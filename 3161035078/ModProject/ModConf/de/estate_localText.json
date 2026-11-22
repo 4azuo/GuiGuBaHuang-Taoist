@@ -588,5 +588,385 @@
 		"id": "-1000011117",
 		"key": "dlg_close",
 		"en|ch|tc|kr": "Schließen"
+	},
+	{
+		"id": "-1000015220",
+		"key": "elder_hunt_fight",
+		"en|ch|tc|kr": "Kämpfen"
+	},
+	{
+		"id": "-1000015230",
+		"key": "elder_dismiss",
+		"en|ch|tc|kr": "Entlassen"
+	},
+	{
+		"id": "-1000015201",
+		"key": "elder_err_dead",
+		"en|ch|tc|kr": "{0} kann nicht dienen: kein Clan mehr zu beschützen."
+	},
+	{
+		"id": "-1000015202",
+		"key": "elder_err_kin",
+		"en|ch|tc|kr": "{0} ist mit dem Clan verwandt: ein Ältester ist ein Außenstehender ohne Blutsbande."
+	},
+	{
+		"id": "-1000015203",
+		"key": "elder_err_grade",
+		"en|ch|tc|kr": "{0} ist nicht stark genug: ein Ältester dieser Gegend braucht ein höheres Reich."
+	},
+	{
+		"id": "-1000015204",
+		"key": "elder_err_busy",
+		"en|ch|tc|kr": "{0} beschützt bereits einen Clan."
+	},
+	{
+		"id": "-1000015205",
+		"key": "elder_err_head",
+		"en|ch|tc|kr": "{0} führt einen Clan dieser Stadt."
+	},
+	{
+		"id": "-1000015206",
+		"key": "elder_err_hunted",
+		"en|ch|tc|kr": "{0} hat den Clan verraten: er wird gejagt, nicht eingeladen."
+	},
+	{
+		"id": "-1000015207",
+		"key": "elder_err_full",
+		"en|ch|tc|kr": "{1} hat so viele Älteste, wie sein Haus versorgen kann: ein größeres Haus versorgt mehr."
+	},
+	{
+		"id": "-1000015208",
+		"key": "elder_err_asked",
+		"en|ch|tc|kr": "{0} hat dieses Jahr schon geantwortet."
+	},
+	{
+		"id": "-1000015209",
+		"key": "elder_refused",
+		"en|ch|tc|kr": "{0} lehnt ab, {1} zu beschützen. Frag nächstes Jahr wieder: mehr Vertrautheit, mehr Ruhm oder ein größeres Haus helfen."
+	},
+	{
+		"id": "-1000015210",
+		"key": "elder_accepted",
+		"en|ch|tc|kr": "{0} nimmt an: ab jetzt ein Ältester, der {1} beschützt."
+	},
+	{
+		"id": "-1000015211",
+		"key": "elder_council_ask",
+		"en|ch|tc|kr": "{0}: {1} hält einen Kriegsrat gegen {2}. Als einer seiner Ältesten hast du eine Stimme (das Oberhaupt hat {3}). Krieg?"
+	},
+	{
+		"id": "-1000015212",
+		"key": "elder_vote_yes",
+		"en|ch|tc|kr": "Für den Krieg"
+	},
+	{
+		"id": "-1000015213",
+		"key": "elder_vote_no",
+		"en|ch|tc|kr": "Gegen den Krieg"
+	},
+	{
+		"id": "-1000015214",
+		"key": "elder_deserted",
+		"en|ch|tc|kr": "Du hast dich aus dem Krieg von {0} herausgehalten, dem Clan, den zu beschützen du geschworen hast. Jetzt bist du ein Deserteur: seine Jäger werden dich holen."
+	},
+	{
+		"id": "-1000015215",
+		"key": "elder_invited",
+		"en|ch|tc|kr": "{0} von {1} vertraut dir: man bittet dich, Schutzältester des Clans zu werden. Sold {2:#,##0} Geistersteine im Monat und jährlich {3} Monate mehr als Opfergabe. Du hast nichts in ihren Angelegenheiten zu sagen, aber eine Stimme über ihre Kriege (das Oberhaupt hat {4}); wer aus einem Krieg des Clans flieht, wird als Deserteur gejagt."
+	},
+	{
+		"id": "-1000015216",
+		"key": "elder_accept",
+		"en|ch|tc|kr": "Annehmen"
+	},
+	{
+		"id": "-1000015217",
+		"key": "elder_decline",
+		"en|ch|tc|kr": "Ablehnen"
+	},
+	{
+		"id": "-1000015218",
+		"key": "elder_joined",
+		"en|ch|tc|kr": "Du bist jetzt Schutzältester von {0} (Sold {1:#,##0} im Monat)."
+	},
+	{
+		"id": "-1000015219",
+		"key": "elder_hunt_ask",
+		"en|ch|tc|kr": "{0} von {1} stellt sich dir in den Weg: \"Deserteur! Der Clan vergibt nicht.\" ({2}/{3} Angriffe abgewehrt)"
+	},
+	{
+		"id": "-1000015221",
+		"key": "elder_hunt_pay",
+		"en|ch|tc|kr": "{0:#,##0} Geistersteine zahlen und die Sache beilegen"
+	},
+	{
+		"id": "-1000015222",
+		"key": "elder_hunt_won",
+		"en|ch|tc|kr": "Du hast den Jäger von {0} abgewehrt ({1}/{2})."
+	},
+	{
+		"id": "-1000015223",
+		"key": "elder_hunt_ended",
+		"en|ch|tc|kr": "Du hast die Jäger von {0} zu oft abgewehrt: der Clan gibt die Jagd auf."
+	},
+	{
+		"id": "-1000015224",
+		"key": "elder_hunt_lost",
+		"en|ch|tc|kr": "Der Jäger von {0} hat dich besiegt: die Jagd geht weiter."
+	},
+	{
+		"id": "-1000015225",
+		"key": "elder_title",
+		"en|ch|tc|kr": "{0} von {1} - Älteste"
+	},
+	{
+		"id": "-1000015226",
+		"key": "elder_rules",
+		"en|ch|tc|kr": "Älteste beschützen den Clan: Außenstehende ohne Verwandtschaft, hier ab Reich {0}. Sie haben in seinen Angelegenheiten nichts zu sagen; sie stimmen über seine Kriege ab (du hast {1} Stimmen) und kämpfen darin. Monatlich bezahlt, eine Opfergabe im Jahr; unbezahlt verlieren sie Treue, ein untreuer Ältester kann aus einem Krieg fliehen."
+	},
+	{
+		"id": "-1000015227",
+		"key": "elder_current",
+		"en|ch|tc|kr": "Älteste: {0} / {1}"
+	},
+	{
+		"id": "-1000015228",
+		"key": "elder_none",
+		"en|ch|tc|kr": "Noch beschützt kein Ältester den Clan."
+	},
+	{
+		"id": "-1000015229",
+		"key": "elder_line",
+		"en|ch|tc|kr": "{0} - Reich {1}, {2:#,##0}/Monat, Treue {3}"
+	},
+	{
+		"id": "-1000015231",
+		"key": "elder_candidates",
+		"en|ch|tc|kr": "Kultivierende der Gegend, die dienen könnten (Reich {0} oder höher)"
+	},
+	{
+		"id": "-1000015232",
+		"key": "elder_no_candidate",
+		"en|ch|tc|kr": "Kein Kultivierender der Gegend könnte jetzt dienen."
+	},
+	{
+		"id": "-1000015233",
+		"key": "elder_candidate_line",
+		"en|ch|tc|kr": "{0} - Reich {1}, Vertrautheit {2}, {3:#,##0}/Monat, nimmt an: {4}%"
+	},
+	{
+		"id": "-1000015234",
+		"key": "elder_invite",
+		"en|ch|tc|kr": "Einladen"
+	},
+	{
+		"id": "-1000015235",
+		"key": "elder_hint",
+		"en|ch|tc|kr": "Wer abgelehnt hat, kann erst nach einem Jahr wieder gefragt werden. Vertrautheit, Ruhm und ein größeres Haus helfen."
+	},
+	{
+		"id": "-1000015236",
+		"key": "elder_council_title",
+		"en|ch|tc|kr": "{1} - Kriegsrat von {0}"
+	},
+	{
+		"id": "-1000015237",
+		"key": "elder_council_rules",
+		"en|ch|tc|kr": "Ein Krieg wird vom Rat erklärt: du hast {0} Stimmen, jeder deiner {1} Ältesten eine; mehr als die Hälfte der {2} Stimmen ist nötig. Älteste mit geringer Treue können aus dem Krieg fliehen."
+	},
+	{
+		"id": "-1000015238",
+		"key": "elder_council_none",
+		"en|ch|tc|kr": "Kein Clan der Stadt ist deinem feindlich gesinnt."
+	},
+	{
+		"id": "-1000015239",
+		"key": "elder_council_line",
+		"en|ch|tc|kr": "{0}: Beziehung {1}, {2} Mitglied(er), {3} Älteste(r), Sieg {4}%"
+	},
+	{
+		"id": "-1000015240",
+		"key": "elder_declare",
+		"en|ch|tc|kr": "Krieg erklären"
+	},
+	{
+		"id": "-1000015241",
+		"key": "elder_ballot_head",
+		"en|ch|tc|kr": "Krieg von {0} gegen {1}: der Rat stimmt ab."
+	},
+	{
+		"id": "-1000015242",
+		"key": "elder_ballot_line_head",
+		"en|ch|tc|kr": "Oberhaupt {0} ({1} Stimmen): {2}"
+	},
+	{
+		"id": "-1000015243",
+		"key": "elder_ballot_line",
+		"en|ch|tc|kr": "Ältester {0} ({1} Stimme): {2}"
+	},
+	{
+		"id": "-1000015244",
+		"key": "elder_ballot_for",
+		"en|ch|tc|kr": "dafür"
+	},
+	{
+		"id": "-1000015245",
+		"key": "elder_ballot_against",
+		"en|ch|tc|kr": "dagegen"
+	},
+	{
+		"id": "-1000015246",
+		"key": "elder_ballot_passed",
+		"en|ch|tc|kr": "{0} von {1} Stimmen dafür: der Krieg ist erklärt."
+	},
+	{
+		"id": "-1000015247",
+		"key": "elder_ballot_failed",
+		"en|ch|tc|kr": "{0} von {1} Stimmen dafür: der Krieg ist abgelehnt."
+	},
+	{
+		"id": "-1000015248",
+		"key": "elder_to_war",
+		"en|ch|tc|kr": "In den Krieg"
+	},
+	{
+		"id": "-1000015249",
+		"key": "elder_button",
+		"en|ch|tc|kr": "Älteste ({0}/{1})"
+	},
+	{
+		"id": "-1000015250",
+		"key": "elder_council_button",
+		"en|ch|tc|kr": "Kriegsrat"
+	},
+	{
+		"id": "-1000015251",
+		"key": "elder_post",
+		"en|ch|tc|kr": "Du beschützt {0} als Ältester: {1:#,##0} Geistersteine im Monat."
+	},
+	{
+		"id": "-1000015252",
+		"key": "elder_resign",
+		"en|ch|tc|kr": "Zurücktreten"
+	},
+	{
+		"id": "-1000015253",
+		"key": "elder_resign_confirm",
+		"en|ch|tc|kr": "Deinen Posten als Ältester von {0} in Frieden aufgeben?"
+	},
+	{
+		"id": "-1000015254",
+		"key": "elder_clan_suffix",
+		"en|ch|tc|kr": " - Älteste: {0}"
+	},
+	{
+		"id": "-1000015255",
+		"key": "log_clan_elder_join",
+		"en|ch|tc|kr": "{0}: {1} wurde Ältester von {2}."
+	},
+	{
+		"id": "-1000015256",
+		"key": "log_clan_elder_fled",
+		"en|ch|tc|kr": "{0}: Ältester {1} floh aus dem Krieg von {2}; der Clan jagt den Deserteur."
+	},
+	{
+		"id": "-1000015257",
+		"key": "log_clan_elder_voted_down",
+		"en|ch|tc|kr": "{0}: die Ältesten von {1} lehnten einen Krieg gegen {2} ab."
+	},
+	{
+		"id": "-1000015258",
+		"key": "log_clan_elder_clan_gone",
+		"en|ch|tc|kr": "{0}: {1} ist kein Ältester mehr: {2} existiert nicht mehr."
+	},
+	{
+		"id": "-1000015259",
+		"key": "log_clan_elder_left_unpaid",
+		"en|ch|tc|kr": "{0}: Ältester {1} hat {2} verlassen, unbezahlt."
+	},
+	{
+		"id": "-1000015260",
+		"key": "log_clan_elder_dismissed",
+		"en|ch|tc|kr": "{0}: Ältester {1} wurde von {2} entlassen."
+	},
+	{
+		"id": "-1000015261",
+		"key": "log_clan_elder_resigned",
+		"en|ch|tc|kr": "{0}: {1} trat als Ältester von {2} zurück."
+	},
+	{
+		"id": "-1000015262",
+		"key": "log_clan_elder_offering",
+		"en|ch|tc|kr": "{0}: {1} erhielt die jährliche Opfergabe von {2}: {3:#,##0} Geistersteine."
+	},
+	{
+		"id": "-1000015263",
+		"key": "log_clan_elder_hunted_down",
+		"en|ch|tc|kr": "{0}: der Deserteur {1} wurde von {3} von {2} zur Strecke gebracht."
+	},
+	{
+		"id": "-1000015264",
+		"key": "log_clan_elder_hunt_over",
+		"en|ch|tc|kr": "{0}: {2} gab die Jagd auf {1} auf."
+	},
+	{
+		"id": "-1000015265",
+		"key": "log_clan_elder_hunt_paid",
+		"en|ch|tc|kr": "{0}: du hast {1} {2:#,##0} Geistersteine gezahlt; die Jagd ist vorbei."
+	},
+	{
+		"id": "-1000015266",
+		"key": "log_clan_succession",
+		"en|ch|tc|kr": "{0}: {1} wurde Familienoberhaupt: {2} lebt weiter."
+	},
+	{
+		"id": "-1000015267",
+		"key": "clan_succession_player",
+		"en|ch|tc|kr": "Das Oberhaupt deiner Familie ist gestorben: die {0} gehört jetzt dir, und du führst {1}. Seine Beziehungen zu den anderen Clans, seine Ältesten und seine Fehden gehören dir auch."
+	},
+	{
+		"id": "-1000015268",
+		"key": "clan_inherit_head",
+		"en|ch|tc|kr": "{0}: als nächstes Familienoberhaupt führt {1} den Clan weiter; die Familie bleibt bei ihm."
+	},
+	{
+		"id": "-1000015269",
+		"key": "clan_inherit_member",
+		"en|ch|tc|kr": "{0}: {1} ist das nächste Familienoberhaupt und übernimmt die {3}; du bleibst ein Mitglied von {2}."
+	},
+	{
+		"id": "-1000015270",
+		"key": "estate_ruin_label",
+		"en|ch|tc|kr": "Ruinen"
+	},
+	{
+		"id": "-1000015271",
+		"key": "clan_ruin_info",
+		"en|ch|tc|kr": "Die Ruinen der {0} von {1}: der Clan fiel vor {2} Jahr(en), niemand blieb, ihn fortzuführen. Unkraut wächst in den Hallen; in {3} Monat(en) wird das Land in Parzellen für die Sterblichen aufgeteilt, wenn kein Clan es als Sitz übernimmt."
+	},
+	{
+		"id": "-1000015272",
+		"key": "clan_ruin_buy_info",
+		"en|ch|tc|kr": "Für {0} Banknote(n) als deinen eigenen Sitz wiederherstellen (du hast {1})."
+	},
+	{
+		"id": "-1000015273",
+		"key": "clan_ruin_buy",
+		"en|ch|tc|kr": "Wiederherstellen ({0} Banknoten)"
+	},
+	{
+		"id": "-1000015274",
+		"key": "clan_ruin_bought",
+		"en|ch|tc|kr": "Die {0} gehört dir: wiederhergestellt, der Sitz deiner Familie."
+	},
+	{
+		"id": "-1000015275",
+		"key": "log_clan_ruin_split",
+		"en|ch|tc|kr": "{0}: die Ruinen von {1} wurden in Parzellen für die Sterblichen aufgeteilt."
+	},
+	{
+		"id": "-1000015276",
+		"key": "log_clan_ruin_taken",
+		"en|ch|tc|kr": "{0}: {1} nahm die Ruinen von {2} als Sitz ({3})."
 	}
 ]

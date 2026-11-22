@@ -157,6 +157,7 @@ namespace MOD_nE7UL2.Mod
                 ["Woods"] = "#668C5CA6",
                 ["Mine"] = "#FFCC33E6",
                 ["Owned"] = "#8FA8C7B3",
+                ["Ruin"] = "#6E625AB3",
                 ["Palace"] = "#BF4D3373",
                 ["Wall"] = "#5C4F42F2",
                 ["Wave"] = "#C9E2EEB3",
@@ -233,6 +234,63 @@ namespace MOD_nE7UL2.Mod
             public int BrawlRelation { get; set; } = -15;
             public int DeathRelation { get; set; } = -40;
             public int WarRelation { get; set; } = -50;
+            /// <summary>Age (years) a child or grandchild needs to head the clan after the head's death (a younger one only when no one else is left).</summary>
+            public int HeirAge { get; set; } = 16;
+            /// <summary>A mansion with no one left to carry on its clan falls into ruin for RuinMonths, then is split into plots for the mortals; meanwhile, each year with RuinTakeChance, a clan of the town that can pay RuinPrice x its land price takes it as its seat.</summary>
+            public int RuinMonths { get; set; } = 36;
+            public float RuinTakeChance { get; set; } = 0.2f;
+            public float RuinPrice { get; set; } = 0.5f;
+        }
+
+        /// <summary>
+        /// Clan elders (ClanElderEvent): cultivators of no kin who guard a clan, paid by it; they vote on its wars.
+        /// </summary>
+        public class _Elders
+        {
+            public bool Enabled { get; set; } = true;
+            /// <summary>Grade an elder needs: the area of the clan's town + this (1..10).</summary>
+            public int GradeOverArea { get; set; } = 1;
+            /// <summary>Elders a clan can keep, by the level of its house (1..6).</summary>
+            public int[] MaxElders { get; set; } = { 1, 1, 2, 2, 3, 4 };
+            /// <summary>
+            /// Monthly salary of an elder (spirit stones) by its grade (1..10): 5 x 3^grade, the income yardstick of the
+            /// estates (3^grade x 1,000 a year) x 6 %: an elder one grade above the player costs about 21 % of the player's
+            /// income with its yearly offering of OfferingMonths salaries, at every grade.
+            /// </summary>
+            public int[] Salary { get; set; } = { 15, 45, 135, 405, 1215, 3645, 10935, 32805, 98415, 295245 };
+            public int OfferingMonths { get; set; } = 2;
+            /// <summary>Loyalty 0..100: at first StartLoyalty + the intimacy with the head x LoyaltyPerIntim; a month paid +PaidLoyalty, unpaid -UnpaidLoyalty (0: the elder leaves); a war won / lost +- WarLoyalty.</summary>
+            public int StartLoyalty { get; set; } = 40;
+            public float LoyaltyPerIntim { get; set; } = 0.1f;
+            public int PaidLoyalty { get; set; } = 1;
+            public int UnpaidLoyalty { get; set; } = 15;
+            public int WarLoyalty { get; set; } = 10;
+            /// <summary>Loyalty the elders lose when a new head takes over the clan.</summary>
+            public int SuccessionLoyalty { get; set; } = 10;
+            /// <summary>Votes of the head in a war council (an elder: 1); a war needs more than half of all the votes.</summary>
+            public int HeadVotes { get; set; } = 3;
+            /// <summary>An elder whose loyalty is under FleeLoyalty may flee a war: chance (FleeLoyalty - loyalty) / FleeLoyalty.</summary>
+            public int FleeLoyalty { get; set; } = 40;
+            /// <summary>An elder dies in a lost war with WarDeath x ElderDeath.</summary>
+            public float ElderDeath { get; set; } = 0.5f;
+            /// <summary>A deserter is hunted by the clan for HuntMonths: each month HuntChance of an attack; an NPC deserter beaten dies with HuntDeath. The player ends it by winning HuntWins fights or paying CompensationMonths salaries.</summary>
+            public int HuntMonths { get; set; } = 60;
+            public float HuntChance { get; set; } = 0.15f;
+            public float HuntDeath { get; set; } = 0.3f;
+            public int HuntWins { get; set; } = 3;
+            public int CompensationMonths { get; set; } = 24;
+            /// <summary>An NPC clan takes an NPC elder with RecruitChance a year.</summary>
+            public float RecruitChance { get; set; } = 0.25f;
+            /// <summary>An NPC clan invites the player (InviteChance a year) when its head's intimacy with the player is InviteIntim or more and the player's reputation InviteReputation or more.</summary>
+            public float InviteChance { get; set; } = 0.5f;
+            public int InviteIntim { get; set; } = 150;
+            public int InviteReputation { get; set; } = 300;
+            /// <summary>An NPC accepts the player's invitation with AcceptBase + intimacy / AcceptIntim + reputation / AcceptReputation + AcceptHouse a house level above 1 - AcceptGrade a grade the NPC has above the player (at most 95 %); asked once a year.</summary>
+            public float AcceptBase { get; set; } = 0.1f;
+            public float AcceptIntim { get; set; } = 200f;
+            public float AcceptReputation { get; set; } = 2000f;
+            public float AcceptHouse { get; set; } = 0.05f;
+            public float AcceptGrade { get; set; } = 0.15f;
         }
 
         /// <summary>Spirit notes (SpiritNoteEvent): an item worth Value spirit stones, changed at the bank for a fee.</summary>
@@ -288,6 +346,7 @@ namespace MOD_nE7UL2.Mod
         public _Rooms Rooms { get; set; } = new _Rooms();
         public _Growth Growth { get; set; } = new _Growth();
         public _Clans Clans { get; set; } = new _Clans();
+        public _Elders Elders { get; set; } = new _Elders();
 
         /// <summary>Reads a config (missing values: the defaults) and makes it safe to use.</summary>
         public static EstateConfig Parse(string json)
@@ -319,6 +378,19 @@ namespace MOD_nE7UL2.Mod
             Clans.WarChance = Math.Max(0f, Math.Min(1f, Clans.WarChance));
             Clans.BrawlDeath = Math.Max(0f, Math.Min(1f, Clans.BrawlDeath));
             Clans.WarDeath = Math.Max(0f, Math.Min(1f, Clans.WarDeath));
+            Elders = Elders ?? d.Elders;
+            if (Elders.MaxElders == null || Elders.MaxElders.Length == 0) Elders.MaxElders = d.Elders.MaxElders;
+            if (Elders.Salary == null || Elders.Salary.Length == 0) Elders.Salary = d.Elders.Salary;
+            Elders.HeadVotes = Math.Max(1, Elders.HeadVotes);
+            Elders.HuntChance = Math.Max(0f, Math.Min(1f, Elders.HuntChance));
+            Elders.HuntDeath = Math.Max(0f, Math.Min(1f, Elders.HuntDeath));
+            Elders.RecruitChance = Math.Max(0f, Math.Min(1f, Elders.RecruitChance));
+            Elders.InviteChance = Math.Max(0f, Math.Min(1f, Elders.InviteChance));
+            Elders.ElderDeath = Math.Max(0f, Elders.ElderDeath);
+            Elders.FleeLoyalty = Math.Max(1, Elders.FleeLoyalty);
+            Elders.HuntWins = Math.Max(1, Elders.HuntWins);
+            Elders.AcceptIntim = Math.Max(1f, Elders.AcceptIntim);
+            Elders.AcceptReputation = Math.Max(1f, Elders.AcceptReputation);
             Growth.MortalChance = Math.Max(0f, Math.Min(1f, Growth.MortalChance));
             Growth.MortalMaxBonus = Math.Max(0, Growth.MortalMaxBonus);
             Growth.NpcBuyChance = Math.Max(0f, Math.Min(1f, Growth.NpcBuyChance));

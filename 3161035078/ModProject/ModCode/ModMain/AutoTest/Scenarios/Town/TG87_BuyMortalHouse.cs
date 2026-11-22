@@ -42,10 +42,12 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                 .Step("the window of the plot", c =>
                 {
                     var p = (EstateEvent.Plot)c.Bag["plot"];
-                    c.Assert(g.ui.HasUI(UIType.TextInfo), "a text window (UITextInfo), not a message box");
+                    c.Assert(g.ui.HasUI(InfoDialog.LastUIType), "a text window (UITextInfo / UITextInfoLong), not a message box");
+                    c.Assert(InfoDialog.Wrap(InfoDialog.LastText ?? string.Empty, InfoDialog.WRAP_CHARS_LONG).All(x => x.Count(ch => ch == '<') == x.Count(ch => ch == '>')),
+                        "no icon tag cut by the line wrap");
                     c.Assert(InfoDialog.LastText != null && InfoDialog.LastText.Contains(EstateEvent.PlotWhere(p)), $"it tells which plot: {EstateEvent.PlotWhere(p)}");
                     var label = string.Format(GameTool.LS("estate_mortal_buy"), SpiritNoteEvent.NotesFor((long)c.Bag["price"]));
-                    c.Bag["btn"] = FindButtons(UIType.TextInfo, label).FirstOrDefault();
+                    c.Bag["btn"] = FindButtons(InfoDialog.LastUIType, label).FirstOrDefault();
                     c.Assert(c.Bag["btn"] != null, $"the button '{label}'");
                 }, 1500)
                 .Step("buy this house", c => (c.Bag["btn"] as ModLib.Object.UIItemButton)?.Item.onClick.Invoke(), 1500)

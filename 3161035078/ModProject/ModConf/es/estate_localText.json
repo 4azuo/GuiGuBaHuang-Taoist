@@ -588,5 +588,385 @@
 		"id": "-1000011117",
 		"key": "dlg_close",
 		"en|ch|tc|kr": "Cerrar"
+	},
+	{
+		"id": "-1000015220",
+		"key": "elder_hunt_fight",
+		"en|ch|tc|kr": "Luchar"
+	},
+	{
+		"id": "-1000015230",
+		"key": "elder_dismiss",
+		"en|ch|tc|kr": "Descartar"
+	},
+	{
+		"id": "-1000015201",
+		"key": "elder_err_dead",
+		"en|ch|tc|kr": "{0} no puede servir: no queda clan que proteger."
+	},
+	{
+		"id": "-1000015202",
+		"key": "elder_err_kin",
+		"en|ch|tc|kr": "{0} es pariente del clan: un anciano es un forastero sin lazos de sangre."
+	},
+	{
+		"id": "-1000015203",
+		"key": "elder_err_grade",
+		"en|ch|tc|kr": "{0} no es lo bastante fuerte: un anciano de esta zona necesita un reino más alto."
+	},
+	{
+		"id": "-1000015204",
+		"key": "elder_err_busy",
+		"en|ch|tc|kr": "{0} ya protege a un clan."
+	},
+	{
+		"id": "-1000015205",
+		"key": "elder_err_head",
+		"en|ch|tc|kr": "{0} encabeza un clan de esta ciudad."
+	},
+	{
+		"id": "-1000015206",
+		"key": "elder_err_hunted",
+		"en|ch|tc|kr": "{0} desertó del clan: se le caza, no se le invita."
+	},
+	{
+		"id": "-1000015207",
+		"key": "elder_err_full",
+		"en|ch|tc|kr": "{1} tiene tantos ancianos como su casa puede mantener: una casa más grande mantiene más."
+	},
+	{
+		"id": "-1000015208",
+		"key": "elder_err_asked",
+		"en|ch|tc|kr": "{0} ya dio una respuesta este año."
+	},
+	{
+		"id": "-1000015209",
+		"key": "elder_refused",
+		"en|ch|tc|kr": "{0} declina proteger a {1}. Pregunta de nuevo el año que viene: más intimidad, más renombre o una casa más grande ayudarán."
+	},
+	{
+		"id": "-1000015210",
+		"key": "elder_accepted",
+		"en|ch|tc|kr": "{0} acepta: desde ahora es un anciano que protege a {1}."
+	},
+	{
+		"id": "-1000015211",
+		"key": "elder_council_ask",
+		"en|ch|tc|kr": "{0}: {1} celebra un consejo de guerra contra {2}. Como uno de sus ancianos tienes un voto (el líder tiene {3}). ¿Guerra?"
+	},
+	{
+		"id": "-1000015212",
+		"key": "elder_vote_yes",
+		"en|ch|tc|kr": "A favor de la guerra"
+	},
+	{
+		"id": "-1000015213",
+		"key": "elder_vote_no",
+		"en|ch|tc|kr": "En contra de la guerra"
+	},
+	{
+		"id": "-1000015214",
+		"key": "elder_deserted",
+		"en|ch|tc|kr": "Te mantuviste al margen de la guerra de {0}, el clan que juraste proteger. Ahora eres un desertor: sus cazadores vendrán a por ti."
+	},
+	{
+		"id": "-1000015215",
+		"key": "elder_invited",
+		"en|ch|tc|kr": "{0} de {1} confía en ti: te piden que seas un anciano guardián del clan. Salario de {2:#,##0} piedras espirituales al mes y {3} meses más como ofrenda anual. No tendrás voz en sus asuntos, pero sí voto en sus guerras (el líder tiene {4}); huir de una guerra del clan te convierte en desertor, perseguido."
+	},
+	{
+		"id": "-1000015216",
+		"key": "elder_accept",
+		"en|ch|tc|kr": "Aceptar"
+	},
+	{
+		"id": "-1000015217",
+		"key": "elder_decline",
+		"en|ch|tc|kr": "Declinar"
+	},
+	{
+		"id": "-1000015218",
+		"key": "elder_joined",
+		"en|ch|tc|kr": "Ahora eres un anciano guardián de {0} (salario de {1:#,##0} al mes)."
+	},
+	{
+		"id": "-1000015219",
+		"key": "elder_hunt_ask",
+		"en|ch|tc|kr": "{0} de {1} te cierra el paso: \"¡Desertor! El clan no perdona.\" ({2}/{3} ataques rechazados)"
+	},
+	{
+		"id": "-1000015221",
+		"key": "elder_hunt_pay",
+		"en|ch|tc|kr": "Pagar {0:#,##0} piedras espirituales para zanjarlo"
+	},
+	{
+		"id": "-1000015222",
+		"key": "elder_hunt_won",
+		"en|ch|tc|kr": "Rechazaste al cazador de {0} ({1}/{2})."
+	},
+	{
+		"id": "-1000015223",
+		"key": "elder_hunt_ended",
+		"en|ch|tc|kr": "Rechazaste a los cazadores de {0} demasiadas veces: el clan abandona la caza."
+	},
+	{
+		"id": "-1000015224",
+		"key": "elder_hunt_lost",
+		"en|ch|tc|kr": "El cazador de {0} te venció: la caza continúa."
+	},
+	{
+		"id": "-1000015225",
+		"key": "elder_title",
+		"en|ch|tc|kr": "{0} de {1} - ancianos"
+	},
+	{
+		"id": "-1000015226",
+		"key": "elder_rules",
+		"en|ch|tc|kr": "Los ancianos protegen el clan: forasteros sin parentesco, aquí de reino {0} o más. No tienen voz en sus asuntos; votan sus guerras (tú tienes {1} votos) y luchan en ellas. Se les paga cada mes y una ofrenda al año; sin pago pierden lealtad, y un anciano desleal puede huir de una guerra."
+	},
+	{
+		"id": "-1000015227",
+		"key": "elder_current",
+		"en|ch|tc|kr": "Ancianos: {0} / {1}"
+	},
+	{
+		"id": "-1000015228",
+		"key": "elder_none",
+		"en|ch|tc|kr": "Ningún anciano protege aún el clan."
+	},
+	{
+		"id": "-1000015229",
+		"key": "elder_line",
+		"en|ch|tc|kr": "{0} - reino {1}, {2:#,##0}/mes, lealtad {3}"
+	},
+	{
+		"id": "-1000015231",
+		"key": "elder_candidates",
+		"en|ch|tc|kr": "Cultivadores de la zona que podrían servir (reino {0} o más)"
+	},
+	{
+		"id": "-1000015232",
+		"key": "elder_no_candidate",
+		"en|ch|tc|kr": "Ningún cultivador de la zona podría servir ahora."
+	},
+	{
+		"id": "-1000015233",
+		"key": "elder_candidate_line",
+		"en|ch|tc|kr": "{0} - reino {1}, intimidad {2}, {3:#,##0}/mes, acepta {4}%"
+	},
+	{
+		"id": "-1000015234",
+		"key": "elder_invite",
+		"en|ch|tc|kr": "Invitar"
+	},
+	{
+		"id": "-1000015235",
+		"key": "elder_hint",
+		"en|ch|tc|kr": "Quien rechaza no puede ser invitado de nuevo en un año. La intimidad, el renombre y una casa más grande ayudan a que acepten."
+	},
+	{
+		"id": "-1000015236",
+		"key": "elder_council_title",
+		"en|ch|tc|kr": "{1} - consejo de guerra de {0}"
+	},
+	{
+		"id": "-1000015237",
+		"key": "elder_council_rules",
+		"en|ch|tc|kr": "Una guerra la declara el consejo: tienes {0} votos, cada uno de tus {1} ancianos uno; hace falta más de la mitad de los {2} votos. Los ancianos de poca lealtad pueden huir de la guerra."
+	},
+	{
+		"id": "-1000015238",
+		"key": "elder_council_none",
+		"en|ch|tc|kr": "Ningún clan de la ciudad es hostil al tuyo."
+	},
+	{
+		"id": "-1000015239",
+		"key": "elder_council_line",
+		"en|ch|tc|kr": "{0}: relación {1}, {2} miembro(s), {3} anciano(s), victoria {4}%"
+	},
+	{
+		"id": "-1000015240",
+		"key": "elder_declare",
+		"en|ch|tc|kr": "Declarar la guerra"
+	},
+	{
+		"id": "-1000015241",
+		"key": "elder_ballot_head",
+		"en|ch|tc|kr": "Guerra de {0} contra {1}: el consejo vota."
+	},
+	{
+		"id": "-1000015242",
+		"key": "elder_ballot_line_head",
+		"en|ch|tc|kr": "Líder {0} ({1} votos): {2}"
+	},
+	{
+		"id": "-1000015243",
+		"key": "elder_ballot_line",
+		"en|ch|tc|kr": "Anciano {0} ({1} voto): {2}"
+	},
+	{
+		"id": "-1000015244",
+		"key": "elder_ballot_for",
+		"en|ch|tc|kr": "a favor"
+	},
+	{
+		"id": "-1000015245",
+		"key": "elder_ballot_against",
+		"en|ch|tc|kr": "en contra"
+	},
+	{
+		"id": "-1000015246",
+		"key": "elder_ballot_passed",
+		"en|ch|tc|kr": "{0} de {1} votos a favor: se declara la guerra."
+	},
+	{
+		"id": "-1000015247",
+		"key": "elder_ballot_failed",
+		"en|ch|tc|kr": "{0} de {1} votos a favor: la guerra queda rechazada."
+	},
+	{
+		"id": "-1000015248",
+		"key": "elder_to_war",
+		"en|ch|tc|kr": "A la guerra"
+	},
+	{
+		"id": "-1000015249",
+		"key": "elder_button",
+		"en|ch|tc|kr": "Ancianos ({0}/{1})"
+	},
+	{
+		"id": "-1000015250",
+		"key": "elder_council_button",
+		"en|ch|tc|kr": "Consejo de guerra"
+	},
+	{
+		"id": "-1000015251",
+		"key": "elder_post",
+		"en|ch|tc|kr": "Proteges a {0} como anciano: {1:#,##0} piedras espirituales al mes."
+	},
+	{
+		"id": "-1000015252",
+		"key": "elder_resign",
+		"en|ch|tc|kr": "Dimitir"
+	},
+	{
+		"id": "-1000015253",
+		"key": "elder_resign_confirm",
+		"en|ch|tc|kr": "¿Dejar en paz tu puesto de anciano de {0}?"
+	},
+	{
+		"id": "-1000015254",
+		"key": "elder_clan_suffix",
+		"en|ch|tc|kr": " - ancianos: {0}"
+	},
+	{
+		"id": "-1000015255",
+		"key": "log_clan_elder_join",
+		"en|ch|tc|kr": "{0}: {1} se convirtió en anciano de {2}."
+	},
+	{
+		"id": "-1000015256",
+		"key": "log_clan_elder_fled",
+		"en|ch|tc|kr": "{0}: el anciano {1} huyó de la guerra de {2}; el clan caza al desertor."
+	},
+	{
+		"id": "-1000015257",
+		"key": "log_clan_elder_voted_down",
+		"en|ch|tc|kr": "{0}: los ancianos de {1} rechazaron una guerra contra {2}."
+	},
+	{
+		"id": "-1000015258",
+		"key": "log_clan_elder_clan_gone",
+		"en|ch|tc|kr": "{0}: {1} ya no es anciano: {2} ha desaparecido."
+	},
+	{
+		"id": "-1000015259",
+		"key": "log_clan_elder_left_unpaid",
+		"en|ch|tc|kr": "{0}: el anciano {1} dejó {2}, sin pago."
+	},
+	{
+		"id": "-1000015260",
+		"key": "log_clan_elder_dismissed",
+		"en|ch|tc|kr": "{0}: el anciano {1} fue destituido por {2}."
+	},
+	{
+		"id": "-1000015261",
+		"key": "log_clan_elder_resigned",
+		"en|ch|tc|kr": "{0}: {1} dimitió como anciano de {2}."
+	},
+	{
+		"id": "-1000015262",
+		"key": "log_clan_elder_offering",
+		"en|ch|tc|kr": "{0}: {1} recibió la ofrenda anual de {2}: {3:#,##0} piedras espirituales."
+	},
+	{
+		"id": "-1000015263",
+		"key": "log_clan_elder_hunted_down",
+		"en|ch|tc|kr": "{0}: el desertor {1} fue cazado por {3} de {2}."
+	},
+	{
+		"id": "-1000015264",
+		"key": "log_clan_elder_hunt_over",
+		"en|ch|tc|kr": "{0}: {2} abandonó la caza de {1}."
+	},
+	{
+		"id": "-1000015265",
+		"key": "log_clan_elder_hunt_paid",
+		"en|ch|tc|kr": "{0}: pagaste a {1} {2:#,##0} piedras espirituales; la caza ha terminado."
+	},
+	{
+		"id": "-1000015266",
+		"key": "log_clan_succession",
+		"en|ch|tc|kr": "{0}: {1} pasó a ser el cabeza de familia: {2} continúa."
+	},
+	{
+		"id": "-1000015267",
+		"key": "clan_succession_player",
+		"en|ch|tc|kr": "El cabeza de tu familia ha muerto: la {0} es tuya ahora y encabezas {1}. Sus relaciones con los demás clanes, sus ancianos y sus enemistades también son tuyos."
+	},
+	{
+		"id": "-1000015268",
+		"key": "clan_inherit_head",
+		"en|ch|tc|kr": "{0}: como próximo cabeza de familia, {1} sigue al frente del clan; la familia permanece con él."
+	},
+	{
+		"id": "-1000015269",
+		"key": "clan_inherit_member",
+		"en|ch|tc|kr": "{0}: {1} es el próximo cabeza de familia y se queda con la {3}; tú sigues como miembro de {2}."
+	},
+	{
+		"id": "-1000015270",
+		"key": "estate_ruin_label",
+		"en|ch|tc|kr": "Ruinas"
+	},
+	{
+		"id": "-1000015271",
+		"key": "clan_ruin_info",
+		"en|ch|tc|kr": "Las ruinas de la {0} de {1}: el clan cayó hace {2} año(s), sin nadie que lo continuara. La maleza crece en los salones; en {3} mes(es) el terreno se dividirá en parcelas para los mortales, salvo que un clan lo tome como sede."
+	},
+	{
+		"id": "-1000015272",
+		"key": "clan_ruin_buy_info",
+		"en|ch|tc|kr": "Restaurarla como tu propia sede por {0} billete(s) (tienes {1})."
+	},
+	{
+		"id": "-1000015273",
+		"key": "clan_ruin_buy",
+		"en|ch|tc|kr": "Restaurar ({0} billetes)"
+	},
+	{
+		"id": "-1000015274",
+		"key": "clan_ruin_bought",
+		"en|ch|tc|kr": "La {0} es tuya: restaurada, la sede de tu familia."
+	},
+	{
+		"id": "-1000015275",
+		"key": "log_clan_ruin_split",
+		"en|ch|tc|kr": "{0}: las ruinas de {1} se dividieron en parcelas para los mortales."
+	},
+	{
+		"id": "-1000015276",
+		"key": "log_clan_ruin_taken",
+		"en|ch|tc|kr": "{0}: {1} tomó las ruinas de {2} como sede ({3})."
 	}
 ]

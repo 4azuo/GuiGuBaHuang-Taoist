@@ -222,7 +222,7 @@ Settings: `Growth` of `estate_configs.json`.
 
 Tests: TG-70 (autotest, screenshot of the map), TG-73 (NPC houses in depth: the monthly hook, the rules, the house tax,
 unpaid months and seizure, a dead owner, mortal growth by months); `FormulaTests.Estate_MortalGrowth` (unit test).
-Promotion pictures: TR-03 (`estate-town-map`, `estate-house`, `town-buildings`, `spirit-banknotes`).
+Promotion pictures: TR-03 (`estate-town-map`, `estate-house`, `town-buildings`, `spirit-banknotes`); TR-04 (`city-map`, `city-buildings`, `house-buy`, `house-bought`: the 6.0 set).
 
 ## House prices by area (2026-11-20)
 

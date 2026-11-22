@@ -392,6 +392,37 @@ namespace UnitTests.Taoist
             Check.Eq(ClanEvent.Key("t", "a", "b"), ClanEvent.Key("t", "b", "a"), "the key of a pair does not depend on the order");
         }
 
+        [TestMethod, Description("ClanElderEvent: grade by area, elders by house, salary, loyalty, acceptance, the war council, flight")]
+        public void ClanElder_Formulas()
+        {
+            Check.Eq(2, ClanElderEvent.MinGrade(1), "area 1: realm 2");
+            Check.Eq(10, ClanElderEvent.MinGrade(10), "never above 10");
+            Check.Eq(1, ClanElderEvent.MaxElders(1), "a small house: one elder");
+            Check.Eq(4, ClanElderEvent.MaxElders(6), "the biggest house: four");
+            Check.Eq(4, ClanElderEvent.MaxElders(9), "levels above 6: as 6");
+            Check.Eq(15, ClanElderEvent.BaseSalary(1), "realm 1: 5 x 3 a month");
+            Check.Eq(1215, ClanElderEvent.BaseSalary(5), "realm 5: 5 x 3^5");
+            Check.Eq(295245, ClanElderEvent.BaseSalary(12), "above 10: as 10");
+            Check.Eq(50, ClanElderEvent.StartLoyalty(100), "40 + intimacy 100 x 0.1");
+            Check.Eq(0, ClanElderEvent.StartLoyalty(-1000), "at least 0");
+            Check.Eq(100, ClanElderEvent.StartLoyalty(5000), "at most 100");
+            Check.Eq(0, ClanElderEvent.AcceptChance(-1, 5000, 6, 0), 0.0001, "dislikes the player: never");
+            Check.Eq(0.1 + 0.5 + 0.25 + 0.1, ClanElderEvent.AcceptChance(100, 500, 3, 0), 0.0001, "base + intimacy 100/200 + reputation 500/2000 + 2 house levels");
+            Check.Eq(0.1 + 0.5 - 0.3, ClanElderEvent.AcceptChance(100, 0, 1, 2), 0.0001, "2 realms above the player: -0.3");
+            Check.Eq(0.95, ClanElderEvent.AcceptChance(1000, 9000, 6, 0), 0.0001, "at most 95 %");
+            Check.Eq(0.45, ClanElderEvent.VoteYesChance(50, 100, 100), 0.0001, "loyalty 50, even forces");
+            Check.True(ClanElderEvent.VoteYesChance(90, 300, 100) > ClanElderEvent.VoteYesChance(90, 100, 300), "a stronger clan: more votes for", null);
+            Check.Eq(0.05, ClanElderEvent.VoteYesChance(0, 0, 1000), 0.0001, "at least 5 %");
+            Check.True(ClanElderEvent.Passes(true, 0, 0), "no elders: the head decides", null);
+            Check.True(ClanElderEvent.Passes(true, 0, 2), "3 of 5 votes", null);
+            Check.True(!ClanElderEvent.Passes(true, 0, 3), "3 of 6 votes: not more than half", null);
+            Check.True(ClanElderEvent.Passes(true, 1, 3), "the head and one elder of 3: 4 of 6", null);
+            Check.True(!ClanElderEvent.Passes(false, 3, 3), "the head against, 3 elders for: 3 of 6", null);
+            Check.Eq(0, ClanElderEvent.FleeChance(40), 0.0001, "loyal enough: never flees");
+            Check.Eq(0.5, ClanElderEvent.FleeChance(20), 0.0001, "loyalty 20: half");
+            Check.Eq(1, ClanElderEvent.FleeChance(-5), 0.0001, "loyalty 0: flees");
+        }
+
         [TestMethod, Description("SpiritNoteEvent: notes first, the change back in stones, the fee both ways")]
         public void SpiritNote_Formulas()
         {

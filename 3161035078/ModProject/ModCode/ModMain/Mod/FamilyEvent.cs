@@ -436,6 +436,11 @@ namespace MOD_nE7UL2.Mod
             var heirSchool = heir.data.unitData.schoolID;
             var heirPost = string.IsNullOrEmpty(heirSchool) ? SchoolPostType.Out : (g.world.build.GetBuild<MapBuildSchool>(heirSchool)?.buildData?.GetPostType(hid) ?? SchoolPostType.Out);
 
+            // 0a. the clans the player heads (ClanEvent): the next head goes on heading them; another child is a member of
+            //     the clan of the next head (before the swap: the family of the old player is still its own)
+            var clanMsgs = new List<string>();
+            try { clanMsgs = ClanEvent.OnPlayerInherit(heir); } catch (Exception ex) { DebugHelper.WriteLine($"ClanEvent.OnPlayerInherit: {ex}"); }
+
             // 0. bounties (before the name changes): the ones on the old player end (refunded), the ones on the heir follow the player
             var wanted = WantedEvent.Instance;
             if (wanted != null)
@@ -527,7 +532,10 @@ namespace MOD_nE7UL2.Mod
             InheritDeclinedMonth = -1;
             TaoistLogEvent.Log("log_family_inherit", oldName, Player.GetName(), Generation);
             DebugHelper.WriteLine($"FamilyEvent: {oldName} -> {Player.GetName()} (heir {hid}), generation {Generation}, techniques of the {(keepSkills ? "old player" : "heir")}");
-            DramaHelper.OpenDrama2(string.Format(GameTool.LS("family_inherited"), oldName, Player.GetName(), Generation), new List<string> { GameTool.LS("family_inherited_o1") },
+            // the clans: head or member (ClanEvent.OnPlayerInherit)
+            var inherited = string.Format(GameTool.LS("family_inherited"), oldName, Player.GetName(), Generation);
+            if (clanMsgs.Count > 0) inherited += "\n" + string.Join("\n", clanMsgs);
+            DramaHelper.OpenDrama2(inherited, new List<string> { GameTool.LS("family_inherited_o1") },
                 x => GameHelper.SaveGame(), "huapaonanziganxie");
         }
 

@@ -5,7 +5,7 @@
     /// </summary>
     public static class ModConst
     {
-        public const string TAOIST_VERSION = "6.0.03";
+        public const string TAOIST_VERSION = "6.1.00";
         public const string MODLIB_REQUIRED_VERSION = "2.2.35";
 
         //Events
@@ -18,6 +18,7 @@
         public const string ESTATE_EVENT = "EstateEvent";
         public const string SPIRIT_NOTE_EVENT = "SpiritNoteEvent";
         public const string CLAN_EVENT = "ClanEvent";
+        public const string CLAN_ELDER_EVENT = "ClanElderEvent";
         public const string UNIT_TYPE_EVENT = "UnitTypeEvent";
         public const string BATTLE_REWARD_EVENT_V2 = "BattleRewardEventV2";
         public const string NPC_UPGRADE_SKILL_EVENT = "NpcUpgradeSkillEvent";

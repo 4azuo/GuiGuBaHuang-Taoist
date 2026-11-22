@@ -93,7 +93,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                     EstateEvent.ClickPlot(town, house);
                     // the text window of the plot (InfoDialog, UITextInfo since 6.0): which plot and whose house
                     var shown = MOD_nE7UL2.Helper.InfoDialog.LastText ?? string.Empty;
-                    c.Assert(g.ui.HasUI(UIType.TextInfo), "the window of the plot (UITextInfo)");
+                    c.Assert(g.ui.HasUI(MOD_nE7UL2.Helper.InfoDialog.LastUIType), "the window of the plot (UITextInfo, UITextInfoLong for a long text)");
                     c.Assert(shown.Contains((string)c.Bag["houseText"]), $"the plot tells whose house it is: {c.Bag["houseText"]}");
                     c.Assert(shown.Contains(EstateEvent.PlotWhere(house)), $"and which plot: {EstateEvent.PlotWhere(house)}");
                     c.Info($"popup: {shown}");

@@ -244,7 +244,7 @@ namespace MOD_nE7UL2.Mod
                 if (at.TryGetValue((o.X + ox, o.Y + oy), out var n))
                 {
                     index[o.Index] = n.Index;
-                    n.District = o.District; n.Prosperity = o.Prosperity; n.Level = o.Level; n.OwnerId = o.OwnerId; n.Unpaid = o.Unpaid;
+                    n.District = o.District; n.Prosperity = o.Prosperity; n.Level = o.Level; n.OwnerId = o.OwnerId; n.Unpaid = o.Unpaid; n.RuinOf = o.RuinOf; n.RuinSince = o.RuinSince;
                     n.Rooms = o.Rooms ?? new Dictionary<int, int>(); n.Herbs = o.Herbs ?? new List<int>();
                     n.MainIndex = o.MainIndex;
                 }

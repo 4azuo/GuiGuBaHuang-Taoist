@@ -942,5 +942,613 @@
 		"ch": "关闭",
 		"tc": "關閉",
 		"kr": "닫기"
+	},
+	{
+		"id": "-1000015201",
+		"key": "elder_err_dead",
+		"en": "{0} cannot serve: no clan to guard.",
+		"ch": "{0}无法任职：没有可守护的世家。",
+		"tc": "{0}無法任職：沒有可守護的世家。",
+		"kr": "{0}은(는) 맡을 수 없다: 지킬 가문이 없다."
+	},
+	{
+		"id": "-1000015202",
+		"key": "elder_err_kin",
+		"en": "{0} is kin of the clan: an elder is an outsider of no blood tie.",
+		"ch": "{0}与该世家有亲缘：长老须是毫无血亲的外人。",
+		"tc": "{0}與該世家有親緣：長老須是毫無血親的外人。",
+		"kr": "{0}은(는) 가문의 혈족이다: 장로는 혈연이 없는 외부인이어야 한다."
+	},
+	{
+		"id": "-1000015203",
+		"key": "elder_err_grade",
+		"en": "{0} is not strong enough: an elder of this area needs a higher realm.",
+		"ch": "{0}修为不足：此地区的长老需要更高的境界。",
+		"tc": "{0}修為不足：此地區的長老需要更高的境界。",
+		"kr": "{0}의 수위가 부족하다: 이 지역의 장로는 더 높은 경지가 필요하다."
+	},
+	{
+		"id": "-1000015204",
+		"key": "elder_err_busy",
+		"en": "{0} already guards a clan.",
+		"ch": "{0}已是其他世家的长老。",
+		"tc": "{0}已是其他世家的長老。",
+		"kr": "{0}은(는) 이미 다른 가문의 장로다."
+	},
+	{
+		"id": "-1000015205",
+		"key": "elder_err_head",
+		"en": "{0} heads a clan of this town.",
+		"ch": "{0}是本城一个世家的家主。",
+		"tc": "{0}是本城一個世家的家主。",
+		"kr": "{0}은(는) 이 마을 가문의 가주다."
+	},
+	{
+		"id": "-1000015206",
+		"key": "elder_err_hunted",
+		"en": "{0} deserted the clan: it is hunted, not invited.",
+		"ch": "{0}曾背弃该世家：只会被追杀，不会被延请。",
+		"tc": "{0}曾背棄該世家：只會被追殺，不會被延請。",
+		"kr": "{0}은(는) 가문을 배신했다: 초빙이 아니라 추살 대상이다."
+	},
+	{
+		"id": "-1000015207",
+		"key": "elder_err_full",
+		"en": "{1} has as many elders as its house can keep: a bigger house keeps more.",
+		"ch": "{1}的长老已满：宅邸越大，可供养的长老越多。",
+		"tc": "{1}的長老已滿：宅邸越大，可供養的長老越多。",
+		"kr": "{1}의 장로가 가득 찼다: 집이 클수록 더 많은 장로를 둘 수 있다."
+	},
+	{
+		"id": "-1000015208",
+		"key": "elder_err_asked",
+		"en": "{0} already gave an answer this year.",
+		"ch": "{0}今年已经答复过了。",
+		"tc": "{0}今年已經答覆過了。",
+		"kr": "{0}은(는) 올해 이미 대답했다."
+	},
+	{
+		"id": "-1000015209",
+		"key": "elder_refused",
+		"en": "{0} declines to guard {1}. Ask again next year: more intimacy, more renown or a bigger house will help.",
+		"ch": "{0}婉拒守护{1}。明年可再请：更深的交情、更高的声望或更大的宅邸都有帮助。",
+		"tc": "{0}婉拒守護{1}。明年可再請：更深的交情、更高的聲望或更大的宅邸都有幫助。",
+		"kr": "{0}은(는) {1}을(를) 지키는 것을 거절했다. 내년에 다시 청하라: 친밀도, 명성, 더 큰 집이 도움이 된다."
+	},
+	{
+		"id": "-1000015210",
+		"key": "elder_accepted",
+		"en": "{0} accepts: from now on an elder who guards {1}.",
+		"ch": "{0}应允：从此成为守护{1}的长老。",
+		"tc": "{0}應允：從此成為守護{1}的長老。",
+		"kr": "{0}이(가) 수락했다: 이제부터 {1}을(를) 지키는 장로다."
+	},
+	{
+		"id": "-1000015211",
+		"key": "elder_council_ask",
+		"en": "{0}: {1} holds a war council against {2}. As one of its elders you have a vote (the head has {3}). War?",
+		"ch": "{0}：{1}召开战议，欲对{2}开战。身为长老你有一票（家主{3}票）。是否开战？",
+		"tc": "{0}：{1}召開戰議，欲對{2}開戰。身為長老你有一票（家主{3}票）。是否開戰？",
+		"kr": "{0}: {1}이(가) {2}에 대한 전쟁 회의를 연다. 장로인 당신에게 한 표가 있다 (가주는 {3}표). 전쟁인가?"
+	},
+	{
+		"id": "-1000015212",
+		"key": "elder_vote_yes",
+		"en": "For the war",
+		"ch": "赞成开战",
+		"tc": "贊成開戰",
+		"kr": "전쟁 찬성"
+	},
+	{
+		"id": "-1000015213",
+		"key": "elder_vote_no",
+		"en": "Against the war",
+		"ch": "反对开战",
+		"tc": "反對開戰",
+		"kr": "전쟁 반대"
+	},
+	{
+		"id": "-1000015214",
+		"key": "elder_deserted",
+		"en": "You stayed out of the war of {0}, the clan you swore to guard. You are a deserter now: its hunters will come for you.",
+		"ch": "你在{0}的战争中袖手旁观，背弃了守护之誓。你已成叛逃者：其族人将来追杀你。",
+		"tc": "你在{0}的戰爭中袖手旁觀，背棄了守護之誓。你已成叛逃者：其族人將來追殺你。",
+		"kr": "당신은 지키기로 맹세한 {0}의 전쟁을 외면했다. 이제 배신자다: 그 가문의 추격자들이 올 것이다."
+	},
+	{
+		"id": "-1000015215",
+		"key": "elder_invited",
+		"en": "{0} of {1} trusts you: they ask you to become a guardian elder of the clan. Salary {2:#,##0} spirit stones a month and {3} months more as a yearly offering. You will have no say in their affairs, but a vote on their wars (the head has {4}); fleeing a war of the clan makes you a deserter, hunted.",
+		"ch": "{1}的{0}信任你，延请你成为本族的守护长老。月俸{2:#,##0}灵石，每年另有{3}个月的供奉。你不得干涉族中内务，但可就战事投票（家主{4}票）；临阵脱逃者视为叛徒，必遭追杀。",
+		"tc": "{1}的{0}信任你，延請你成為本族的守護長老。月俸{2:#,##0}靈石，每年另有{3}個月的供奉。你不得干涉族中內務，但可就戰事投票（家主{4}票）；臨陣脫逃者視為叛徒，必遭追殺。",
+		"kr": "{1}의 {0}이(가) 당신을 신뢰하여 가문의 수호 장로가 되어 달라고 청한다. 월급 영석 {2:#,##0}, 매년 {3}개월분의 공봉. 가문 내부 일에는 발언권이 없지만 전쟁에는 투표권이 있다 (가주는 {4}표); 전쟁에서 도망치면 배신자로 추살당한다."
+	},
+	{
+		"id": "-1000015216",
+		"key": "elder_accept",
+		"en": "Accept",
+		"ch": "应允",
+		"tc": "應允",
+		"kr": "수락"
+	},
+	{
+		"id": "-1000015217",
+		"key": "elder_decline",
+		"en": "Decline",
+		"ch": "婉拒",
+		"tc": "婉拒",
+		"kr": "거절"
+	},
+	{
+		"id": "-1000015218",
+		"key": "elder_joined",
+		"en": "You are now a guardian elder of {0} (salary {1:#,##0} a month).",
+		"ch": "你已成为{0}的守护长老（月俸{1:#,##0}）。",
+		"tc": "你已成為{0}的守護長老（月俸{1:#,##0}）。",
+		"kr": "당신은 이제 {0}의 수호 장로다 (월급 {1:#,##0})."
+	},
+	{
+		"id": "-1000015219",
+		"key": "elder_hunt_ask",
+		"en": "{0} of {1} blocks your way: \"Deserter! The clan does not forgive.\" ({2}/{3} attacks beaten off)",
+		"ch": "{1}的{0}拦住去路：「叛徒！本族绝不宽恕。」（已击退{2}/{3}次）",
+		"tc": "{1}的{0}攔住去路：「叛徒！本族絕不寬恕。」（已擊退{2}/{3}次）",
+		"kr": "{1}의 {0}이(가) 길을 막는다: \"배신자! 가문은 용서하지 않는다.\" (격퇴 {2}/{3})"
+	},
+	{
+		"id": "-1000015220",
+		"key": "elder_hunt_fight",
+		"en": "Fight",
+		"ch": "迎战",
+		"tc": "迎戰",
+		"kr": "맞서 싸운다"
+	},
+	{
+		"id": "-1000015221",
+		"key": "elder_hunt_pay",
+		"en": "Pay {0:#,##0} spirit stones to settle",
+		"ch": "赔偿{0:#,##0}灵石了结恩怨",
+		"tc": "賠償{0:#,##0}靈石了結恩怨",
+		"kr": "영석 {0:#,##0}을(를) 배상하고 끝낸다"
+	},
+	{
+		"id": "-1000015222",
+		"key": "elder_hunt_won",
+		"en": "You beat off the hunter of {0} ({1}/{2}).",
+		"ch": "你击退了{0}的追杀者（{1}/{2}）。",
+		"tc": "你擊退了{0}的追殺者（{1}/{2}）。",
+		"kr": "{0}의 추격자를 물리쳤다 ({1}/{2})."
+	},
+	{
+		"id": "-1000015223",
+		"key": "elder_hunt_ended",
+		"en": "You beat off the hunters of {0} once too often: the clan gives up the hunt.",
+		"ch": "你屡次击退{0}的追杀：该族放弃了追杀。",
+		"tc": "你屢次擊退{0}的追殺：該族放棄了追殺。",
+		"kr": "{0}의 추격을 여러 번 물리치자 가문이 추살을 포기했다."
+	},
+	{
+		"id": "-1000015224",
+		"key": "elder_hunt_lost",
+		"en": "The hunter of {0} beat you: the hunt goes on.",
+		"ch": "你败于{0}的追杀者：追杀仍在继续。",
+		"tc": "你敗於{0}的追殺者：追殺仍在繼續。",
+		"kr": "{0}의 추격자에게 패했다: 추살은 계속된다."
+	},
+	{
+		"id": "-1000015225",
+		"key": "elder_title",
+		"en": "{0} of {1} - elders",
+		"ch": "{1} {0} - 长老",
+		"tc": "{1} {0} - 長老",
+		"kr": "{1} {0} - 장로"
+	},
+	{
+		"id": "-1000015226",
+		"key": "elder_rules",
+		"en": "Elders guard the clan: outsiders of no kin, realm {0} or more here. They have no say in its affairs; they vote on its wars (you have {1} votes) and fight in them. Paid every month, an offering a year; unpaid they lose loyalty, a disloyal elder may flee a war.",
+		"ch": "长老守护世家：须是毫无亲缘的外人，此地需境界{0}以上。长老不干涉族中内务，但就战事投票（你有{1}票）并出战。每月发俸，每年供奉；欠俸则忠诚下降，不忠的长老可能临阵脱逃。",
+		"tc": "長老守護世家：須是毫無親緣的外人，此地需境界{0}以上。長老不干涉族中內務，但就戰事投票（你有{1}票）並出戰。每月發俸，每年供奉；欠俸則忠誠下降，不忠的長老可能臨陣脫逃。",
+		"kr": "장로는 가문을 지킨다: 혈연이 없는 외부인이며 이곳에서는 경지 {0} 이상. 내부 일에는 발언권이 없고 전쟁에 투표(당신은 {1}표)하고 출전한다. 매달 봉급, 매년 공봉; 봉급이 밀리면 충성이 떨어지고 불충한 장로는 전쟁에서 도망칠 수 있다."
+	},
+	{
+		"id": "-1000015227",
+		"key": "elder_current",
+		"en": "Elders: {0} / {1}",
+		"ch": "长老：{0} / {1}",
+		"tc": "長老：{0} / {1}",
+		"kr": "장로: {0} / {1}"
+	},
+	{
+		"id": "-1000015228",
+		"key": "elder_none",
+		"en": "No elder guards the clan yet.",
+		"ch": "尚无长老守护本族。",
+		"tc": "尚無長老守護本族。",
+		"kr": "아직 가문을 지키는 장로가 없다."
+	},
+	{
+		"id": "-1000015229",
+		"key": "elder_line",
+		"en": "{0} - realm {1}, {2:#,##0}/month, loyalty {3}",
+		"ch": "{0} - 境界{1}，月俸{2:#,##0}，忠诚{3}",
+		"tc": "{0} - 境界{1}，月俸{2:#,##0}，忠誠{3}",
+		"kr": "{0} - 경지 {1}, 월 {2:#,##0}, 충성 {3}"
+	},
+	{
+		"id": "-1000015230",
+		"key": "elder_dismiss",
+		"en": "Dismiss",
+		"ch": "辞退",
+		"tc": "辭退",
+		"kr": "해임"
+	},
+	{
+		"id": "-1000015231",
+		"key": "elder_candidates",
+		"en": "Cultivators of the area who could serve (realm {0} or more)",
+		"ch": "本地区可任长老的修士（境界{0}以上）",
+		"tc": "本地區可任長老的修士（境界{0}以上）",
+		"kr": "이 지역에서 장로가 될 수 있는 수사 (경지 {0} 이상)"
+	},
+	{
+		"id": "-1000015232",
+		"key": "elder_no_candidate",
+		"en": "No cultivator of the area could serve now.",
+		"ch": "本地区暂无可任长老的修士。",
+		"tc": "本地區暫無可任長老的修士。",
+		"kr": "지금 이 지역에는 장로가 될 수사가 없다."
+	},
+	{
+		"id": "-1000015233",
+		"key": "elder_candidate_line",
+		"en": "{0} - realm {1}, intimacy {2}, {3:#,##0}/month, accepts {4}%",
+		"ch": "{0} - 境界{1}，好感{2}，月俸{3:#,##0}，应允{4}%",
+		"tc": "{0} - 境界{1}，好感{2}，月俸{3:#,##0}，應允{4}%",
+		"kr": "{0} - 경지 {1}, 친밀 {2}, 월 {3:#,##0}, 수락 {4}%"
+	},
+	{
+		"id": "-1000015234",
+		"key": "elder_invite",
+		"en": "Invite",
+		"ch": "延请",
+		"tc": "延請",
+		"kr": "초빙"
+	},
+	{
+		"id": "-1000015235",
+		"key": "elder_hint",
+		"en": "A cultivator asked declines for a year. Intimacy, renown and a bigger house make them accept.",
+		"ch": "被拒后一年内不可再请。好感、声望与更大的宅邸能让人应允。",
+		"tc": "被拒後一年內不可再請。好感、聲望與更大的宅邸能讓人應允。",
+		"kr": "거절한 수사는 1년간 다시 청할 수 없다. 친밀도, 명성, 더 큰 집이 수락을 돕는다."
+	},
+	{
+		"id": "-1000015236",
+		"key": "elder_council_title",
+		"en": "{1} - war council of {0}",
+		"ch": "{1} - {0}战议",
+		"tc": "{1} - {0}戰議",
+		"kr": "{1} - {0} 전쟁 회의"
+	},
+	{
+		"id": "-1000015237",
+		"key": "elder_council_rules",
+		"en": "A war is declared by the council: you have {0} votes, each of your {1} elders one; more than half of the {2} votes are needed. Elders of low loyalty may flee the war.",
+		"ch": "宣战须经战议：你有{0}票，{1}位长老各一票；需超过总数{2}票的一半。忠诚低的长老可能临阵脱逃。",
+		"tc": "宣戰須經戰議：你有{0}票，{1}位長老各一票；需超過總數{2}票的一半。忠誠低的長老可能臨陣脫逃。",
+		"kr": "전쟁은 회의로 선포한다: 당신은 {0}표, 장로 {1}명은 각 한 표; 총 {2}표의 과반이 필요하다. 충성이 낮은 장로는 도망칠 수 있다."
+	},
+	{
+		"id": "-1000015238",
+		"key": "elder_council_none",
+		"en": "No clan of the town is hostile to yours.",
+		"ch": "城中没有与你为敌的世家。",
+		"tc": "城中沒有與你為敵的世家。",
+		"kr": "마을에 당신 가문과 적대하는 가문이 없다."
+	},
+	{
+		"id": "-1000015239",
+		"key": "elder_council_line",
+		"en": "{0}: relation {1}, {2} member(s), {3} elder(s), win {4}%",
+		"ch": "{0}：关系{1}，成员{2}，长老{3}，胜算{4}%",
+		"tc": "{0}：關係{1}，成員{2}，長老{3}，勝算{4}%",
+		"kr": "{0}: 관계 {1}, 구성원 {2}, 장로 {3}, 승산 {4}%"
+	},
+	{
+		"id": "-1000015240",
+		"key": "elder_declare",
+		"en": "Declare war",
+		"ch": "宣战",
+		"tc": "宣戰",
+		"kr": "선전포고"
+	},
+	{
+		"id": "-1000015241",
+		"key": "elder_ballot_head",
+		"en": "War of {0} against {1}: the council votes.",
+		"ch": "{0}对{1}之战：战议投票。",
+		"tc": "{0}對{1}之戰：戰議投票。",
+		"kr": "{0} 대 {1}의 전쟁: 회의가 투표한다."
+	},
+	{
+		"id": "-1000015242",
+		"key": "elder_ballot_line_head",
+		"en": "Head {0} ({1} votes): {2}",
+		"ch": "家主{0}（{1}票）：{2}",
+		"tc": "家主{0}（{1}票）：{2}",
+		"kr": "가주 {0} ({1}표): {2}"
+	},
+	{
+		"id": "-1000015243",
+		"key": "elder_ballot_line",
+		"en": "Elder {0} ({1} vote): {2}",
+		"ch": "长老{0}（{1}票）：{2}",
+		"tc": "長老{0}（{1}票）：{2}",
+		"kr": "장로 {0} ({1}표): {2}"
+	},
+	{
+		"id": "-1000015244",
+		"key": "elder_ballot_for",
+		"en": "for",
+		"ch": "赞成",
+		"tc": "贊成",
+		"kr": "찬성"
+	},
+	{
+		"id": "-1000015245",
+		"key": "elder_ballot_against",
+		"en": "against",
+		"ch": "反对",
+		"tc": "反對",
+		"kr": "반대"
+	},
+	{
+		"id": "-1000015246",
+		"key": "elder_ballot_passed",
+		"en": "{0} of {1} votes for: war is declared.",
+		"ch": "{1}票中{0}票赞成：宣战！",
+		"tc": "{1}票中{0}票贊成：宣戰！",
+		"kr": "{1}표 중 {0}표 찬성: 전쟁이 선포되었다."
+	},
+	{
+		"id": "-1000015247",
+		"key": "elder_ballot_failed",
+		"en": "{0} of {1} votes for: the war is voted down.",
+		"ch": "{1}票中{0}票赞成：开战被否决。",
+		"tc": "{1}票中{0}票贊成：開戰被否決。",
+		"kr": "{1}표 중 {0}표 찬성: 전쟁이 부결되었다."
+	},
+	{
+		"id": "-1000015248",
+		"key": "elder_to_war",
+		"en": "To war",
+		"ch": "出征",
+		"tc": "出征",
+		"kr": "출정"
+	},
+	{
+		"id": "-1000015249",
+		"key": "elder_button",
+		"en": "Elders ({0}/{1})",
+		"ch": "长老（{0}/{1}）",
+		"tc": "長老（{0}/{1}）",
+		"kr": "장로 ({0}/{1})"
+	},
+	{
+		"id": "-1000015250",
+		"key": "elder_council_button",
+		"en": "War council",
+		"ch": "战议",
+		"tc": "戰議",
+		"kr": "전쟁 회의"
+	},
+	{
+		"id": "-1000015251",
+		"key": "elder_post",
+		"en": "You guard {0} as an elder: {1:#,##0} spirit stones a month.",
+		"ch": "你是{0}的守护长老：月俸{1:#,##0}灵石。",
+		"tc": "你是{0}的守護長老：月俸{1:#,##0}靈石。",
+		"kr": "당신은 {0}의 수호 장로다: 월 영석 {1:#,##0}."
+	},
+	{
+		"id": "-1000015252",
+		"key": "elder_resign",
+		"en": "Resign",
+		"ch": "辞任",
+		"tc": "辭任",
+		"kr": "사임"
+	},
+	{
+		"id": "-1000015253",
+		"key": "elder_resign_confirm",
+		"en": "Leave your post of elder of {0} in peace?",
+		"ch": "是否在太平时辞去{0}的长老之职？",
+		"tc": "是否在太平時辭去{0}的長老之職？",
+		"kr": "평화로이 {0}의 장로직을 사임하겠는가?"
+	},
+	{
+		"id": "-1000015254",
+		"key": "elder_clan_suffix",
+		"en": " - elders: {0}",
+		"ch": " - 长老：{0}",
+		"tc": " - 長老：{0}",
+		"kr": " - 장로: {0}"
+	},
+	{
+		"id": "-1000015255",
+		"key": "log_clan_elder_join",
+		"en": "{0}: {1} became an elder of {2}.",
+		"ch": "{0}：{1}成为{2}的长老。",
+		"tc": "{0}：{1}成為{2}的長老。",
+		"kr": "{0}: {1}이(가) {2}의 장로가 되었다."
+	},
+	{
+		"id": "-1000015256",
+		"key": "log_clan_elder_fled",
+		"en": "{0}: elder {1} fled the war of {2}; the clan hunts the deserter.",
+		"ch": "{0}：长老{1}临阵脱逃，{2}追杀叛徒。",
+		"tc": "{0}：長老{1}臨陣脫逃，{2}追殺叛徒。",
+		"kr": "{0}: 장로 {1}이(가) {2}의 전쟁에서 도망쳤다; 가문이 배신자를 추살한다."
+	},
+	{
+		"id": "-1000015257",
+		"key": "log_clan_elder_voted_down",
+		"en": "{0}: the elders of {1} voted down a war against {2}.",
+		"ch": "{0}：{1}的长老否决了对{2}的战争。",
+		"tc": "{0}：{1}的長老否決了對{2}的戰爭。",
+		"kr": "{0}: {1}의 장로들이 {2}와의 전쟁을 부결했다."
+	},
+	{
+		"id": "-1000015258",
+		"key": "log_clan_elder_clan_gone",
+		"en": "{0}: {1} is no longer an elder: {2} is gone.",
+		"ch": "{0}：{2}已不复存在，{1}卸下长老之职。",
+		"tc": "{0}：{2}已不復存在，{1}卸下長老之職。",
+		"kr": "{0}: {2}이(가) 사라져 {1}은(는) 더 이상 장로가 아니다."
+	},
+	{
+		"id": "-1000015259",
+		"key": "log_clan_elder_left_unpaid",
+		"en": "{0}: elder {1} left {2}, unpaid.",
+		"ch": "{0}：长老{1}因欠俸离开了{2}。",
+		"tc": "{0}：長老{1}因欠俸離開了{2}。",
+		"kr": "{0}: 장로 {1}이(가) 봉급을 받지 못해 {2}을(를) 떠났다."
+	},
+	{
+		"id": "-1000015260",
+		"key": "log_clan_elder_dismissed",
+		"en": "{0}: elder {1} was dismissed by {2}.",
+		"ch": "{0}：长老{1}被{2}辞退。",
+		"tc": "{0}：長老{1}被{2}辭退。",
+		"kr": "{0}: 장로 {1}이(가) {2}에서 해임되었다."
+	},
+	{
+		"id": "-1000015261",
+		"key": "log_clan_elder_resigned",
+		"en": "{0}: {1} resigned as an elder of {2}.",
+		"ch": "{0}：{1}辞去了{2}的长老之职。",
+		"tc": "{0}：{1}辭去了{2}的長老之職。",
+		"kr": "{0}: {1}이(가) {2}의 장로직을 사임했다."
+	},
+	{
+		"id": "-1000015262",
+		"key": "log_clan_elder_offering",
+		"en": "{0}: {1} received the yearly offering of {2}: {3:#,##0} spirit stones.",
+		"ch": "{0}：{1}收到{2}的年度供奉：{3:#,##0}灵石。",
+		"tc": "{0}：{1}收到{2}的年度供奉：{3:#,##0}靈石。",
+		"kr": "{0}: {1}이(가) {2}의 연간 공봉 영석 {3:#,##0}을(를) 받았다."
+	},
+	{
+		"id": "-1000015263",
+		"key": "log_clan_elder_hunted_down",
+		"en": "{0}: the deserter {1} was hunted down by {3} of {2}.",
+		"ch": "{0}：叛徒{1}被{2}的{3}追杀身亡。",
+		"tc": "{0}：叛徒{1}被{2}的{3}追殺身亡。",
+		"kr": "{0}: 배신자 {1}이(가) {2}의 {3}에게 추살당했다."
+	},
+	{
+		"id": "-1000015264",
+		"key": "log_clan_elder_hunt_over",
+		"en": "{0}: {2} gave up hunting {1}.",
+		"ch": "{0}：{2}放弃了对{1}的追杀。",
+		"tc": "{0}：{2}放棄了對{1}的追殺。",
+		"kr": "{0}: {2}이(가) {1}에 대한 추살을 포기했다."
+	},
+	{
+		"id": "-1000015265",
+		"key": "log_clan_elder_hunt_paid",
+		"en": "{0}: you paid {1} {2:#,##0} spirit stones; the hunt is over.",
+		"ch": "{0}：你向{1}赔偿了{2:#,##0}灵石，追杀就此了结。",
+		"tc": "{0}：你向{1}賠償了{2:#,##0}靈石，追殺就此了結。",
+		"kr": "{0}: {1}에 영석 {2:#,##0}을(를) 배상했다; 추살이 끝났다."
+	},
+	{
+		"id": "-1000015266",
+		"key": "log_clan_succession",
+		"en": "{0}: {1} became the head of the family: {2} goes on.",
+		"ch": "{0}：{1}继任家主，{2}薪火相传。",
+		"tc": "{0}：{1}繼任家主，{2}薪火相傳。",
+		"kr": "{0}: {1}이(가) 가주를 이었다: {2}은(는) 계속된다."
+	},
+	{
+		"id": "-1000015267",
+		"key": "clan_succession_player",
+		"en": "The head of your family has died: the {0} is yours now, and you head {1}. Its relations with the other clans, its elders and its feuds are yours too.",
+		"ch": "家主已逝：{0}归你所有，你成为{1}的家主。与各世家的关系、族中长老与宿怨也一并由你继承。",
+		"tc": "家主已逝：{0}歸你所有，你成為{1}的家主。與各世家的關係、族中長老與宿怨也一併由你繼承。",
+		"kr": "가주가 세상을 떠났다: {0}은(는) 이제 당신의 것이며 당신이 {1}의 가주다. 다른 가문과의 관계, 장로, 원한도 이어받는다."
+	},
+	{
+		"id": "-1000015268",
+		"key": "clan_inherit_head",
+		"en": "{0}: as the next head of the family, {1} goes on heading the clan; the family stays with it.",
+		"ch": "{0}：{1}身为下一代家主，继续执掌世家，族人一如既往。",
+		"tc": "{0}：{1}身為下一代家主，繼續執掌世家，族人一如既往。",
+		"kr": "{0}: 다음 가주인 {1}이(가) 가문을 계속 이끈다; 가족은 그대로 남는다."
+	},
+	{
+		"id": "-1000015269",
+		"key": "clan_inherit_member",
+		"en": "{0}: {1} is the next head of the family and takes the {3}; you go on as a member of {2}.",
+		"ch": "{0}：{1}继任家主并接掌{3}；你成为{2}的一名族人。",
+		"tc": "{0}：{1}繼任家主並接掌{3}；你成為{2}的一名族人。",
+		"kr": "{0}: {1}이(가) 다음 가주가 되어 {3}을(를) 물려받는다; 당신은 {2}의 구성원으로 남는다."
+	},
+	{
+		"id": "-1000015270",
+		"key": "estate_ruin_label",
+		"en": "Ruins",
+		"ch": "废宅",
+		"tc": "廢宅",
+		"kr": "폐가"
+	},
+	{
+		"id": "-1000015271",
+		"key": "clan_ruin_info",
+		"en": "The ruins of the {0} of {1}: the clan fell {2} year(s) ago, no one left to carry it on. Weeds grow in the halls; in {3} month(s) the land is split into plots for the mortals, unless a clan takes it as its seat.",
+		"ch": "{1}的{0}废墟：{2}年前该族覆灭，后继无人。厅堂荒草丛生；{3}个月后此地将被分割给凡人建房，除非有世家将其收为府邸。",
+		"tc": "{1}的{0}廢墟：{2}年前該族覆滅，後繼無人。廳堂荒草叢生；{3}個月後此地將被分割給凡人建房，除非有世家將其收為府邸。",
+		"kr": "{1}의 {0} 폐허: {2}년 전 가문이 멸족하여 이을 사람이 없다. 대청에 잡초가 무성하다; {3}개월 후 땅은 범인들의 집터로 나뉜다, 어느 가문이 저택으로 삼지 않는 한."
+	},
+	{
+		"id": "-1000015272",
+		"key": "clan_ruin_buy_info",
+		"en": "Restore it as your own seat for {0} banknote(s) (you have {1}).",
+		"ch": "可花费{0}张灵票将其修缮为自家府邸（你有{1}张）。",
+		"tc": "可花費{0}張靈票將其修繕為自家府邸（你有{1}張）。",
+		"kr": "영표 {0}장으로 수리하여 당신의 저택으로 삼을 수 있다 (보유 {1}장)."
+	},
+	{
+		"id": "-1000015273",
+		"key": "clan_ruin_buy",
+		"en": "Restore ({0} banknotes)",
+		"ch": "修缮（{0}张灵票）",
+		"tc": "修繕（{0}張靈票）",
+		"kr": "수리 (영표 {0}장)"
+	},
+	{
+		"id": "-1000015274",
+		"key": "clan_ruin_bought",
+		"en": "The {0} is yours: restored, the seat of your family.",
+		"ch": "{0}已归你所有：修缮一新，成为你家族的府邸。",
+		"tc": "{0}已歸你所有：修繕一新，成為你家族的府邸。",
+		"kr": "{0}은(는) 이제 당신의 것이다: 새로 수리되어 가문의 저택이 되었다."
+	},
+	{
+		"id": "-1000015275",
+		"key": "log_clan_ruin_split",
+		"en": "{0}: the ruins of {1} were split into plots for the mortals.",
+		"ch": "{0}：{1}的废宅被分割给凡人建房。",
+		"tc": "{0}：{1}的廢宅被分割給凡人建房。",
+		"kr": "{0}: {1}의 폐가가 범인들의 집터로 나뉘었다."
+	},
+	{
+		"id": "-1000015276",
+		"key": "log_clan_ruin_taken",
+		"en": "{0}: {1} took the ruins of {2} as its seat ({3}).",
+		"ch": "{0}：{1}收下{2}的废宅作为府邸（{3}）。",
+		"tc": "{0}：{1}收下{2}的廢宅作為府邸（{3}）。",
+		"kr": "{0}: {1}이(가) {2}의 폐가를 저택으로 삼았다 ({3})."
 	}
 ]

@@ -191,6 +191,9 @@ namespace MOD_nE7UL2.Mod
             public List<int> Herbs { get; set; } = new List<int>();
             /// <summary>A plot taken by a bigger house: the index of the house's own plot (null: none).</summary>
             public int? MainIndex { get; set; }
+            /// <summary>A ruined mansion (OwnerId RUIN): the clan that fell, the game month it fell.</summary>
+            public string RuinOf { get; set; }
+            public int RuinSince { get; set; } = -1;
         }
 
         public class TownEstate
@@ -208,6 +211,23 @@ namespace MOD_nE7UL2.Mod
         }
 
         /// <summary>The plots of a house: its own plot and the plots it took.</summary>
+        /// <summary>Owner of a ruined mansion: a clan gone with no one to carry it on (ClanEvent); mortals neither live nor build there.</summary>
+        public const string RUIN = "~ruin";
+        public static bool IsRuin(Plot p) => p != null && p.OwnerId == RUIN;
+
+        /// <summary>The house falls into ruin (all its plots): no owner, its rooms and garden gone, its size kept.</summary>
+        public static void Ruin(TownEstate e, Plot main, string clanName)
+        {
+            Touch();
+            foreach (var p in PartsOf(e, main))
+            {
+                p.OwnerId = RUIN; p.Unpaid = 0;
+                p.Rooms = new Dictionary<int, int>(); p.Herbs = new List<int>();
+                p.RuinSince = GameHelper.GetGameTotalMonth();
+                p.RuinOf = clanName;
+            }
+        }
+
         public static List<Plot> PartsOf(TownEstate e, Plot main) =>
             e.Plots.Where(x => x == main || (x.MainIndex == main.Index && x.OwnerId != null && x.OwnerId == main.OwnerId)).ToList();
 
@@ -263,7 +283,7 @@ namespace MOD_nE7UL2.Mod
             Touch();
             foreach (var p in PartsOf(e, main))
             {
-                p.OwnerId = null; p.Unpaid = 0; p.MainIndex = null;
+                p.OwnerId = null; p.Unpaid = 0; p.MainIndex = null; p.RuinOf = null; p.RuinSince = -1;
                 p.Rooms = new Dictionary<int, int>(); p.Herbs = new List<int>();
                 p.Level = mortals ? DistrictOf(p.District).MortalLevel : 0;
             }
@@ -355,7 +375,7 @@ namespace MOD_nE7UL2.Mod
                 {
                     var add = Expansion(e, to, level, _ => 0);
                     if (add == null) continue;
-                    to.OwnerId = h.OwnerId; to.Level = level; to.Unpaid = h.Unpaid; to.MainIndex = null;
+                    to.OwnerId = h.OwnerId; to.Level = level; to.Unpaid = h.Unpaid; to.MainIndex = null; to.RuinOf = h.RuinOf; to.RuinSince = h.RuinSince;
                     to.Rooms = h.Rooms ?? new Dictionary<int, int>(); to.Herbs = h.Herbs ?? new List<int>();
                     foreach (var a in add) Take(a, to);
                     return;
@@ -637,12 +657,14 @@ namespace MOD_nE7UL2.Mod
                 UpgradeWall(town, master);
 
             // houses: taxes and gardens
-            foreach (var p in e.Plots.Where(x => x.OwnerId != null && x.Level > 0).ToList())
+            foreach (var p in e.Plots.Where(x => x.OwnerId != null && x.Level > 0 && !IsRuin(x)).ToList())
             {
                 var owner = g.world.unit.GetUnit(p.OwnerId);
                 if (owner == null || owner.isDie)
                 {
-                    Release(e, p, true);   // the house of a dead cultivator: the mortals move in
+                    // the house of a dead cultivator: its heir heads the clan (ClanEvent), else it falls into ruin
+                    var main = p.MainIndex == null ? p : e.Plots.FirstOrDefault(x => x.Index == p.MainIndex && x.OwnerId == p.OwnerId) ?? p;
+                    if (!ClanEvent.Succeed(town, e, main, p.OwnerId)) Ruin(e, main, ClanEvent.ClanName(owner));
                     continue;
                 }
                 Garden(p, owner, months);

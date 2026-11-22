@@ -73,6 +73,8 @@
     <Compile Include="Mod\EstateEvent.cs" />
     <Compile Include="Mod\SpiritNoteEvent.cs" />
     <Compile Include="Mod\ClanEvent.cs" />
+    <Compile Include="Mod\ClanElderEvent.cs" />
+    <Compile Include="Mod\ClanElderEvent.Window.cs" />
     <Compile Include="Mod\EstateEvent.Config.cs" />
     <Compile Include="Mod\EstateEvent.Layout.cs" />
     <Compile Include="Mod\EstateEvent.Map.cs" />
@@ -237,6 +239,7 @@
     <Compile Include="AutoTest\Scenarios\Tool\TE_EffectGallery.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TI01_SaveReloadProbe.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TR_PromoShots.cs" />
+    <Compile Include="AutoTest\Scenarios\Tool\TR04_Promo60.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT02_SMGlobalConfigsEvent.cs" />
     <Compile Include="AutoTest\Scenarios\UI\TG24_TimeSkipEvent.cs" />
     <Compile Include="AutoTest\Scenarios\UI\TG25_QiCulEvent.cs" />
@@ -253,6 +256,8 @@
     <Compile Include="AutoTest\Scenarios\Town\TG72_Clans.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG73_NpcHouses.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG74_ClanDepth.cs" />
+    <Compile Include="AutoTest\Scenarios\Town\TG88_ClanElders.cs" />
+    <Compile Include="AutoTest\Scenarios\Town\TG89_ClanSuccession.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG75_NpcHomes.cs" />
     <Compile Include="AutoTest\Scenarios\Unit\TG71_BodyTribulation.cs" />
     <Compile Include="AutoTest\Scenarios\Unit\TG80_Merit.cs" />

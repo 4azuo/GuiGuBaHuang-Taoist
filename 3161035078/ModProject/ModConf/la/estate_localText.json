@@ -588,5 +588,385 @@
 		"id": "-1000011117",
 		"key": "dlg_close",
 		"en|ch|tc|kr": "Claude"
+	},
+	{
+		"id": "-1000015220",
+		"key": "elder_hunt_fight",
+		"en|ch|tc|kr": "Pugnare"
+	},
+	{
+		"id": "-1000015230",
+		"key": "elder_dismiss",
+		"en|ch|tc|kr": "Dimitte"
+	},
+	{
+		"id": "-1000015201",
+		"key": "elder_err_dead",
+		"en|ch|tc|kr": "{0} servire non potest: nulla gens tuenda manet."
+	},
+	{
+		"id": "-1000015202",
+		"key": "elder_err_kin",
+		"en|ch|tc|kr": "{0} gentis cognatus est: senior alienus esse debet, nullo sanguinis vinculo."
+	},
+	{
+		"id": "-1000015203",
+		"key": "elder_err_grade",
+		"en|ch|tc|kr": "{0} non satis validus est: senior huius regionis altiore gradu eget."
+	},
+	{
+		"id": "-1000015204",
+		"key": "elder_err_busy",
+		"en|ch|tc|kr": "{0} iam gentem tuetur."
+	},
+	{
+		"id": "-1000015205",
+		"key": "elder_err_head",
+		"en|ch|tc|kr": "{0} gentem huius oppidi regit."
+	},
+	{
+		"id": "-1000015206",
+		"key": "elder_err_hunted",
+		"en|ch|tc|kr": "{0} gentem deseruit: quaeritur ad necem, non invitatur."
+	},
+	{
+		"id": "-1000015207",
+		"key": "elder_err_full",
+		"en|ch|tc|kr": "{1} tot seniores habet quot domus alere potest: maior domus plures alit."
+	},
+	{
+		"id": "-1000015208",
+		"key": "elder_err_asked",
+		"en|ch|tc|kr": "{0} hoc anno iam respondit."
+	},
+	{
+		"id": "-1000015209",
+		"key": "elder_refused",
+		"en|ch|tc|kr": "{0} {1} tueri recusat. Anno proximo iterum roga: plus familiaritatis, plus famae aut maior domus iuvabunt."
+	},
+	{
+		"id": "-1000015210",
+		"key": "elder_accepted",
+		"en|ch|tc|kr": "{0} accipit: ex hoc die senior qui {1} tuetur."
+	},
+	{
+		"id": "-1000015211",
+		"key": "elder_council_ask",
+		"en|ch|tc|kr": "{0}: {1} consilium belli contra {2} habet. Ut unus ex senioribus suffragium habes (caput habet {3}). Bellum?"
+	},
+	{
+		"id": "-1000015212",
+		"key": "elder_vote_yes",
+		"en|ch|tc|kr": "Pro bello"
+	},
+	{
+		"id": "-1000015213",
+		"key": "elder_vote_no",
+		"en|ch|tc|kr": "Contra bellum"
+	},
+	{
+		"id": "-1000015214",
+		"key": "elder_deserted",
+		"en|ch|tc|kr": "A bello {0}, gentis quam tueri iuravisti, abstinuisti. Nunc desertor es: venatores eius te quaerent."
+	},
+	{
+		"id": "-1000015215",
+		"key": "elder_invited",
+		"en|ch|tc|kr": "{0} gentis {1} tibi confidit: rogant ut senior custos gentis fias. Stipendium {2:#,##0} lapidum spiritalium in mense et {3} menses amplius ut donum annuum. In rebus eorum nihil dices, sed de bellis suffragium habebis (caput habet {4}); qui ex bello gentis fugit desertor est et quaeritur."
+	},
+	{
+		"id": "-1000015216",
+		"key": "elder_accept",
+		"en|ch|tc|kr": "Accipere"
+	},
+	{
+		"id": "-1000015217",
+		"key": "elder_decline",
+		"en|ch|tc|kr": "Recusare"
+	},
+	{
+		"id": "-1000015218",
+		"key": "elder_joined",
+		"en|ch|tc|kr": "Nunc senior custos {0} es (stipendium {1:#,##0} in mense)."
+	},
+	{
+		"id": "-1000015219",
+		"key": "elder_hunt_ask",
+		"en|ch|tc|kr": "{0} gentis {1} viam tibi obstruit: \"Desertor! Gens non ignoscit.\" ({2}/{3} impetus repulsi)"
+	},
+	{
+		"id": "-1000015221",
+		"key": "elder_hunt_pay",
+		"en|ch|tc|kr": "{0:#,##0} lapides spiritales solvere ut res componatur"
+	},
+	{
+		"id": "-1000015222",
+		"key": "elder_hunt_won",
+		"en|ch|tc|kr": "Venatorem {0} repulisti ({1}/{2})."
+	},
+	{
+		"id": "-1000015223",
+		"key": "elder_hunt_ended",
+		"en|ch|tc|kr": "Venatores {0} saepius repulisti: gens venationem omittit."
+	},
+	{
+		"id": "-1000015224",
+		"key": "elder_hunt_lost",
+		"en|ch|tc|kr": "Venator {0} te vicit: venatio pergit."
+	},
+	{
+		"id": "-1000015225",
+		"key": "elder_title",
+		"en|ch|tc|kr": "{0} {1} - seniores"
+	},
+	{
+		"id": "-1000015226",
+		"key": "elder_rules",
+		"en|ch|tc|kr": "Seniores gentem tuentur: alieni sine cognatione, hic gradu {0} aut altiore. In rebus eius nihil dicunt; de bellis suffragium ferunt (tu {1} suffragia habes) et in eis pugnant. Singulis mensibus solvuntur, donum quotannis; non soluti fidem amittunt, et senior infidus e bello fugere potest."
+	},
+	{
+		"id": "-1000015227",
+		"key": "elder_current",
+		"en|ch|tc|kr": "Seniores: {0} / {1}"
+	},
+	{
+		"id": "-1000015228",
+		"key": "elder_none",
+		"en|ch|tc|kr": "Nullus senior adhuc gentem tuetur."
+	},
+	{
+		"id": "-1000015229",
+		"key": "elder_line",
+		"en|ch|tc|kr": "{0} - gradus {1}, {2:#,##0}/mensem, fides {3}"
+	},
+	{
+		"id": "-1000015231",
+		"key": "elder_candidates",
+		"en|ch|tc|kr": "Cultores regionis qui servire possint (gradus {0} aut altior)"
+	},
+	{
+		"id": "-1000015232",
+		"key": "elder_no_candidate",
+		"en|ch|tc|kr": "Nullus cultor regionis nunc servire potest."
+	},
+	{
+		"id": "-1000015233",
+		"key": "elder_candidate_line",
+		"en|ch|tc|kr": "{0} - gradus {1}, familiaritas {2}, {3:#,##0}/mensem, accipit {4}%"
+	},
+	{
+		"id": "-1000015234",
+		"key": "elder_invite",
+		"en|ch|tc|kr": "Invitare"
+	},
+	{
+		"id": "-1000015235",
+		"key": "elder_hint",
+		"en|ch|tc|kr": "Qui recusavit per annum iterum rogari non potest. Familiaritas, fama et maior domus eos ad accipiendum movent."
+	},
+	{
+		"id": "-1000015236",
+		"key": "elder_council_title",
+		"en|ch|tc|kr": "{1} - consilium belli {0}"
+	},
+	{
+		"id": "-1000015237",
+		"key": "elder_council_rules",
+		"en|ch|tc|kr": "Bellum a consilio indicitur: tu {0} suffragia habes, quisque ex {1} senioribus unum; plus quam dimidium {2} suffragiorum requiritur. Seniores parum fideles e bello fugere possunt."
+	},
+	{
+		"id": "-1000015238",
+		"key": "elder_council_none",
+		"en|ch|tc|kr": "Nulla gens oppidi tuae infesta est."
+	},
+	{
+		"id": "-1000015239",
+		"key": "elder_council_line",
+		"en|ch|tc|kr": "{0}: necessitudo {1}, {2} membra, {3} seniores, victoria {4}%"
+	},
+	{
+		"id": "-1000015240",
+		"key": "elder_declare",
+		"en|ch|tc|kr": "Bellum indicere"
+	},
+	{
+		"id": "-1000015241",
+		"key": "elder_ballot_head",
+		"en|ch|tc|kr": "Bellum {0} contra {1}: consilium suffragia fert."
+	},
+	{
+		"id": "-1000015242",
+		"key": "elder_ballot_line_head",
+		"en|ch|tc|kr": "Caput {0} ({1} suffragia): {2}"
+	},
+	{
+		"id": "-1000015243",
+		"key": "elder_ballot_line",
+		"en|ch|tc|kr": "Senior {0} ({1} suffragium): {2}"
+	},
+	{
+		"id": "-1000015244",
+		"key": "elder_ballot_for",
+		"en|ch|tc|kr": "pro"
+	},
+	{
+		"id": "-1000015245",
+		"key": "elder_ballot_against",
+		"en|ch|tc|kr": "contra"
+	},
+	{
+		"id": "-1000015246",
+		"key": "elder_ballot_passed",
+		"en|ch|tc|kr": "{0} ex {1} suffragiis pro: bellum indictum est."
+	},
+	{
+		"id": "-1000015247",
+		"key": "elder_ballot_failed",
+		"en|ch|tc|kr": "{0} ex {1} suffragiis pro: bellum reiectum est."
+	},
+	{
+		"id": "-1000015248",
+		"key": "elder_to_war",
+		"en|ch|tc|kr": "Ad bellum"
+	},
+	{
+		"id": "-1000015249",
+		"key": "elder_button",
+		"en|ch|tc|kr": "Seniores ({0}/{1})"
+	},
+	{
+		"id": "-1000015250",
+		"key": "elder_council_button",
+		"en|ch|tc|kr": "Consilium belli"
+	},
+	{
+		"id": "-1000015251",
+		"key": "elder_post",
+		"en|ch|tc|kr": "{0} ut senior tueris: {1:#,##0} lapides spiritales in mense."
+	},
+	{
+		"id": "-1000015252",
+		"key": "elder_resign",
+		"en|ch|tc|kr": "Abdicare"
+	},
+	{
+		"id": "-1000015253",
+		"key": "elder_resign_confirm",
+		"en|ch|tc|kr": "Munus senioris {0} in pace deponere?"
+	},
+	{
+		"id": "-1000015254",
+		"key": "elder_clan_suffix",
+		"en|ch|tc|kr": " - seniores: {0}"
+	},
+	{
+		"id": "-1000015255",
+		"key": "log_clan_elder_join",
+		"en|ch|tc|kr": "{0}: {1} senior {2} factus est."
+	},
+	{
+		"id": "-1000015256",
+		"key": "log_clan_elder_fled",
+		"en|ch|tc|kr": "{0}: senior {1} e bello {2} fugit; gens desertorem quaerit."
+	},
+	{
+		"id": "-1000015257",
+		"key": "log_clan_elder_voted_down",
+		"en|ch|tc|kr": "{0}: seniores {1} bellum contra {2} reiecerunt."
+	},
+	{
+		"id": "-1000015258",
+		"key": "log_clan_elder_clan_gone",
+		"en|ch|tc|kr": "{0}: {1} iam non senior est: {2} periit."
+	},
+	{
+		"id": "-1000015259",
+		"key": "log_clan_elder_left_unpaid",
+		"en|ch|tc|kr": "{0}: senior {1} {2} reliquit, stipendio non soluto."
+	},
+	{
+		"id": "-1000015260",
+		"key": "log_clan_elder_dismissed",
+		"en|ch|tc|kr": "{0}: senior {1} a {2} dimissus est."
+	},
+	{
+		"id": "-1000015261",
+		"key": "log_clan_elder_resigned",
+		"en|ch|tc|kr": "{0}: {1} munus senioris {2} abdicavit."
+	},
+	{
+		"id": "-1000015262",
+		"key": "log_clan_elder_offering",
+		"en|ch|tc|kr": "{0}: {1} donum annuum {2} accepit: {3:#,##0} lapides spiritales."
+	},
+	{
+		"id": "-1000015263",
+		"key": "log_clan_elder_hunted_down",
+		"en|ch|tc|kr": "{0}: desertor {1} a {3} gentis {2} interfectus est."
+	},
+	{
+		"id": "-1000015264",
+		"key": "log_clan_elder_hunt_over",
+		"en|ch|tc|kr": "{0}: {2} venationem {1} omisit."
+	},
+	{
+		"id": "-1000015265",
+		"key": "log_clan_elder_hunt_paid",
+		"en|ch|tc|kr": "{0}: {1} {2:#,##0} lapides spiritales solvisti; venatio finita est."
+	},
+	{
+		"id": "-1000015266",
+		"key": "log_clan_succession",
+		"en|ch|tc|kr": "{0}: {1} caput familiae factus est: {2} perdurat."
+	},
+	{
+		"id": "-1000015267",
+		"key": "clan_succession_player",
+		"en|ch|tc|kr": "Caput familiae tuae mortuum est: {0} nunc tua est, et {1} regis. Necessitudines eius cum aliis gentibus, seniores et simultates quoque tuae sunt."
+	},
+	{
+		"id": "-1000015268",
+		"key": "clan_inherit_head",
+		"en|ch|tc|kr": "{0}: ut proximum caput familiae, {1} gentem regere pergit; familia cum eo manet."
+	},
+	{
+		"id": "-1000015269",
+		"key": "clan_inherit_member",
+		"en|ch|tc|kr": "{0}: {1} proximum caput familiae est et {3} accipit; tu membrum {2} manes."
+	},
+	{
+		"id": "-1000015270",
+		"key": "estate_ruin_label",
+		"en|ch|tc|kr": "Ruinae"
+	},
+	{
+		"id": "-1000015271",
+		"key": "clan_ruin_info",
+		"en|ch|tc|kr": "Ruinae {0} {1}: gens ante {2} annos cecidit, nemine superstite qui eam continuaret. Herbae in atriis crescunt; post {3} menses solum in areas mortalibus dividetur, nisi gens id sedem suam faciat."
+	},
+	{
+		"id": "-1000015272",
+		"key": "clan_ruin_buy_info",
+		"en|ch|tc|kr": "Eam ut tuam sedem pro {0} schedis restitue (habes {1})."
+	},
+	{
+		"id": "-1000015273",
+		"key": "clan_ruin_buy",
+		"en|ch|tc|kr": "Restituere ({0} schedae)"
+	},
+	{
+		"id": "-1000015274",
+		"key": "clan_ruin_bought",
+		"en|ch|tc|kr": "{0} tua est: restituta, sedes familiae tuae."
+	},
+	{
+		"id": "-1000015275",
+		"key": "log_clan_ruin_split",
+		"en|ch|tc|kr": "{0}: ruinae {1} in areas mortalibus divisae sunt."
+	},
+	{
+		"id": "-1000015276",
+		"key": "log_clan_ruin_taken",
+		"en|ch|tc|kr": "{0}: {1} ruinas {2} sedem suam fecit ({3})."
 	}
 ]

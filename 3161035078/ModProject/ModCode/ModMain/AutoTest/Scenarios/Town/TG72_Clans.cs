@@ -114,6 +114,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                 {
                     if (a == null || b == null) return;
                     var e = EstateEvent.Get(town);
+                    var seat = EstateEvent.HouseOf(town, b);
                     var losers = ClanEvent.Members(b);
                     var logs = TaoistLogEvent.Instance.Entries.Count;
                     // A wins; every loser dies (0), no winner dies (0.99)
@@ -121,7 +122,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                         Rolls(losers.Select(_ => 0.0).ToArray()));
                     c.Assert(losers.All(x => x.isDie), $"{losers.Count} member(s) of the losers fell");
                     c.Assert(ClanEvent.Members(a).Count > 0, "the winners stand");
-                    c.Assert(!e.Plots.Any(x => x.OwnerId == b.GetUnitId()), "their house went to the mortals");
+                    c.Assert(!e.Plots.Any(x => x.OwnerId == b.GetUnitId()), "their house is lost");
+                    c.Assert(seat == null || EstateEvent.IsRuin(seat), "wiped out: their mansion stands in ruins");
                     c.AssertEqual(0, ClanEvent.Members(b).Count, "the clan is wiped out");
                     var keys = TaoistLogEvent.Instance.Entries.Skip(logs).Select(x => x.Key).ToList();
                     c.Assert(keys.Contains("log_clan_war") && keys.Contains("log_clan_extinct"), $"Taoist log: {string.Join(", ", keys)}");

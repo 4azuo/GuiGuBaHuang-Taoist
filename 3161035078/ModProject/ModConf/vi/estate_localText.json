@@ -588,5 +588,385 @@
 		"id": "-1000011117",
 		"key": "dlg_close",
 		"en|ch|tc|kr": "Đóng"
+	},
+	{
+		"id": "-1000015220",
+		"key": "elder_hunt_fight",
+		"en|ch|tc|kr": "Đánh"
+	},
+	{
+		"id": "-1000015230",
+		"key": "elder_dismiss",
+		"en|ch|tc|kr": "Loại bỏ"
+	},
+	{
+		"id": "-1000015201",
+		"key": "elder_err_dead",
+		"en|ch|tc|kr": "{0} không thể nhận chức: không còn gia tộc để bảo hộ."
+	},
+	{
+		"id": "-1000015202",
+		"key": "elder_err_kin",
+		"en|ch|tc|kr": "{0} là người thân của gia tộc: trưởng lão phải là người ngoài, không chung huyết thống."
+	},
+	{
+		"id": "-1000015203",
+		"key": "elder_err_grade",
+		"en|ch|tc|kr": "{0} chưa đủ mạnh: trưởng lão ở vùng này cần cảnh giới cao hơn."
+	},
+	{
+		"id": "-1000015204",
+		"key": "elder_err_busy",
+		"en|ch|tc|kr": "{0} đã là trưởng lão của một gia tộc khác."
+	},
+	{
+		"id": "-1000015205",
+		"key": "elder_err_head",
+		"en|ch|tc|kr": "{0} là gia chủ của một gia tộc trong thành này."
+	},
+	{
+		"id": "-1000015206",
+		"key": "elder_err_hunted",
+		"en|ch|tc|kr": "{0} từng phản bội gia tộc: chỉ bị truy sát, không được mời."
+	},
+	{
+		"id": "-1000015207",
+		"key": "elder_err_full",
+		"en|ch|tc|kr": "{1} đã đủ số trưởng lão mà phủ đệ có thể cung phụng: phủ đệ lớn hơn nuôi được nhiều hơn."
+	},
+	{
+		"id": "-1000015208",
+		"key": "elder_err_asked",
+		"en|ch|tc|kr": "{0} đã trả lời trong năm nay rồi."
+	},
+	{
+		"id": "-1000015209",
+		"key": "elder_refused",
+		"en|ch|tc|kr": "{0} từ chối bảo hộ {1}. Năm sau hãy mời lại: thân thiết hơn, danh vọng cao hơn hoặc phủ đệ lớn hơn sẽ giúp ích."
+	},
+	{
+		"id": "-1000015210",
+		"key": "elder_accepted",
+		"en|ch|tc|kr": "{0} nhận lời: từ nay là trưởng lão bảo hộ {1}."
+	},
+	{
+		"id": "-1000015211",
+		"key": "elder_council_ask",
+		"en|ch|tc|kr": "{0}: {1} mở chiến nghị đánh {2}. Là trưởng lão, ngươi có một phiếu (gia chủ có {3}). Khai chiến chứ?"
+	},
+	{
+		"id": "-1000015212",
+		"key": "elder_vote_yes",
+		"en|ch|tc|kr": "Tán thành khai chiến"
+	},
+	{
+		"id": "-1000015213",
+		"key": "elder_vote_no",
+		"en|ch|tc|kr": "Phản đối khai chiến"
+	},
+	{
+		"id": "-1000015214",
+		"key": "elder_deserted",
+		"en|ch|tc|kr": "Ngươi đứng ngoài cuộc chiến của {0}, gia tộc ngươi đã thề bảo hộ. Giờ ngươi là kẻ phản bội: người của họ sẽ tìm đến truy sát."
+	},
+	{
+		"id": "-1000015215",
+		"key": "elder_invited",
+		"en|ch|tc|kr": "{0} của {1} tin tưởng ngươi: mời ngươi làm trưởng lão bảo hộ gia tộc. Bổng lộc {2:#,##0} linh thạch mỗi tháng, mỗi năm thêm {3} tháng cung phụng. Ngươi không được can dự việc nội bộ, nhưng có phiếu khi bàn chiến sự (gia chủ có {4}); bỏ chạy khỏi chiến tranh của gia tộc sẽ thành kẻ phản bội, bị truy sát."
+	},
+	{
+		"id": "-1000015216",
+		"key": "elder_accept",
+		"en|ch|tc|kr": "Nhận lời"
+	},
+	{
+		"id": "-1000015217",
+		"key": "elder_decline",
+		"en|ch|tc|kr": "Từ chối"
+	},
+	{
+		"id": "-1000015218",
+		"key": "elder_joined",
+		"en|ch|tc|kr": "Ngươi đã trở thành trưởng lão bảo hộ của {0} (bổng lộc {1:#,##0} mỗi tháng)."
+	},
+	{
+		"id": "-1000015219",
+		"key": "elder_hunt_ask",
+		"en|ch|tc|kr": "{0} của {1} chặn đường ngươi: \"Kẻ phản bội! Gia tộc không tha thứ.\" (đã đẩy lui {2}/{3} lần)"
+	},
+	{
+		"id": "-1000015221",
+		"key": "elder_hunt_pay",
+		"en|ch|tc|kr": "Bồi thường {0:#,##0} linh thạch để giải hòa"
+	},
+	{
+		"id": "-1000015222",
+		"key": "elder_hunt_won",
+		"en|ch|tc|kr": "Ngươi đã đẩy lui kẻ truy sát của {0} ({1}/{2})."
+	},
+	{
+		"id": "-1000015223",
+		"key": "elder_hunt_ended",
+		"en|ch|tc|kr": "Ngươi đẩy lui người của {0} quá nhiều lần: gia tộc từ bỏ việc truy sát."
+	},
+	{
+		"id": "-1000015224",
+		"key": "elder_hunt_lost",
+		"en|ch|tc|kr": "Kẻ truy sát của {0} đã đánh bại ngươi: cuộc truy sát vẫn tiếp tục."
+	},
+	{
+		"id": "-1000015225",
+		"key": "elder_title",
+		"en|ch|tc|kr": "{0} ở {1} - trưởng lão"
+	},
+	{
+		"id": "-1000015226",
+		"key": "elder_rules",
+		"en|ch|tc|kr": "Trưởng lão bảo hộ gia tộc: người ngoài không thân thích, ở đây cần cảnh giới {0} trở lên. Họ không can dự việc nội bộ; họ bỏ phiếu khi bàn chiến sự (ngươi có {1} phiếu) và ra trận. Nhận bổng mỗi tháng, cung phụng mỗi năm; nợ bổng thì lòng trung giảm, trưởng lão bất trung có thể bỏ chạy khi có chiến tranh."
+	},
+	{
+		"id": "-1000015227",
+		"key": "elder_current",
+		"en|ch|tc|kr": "Trưởng lão: {0} / {1}"
+	},
+	{
+		"id": "-1000015228",
+		"key": "elder_none",
+		"en|ch|tc|kr": "Chưa có trưởng lão nào bảo hộ gia tộc."
+	},
+	{
+		"id": "-1000015229",
+		"key": "elder_line",
+		"en|ch|tc|kr": "{0} - cảnh giới {1}, {2:#,##0}/tháng, trung thành {3}"
+	},
+	{
+		"id": "-1000015231",
+		"key": "elder_candidates",
+		"en|ch|tc|kr": "Tu sĩ trong vùng có thể nhận chức (cảnh giới {0} trở lên)"
+	},
+	{
+		"id": "-1000015232",
+		"key": "elder_no_candidate",
+		"en|ch|tc|kr": "Hiện không có tu sĩ nào trong vùng có thể nhận chức."
+	},
+	{
+		"id": "-1000015233",
+		"key": "elder_candidate_line",
+		"en|ch|tc|kr": "{0} - cảnh giới {1}, thân thiết {2}, {3:#,##0}/tháng, nhận lời {4}%"
+	},
+	{
+		"id": "-1000015234",
+		"key": "elder_invite",
+		"en|ch|tc|kr": "Mời"
+	},
+	{
+		"id": "-1000015235",
+		"key": "elder_hint",
+		"en|ch|tc|kr": "Người đã từ chối thì một năm sau mới mời lại được. Thân thiết, danh vọng và phủ đệ lớn hơn khiến họ dễ nhận lời."
+	},
+	{
+		"id": "-1000015236",
+		"key": "elder_council_title",
+		"en|ch|tc|kr": "{1} - chiến nghị của {0}"
+	},
+	{
+		"id": "-1000015237",
+		"key": "elder_council_rules",
+		"en|ch|tc|kr": "Tuyên chiến phải qua chiến nghị: ngươi có {0} phiếu, mỗi trưởng lão trong {1} người có một phiếu; cần quá nửa trong {2} phiếu. Trưởng lão kém trung thành có thể bỏ chạy khi chiến tranh."
+	},
+	{
+		"id": "-1000015238",
+		"key": "elder_council_none",
+		"en|ch|tc|kr": "Không có gia tộc nào trong thành thù địch với gia tộc ngươi."
+	},
+	{
+		"id": "-1000015239",
+		"key": "elder_council_line",
+		"en|ch|tc|kr": "{0}: quan hệ {1}, {2} thành viên, {3} trưởng lão, thắng {4}%"
+	},
+	{
+		"id": "-1000015240",
+		"key": "elder_declare",
+		"en|ch|tc|kr": "Tuyên chiến"
+	},
+	{
+		"id": "-1000015241",
+		"key": "elder_ballot_head",
+		"en|ch|tc|kr": "{0} khai chiến với {1}: chiến nghị bỏ phiếu."
+	},
+	{
+		"id": "-1000015242",
+		"key": "elder_ballot_line_head",
+		"en|ch|tc|kr": "Gia chủ {0} ({1} phiếu): {2}"
+	},
+	{
+		"id": "-1000015243",
+		"key": "elder_ballot_line",
+		"en|ch|tc|kr": "Trưởng lão {0} ({1} phiếu): {2}"
+	},
+	{
+		"id": "-1000015244",
+		"key": "elder_ballot_for",
+		"en|ch|tc|kr": "tán thành"
+	},
+	{
+		"id": "-1000015245",
+		"key": "elder_ballot_against",
+		"en|ch|tc|kr": "phản đối"
+	},
+	{
+		"id": "-1000015246",
+		"key": "elder_ballot_passed",
+		"en|ch|tc|kr": "{0} trên {1} phiếu tán thành: tuyên chiến!"
+	},
+	{
+		"id": "-1000015247",
+		"key": "elder_ballot_failed",
+		"en|ch|tc|kr": "{0} trên {1} phiếu tán thành: khai chiến bị bác bỏ."
+	},
+	{
+		"id": "-1000015248",
+		"key": "elder_to_war",
+		"en|ch|tc|kr": "Xuất chinh"
+	},
+	{
+		"id": "-1000015249",
+		"key": "elder_button",
+		"en|ch|tc|kr": "Trưởng lão ({0}/{1})"
+	},
+	{
+		"id": "-1000015250",
+		"key": "elder_council_button",
+		"en|ch|tc|kr": "Chiến nghị"
+	},
+	{
+		"id": "-1000015251",
+		"key": "elder_post",
+		"en|ch|tc|kr": "Ngươi là trưởng lão bảo hộ {0}: {1:#,##0} linh thạch mỗi tháng."
+	},
+	{
+		"id": "-1000015252",
+		"key": "elder_resign",
+		"en|ch|tc|kr": "Từ chức"
+	},
+	{
+		"id": "-1000015253",
+		"key": "elder_resign_confirm",
+		"en|ch|tc|kr": "Từ bỏ chức trưởng lão của {0} trong lúc thái bình?"
+	},
+	{
+		"id": "-1000015254",
+		"key": "elder_clan_suffix",
+		"en|ch|tc|kr": " - trưởng lão: {0}"
+	},
+	{
+		"id": "-1000015255",
+		"key": "log_clan_elder_join",
+		"en|ch|tc|kr": "{0}: {1} trở thành trưởng lão của {2}."
+	},
+	{
+		"id": "-1000015256",
+		"key": "log_clan_elder_fled",
+		"en|ch|tc|kr": "{0}: trưởng lão {1} bỏ chạy khỏi cuộc chiến của {2}; gia tộc truy sát kẻ phản bội."
+	},
+	{
+		"id": "-1000015257",
+		"key": "log_clan_elder_voted_down",
+		"en|ch|tc|kr": "{0}: các trưởng lão của {1} đã bác bỏ cuộc chiến với {2}."
+	},
+	{
+		"id": "-1000015258",
+		"key": "log_clan_elder_clan_gone",
+		"en|ch|tc|kr": "{0}: {1} không còn là trưởng lão: {2} đã không còn."
+	},
+	{
+		"id": "-1000015259",
+		"key": "log_clan_elder_left_unpaid",
+		"en|ch|tc|kr": "{0}: trưởng lão {1} rời {2} vì bị nợ bổng."
+	},
+	{
+		"id": "-1000015260",
+		"key": "log_clan_elder_dismissed",
+		"en|ch|tc|kr": "{0}: trưởng lão {1} bị {2} bãi chức."
+	},
+	{
+		"id": "-1000015261",
+		"key": "log_clan_elder_resigned",
+		"en|ch|tc|kr": "{0}: {1} từ chức trưởng lão của {2}."
+	},
+	{
+		"id": "-1000015262",
+		"key": "log_clan_elder_offering",
+		"en|ch|tc|kr": "{0}: {1} nhận cung phụng hằng năm của {2}: {3:#,##0} linh thạch."
+	},
+	{
+		"id": "-1000015263",
+		"key": "log_clan_elder_hunted_down",
+		"en|ch|tc|kr": "{0}: kẻ phản bội {1} đã bị {3} của {2} truy sát đến chết."
+	},
+	{
+		"id": "-1000015264",
+		"key": "log_clan_elder_hunt_over",
+		"en|ch|tc|kr": "{0}: {2} từ bỏ việc truy sát {1}."
+	},
+	{
+		"id": "-1000015265",
+		"key": "log_clan_elder_hunt_paid",
+		"en|ch|tc|kr": "{0}: ngươi đã bồi thường cho {1} {2:#,##0} linh thạch; cuộc truy sát chấm dứt."
+	},
+	{
+		"id": "-1000015266",
+		"key": "log_clan_succession",
+		"en|ch|tc|kr": "{0}: {1} kế vị gia chủ: {2} tiếp tục hương hỏa."
+	},
+	{
+		"id": "-1000015267",
+		"key": "clan_succession_player",
+		"en|ch|tc|kr": "Gia chủ đã qua đời: {0} giờ thuộc về ngươi, ngươi trở thành gia chủ của {1}. Quan hệ với các gia tộc khác, các trưởng lão và mối thù cũng do ngươi kế thừa."
+	},
+	{
+		"id": "-1000015268",
+		"key": "clan_inherit_head",
+		"en|ch|tc|kr": "{0}: là gia chủ đời kế, {1} tiếp tục dẫn dắt gia tộc; người nhà vẫn ở lại."
+	},
+	{
+		"id": "-1000015269",
+		"key": "clan_inherit_member",
+		"en|ch|tc|kr": "{0}: {1} là gia chủ đời kế và tiếp quản {3}; ngươi trở thành một thành viên của {2}."
+	},
+	{
+		"id": "-1000015270",
+		"key": "estate_ruin_label",
+		"en|ch|tc|kr": "Phế trạch"
+	},
+	{
+		"id": "-1000015271",
+		"key": "clan_ruin_info",
+		"en|ch|tc|kr": "Phế tích {0} của {1}: gia tộc diệt vong {2} năm trước, không còn ai nối dõi. Cỏ dại mọc đầy sảnh đường; sau {3} tháng đất sẽ bị chia thành lô cho phàm nhân, trừ khi có gia tộc nhận làm phủ đệ."
+	},
+	{
+		"id": "-1000015272",
+		"key": "clan_ruin_buy_info",
+		"en|ch|tc|kr": "Tu sửa làm phủ đệ của ngươi với {0} linh phiếu (ngươi có {1})."
+	},
+	{
+		"id": "-1000015273",
+		"key": "clan_ruin_buy",
+		"en|ch|tc|kr": "Tu sửa ({0} linh phiếu)"
+	},
+	{
+		"id": "-1000015274",
+		"key": "clan_ruin_bought",
+		"en|ch|tc|kr": "{0} đã là của ngươi: tu sửa khang trang, thành phủ đệ của gia tộc."
+	},
+	{
+		"id": "-1000015275",
+		"key": "log_clan_ruin_split",
+		"en|ch|tc|kr": "{0}: phế trạch của {1} đã bị chia thành lô đất cho phàm nhân."
+	},
+	{
+		"id": "-1000015276",
+		"key": "log_clan_ruin_taken",
+		"en|ch|tc|kr": "{0}: {1} thu phế trạch của {2} làm phủ đệ ({3})."
 	}
 ]

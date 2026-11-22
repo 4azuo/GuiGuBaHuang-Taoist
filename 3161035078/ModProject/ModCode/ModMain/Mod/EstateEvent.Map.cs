@@ -87,15 +87,16 @@ namespace MOD_nE7UL2.Mod
         }
 
         /// <summary>A game picture fitted into a box (keeps its ratio); also for other windows (town management).</summary>
-        public static void Picture(UICustomBase ui, string[] sprite, float x, float y, float w, float h)
+        public static UIItemImage Picture(UICustomBase ui, string[] sprite, float x, float y, float w, float h)
         {
             var s = sprite == null ? null : GameSprite(sprite[0], sprite[1]);
             if (s == null)
-                return;
+                return null;
             var k = Math.Min(w / s.rect.width, h / s.rect.height);
             var img = ui.AddImage(x, y, s);
             img.Size(s.rect.width * k, s.rect.height * k);
             img.Item.raycastTarget = false;
+            return img;
         }
 
         private static void Clickable(UIItemImage img, Action act)
@@ -256,7 +257,7 @@ namespace MOD_nE7UL2.Mod
             {
                 var plot = p;
                 var isMine = p.OwnerId != null && p.OwnerId == me;
-                var ground = Rect(ui, X(p.X), Y(p.Y), cw - 2f, ch - 2f, isMine ? ConfColor("Mine") : p.OwnerId != null ? ConfColor("Owned") : DistrictColor(p.District));
+                var ground = Rect(ui, X(p.X), Y(p.Y), cw - 2f, ch - 2f, isMine ? ConfColor("Mine") : IsRuin(p) ? ConfColor("Ruin") : p.OwnerId != null ? ConfColor("Owned") : DistrictColor(p.District));
                 Clickable(ground, () => ClickPlot(town, MainOf(e, plot)));
                 if (p.OwnerId == null)
                     Picture(ui, SpriteOf(p), X(p.X), Y(p.Y), cw - 3f, ch - 3f);
@@ -265,7 +266,13 @@ namespace MOD_nE7UL2.Mod
             {
                 var parts = PartsOf(e, p);
                 float minX = parts.Min(v => v.X), maxX = parts.Max(v => v.X), minY = parts.Min(v => v.Y), maxY = parts.Max(v => v.Y);
-                Picture(ui, SpriteOf(p), X((minX + maxX) / 2f), Y((minY + maxY) / 2f), (maxX - minX + 1) * cw - 4f, (maxY - minY + 1) * ch - 4f);
+                var img = Picture(ui, SpriteOf(p), X((minX + maxX) / 2f), Y((minY + maxY) / 2f), (maxX - minX + 1) * cw - 4f, (maxY - minY + 1) * ch - 4f);
+                // a ruined mansion: the house greyed and faded, "Ruins" over it
+                if (IsRuin(p) && p.MainIndex == null)
+                {
+                    if (img != null) img.Item.color = new Color(0.48f, 0.44f, 0.40f, 0.72f);
+                    Label(ui, X((minX + maxX) / 2f), Y((minY + maxY) / 2f), GameTool.LS("estate_ruin_label"), new Color(0.25f, 0.2f, 0.18f, 0.85f));
+                }
             }
 
             // the palace of the town master (one picture over its cells)
@@ -427,6 +434,11 @@ namespace MOD_nE7UL2.Mod
             if (p.OwnerId != null && p.OwnerId == Player.GetUnitId())
             {
                 OpenHouse(town, p);
+                return;
+            }
+            if (IsRuin(p))
+            {
+                ClanEvent.ClickRuin(town, Get(town), p);
                 return;
             }
             if (p.OwnerId != null)

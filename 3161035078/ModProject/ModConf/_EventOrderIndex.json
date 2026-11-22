@@ -40,6 +40,7 @@
 	"BankLoanEvent": 3015,
 	"WantedEvent": 3020,
 	"ClanEvent": 3022,
+	"ClanElderEvent": 3023,
 	"SeclusionEvent": 3022,
 	"FamilyEvent": 3024,
 	"FamilyFundEvent": 3025,
