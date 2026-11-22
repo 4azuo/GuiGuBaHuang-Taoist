@@ -26,6 +26,10 @@ namespace MOD_nE7UL2.Mod
         public override void OnLoadGame()
         {
             base.OnLoadGame();
+            // the role picked in S&M configs is given at once (not at the first monthly tick)
+            var player = g.world?.playerUnit;
+            if (player != null && !UnitTypeDic.ContainsKey(player.GetUnitId()))
+                AddStartupPlayerRole(player);
             foreach (var wunit in ModMain.Store.WUnits)
             {
                 var unitId = wunit.GetUnitId();
@@ -49,14 +53,8 @@ namespace MOD_nE7UL2.Mod
             //add luck
             if (!UnitTypeDic.ContainsKey(unitId))
             {
-                if (wunit.IsPlayer() && SMLocalConfigsEvent.Instance.Configs.StartupPlayerRole > 0)
-                {
-                    UnitTypeDic.Add(unitId, SMGlobalConfigsEvent.Instance.StartupPlayerRoles[SMLocalConfigsEvent.Instance.Configs.StartupPlayerRole]);
-                }
-                else
-                {
+                if (!AddStartupPlayerRole(wunit))
                     UnitTypeDic.Add(unitId, AddRandomUnitType(wunit));
-                }
             }
 
             //add apprentice luck
@@ -128,6 +126,25 @@ namespace MOD_nE7UL2.Mod
         /// <summary>
         /// Removes all role lucks.
         /// </summary>
+        /// <summary>
+        /// Player with a StartupPlayerRole in the S&amp;M configs: records the role and adds its luck. False when it does not apply.
+        /// </summary>
+        private bool AddStartupPlayerRole(WorldUnitBase wunit)
+        {
+            var roleIdx = SMLocalConfigsEvent.Instance.Configs.StartupPlayerRole;
+            var roles = SMGlobalConfigsEvent.Instance.StartupPlayerRoles;
+            if (!wunit.IsPlayer() || roleIdx <= 0 || roleIdx >= roles.Length)
+                return false;
+            var role = roles[roleIdx];
+            UnitTypeDic[wunit.GetUnitId()] = role;
+            if (role.CustomLuck != null)
+            {
+                RemoveUnitTypeLuck(wunit);
+                wunit.AddLuck(role.Value.Parse<int>());
+            }
+            return true;
+        }
+
         private void RemoveUnitTypeLuck(WorldUnitBase wunit)
         {
             foreach (var t in UnitTypeEnum.GetAllEnums<UnitTypeEnum>())
