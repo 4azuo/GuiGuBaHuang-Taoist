@@ -1,88 +1,135 @@
 {
-  "$comment": "Timing, music and chapters of the marketing videos, read by src/data.ts and scripts/prepare-assets.mjs (music cut to the same timeline). Lengths in beats of the song (112 BPM: 16.07 frames a beat at 30 fps; every cut lands on the nearest frame of a beat). glyph: the brush character of a chapter card (simplified Chinese: the brush font has no traditional forms). pictures / short: a name is a scene of one picture, a list of names a scene of several pictures of one feature (cards coming to the front in turn).",
+  "$comment": "Timing, music and chapters of the marketing videos, read by src/data.ts and scripts/prepare-assets.mjs (music cut to the same timeline). Lengths in beats of the song (94.15 BPM: 19.12 frames a beat at 30 fps; every cut lands on the nearest frame of a beat). glyph: the brush character of a chapter card (simplified Chinese: the brush font has no traditional forms). pictures: a name is a scene of one picture, a list of names a scene of several pictures of one feature (cards coming to the front in turn).",
   "fps": 30,
   "chapterBeats": 4,
   "slideBeats": 4,
   "music": {
-    "$comment": "Song beats counted from firstBeat (seconds; a downbeat of a phrase, found by onset analysis). sections: [start, end) beats. A video plays intro, then its body sections (cut to fit: each drop starts on a chapter card), then outro.",
-    "file": "ebunny-samurai-354083.mp3",
-    "credit": "Music: \"Samurai\" by eBunny (Pixabay)",
-    "bpm": 112,
-    "firstBeat": 1.367,
+    "$comment": "A loop of 128 beats (81.7 s) played whole, no cut: intro (soft, beats 0-14), the chapters (beats 14-118: every card and picture on 2 mod 4, where the drum hits are), the end card on the last chord (118-128). Beat 0 at firstBeat seconds (onset analysis). accents: the big drum hits (beats of the song), where a gust of petals crosses the screen. A video longer than the song: the middle of main played again (cut on 2 mod 4); the accents follow the pieces (src/data.ts).",
+    "file": "sonican-chinese-oriental-asian-love-music-loop-459656.mp3",
+    "credit": "Music: \"Chinese Oriental Asian Love Music Loop\" by Dvir Silverstone (Pixabay)",
+    "bpm": 94.15,
+    "firstBeat": 0.035,
     "sections": {
       "intro": [
         0,
-        16
+        14
       ],
-      "build": [
-        16,
-        44
-      ],
-      "drop1": [
-        44,
-        88
-      ],
-      "break": [
-        88,
-        136
-      ],
-      "drop2": [
-        136,
-        232
+      "main": [
+        14,
+        118
       ],
       "end": [
-        232,
-        248
+        118,
+        128
       ]
     },
     "long": {
       "intro": [
         0,
-        16
+        14
       ],
       "body": [
-        "build",
-        "drop1",
-        "break",
-        "drop2"
+        "main"
       ],
       "outro": [
-        232,
-        248
+        118,
+        128
       ]
     },
-    "short": {
-      "intro": [
-        36,
-        44
-      ],
-      "body": [
-        "drop1",
-        "drop2"
-      ],
-      "outro": [
-        240,
-        248
-      ]
-    }
+    "accents": [
+      33,
+      66,
+      82,
+      98,
+      114
+    ]
   },
   "chapters": [
     {
+      "title": "Build your city",
+      "subtitle": "Raise the palace and the walls, rule the city",
+      "glyph": "城",
+      "pictures": [
+        [
+          "city-map",
+          "city-buildings"
+        ]
+      ]
+    },
+    {
+      "title": "A home among mortals",
+      "subtitle": "Buy any house of the city and make it yours",
+      "glyph": "宅",
+      "pictures": [
+        [
+          "house-buy",
+          "house-bought"
+        ]
+      ]
+    },
+    {
+      "title": "Children of the Dao",
+      "subtitle": "Marry, raise children, grow a family of cultivators",
+      "glyph": "嗣",
+      "pictures": [
+        "birth",
+        "family"
+      ]
+    },
+    {
+      "title": "Found a clan",
+      "subtitle": "Allies and blood feuds among the clans of the city",
+      "glyph": "族",
+      "pictures": [
+        "clan"
+      ]
+    },
+    {
+      "title": "Clan elders",
+      "subtitle": "Outsiders guard your clan, vote on its wars, hunt its deserters",
+      "glyph": "老",
+      "pictures": [
+        "elders",
+        "elder-council",
+        [
+          "elder-invite",
+          "elder-hunt"
+        ]
+      ]
+    },
+    {
+      "title": "Clan wars",
+      "subtitle": "Step in, fight their champion, wipe their clan out",
+      "glyph": "战",
+      "pictures": [
+        "clan-war-call",
+        "clan-battle",
+        [
+          "clan-victory",
+          "clan-extinct"
+        ]
+      ]
+    },
+    {
       "title": "New paths of cultivation",
-      "subtitle": "Body, merit, craft, Dao heart and spirit sense",
+      "subtitle": "Body refining, spirit sense and the Dao heart",
       "glyph": "道",
       "pictures": [
-        "body-refining",
-        "merit",
+        "path-body",
         [
-          "dao-heart",
-          "spirit-sense"
+          "path-sense",
+          "path-scan"
         ],
-        "spirit-scan"
-      ],
-      "short": [
-        "body-refining",
-        "spirit-scan"
+        "path-heart"
+      ]
+    },
+    {
+      "title": "Righteous or ruthless",
+      "subtitle": "Merit and blessings - or karma and a town put to the sword",
+      "glyph": "劫",
+      "pictures": [
+        "path-merit",
+        "path-massacre"
       ]
     },
     {
@@ -90,67 +137,18 @@
       "subtitle": "Six crafts, from novice to Return to Simplicity",
       "glyph": "艺",
       "pictures": [
-        "artisan",
-        "mine-vein"
-      ],
-      "short": [
-        "artisan",
-        "mine-vein"
-      ]
-    },
-    {
-      "title": "Righteous or ruthless",
-      "subtitle": "Merit and karma - and towns put to the sword",
-      "glyph": "劫",
-      "pictures": [
-        "massacre-drama",
-        "massacre-battle"
-      ],
-      "short": [
-        "massacre-battle"
-      ]
-    },
-    {
-      "title": "A home among mortals",
-      "subtitle": "Buy back a mortal house, grow an estate",
-      "glyph": "家",
-      "pictures": [
-        "estate-buy-mortal",
-        [
-          "estate-town-map",
-          "estate-house"
-        ]
-      ],
-      "short": [
-        "estate-buy-mortal"
-      ]
-    },
-    {
-      "title": "New stories",
-      "subtitle": "A smith, a street, a child of ashes, a heart in the stone",
-      "glyph": "命",
-      "pictures": [
-        [
-          "story-forge",
-          "story-old-street",
-          "story-ashes",
-          "story-stone-heart"
-        ]
-      ],
-      "short": [
-        [
-          "story-forge",
-          "story-ashes",
-          "story-stone-heart"
-        ]
+        "path-artisan"
       ]
     }
   ],
-  "$version": "Taoist 6.0: the new features only (the video of 5.5.45: marketing/video-5.5.45).",
+  "$version": "Taoist 6.0: the new features only, from the pictures of the promotion scenario TR-04 (the video of 5.5.45: marketing/video-5.5.45).",
   "extras": false,
   "tagline": [
     "Taoist 6.0:",
-    "new paths of the Dao."
+    "a clan of your own."
   ],
-  "endline": "THE 6.0 UPDATE"
+  "endline": "THE 6.0 UPDATE",
+  "scenarios": [
+    "TR-04"
+  ]
 }

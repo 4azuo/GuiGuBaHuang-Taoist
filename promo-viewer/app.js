@@ -15,12 +15,12 @@
   if (!DATA) { $("empty").classList.remove("hidden"); return; }
   $("generated").textContent = "Data of " + DATA.generated;
 
-  const pictureOf = (name) => DATA.pictures.find((p) => p.name === name);
+  const pictureOf = (e) => DATA.pictures.find((p) => p.file === e.file);
   const takesOf = (name) => DATA.runs.flatMap((r) => r.takes.filter((t) => t.name === name).map((t) => ({ run: r.run, ...t })));
 
   // one list of cards: every promo entry (taken or not), the stale promo pictures, the other SteamImg pictures
-  const cards = DATA.entries.map((e) => ({ ...e, picture: pictureOf(e.name), takes: takesOf(e.name) }));
-  DATA.pictures.filter((p) => p.stale).forEach((p) => cards.push({ name: p.name, caption: "", scenario: "", picture: p, takes: [], stale: true }));
+  const cards = DATA.entries.map((e) => ({ ...e, picture: pictureOf(e), takes: takesOf(e.name) }));
+  DATA.pictures.filter((p) => p.stale).forEach((p) => cards.push({ name: p.name, caption: "", scenario: p.scenario || "", version: p.version || "", picture: p, takes: [], stale: true }));
   DATA.pictures.filter((p) => !p.name).forEach((p) => cards.push({ name: p.file, caption: "", scenario: "", picture: p, takes: [], extra: true }));
 
   const TABS = [["pictures", "Pictures"], ["runs", "Takes by run"], ["videos", "Videos"]];
@@ -29,6 +29,18 @@
   $("tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { tab = b.dataset.tab; store.set("tab", tab); render(); } });
   $("q").value = store.get("q", "");
   $("fState").value = store.get("state", "");
+  // versions of the mod (SteamImg/promo-<version>): the promo entries and the folders, newest first
+  const verOfScenario = {};
+  DATA.entries.forEach((e) => { verOfScenario[e.scenario] = e.version; });
+  const versions = [...new Set(DATA.entries.map((e) => e.version).concat(DATA.pictures.map((p) => p.version)).filter(Boolean))]
+    .sort((a, b) => b.localeCompare(a, undefined, { numeric: true }));
+  $("fVer").innerHTML += versions.map((v) => {
+    const n = cards.filter((c) => c.version === v).length, got = cards.filter((c) => c.version === v && c.picture).length;
+    return `<option value="${esc(v)}">${esc(v)} (${got}/${n})</option>`;
+  }).join("");
+  $("fVer").value = versions.includes(store.get("ver", "")) ? store.get("ver", "") : "";
+  $("fVer").addEventListener("change", () => { store.set("ver", $("fVer").value); render(); });
+  const verOk = (v) => !$("fVer").value || v === $("fVer").value;
   $("q").addEventListener("input", () => { store.set("q", $("q").value); render(); });
   $("fState").addEventListener("change", () => { store.set("state", $("fState").value); render(); });
 
@@ -50,7 +62,8 @@
   const matches = (c) => {
     const q = $("q").value.trim().toLowerCase();
     const st = $("fState").value;
-    if (q && ![c.name, c.caption, c.scenario].join(" ").toLowerCase().includes(q)) return false;
+    if (q && ![c.name, c.caption, c.scenario, c.version, c.file].join(" ").toLowerCase().includes(q)) return false;
+    if (!verOk(c.version)) return false;
     if (st === "taken" && !c.picture) return false;
     if (st === "missing" && (c.picture || c.extra || c.stale)) return false;
     if (st === "stale" && !c.stale) return false;
@@ -72,10 +85,10 @@
           ? `<img loading="lazy" src="${STEAM}${esc(c.picture.file)}" alt="${esc(c.caption || c.name)}">` : "no picture yet"}</div>
         <div class="body">
           <div class="caption">${esc(c.caption || c.name)}</div>
-          <div class="meta">${badge}${c.scenario ? `<span class="mono">${esc(c.scenario)} &middot; ${esc(c.step)}</span>` : ""}
+          <div class="meta">${badge}${c.scenario ? `<span class="mono">${c.version ? esc(c.version) + " &middot; " : ""}${esc(c.scenario)} &middot; ${esc(c.step)}</span>` : ""}
             ${c.picture ? `<span>${esc(c.picture.time)} &middot; ${kb(c.picture.size)}</span>` : ""}
             ${c.takes.length ? `<span>${c.takes.length} take(s)</span>` : ""}</div>
-          <div class="meta mono">${esc(c.picture ? c.picture.file : "promo_" + c.name + ".jpg")}</div>
+          <div class="meta mono">${esc(c.picture ? c.picture.file : c.file || "promo_" + c.name + ".jpg")}</div>
           ${takes}
         </div></article>`;
     }).join("")}</div>`;
@@ -91,7 +104,7 @@
     const q = $("q").value.trim().toLowerCase();
     let n = 0;
     $("main").innerHTML = DATA.runs.length ? DATA.runs.map((r) => {
-      const takes = r.takes.filter((t) => !q || (t.name + " " + t.scenario).toLowerCase().includes(q));
+      const takes = r.takes.filter((t) => verOk(verOfScenario[t.scenario]) && (!q || (t.name + " " + t.scenario).toLowerCase().includes(q)));
       n += takes.length;
       if (!takes.length) return "";
       return `<section class="run"><h2>Run ${esc(r.run)} <span class="sub">${takes.length} take(s)</span></h2>
@@ -105,7 +118,7 @@
     }).join("") : '<div class="empty">No promotion run in logs/autotest yet (scripts/game/run-promo.ps1).</div>';
     $("main").querySelectorAll(".thumb[data-run]").forEach((el) => el.addEventListener("click", () => {
       const r = DATA.runs.find((x) => x.run === el.dataset.run);
-      const takes = r.takes.filter((t) => !q || (t.name + " " + t.scenario).toLowerCase().includes(q));
+      const takes = r.takes.filter((t) => verOk(verOfScenario[t.scenario]) && (!q || (t.name + " " + t.scenario).toLowerCase().includes(q)));
       openLb(takes.map((t) => ({ src: `${RUNS}${r.run}/screens/${t.file}`, cap: `${esc(t.name)} &middot; run ${esc(r.run)}` })), +el.dataset.at);
     }));
     return n;

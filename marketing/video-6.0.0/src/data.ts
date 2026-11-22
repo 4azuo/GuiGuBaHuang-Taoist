@@ -1,5 +1,6 @@
 import generated from "./promo.generated.json";
 import timing from "./chapters.json";
+import timeline from "./timeline-long.generated.json";
 
 export type Slide = { file: string; caption?: string; name?: string };
 /** A chapter of a video: a card (title over its first picture, blurred), then its scenes: one picture each, or the
@@ -8,15 +9,27 @@ export type Part = { title: string; subtitle: string; glyph: string; number: num
 /** A video (written by scripts/prepare-assets.mjs): intro and outro in beats, the chapters. */
 export type Plan = { intro: number; outro: number; parts: Part[] };
 
-export const plans = generated as { long: Plan; short: Plan };
+export const plans = generated as { long: Plan };
 
 export const FPS = timing.fps;
 export const BPM = timing.music.bpm;
 export const CREDIT = timing.music.credit;
+/** The big drum hits of the song (accents, beats of the song) at their beats in the video: the music is the song's
+ *  pieces put end to end (src/timeline-long.generated.json, a part of the song may play twice), a burst of petals on each. */
+export const ACCENTS: number[] = (() => {
+  const song: number[] = (timing.music as any).accents ?? [];
+  const rs: number[] = [];
+  let at = 0;
+  for (const [src, n] of (timeline as { pieces: number[][] }).pieces) {
+    for (const a of song) if (a >= src && a < src + n) rs.push(at + a - src);
+    at += n;
+  }
+  return rs;
+})();
 /** The tagline of the intro (its last word in gold) and the line above TAOIST in the end card. */
 export const TAGLINE: [string, string] = ((timing as any).tagline ?? ["Your cultivation journey,", "ascended."]) as [string, string];
 export const ENDLINE: string = (timing as any).endline ?? "A LIVING CULTIVATION WORLD";
-/** Frames of a beat (16.07 at 30 fps and 112 BPM): a scene starts on the nearest frame of its beat. */
+/** Frames of a beat (19.12 at 30 fps and 94.15 BPM): a scene starts on the nearest frame of its beat. */
 export const BEAT = (FPS * 60) / BPM;
 /** The frame of a beat of the video. */
 export const frameOf = (beats: number) => Math.round(beats * BEAT);

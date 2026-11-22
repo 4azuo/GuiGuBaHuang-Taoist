@@ -1,5 +1,5 @@
 {
-  "$comment": "Timing, music and chapters of the marketing videos, read by src/data.ts and scripts/prepare-assets.mjs (music cut to the same timeline). Lengths in beats of the song (112 BPM: 16.07 frames a beat at 30 fps; every cut lands on the nearest frame of a beat). glyph: the brush character of a chapter card (simplified Chinese: the brush font has no traditional forms). pictures / short: a name is a scene of one picture, a list of names a scene of several pictures of one feature (cards coming to the front in turn).",
+  "$comment": "Timing, music and chapters of the marketing videos, read by src/data.ts and scripts/prepare-assets.mjs (music cut to the same timeline). Lengths in beats of the song (112 BPM: 16.07 frames a beat at 30 fps; every cut lands on the nearest frame of a beat). glyph: the brush character of a chapter card (simplified Chinese: the brush font has no traditional forms). pictures: a name is a scene of one picture, a list of names a scene of several pictures of one feature (cards coming to the front in turn).",
   "$version": "Taoist 5.5.45: the video of every feature up to 5.5.45 (frozen copy of marketing/video; node_modules: a junction to ../video/node_modules). extras false: the pictures of later versions are not added.",
   "extras": false,
   "fps": 30,
@@ -52,20 +52,6 @@
         232,
         248
       ]
-    },
-    "short": {
-      "intro": [
-        36,
-        44
-      ],
-      "body": [
-        "drop1",
-        "drop2"
-      ],
-      "outro": [
-        240,
-        248
-      ]
     }
   },
   "chapters": [
@@ -87,11 +73,6 @@
         ],
         "taoist-settings",
         "taoist-log"
-      ],
-      "short": [
-        "new-character",
-        "sm-configs-3",
-        "trainer"
       ]
     },
     {
@@ -116,14 +97,6 @@
         [
           "damage-calc",
           "damage-calc-foes",
-          "damage-calc-battle"
-        ]
-      ],
-      "short": [
-        "technique-attack",
-        "weapon-detail",
-        [
-          "damage-calc",
           "damage-calc-battle"
         ]
       ]
@@ -153,14 +126,6 @@
         ],
         "town-buildings",
         "spirit-banknotes"
-      ],
-      "short": [
-        "bank-loan",
-        "market-buy-orders",
-        [
-          "town-master",
-          "town-hire"
-        ]
       ]
     },
     {
@@ -183,14 +148,6 @@
           "clans",
           "clan-war"
         ]
-      ],
-      "short": [
-        [
-          "family-tree",
-          "family-heir"
-        ],
-        "team",
-        "wanted"
       ]
     },
     {
@@ -202,13 +159,6 @@
         [
           "story-cold-sword",
           "story-furnace",
-          "story-sworn-brothers",
-          "story-herb-garden",
-          "story-wager"
-        ]
-      ],
-      "short": [
-        [
           "story-sworn-brothers",
           "story-herb-garden",
           "story-wager"

@@ -91,7 +91,7 @@ Automatic save loading clicks the title screen "Continue/Into" button and the sa
    |---|---|
    | `report.json` | Final results read by the viewer (checks with ids, log-error rule applied, screenshots by step) |
    | `results.json` | Raw results written by the game (status, checks, screenshots, error stack, runner log) |
-   | `screens/*.png` | Screenshots of the game window `<nnn>_<scenario id>_<step no>-<label>.png`: `00-before` then one after every step. Taken by `run-autotest.ps1` (PrintWindow, works when the window is covered) when the runner asks for one (`<autotest>\snaps\*.req`): `UnityEngine.ScreenCapture` is stripped from the game |
+   | `screens/*.png` | Screenshots of the game window `<nnn>_<scenario id>_<step no>-<label>.png`: `00-before` then one after every step. Taken by `run-autotest.ps1` (PrintWindow, works when the window is covered; a minimized game window is restored without activation) when the runner asks for one (`<autotest>\snaps\*.req`): `UnityEngine.ScreenCapture` is stripped from the game. Never a copy of the screen (it took the tester's desktop and browser into the promotion pictures, 2026-11-22): no picture and a warning when the window cannot be captured; collect-promo also refuses a picture of a whole screen's size |
    | `game-run/` | Copy of the `run-game.ps1` session: `timeline.log`, `mod-flQrxq-*.log` (ModLib/Taoist logs, `[AUTOTEST]` lines), `melonloader.log`, `player.log`, `summary.json` |
    | `save-backup/` | Saves and ModLib caches before the run (restored automatically afterwards) |
    | `summary.json` | Counts, exit code, NG ids, number of screenshots |
@@ -249,36 +249,69 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
   nth = which one when the step has several). They are taken in a **promotion run** of their own, not picked from the test
   runs, by the tools **TR-01** (title screen: S&M configs pages) and **TR-02** (in the game: trainer, Taoist settings,
   bank account / loan, weapon details, player market / buy orders, shop, NPC hiring / team, town master, bounties,
-  family accounts, Taoist log) and **TR-03** (a developed city: the town map, the player's immortal palace, the town
-  management with its buildings, the clans, a clan war asking the player, the banknote bank; `AutoTest/Scenarios/Tool/TR_PromoShots.cs`: `Shot(name, open)` opens a window and
+  family accounts, Taoist log), **TR-03** (a developed city: the town map, the player's immortal palace, the town
+  management with its buildings, the clans, a clan war asking the player, the banknote bank) and **TR-04** (the set of
+  the 6.0 video, in the order of its chapters: the player's city with palace and wall, its town map and buildings; a
+  mortal house bought; a child born and the family tree; the player's clan among the clans of the city; a clan war -
+  the call, the battle stepped in, the victory, the enemy clan wiped out (WarDeath 1 for that war, set back after) in the
+  Taoist log; body refining, spirit sense and its scan, Dao heart, merit, the Artisan Dao; karma and the massacre of a
+  small town offered; `TR04_Promo60.cs`); `AutoTest/Scenarios/Tool/TR_PromoShots.cs`: `Shot(name, open)` opens a window and
   captures `promo-<name>`, the mouse first moved out of the game window so that no hover tooltip shows; a feature
   missing in the save only skips its picture; trainer pages, town guardians to hire and the town with its guardians
   too), and the steps of test scenarios with a promo entry: TP-01 `destinies-and-artifacts` (character creation, the 3
   divine artifacts and Skip intro ticked; run-promo then passes `-NewCharacter`), TB-17 `window-shown` (damage
-  calculation in a battle), TG-55 `encounter-drama`, TG-57 `collector`, the storylines TS-xx. `.\scripts\game\run-promo.ps1 [-Deploy] [-Save <save>] [-Name <promo names>] [-List] [-ConfirmTools]`
+  calculation in a battle), TG-55 `encounter-drama`, TG-57 `collector`, the storylines TS-xx. `.\scripts\game\run-promo.ps1 [-Deploy] [-Save <save>] [-Version <e.g. 6.0.00: every picture of that folder>] [-Scenario <ids, e.g. TR-04>] [-Name <promo names>] [-List] [-ConfirmTools]`
   runs them (`run-autotest.ps1 -Promo`: no check panels over the screenshots, 1600x900 window, scenario-status.json
-  left as it is), then
+  left as it is). Like the tools, a promotion run (TR-xx and the test scenarios with promo pictures) only starts once
+  the user confirmed it: at the prompt in a terminal, `-ConfirmTools` otherwise. Then
   `scripts/game/collect-promo.ps1` copies them, without the window title bar, to
-  `3161035078/ModProject/SteamImg/promo_<name>.jpg` (JPEG under 2 MB, the Steam Workshop limit: the quality lowered
+  `3161035078/ModProject/SteamImg/promo-<version>/promo_<scenario>_<name>.jpg`: one folder per version of the mod the
+  pictures promote, the `"promoVersion"` of the scenario in scenarios.json (`promo-5.5.45`: TR-01..03, TP-01, TB-17,
+  TG-55, TG-57, TS-01..07 - the 5.5.45 video; `promo-6.0.00`: TR-04 and the pictures of the 6.0 features TG-62,
+  TG-80..87, TS-13..16), the files of a folder are uploaded together; a scenario moved to another version has its
+  pictures removed from the former folder; names need only be unique, the videos copy every folder flat; JPEG under 2 MB, the Steam Workshop limit: the quality lowered
   until it fits; Steam Workshop / Ko-fi; not from a test reported SKIP: its step
   screenshots show whatever is on the screen); only pictures go there (SteamImg is
   deployed with the mod), the captions stay in scenarios.json; promo pictures without an entry anymore are removed. **Promo viewer**
   (`promo-viewer/index.html`, data from `python scripts/update-promo-viewer.py [--open]`, run by collect-promo; VS Code
-  task "Test: Open Promo Viewer"): the SteamImg pictures with their captions (taken / not taken / no entry anymore),
+  task "Test: Open Promo Viewer"): the SteamImg pictures with their captions (taken / not taken / no entry anymore;
+  a version list shows one promo-<version> folder, "taken / defined" per version),
   the takes of every promotion run still in logs/autotest (to compare and pick), and the videos of marketing/video-6.0.0/out. The test runs never write SteamImg; the
   other pictures there (1.jpg...) are kept.
 - **Marketing videos by version**: `marketing/video-6.0.0` is the video of the current version (6.0: only the features new
-  in 6.0, `chapters.json` with `"extras": false` - the promo pictures of no chapter are not added -, its own
-  `tagline` of the intro and `endline` of the end card); `marketing/video-5.5.45` is the frozen video of every feature
+  in 6.0, from the pictures of its own promotion scenario TR-04 only - `chapters.json` `"scenarios": ["TR-04"]` -
+  with `"extras": false` - the promo pictures of no chapter are not added -, its own `tagline` of the intro and
+  `endline` of the end card; chapters: Build your city, A home among mortals, Children of the Dao, Found a clan, Clan elders, Clan
+  wars, New paths of cultivation, Righteous or ruthless, The Artisan Dao; a **cherry blossom theme**, its own style
+  (`src/Promo.tsx`, `src/Sakura.tsx`): all of it in an avenue of cherry trees in bloom under a spring sky (`Avenue`:
+  `SakuraTree`: a dark banded trunk, limbs spreading like an umbrella, a canopy of blossom clusters with shade, sunlit
+  tops and single flowers, its edges ragged; two rows going to a vanishing point, the grass and the path meeting in a
+  soft worn edge (the trees drawn once into four transparent layers, `public/avenue/*.png`, by
+  `scripts/render-layers.mjs`, run by `npm run render`/`studio`: drawing them on every frame took seconds a frame; the
+  video moves and sways the layers); the camera moving slowly down it the whole
+  video, the trees swaying), petals falling all the time (`PetalField`, some near the lens, blurred), a burst of
+  petals on each big drum hit (`music.accents`); the pictures on white paper with a sprig of blossom, the caption on a
+  cream band with a turning flower; a chapter card is a pale moon with the brush character and the volume seal, a
+  flowering branch growing over it (`Branch`); the scenes come in 8 sakura ways in turn (`KINDS`): a gust of petals,
+  a flower opening from the middle, a folding fan unfolding, flowers opening all over, a flowering branch sweeping
+  across, a moon gate, a curtain of falling petals, the page of an album; the next picture of a scene turns in like a
+  fan leaf, is passed from hand to hand or falls like a petal (`SWAPS`). Music: "Chinese Oriental Asian Love Music
+  Loop" by Dvir Silverstone (Pixabay; the track is registered with YouTube Content ID: on YouTube, the Pixabay licence
+  certificate clears a claim), `public/sonican-chinese-oriental-asian-love-music-loop-459656.mp3`, a loop of 128 beats
+  at 94.15 BPM (19.12 frames a beat): intro on beats 0-14, the chapters on 14-118 (every card and picture on a drum
+  hit, beats 2 mod 4), the end card on the last chord (118-128); chapters longer than 104 beats play the middle of
+  `main` again (cut on 2 mod 4, `scripts/cut-music.py`), the accents follow the pieces (`ACCENTS` in `src/data.ts`);
+  `music.sections`/`long` in chapters.json, the beat found by onset analysis); `marketing/video-5.5.45` is the frozen video of every feature
   up to 5.5.45 (the same project copied; `node_modules` a junction to `../video-6.0.0/node_modules`, so `npm run render`
   works there without an install; its `out/taoist-promo.mp4` the video rendered then). A later version: copy
   `marketing/video-6.0.0` to `marketing/video-<version>` the same way before changing it.
-- **Marketing video** (`marketing/video-6.0.0`, Remotion, Node.js, Python + numpy): a calm xianxia-styled video from the
+- **Marketing video** (`marketing/video-5.5.45`, Remotion, Node.js, Python + numpy; the 6.0 video is made the same
+  way, in its own style above): a calm xianxia-styled video from the
   SteamImg pictures and the captions of the promo entries of scenarios.json, by chapter (`src/chapters.json`: Shape your
   world, Master your cultivator, A living economy, Family allies and enemies, Living stories). Intro: the game's name, a
   brush 道, TAOIST slams with its red seal; a card per chapter over its first picture, blurred (brush character of the
   chapter, "第一卷" seal, VOLUME I and the title; the picture then comes into focus); then the scenes of the chapter:
-  a picture (a name in `pictures` / `short`) or the pictures of one feature (a list of names: S&M configs pages,
+  a picture (a name in `pictures`) or the pictures of one feature (a list of names: S&M configs pages,
   techniques, bank and loan...), shown in one of 11 ways, each once in the long video (`GROUP_ORDER` in `src/Promo.tsx`): a stack of cards (the one
   shown drifts left, rises like qi, turns over like a page, is shuffled to the back or melts into a haze), a gallery
   (each comes in big from the right, then shrinks into a column on the left), a handscroll (unrolled from the middle, side
@@ -305,11 +338,11 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
   blurred, with the music credit (no feature count: more keep coming). Cloud mist and qi motes on the cards; fonts Ma Shan Zheng (brush)
   and Cinzel (titles), Google Fonts (OFL), downloaded to `public/fonts`. Music: "Samurai" by eBunny (Pixabay, free
   licence, credited in the end card), `public/ebunny-samurai-354083.mp3`, 112 BPM: every scene starts on the nearest
-  frame of a beat (16.07 frames at 30 fps). `scripts/cut-music.py` cuts the song to each video on beats: the
+  frame of a beat (16.07 frames at 30 fps). `scripts/cut-music.py` cuts the song to the video on beats: the
   sections of the song (`music` of chapters.json: intro, build, drop1, break, drop2, end) are trimmed so that each drop
-  starts on a chapter card and the song's ending plays under the end card (`public/music-long.wav` / `music-short.wav`).
-  `npm install` once, then `npm run studio` (preview), `npm run render` (all pictures, `out/taoist-promo.mp4`),
-  `npm run render:short` (the `short` pictures of each chapter), `npm run render:still`. `prepare-assets` (run by each)
+  starts on a chapter card and the song's ending plays under the end card (`public/music-long.wav`).
+  `npm install` once, then `npm run studio` (preview), `npm run render` (`out/taoist-promo.mp4`; there is no
+  short video), `npm run render:still`. `prepare-assets` (run by each)
   copies SteamImg to `public/steam`, downloads the fonts, writes the plans (`src/promo.generated.json`) and cuts the
   music (none in git).
 - **Preview images** (`marketing/preview`): `preview.html` (ink, gold title, red seal) rendered by `render.ps1` (Edge

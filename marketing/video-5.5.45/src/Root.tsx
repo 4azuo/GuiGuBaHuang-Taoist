@@ -14,15 +14,5 @@ export const Root: React.FC = () => (
       height={1080}
       defaultProps={{ plan: plans.long, music: "music-long.wav" } satisfies PromoProps}
     />
-    {/* the "short" pictures of each chapter, for social posts */}
-    <Composition
-      id="TaoistPromoShort"
-      component={Promo}
-      durationInFrames={frameOf(beatsOf(plans.short))}
-      fps={FPS}
-      width={1920}
-      height={1080}
-      defaultProps={{ plan: plans.short, music: "music-short.wav" } satisfies PromoProps}
-    />
   </>
 );

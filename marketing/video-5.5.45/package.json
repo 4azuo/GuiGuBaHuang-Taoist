@@ -6,7 +6,6 @@
     "prepare-assets": "node scripts/prepare-assets.mjs",
     "studio": "npm run prepare-assets && remotion studio",
     "render": "npm run prepare-assets && remotion render TaoistPromo out/taoist-promo.mp4",
-    "render:short": "npm run prepare-assets && remotion render TaoistPromoShort out/taoist-promo-short.mp4",
     "render:still": "npm run prepare-assets && remotion still TaoistPromo out/thumbnail.png --frame=30",
     "typecheck": "tsc --noEmit"
   },

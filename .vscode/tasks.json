@@ -290,9 +290,9 @@
         },
         {
             "label": "Marketing: Render Video",
-            "detail": "Remotion video from SteamImg (marketing/video-6.0.0): out/taoist-promo.mp4 and out/taoist-promo-short.mp4",
+            "detail": "Remotion video from SteamImg (marketing/video-6.0.0): out/taoist-promo.mp4",
             "type": "shell",
-            "command": "npm install --no-audit --no-fund && npm run render && npm run render:short",
+            "command": "npm install --no-audit --no-fund && npm run render",
             "options": { "cwd": "${workspaceFolder}/marketing/video-6.0.0" },
             "problemMatcher": [],
             "presentation": { "panel": "dedicated", "clear": true }

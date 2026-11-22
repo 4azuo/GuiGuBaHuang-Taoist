@@ -4,8 +4,8 @@
 // - writes src/promo.generated.json: the plan of each video (intro, chapters with their pictures and captions - the
 //   "promo" entries of 3161035078/tests/scenarios.json, pictures taken by scripts/game/run-promo.ps1 - and outro, in
 //   beats; src/chapters.json gives the chapters, the timing and the music);
-// - cuts the song to the timeline of each video (scripts/cut-music.py -> public/music-long.wav / music-short.wav):
-//   every cut on a beat, each drop of the song on a chapter card.
+// - cuts the song to the timeline of the video (scripts/cut-music.py -> public/music-long.wav): every cut on a beat,
+//   each drop of the song on a chapter card.
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
@@ -25,12 +25,24 @@ const music = timing.music;
 if (!fs.existsSync(steamImg)) throw new Error(`No SteamImg folder: ${steamImg}`);
 fs.rmSync(steam, { recursive: true, force: true });
 fs.mkdirSync(steam, { recursive: true });
-const files = fs.readdirSync(steamImg).filter((f) => /\.(png|jpe?g)$/i.test(f));
-for (const f of files) fs.copyFileSync(path.join(steamImg, f), path.join(steam, f));
+// SteamImg/<picture> and SteamImg/promo-<version>/promo_<scenario>_<name>.jpg: copied flat (the names are unique)
+const isPicture = (f) => /\.(png|jpe?g)$/i.test(f);
+const sources = new Map();
+for (const f of fs.readdirSync(steamImg)) {
+  const full = path.join(steamImg, f);
+  if (fs.statSync(full).isDirectory()) {
+    if (f.startsWith("promo-")) for (const g of fs.readdirSync(full).filter(isPicture)) sources.set(g, path.join(full, g));
+  } else if (isPicture(f)) sources.set(f, full);
+}
+const files = [...sources.keys()];
+for (const [f, src] of sources) fs.copyFileSync(src, path.join(steam, f));
 
 const scenarios = JSON.parse(fs.readFileSync(scenariosFile, "utf8").replace(/^﻿/, "")).scenarios ?? [];
+// the pictures are SteamImg/promo-<version>/promo_<scenario>_<name>.jpg (collect-promo.ps1); chapters.json "scenarios": only the
+// pictures of these scenarios (the 6.0 video: its own set TR-04)
 const promo = scenarios
-  .flatMap((s) => (s.promo ?? []).map((p) => ({ name: p.name, file: `promo_${p.name}.jpg`, caption: p.caption ?? "" })))
+  .filter((s) => !Array.isArray(timing.scenarios) || timing.scenarios.includes(s.id))
+  .flatMap((s) => (s.promo ?? []).map((p) => ({ name: p.name, file: `promo_${s.id}_${p.name}.jpg`, caption: p.caption ?? "" })))
   .filter((p) => files.includes(p.file));
 const extra = files.filter((f) => !f.startsWith("promo_") && !/^preview\./i.test(f)).sort();
 console.log(`SteamImg: ${files.length} picture(s), ${promo.length} with a caption -> public/steam`);
@@ -50,20 +62,20 @@ for (const [name, url] of Object.entries(fonts)) {
   console.log(`font: ${name}`);
 }
 
-// --- plans: the chapters of a video with their pictures present in SteamImg (empty chapters skipped)
+// --- plan: the chapters of the video with their pictures present in SteamImg (empty chapters skipped)
 const slideOf = (p) => ({ file: p.file, caption: p.caption, name: p.name });
-const partsFor = (short) => {
+const partsFor = () => {
   if (promo.length === 0) return [{ title: "TAOIST", subtitle: "", glyph: "道", number: 1, scenes: extra.map((file) => [{ file }]) }];
   const named = (n) => promo.find((p) => p.name === n);
   const parts = timing.chapters
     .map((c) => ({
       title: c.title, subtitle: c.subtitle, glyph: c.glyph,
       // a scene: one picture (a name) or the pictures of one feature (a list of names)
-      scenes: (short ? c.short : c.pictures).map((x) => [x].flat().map(named).filter(Boolean).map(slideOf)).filter((x) => x.length > 0),
+      scenes: c.pictures.map((x) => [x].flat().map(named).filter(Boolean).map(slideOf)).filter((x) => x.length > 0),
     }))
     .filter((p) => p.scenes.length > 0);
-  // the long video also shows the pictures of no chapter, in the last one
-  if (!short && parts.length > 0 && timing.extras !== false)
+  // the pictures of no chapter are shown in the last one
+  if (parts.length > 0 && timing.extras !== false)
     parts[parts.length - 1].scenes.push(...promo.filter((p) => !timing.chapters.some((c) => c.pictures.flat().includes(p.name))).map((p) => [slideOf(p)]));
   return parts.map((p, i) => ({ ...p, number: i + 1 }));
 };
@@ -92,7 +104,7 @@ fitSection.rest = (name, from, take) => {
   return [[from, e - from - 16], ...fitSection.rest(name, from, take - (e - from - 16))];
 };
 
-/** The song pieces of a video: intro, the body sections (each one after the first ends on a chapter card, so the next
+/** The song pieces of the video: intro, the body sections (each one after the first ends on a chapter card, so the next
  *  section - a drop - starts on one; the last one fills the rest and ends where the outro starts), outro. */
 const musicPieces = (variant, parts) => {
   const v = music[variant];
@@ -129,12 +141,12 @@ if (!fs.existsSync(song) || fs.statSync(song).mtimeMs < fs.statSync(mp3).mtimeMs
   // the ffmpeg shipped with Remotion
   execFileSync(process.execPath, [path.join(root, "node_modules", "@remotion", "cli", "remotion-cli.js"), "ffmpeg", "-y", "-loglevel", "error",
     "-i", mp3, "-ar", "44100", "-ac", "2", song], { cwd: root, stdio: "inherit" });
-for (const [name, short] of [["long", false], ["short", true]]) {
-  const parts = partsFor(short);
-  const v = music[name];
-  plans[name] = { intro: v.intro[1] - v.intro[0], outro: v.outro[1] - v.outro[0], parts };
-  const tl = path.join(root, "src", `timeline-${name}.generated.json`);
-  fs.writeFileSync(tl, JSON.stringify({ bpm: music.bpm, firstBeat: music.firstBeat, pieces: musicPieces(name, parts) }, null, 2));
-  process.stdout.write(execFileSync("python", [path.join(here, "cut-music.py"), song, tl, path.join(pub, `music-${name}.wav`)], { encoding: "utf8" }));
+{
+  const parts = partsFor();
+  const v = music.long;
+  plans.long = { intro: v.intro[1] - v.intro[0], outro: v.outro[1] - v.outro[0], parts };
+  const tl = path.join(root, "src", "timeline-long.generated.json");
+  fs.writeFileSync(tl, JSON.stringify({ bpm: music.bpm, firstBeat: music.firstBeat, pieces: musicPieces("long", parts) }, null, 2));
+  process.stdout.write(execFileSync("python", [path.join(here, "cut-music.py"), song, tl, path.join(pub, "music-long.wav")], { encoding: "utf8" }));
 }
 fs.writeFileSync(path.join(root, "src", "promo.generated.json"), JSON.stringify(plans, null, 2));

@@ -8,7 +8,7 @@ export type Part = { title: string; subtitle: string; glyph: string; number: num
 /** A video (written by scripts/prepare-assets.mjs): intro and outro in beats, the chapters. */
 export type Plan = { intro: number; outro: number; parts: Part[] };
 
-export const plans = generated as { long: Plan; short: Plan };
+export const plans = generated as { long: Plan };
 
 export const FPS = timing.fps;
 export const BPM = timing.music.bpm;

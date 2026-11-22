@@ -55,16 +55,22 @@
     if (state.feat && String(feature || '') !== state.feat) return false;
     return true;
   }
-  /** Group chips (with counts) and the feature list for a list of {id, feature}. */
-  function groupBar(items) {
-    const counts = {}, feats = {};
+  /** Group chips and the feature list for a list of {id, feature}. Every group of scenarios.json is shown, with
+   *  "results / total": the scenario ids having a result (in items, or hasResult(item)) over the defined ones. */
+  function groupBar(items, hasResult = () => true) {
+    const feats = {}, total = {}, done = {};
+    (DATA.definitions || []).forEach(d => { const g = groupOf(d.id); total[g] = (total[g] || 0) + 1; });
+    const ids = new Set();
     items.forEach(x => {
-      const g = groupOf(x.id); counts[g] = (counts[g] || 0) + 1;
+      const g = groupOf(x.id), id = String(x.id || '').split('#')[0];
+      if (!(g in total)) total[g] = 0;
+      if (hasResult(x) && !ids.has(id)) { ids.add(id); done[g] = (done[g] || 0) + 1; }
       if (state.group === 'all' || g === state.group) feats[x.feature || '-'] = (feats[x.feature || '-'] || 0) + 1;
     });
-    const order = Object.keys(GROUPS).concat(Object.keys(counts).filter(g => !(g in GROUPS)).sort()).filter(g => counts[g]);
-    const chips = [`<button class="chip ${state.group === 'all' ? 'on' : ''}" data-group="all">All groups <small>${items.length}</small></button>`]
-      .concat(order.map(g => `<button class="chip ${state.group === g ? 'on' : ''}" data-group="${esc(g)}" title="${esc(GROUPS[g] || g)}">${esc(g)} <small>${counts[g]}</small></button>`));
+    const sum = o => Object.values(o).reduce((a, b) => a + b, 0);
+    const order = Object.keys(GROUPS).concat(Object.keys(total).filter(g => !(g in GROUPS)).sort()).filter(g => g in total);
+    const chips = [`<button class="chip ${state.group === 'all' ? 'on' : ''}" data-group="all" title="Scenarios with a result / defined">All groups <small>${sum(done)}/${sum(total)}</small></button>`]
+      .concat(order.map(g => `<button class="chip ${state.group === g ? 'on' : ''} ${done[g] ? '' : 'empty'}" data-group="${esc(g)}" title="${esc(GROUPS[g] || g)}: ${done[g] || 0} with a result / ${total[g]} defined">${esc(g)} <small>${done[g] || 0}/${total[g]}</small></button>`));
     const opts = Object.keys(feats).sort((a, b) => a.localeCompare(b)).map(f =>
       `<option value="${esc(f)}" ${state.feat === f ? 'selected' : ''}>${esc(f)} (${feats[f]})</option>`).join('');
     return `<div class="toolbar groupbar"><span class="glabel">Group</span>${chips.join('')}
@@ -480,7 +486,7 @@
       </div></div>
       <div class="card"><div class="card-head sticky-head"><h2>Scenarios <small class="count">${list.length} / ${defs.length}</small></h2>
         <div class="toolbar">${[['all', 'All'], ['NG', 'NG'], ['OK', 'OK'], ['SKIP', 'SKIP'], ['-', 'Not tested']].map(([f, t]) => `<button class="chip ${state.filter === f ? 'on' : ''}" data-filter="${f}">${t}</button>`).join('')}
-        <input class="search" id="search" placeholder="Search..." value="${esc(state.query)}">${sortSelect()}${listActs()}</div>${groupBar(defs)}</div>
+        <input class="search" id="search" placeholder="Search..." value="${esc(state.query)}">${sortSelect()}${listActs()}</div>${groupBar(defs, d => ((status[d.id] || {}).result || '-') !== '-')}</div>
         <table class="rows sticky-rows"><thead><tr><th></th><th>Id</th><th>Latest</th><th>Scenario</th><th>History</th><th>Last run</th></tr></thead><tbody>${body}</tbody></table>
       </div>`;
   }

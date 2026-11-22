@@ -153,16 +153,32 @@ public static class AutoTestWin32b {
 }
 [void][AutoTestWin32b]::SetProcessDPIAware()
 
-# Captures the game window with PrintWindow (PW_RENDERFULLCONTENT): works when other windows cover it.
-# Falls back to a screen copy of the primary screen when the window is minimized or PrintWindow fails.
+if (-not ('AutoTestWin32Show' -as [type])) {
+    Add-Type -TypeDefinition @'
+using System;
+using System.Runtime.InteropServices;
+public static class AutoTestWin32Show {
+    [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int cmd);
+}
+'@
+}
+
+# Captures the game window with PrintWindow (PW_RENDERFULLCONTENT): works when other windows cover it. A minimized
+# game window is restored first without activation (SW_SHOWNOACTIVATE: the tester's window keeps the focus).
+# Never a copy of the screen: it took the tester's desktop instead of the game (TT-06 2026-11-19; the promotion
+# pictures of TR-04 2026-11-22 showed the browser with its tabs) - no picture then, a warning.
 function Save-GameScreenshot([string]$Path) {
     New-Item -ItemType Directory -Path (Split-Path $Path) -Force | Out-Null
-    # a few tries: the window handle of the game is sometimes not readable for a moment (the screen copy below then
-    # gives the desktop instead of the game, TT-06 2026-11-19)
-    for ($try = 0; $try -lt 3; $try++) {
+    # a few tries: the window handle of the game is sometimes not readable for a moment
+    for ($try = 0; $try -lt 5; $try++) {
         if ($try -gt 0) { Start-Sleep -Milliseconds 300 }
         $p = Get-GameProcess
-        if (-not $p -or $p.MainWindowHandle -eq [IntPtr]::Zero -or [AutoTestWin32b]::IsIconic($p.MainWindowHandle)) { continue }
+        if (-not $p -or $p.MainWindowHandle -eq [IntPtr]::Zero) { continue }
+        if ([AutoTestWin32b]::IsIconic($p.MainWindowHandle)) {
+            [AutoTestWin32Show]::ShowWindow($p.MainWindowHandle, 4) | Out-Null   # SW_SHOWNOACTIVATE
+            Start-Sleep -Milliseconds 500
+            if ([AutoTestWin32b]::IsIconic($p.MainWindowHandle)) { continue }
+        }
         $r = New-Object AutoTestWin32b+RECT
         if ([AutoTestWin32b]::GetWindowRect($p.MainWindowHandle, [ref]$r) -and ($r.Right - $r.Left) -gt 100) {
             $bmp = New-Object Drawing.Bitmap ($r.Right - $r.Left), ($r.Bottom - $r.Top)
@@ -174,15 +190,7 @@ function Save-GameScreenshot([string]$Path) {
             finally { $bmp.Dispose() }
         }
     }
-    Add-Type -AssemblyName System.Windows.Forms
-    $rect = [Windows.Forms.Screen]::PrimaryScreen.Bounds
-    $bmp = New-Object Drawing.Bitmap $rect.Width, $rect.Height
-    $gfx = [Drawing.Graphics]::FromImage($bmp)
-    try {
-        $gfx.CopyFromScreen($rect.Location, [Drawing.Point]::Empty, $rect.Size)
-        $bmp.Save($Path, [Drawing.Imaging.ImageFormat]::Png)
-    }
-    finally { $gfx.Dispose(); $bmp.Dispose() }
+    Write-Warn "Screenshot not taken (the game window could not be captured): $(Split-Path $Path -Leaf)"
 }
 
 # The game window as a bitmap (PrintWindow), null when it cannot be captured this way.
@@ -272,7 +280,8 @@ if ($needNew -and -not $useNewCharacter -and $selectedIds.Count -gt 0) {
     Write-Warning "Scenarios needing a new character run on an existing save: $(@($definitions | Where-Object { $_.newCharacter -and $selectedIds -contains $_.id } | ForEach-Object { $_.id }) -join ', ')"
 }
 
-# Tools (kind "tool": the effect galleries TE-xx, the investigations TI-xx) run for a long time: only once the user
+# Tools (kind "tool": the effect galleries TE-xx, the investigations TI-xx, the promotion pictures TR-xx) run for a
+# long time: only once the user
 # confirmed it - a prompt in an interactive terminal, -ConfirmTools otherwise (never just because the scenarios ran).
 function Confirm-ToolRun([string[]]$Ids, [switch]$Confirmed) {
     if ($Ids.Count -eq 0 -or $Confirmed) { return $true }

@@ -1,5 +1,5 @@
 """Data of the promo viewer (promo-viewer/index.html) -> promo-viewer/data/promo.js:
-- the pictures of 3161035078/ModProject/SteamImg (promo_*.jpg with the captions of scenarios.json, the other pictures);
+- the pictures of 3161035078/ModProject/SteamImg (promo-<version>/promo_<scenario>_<name>.jpg with the captions of scenarios.json, the other pictures);
 - the promo entries of 3161035078/tests/scenarios.json (taken or not);
 - the promotion screenshots ("promo-<name>") of every autotest run still in logs/autotest, to compare the takes;
 - the rendered videos of marketing/video-6.0.0/out.
@@ -28,19 +28,27 @@ defs = load(os.path.join(repo, "3161035078", "tests", "scenarios.json"), {"scena
 entries = []
 for d in defs:
     for p in d.get("promo", []):
+        # promo-<version>/promo_<scenario>_<name>.jpg (collect-promo.ps1): one folder per version of the mod
+        ver = d.get("promoVersion") or "other"
         entries.append({"name": p["name"], "caption": p.get("caption", ""), "scenario": d["id"], "step": p["step"],
-                        "nth": p.get("nth", 1)})
-known = {e["name"] for e in entries}
+                        "nth": p.get("nth", 1), "version": ver,
+                        "file": f"promo-{ver}/promo_{d['id']}_{p['name']}.jpg"})
+known = {e["file"] for e in entries}
 
 pictures = []
 if os.path.isdir(steam):
-    for f in sorted(os.listdir(steam)):
-        if not re.search(r"\.(png|jpe?g)$", f, re.I):
-            continue
-        full = os.path.join(steam, f)
-        m = re.match(r"promo_(.+)\.(?:png|jpe?g)$", f, re.I)
-        pictures.append({"file": f, "name": m.group(1) if m else None, "size": os.path.getsize(full),
-                         "time": stamp(full), "stale": bool(m) and m.group(1) not in known})
+    for top, _dirs, names in os.walk(steam):
+        for n in names:
+            if not re.search(r"\.(png|jpe?g)$", n, re.I):
+                continue
+            full = os.path.join(top, n)
+            f = os.path.relpath(full, steam).replace(os.sep, "/")
+            m = re.match(r"promo_(?:([A-Z]{2}-\d+)_)?(.+)\.(?:png|jpe?g)$", n, re.I)
+            vm = re.match(r"promo-([^/]+)/", f)
+            pictures.append({"file": f, "name": m.group(2) if m else None, "scenario": m.group(1) if m else None,
+                             "version": vm.group(1) if vm else None,
+                             "size": os.path.getsize(full), "time": stamp(full), "stale": bool(m) and f not in known})
+    pictures.sort(key=lambda x: x["file"])
 
 # takes of every run: screens/NNN_<id>_NN-promo-<name>.png
 runs = []
