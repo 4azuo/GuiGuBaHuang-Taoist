@@ -26,13 +26,14 @@ One line at the height of the START GAME button (`btnOK_En` when shown, else `bt
 | `OnOpenUIEnd(MapMain)` | not None | `ApplyWeapons()`; if `IntroEnded` -> `None` |
 | `OnOpenUIEnd(IntoGameInfo / IntoGameDrama)` | not None, `SkipIntro` | closes the screen 100 ms later (`ModDelayEvent`; closing inside its own open event is unsafe); records the time |
 | `OnOpenUIEnd(GodEye / PiscesPendant / DevilDemon)` | `SkipIntro`, < 10 s after a skip | closes it too (the game opens one after the skipped intro) |
-| `OnCloseUIEnd(IntoGameDrama)` | not None | `ApplyWeapons()` again (the intro drama may set its own artifact); then `None` if skipped, else `IntroEnded` (applied a last time on the map after the first battle) |
+| `OnCloseUIEnd(IntoGameDrama)` | not None | `ApplyWeapons()` again (the intro drama may set its own artifact); skipped: `FIRST_BATTLE_UNLOCKS` (see Notes), then `None`; else `IntroEnded` (applied a last time on the map after the first battle) |
 
 `ApplyWeapons()`: nothing when no box is checked (the game's choice stays); else `GodArtifactHelper.SetAnimaWeapon(selected)` + `UpdateUI()`.
 
 ## Notes
 
 - Later map openings (after battles, trainer...) do not touch the artifacts.
+- The game shows the Tree Vault (storage: town 2011, sect 1008) and the area-1 Manual Pavilion (2010) only after its trigger 11009 (map loaded after the first battle, dungeon 15). A skipped intro never gets there, so the skip runs these unlocks itself (`DramaFunctionTool.OptionsFunction("showTownSubBuild_1_2010|showTownSubBuild_-1_2011|showTownSubBuild_-1_1008")`, 6.1.04). Saves made with the skip before 6.1.04 keep the storage hidden; with the intro played the game unlocks it as usual.
 - With several artifacts, their map / battle buttons and hotkeys come from [AnimaWeaponEvent](AnimaWeaponEvent.md).
 
 ## Tests

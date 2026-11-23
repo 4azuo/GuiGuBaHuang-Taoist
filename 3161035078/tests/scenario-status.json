@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-23T08:27:45",
+  "updatedAt": "2026-11-23T21:28:29",
   "counts": {
-    "OK": 5,
+    "OK": 7,
     "NG": 1,
     "SKIP": 1,
-    "NOT RUN": 135,
+    "NOT RUN": 134,
     "-": 4
   },
   "scenarios": [
@@ -251,8 +251,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "OK",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "lastRun": "2026-11-23T21:28:29",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-212502",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -820,9 +820,9 @@
       "kind": "auto",
       "feature": "BankAccountEvent",
       "title": "Town storage: open a bank account",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-23T21:03:12",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-210105",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3750,6 +3750,21 @@
       "note": null,
       "checks": {
         "TI-01-01": "OK"
+      }
+    },
+    {
+      "id": "TI-02",
+      "kind": "tool",
+      "feature": "Autotest",
+      "title": "Investigation: sub-buildings of the town window",
+      "result": "OK",
+      "lastRun": "2026-11-23T21:28:29",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-212502",
+      "tester": "autotest",
+      "note": null,
+      "checks": {
+        "TI-02-01": "OK",
+        "TI-02-02": "OK"
       }
     },
     {

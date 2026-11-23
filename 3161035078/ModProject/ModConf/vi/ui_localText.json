@@ -248,5 +248,25 @@
 		"id": "-1000008049",
 		"key": "ui_modlib_too_old",
 		"en|ch|tc|kr": "Taoist {0} không hỗ trợ ModLib {1}!\nHãy cài ModLib {2} trở lên."
+	},
+	{
+		"id": "-1000008050",
+		"key": "ui_town_buildup_notice",
+		"en|ch|tc|kr": "Save này đang BẬT \"Cho phép xây dựng thị trấn theo thời gian\" (cài đặt S&M).\nThị trấn và tông môn bắt đầu không có công trình phụ (truyền tống trận, đấu giá, lò rèn, chợ sách, chợ y phục, bảng truy nã, phòng luyện công và truyền tống trận của tông môn); vùng đầu tiên vẫn giữ trừ khi bật \"Bao gồm thị trấn đầu tiên\". Mỗi tháng thị trấn hoặc tông môn đủ ngân sách có thể xây lại một công trình; trấn chủ xây bằng ngân sách thị trấn.\n\nTẮT cho save này? Mọi công trình sẽ có lại ngay và điểm S&M bị trừ điểm của tùy chọn này."
+	},
+	{
+		"id": "-1000008051",
+		"key": "ui_town_buildup_off",
+		"en|ch|tc|kr": "Đã TẮT \"Cho phép xây dựng thị trấn theo thời gian\": thị trấn và tông môn đã có lại công trình."
+	},
+	{
+		"id": "-1000008052",
+		"key": "ui_town_portal_notice",
+		"en|ch|tc|kr": "Save này đang BẬT \"Cổng thông tin duy nhất tại Thành phố và Giáo phái\" (cài đặt S&M).\nThị trấn nhỏ không có truyền tống trận: chỉ thành chính và tông môn giữ lại, thị trấn nhỏ không bao giờ xây lại nên di chuyển lâu hơn.\n\nTẮT cho save này? Thị trấn nhỏ có lại truyền tống trận ngay (nơi bị \"Cho phép xây dựng thị trấn theo thời gian\" dỡ bỏ thì sẽ xây lại dần) và điểm S&M bị trừ điểm của tùy chọn này."
+	},
+	{
+		"id": "-1000008053",
+		"key": "ui_town_portal_off",
+		"en|ch|tc|kr": "Đã TẮT \"Cổng thông tin duy nhất tại Thành phố và Giáo phái\": thị trấn nhỏ có thể có lại truyền tống trận."
 	}
 ]

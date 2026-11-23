@@ -248,5 +248,25 @@
 		"id": "-1000008049",
 		"key": "ui_modlib_too_old",
 		"en|ch|tc|kr": "Taoist {0} n'est pas pris en charge par ModLib {1} !\nVeuillez installer ModLib {2} ou plus récent."
+	},
+	{
+		"id": "-1000008050",
+		"key": "ui_town_buildup_notice",
+		"en|ch|tc|kr": "Cette partie a \"Autoriser la construction de la ville au fil du temps\" ACTIVÉ (réglages S&M).\nLes villes et sectes commencent sans leurs bâtiments annexes (portail, enchères, forge, marchés de livres et de vêtements, tableau des primes, salle d'entraînement et portail de secte) ; la première région les garde sauf si \"Inclure la première ville\" est activé. Chaque mois, une ville ou secte avec assez de budget peut en reconstruire un ; un maître de ville les construit avec le budget de la ville.\n\nLe DÉSACTIVER pour cette partie ? Tous les bâtiments reviennent tout de suite et le score S&M perd les points de l'option."
+	},
+	{
+		"id": "-1000008051",
+		"key": "ui_town_buildup_off",
+		"en|ch|tc|kr": "\"Autoriser la construction de la ville au fil du temps\" est DÉSACTIVÉ : les villes et sectes ont retrouvé leurs bâtiments."
+	},
+	{
+		"id": "-1000008052",
+		"key": "ui_town_portal_notice",
+		"en|ch|tc|kr": "Cette partie a \"Seul portail dans la ville et la secte\" ACTIVÉ (réglages S&M).\nLes petites villes n'ont pas de portail : seules les cités et les sectes en gardent un, et les petites villes ne le reconstruisent jamais, les voyages sont donc plus longs.\n\nLe DÉSACTIVER pour cette partie ? Les petites villes retrouvent leur portail tout de suite (là où \"Autoriser la construction de la ville au fil du temps\" l'a retiré, elles le reconstruisent avec le temps) et le score S&M perd les points de l'option."
+	},
+	{
+		"id": "-1000008053",
+		"key": "ui_town_portal_off",
+		"en|ch|tc|kr": "\"Seul portail dans la ville et la secte\" est DÉSACTIVÉ : les petites villes peuvent de nouveau avoir un portail."
 	}
 ]

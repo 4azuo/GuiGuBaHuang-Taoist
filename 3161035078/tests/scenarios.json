@@ -3253,6 +3253,22 @@
       ]
     },
     {
+      "id": "TI-02",
+      "kind": "tool",
+      "feature": "Autotest",
+      "title": "Investigation: sub-buildings of the town window",
+      "description": "Tool, not a test (runs only with -Scenario TI-02): a town with a storage (Tree Vault) is entered and the hierarchy of its town window is written to the mod log, to find why a sub-building of the game's data is not drawn.",
+      "preconditions": "An existing save",
+      "steps": [
+        "Travel to a city with a storage",
+        "Enter the town",
+        "Dump the town window"
+      ],
+      "expected": [
+        "The dump in the mod log"
+      ]
+    },
+    {
       "id": "TR-01",
       "kind": "tool",
       "feature": "Promo",

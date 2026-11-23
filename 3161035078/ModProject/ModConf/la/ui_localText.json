@@ -248,5 +248,25 @@
 		"id": "-1000008049",
 		"key": "ui_modlib_too_old",
 		"en|ch|tc|kr": "Taoist {0} cum ModLib {1} non operatur!\nModLib {2} vel recentiorem instrue."
+	},
+	{
+		"id": "-1000008050",
+		"key": "ui_town_buildup_notice",
+		"en|ch|tc|kr": "Hic ludus \"Patitur oppidum Buildup super Tempus\" ACCENSUM habet (S&M).\nOppida et sectae sine aedificiis additis incipiunt (porta, auctio, fabrica, fora librorum et vestium, tabula praemiorum, aula exercitationis et porta sectae); prima regio ea servat nisi \"Include Primum Urbs\" accensum est. Quoque mense oppidum vel secta cum satis pecuniae unum reficere potest; dominus oppidi ea ex pecunia oppidi aedificat.\n\nIn hoc ludo EXSTINGUERE? Omnia aedificia statim redeunt et numerus S&M puncta optionis amittit."
+	},
+	{
+		"id": "-1000008051",
+		"key": "ui_town_buildup_off",
+		"en|ch|tc|kr": "\"Patitur oppidum Buildup super Tempus\" EXSTINCTUM est: oppida et sectae aedificia receperunt."
+	},
+	{
+		"id": "-1000008052",
+		"key": "ui_town_portal_notice",
+		"en|ch|tc|kr": "Hic ludus \"Tantum Portal in urbe et Sect\" ACCENSUM habet (S&M).\nOppida parva portam non habent: solae urbes et sectae eam servant, neque oppida parva eam reficiunt, itaque iter longius est.\n\nIn hoc ludo EXSTINGUERE? Oppida parva portam statim recipiunt (ubi \"Patitur oppidum Buildup super Tempus\" eam sustulit, tempore reficiunt) et numerus S&M puncta optionis amittit."
+	},
+	{
+		"id": "-1000008053",
+		"key": "ui_town_portal_off",
+		"en|ch|tc|kr": "\"Tantum Portal in urbe et Sect\" EXSTINCTUM est: oppida parva portam rursus habere possunt."
 	}
 ]

@@ -241,6 +241,7 @@
     <Compile Include="AutoTest\Scenarios\Title\TT01_UITitleScreenEvent.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TE_EffectGallery.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TI01_SaveReloadProbe.cs" />
+    <Compile Include="AutoTest\Scenarios\Tool\TI02_TownBuildingsProbe.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TR_PromoShots.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TR04_Promo60.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT02_SMGlobalConfigsEvent.cs" />

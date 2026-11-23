@@ -398,5 +398,37 @@
     "ch": "Taoist {0} 不支持 ModLib {1}！\n请安装 ModLib {2} 或更高版本。",
     "tc": "Taoist {0} 不支援 ModLib {1}！\n請安裝 ModLib {2} 或更高版本。",
     "kr": "Taoist {0}은(는) ModLib {1}을(를) 지원하지 않는다!\nModLib {2} 이상을 설치하라."
+  },
+  {
+    "id": -1000008050,
+    "key": "ui_town_buildup_notice",
+    "en": "This save has \"Allow Town Buildup Over Time\" ON (S&M settings).\nTowns and sects start without their extra buildings (portal, auction, forge, book and clothes markets, bounty board, sect training hall and portal); the first region keeps them unless \"Include First Town\" is ON. Each month a town or sect with enough budget may rebuild one; a town master builds them from the town budget.\n\nTurn it OFF for this save? All the buildings come back now and the S&M score loses the points of the option.",
+    "ch": "本存档开启了“允许随着时间的推移城镇建设”（S&M设置）。\n城镇和宗门开局没有附属建筑（传送阵、拍卖行、炼器坊、书市、衣市、悬赏榜、宗门练功房和传送阵）；除非开启“包括第一镇”，第一个区域会保留它们。每月预算足够的城镇或宗门可能重建一座；镇主可用城镇预算建造。\n\n要在本存档关闭吗？所有建筑会立即恢复，S&M分数扣除该选项的分数。",
+    "tc": "本存檔開啟了「允許隨著時間的推移城鎮建設」（S&M設定）。\n城鎮和宗門開局沒有附屬建築（傳送陣、拍賣行、煉器坊、書市、衣市、懸賞榜、宗門練功房和傳送陣）；除非開啟「包括第一鎮」，第一個區域會保留它們。每月預算足夠的城鎮或宗門可能重建一座；鎮主可用城鎮預算建造。\n\n要在本存檔關閉嗎？所有建築會立即恢復，S&M分數扣除該選項的分數。",
+    "kr": "이 세이브는 \"시간이 지남에 따라 마을 건설을 허용\"이 켜져 있다 (S&M 설정).\n마을과 종문은 부속 건물 없이 시작한다 (전송진, 경매장, 단조방, 책 시장, 옷 시장, 현상금 게시판, 종문 수련장과 전송진). \"퍼스트 타운 포함\"이 꺼져 있으면 첫 지역은 건물을 유지한다. 매달 예산이 충분한 마을이나 종문이 하나를 다시 지을 수 있고, 마을 주인은 마을 예산으로 짓는다.\n\n이 세이브에서 끄겠는가? 모든 건물이 바로 돌아오고 S&M 점수에서 이 옵션의 점수가 빠진다."
+  },
+  {
+    "id": -1000008051,
+    "key": "ui_town_buildup_off",
+    "en": "\"Allow Town Buildup Over Time\" is OFF: the towns and sects got their buildings back.",
+    "ch": "“允许随着时间的推移城镇建设”已关闭：城镇和宗门的建筑已恢复。",
+    "tc": "「允許隨著時間的推移城鎮建設」已關閉：城鎮和宗門的建築已恢復。",
+    "kr": "\"시간이 지남에 따라 마을 건설을 허용\"이 꺼졌다: 마을과 종문의 건물이 돌아왔다."
+  },
+  {
+    "id": -1000008052,
+    "key": "ui_town_portal_notice",
+    "en": "This save has \"Only Portal at City and Sect\" ON (S&M settings).\nSmall towns have no portal: only cities and sects keep one, and small towns never rebuild it, so travel takes longer.\n\nTurn it OFF for this save? Small towns get their portal back now (where \"Allow Town Buildup Over Time\" removed it, they rebuild it over time) and the S&M score loses the points of the option.",
+    "ch": "本存档开启了“城与宗唯一的门户”（S&M设置）。\n小镇没有传送阵：只有主城和宗门保留，小镇也不会重建，所以赶路更久。\n\n要在本存档关闭吗？小镇会立即恢复传送阵（被“允许随着时间的推移城镇建设”拆除的会随时间重建），S&M分数扣除该选项的分数。",
+    "tc": "本存檔開啟了「城與宗唯一的門戶」（S&M設定）。\n小鎮沒有傳送陣：只有主城和宗門保留，小鎮也不會重建，所以趕路更久。\n\n要在本存檔關閉嗎？小鎮會立即恢復傳送陣（被「允許隨著時間的推移城鎮建設」拆除的會隨時間重建），S&M分數扣除該選項的分數。",
+    "kr": "이 세이브는 \"도시와 종파의 유일한 포털\"이 켜져 있다 (S&M 설정).\n작은 마을에는 전송진이 없다: 도시와 종문만 유지하고 작은 마을은 다시 짓지 않아 이동이 더 오래 걸린다.\n\n이 세이브에서 끄겠는가? 작은 마을의 전송진이 바로 돌아오고 (\"시간이 지남에 따라 마을 건설을 허용\"으로 사라진 곳은 시간이 지나며 다시 짓는다) S&M 점수에서 이 옵션의 점수가 빠진다."
+  },
+  {
+    "id": -1000008053,
+    "key": "ui_town_portal_off",
+    "en": "\"Only Portal at City and Sect\" is OFF: small towns can have their portal again.",
+    "ch": "“城与宗唯一的门户”已关闭：小镇可以重新拥有传送阵。",
+    "tc": "「城與宗唯一的門戶」已關閉：小鎮可以重新擁有傳送陣。",
+    "kr": "\"도시와 종파의 유일한 포털\"이 꺼졌다: 작은 마을이 다시 전송진을 가질 수 있다."
   }
 ]

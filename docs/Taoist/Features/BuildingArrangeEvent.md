@@ -9,6 +9,8 @@ Towns and sects build their sub-buildings (portal, auction, forge, shops, bounty
 | Property | Meaning |
 |---|---|
 | `DefaultBuilding` | `"{buildId}_{name}"` of every sub-building the world had at creation: only these can be (re)built |
+| `BuildupNoticeShown` | The notice about `AllowTownBuildupOverTime` was shown in this save (6.1.04) |
+| `PortalNoticeShown` | The notice about `OnlyPortalAtCityAndSect` was shown in this save (6.1.04) |
 
 ## Switches (S&M)
 
@@ -36,6 +38,7 @@ Storage buildings are commented out (not managed). `IsMatchBuildConds`: any town
 | Hook | What happens |
 |---|---|
 | `OnLoadNewGame` | Records `DefaultBuilding`; then applies the switches above. |
+| `OnOpenUIEnd` (Town) | First town of a save with `AllowTownBuildupOverTime` ON (6.1.04, also older saves): a Yes/No popup (`ui_town_buildup_notice`) explains the option; Yes = `TurnOffBuildup`: both switches OFF for this save, S&M `Score` - 1,000 (- 1,000 more with Include First Town), every missing original sub-building built free (small-town portals stay out with `OnlyPortalAtCityAndSect`). Then the same for `OnlyPortalAtCityAndSect` (`ui_town_portal_notice`, one popup after the other): Yes = `TurnOffOnlyPortal`: OFF, `Score` - 1,000, small towns get their original portal free (except where the buildup option removed it: rebuilt over time). Both switches are per save (`SMLocalConfigsEvent`): turning them OFF on the title screen only changes new saves. |
 | `OnMonthly` | Every building except towns where the player is town master: for each managed sub-building that existed at creation and is missing, if `budget > cost` and `Random(0,100) < rate` -> built, budget - cost. |
 
 ```

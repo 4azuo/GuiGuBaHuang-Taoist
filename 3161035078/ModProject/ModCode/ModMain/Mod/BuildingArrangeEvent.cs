@@ -1,6 +1,8 @@
-﻿using MOD_nE7UL2.Const;
+﻿using EGameTypeData;
+using MOD_nE7UL2.Const;
 using MOD_nE7UL2.Enum;
 using ModLib.Attributes;
+using ModLib.Enum;
 using ModLib.Mod;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,11 @@ namespace MOD_nE7UL2.Mod
         public static BuildingArrangeEvent Instance { get; set; }
 
         public List<string> DefaultBuilding { get; set; } = new List<string>();
+
+        /// <summary>True once the notice about "Allow Town Buildup Over Time" was shown in this save.</summary>
+        public bool BuildupNoticeShown { get; set; } = false;
+        /// <summary>True once the notice about "Only Portal at City and Sect" was shown in this save.</summary>
+        public bool PortalNoticeShown { get; set; } = false;
 
         /// <summary>
         /// Key "&lt;buildId&gt;_&lt;subBuilding&gt;".
@@ -70,6 +77,93 @@ namespace MOD_nE7UL2.Mod
                 }
             }
         }
+
+        /// <summary>
+        /// First town of a save with "Allow Town Buildup Over Time" / "Only Portal at City and Sect" ON: explains why towns
+        /// lack buildings (portals) and offers to turn the option OFF (one popup after the other when both are ON).
+        /// </summary>
+        public override void OnOpenUIEnd(OpenUIEnd e)
+        {
+            base.OnOpenUIEnd(e);
+            if (e.uiType.uiName == UIType.Town.uiName)
+                ShowNextNotice();
+        }
+
+        /// <summary>The next notice not shown yet in this save (none when the options are OFF).</summary>
+        private void ShowNextNotice()
+        {
+            var cfg = SMLocalConfigsEvent.Instance.Configs;
+            if (!BuildupNoticeShown && cfg.AllowTownBuildupOverTime)
+            {
+                BuildupNoticeShown = true;
+                ShowNotice("smcfgs050", "ui_town_buildup_notice", "ui_town_buildup_off", TurnOffBuildup);
+            }
+            else if (!PortalNoticeShown && cfg.OnlyPortalAtCityAndSect)
+            {
+                PortalNoticeShown = true;
+                ShowNotice("smcfgs033", "ui_town_portal_notice", "ui_town_portal_off", TurnOffOnlyPortal);
+            }
+        }
+
+        /// <summary>Yes = turn the option OFF (then a confirmation); either way the next notice follows.</summary>
+        private void ShowNotice(string titleKey, string noticeKey, string offKey, Action turnOff)
+        {
+            g.ui.MsgBox(GameTool.LS(titleKey), GameTool.LS(noticeKey), MsgBoxButtonEnum.YesNo,
+                () =>
+                {
+                    turnOff();
+                    g.ui.MsgBox(GameTool.LS(titleKey), GameTool.LS(offKey), MsgBoxButtonEnum.Ok, ShowNextNotice);
+                },
+                ShowNextNotice);
+        }
+
+        /// <summary>
+        /// Turns "Only Portal at City and Sect" OFF in this save: the small towns get their original portal back (free),
+        /// except where "Allow Town Buildup Over Time" removed it (rebuilt over time there); the S&amp;M score loses its points.
+        /// </summary>
+        public void TurnOffOnlyPortal()
+        {
+            var cfg = SMLocalConfigsEvent.Instance.Configs;
+            if (!cfg.OnlyPortalAtCityAndSect)
+                return;
+            cfg.Score -= ONLY_PORTAL_SCORE;
+            cfg.OnlyPortalAtCityAndSect = false;
+            foreach (var build in ModMain.Store.Buildings)
+            {
+                var strippedByBuildup = cfg.AllowTownBuildupOverTime && (cfg.AllowTownBuildupOverTime_IncludeFirstTown || build.gridData.areaBaseID > 1);
+                if (build.IsSmallTown() && !strippedByBuildup && IsBuildable(build, BuildingCostEnum.TownPortalBuildCost))
+                    BuildingCostEnum.TownPortalBuildCost.Build(build);
+            }
+        }
+
+        /// <summary>
+        /// Turns "Allow Town Buildup Over Time" OFF in this save: every removed original sub-building comes back (free)
+        /// and the S&amp;M score loses the points of the option(s).
+        /// </summary>
+        public void TurnOffBuildup()
+        {
+            var cfg = SMLocalConfigsEvent.Instance.Configs;
+            if (!cfg.AllowTownBuildupOverTime)
+                return;
+            cfg.Score -= BUILDUP_SCORE + (cfg.AllowTownBuildupOverTime_IncludeFirstTown ? BUILDUP_FIRST_TOWN_SCORE : 0);
+            cfg.AllowTownBuildupOverTime = false;
+            cfg.AllowTownBuildupOverTime_IncludeFirstTown = false;
+            foreach (var build in ModMain.Store.Buildings)
+            {
+                foreach (var e in BuildingCostEnum.GetAllEnums<BuildingCostEnum>())
+                {
+                    if (cfg.OnlyPortalAtCityAndSect && e == BuildingCostEnum.TownPortalBuildCost && build.IsSmallTown())
+                        continue;
+                    if (IsBuildable(build, e))
+                        e.Build(build);
+                }
+            }
+        }
+
+        /// <summary>Points of the options in the S&amp;M window (SMGlobalConfigsEvent.Register).</summary>
+        public const int BUILDUP_SCORE = 1000;
+        public const int BUILDUP_FIRST_TOWN_SCORE = 1000;
+        public const int ONLY_PORTAL_SCORE = 1000;
 
         /// <summary>
         /// Tries to build every missing original sub-building (skipped for towns the player governs).

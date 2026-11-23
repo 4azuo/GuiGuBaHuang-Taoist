@@ -248,5 +248,25 @@
 		"id": "-1000008049",
 		"key": "ui_modlib_too_old",
 		"en|ch|tc|kr": "Taoist {0} wird von ModLib {1} nicht unterstützt!\nBitte installiere ModLib {2} oder neuer."
+	},
+	{
+		"id": "-1000008050",
+		"key": "ui_town_buildup_notice",
+		"en|ch|tc|kr": "In diesem Spielstand ist \"Erlauben Sie den Stadtaufbau im Laufe der Zeit\" AN (S&M-Einstellungen).\nStädte und Sekten beginnen ohne ihre Zusatzgebäude (Portal, Auktion, Schmiede, Bücher- und Kleidermarkt, Kopfgeldtafel, Trainingshalle und Portal der Sekte); die erste Region behält sie, außer \"Erste Stadt einschließen\" ist AN. Jeden Monat kann eine Stadt oder Sekte mit genug Budget eines wieder bauen; ein Stadtherr baut sie aus dem Stadtbudget.\n\nFür diesen Spielstand AUSschalten? Alle Gebäude kommen sofort zurück und der S&M-Punktestand verliert die Punkte der Option."
+	},
+	{
+		"id": "-1000008051",
+		"key": "ui_town_buildup_off",
+		"en|ch|tc|kr": "\"Erlauben Sie den Stadtaufbau im Laufe der Zeit\" ist AUS: Städte und Sekten haben ihre Gebäude zurück."
+	},
+	{
+		"id": "-1000008052",
+		"key": "ui_town_portal_notice",
+		"en|ch|tc|kr": "In diesem Spielstand ist \"Nur Portal bei Stadt und Sekte\" AN (S&M-Einstellungen).\nKleine Städte haben kein Portal: nur Großstädte und Sekten behalten eines, kleine Städte bauen es nie wieder, Reisen dauert länger.\n\nFür diesen Spielstand AUSschalten? Kleine Städte bekommen ihr Portal sofort zurück (wo \"Erlauben Sie den Stadtaufbau im Laufe der Zeit\" es entfernt hat, bauen sie es mit der Zeit) und der S&M-Punktestand verliert die Punkte der Option."
+	},
+	{
+		"id": "-1000008053",
+		"key": "ui_town_portal_off",
+		"en|ch|tc|kr": "\"Nur Portal bei Stadt und Sekte\" ist AUS: kleine Städte können wieder ein Portal haben."
 	}
 ]

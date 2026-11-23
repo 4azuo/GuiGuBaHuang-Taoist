@@ -248,5 +248,25 @@
 		"id": "-1000008049",
 		"key": "ui_modlib_too_old",
 		"en|ch|tc|kr": "¡Taoist {0} no es compatible con ModLib {1}!\nInstala ModLib {2} o superior."
+	},
+	{
+		"id": "-1000008050",
+		"key": "ui_town_buildup_notice",
+		"en|ch|tc|kr": "Esta partida tiene \"Permitir la acumulación de la ciudad con el tiempo\" ACTIVADO (ajustes S&M).\nLos pueblos y sectas empiezan sin sus edificios extra (portal, subasta, forja, mercados de libros y de ropa, tablón de recompensas, sala de entrenamiento y portal de la secta); la primera región los conserva salvo que \"Incluir primera ciudad\" esté activado. Cada mes un pueblo o secta con presupuesto suficiente puede reconstruir uno; un señor del pueblo los construye con el presupuesto del pueblo.\n\n¿DESACTIVARLO en esta partida? Todos los edificios vuelven ahora y la puntuación S&M pierde los puntos de la opción."
+	},
+	{
+		"id": "-1000008051",
+		"key": "ui_town_buildup_off",
+		"en|ch|tc|kr": "\"Permitir la acumulación de la ciudad con el tiempo\" está DESACTIVADO: los pueblos y sectas recuperaron sus edificios."
+	},
+	{
+		"id": "-1000008052",
+		"key": "ui_town_portal_notice",
+		"en|ch|tc|kr": "Esta partida tiene \"Único portal en la ciudad y la secta\" ACTIVADO (ajustes S&M).\nLos pueblos pequeños no tienen portal: solo las ciudades y sectas lo conservan y los pueblos nunca lo reconstruyen, así que viajar lleva más tiempo.\n\n¿DESACTIVARLO en esta partida? Los pueblos recuperan su portal ahora (donde \"Permitir la acumulación de la ciudad con el tiempo\" lo quitó, lo reconstruyen con el tiempo) y la puntuación S&M pierde los puntos de la opción."
+	},
+	{
+		"id": "-1000008053",
+		"key": "ui_town_portal_off",
+		"en|ch|tc|kr": "\"Único portal en la ciudad y la secta\" está DESACTIVADO: los pueblos pequeños pueden volver a tener portal."
 	}
 ]

@@ -115,7 +115,29 @@ namespace MOD_nE7UL2.Mod
             if (stage == Stage.None || !GameHelper.IsInGame() || e.uiType.uiName != UIType.IntoGameDrama.uiName)
                 return;
             ApplyWeapons();
+            if (SkipIntro)
+                UnlockAfterFirstBattle();
             stage = SkipIntro ? Stage.None : Stage.IntroEnded;
+        }
+
+        /// <summary>
+        /// What the game unlocks after the first battle (its trigger 11009, map loaded after dungeon 15) and so never with
+        /// the intro skipped: the Tree Vault (storage) of the towns (2011) and sects (1008), the area-1 Manual Pavilion (2010).
+        /// </summary>
+        public const string FIRST_BATTLE_UNLOCKS = "showTownSubBuild_1_2010|showTownSubBuild_-1_2011|showTownSubBuild_-1_1008";
+
+        /// <summary>The intro was skipped: runs the unlocks of the first battle.</summary>
+        private static void UnlockAfterFirstBattle()
+        {
+            try
+            {
+                DramaFunctionTool.OptionsFunction(FIRST_BATTLE_UNLOCKS);
+                DebugHelper.WriteLine("NewGameEvent: intro skipped, Tree Vaults unlocked");
+            }
+            catch (System.Exception ex)
+            {
+                DebugHelper.WriteLine($"NewGameEvent: Tree Vaults not unlocked: {ex.Message}");
+            }
         }
 
         /// <summary>Gives the checked artifacts (no change when none is checked).</summary>
