@@ -12,3 +12,7 @@ marketing/video/public/**/*.ogg filter=lfs diff=lfs merge=lfs -text
 marketing/video/public/**/*.png filter=lfs diff=lfs merge=lfs -text
 marketing/video/public/**/*.jpg filter=lfs diff=lfs merge=lfs -text
 marketing/video/public/**/*.webp filter=lfs diff=lfs merge=lfs -text
+# DLLs (game / library references, build output of the mods): Git LFS
+**/ModCode/ModMain/dll/*.dll filter=lfs diff=lfs merge=lfs -text
+**/CodeArtifacts/*.dll filter=lfs diff=lfs merge=lfs -text
+**/debug/*/ModCode/dll/*.dll filter=lfs diff=lfs merge=lfs -text
