@@ -31,7 +31,7 @@ $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot '_common.ps1')
 if ($Yes) { $Global:SetupAssumeYes = $true }
 
-Write-Title 'GuiGuBaHuang-ModLib - Extract BaseGameResources'
+Write-Title 'GuiGuBaHuang-Taoist - Extract BaseGameResources'
 
 $repo = Resolve-RepoPath $RepoPath $PSScriptRoot
 $modCreatorDir = Join-Path $repo 'GuiGuBaHuang-ModCreator'

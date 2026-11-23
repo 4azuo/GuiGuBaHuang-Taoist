@@ -41,7 +41,7 @@ Both end with the same result. If anything goes wrong, see [Troubleshooting](#tr
 ### A1. New machine (repository not downloaded yet)
 
 1. Create a temporary folder, e.g. `C:\temp\modlib-install`.
-2. Download **only** [`install.ps1`](https://raw.githubusercontent.com/4azuo/GuiGuBaHuang-ModLib/main/scripts/setup/install.ps1) into it
+2. Download **only** [`install.ps1`](https://raw.githubusercontent.com/4azuo/GuiGuBaHuang-Taoist/main/scripts/setup/install.ps1) into it
    (right-click the link → *Save link as…*). The other setup scripts are downloaded automatically.
 3. Open **PowerShell as Administrator**: press `Win + X` → **Terminal (Admin)**.
 4. Run:
@@ -51,7 +51,7 @@ Both end with the same result. If anything goes wrong, see [Troubleshooting](#tr
    powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
    ```
 
-   The repository is cloned to `C:\git\GuiGuBaHuang-ModLib`. To put it somewhere else:
+   The repository is cloned to `C:\git\GuiGuBaHuang-Taoist`. To put it somewhere else:
 
    ```powershell
    powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -RepoPath "D:\Projects\GuiGuBaHuang-ModLib"
@@ -76,7 +76,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup\install.ps1 
 
 | Parameter | Meaning |
 |---|---|
-| `-RepoPath <folder>` | Where the repository is (or should be cloned). Default: the repo containing the script, otherwise `C:\git\GuiGuBaHuang-ModLib` |
+| `-RepoPath <folder>` | Where the repository is (or should be cloned). Default: the repo containing the script, otherwise `C:\git\GuiGuBaHuang-Taoist` |
 | `-Yes` | Don't ask anything; accept every detected/default value (unattended install) |
 | `-ArchivePath <file>` | Path of the `BaseGameResources *.rar/.7z/.zip` archive, if it is not in a standard place |
 | `-SkipDependencies` | Don't install tools (no Administrator needed) |
@@ -182,9 +182,9 @@ Find your paths first:
   Usually `C:\Program Files (x86)\Steam\steamapps\common\鬼谷八荒`.
 - **Workshop folder**: in the same Steam library, `...\steamapps\workshop\content\1468810` (1468810 is the game's Steam app id).
   It may not exist until you subscribe to a Workshop item. That is fine, deploy scripts create it.
-- **Repository folder**: where you cloned in step 2, e.g. `C:\git\GuiGuBaHuang-ModLib`.
+- **Repository folder**: where you cloned in step 2, e.g. `C:\git\GuiGuBaHuang-Taoist`.
 
-Open each file below in a text editor (Notepad++, VS Code) and set the values. In JSON, **every backslash must be doubled**: `C:\\git\\GuiGuBaHuang-ModLib`.
+Open each file below in a text editor (Notepad++, VS Code) and set the values. In JSON, **every backslash must be doubled**: `C:\\git\\GuiGuBaHuang-Taoist`.
 
 **`scripts\settings.json`** and **`3161035078\scripts\settings.json`** and **`3385996759\scripts\settings.json`**
 

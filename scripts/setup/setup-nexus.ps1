@@ -78,7 +78,7 @@ if ($key -eq "-") {
     $ok = $true
     if (-not $SkipValidate) {
         try {
-            $user = Invoke-RestMethod -Uri "https://api.nexusmods.com/v1/users/validate.json" -Headers @{ apikey = $key; "Application-Name" = "GuiGuBaHuang-ModLib-setup"; "Application-Version" = "1.0" } -TimeoutSec 20
+            $user = Invoke-RestMethod -Uri "https://api.nexusmods.com/v1/users/validate.json" -Headers @{ apikey = $key; "Application-Name" = "GuiGuBaHuang-Taoist-setup"; "Application-Version" = "1.0" } -TimeoutSec 20
             Write-Host "  key valid (Nexus user: $($user.name))" -ForegroundColor Green
         } catch {
             Write-Host "  Nexus refused the key: $($_.Exception.Message)" -ForegroundColor Red

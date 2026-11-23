@@ -46,7 +46,7 @@ $ErrorActionPreference = 'Stop'
 if ($Yes -or $SkipConfirmation) { $Global:SetupAssumeYes = $true }
 if ($OpenAll) { $OpenFiles = $true }
 
-Write-Title 'GuiGuBaHuang-ModLib - Configure Settings'
+Write-Title 'GuiGuBaHuang-Taoist - Configure Settings'
 
 $repo = Resolve-RepoPath $RepoPath $PSScriptRoot
 $rootSettings = Join-Path $repo 'scripts\settings.json'

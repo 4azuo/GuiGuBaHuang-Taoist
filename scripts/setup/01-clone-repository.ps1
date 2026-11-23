@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-    Clone GuiGuBaHuang-ModLib (and GuiGuBaHuang-ModCreator) to any folder.
+    Clone GuiGuBaHuang-Taoist (and GuiGuBaHuang-ModCreator) to any folder.
 .DESCRIPTION
-    - Clones the repository to -RepoPath (default C:\git\GuiGuBaHuang-ModLib)
+    - Clones the repository to -RepoPath (default C:\git\GuiGuBaHuang-Taoist)
     - If the folder already holds the repository, cloning is skipped
     - Makes sure GuiGuBaHuang-ModCreator is checked out (submodule, or direct clone
       when .gitmodules has no mapping)
@@ -10,12 +10,12 @@
 .EXAMPLE
     .\01-clone-repository.ps1
 .EXAMPLE
-    .\01-clone-repository.ps1 -RepoPath D:\Projects\GuiGuBaHuang-ModLib -SkipStar
+    .\01-clone-repository.ps1 -RepoPath D:\Projects\GuiGuBaHuang-Taoist -SkipStar
 #>
 
 [CmdletBinding()]
 param(
-    [string]$RepoPath = 'C:\git\GuiGuBaHuang-ModLib',
+    [string]$RepoPath = 'C:\git\GuiGuBaHuang-Taoist',
     [string]$RepoUrl = 'https://github.com/4azuo/GuiGuBaHuang-Taoist.git',
     [string]$Branch,
     [switch]$SkipStar,
@@ -28,7 +28,7 @@ $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot '_common.ps1')
 if ($Yes) { $Global:SetupAssumeYes = $true }
 
-Write-Title 'GuiGuBaHuang-ModLib - Clone Repository'
+Write-Title 'GuiGuBaHuang-Taoist - Clone Repository'
 
 if (-not (Test-Command git)) {
     Write-Err 'Git is not installed. Run .\00-install-dependencies.ps1 or install Git from https://git-scm.com/'

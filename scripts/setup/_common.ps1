@@ -10,7 +10,7 @@
 
 $script:RepoUrlDefault       = 'https://github.com/4azuo/GuiGuBaHuang-Taoist.git'
 $script:ModCreatorUrlDefault = 'https://github.com/4azuo/GuiGuBaHuang-ModCreator.git'
-$script:DefaultRepoPath      = 'C:\git\GuiGuBaHuang-ModLib'
+$script:DefaultRepoPath      = 'C:\git\GuiGuBaHuang-Taoist'
 $script:GameAppId            = '1468810'
 # Game install folder name (Gui Gu Ba Huang in Chinese characters)
 $script:GameFolderName       = -join [char[]](0x9B3C, 0x8C37, 0x516B, 0x8352)
@@ -99,11 +99,11 @@ function Get-RepoRootFromScript([string]$ScriptDir) {
 
 function Resolve-RepoPath([string]$RepoPath, [string]$ScriptDir) {
     if ($RepoPath) {
-        if (-not (Test-RepoRoot $RepoPath)) { throw "Not a GuiGuBaHuang-ModLib repository: $RepoPath" }
+        if (-not (Test-RepoRoot $RepoPath)) { throw "Not a GuiGuBaHuang-Taoist repository: $RepoPath" }
         return (Resolve-Path $RepoPath).Path
     }
     $found = Get-RepoRootFromScript $ScriptDir
-    if (-not $found) { throw 'Cannot find the repository root. Pass -RepoPath <path-to-GuiGuBaHuang-ModLib>.' }
+    if (-not $found) { throw 'Cannot find the repository root. Pass -RepoPath <path-to-GuiGuBaHuang-Taoist>.' }
     return $found
 }
 

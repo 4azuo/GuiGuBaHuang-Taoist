@@ -38,7 +38,7 @@ python run.py --project <PROJECT_ID> --path <PATH> [OPTIONS]
 
 - `--project`: **Required**. Project directory name or full path to project folder
   - Can be project name: `3385996759` (will look in parent directory)
-  - Can be full path: `C:\git\GuiGuBaHuang-ModLib\3385996759`
+  - Can be full path: `C:\git\GuiGuBaHuang-Taoist\3385996759`
   - Can be relative path: `..\3385996759`
 - `--path`: **Required**. Relative path within ModConf folder or file
   - `.` - Process entire ModConf directory
@@ -153,7 +153,7 @@ python run.py --project 3385996759 --path . --source_lan tc
 
 ```bash
 # Using full path
-python run.py --project "C:\git\GuiGuBaHuang-ModLib\3385996759" --path .
+python run.py --project "C:\git\GuiGuBaHuang-Taoist\3385996759" --path .
 
 # Using relative path
 python run.py --project "..\3385996759" --path .

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Install development tools for GuiGuBaHuang-ModLib (requires Administrator).
+    Install development tools for GuiGuBaHuang-Taoist (requires Administrator).
 .DESCRIPTION
     Installs via Chocolatey only what is missing (each tool is detected first,
     so re-running is safe):
@@ -55,7 +55,7 @@ $tools = @(
                  (Test-Path "${env:ProgramFiles(x86)}\7-Zip\7z.exe") -or (Test-Path "${env:ProgramFiles(x86)}\WinRAR\WinRAR.exe") } }
 )
 
-Write-Title 'GuiGuBaHuang-ModLib - Install Dependencies'
+Write-Title 'GuiGuBaHuang-Taoist - Install Dependencies'
 
 if (-not (Test-IsAdmin)) {
     Write-Err 'This script needs Administrator privileges (Chocolatey installs system-wide).'

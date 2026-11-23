@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    One-shot setup for GuiGuBaHuang-ModLib.
+    One-shot setup for GuiGuBaHuang-Taoist.
 .DESCRIPTION
     Steps (each can be skipped):
       1. 00-install-dependencies.ps1   install tools (needs Administrator)
@@ -12,14 +12,14 @@
     Where is the repository?
       - -RepoPath given           -> that folder (cloned there if it does not exist)
       - run from <repo>\scripts\setup -> that repo (no clone)
-      - otherwise                 -> C:\git\GuiGuBaHuang-ModLib
+      - otherwise                 -> C:\git\GuiGuBaHuang-Taoist
 
     Running from a standalone download: only install.ps1 is required; missing
     helper scripts are downloaded from GitHub next to it.
 .EXAMPLE
     .\install.ps1
 .EXAMPLE
-    .\install.ps1 -RepoPath D:\dev\GuiGuBaHuang-ModLib -Yes
+    .\install.ps1 -RepoPath D:\dev\GuiGuBaHuang-Taoist -Yes
 .EXAMPLE
     # inside an existing clone, no admin, just configure + verify
     .\scripts\setup\install.ps1 -SkipDependencies -Yes
@@ -44,7 +44,7 @@ $ErrorActionPreference = 'Stop'
 $scriptDir = if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }
 
 # ---- bootstrap: download helper scripts when install.ps1 was downloaded alone
-$rawBase = 'https://raw.githubusercontent.com/4azuo/GuiGuBaHuang-ModLib/main/scripts/setup'
+$rawBase = 'https://raw.githubusercontent.com/4azuo/GuiGuBaHuang-Taoist/main/scripts/setup'
 foreach ($name in '_common.ps1', '00-install-dependencies.ps1', '01-clone-repository.ps1') {
     $local = Join-Path $scriptDir $name
     if (-not (Test-Path $local)) {
@@ -61,7 +61,7 @@ $insideRepo = Get-RepoRootFromScript $scriptDir
 if (-not $RepoPath) { $RepoPath = if ($insideRepo) { $insideRepo } else { $DefaultRepoPath } }
 $RepoPath = [IO.Path]::GetFullPath($RepoPath)
 
-Write-Title 'GuiGuBaHuang-ModLib - Full Installation'
+Write-Title 'GuiGuBaHuang-Taoist - Full Installation'
 Write-Info "Repository folder: $RepoPath"
 if (Test-RepoRoot $RepoPath) { Write-Info '(existing repository - clone step will be skipped)' }
 
@@ -87,7 +87,7 @@ try {
         if (-not $SkipCheckpoint -and (Confirm-Choice 'Create a Windows System Restore Point first?' $false)) {
             try {
                 Enable-ComputerRestore -Drive "$env:SystemDrive\" -ErrorAction SilentlyContinue | Out-Null
-                Checkpoint-Computer -Description "GuiGuBaHuang-ModLib setup $(Get-Date -Format 'yyyy-MM-dd HH:mm')" -RestorePointType MODIFY_SETTINGS
+                Checkpoint-Computer -Description "GuiGuBaHuang-Taoist setup $(Get-Date -Format 'yyyy-MM-dd HH:mm')" -RestorePointType MODIFY_SETTINGS
                 Write-Ok 'Restore point created'
             }
             catch { $warnings.Add("Restore point not created: $($_.Exception.Message)"); Write-Warn $warnings[-1] }
