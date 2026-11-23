@@ -58,6 +58,7 @@ Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been
 - Steam Workshop: [Taoist](https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078) — requires [Fouru's ModLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3385996759) (put it at the top of the mod list, then restart)
 - Nexus Mods: [Taoist](https://www.nexusmods.com/taleofimmortal/mods/60)
 - Source code / releases: [GitHub](https://github.com/4azuo/GuiGuBaHuang-Taoist/)
+- Make your own mod: [Fouru's ModLib on GitHub](https://github.com/4azuo/GuiGuBaHuang-ModLib/) (source, docs, how to create a mod)
 - Feedback & bugs: [feedback page](https://github.com/4azuo/GuiGuBaHuang-Taoist/issues/13)
 
 The mod is free and stays free. If you enjoy it, you can support me on [Ko-fi](https://ko-fi.com/fouru). Feedback is very welcome — and sorry for my English!

@@ -1,7 +1,7 @@
 {
 	"__name": "Town estates (EstateEvent): plots, houses, palace, rooms",
 	"__help": [
-		"Pictures: \"Atlas/Sprite\" of the game, see docs/GameAssets/index.html (Buildings tab): TownCommon/..., CommonMapGrid/..., VillageCommon/...",
+		"Pictures: \"Atlas/Sprite\" of the game, see GuiGuBaHuang-ModLib/docs/GameAssets/index.html (Buildings tab): TownCommon/..., CommonMapGrid/..., VillageCommon/...",
 		"Colors: \"#RRGGBBAA\" (AA = opacity).",
 		"Prices of houses, land and rooms are in price taxes: HouseTax x area x AreaWeight (area 10: x5), x2 in a city, inflation applied, the same for every buyer. Palace and Wall are in plain base taxes of the town (5 x 2^area, x2 in a city), paid from its budget. Growth: the price x this every level. TownBuildingCost: the sub-buildings of the towns (portal, auction, factory...) cost x this.",
 		"Growth: a mortal house grows up to MortalMaxBonus levels above its district's (a big population, a prosperous plot); NPC cultivators buy a house in a town of the area where they are (a city from NpcCityGrade, else a small town) and upgrade it with their spirit stones (at most NpcSpend of them, NpcShare of the plots); a spouse and the unmarried children live in the family house, a married child moves out in the same town; with NpcHomeChance a month an NPC goes back to its home town.",

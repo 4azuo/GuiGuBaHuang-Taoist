@@ -1,6 +1,6 @@
-# GuiGuBaHuang-ModLib Installation Guide
+# GuiGuBaHuang-Taoist Installation Guide
 
-How to set up a Windows machine to build ModLib (3385996759), the Taoist mod (3161035078) and ModCreator.
+How to set up a Windows machine to build ModLib (3385996759), the Taoist mod (3161035078) and ModCreator (development on hold: optional).
 
 There are two ways:
 
@@ -54,7 +54,7 @@ Both end with the same result. If anything goes wrong, see [Troubleshooting](#tr
    The repository is cloned to `C:\git\GuiGuBaHuang-Taoist`. To put it somewhere else:
 
    ```powershell
-   powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -RepoPath "D:\Projects\GuiGuBaHuang-ModLib"
+   powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -RepoPath "D:\Projects\GuiGuBaHuang-Taoist"
    ```
 
 5. Answer the questions (press **Enter** to accept the suggested value). At the settings step, the script shows the paths it detected (repository, Steam Workshop, game folder, BaseGameResources) and lets you change any of them.
@@ -88,7 +88,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup\install.ps1 
 Example, fully unattended into a custom folder:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -RepoPath D:\dev\GuiGuBaHuang-ModLib -Yes -SkipCheckpoint
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -RepoPath D:\dev\GuiGuBaHuang-Taoist -Yes -SkipCheckpoint
 ```
 
 ### Running a single step
@@ -151,10 +151,14 @@ Pick a folder (examples use `C:\git`) and clone:
 mkdir C:\git -Force
 cd C:\git
 git clone --recurse-submodules https://github.com/4azuo/GuiGuBaHuang-Taoist.git
-cd GuiGuBaHuang-ModLib
+cd GuiGuBaHuang-Taoist
 ```
 
-`GuiGuBaHuang-ModCreator` is a separate repository. If the folder is empty after cloning (the submodule entry in `.gitmodules` may be missing), fetch it yourself at the commit this repository expects:
+The two submodules are separate repositories: `GuiGuBaHuang-ModLib` (ModLib source and its `docs/`; the pictures of
+`docs/Effects` and `docs/GameAssets`, about 500 MB, are in Git LFS: run `git lfs install` once before cloning) and
+`GuiGuBaHuang-ModCreator`.
+
+If the `GuiGuBaHuang-ModCreator` folder is empty after cloning (the submodule entry in `.gitmodules` may be missing), fetch it yourself at the commit this repository expects:
 
 ```powershell
 git ls-tree HEAD GuiGuBaHuang-ModCreator          # prints: 160000 commit <SHA>  GuiGuBaHuang-ModCreator
@@ -213,7 +217,7 @@ Example (`3385996759\scripts\settings.json`):
     "projectId": "3385996759",
     "modName": "Mod_flQrxq",
     "steamWorkshopPath": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1468810",
-    "repositoryPath": "D:\\Projects\\GuiGuBaHuang-ModLib",
+    "repositoryPath": "D:\\Projects\\GuiGuBaHuang-Taoist",
     "autoBuildDebounceSeconds": 300,
     "rapidChangeDebounceSeconds": 5
 }
