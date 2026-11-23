@@ -1,18 +1,36 @@
-**Title:** [Mod] Taoist 6.0 — body refining, merit & karma, Artisan Dao, your own house in town (hardcore overhaul, free)
+**Title:** [Mod] Taoist 6.1 — clan elders who vote, fight and betray, plus body refining, karma and your own house (hardcore overhaul, free)
 
 ---
 
-Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been working on for a long time. Version **6.0** is the biggest update so far.
+Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been working on for a long time. Version **6.1** builds on 6.0, the biggest update so far.
 
 ## What Taoist is (short version)
 
 - **A living world**: NPCs grow, craft artifacts, marry, have children and join your battles. Hire a team, meet random encounters, get chased by stalkers when you show rare items.
 - **A harsh economy**: inflation, bank loans (with debt collectors), storage fees, a player market where you haggle with NPCs.
-- **Towns** with budgets, taxes, town masters and bounties.
+- **Towns** with budgets, taxes, town masters, bounties and cultivator clans (feuds and clan wars).
 - **Families and legacy**: when you die, play on as your child or grandchild.
 - **Storylines**: long NPC storylines with portraits, real battles and several endings — some of them last over a hundred years.
 - **Tougher battles**: mana shields, growing monsters, reworked damage, and a Damage Calc window (F9) that shows every number.
 - **S&M Configs**: almost everything can be tuned or turned off. Harder settings = higher S&M score = better rewards.
+
+## New in 6.1
+
+**Clan elders**
+
+- Outsiders of no kin who guard a clan, paid a monthly salary and a yearly offering. Their realm follows the area, their number the clan's house.
+- They vote on the clan's wars (the head has 3 votes) and fight in them. Invite them to your clan, or become the guardian elder of an NPC clan.
+- In a clan war they fight beside their clan in the real battle. A disloyal elder may flee — or **betray its clan in the middle of the battle** — and is hunted down afterwards.
+
+**Succession**
+
+- When the head of a clan dies, a son or daughter takes over (else a grandchild, a sibling or the spouse). Play on as your child and you may head the clan yourself.
+- A clan wiped out leaves its mansion in ruins, for another clan to take or for the mortals.
+
+**Also**
+
+- Faster months: NPCs grow by turns, and the game saves in the background.
+- S&M score balance, new windows for plots, clans and elders, an option to hide the Damage Calc button.
 
 ## New in 6.0
 

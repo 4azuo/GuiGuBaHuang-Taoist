@@ -18,6 +18,8 @@ Taoist 6.0 – Build a City, Found a Clan | Tale of Immortal (鬼谷八荒) Mod 
 ```text
 Taoist 6.0 brings the cultivator clans to Tale of Immortal (鬼谷八荒): build your city, buy a house among the mortals, raise children, found a clan with its own elders and blood feuds, and wage clan wars. New paths of cultivation too: body refining, spirit sense, the Dao heart, merit and karma, and the Artisan Dao. Almost everything can be tuned or turned off in S&M Configs.
 
+🆕 Latest version: Taoist 6.1.02 (ModLib 2.2.36) – clan elders who vote, fight and may betray their clan mid-battle, succession of the clan heads, faster months. Changelog: https://steamcommunity.com/sharedfiles/filedetails/changelog/3161035078
+
 🔗 Links
 🎮 Game – Tale of Immortal on Steam: https://store.steampowered.com/app/1468810
 ▶ Taoist (Steam Workshop): https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078
@@ -54,6 +56,7 @@ Taoist 6.0 brings the cultivator clans to Tale of Immortal (鬼谷八荒): build
 • When the head dies, a son or daughter (or a brother or sister) carries the clan on; a clan wiped out leaves its mansion in ruins
 • Five new paths of cultivation: body refining, spirit sense, the Dao heart, merit and karma, the Artisan Dao
 • Walk the evil way: karma, and a whole town put to the sword
+• 6.1: elders fight in the clan wars – and a disloyal one may turn on its clan mid-battle
 • …and more features with every update
 
 🐞 Found a bug or have an idea? Open an issue on GitHub or leave a comment below.

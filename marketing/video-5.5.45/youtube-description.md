@@ -2,6 +2,8 @@
 
 Uploaded 2026-11-19 (channel Phong H.C): https://www.youtube.com/watch?v=_aV8PC5sAQ4 - the video is `out/taoist-promo.mp4`.
 Recorded from the published page (the Workshop links written in full: YouTube shows them as links to steamcommunity.com).
+2026-11-23: the latest version line and the GitHub link of the renamed repository (GuiGuBaHuang-Taoist) added: paste the
+description into YouTube Studio again.
 
 ## Title
 
@@ -12,9 +14,12 @@ Taoist – A Living Cultivation World | Tale of Immortal (鬼谷八荒) Mod Show
 ```text
 Taoist is a hardcore rework of Tale of Immortal (鬼谷八荒): a living world, a harsh economy, towns you can rule, families that carry on your legacy, lifelong NPC storylines and tougher battles. Almost everything can be tuned or turned off in S&M Configs.
 
+🆕 Latest version: Taoist 6.1.02 (ModLib 2.2.36) – clan elders who vote, fight and may betray their clan mid-battle, succession of the clan heads, faster months. Changelog: https://steamcommunity.com/sharedfiles/filedetails/changelog/3161035078
+
 🔗 Links
 🎮 Game – Tale of Immortal on Steam: https://store.steampowered.com/app/1468810
 ▶ Taoist (Steam Workshop): https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078
+▶ Taoist (Nexus Mods, manual download): https://www.nexusmods.com/taleofimmortal/mods/60
 ▶ Fouru's ModLib (required, Steam Workshop): https://steamcommunity.com/sharedfiles/filedetails/?id=3385996759
 💻 GitHub (source, bugs, ideas): https://github.com/4azuo/GuiGuBaHuang-Taoist
 ♥ Support the work on Ko-fi: https://ko-fi.com/fouru

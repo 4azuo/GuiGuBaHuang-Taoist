@@ -1,4 +1,4 @@
-[h1]Fouru's ModLib — v2.2.34[/h1]
+[h1]Fouru's ModLib — v2.2.36[/h1]
 A shared framework library used by my mods (e.g. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078]Taoist[/url]). It does nothing on its own — it just lets other mods run.
 
 [h2]⚠ Installation[/h2]
@@ -12,6 +12,7 @@ A shared framework library used by my mods (e.g. [url=https://steamcommunity.com
 [list]
 [*][b]Save-safe:[/b] mod data is stored in separate JSON files and never written into your save file, so removing a mod will not break your save.
 [*]Mod data of saves you delete in the game is cleaned up automatically.
+[*][b]Faster:[/b] the monthly events of the mods are dispatched faster, and the mod data is saved in the background (only the files that changed).
 [*]Child mods load and update in a fixed order, so they do not conflict with each other.
 [*]Translations: each mod's text can be replaced through LocalText.json.
 [/list]

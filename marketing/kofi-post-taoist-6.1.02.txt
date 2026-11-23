@@ -1,10 +1,17 @@
-Taoist 6.0 is out! (v6.0.01, ModLib v2.2.34)
+Taoist 6.1 is out! (v6.1.02, ModLib v2.2.36)
 
 Thank you so much to everyone who supports the mod — your coffees keep it going, and the mod stays free for everyone.
 
-For newcomers: Taoist is a hardcore overhaul of Tale of Immortal. A living world where NPCs grow, marry and fight beside you; a harsh economy with inflation, loans and a player market; towns with taxes and bounties; families that carry your legacy after you die; long storylines with real battles; and tougher battles with a Damage Calc window. Almost everything can be tuned in S&M Configs.
+For newcomers: Taoist is a hardcore overhaul of Tale of Immortal. A living world where NPCs grow, marry and fight beside you; a harsh economy with inflation, loans and a player market; towns with taxes, bounties and cultivator clans; families that carry your legacy after you die; long storylines with real battles; and tougher battles with a Damage Calc window. Almost everything can be tuned in S&M Configs.
 
-What's new in 6.0:
+What's new in 6.1:
+
+• Clan elders — outsiders who guard a clan for a salary. They vote on its wars and fight in them... and a disloyal elder may flee, or betray its clan in the middle of the battle.
+• Succession — when the head of a clan dies, a child (or a sibling, or the spouse) carries the clan on. A clan wiped out leaves its mansion in ruins.
+• Faster months — NPCs grow by turns and the game saves in the background.
+• S&M score balance, new windows for plots, clans and elders, and an option to hide the Damage Calc button.
+
+Still new since 6.0:
 
 • Body Refining — from Copper Skin to Undying Body. Train under waterfalls, in lava and thunder pools, and survive the body tribulation.
 • Merit & Karma — good deeds bring blessings; evil deeds bring power, bounties and revenge. Deep enough in karma, you can even massacre a town.
