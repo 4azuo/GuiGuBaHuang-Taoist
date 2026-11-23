@@ -6,7 +6,7 @@ The damage calculation window: shows how the [BattleModifyEvent](BattleModifyEve
 
 ## Opened by
 
-- the "Damage Calc" button of the battle screen (under the damage multiplier, added by BattleModifyEvent);
+- the "Damage Calc" button of the battle screen (under the damage multiplier, added by BattleModifyEvent; hidden by the Taoist setting `HideDamageCalcButton`);
 - the hotkey "Damage calculation" (Taoist Settings > Other hotkeys, default F9 = `DEFAULT_KEY` 290; [AnimaWeaponEvent](AnimaWeaponEvent.md)), battle only;
 - a button of the player info, stats tab, under the combat numbers ([UIEvent](UIEvent.md)), to work it out before a battle.
 

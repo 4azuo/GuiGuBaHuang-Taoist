@@ -18,7 +18,7 @@ None. Runtime: `_nullify` (nullify charges left per unit, cleared on the map).
 
 ## Battle screen (`OnOpenUIEnd(BattleInfo)`)
 
-- `DamageInfo.Reset()`; button "Damage Calc" (`dmginfo_button`) at the top center -> `DamageInfo.Toggle`.
+- `DamageInfo.Reset()`; button "Damage Calc" (`dmginfo_button`) at the top center -> `DamageInfo.Toggle`; not added when `UISettingScreenEvent.HideDamageCalcButton` (Taoist Settings, 6.1.02).
 - Damage multiplier text (`other500020089`, live, `#,##0.00`) unless hidden.
 - Monster counters hidden (or replaced when `IsShowCustomMonstCount`, used by [MapBuildBattleEvent](MapBuildBattleEvent.md)).
 

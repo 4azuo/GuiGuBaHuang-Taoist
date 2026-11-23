@@ -92,6 +92,12 @@ button, select, input { font: inherit; color: inherit; }
 .history span:hover { opacity: 1; }
 .history span.pinned { height: 22px; box-shadow: inset 0 3px 0 var(--text); } /* pinned run: taller, marked on top */
 
+.pinbtn {
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; cursor: pointer; white-space: nowrap; flex: 0 0 auto;
+}
+.pinbtn:hover { border-color: var(--text); }
+.pinbtn.on { border-color: var(--warn); }
+
 /* ---------------------------------------------------------------- layout */
 main { padding: 14px 20px 40px; max-width: 2400px; margin: 0 auto; }
 .empty { padding: 40px; text-align: center; color: var(--muted); }

@@ -9,6 +9,7 @@ The "Taoist Settings" window, opened from a button of the game settings.
 | Property | Default | Meaning |
 |---|---|---|
 | `HideDamageMultiplier` | false | hide the damage multiplier text in battles ([BattleModifyEvent](BattleModifyEvent.md)) |
+| `HideDamageCalcButton` | false | hide the "Damage Calc" button of the battle screen (6.1.02; the hotkey still opens the window, [DamageInfo](DamageInfo.md)) |
 | `HideExceptionLogs` | false | `DebugHelper.IsDebugMode = !HideExceptionLogs` (no exception log lines) |
 | `NotifyMarketOffers` | true | message for new offers / filled buy orders ([RealMarketEvent3](RealMarketEvent3.md)) |
 
@@ -23,7 +24,7 @@ The "Taoist Settings" window, opened from a button of the game settings.
 
 | Section | Content |
 |---|---|
-| Display (`setting010`) | toggle hide damage multiplier (`setting002`); toggle hide exception logs (`setting003`); note `setting004` |
+| Display (`setting010`) | toggle hide damage multiplier (`setting002`); toggle hide the battle "Damage Calc" button (`setting017`); toggle hide exception logs (`setting003`); note `setting004` |
 | Game (`setting011`) | toggle market notifications (`setting012`); toggle random encounters (`setting014`, `EncounterEvent.Enabled`); buttons "Taoist log" (`setting013` -> `TaoistLogEvent.OpenLog`) and "Score records" (`setting016` -> `SMScoreEvent.OpenRecords`) |
 | Divine artifact hotkeys (`setting005`) | help text `setting006` (wrapped at 110 characters), then a binding row per artifact (`AnimaWeaponEvent.AddBindingRows`) |
 | Other hotkeys (`setting015`) | the damage calculation row (default F9) |

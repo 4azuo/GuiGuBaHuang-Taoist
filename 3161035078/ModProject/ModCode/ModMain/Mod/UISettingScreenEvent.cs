@@ -9,7 +9,7 @@ using ModLib.Helper;
 namespace MOD_nE7UL2.Mod
 {
     /// <summary>
-    /// Taoist settings in the game settings UI (large window): hide damage multiplier, hide exception logs, market offer
+    /// Taoist settings in the game settings UI (large window): hide damage multiplier, hide the battle "Damage Calc" button, hide exception logs, market offer
     /// notifications, the Taoist monthly log. The divine artifact hotkeys are bound in the game's Bindings tab
     /// (AnimaWeaponEvent).
     /// </summary>
@@ -20,6 +20,8 @@ namespace MOD_nE7UL2.Mod
 
         public bool HideDamageMultiplier { get; set; } = false;
         public bool HideExceptionLogs { get; set; } = false;
+        /// <summary>Hides the "Damage Calc" button of the battle screen (the hotkey still opens the window).</summary>
+        public bool HideDamageCalcButton { get; set; } = false;
         /// <summary>A message when an NPC makes or raises an offer on a player listing (RealMarketEvent3).</summary>
         public bool NotifyMarketOffers { get; set; } = true;
 
@@ -56,6 +58,7 @@ namespace MOD_nE7UL2.Mod
                 var row = ui.FirstRow + 1;
                 ui.AddText(col, row++, GameTool.LS("setting010")).Format(null, 17, FontStyle.Italic);
                 AddToggle(ui, col, row++, "setting002", HideDamageMultiplier, v => HideDamageMultiplier = v);
+                AddToggle(ui, col, row++, "setting017", HideDamageCalcButton, v => HideDamageCalcButton = v);
                 AddToggle(ui, col, row++, "setting003", !DebugHelper.IsDebugMode, v =>
                 {
                     DebugHelper.IsDebugMode = !v;

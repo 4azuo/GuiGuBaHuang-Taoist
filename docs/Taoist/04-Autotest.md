@@ -47,6 +47,8 @@ The scenarios of [03-Test-Scenarios](03-Test-Scenarios.md) run **inside the real
 .\scripts\pin-test-run.ps1 -Best -Note "full run before the release"
 .\scripts\pin-test-run.ps1 -Run 20261117-074658 -Unpin
 .\scripts\pin-test-run.ps1 -Unit -Latest
+# or in the test viewer: button Pin / Unpin next to the run list (saves with the viewer server:
+# python scripts/effect-viewer-server.py --open --page test-viewer; opened as a file it copies the command above)
 
 # record a result by hand
 .\scripts\game\set-scenario-status.ps1 -Id TG-45,TG-46 -Result OK

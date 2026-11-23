@@ -78,5 +78,10 @@
 		"id": -1000003016,
 		"key": "setting016",
 		"en|ch|tc|kr": "Kỷ lục điểm"
+	},
+	{
+		"id": -1000003017,
+		"key": "setting017",
+		"en|ch|tc|kr": "Ẩn nút \"Tính sát thương\""
 	}
 ]

@@ -176,6 +176,14 @@
       const pin = r.pin ? ` [PINNED${r.pin.note ? ': ' + r.pin.note : r.pin.auto ? ': full run, all passed' : ''}]` : '';
       return `<option value="${esc(r.id)}" ${cur && r.id === cur.id ? 'selected' : ''}>${esc(fmtTime(r.time) || r.id)}${i === 0 ? ' (latest)' : ''} - ${esc(extra)}${esc(pin)}</option>`;
     }).join('');
+    const pb = $('#pinBtn');
+    pb.hidden = !cur || !!cur.virtual;
+    if (cur && !cur.virtual) {
+      pb.textContent = cur.pin ? 'Unpin' : 'Pin';
+      pb.classList.toggle('on', !!cur.pin);
+      pb.title = cur.pin ? `Unpin run ${cur.id}: it may be deleted again by the cleanup (newest 10 runs kept)`
+        : `Pin run ${cur.id}: never deleted by the cleanup (pinned.json in its folder)`;
+    }
     $('#history').innerHTML = runs.slice(-40).map(r =>
       `<span data-run="${esc(r.id)}" class="${cur && r.id === cur.id ? 'sel' : ''}${r.pin ? ' pinned' : ''}" style="background:${runColor(tab, r)}" title="${esc(runTitle(r))}"></span>`).join('');
   }
@@ -555,6 +563,39 @@
     if (t.closest('.logbar') || t.closest('details') && !t.closest('tr.row')) return;
     const row = t.closest('tr.row');
     if (row) { const k = row.dataset.sc; state.open.has(k) ? state.open.delete(k) : state.open.add(k); render(); }
+  });
+  // pin / unpin the selected run: saved by the viewer server (scripts/effect-viewer-server.py, http://localhost:8765/
+  // test-viewer/); opened as a file, the pin-test-run.ps1 command is copied to the clipboard instead
+  $('#pinBtn').addEventListener('click', async () => {
+    const tab = state.tab === 'unit' ? 'unit' : 'auto';
+    const r = currentRun(tab);
+    if (!r || r.virtual) return;
+    const pin = !r.pin;
+    let note = '';
+    if (pin) {
+      note = window.prompt(`Pin run ${r.id} (never deleted by the cleanup). Note (optional):`, '');
+      if (note === null) return;
+    }
+    if (location.protocol.startsWith('http')) {
+      try {
+        const res = await fetch('/api/pin-run', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ kind: tab, id: r.id, pin, note, file: r.file }),
+        });
+        const j = await res.json();
+        if (!j.ok) throw new Error(j.error || res.status);
+        r.pin = j.pin || null;
+        render();
+        return;
+      } catch (ex) {
+        if (!window.confirm(`Saving failed (${ex.message}). Copy the command instead?`)) return;
+      }
+    }
+    const cmd = `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\pin-test-run.ps1${tab === 'unit' ? ' -Unit' : ''} -Run ${r.id}` +
+      (pin ? (note ? ` -Note "${note.replace(/"/g, "'")}"` : '') : ' -Unpin');
+    try { await navigator.clipboard.writeText(cmd); } catch (ex) { /* the prompt below shows it */ }
+    window.prompt('The viewer opened as a file cannot save. Run this command (copied), or open the viewer with the server ' +
+      '(python scripts/effect-viewer-server.py --open --page test-viewer):', cmd);
   });
   $('#runSelect').addEventListener('change', e => { state.run[state.tab] = e.target.value; state.open.clear(); render(); });
   document.addEventListener('change', e => {

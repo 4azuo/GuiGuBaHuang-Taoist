@@ -1,14 +1,17 @@
-"""Effect viewer with saving: a local web server for effect-viewer/index.html (http://localhost:8765/effect-viewer/).
+"""Viewers with saving: a local web server for effect-viewer/index.html (http://localhost:8765/effect-viewer/) and
+test-viewer/index.html (http://localhost:8765/test-viewer/).
 
 - GET  /effect-viewer/data/effects.js : built at every request from docs/Effects/<kind>/index.json (always fresh);
 - POST /api/user-label {"kind", "name", "fields": {...}} : the tester's own assessment written into index.json as
   "user-*" fields (an empty value removes the field), under the lock of the effect scripts;
+- POST /api/pin-run {"kind": "auto"|"unit", "id", "pin": true|false, "note", "file" (unit: the trx)} : pins / unpins a test run (pinned.json
+  in its folder, as scripts/pin-test-run.ps1) and patches test-viewer/data/runs.js so a reload shows it;
 - every other path: the files of the repository (read only).
 Opened as a file (no server) the viewer still shows everything but cannot save.
 
-usage: python scripts/effect-viewer-server.py [--port 8765] [--open]
+usage: python scripts/effect-viewer-server.py [--port 8765] [--open] [--page effect-viewer|test-viewer]
 """
-import argparse, json, os, sys, time, webbrowser
+import argparse, json, os, re, sys, threading, time, webbrowser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -53,6 +56,55 @@ def save_user_label(kind, name, fields):
     return {k: v for k, v in e.items() if k.startswith("user-") and v not in (None, "", [], {})}
 
 
+RUN_ID = re.compile(r"^\d{8}-\d{6}(-s\d+)?$")
+RUNS_JS = os.path.join(REPO, "test-viewer", "data", "runs.js")
+RUNS_PREFIX = "window.TEST_DATA = "
+_runs_lock = threading.Lock()
+
+
+def run_dir(kind, run_id, trx_file=None):
+    """Folder of a test run: logs/autotest/<id>, or the folder of the unit test run's trx file (under logs/unittests)."""
+    if kind == "auto":
+        if not RUN_ID.match(str(run_id)):
+            raise ValueError("bad run id " + str(run_id))
+        d = os.path.join(REPO, "logs", "autotest", run_id)
+    elif kind == "unit":
+        root = os.path.join(REPO, "logs", "unittests")
+        d = os.path.dirname(os.path.abspath(os.path.join(REPO, str(trx_file or ""))))
+        if not trx_file or os.path.commonpath([root, d]) != root:
+            raise ValueError("bad unit test file " + str(trx_file))
+    else:
+        raise ValueError("unknown kind " + str(kind))
+    if not os.path.isdir(d):
+        raise ValueError("run not found: " + str(run_id))
+    return d
+
+
+def pin_run(kind, run_id, pin, note, trx_file=None):
+    f = os.path.join(run_dir(kind, run_id, trx_file), "pinned.json")
+    data = None
+    if pin:
+        data = {"pinnedAt": time.strftime("%Y-%m-%dT%H:%M:%S"), "note": str(note or ""), "auto": False}
+        with open(f, "w", encoding="utf-8", newline="\n") as fh:
+            json.dump(data, fh, ensure_ascii=False, indent=4)
+    elif os.path.exists(f):
+        os.remove(f)
+    # the viewer data: the same pin on the run (no full regeneration by update-test-viewer.ps1)
+    with _runs_lock:
+        if os.path.exists(RUNS_JS):
+            text = open(RUNS_JS, encoding="utf-8-sig").read().strip()
+            if text.startswith(RUNS_PREFIX):
+                all_data = json.loads(text[len(RUNS_PREFIX):].rstrip(";"))
+                for r in all_data.get("autotest" if kind == "auto" else "unittest") or []:
+                    if r.get("id") == run_id:
+                        r["pin"] = data
+                tmp = RUNS_JS + ".tmp"
+                with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+                    fh.write(RUNS_PREFIX + json.dumps(all_data, ensure_ascii=False, separators=(",", ":")) + ";\n")
+                os.replace(tmp, RUNS_JS)
+    return data
+
+
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *a, **kw):
         super().__init__(*a, directory=REPO, **kw)
@@ -80,10 +132,13 @@ class Handler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_POST(self):
-        if self.path != "/api/user-label":
+        if self.path not in ("/api/user-label", "/api/pin-run"):
             return self.send_body(404, b"not found", "text/plain")
         try:
             req = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))).decode("utf-8"))
+            if self.path == "/api/pin-run":
+                pin = pin_run(req.get("kind"), str(req.get("id")), bool(req.get("pin")), req.get("note"), req.get("file"))
+                return self.send_body(200, json.dumps({"ok": True, "pin": pin}, ensure_ascii=False).encode("utf-8"), "application/json")
             saved = save_user_label(req.get("kind"), req.get("name"), req.get("fields") or {})
             return self.send_body(200, json.dumps({"ok": True, "fields": saved}, ensure_ascii=False).encode("utf-8"), "application/json")
         except Exception as ex:
@@ -94,10 +149,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--open", action="store_true")
+    ap.add_argument("--page", choices=("effect-viewer", "test-viewer"), default="effect-viewer")
     a = ap.parse_args()
     srv = ThreadingHTTPServer(("127.0.0.1", a.port), Handler)
-    url = f"http://localhost:{a.port}/effect-viewer/"
-    print("Effect viewer:", url, "(Ctrl+C to stop)")
+    url = f"http://localhost:{a.port}/{a.page}/"
+    print("Viewers:", f"http://localhost:{a.port}/effect-viewer/", f"http://localhost:{a.port}/test-viewer/", "(Ctrl+C to stop)")
     if a.open:
         webbrowser.open(url)
     try:

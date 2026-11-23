@@ -78,5 +78,10 @@
 		"id": -1000003016,
 		"key": "setting016",
 		"en|ch|tc|kr": "Tabulae punctorum"
+	},
+	{
+		"id": -1000003017,
+		"key": "setting017",
+		"en|ch|tc|kr": "Celare bullam \"Ratio damni\""
 	}
 ]

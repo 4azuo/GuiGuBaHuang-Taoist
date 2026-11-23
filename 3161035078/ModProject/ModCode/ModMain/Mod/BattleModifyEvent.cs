@@ -58,7 +58,8 @@ namespace MOD_nE7UL2.Mod
                 {
                     //damage calculation window (also the hotkey of Taoist Settings): under the damage multiplier, top
                     //centre (free: the minimap is at the top right, the skill bar at the bottom)
-                    ui.AddButton(ui.MidCol, ui.FirstRow + 7, DamageInfo.Toggle, GameTool.LS("dmginfo_button")).Size(150, 30);
+                    if (!UISettingScreenEvent.Instance.HideDamageCalcButton)
+                        ui.AddButton(ui.MidCol, ui.FirstRow + 7, DamageInfo.Toggle, GameTool.LS("dmginfo_button")).Size(150, 30);
 
                     //damage multiplier
                     if (!UISettingScreenEvent.Instance.HideDamageMultiplier)

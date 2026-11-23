@@ -337,6 +337,16 @@
             "presentation": { "reveal": "silent" }
         },
         {
+            "label": "Test: Open Test Viewer (server)",
+            "detail": "Test viewer with saving (Pin / Unpin a run): local server http://localhost:8765/test-viewer/ - stop it with the terminal; run 'Test: Open Test Viewer' first for fresh data",
+            "type": "process",
+            "command": "python",
+            "args": ["${workspaceFolder}/scripts/effect-viewer-server.py", "--open", "--page", "test-viewer"],
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "dedicated" }
+        },
+        {
             "label": "Test: Open Effect Viewer",
             "detail": "Effect viewer with saving (your own assessment: user-* fields of docs/Effects/*/index.json): local server http://localhost:8765/effect-viewer/ - stop it with the terminal",
             "type": "process",
