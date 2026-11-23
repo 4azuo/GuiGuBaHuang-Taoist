@@ -28,7 +28,10 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Unit
                     var npc = Npcs.FirstOrDefault(x => !x.IsFullExp() && x.GetDynProperty(UnitDynPropertyEnum.Talent).value > 0);
                     if (npc == null) { c.Skip("no NPC without full exp"); return; }
                     var before = npc.GetExp();
-                    NpcAutoEvent.Instance.OnMonthlyForEachWUnit(npc);
+                    var turns = GrowTurnHelper.Turns(npc);
+                    c.Info($"{npc.GetName()}: growth turns this month {turns} (group {GrowTurnHelper.Group(npc.GetUnitId(), GrowTurnHelper.Period)} of {GrowTurnHelper.Period})");
+                    // its growth turn (GrowUpSpeed: one NPC group a month)
+                    GrowTurnHelper.WithTurns(1, () => NpcAutoEvent.Instance.OnMonthlyForEachWUnit(npc));
                     c.Assert(npc.GetExp() > before, $"{npc.GetName()}: exp {before} -> {npc.GetExp()}");
                 });
         }

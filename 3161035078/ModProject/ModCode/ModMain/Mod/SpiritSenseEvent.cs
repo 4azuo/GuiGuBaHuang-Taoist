@@ -166,7 +166,10 @@ namespace MOD_nE7UL2.Mod
         {
             base.OnMonthlyForEachWUnit(wunit);
             if (wunit == null || wunit.isDie) return;
-            var months = Math.Max(1, ModMaster.MonthsPassed);
+            // the player every month; NPCs on their growth turn only (GrowUpSpeed: one NPC group a month)
+            var months = wunit.IsPlayer() ? Math.Max(1, ModMaster.MonthsPassed) : GrowTurnHelper.Turns(wunit);
+            if (months <= 0)
+                return;
             AddExp(wunit, MonthlyExp(wunit.GetProperty<int>(UnitPropertyEnum.Talent)) * months);
         }
 

@@ -833,13 +833,18 @@ namespace MOD_nE7UL2.Mod
         private static bool Known(WorldUnitBase wunit) =>
             FamilyEvent.IsFamilyOfPlayer(wunit) || Player.data.unitData.relationData.GetAllGoodRelationUnitID(false, false).ToArray().Contains(wunit.GetUnitId());
 
-        /// <summary>An NPC at a tempering place: the exp of the place for the months spent there. Returns true while it stays.</summary>
-        public static bool NpcAtPlace(WorldUnitBase wunit, BodyData d, int months)
+        /// <summary>
+        /// An NPC at a tempering place: the exp of the place for the months spent there. Returns true while it stays.
+        /// turns: growth turns the months stand for (GrowTurnHelper; default: one a month), the exp is given per turn.
+        /// </summary>
+        public static bool NpcAtPlace(WorldUnitBase wunit, BodyData d, int months, int turns = -1)
         {
             if (d.PlaceMonths <= 0 || d.PlaceKind <= 0)
                 return false;
+            months = Math.Max(1, months);
             var m = Math.Min(months, d.PlaceMonths);
-            for (var i = 0; i < m; i++)
+            var grants = turns < 0 ? m : Math.Max(1, m * turns / months);
+            for (var i = 0; i < grants; i++)
                 AddExp(wunit, PlaceExp((Place)d.PlaceKind, d.Level));
             d.PlaceMonths -= m;
             if (d.PlaceMonths <= 0)
@@ -883,6 +888,16 @@ namespace MOD_nE7UL2.Mod
         {
             base.OnMonthlyForEachWUnit(wunit);
             var months = Math.Max(1, ModMaster.MonthsPassed);
+            var turns = months;
+            if (!wunit.IsPlayer())
+            {
+                // NPCs: on their growth turn only (GrowUpSpeed: one NPC group a month); exp by turns, while timers
+                // (injury, stays) and chances run over the months the turns stand for
+                turns = GrowTurnHelper.Turns(wunit);
+                if (turns <= 0)
+                    return;
+                months = GrowTurnHelper.Months(turns);
+            }
             var d = Get(wunit);
             if (d == null)
             {
@@ -901,10 +916,10 @@ namespace MOD_nE7UL2.Mod
                 return;
             }
             // NPCs: a tempering place instead of the training while they stay there
-            if (NpcAtPlace(wunit, d, months))
+            if (NpcAtPlace(wunit, d, months, turns))
                 return;
             if (!injured)
-                AddExp(wunit, TrainExp(false, InBodySect(wunit), months));
+                AddExp(wunit, TrainExp(false, InBodySect(wunit), turns));
             if (IsBottleneck(d))
                 NpcBreak(wunit, d, CommonTool.Random(0f, 100f) < NPC_TRIB_SHARE, CommonTool.Random(0f, 100f));
             else if (!injured && CommonTool.Random(0f, 100f) < NPC_PLACE_RATE * months)

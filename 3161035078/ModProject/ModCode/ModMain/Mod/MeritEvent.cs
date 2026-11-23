@@ -278,9 +278,13 @@ namespace MOD_nE7UL2.Mod
                 }
                 return;
             }
+            // NPCs: on their growth turn only (GrowUpSpeed: one NPC group a month), the gain by turns
+            var turns = GrowTurnHelper.Turns(wunit);
+            if (turns <= 0)
+                return;
             var side = Side(wunit);
             if (side != 0)
-                Add(wunit, side * CommonTool.Random(0, NPC_MONTHLY + 1) * months);
+                Add(wunit, side * CommonTool.Random(0, NPC_MONTHLY + 1) * turns);
         }
 
         /// <summary>The world answers the merit of the player: a gift of the grateful, a revenge of the kin of the victims.</summary>

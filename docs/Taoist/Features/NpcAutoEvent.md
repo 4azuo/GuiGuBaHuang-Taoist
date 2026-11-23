@@ -18,7 +18,7 @@ NPCs cultivate by themselves: monthly exp, then a breakthrough chance that grows
 
 | Hook | What happens |
 |---|---|
-| `OnMonthlyForEachWUnit` | NPCs only (not the player). Full exp -> breakthrough roll; otherwise -> exp gain. |
+| `OnMonthlyForEachWUnit` | NPCs only (not the player), on their [growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed) only. Full exp -> breakthrough roll; otherwise -> exp gain. |
 | `OnYearly` | `g.world.run.npc.AddUnit(random grade 1..player grade, 1)` once per year passed (at least 1; a 10-year skip adds 10). |
 
 ## Formulas
@@ -29,14 +29,14 @@ NPCs cultivate by themselves: monthly exp, then a breakthrough chance that grows
 exp = Random(10, 200) x gradeLvl x Talent / 100
 exp = exp + exp x AddNpcGrowRate
 Hero units: exp x Random(0.5, 2)
-added = exp x MonthsPassed
+added = exp x turns
 ```
 
 **Breakthrough (exp full, a next phase exists)**
 
 ```
 supportRate = 0.001 + sum over past phases of 0.001 x 2^quality      (quality of each earlier breakthrough)
-NpcUpGradeRate[unit] += supportRate x MonthsPassed
+NpcUpGradeRate[unit] += supportRate x turns
 success when Random(0, 100) < NpcUpGradeRate[unit] / 2^nextGrade
 ```
 
@@ -45,7 +45,7 @@ On success: `GradeID` = id of the next phase, exp cleared. The accumulated rate 
 ## Notes
 
 - Higher grades need exponentially longer (divisor `2^grade`); NPCs with good past breakthroughs (high quality) progress faster.
-- `MonthsPassed` makes a time-skip month (that stands for N months) count N times.
+- `turns` = growth turns of the NPC (GrowUpSpeed P: one every P months; N / P over a time skip of N months).
 
 ## Tests
 

@@ -98,6 +98,13 @@ namespace MOD_nE7UL2.Helper
         /// <summary>The window of the last text: UIType.TextInfo, or UIType.TextInfoLong for a long text (tests).</summary>
         public static UIType.UITypeBase LastUIType { get; private set; } = UIType.TextInfo;
 
+        /// <summary>Another window of text (InfoSheet) tells what it shows (tests).</summary>
+        public static void Remember(string text, UIType.UITypeBase type)
+        {
+            LastText = text;
+            LastUIType = type;
+        }
+
         /// <summary>
         /// Lines of at most max characters, cut between words (a word longer than a line stays whole). A rich text tag
         /// ("&lt;sprite name=zm_lingshi&gt;": the icons of the texts) is never cut and does not count in the length.

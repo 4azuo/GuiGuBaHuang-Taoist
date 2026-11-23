@@ -233,26 +233,26 @@ namespace MOD_nE7UL2.Mod
             base.OnLoadClass(isNew, modId, attr);
 
             ScoreCalculator.Clear();
-            Register(() => slMonstAtk,
-                funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
-            Register(() => slMonstDef,
-                funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
-            Register(() => slMonstHp,
-                funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
-            Register(() => slMonstBasis,
-                funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
+            Register(() => slMonstAtk, // x1,000: +8 (x9) = +8,000 P
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
+            Register(() => slMonstDef, // x1,000: +8 (x9) = +8,000 P
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
+            Register(() => slMonstHp, // x1,000: +8 (x9) = +8,000 P
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
+            Register(() => slMonstBasis, // x1,000: +8 (x9) = +8,000 P
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
             Register(() => slMonstSpecialRate,
                 funcCal: s => (s.Get().Parse<float>() * 3000).Parse<int>());
-            Register(() => slEcoTaxRate,
-                funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
+            Register(() => slEcoTaxRate, // x400: +500 % taxes = +2,000 P (same top as the bank fee)
+                funcCal: s => (s.Get().Parse<float>() * 400).Parse<int>());
             Register(() => slEcoInfRate,
                 funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
             Register(() => slEcoBuildingCost,
                 funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
             Register(() => slEcoBankAccCost,
                 funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
-            Register(() => slEcoBankFee,
-                funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
+            Register(() => slEcoBankFee, // x20: the top fee (100) = +2,000 P (was x100: +10,000, 20 times the taxes)
+                funcCal: s => (s.Get().Parse<float>() * 20).Parse<int>());
             Register(() => slEcoRefineCost,
                 funcCal: s => (s.Get().Parse<float>() * 2000).Parse<int>());
             Register(() => slEcoSectExchangeRate,
@@ -262,8 +262,8 @@ namespace MOD_nE7UL2.Mod
                 funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
             Register(() => slNpcGrowRate,
                 funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
-            Register(() => slMiscLevelupExp,
-                funcCal: s => (s.Get().Parse<float>() * 2000).Parse<int>());
+            Register(() => slMiscLevelupExp, // x5,000: twice the exp to level up = +5,000 P
+                funcCal: s => (s.Get().Parse<float>() * 5000).Parse<int>());
             Register(() => tglSysHideSave,
                 funcCal: s => 1000,
                 funcCond: s => s.Get().Parse<bool>(),
@@ -290,7 +290,8 @@ namespace MOD_nE7UL2.Mod
                 funcCond: s => s.Get().Parse<bool>());
             Register(() => tglSysOnelife,
                 funcCal: s => 20000,
-                funcCond: s => s.Get().Parse<bool>(),
+                // with the auto-save after a lost battle (forced on by it, counted here): one life without it is not one
+                funcCond: s => s.Get().Parse<bool>() && tglAutoSaveAfterLostInBattle.Get().Parse<bool>(),
                 onChange: (s, v) =>
                 {
                     var tgl = v.Parse<bool>();
@@ -326,7 +327,7 @@ namespace MOD_nE7UL2.Mod
                 funcCal: s => -1000000,
                 funcCond: s => s.Get().Parse<bool>());
             Register(() => slNPCAmount,
-                funcCal: s => s.Get().Parse<int>(),
+                funcCal: s => NpcAmountScore(s.Get().Parse<int>()),
                 funcFormatter: s =>
                 {
                     var rs = new object[] { 0, 0 };
@@ -353,7 +354,7 @@ namespace MOD_nE7UL2.Mod
                     tglAllowTownBuildupOverTime_IncludeFirstTown.Set(false);
                 });
             Register(() => slGrowUpSpeed,
-                funcCal: s => ((12 - s.Get().Parse<int>()) * 1000).Parse<int>(),
+                funcCal: s => GrowUpSpeedScore(s.Get().Parse<int>()),
                 funcFormatter: s =>
                 {
                     var rs = new object[] { 0, 0 };
@@ -381,7 +382,7 @@ namespace MOD_nE7UL2.Mod
                 funcCond: s => s.Get().Parse<bool>());
             Register(() => tglAutoSaveAfterLostInBattle,
                 funcCal: s => 20000,
-                funcCond: s => s.Get().Parse<bool>());
+                funcCond: s => s.Get().Parse<bool>() && !tglSysOnelife.Get().Parse<bool>()); // with One life: counted by it
             Register(() => cbStartupPlayerRole,
                 funcCal: s => s.Get().Parse<int>() == 0 ? 0 : -10000);
             Register(() => slMarketItemNpcJoinRate,
@@ -507,8 +508,8 @@ namespace MOD_nE7UL2.Mod
                     }
                     return rs;
                 });
-            Register(() => tglOnlyActiveOnCurOrNearArea,
-                funcCal: s => -5000,
+            Register(() => tglOnlyActiveOnCurOrNearArea, // a performance option on by default: a small discount
+                funcCal: s => -1000,
                 funcCond: s => s.Get().Parse<bool>());
             Register(() => tglDestroyBuildingAfterTownWar,
                 funcCal: s => 2000,
@@ -516,10 +517,24 @@ namespace MOD_nE7UL2.Mod
             Register(() => tglAllowRepairGodWeapon,
                 funcCal: s => -5000,
                 funcCond: s => s.Get().Parse<bool>());
-            Register(() => tglAllFunctionsApplyToNearestUnits,
-                funcCal: s => -1000,
+            Register(() => tglAllFunctionsApplyToNearestUnits, // the NPCs far away do not grow (Taoist handlers skip them)
+                funcCal: s => -3000,
                 funcCond: s => s.Get().Parse<bool>());
         }
+
+        /// <summary>
+        /// Score of GrowUpSpeed v (months per growth turn): 4,000 x (3 / v - 1) rounded to 100, 0 at the default 3. The
+        /// NPCs grow at 1 / v of the speed, so a small v counts much more than a large one: 1 = +8,000, 2 = +2,000,
+        /// 4 = -1,000, 6 = -2,000, 12 = -3,000, 24 = -3,500.
+        /// </summary>
+        public static int GrowUpSpeedScore(int v)
+        {
+            v = Math.Max(1, v);
+            return (int)Math.Round(4000.0 * (3.0 / v - 1.0) / 100.0, MidpointRounding.AwayFromZero) * 100;
+        }
+
+        /// <summary>Score of NPCAmount: the NPCs above the default 2,000 (1,000 = -1,000, 10,000 = +8,000).</summary>
+        public static int NpcAmountScore(int v) => v - 2000;
 
         /// <summary>
         /// Registers one UI component with its score calculator and condition.
@@ -869,6 +884,7 @@ namespace MOD_nE7UL2.Mod
                     {
                         using (var writer = new StreamWriter(stream))
                         {
+                            CacheHelper.FlushWrites(); // the monthly save may still be writing it
                             writer.Write(File.ReadAllText(CacheHelper.GetGlobalCacheFilePath(ModId, CacheId)));
                         }
                     }
@@ -888,6 +904,7 @@ namespace MOD_nE7UL2.Mod
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
+                    CacheHelper.FlushWrites(); // a queued write must not land over the imported file
                     var confPath = CacheHelper.GetGlobalCacheFilePath(ModId, CacheId);
                     if (FileHelper.IsReadable<SMGlobalConfigsEvent>(confPath))
                     {

@@ -56,30 +56,6 @@
 		"kr": "이 마을에 이미 집이 있습니다 (마을당 한 채)."
 	},
 	{
-		"id": "-1000011007",
-		"key": "estate_buy_confirm",
-		"en": "A plot in the {0} (prosperity {1}).\nLand and a thatched hut: {2:#,##0} spirit banknotes (= {3:#,##0} [icon:zm_lingshi]); you have {4:#,##0}.\nHouse tax {5:#,##0}/month instead of the entry tax. Buy it?",
-		"ch": "{0}的地块（繁华度 {1}）。\n地价与茅屋：{2:#,##0}张灵票（= {3:#,##0} [icon:zm_lingshi]）；你有{4:#,##0}张。\n房屋税 {5:#,##0}/月，代替入城税。购买？",
-		"tc": "{0}的地塊（繁華度 {1}）。\n地價與茅屋：{2:#,##0}張靈票（= {3:#,##0} [icon:zm_lingshi]）；你有{4:#,##0}張。\n房屋稅 {5:#,##0}/月，代替入城稅。購買？",
-		"kr": "{0}의 부지 (번화도 {1}).\n땅과 초가집: 영표 {2:#,##0}장 (= {3:#,##0} [icon:zm_lingshi]); 보유 {4:#,##0}장.\n입성세 대신 주택세 {5:#,##0}/월. 구입하시겠습니까?"
-	},
-	{
-		"id": "-1000011008",
-		"key": "estate_info_shop",
-		"en": "A mortal shop in the {0} (prosperity {1}, land worth {2:#,##0}): the busy street brings trade.",
-		"ch": "{0}的凡人商铺（繁华度 {1}，地价 {2:#,##0}）：繁华街道带来生意。",
-		"tc": "{0}的凡人商鋪（繁華度 {1}，地價 {2:#,##0}）：繁華街道帶來生意。",
-		"kr": "{0}의 범인 상점 (번화도 {1}, 땅값 {2:#,##0}): 번화한 거리에 장사가 잘 된다."
-	},
-	{
-		"id": "-1000011009",
-		"key": "estate_info_mortal",
-		"en": "Mortals live here, in the {0} (prosperity {1}, land worth {2:#,##0}).",
-		"ch": "凡人居住于{0}（繁华度 {1}，地价 {2:#,##0}）。",
-		"tc": "凡人居住於{0}（繁華度 {1}，地價 {2:#,##0}）。",
-		"kr": "{0}에 범인들이 산다 (번화도 {1}, 땅값 {2:#,##0})."
-	},
-	{
 		"id": "-1000011010",
 		"key": "estate_done",
 		"en": "Built: {0}!",
@@ -696,14 +672,6 @@
 		"kr": "도시로 승격: {0:#,##0}"
 	},
 	{
-		"id": "-1000011087",
-		"key": "estate_info_owner",
-		"en": "The {1} of the cultivator {0}, in the {2} (prosperity {3}); house tax {4:#,##0}/month to the town.",
-		"ch": "修士{0}的{1}，位于{2}（繁华度 {3}）；每月向城镇缴纳房屋税 {4:#,##0}。",
-		"tc": "修士{0}的{1}，位於{2}（繁華度 {3}）；每月向城鎮繳納房屋稅 {4:#,##0}。",
-		"kr": "수사 {0}의 {1}, {2} 위치 (번화도 {3}); 매달 마을에 주택세 {4:#,##0}."
-	},
-	{
 		"id": "-1000011088",
 		"key": "estate_info_grown",
 		"en": "The mortals here prospered: their house grew into a {0}.",
@@ -742,14 +710,6 @@
 		"ch": "此城尚无修仙世家：需有在城中置宅且有家眷的修士。",
 		"tc": "此城尚無修仙世家：需有在城中置宅且有家眷的修士。",
 		"kr": "아직 이곳에 정착한 수선 세가가 없다: 마을에 집과 가족이 있는 수사가 필요하다."
-	},
-	{
-		"id": "-1000011093",
-		"key": "clan_line",
-		"en": "{0}: {1} member(s), {2}",
-		"ch": "{0}：{1}名成员，{2}",
-		"tc": "{0}：{1}名成員，{2}",
-		"kr": "{0}: 구성원 {1}명, {2}"
 	},
 	{
 		"id": "-1000011094",
@@ -886,14 +846,6 @@
 		"ch": "第{0}号地块（城镇地图第{1}列第{2}行）",
 		"tc": "第{0}號地塊（城鎮地圖第{1}列第{2}行）",
 		"kr": "{0}번 부지 (마을 지도 {1}열 {2}행)"
-	},
-	{
-		"id": "-1000011111",
-		"key": "estate_mortal_buy_info",
-		"en": "The mortals would sell their house: a {0} for {1:#,##0} spirit banknotes (= {2:#,##0} [icon:zm_lingshi], the land and the whole house); you have {3:#,##0}.\nHouse tax {4:#,##0}/month instead of the entry tax; it needs grade {5}.\nA bigger house later takes the plots around it: they are bought with the upgrade (free land, or mortal houses at their land and half their house).",
-		"ch": "凡人愿意卖掉房屋：{0}，价格{1:#,##0}张灵票（={2:#,##0}[icon:zm_lingshi]，含地皮与整座房屋）；你有{3:#,##0}张。\n以每月{4:#,##0}房屋税代替入城税；需要境界{5}。\n日后扩建大宅会占用周围地块：升级时一并购入（空地，或凡人房屋按地价加半价房屋）。",
-		"tc": "凡人願意賣掉房屋：{0}，價格{1:#,##0}張靈票（={2:#,##0}[icon:zm_lingshi]，含地皮與整座房屋）；你有{3:#,##0}張。\n以每月{4:#,##0}房屋稅代替入城稅；需要境界{5}。\n日後擴建大宅會佔用周圍地塊：升級時一併購入（空地，或凡人房屋按地價加半價房屋）。",
-		"kr": "범인들이 집을 팔려 한다: {0}, 영표 {1:#,##0}장 (= {2:#,##0}[icon:zm_lingshi], 땅과 집 전체); 보유 {3:#,##0}장.\n입성세 대신 월 {4:#,##0} 주택세; 경지 {5} 필요.\n나중에 더 큰 집은 주변 부지를 차지한다: 확장할 때 함께 구입 (빈 땅, 또는 범인 집은 땅값과 집값 절반)."
 	},
 	{
 		"id": "-1000011112",
@@ -1168,14 +1120,6 @@
 		"kr": "아직 가문을 지키는 장로가 없다."
 	},
 	{
-		"id": "-1000015229",
-		"key": "elder_line",
-		"en": "{0} - realm {1}, {2:#,##0}/month, loyalty {3}",
-		"ch": "{0} - 境界{1}，月俸{2:#,##0}，忠诚{3}",
-		"tc": "{0} - 境界{1}，月俸{2:#,##0}，忠誠{3}",
-		"kr": "{0} - 경지 {1}, 월 {2:#,##0}, 충성 {3}"
-	},
-	{
 		"id": "-1000015230",
 		"key": "elder_dismiss",
 		"en": "Dismiss",
@@ -1198,14 +1142,6 @@
 		"ch": "本地区暂无可任长老的修士。",
 		"tc": "本地區暫無可任長老的修士。",
 		"kr": "지금 이 지역에는 장로가 될 수사가 없다."
-	},
-	{
-		"id": "-1000015233",
-		"key": "elder_candidate_line",
-		"en": "{0} - realm {1}, intimacy {2}, {3:#,##0}/month, accepts {4}%",
-		"ch": "{0} - 境界{1}，好感{2}，月俸{3:#,##0}，应允{4}%",
-		"tc": "{0} - 境界{1}，好感{2}，月俸{3:#,##0}，應允{4}%",
-		"kr": "{0} - 경지 {1}, 친밀 {2}, 월 {3:#,##0}, 수락 {4}%"
 	},
 	{
 		"id": "-1000015234",
@@ -1366,14 +1302,6 @@
 		"ch": "是否在太平时辞去{0}的长老之职？",
 		"tc": "是否在太平時辭去{0}的長老之職？",
 		"kr": "평화로이 {0}의 장로직을 사임하겠는가?"
-	},
-	{
-		"id": "-1000015254",
-		"key": "elder_clan_suffix",
-		"en": " - elders: {0}",
-		"ch": " - 长老：{0}",
-		"tc": " - 長老：{0}",
-		"kr": " - 장로: {0}"
 	},
 	{
 		"id": "-1000015255",
@@ -1550,5 +1478,269 @@
 		"ch": "{0}：{1}收下{2}的废宅作为府邸（{3}）。",
 		"tc": "{0}：{1}收下{2}的廢宅作為府邸（{3}）。",
 		"kr": "{0}: {1}이(가) {2}의 폐가를 저택으로 삼았다 ({3})."
+	},
+	{
+		"id": "-1000015277",
+		"key": "elder_betray_ours",
+		"en": "In the middle of the battle {0}, an elder of {1}, turns on you and fights for {2}!",
+		"ch": "激战正酣，{1}的长老{0}突然倒戈，转而为{2}向你出手！",
+		"tc": "激戰正酣，{1}的長老{0}突然倒戈，轉而為{2}向你出手！",
+		"kr": "전투가 한창일 때 {1}의 장로 {0}이(가) 등을 돌려 {2}을(를) 위해 너를 공격한다!"
+	},
+	{
+		"id": "-1000015278",
+		"key": "elder_betray_theirs",
+		"en": "In the middle of the battle {0}, an elder of {1}, turns on its own clan and fights for {2}!",
+		"ch": "激战正酣，{1}的长老{0}临阵倒戈，转而为{2}而战！",
+		"tc": "激戰正酣，{1}的長老{0}臨陣倒戈，轉而為{2}而戰！",
+		"kr": "전투가 한창일 때 {1}의 장로 {0}이(가) 자기 가문을 배신하고 {2}을(를) 위해 싸운다!"
+	},
+	{
+		"id": "-1000015279",
+		"key": "elder_betray_fight",
+		"en": "Fight on",
+		"ch": "继续战斗",
+		"tc": "繼續戰鬥",
+		"kr": "계속 싸운다"
+	},
+	{
+		"id": "-1000015280",
+		"key": "log_clan_elder_betrayed",
+		"en": "{0}: elder {1} betrayed {2} in the middle of its war with {3}; the clan hunts the traitor.",
+		"ch": "{0}：长老{1}在{2}与{3}的战争中临阵倒戈，{2}追杀叛徒。",
+		"tc": "{0}：長老{1}在{2}與{3}的戰爭中臨陣倒戈，{2}追殺叛徒。",
+		"kr": "{0}: 장로 {1}이(가) {3}와(과)의 전쟁 도중 {2}을(를) 배신했다; 가문이 배신자를 추살한다."
+	},
+	{
+		"id": "-1000015281",
+		"key": "log_clan_elder_turncoat",
+		"en": "{0}: the turncoat {1} becomes an elder of {2}.",
+		"ch": "{0}：倒戈者{1}成为{2}的长老。",
+		"tc": "{0}：倒戈者{1}成為{2}的長老。",
+		"kr": "{0}: 변절자 {1}이(가) {2}의 장로가 되었다."
+	},
+	{
+		"id": "-1000015282",
+		"key": "elder_turncoat_joined",
+		"en": "{0}, who changed sides for you in the battle, now guards your clan as an elder.",
+		"ch": "在战斗中为你倒戈的{0}，如今成为你家族的长老。",
+		"tc": "在戰鬥中為你倒戈的{0}，如今成為你家族的長老。",
+		"kr": "전투에서 너의 편으로 돌아선 {0}이(가) 이제 장로로서 너의 가문을 지킨다."
+	},
+	{
+		"id": "-1000015283",
+		"key": "estate_row_who",
+		"en": "Who lives here",
+		"ch": "居住者",
+		"tc": "居住者",
+		"kr": "거주자"
+	},
+	{
+		"id": "-1000015284",
+		"key": "estate_row_district",
+		"en": "District",
+		"ch": "街区",
+		"tc": "街區",
+		"kr": "구역"
+	},
+	{
+		"id": "-1000015285",
+		"key": "estate_row_land",
+		"en": "Land worth",
+		"ch": "地价",
+		"tc": "地價",
+		"kr": "땅값"
+	},
+	{
+		"id": "-1000015286",
+		"key": "estate_row_house",
+		"en": "House",
+		"ch": "房屋",
+		"tc": "房屋",
+		"kr": "집"
+	},
+	{
+		"id": "-1000015287",
+		"key": "estate_row_price",
+		"en": "Price",
+		"ch": "价格",
+		"tc": "價格",
+		"kr": "가격"
+	},
+	{
+		"id": "-1000015288",
+		"key": "estate_row_have",
+		"en": "You have",
+		"ch": "你持有",
+		"tc": "你持有",
+		"kr": "보유"
+	},
+	{
+		"id": "-1000015289",
+		"key": "estate_row_tax",
+		"en": "House tax",
+		"ch": "房产税",
+		"tc": "房產稅",
+		"kr": "주택세"
+	},
+	{
+		"id": "-1000015290",
+		"key": "estate_val_mortals",
+		"en": "Mortals",
+		"ch": "凡人",
+		"tc": "凡人",
+		"kr": "범인"
+	},
+	{
+		"id": "-1000015291",
+		"key": "estate_val_shop",
+		"en": "A mortal shop (the busy street brings trade)",
+		"ch": "凡人商铺（街市繁华，生意兴隆）",
+		"tc": "凡人商鋪（街市繁華，生意興隆）",
+		"kr": "범인의 상점 (번화한 거리가 장사를 부른다)"
+	},
+	{
+		"id": "-1000015292",
+		"key": "estate_val_free",
+		"en": "Free land",
+		"ch": "空地",
+		"tc": "空地",
+		"kr": "빈 땅"
+	},
+	{
+		"id": "-1000015293",
+		"key": "estate_val_owner",
+		"en": "The cultivator {0}",
+		"ch": "修士{0}",
+		"tc": "修士{0}",
+		"kr": "수사 {0}"
+	},
+	{
+		"id": "-1000015294",
+		"key": "estate_val_district",
+		"en": "{0} · prosperity {1}",
+		"ch": "{0} · 繁荣度{1}",
+		"tc": "{0} · 繁榮度{1}",
+		"kr": "{0} · 번영도 {1}"
+	},
+	{
+		"id": "-1000015295",
+		"key": "estate_val_grade",
+		"en": "{0} (needs grade {1})",
+		"ch": "{0}（需境界{1}）",
+		"tc": "{0}（需境界{1}）",
+		"kr": "{0} (경지 {1} 필요)"
+	},
+	{
+		"id": "-1000015296",
+		"key": "estate_val_price",
+		"en": "{0:#,##0} spirit banknotes (= {1:#,##0} [icon:zm_lingshi])",
+		"ch": "{0:#,##0}张灵票（= {1:#,##0} [icon:zm_lingshi]）",
+		"tc": "{0:#,##0}張靈票（= {1:#,##0} [icon:zm_lingshi]）",
+		"kr": "영표 {0:#,##0}장 (= {1:#,##0} [icon:zm_lingshi])"
+	},
+	{
+		"id": "-1000015297",
+		"key": "estate_val_notes",
+		"en": "{0:#,##0} spirit banknotes",
+		"ch": "{0:#,##0}张灵票",
+		"tc": "{0:#,##0}張靈票",
+		"kr": "영표 {0:#,##0}장"
+	},
+	{
+		"id": "-1000015298",
+		"key": "estate_val_tax",
+		"en": "{0:#,##0}/month, instead of the entry tax",
+		"ch": "每月{0:#,##0}，取代入城税",
+		"tc": "每月{0:#,##0}，取代入城稅",
+		"kr": "월 {0:#,##0}, 입성세 대신"
+	},
+	{
+		"id": "-1000015299",
+		"key": "estate_val_tax_town",
+		"en": "{0:#,##0}/month to the town",
+		"ch": "每月{0:#,##0}，交给城镇",
+		"tc": "每月{0:#,##0}，交給城鎮",
+		"kr": "월 {0:#,##0}, 마을에 납부"
+	},
+	{
+		"id": "-1000015300",
+		"key": "estate_val_hut",
+		"en": "A thatched hut (built with the land)",
+		"ch": "茅屋（连同土地一并建造）",
+		"tc": "茅屋（連同土地一併建造）",
+		"kr": "초가집 (땅과 함께 지음)"
+	},
+	{
+		"id": "-1000015301",
+		"key": "estate_note_grow",
+		"en": "A bigger house later takes the plots around it: they are bought with the upgrade (free land, or mortal houses at their land and half their house).",
+		"ch": "日后扩建会占用周围地块：随升级一并购买（空地，或按地价加半价房屋收购凡人住宅）。",
+		"tc": "日後擴建會佔用周圍地塊：隨升級一併購買（空地，或按地價加半價房屋收購凡人住宅）。",
+		"kr": "나중에 더 큰 집은 주변 땅을 차지한다: 업그레이드와 함께 구입한다 (빈 땅, 또는 땅값과 집값의 절반으로 범인의 집)."
+	},
+	{
+		"id": "-1000015302",
+		"key": "estate_buy_plot",
+		"en": "Buy this plot ({0:#,##0} banknotes)",
+		"ch": "购买此地块（{0:#,##0}张灵票）",
+		"tc": "購買此地塊（{0:#,##0}張靈票）",
+		"kr": "이 땅 구입 (영표 {0:#,##0}장)"
+	},
+	{
+		"id": "-1000015303",
+		"key": "clan_card_members",
+		"en": "{0} member(s) · {1}",
+		"ch": "{0}名成员 · {1}",
+		"tc": "{0}名成員 · {1}",
+		"kr": "구성원 {0}명 · {1}"
+	},
+	{
+		"id": "-1000015304",
+		"key": "clan_card_elders",
+		"en": "Elders: {0}",
+		"ch": "长老：{0}",
+		"tc": "長老：{0}",
+		"kr": "장로: {0}"
+	},
+	{
+		"id": "-1000015305",
+		"key": "clan_relations",
+		"en": "Relations between the clans",
+		"ch": "各家族关系",
+		"tc": "各家族關係",
+		"kr": "가문 간의 관계"
+	},
+	{
+		"id": "-1000015306",
+		"key": "elder_card_line",
+		"en": "Realm {0} · {1:#,##0}/month",
+		"ch": "境界{0} · 每月{1:#,##0}",
+		"tc": "境界{0} · 每月{1:#,##0}",
+		"kr": "경지 {0} · 월 {1:#,##0}"
+	},
+	{
+		"id": "-1000015307",
+		"key": "elder_card_loyalty",
+		"en": "Loyalty {0}",
+		"ch": "忠诚{0}",
+		"tc": "忠誠{0}",
+		"kr": "충성 {0}"
+	},
+	{
+		"id": "-1000015308",
+		"key": "elder_card_cand",
+		"en": "Realm {0} · intimacy {1}",
+		"ch": "境界{0} · 好感{1}",
+		"tc": "境界{0} · 好感{1}",
+		"kr": "경지 {0} · 호감 {1}"
+	},
+	{
+		"id": "-1000015309",
+		"key": "elder_card_accept",
+		"en": "{0:#,##0}/month · accepts {1}%",
+		"ch": "每月{0:#,##0} · 应允{1}%",
+		"tc": "每月{0:#,##0} · 應允{1}%",
+		"kr": "월 {0:#,##0} · 수락 {1}%"
 	}
 ]

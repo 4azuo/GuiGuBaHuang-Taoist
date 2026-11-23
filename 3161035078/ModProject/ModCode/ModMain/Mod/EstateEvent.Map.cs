@@ -417,7 +417,6 @@ namespace MOD_nE7UL2.Mod
         public static void ClickPlot(MapBuildTown town, Plot p)
         {
             var title = string.Format(GameTool.LS("estate_title"), town.name);
-            var district = DistrictName(p.District);
             if (p.Level <= 0 && p.OwnerId == null)
             {
                 if (HasHouse(town, Player))
@@ -426,9 +425,13 @@ namespace MOD_nE7UL2.Mod
                     return;
                 }
                 var land = LandPrice(town, p); var build = BuildCost(town, 1);
-                InfoDialog.Msg(title, PlotWhere(p) + "\n" + string.Format(GameTool.LS("estate_buy_confirm"), district, p.Prosperity, SpiritNoteEvent.NotesFor(Payable(land + build)), Payable(land + build), SpiritNoteEvent.Notes(Player), HouseTax(town, p, 1))
-                        + "\n" + string.Format(GameTool.LS("estate_buy_room"), HouseName(MaxLevelAt(Get(town), p))),
-                    MsgBoxButtonEnum.YesNo, () => Result(town, p, Buy(town, p, Player), land + build, 1));
+                var cost = Payable(land + build);
+                var rows = PlotRows(town, p);
+                rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_house"), GameTool.LS("estate_val_hut")));
+                AddPriceRows(rows, town, p, cost, 1);
+                InfoSheet.Show(title, PlotWhere(p), null, rows, string.Format(GameTool.LS("estate_buy_room"), HouseName(MaxLevelAt(Get(town), p))),
+                    (string.Format(GameTool.LS("estate_buy_plot"), SpiritNoteEvent.NotesFor(cost)), () => Result(town, p, Buy(town, p, Player), land + build, 1)),
+                    (GameTool.LS("dlg_close"), null));
                 return;
             }
             if (p.OwnerId != null && p.OwnerId == Player.GetUnitId())
@@ -444,13 +447,14 @@ namespace MOD_nE7UL2.Mod
             if (p.OwnerId != null)
             {
                 // the house of an NPC cultivator
-                var owner = g.world.unit.GetUnit(p.OwnerId);
-                InfoDialog.Show(title, PlotWhere(p) + "\n" + string.Format(GameTool.LS("estate_info_owner"), owner?.GetName() ?? "-", HouseName(p.Level), district, p.Prosperity, HouseTax(town, p)));
+                var rows = PlotRows(town, p);
+                rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_house"), HouseName(p.Level)));
+                rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_tax"), string.Format(GameTool.LS("estate_val_tax_town"), HouseTax(town, p))));
+                InfoSheet.Show(title, PlotWhere(p), HouseSprite(p.Level), rows, null);
                 return;
             }
-            var grown = p.Level > DistrictOf(p.District).MortalLevel ? "\n" + string.Format(GameTool.LS("estate_info_grown"), HouseName(p.Level)) : string.Empty;
             // a mortal house: what it is, and buying it back (MortalWindow, not a shop of the market)
-            MortalWindow(town, p, title, string.Format(GameTool.LS(DistrictOf(p.District).Code == 'M' ? "estate_info_shop" : "estate_info_mortal"), district, p.Prosperity, LandPrice(town, p)) + grown);
+            MortalWindow(town, p, title);
         }
 
         /// <summary>The palace: the master expands it (town budget), others see who holds the town.</summary>

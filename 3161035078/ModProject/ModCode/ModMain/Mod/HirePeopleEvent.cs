@@ -235,12 +235,14 @@ namespace MOD_nE7UL2.Mod
             if (wunit == null)
                 return;
 
-            //teamup with friends
-            if (!wunit.IsPlayer() && !IsHired(wunit))
+            //teamup with friends: on the growth turn of the NPC only (GrowUpSpeed: one NPC group a month), the chance over the months it stands for
+            var turns = wunit.IsPlayer() || IsHired(wunit) ? 0 : GrowTurnHelper.Turns(wunit);
+            if (turns > 0)
             {
+                var joinRate = ModLib.Mod.ModMaster.ChanceOver(FRIEND_JOIN_RATE, GrowTurnHelper.Months(turns));
                 foreach (var relationWUnitIntim in wunit.data.unitData.relationData.intimToUnit)
                 {
-                    if (relationWUnitIntim.Value >= FRIEND_INTIM && CommonTool.Random(0.00f, 100.00f).IsBetween(0.00f, ModLib.Mod.ModMaster.ChanceOver(FRIEND_JOIN_RATE, ModLib.Mod.ModMaster.MonthsPassed)))
+                    if (relationWUnitIntim.Value >= FRIEND_INTIM && CommonTool.Random(0.00f, 100.00f).IsBetween(0.00f, joinRate))
                     {
                         var relationWUnit = g.world.unit.GetUnit(relationWUnitIntim.Key);
                         if (relationWUnit == null || relationWUnit.isDie)

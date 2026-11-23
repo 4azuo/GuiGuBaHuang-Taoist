@@ -21,6 +21,22 @@ namespace UnitTests.Taoist
             Check.Eq(SMScoreEvent.TIER_MIN.Length, SMScoreEvent.TIER_ICONS.Length, "an icon per tier");
         }
 
+        [TestMethod, Description("S&M score of GrowUpSpeed: 4,000 x (3 / v - 1) rounded to 100 (0 at the default 3); NPCAmount: above 2,000")]
+        public void GrowUpSpeed_And_NpcAmount_Score()
+        {
+            Check.Eq(8000, SMGlobalConfigsEvent.GrowUpSpeedScore(1), "1 month");
+            Check.Eq(2000, SMGlobalConfigsEvent.GrowUpSpeedScore(2), "2 months");
+            Check.Eq(0, SMGlobalConfigsEvent.GrowUpSpeedScore(3), "3 months (default)");
+            Check.Eq(-1000, SMGlobalConfigsEvent.GrowUpSpeedScore(4), "4 months");
+            Check.Eq(-2000, SMGlobalConfigsEvent.GrowUpSpeedScore(6), "6 months");
+            Check.Eq(-3000, SMGlobalConfigsEvent.GrowUpSpeedScore(12), "12 months");
+            Check.Eq(-3500, SMGlobalConfigsEvent.GrowUpSpeedScore(24), "24 months");
+            Check.Eq(8000, SMGlobalConfigsEvent.GrowUpSpeedScore(0), "0 read as 1");
+            Check.Eq(0, SMGlobalConfigsEvent.NpcAmountScore(2000), "2,000 NPCs (default)");
+            Check.Eq(-1000, SMGlobalConfigsEvent.NpcAmountScore(1000), "1,000 NPCs");
+            Check.Eq(8000, SMGlobalConfigsEvent.NpcAmountScore(10000), "10,000 NPCs");
+        }
+
         [TestMethod, Description("Idea 1 - SMScoreEvent.RewardPercent / RewardMultiplier: P / 2,000 %, clamped to -20 .. +50 %")]
         public void Reward_Clamped()
         {

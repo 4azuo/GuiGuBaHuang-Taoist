@@ -46,10 +46,12 @@
     <Compile Include="Enum\UnitTypeEnum.cs" />
     <Compile Include="Helper\ItemHelper.cs" />
     <Compile Include="Helper\InfoDialog.cs" />
+    <Compile Include="Helper\InfoSheet.cs" />
     <Compile Include="Helper\UnitPowerCalHelper.cs" />
     <Compile Include="Helper\UILocalHelper.cs" />
     <Compile Include="Helper\UnitModifyHelper.cs" />
     <Compile Include="Helper\PriceHelper.cs" />
+    <Compile Include="Helper\GrowTurnHelper.cs" />
     <Compile Include="ModMain.cs" />
     <Compile Include="Mod\BattleAfterEvent.cs" />
     <Compile Include="Mod\DamageInfo.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Mod\SpiritNoteEvent.cs" />
     <Compile Include="Mod\ClanEvent.cs" />
     <Compile Include="Mod\ClanElderEvent.cs" />
+    <Compile Include="Mod\ClanElderEvent.Battle.cs" />
     <Compile Include="Mod\ClanElderEvent.Window.cs" />
     <Compile Include="Mod\EstateEvent.Config.cs" />
     <Compile Include="Mod\EstateEvent.Layout.cs" />
@@ -256,6 +259,7 @@
     <Compile Include="AutoTest\Scenarios\Town\TG72_Clans.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG73_NpcHouses.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG74_ClanDepth.cs" />
+    <Compile Include="AutoTest\Scenarios\Town\TG90_ElderBetrayal.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG88_ClanElders.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG89_ClanSuccession.cs" />
     <Compile Include="AutoTest\Scenarios\Town\TG75_NpcHomes.cs" />

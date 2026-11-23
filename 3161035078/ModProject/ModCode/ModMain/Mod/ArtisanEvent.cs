@@ -503,18 +503,28 @@ namespace MOD_nE7UL2.Mod
                 PlayerMonthly(wunit, months);
                 return;
             }
-            var craft = CRAFTS.OrderByDescending(x => CraftValue(wunit, x)).First();
-            var value = CraftValue(wunit, craft);
+            // NPCs: on their growth turn only (GrowUpSpeed: one NPC group a month), the gain by turns
+            var turns = GrowTurnHelper.Turns(wunit);
+            if (turns <= 0)
+                return;
+            var craft = CRAFTS[0];
+            var value = int.MinValue;
+            foreach (var x in CRAFTS)
+            {
+                var v = CraftValue(wunit, x);
+                if (v > value) { value = v; craft = x; }
+            }
             if (value < NPC_MIN_VALUE)
                 return;
             var d = Get(wunit, craft, true);
             var steps0 = EssenceSteps(d.Essence);
-            if (AddExp(d, (long)(value * NPC_EXP_SHARE * months)) > 0 || EssenceSteps(d.Essence) != steps0)
+            if (AddExp(d, (long)(value * NPC_EXP_SHARE * turns)) > 0 || EssenceSteps(d.Essence) != steps0)
             {
                 Sync(wunit, craft);
                 TryReturn(wunit);
             }
-            if (ExamReady(d) && d.LastExamYear != GameHelper.GetGameYear() && GameHelper.GetGameMonth() == 1)
+            // the yearly exam on the first growth turn of the year (each NPC group has one in the first GrowUpSpeed months)
+            if (ExamReady(d) && d.LastExamYear != GameHelper.GetGameYear() && GameHelper.GetGameMonth() <= Math.Min(12, GrowTurnHelper.Period))
                 Exam(wunit, craft, CommonTool.Random(0f, 100f));
         }
 

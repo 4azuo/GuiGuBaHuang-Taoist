@@ -2281,7 +2281,7 @@
       "kind": "auto",
       "feature": "EstateEvent",
       "title": "NPC houses in depth: rules, tax, seizure, death",
-      "description": "NPC cultivators' houses in depth. The monthly hook of the mod buys a house for an NPC staying in the town (sure chance for the test). Rules: nothing when the feature is off, when NpcShare leaves no plot or without the monthly chance; one house in the world; upgrades stop at the grade of the next level, the room around or half of the stones; a poor NPC buys nothing. The NPC pays the house tax every month to the town; without money the unpaid months are counted and the house is taken back after MaxUnpaidMonths (the mortals move in). The house of a dead cultivator goes to the mortals. The mortal houses grow one level a monthly chance hit.",
+      "description": "NPC cultivators' houses in depth. The monthly hook of the mod buys a house for an NPC staying in the town (sure chance for the test). Rules: nothing when the feature is off, when NpcShare leaves no plot or without the monthly chance; one house in the world; upgrades stop at the grade of the next level, the room around or half of the stones; a poor NPC buys nothing. The NPC pays the house tax every month to the town; without money the unpaid months are counted and the house is taken back after MaxUnpaidMonths (the mortals move in). The house of a dead cultivator goes to its heir (ClanEvent succession), or stands in ruins without one. The mortal houses grow one level a monthly chance hit.",
       "preconditions": "Save loaded (an NPC dies: the save is restored by run-autotest.ps1; estate, budget, settings, money and places restored)",
       "steps": [
         "Travel to a town, two NPCs moved there",
@@ -2295,7 +2295,7 @@
         "Two NPCs",
         "Off / no share / no chance: nothing; bought with at most half of the stones; one house; stops for a reason; on the plots of its level; poor: nothing",
         "Tax paid to the budget; unpaid months counted; taken back after the limit",
-        "The house to the mortals",
+        "The house to the heir of the dead NPC, or in ruins",
         "One level a hit",
         "Budget and settings restored"
       ]
@@ -2707,6 +2707,30 @@
         "The mansion in ruins; taken as a seat, the town paid",
         "Split into mortal plots after RuinMonths",
         "Budget restored"
+      ]
+    },
+    {
+      "id": "TG-90",
+      "kind": "auto",
+      "feature": "ClanElderEvent",
+      "title": "A clan elder betrays the player in the middle of a war battle",
+      "description": "The player's clan (a house and a spouse) is at war with an NPC clan; an elder of the player's clan (loyalty 0, a month unpaid: a motive) joins the real battle on the player's side. It does not betray while the player is healthy; with the player under half of its HP and the enemy as strong, after BetrayAfterSeconds, it turns: its battle unit fights for the enemy, it leaves the clan and the clan hunts it, the Taoist log and a drama tell it; one betrayal a battle (BetrayMax). The player wins: the turncoat (on the losing side) serves no clan.",
+      "preconditions": "Save loaded (relations and hunts: the save is restored by run-autotest.ps1; estate, clan relations, elders, hunts, money and places restored)",
+      "steps": [
+        "The player's clan, an NPC clan in a feud, an elder of low loyalty; the war battle",
+        "The elder joins the battle",
+        "The player at full HP",
+        "The player at 40 % of its HP",
+        "Win the battle",
+        "Restore"
+      ],
+      "expected": [
+        "The battle against the enemy's champion",
+        "On the player's side",
+        "No betrayal",
+        "The elder fights for the enemy, leaves the clan, hunted, logged; no second betrayal",
+        "The turncoat serves no clan; the war decided",
+        "Elders and hunts restored"
       ]
     },
     {

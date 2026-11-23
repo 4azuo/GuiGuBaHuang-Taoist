@@ -1,7 +1,8 @@
-using MOD_nE7UL2.Helper;
+﻿using MOD_nE7UL2.Helper;
 using ModLib.Helper;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MOD_nE7UL2.Mod
 {
@@ -47,25 +48,57 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Which plot: its number and place on the town map.</summary>
         public static string PlotWhere(Plot p) => string.Format(GameTool.LS("estate_plot_where"), p.Index + 1, p.X + 1, p.Y + 1);
 
-        /// <summary>The window of a plot of the mortals: what it is, and the house bought back (not a shop).</summary>
-        public static void MortalWindow(MapBuildTown town, Plot p, string title, string text)
+        /// <summary>The facts of a plot: who lives there, the district and its prosperity, the land.</summary>
+        public static List<InfoSheet.Row> PlotRows(MapBuildTown town, Plot p)
         {
-            var where = PlotWhere(p) + "\n" + text;
+            var rows = new List<InfoSheet.Row>();
+            string who;
+            if (p.OwnerId != null) who = string.Format(GameTool.LS("estate_val_owner"), g.world.unit.GetUnit(p.OwnerId)?.GetName() ?? "-");
+            else if (p.Level > 0) who = GameTool.LS(DistrictOf(p.District).Code == 'M' ? "estate_val_shop" : "estate_val_mortals");
+            else who = GameTool.LS("estate_val_free");
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_who"), who));
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_district"), string.Format(GameTool.LS("estate_val_district"), DistrictName(p.District), p.Prosperity)));
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_land"), LandPrice(town, p).ToString("#,##0")));
+            return rows;
+        }
+
+        /// <summary>The rows of a purchase: the price, the banknotes of the player (green: enough), the house tax.</summary>
+        public static void AddPriceRows(List<InfoSheet.Row> rows, MapBuildTown town, Plot p, long price, int level)
+        {
+            var notes = SpiritNoteEvent.NotesFor(price);
+            var have = SpiritNoteEvent.Notes(Player);
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_price"), string.Format(GameTool.LS("estate_val_price"), notes, price)));
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_have"), string.Format(GameTool.LS("estate_val_notes"), have), have >= notes ? InfoSheet.GOOD : InfoSheet.BAD));
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_tax"), string.Format(GameTool.LS("estate_val_tax"), HouseTax(town, p, level))));
+        }
+
+        /// <summary>
+        /// The window of a plot of the mortals (InfoSheet: the house pictured, the facts in rows): what it is, and the
+        /// house bought back (not a shop).
+        /// </summary>
+        public static void MortalWindow(MapBuildTown town, Plot p, string title)
+        {
+            var rows = PlotRows(town, p);
+            var grown = p.Level > DistrictOf(p.District).MortalLevel ? string.Format(GameTool.LS("estate_info_grown"), HouseName(p.Level)) : null;
             if (!IsMortalHome(p))
             {
-                InfoDialog.Show(title, where);
+                rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_house"), HouseName(p.Level)));
+                InfoSheet.Show(title, PlotWhere(p), HouseSprite(p.Level), rows, grown);
                 return;
             }
             var price = MortalPrice(town, p);
             var level = Math.Min(MAX_LEVEL, p.Level);
-            var info = where + "\n" + string.Format(GameTool.LS("estate_mortal_buy_info"), HouseName(level), SpiritNoteEvent.NotesFor(price), price,
-                SpiritNoteEvent.Notes(Player), HouseTax(town, p, level), RequiredGrade(level));
+            var gradeOk = Player.GetGradeLvl() >= RequiredGrade(level);
+            rows.Add(new InfoSheet.Row(GameTool.LS("estate_row_house"), string.Format(GameTool.LS("estate_val_grade"), HouseName(level), RequiredGrade(level)),
+                gradeOk ? (UnityEngine.Color?)null : InfoSheet.BAD));
+            AddPriceRows(rows, town, p, price, level);
+            var note = string.Join("\n", new[] { grown, GameTool.LS("estate_note_grow") }.Where(x => x != null));
             if (HasHouse(town, Player))
             {
-                InfoDialog.Show(title, info + "\n" + GameTool.LS("estate_one_house"));
+                InfoSheet.Show(title, PlotWhere(p), HouseSprite(p.Level), rows, note + "\n" + GameTool.LS("estate_one_house"));
                 return;
             }
-            InfoDialog.Show(title, info,
+            InfoSheet.Show(title, PlotWhere(p), HouseSprite(p.Level), rows, note,
                 (string.Format(GameTool.LS("estate_mortal_buy"), SpiritNoteEvent.NotesFor(price)), () =>
                 {
                     var rs = BuyMortal(town, p, Player);

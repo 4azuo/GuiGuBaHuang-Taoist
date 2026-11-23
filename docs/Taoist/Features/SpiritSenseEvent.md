@@ -41,7 +41,7 @@ S&M switch `NoSpiritSense` (+500 points).
 
 ## Exp
 
-Every month 2 + Talent / 20 (player and NPCs); a seclusion 5 a month; a heart demon beaten +200; a scan +20.
+Every month 2 + Talent / 20 (the player every month, NPCs on their [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed)); a seclusion 5 a month; a heart demon beaten +200; a scan +20.
 
 ## UI
 

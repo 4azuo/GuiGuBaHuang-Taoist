@@ -21,7 +21,7 @@ namespace MOD_nE7UL2.Mod
         public static UnitModifyEvent Instance { get; set; }
 
         [JsonIgnore]
-        public List<string> CachedUnits { get; } = new List<string>();
+        public HashSet<string> CachedUnits { get; } = new HashSet<string>(); // hooked units (HashSet: looked up for every unit every month)
         [JsonIgnore]
         public Dictionary<string, int> CachedValues { get; } = new Dictionary<string, int>();
 

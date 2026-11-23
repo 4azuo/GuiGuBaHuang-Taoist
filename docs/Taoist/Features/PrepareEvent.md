@@ -18,7 +18,7 @@ None.
 |---|---|
 | `OnRefreshParameterStoreOnMonthly` | Runs before the other monthly handlers. With the switch on, builds a child `ParameterStore` from the **full** ModLib unit list (`ModMaster.ModObj.ParameterStore.WUnits`, not the nearby list of last month) keeping units whose area id is within `player area +- 3`, and sets it with `SetModChildParameterStore`. |
 
-Every `OnMonthlyForEachWUnit` of Taoist (NPC growth, Qi, skills, unit types, artifacts...) then runs only on these units.
+Every `OnMonthlyForEachWUnit` of Taoist (NPC growth, Qi, skills, unit types, artifacts...) then runs only on these units: ModLib (2.2.36) gives the per-unit handlers of a mod only the units of its own store (`EventHelper.RunMinorEventsForEachWUnit`; before, every handler got every unit and the store only changed `ModMain.Store`). The handlers of ModLib and of other mods still get every unit.
 
 ## Notes
 

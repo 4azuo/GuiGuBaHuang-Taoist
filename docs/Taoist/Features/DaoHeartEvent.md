@@ -38,7 +38,7 @@ S&M switch `NoDaoHeart` (+500 points).
 | a commission delivered / late (Artisan Dao: a promise) | +20 / -30 |
 | killing a bond in a battle (family, master, spouse, student, intimacy 200+): betrayal | -150 |
 | the player's mood, every month: 80 %+ / 20 % or less of the max | +1 / -1 |
-| NPCs every month | +0..2 |
+| NPCs on their [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed) | +0..2 |
 
 Taoist log: `log_heart_up`, `log_heart_down` (with the deed), `log_heart_level`.
 

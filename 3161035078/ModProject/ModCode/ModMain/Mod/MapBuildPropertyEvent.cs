@@ -268,7 +268,12 @@ namespace MOD_nE7UL2.Mod
             base.OnMonthly();
             //clear lst pay tax town
             PayTaxTown.Clear();
+            // the guardians of every town at the month start: the per-unit check below scans the towns only for them
+            guardianIds = new HashSet<string>(TownMasters.Values.SelectMany(x => x));
         }
+
+        /// <summary>Unit ids in TownMasters at the start of the month (OnMonthly), null before the first month.</summary>
+        private HashSet<string> guardianIds;
 
         /// <summary>
         /// Fixes guardian lucks, collects town/sect taxes from NPCs (inn rest included), expels NPCs that cannot pay.
@@ -285,7 +290,8 @@ namespace MOD_nE7UL2.Mod
                 RemoveFromTownGuardians(wunitId, wunit);
             }
             else
-            if (!IsTownGuardian(wunit) && TownMasters.Any(x => x.Value.Contains(wunitId)))
+            // a unit not a guardian (most of them): the towns are scanned only when it was in a list at the month start
+            if (!IsTownGuardian(wunit) && (guardianIds == null || guardianIds.Contains(wunitId)) && TownMasters.Any(x => x.Value.Contains(wunitId)))
             {
                 RemoveFromTownGuardians(wunitId, wunit);
             }

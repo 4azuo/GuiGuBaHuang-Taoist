@@ -18,7 +18,7 @@ Related object: `Object/CustomRefine.cs` (one slot), enums `AdjTypeEnum` (what a
 ## Switches
 
 - `AddRefineCost` (S&M): raises the exp per level.
-- `GrowUpSpeed` (S&M): NPC refining runs every `GrowUpSpeed` months.
+- `GrowUpSpeed` (S&M): NPC refining runs every `GrowUpSpeed` months ([growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed): one NPC group a month).
 - `custom_refine_configs.json` > `LevelRates` (`CustomRefineConfig`): slot quality chance (%): Common 30, Uncommon 20, Rare 20, Myst 16, Lgendary 8, Beast 4, Antique 2.
 
 ## Flow

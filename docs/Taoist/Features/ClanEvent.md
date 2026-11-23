@@ -15,8 +15,9 @@ Cultivator clans (世家) of the towns. Builds on [EstateEvent](EstateEvent.md) 
   brawl `DeathRelation` -40, a war `WarRelation` -50). States: blood feud (`WarAt` -70 or less), hostile (`HostileAt`
   -30 or less), allied (`AllyAt` 50 or more), neutral.
 - Elders: outsiders who guard a clan, vote on its wars and fight in them: [ClanElderEvent](ClanElderEvent.md).
-- The town map has a "Clans (n)" button (top left): the clans, their members, their houses, the relation of every pair
-  (red hostile, green allied).
+- The town map has a "Clans (n)" button (top left): a card a clan (6.1.01: the picture of its mansion by the level of
+  its house, its name - gold for the player's -, its members and house, its elders), 5 a row, at most 10, the player's
+  first; then "Relations between the clans": the worst 9 pairs in three columns (red hostile, green allied).
 
 ## Fights (yearly, very rare)
 

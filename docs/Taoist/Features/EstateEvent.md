@@ -168,13 +168,20 @@ Taoist log: `log_estate_buy`, `log_estate_upgrade`, `log_estate_unpaid`, `log_es
 
 - Every plot window says which plot it is: `PlotWhere(p)` = "Plot no. n (column x, row y of the town map)".
 - A click on a house of the mortals (`IsMortalHome`: no owner, not part of another house, level > 0, not a shop of the
-  market district) opens a text window (`InfoDialog.Show`, UITextInfo) with what it is and, if the player has no house in
+  market district) opens a window of facts (`InfoSheet`, below) with what it is and, if the player has no house in
   the town, "Buy this house (n banknotes)": `MortalPrice` = land + the whole house of its level (a plot taken for a bigger
   house pays only half the house: it is pulled down). `BuyMortal` makes it the player's house of the same level (the
   grade that level needs), the price goes to the town budget, Taoist log `log_estate_buy_mortal`. Shops cannot be bought.
 - A bigger house still takes the plots around it: they are bought with the upgrade (`Expansion`/`AcquirePrice`: free land,
   or mortal houses at land + half the house); the window says so.
-- Buy confirmation of a free plot, NPC houses: text windows too (long texts, see `Helper/InfoDialog.cs`).
+- **Plot windows** (6.1.01, `Helper/InfoSheet.cs`): the plot (`PlotWhere`) under the title, the picture of the house on
+  the left (`HouseSprite`; none on free land), then the facts as "label  value" rows (`PlotRows`: who lives there - the
+  mortals, a mortal shop, free land, the cultivator X -, the district and its prosperity, the land worth; a purchase adds
+  `AddPriceRows`: the price in banknotes (= spirit stones), the banknotes of the player in green when enough / red
+  when not, the house tax), a note in small grey lines (a bigger house takes the plots around it; the mortals' house
+  grew), the buttons under them. Free plot: "Buy this plot (n banknotes)" / Close (was a Yes / No message); the house
+  of an NPC: owner, house, tax to the town; a mortal house: the house and the grade it needs (red when the player's is
+  lower). `InfoDialog.LastText` holds the rows ("label: value") for the tests.
 
 ## Tests
 
@@ -210,7 +217,7 @@ Settings: `Growth` of `estate_configs.json`.
   prosperity `MortalProsperity` (70) or more, at most `MortalMaxBonus` (2) above. A grown house is drawn with the house
   picture of its level; its plot says "the mortals here prospered". Every grown level adds `PerMortalLevel` (30)
   residents to the target population; a bigger mortal house costs more to buy out.
-- **NPC cultivators buy houses** (`NpcHouse`, monthly for every NPC staying in a town; `Npc` false: off): without a
+- **NPC cultivators buy houses** (`NpcHouse`, on the [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed) of every NPC staying in a town, chances over the months it stands for; `Npc` false: off): without a
   house anywhere, with the chance `NpcBuyChance` (2 %) a month, it buys the most prosperous free plot it can pay with
   `NpcSpend` (half) of its spirit stones; with a house, the chance `NpcUpgradeChance` (3 %) to upgrade it one level
   (grade and room as for the player; the plots around bought). The same prices as the player's (by area), paid

@@ -26,6 +26,10 @@ namespace MOD_nE7UL2.Mod
             base.OnMonthlyForEachWUnit(wunit);
             if (!wunit.IsPlayer())
             {
+                // grows on its turn only (GrowUpSpeed: one NPC group a month)
+                var turns = GrowTurnHelper.Turns(wunit);
+                if (turns <= 0)
+                    return;
                 if (wunit.IsFullExp())
                 {
                     //up grade
@@ -40,7 +44,7 @@ namespace MOD_nE7UL2.Mod
                     var supportRate = 0.001f;
                     foreach (var oldPhaseInfo in wunit.data.unitData.npcUpGrade)
                         supportRate += (0.001f * Math.Pow(2, oldPhaseInfo.value.quality)).Parse<float>();
-                    NpcUpGradeRate[unitId] += supportRate * ModLib.Mod.ModMaster.MonthsPassed;
+                    NpcUpGradeRate[unitId] += supportRate * turns;
 
                     var r = CommonTool.Random(0.0000000f, 100.0000000f).Parse<double>();
                     if (r.IsBetween(0.0000000d, NpcUpGradeRate[unitId] / Math.Pow(2, nPhase.grade)))
@@ -54,7 +58,7 @@ namespace MOD_nE7UL2.Mod
                     var exp = SMLocalConfigsEvent.Instance.Calculate(CommonTool.Random(10.00f, 200.00f) * wunit.GetGradeLvl() * wunit.GetDynProperty(UnitDynPropertyEnum.Talent).value / 100f, SMLocalConfigsEvent.Instance.Configs.AddNpcGrowRate);
                     if (wunit.IsHero())
                         exp *= CommonTool.Random(0.50f, 2.00f);
-                    wunit.AddExp((exp * ModLib.Mod.ModMaster.MonthsPassed).Parse<int>());
+                    wunit.AddExp((exp * turns).Parse<int>());
                 }
             }
         }

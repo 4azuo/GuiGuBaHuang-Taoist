@@ -291,6 +291,25 @@ namespace MOD_nE7UL2.Mod
             public float AcceptReputation { get; set; } = 2000f;
             public float AcceptHouse { get; set; } = 0.05f;
             public float AcceptGrade { get; set; } = 0.15f;
+            /// <summary>In the real battle of a clan war, the elders of both clans join on their side JoinSeconds after it starts.</summary>
+            public bool BattleJoin { get; set; } = true;
+            public int JoinSeconds { get; set; } = 3;
+            /// <summary>
+            /// An elder in that battle may betray its clan and fight for the other side, when all hold: BetrayAfterSeconds
+            /// passed; loyalty under BetrayLoyalty; served less than BetrayLoyalMonths; a motive (a selfish, evil or
+            /// power-hungry nature, unpaid months, or an intimacy with the other head BetrayIntimGap above the one with its
+            /// own); its side's leader (the player, or the enemy's champion) at BetrayLeaderHp of its HP or less; the other
+            /// side at least BetrayPowerRatio x its side's power. Then each second BetrayRate x (BetrayLoyalty - loyalty) /
+            /// BetrayLoyalty; BetrayMax a battle (0: never).
+            /// </summary>
+            public int BetrayAfterSeconds { get; set; } = 10;
+            public int BetrayLoyalty { get; set; } = 30;
+            public int BetrayLoyalMonths { get; set; } = 120;
+            public int BetrayIntimGap { get; set; } = 100;
+            public float BetrayLeaderHp { get; set; } = 0.5f;
+            public float BetrayPowerRatio { get; set; } = 0.8f;
+            public float BetrayRate { get; set; } = 0.05f;
+            public int BetrayMax { get; set; } = 1;
         }
 
         /// <summary>Spirit notes (SpiritNoteEvent): an item worth Value spirit stones, changed at the bank for a fee.</summary>

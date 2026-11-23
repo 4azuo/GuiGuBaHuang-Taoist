@@ -14,7 +14,7 @@ Every unit gets a role (`UnitTypeEnum`) the first month it is seen. The role dec
 
 - `unit_type_configs.json` > `UnitTypes` (`UnitTypeConfig`): chance (%) of each random role (`RandomUnitType`): PowerUnit 8, SpeedUnit 8, TaoistUnit 8, AtkUnit 12, DefUnit 12, Angel 2, Evil 4, Merchant 16; the remaining 30 % get `Default`.
 - `StartupPlayerRole` (S&M, > 0): fixed role of the player, taken from `SMGlobalConfigsEvent.StartupPlayerRoles`.
-- `GrowUpSpeed` (S&M): property growth runs every `GrowUpSpeed` months (`ModMaster.Ticks`).
+- `GrowUpSpeed` (S&M): [growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed): the player every `GrowUpSpeed` months (`ModMaster.Ticks`); an NPC updates its lucks, income and properties on its turn only.
 - `AddNpcGrowRate` (S&M): multiplies NPC property growth.
 
 ## Flow
@@ -77,7 +77,7 @@ Merchant rank: sell value +0.3 % and passive income +0.1 % of money per level. T
 NPC base       = Random(3^grade, 4^grade)          (player: 0)
 Merchant role  += money x 3 %
 Merchant rank  += money x level x 0.1 %
-added          = income x MonthsPassed (capped at int.MaxValue)
+added          = income x months (player: MonthsPassed; NPC: Months(turns)) (capped at int.MaxValue)
 ```
 
 ## API

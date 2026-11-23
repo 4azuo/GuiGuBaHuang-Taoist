@@ -12,14 +12,14 @@ The S&M ("sadism & masochism") difficulty configs, edited in the "S&M Configs" w
 
 | Option | Range / default | Score | Used by |
 |---|---|---|---|
-| `AddAtkRate`, `AddDefRate`, `AddHpRate`, `AddBasisRate` (monsters) | -0.5 .. 8 / 0 | x 100 | [MonstStrongerEvent](MonstStrongerEvent.md) |
+| `AddAtkRate`, `AddDefRate`, `AddHpRate`, `AddBasisRate` (monsters) | -0.5 .. 8 / 0 | x 1,000 (6.1.01; was x 100) | [MonstStrongerEvent](MonstStrongerEvent.md) |
 | `AddSpecialMonsterRate` | -0.5 .. 1 / 0 | x 3,000 | [SpecialMonsterEvent](SpecialMonsterEvent.md) |
 | `MonsterPropertiesDependOnPlayerProperties` | off | +5,000 | MonstStrongerEvent |
 | `BossHasShield` | off | +10,000 | SpecialMonsterEvent |
 | `AddNpcGrowRate` | 0 .. 8 / 0 | x 1,000 | [NpcAutoEvent](NpcAutoEvent.md), [UnitTypeEvent](UnitTypeEvent.md) |
-| `NPCAmount` | 1,000 .. 10,000 / 2,000 | = value | the game's initial NPC count of a new world: OK writes it into `g.conf.npcInitParameters` item 1 (only in that game session: after a restart it applies once the window is confirmed again) |
-| `AddLevelupExpRate` | 0 .. 1 / 0 | x 2,000 | SMLocalConfigsEvent |
-| `GrowUpSpeed` (months per growth tick) | 1 .. 24 / 3 | `(12 - value) x 1,000` | Qi, unit types, expertise, refine, monsters, training |
+| `NPCAmount` | 1,000 .. 10,000 / 2,000 | value - 2,000 (6.1.01; was = value) | the game's initial NPC count of a new world: OK writes it into `g.conf.npcInitParameters` item 1 (only in that game session: after a restart it applies once the window is confirmed again) |
+| `AddLevelupExpRate` | 0 .. 1 / 0 | x 5,000 (6.1.01; was x 2,000) | SMLocalConfigsEvent |
+| `GrowUpSpeed` (months per growth tick) | 1 .. 24 / 3 | `4,000 x (3 / value - 1)` rounded to 100: 1 = +8,000, 2 = +2,000, 3 = 0, 4 = -1,000, 6 = -2,000, 12 = -3,000, 24 = -3,500 (6.1.01; was `(12 - value) x 1,000`) | the NPC growth turns (below), monsters, training |
 | `StartupPlayerRole` | none / 8 roles | -10,000 if set | UnitTypeEvent |
 | `PriorityDestinyLevel` | 0 .. 6 / 0 | `(3 - level) x 1,000` if set | [UICreatePlayerEvent](UICreatePlayerEvent.md) |
 | `HideSaveButton` | off | +1,000 (enables HideReload) | [UIEvent](UIEvent.md) |
@@ -27,22 +27,50 @@ The S&M ("sadism & masochism") difficulty configs, edited in the "S&M Configs" w
 | `LostItemWhenDie` | off | +10,000 | [BattleRewardEventV2](BattleRewardEventV2.md) |
 | `LostMoneyWhenDie` | **on** | +1,000 | BattleRewardEventV2 |
 | `LostLifespanWhenDie` | off | +2,000 | BattleRewardEventV2 |
-| `Onelife` | off | +20,000 (forces AutoSaveAfterLostInBattle) | BattleRewardEventV2 |
-| `AutoSaveAfterLostInBattle` | off | +20,000 | BattleRewardEventV2 |
+| `Onelife` | off | +20,000 with AutoSaveAfterLostInBattle (which it forces on), else 0 | BattleRewardEventV2 |
+| `AutoSaveAfterLostInBattle` | off | +20,000 without Onelife (with it: counted by Onelife; 6.1.01) | BattleRewardEventV2 |
 | `EnableTrainer` | off | -1,000,000 | [TrainerEvent](TrainerEvent.md) |
-| `AllFunctionsApplyToNearestUnits` | off | -1,000 | [PrepareEvent](PrepareEvent.md) |
+| `AllFunctionsApplyToNearestUnits` | off | -3,000 (6.1.01; was -1,000: the far NPCs really stop growing since ModLib 2.2.36) | [PrepareEvent](PrepareEvent.md) |
 
 Buttons: Export (save dialog, copies the global cache file), Import (open dialog, replaces and reloads; unreadable file -> `ui_file_errors`), open the save data folder, open the ModConf folder (Explorer: `mod_configs.json` and the `*_configs.json` settings files of the features).
+
+### Growth turns (GrowUpSpeed)
+
+`GrowTurnHelper` (`ModMain/Helper/GrowTurnHelper.cs`). With `GrowUpSpeed` = P, the NPCs are split in P groups by
+their unit id (FNV-1a hash, stable between sessions) and each month **one group** grows: an NPC grows once every P
+months, and the load of the NPC handlers is spread evenly over the P months (no month with every NPC at once).
+
+- `Turns(wunit)`: growth turns in the running month dispatch. NPC: 1 on its turn, 0 otherwise (`N / P` over a time
+  skip of N months). Player: `ModMaster.Ticks(P)` (every P months, as before), not split.
+- `Months(turns)` = turns x P: the months a turn stands for, for timers and chances that keep their monthly pace.
+- Growth amounts are given per turn (one month's worth), so a larger P slows NPC growth; P = 1: every NPC every month,
+  as before the turns.
+- `ForcedTurns` / `WithTurns(n, action)`: autotests run a handler for one NPC on its turn.
+
+| Feature (NPC side) | By turns (growth) | By `Months(turns)` (pace kept) |
+|---|---|---|
+| [NpcAutoEvent](NpcAutoEvent.md) | exp, breakthrough rate | |
+| [NpcUpgradeSkillEvent](NpcUpgradeSkillEvent.md) | one martial upgrade try a turn | |
+| [NpcAutoCraftArtifact](NpcAutoCraftArtifact.md) | craft chance `ChanceOver(.., turns)` | |
+| [BodyCulEvent](BodyCulEvent.md) | training exp, place exp | taking up the path, injury, stays, going to a place |
+| [ArtisanEvent](ArtisanEvent.md) | craft exp; the yearly exam on the first turn of the year | |
+| [MeritEvent](MeritEvent.md), [DaoHeartEvent](DaoHeartEvent.md), [SpiritSenseEvent](SpiritSenseEvent.md) | monthly gain | |
+| [UnitTypeEvent](UnitTypeEvent.md) | rank lucks, property growth | passive income (the role is still given on first sight, every month) |
+| [QiCulEvent](QiCulEvent.md), [ExpertEvent](ExpertEvent.md), [CustomRefineEvent](CustomRefineEvent.md) | as before (every P months), now spread over the groups | |
+| [EstateEvent](EstateEvent.md) | | buying / upgrading a house, going home |
+| [HirePeopleEvent](HirePeopleEvent.md) | | teaming up with friends (the payment of masters stays monthly) |
+
+Not split: the player side of every feature, `UnitModifyEvent` (hooks new units), `MapBuildPropertyEvent` (town tax).
 
 ### Page 2 (economy, market, systems)
 
 | Option | Range / default | Score | Used by |
 |---|---|---|---|
-| `AddTaxRate` | -0.5 .. 5 | x 100 | [MapBuildPropertyEvent](MapBuildPropertyEvent.md) |
+| `AddTaxRate` | -0.5 .. 5 | x 400 (6.1.01; was x 100) | [MapBuildPropertyEvent](MapBuildPropertyEvent.md) |
 | `AddInflationRate` | -0.5 .. 2 | x 1,000 | [InflationaryEvent](InflationaryEvent.md) |
 | `AddBuildingCostRate` | 0 .. 8 | x 100 | [BuildingArrangeEvent](BuildingArrangeEvent.md) |
 | `AddBankAccountCostRate` | 0 .. 8 | x 100 | [BankAccountEvent](BankAccountEvent.md) |
-| `AddBankFee` | 0 .. 100 | x 100 | [RealStorageEvent](RealStorageEvent.md) |
+| `AddBankFee` | 0 .. 100 | x 20 (6.1.01; was x 100) | [RealStorageEvent](RealStorageEvent.md) |
 | `AddRefineCost` | -0.5 .. 1 | x 2,000 | [CustomRefineEvent](CustomRefineEvent.md) |
 | `AddSectExchangeRate` | -0.5 .. 1 | x 2,000 (not with SectNoExchange) | [ContributionExchangeEvent](ContributionExchangeEvent.md) |
 | `AddItemValueRate` | -0.5 .. 1 | x 1,000 | InflationaryEvent (start index) |
@@ -60,7 +88,7 @@ Buttons: Export (save dialog, copies the global cache file), Import (open dialog
 | `NoGrowupFromBattles` | off | +10,000 | BattleRewardEventV2 |
 | `AllowUpgradeNaturally` | off | -2,000 | [UpgradeNaturallyEvent](UpgradeNaturallyEvent.md) |
 | `AllowTownBuildupOverTime` (+ `_IncludeFirstTown`) | off | +1,000 (+1,000) | BuildingArrangeEvent |
-| `OnlyActiveOnCurOrNearArea` | **on** | -5,000 | RealMarketEvent3 |
+| `OnlyActiveOnCurOrNearArea` | **on** | -1,000 (6.1.01; was -5,000) | RealMarketEvent3 |
 | `DestroyBuildingAfterTownWar` | **on** | +2,000 | [MapBuildBattleEvent](MapBuildBattleEvent.md) |
 | `AllowRepairGodWeapon` | off | -5,000 | [RepairShinkiEvent](RepairShinkiEvent.md) |
 

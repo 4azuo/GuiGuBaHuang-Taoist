@@ -12,7 +12,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
     /// TG-73 (EstateEvent, NPC houses in depth): the monthly hook buys a house for an NPC staying in the town; the
     /// rules: the feature off, the share of the plots, one house in the world, the grade of the next level, at most half
     /// of the stones; the house tax paid by the NPC every month, unpaid months, the house taken back after MaxUnpaidMonths;
-    /// the house of a dead cultivator goes to the mortals; the mortal houses over months (the monthly chance). Changes the
+    /// the house of a dead cultivator goes to its heir or stands in ruins; the mortal houses over months (the monthly chance). Changes the
     /// save (an NPC dies; restored by run-autotest.ps1); estate, budget, settings, money and places restored.
     /// </summary>
     public class TG73_NpcHouses : IScenarioDefinition
@@ -64,7 +64,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                     // the monthly hook of the mod (all its parts) with a sure chance
                     g0.NpcBuyChance = 1f;
                     var money = npc.GetUnitMoney();
-                    EstateEvent.Instance.OnMonthlyForEachWUnit(npc);
+                    GrowTurnHelper.WithTurns(1, () => EstateEvent.Instance.OnMonthlyForEachWUnit(npc)); // its growth turn (one NPC group a month)
                     var house = EstateEvent.HouseOf(town, npc);
                     c.Assert(house != null, $"the monthly hook: {npc.GetName()} bought a house");
                     c.Assert(money - npc.GetUnitMoney() <= money / 2, "at most half of its stones");
@@ -120,9 +120,13 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                     var e = EstateEvent.Get(town);
                     var house = EstateEvent.HouseOf(town, other);
                     if (!c.Assert(house != null, "the other NPC's house")) return;
+                    var deadId = other.GetUnitId();
                     other.Die();
                     EstateEvent.MonthTown(town, 1, () => 0.99);
-                    c.Assert(house.OwnerId == null && house.Level > 0, "the house of a dead cultivator goes to the mortals");
+                    // 6.1.00: the heir heads the clan and keeps the house (ClanEvent.Succeed), else it stands in ruins (TG-89)
+                    var heir = house.OwnerId == null || EstateEvent.IsRuin(house) ? null : g.world.unit.GetUnit(house.OwnerId);
+                    c.Assert(house.OwnerId != deadId && house.Level > 0 && (EstateEvent.IsRuin(house) || (heir != null && !heir.isDie)),
+                        EstateEvent.IsRuin(house) ? "the house of a dead cultivator without heir stands in ruins" : $"the house of a dead cultivator goes to its heir {heir?.GetName()}");
                 })
                 .Step("mortals over months", c =>
                 {

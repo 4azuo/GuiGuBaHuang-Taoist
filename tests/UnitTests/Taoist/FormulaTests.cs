@@ -392,6 +392,25 @@ namespace UnitTests.Taoist
             Check.Eq(ClanEvent.Key("t", "a", "b"), ClanEvent.Key("t", "b", "a"), "the key of a pair does not depend on the order");
         }
 
+        [TestMethod, Description("ClanElderEvent: an elder betrays in the battle only when every condition holds (motive, time, loyalty, service, its leader hurt, the other side not weaker)")]
+        public void ClanElder_Betrayal()
+        {
+            Check.True(ClanElderEvent.BetrayMotive(true, 0, 0, 0), "a bad nature", null);
+            Check.True(ClanElderEvent.BetrayMotive(false, 1, 0, 0), "an unpaid month", null);
+            Check.True(ClanElderEvent.BetrayMotive(false, 0, 20, 120), "closer to the other head by 100", null);
+            Check.False(ClanElderEvent.BetrayMotive(false, 0, 20, 119), "no motive");
+            // all conditions: motive, 10 s, loyalty 0 < 30, served 1 year < 10, leader at 50 %, the other side as strong
+            Check.Eq(0.05, ClanElderEvent.BetrayChance(true, 10, 0, 12, 0.5, 100, 100), 0.0001, "loyalty 0: the full rate");
+            Check.Eq(0.05 * 15 / 30, ClanElderEvent.BetrayChance(true, 10, 15, 12, 0.5, 100, 100), 0.0001, "loyalty 15: half");
+            Check.Eq(0.05, ClanElderEvent.BetrayChance(true, 10, 0, 12, 0.5, 100, 80), 0.0001, "the other side at 80 %: still");
+            Check.Eq(0, ClanElderEvent.BetrayChance(false, 10, 0, 12, 0.5, 100, 100), 0.0001, "no motive");
+            Check.Eq(0, ClanElderEvent.BetrayChance(true, 9, 0, 12, 0.5, 100, 100), 0.0001, "too early in the battle");
+            Check.Eq(0, ClanElderEvent.BetrayChance(true, 10, 30, 12, 0.5, 100, 100), 0.0001, "loyal enough");
+            Check.Eq(0, ClanElderEvent.BetrayChance(true, 10, 0, 120, 0.5, 100, 100), 0.0001, "served 10 years");
+            Check.Eq(0, ClanElderEvent.BetrayChance(true, 10, 0, 12, 0.51, 100, 100), 0.0001, "its leader above half of its HP");
+            Check.Eq(0, ClanElderEvent.BetrayChance(true, 10, 0, 12, 0.5, 100, 79), 0.0001, "the other side clearly weaker");
+        }
+
         [TestMethod, Description("ClanElderEvent: grade by area, elders by house, salary, loyalty, acceptance, the war council, flight")]
         public void ClanElder_Formulas()
         {

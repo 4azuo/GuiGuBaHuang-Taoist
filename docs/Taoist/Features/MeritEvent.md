@@ -49,7 +49,7 @@ property moved by `Sync` when the level changes (`LuckGiven`).
 | encounter **Flood relief** (in a town: `Cost(8)` to the town budget) | +20 x grade |
 | encounter **Plague** (in a town: 5 herbs of the bag, the cheapest) | +15 x grade |
 | encounter **Beast raid** (outside towns): fight (60 %: -20 % HP, +25 x grade; else -40 % HP, +5 x grade) / walk away | / -5 x grade |
-| NPCs every month by their side | righteous +0..3, evil -0..3 |
+| NPCs on their [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed), by their side | righteous +0..3, evil -0..3 |
 
 Taoist log: `log_merit_gain`, `log_merit_loss` (with the deed), `log_merit_level`, `log_merit_bounty`.
 

@@ -27,6 +27,17 @@ namespace MOD_nE7UL2.Mod
         {
             base.OnLoadGame();
             ArtifactConfs = g.conf.itemProps._allConfList.ToArray().Where(x => x.IsArtifact() != null).ToArray();
+            artifactsByGrade.Clear();
+        }
+
+        private static readonly Dictionary<int, ConfItemPropsItem[]> artifactsByGrade = new Dictionary<int, ConfItemPropsItem[]>();
+
+        /// <summary>The artifacts a unit of this grade can craft (initGrade &lt;= grade), built once per grade and load.</summary>
+        public static ConfItemPropsItem[] ArtifactsOfGrade(int grade)
+        {
+            if (!artifactsByGrade.TryGetValue(grade, out var rs))
+                artifactsByGrade[grade] = rs = ArtifactConfs.Where(x => grade >= x.IsArtifact().initGrade).ToArray();
+            return rs;
         }
 
         /// <summary>
@@ -37,14 +48,18 @@ namespace MOD_nE7UL2.Mod
             base.OnMonthlyForEachWUnit(wunit);
             if (!wunit.IsPlayer())
             {
+                // crafts on its growth turn only (GrowUpSpeed: one NPC group a month)
+                var turns = GrowTurnHelper.Turns(wunit);
+                if (turns <= 0)
+                    return;
                 var wunitGrade = wunit.GetGradeLvl();
-                var availableArtifacts = ArtifactConfs.Where(x => wunitGrade >= x.IsArtifact().initGrade).ToArray();
+                var availableArtifacts = ArtifactsOfGrade(wunitGrade);
                 if (availableArtifacts.Length > 0)
                 {
                     var refine = wunit.GetDynProperty(UnitDynPropertyEnum.RefineWeapon).value;
                     var skill = CraftSkill(wunit);
                     var luck = wunit.GetDynProperty(UnitDynPropertyEnum.Luck).value;
-                    if (CommonTool.Random(0.00f, 100.00f).IsBetween(0.00f, ModLib.Mod.ModMaster.ChanceOver(refine / 1000f + luck / 100f, ModLib.Mod.ModMaster.MonthsPassed)))
+                    if (CommonTool.Random(0.00f, 100.00f).IsBetween(0.00f, ModLib.Mod.ModMaster.ChanceOver(refine / 1000f + luck / 100f, turns)))
                     {
                         // never an artifact of a kind and grade the NPC already owns (equipped or in the bag): it used to
                         // craft without any limit, its bag filling up over the years

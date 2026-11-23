@@ -19,7 +19,7 @@ Expertise: every martial art, step, ability and artifact (each item instance, by
 | `SkillExpRatios` (exp gain) | 0.02 | 0.8 | 0.1 | 1.0 | 0.6 |
 | `SkillDmgRatios` (damage bonus factor) | 0.1 | 1.0 | 1.0 | 0.4 | 5.0 |
 
-`AutoArtifactExpRate` 1.0 (monthly, NPCs), `BattleArtifactExpRate` 0.02 (per hit). `GrowUpSpeed` (S&M) for the monthly part.
+`AutoArtifactExpRate` 1.0 (monthly, NPCs), `BattleArtifactExpRate` 0.02 (per hit). `GrowUpSpeed` (S&M) for the monthly part ([growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed)).
 
 ## Where exp comes from
 

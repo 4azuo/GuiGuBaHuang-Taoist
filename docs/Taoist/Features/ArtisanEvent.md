@@ -73,7 +73,7 @@ apprentice           = Master 1, Grandmaster 2, Saint 3 a craft: the friendliest
 | 5 | Saint (Thánh thủ) | - |
 
 From rank 1 the exp stops at the next rank: an **exam** in a city (`Exam`), once a year, fee `Cost(3 x rank)` to the
-town budget. NPCs with a craft value of 100 or more raise their best craft every month (10 % of the value) and take its
+town budget. NPCs with a craft value of 100 or more raise their best craft on their [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed) (the yearly exam on the first turn of the year) (10 % of the value) and take its
 exam in the first month of the year. Taoist log: `log_artisan_rank`, `log_artisan_masterpiece`, `log_artisan_accident`,
 friends and family `log_npc_artisan_rank`, `log_npc_artisan_masterpiece`.
 

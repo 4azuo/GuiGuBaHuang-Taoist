@@ -38,8 +38,9 @@ namespace MOD_nE7UL2.Mod
         public override void OnMonthlyForEachWUnit(WorldUnitBase wunit)
         {
             base.OnMonthlyForEachWUnit(wunit);
-            var ticks = ModLib.Mod.ModMaster.Ticks(SMLocalConfigsEvent.Instance.Configs.GrowUpSpeed);
-            if (wunit.IsFullExp() && ticks > 0)
+            // the player every GrowUpSpeed months; NPCs split in groups, one group a month (GrowTurnHelper)
+            var ticks = GrowTurnHelper.Turns(wunit);
+            if (ticks > 0 && wunit.IsFullExp())
             {
                 var unitId = wunit.GetUnitId();
                 if (!Qi.ContainsKey(unitId))

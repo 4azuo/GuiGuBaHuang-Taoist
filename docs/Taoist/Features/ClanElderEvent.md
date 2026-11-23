@@ -1,6 +1,6 @@
 # ClanElderEvent
 
-`3161035078/ModProject/ModCode/ModMain/Mod/ClanElderEvent.cs` (+ `ClanElderEvent.Window.cs`) - cache key
+`3161035078/ModProject/ModCode/ModMain/Mod/ClanElderEvent.cs` (+ `ClanElderEvent.Window.cs`, `ClanElderEvent.Battle.cs`) - cache key
 `ModConst.CLAN_ELDER_EVENT` - group: Economy (order 3023)
 
 Clan elders (6.1.0): cultivators of no kin who guard a clan of [ClanEvent](ClanEvent.md), paid by it. They have no say
@@ -39,6 +39,27 @@ in its affairs but vote on its wars and fight in them; one who flees a war is hu
 - **In a war**: the elders' power counts for their clan (`ClanEvent.SidePower`); before it, an elder whose loyalty is
   under `FleeLoyalty` flees with `FleeChance` (a deserter); after it, the losers' elders fall with WarDeath x
   `ElderDeath` (never the player), the others are hurt.
+- **In the battle of a clan war** (6.1.01, `ClanElderEvent.Battle.cs`): the real battle the player fights in a war
+  (`ClanEvent.Pending` with `War`: the player steps in, or its clan declared the war). `OnBattleStart` keeps the war and
+  the power of both sides (`ClanEvent.SidePower`); `JoinSeconds` after the start the elders of both clans (not the
+  player) join (`BattleEvent.NPCJoin`): those of the player's side as allies, the others as enemies.
+- **Betrayal in the battle** (`TryBetray`, each second): an elder turns on its clan only when **all** hold
+  (`BetrayChance`):
+  - a motive (`BetrayMotive`): a nature that betrays (`BadNature`: inner trait selfish or evil, an outer trait
+    power-hungry, as the team members of BattleEvent), unpaid months, or an intimacy with the other head `BetrayIntimGap`
+    above the one with its own head;
+  - `BetrayAfterSeconds` of battle passed; loyalty under `BetrayLoyalty`; served less than `BetrayLoyalMonths`;
+  - its side's leader hurt: the player (for the elders of the player's side) or the enemy's champion at `BetrayLeaderHp`
+    of its HP or less;
+  - the other side at least `BetrayPowerRatio` x the power of its own (at the start of the war).
+
+  Then the chance a second is `BetrayRate x (BetrayLoyalty - loyalty) / BetrayLoyalty`, `BetrayMax` betrayals a battle.
+  An elder of the player's side who betrays becomes an enemy (its battle unit changes sides), +200 hate both ways; an
+  enemy elder who betrays fights beside the player, +30 intimacy both ways. Either way it leaves its clan as a traitor
+  (`Outlaw`: hunted like a deserter, its old clan's intimacy -100), a drama in the battle (`elder_betray_ours` /
+  `elder_betray_theirs`), Taoist log `log_clan_elder_betrayed`. After the battle (`EndWarBattle`): a turncoat alive
+  whose new side won becomes an elder of that clan when it can serve there (`log_clan_elder_turncoat`; the player's
+  clan: message `elder_turncoat_joined`). An elder who fled before the war (`FleeLoyalty`) is not in the battle.
 - **Desertion** (`Desert`): the elder leaves, the clan members' intimacy with it -100, a hunt for `HuntMonths`. The
   player deserts by staying out of a war of the clan it guards (ClanEvent.OnAnswer). Each month a hunt attacks with
   `HuntChance`: the hunter is the strongest member or elder of the clan; an NPC deserter beaten dies with `HuntDeath`;
@@ -56,9 +77,10 @@ in its affairs but vote on its wars and fight in them; one who flees a war is hu
 ## Windows
 
 - Clans window (town map, `AddClansButtons`): "Elders (n/max)" and "War council" for the player's clan; the player's post
-  (clan, salary) with Resign; each clan line lists its elders (`ClanLineSuffix`).
-- Elders window (`OpenElders`): rules, the elders (realm, salary, loyalty in red when low; Dismiss), the candidates
-  (realm, intimacy, salary, chance; Invite).
+  (clan, salary) with Resign; each clan card lists its elders (`ElderNames`).
+- Elders window (`OpenElders`, 6.1.01 cards): rules, then a card per elder (portrait - `InfoSheet.Portrait`, a click
+  opens its information -, name, realm and salary, loyalty in red when low / green; Dismiss), then a card per candidate
+  (portrait, name, realm and intimacy, salary and the chance it accepts - red at 0 %, green from 50 %; Invite).
 - War council (`OpenWarCouncil`): the hostile clans (relation, members, elders, chance to win; Declare war); the ballots
   (`ShowBallots`).
 
@@ -67,10 +89,13 @@ in its affairs but vote on its wars and fight in them; one who flees a war is hu
 `Enabled`, `GradeOverArea`, `MaxElders`, `Salary`, `OfferingMonths`, `StartLoyalty`, `LoyaltyPerIntim`, `PaidLoyalty`,
 `UnpaidLoyalty`, `WarLoyalty`, `SuccessionLoyalty`, `HeadVotes`, `FleeLoyalty`, `ElderDeath`, `HuntMonths`, `HuntChance`,
 `HuntDeath`, `HuntWins`, `CompensationMonths`, `RecruitChance`, `InviteChance`, `InviteIntim`, `InviteReputation`,
-`AcceptBase`, `AcceptIntim`, `AcceptReputation`, `AcceptHouse`, `AcceptGrade`.
+`AcceptBase`, `AcceptIntim`, `AcceptReputation`, `AcceptHouse`, `AcceptGrade`; in the battle: `BattleJoin` (true),
+`JoinSeconds` (3), `BetrayAfterSeconds` (10), `BetrayLoyalty` (30), `BetrayLoyalMonths` (120), `BetrayIntimGap` (100),
+`BetrayLeaderHp` (0.5), `BetrayPowerRatio` (0.8), `BetrayRate` (0.05 a second), `BetrayMax` (1; 0: never).
 
 ## Tests
 
+TG-90 (autotest: the elder joins the war battle, no betrayal at full HP, betrays under half of the HP, hunted, one a battle);
 TG-88 (autotest: who can serve, the invitation, the Elders window, pay and loyalty, the war council, desertion and hunt,
-an NPC clan inviting the player, resign); `FormulaTests.ClanElder_Formulas`. Promotion pictures: TR-04 (`elders`,
+an NPC clan inviting the player, resign); `FormulaTests.ClanElder_Formulas`, `FormulaTests.ClanElder_Betrayal`. Promotion pictures: TR-04 (`elders`,
 `elder-council`, `elder-invite`, `elder-hunt`).

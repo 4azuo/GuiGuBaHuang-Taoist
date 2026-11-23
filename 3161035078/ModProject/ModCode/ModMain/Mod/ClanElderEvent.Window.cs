@@ -16,56 +16,87 @@ namespace MOD_nE7UL2.Mod
         private static Color RED => new Color(0.6f, 0.1f, 0.1f);
 
         /// <summary>
-        /// The elders of the player's clan in the town: each with its grade, salary and loyalty (dismiss), then the
-        /// candidates of the area with the chance they accept (invite).
+        /// The elders of the player's clan in the town: a card each (portrait, name, realm, salary, loyalty; dismiss),
+        /// then the candidates of the area (portrait, name, realm, intimacy, salary, the chance they accept; invite).
+        /// A click on a portrait opens the cultivator's information.
         /// </summary>
         public static void OpenElders(MapBuildTown town)
         {
             g.ui.CloseUI(UIType.TextInfoLong);
             g.ui.CloseUI(UIType.TextInfo);
             var ui = new UICustom1(string.Format(GameTool.LS("elder_title"), ClanEvent.ClanName(Player), town.name));
+            var dy = InfoSheet.RowHeight(ui);
+            var left = ui.Columns[ui.FirstCol];
+            var width = ui.Columns[ui.LastCol] - left;
             var row = ui.FirstRow;
-            var list = Of(town, Player);
+            var list = Of(town, Player).Where(x => Unit(x.UnitId) != null).ToList();
             var max = MaxElders(town, Player);
             foreach (var line in InfoDialog.Wrap(string.Format(GameTool.LS("elder_rules"), MinGrade(town), Conf.HeadVotes), InfoDialog.WRAP_CHARS_LONG))
-                ui.AddText(ui.MidCol, row++, line).Format(null, 14);
-            row++;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("elder_current"), list.Count, max)).Format(GOLD, 15);
-            var textX = ui.Columns[ui.MidCol] - 90f;
-            var btnX = ui.Columns[ui.LastCol] - 130f;
-            if (list.Count == 0) ui.AddText(ui.MidCol, row++, GameTool.LS("elder_none")).Format(Color.gray, 14);
-            foreach (var e in list)
-            {
-                var u = Unit(e.UnitId);
-                if (u == null) continue;
-                ui.AddText(textX, ui.Rows[row], string.Format(GameTool.LS("elder_line"), u.GetName(), u.GetGradeLvl(), Salary(u), e.Loyalty))
-                    .Format(e.Loyalty < Conf.FleeLoyalty ? RED : Color.black, 14);
-                ui.AddButton(btnX, ui.Rows[row], () =>
-                {
-                    Leave(e, "log_clan_elder_dismissed");
-                    OpenElders(town);
-                }, GameTool.LS("elder_dismiss")).Size(130, 28);
-                row++;
-            }
-            row++;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("elder_candidates"), MinGrade(town))).Format(GOLD, 15);
+                ui.AddText(ui.MidCol, row++, line).Format(new Color(0.3f, 0.3f, 0.3f), 13);
             var cands = Candidates(town, Player, 6);
-            if (cands.Count == 0) ui.AddText(ui.MidCol, row++, GameTool.LS("elder_no_candidate")).Format(Color.gray, 14);
-            foreach (var u in cands)
+            // two sections of cards (a header, the portrait, 3 lines, a button): the portrait takes what is left
+            var top = ui.Rows[row] - dy * 0.2f;
+            var bottom = ui.Rows[ui.LastRow] + dy * 0.8f;
+            // a section: its header (0.8), the portrait, the name (0.6), two lines, the button (3.2) and a margin
+            var picH = Math.Max(dy * 2f, Math.Min(dy * 5.5f, ((top - bottom) - 2 * dy * 6f) / 2f));
+            var picW = picH * 0.85f;
+            var cardH = picH + dy * 6f;
+            var cardW = Math.Min(width / 6f, picW + 70f);
+
+            // the elders
+            var y = top - dy * 0.5f;
+            ui.AddText(ui.Columns[ui.MidCol], y, string.Format(GameTool.LS("elder_current"), list.Count, max)).Format(GOLD, 15, FontStyle.Bold);
+            if (list.Count == 0)
+                ui.AddText(ui.Columns[ui.MidCol], y - dy * 1.5f, GameTool.LS("elder_none")).Format(Color.gray, 14);
+            for (var i = 0; i < list.Count; i++)
             {
-                if (row >= ui.LastRow - 1) break;
-                ui.AddText(textX, ui.Rows[row], string.Format(GameTool.LS("elder_candidate_line"), u.GetName(), u.GetGradeLvl(), (int)Intim(u, Player), Salary(u), (int)Math.Round(ChanceOf(town, u) * 100)))
-                    .Format(Color.black, 14);
-                var cand = u;
-                ui.AddButton(btnX, ui.Rows[row], () =>
-                {
-                    var rs = Invite(town, cand, Roll);
-                    OpenElders(town);
-                    InfoDialog.Msg(town.name, string.Format(GameTool.LS(rs), cand.GetName(), ClanEvent.ClanName(Player)));
-                }, GameTool.LS("elder_invite")).Size(130, 28);
-                row++;
+                var e = list[i];
+                var u = Unit(e.UnitId);
+                var cx = ui.Columns[ui.MidCol] + cardW * (i - (list.Count - 1) / 2f);
+                var low = e.Loyalty < Conf.FleeLoyalty;
+                Card(ui, u, cx, y - dy * 0.8f, picW, picH, dy,
+                    string.Format(GameTool.LS("elder_card_line"), u.GetGradeLvl(), Salary(u)), Color.black,
+                    string.Format(GameTool.LS("elder_card_loyalty"), e.Loyalty), low ? RED : new Color(0.1f, 0.45f, 0.1f),
+                    GameTool.LS("elder_dismiss"), () =>
+                    {
+                        Leave(e, "log_clan_elder_dismissed");
+                        OpenElders(town);
+                    }, cardW - 16f);
+            }
+
+            // the candidates
+            y = top - cardH - dy * 0.6f;
+            ui.AddText(ui.Columns[ui.MidCol], y, string.Format(GameTool.LS("elder_candidates"), MinGrade(town))).Format(GOLD, 15, FontStyle.Bold);
+            if (cands.Count == 0)
+                ui.AddText(ui.Columns[ui.MidCol], y - dy * 1.5f, GameTool.LS("elder_no_candidate")).Format(Color.gray, 14);
+            for (var i = 0; i < cands.Count; i++)
+            {
+                var cand = cands[i];
+                var cx = ui.Columns[ui.MidCol] + cardW * (i - (cands.Count - 1) / 2f);
+                var chance = (int)Math.Round(ChanceOf(town, cand) * 100);
+                Card(ui, cand, cx, y - dy * 0.8f, picW, picH, dy,
+                    string.Format(GameTool.LS("elder_card_cand"), cand.GetGradeLvl(), (int)Intim(cand, Player)), Color.black,
+                    string.Format(GameTool.LS("elder_card_accept"), Salary(cand), chance), chance <= 0 ? RED : chance >= 50 ? new Color(0.1f, 0.45f, 0.1f) : Color.black,
+                    GameTool.LS("elder_invite"), () =>
+                    {
+                        var rs = Invite(town, cand, Roll);
+                        OpenElders(town);
+                        InfoDialog.Msg(town.name, string.Format(GameTool.LS(rs), cand.GetName(), ClanEvent.ClanName(Player)));
+                    }, cardW - 16f);
             }
             ui.AddText(ui.MidCol, ui.LastRow, GameTool.LS("elder_hint")).Format(Color.gray, 13);
+        }
+
+        /// <summary>A card of a cultivator: its portrait under top, its name, two lines, a button.</summary>
+        private static void Card(UICustom1 ui, WorldUnitBase u, float cx, float top, float picW, float picH, float dy,
+            string line1, Color color1, string line2, Color color2, string button, Action act, float btnW)
+        {
+            InfoSheet.Portrait(ui, u, cx, top - picH / 2f, picW, picH);
+            var y = top - picH - dy * 0.6f;
+            ui.AddText(cx, y, u.GetName()).Format(Color.black, 14, FontStyle.Bold);
+            ui.AddText(cx, y - dy, line1).Format(color1, 12);
+            ui.AddText(cx, y - dy * 2f, line2).Format(color2, 12);
+            ui.AddButton(cx, y - dy * 3.2f, act, button).Size(Math.Max(90f, btnW), 28);
         }
 
         /// <summary>The war council of the player's clan: the clans of the town hostile to it, war declared on one by a vote.</summary>
@@ -135,12 +166,8 @@ namespace MOD_nE7UL2.Mod
             }
         }
 
-        /// <summary>The elders of a clan for its line in the Clans window ("" when none).</summary>
-        public static string ClanLineSuffix(MapBuildTown town, WorldUnitBase head)
-        {
-            if (!Enabled) return string.Empty;
-            var names = Of(town, head).Select(x => Unit(x.UnitId)?.GetName()).Where(x => x != null).ToList();
-            return names.Count == 0 ? string.Empty : string.Format(GameTool.LS("elder_clan_suffix"), string.Join(", ", names));
-        }
+        /// <summary>The names of the elders of a clan (its card in the Clans window).</summary>
+        public static List<string> ElderNames(MapBuildTown town, WorldUnitBase head) =>
+            !Enabled ? new List<string>() : Of(town, head).Select(x => Unit(x.UnitId)?.GetName()).Where(x => x != null).ToList();
     }
 }

@@ -48,7 +48,7 @@ The search windows set the flags; closing `NPCSearch` resets them.
 
 ## Monthly (`OnMonthlyForEachWUnit`)
 
-1. **Team up** (NPC not hired): for every unit it likes (intimacy >= 180), chance `ChanceOver(10 %, MonthsPassed)`, if: (1) the other is a friend, or (2) intimacy >= 30 % of 180 and same sect, or (3) `BattleEvent.IsFriendlyUnit` and same alignment with stand values apart < 80. The other becomes its master: the player gets a drama (`420041123`, option `420041124` = accept); an NPC accepts at once.
+1. **Team up** (NPC not hired): for every unit it likes (intimacy >= 180), on its [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed) only, chance `ChanceOver(10 %, Months(turns))`, if: (1) the other is a friend, or (2) intimacy >= 30 % of 180 and same sect, or (3) `BattleEvent.IsFriendlyUnit` and same alignment with stand values apart < 80. The other becomes its master: the player gets a drama (`420041123`, option `420041124` = accept); an NPC accepts at once.
 2. **Payment** (unit is a master): dead master -> team disbanded. For each member: gone -> removed; dead -> removed and luck removed; not a friend -> pay `monthly pay x MonthsPassed`; not enough money -> dismissed and +50 hate; paid -> the member is moved to the master. Team empty -> removed.
 
 ## API

@@ -14,7 +14,7 @@ Qi cultivation: a unit whose exp is full keeps cultivating and stores Qi; Qi giv
 ## Switches
 
 - `NoQiCultivation` (S&M): `OnCacheHandler` returns false -> the event is not loaded at all (`Instance` null, all Qi bonuses 0; BUG-16).
-- `GrowUpSpeed` (S&M): Qi is added every `GrowUpSpeed` months (`ModMaster.Ticks`).
+- `GrowUpSpeed` (S&M): Qi is added every `GrowUpSpeed` months ([growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed): the player by `ModMaster.Ticks`, NPCs one group a month).
 
 ## Flow
 

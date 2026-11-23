@@ -55,7 +55,7 @@ Layers inside a realm go up by themselves; at the last layer of a realm (and at 
 
 | Hook | What happens |
 |---|---|
-| `OnMonthlyForEachWUnit` | NPC not a body refiner: takes up the path with 0.5 % a month; body refiners: injury months go down, training exp; NPCs at a bottleneck try a breakthrough |
+| `OnMonthlyForEachWUnit` | NPC not a body refiner: takes up the path with 0.5 % a month; body refiners: injury months go down, training exp; NPCs at a bottleneck try a breakthrough. NPCs on their [growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed) only: exp by turns, the chances and timers over the months the turns stand for |
 | `OnBattleUnitHit` | the hit world unit is a body refiner (not injured): hit exp |
 | `OnOpenUIEnd(FateFeature)` | button "Body Refining" left of the Qi lines, the realm under it -> `OpenWindow` |
 | `OnOpenUIEnd(NPCInfo)` | an NPC body refiner: "Body: realm - layer" over the Qi lines |

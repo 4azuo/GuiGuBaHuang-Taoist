@@ -33,8 +33,9 @@ namespace MOD_nE7UL2.Mod
             base.OnMonthlyForEachWUnit(wunit);
             if (!wunit.IsPlayer())
             {
-                // one dispatch may stand for several months (time skip)
-                for (var m = 0; m < ModLib.Mod.ModMaster.MonthsPassed; m++)
+                // one try per growth turn (GrowUpSpeed: one NPC group a month; several turns over a time skip)
+                var turns = GrowTurnHelper.Turns(wunit);
+                for (var m = 0; m < turns; m++)
                     UpgradeMartial(wunit);
             }
         }

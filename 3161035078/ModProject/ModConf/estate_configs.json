@@ -188,6 +188,16 @@
 		"AcceptIntim": 200,
 		"AcceptReputation": 2000,
 		"AcceptHouse": 0.05,
-		"AcceptGrade": 0.15
+		"AcceptGrade": 0.15,
+		"BattleJoin": true,
+		"JoinSeconds": 3,
+		"BetrayAfterSeconds": 10,
+		"BetrayLoyalty": 30,
+		"BetrayLoyalMonths": 120,
+		"BetrayIntimGap": 100,
+		"BetrayLeaderHp": 0.5,
+		"BetrayPowerRatio": 0.8,
+		"BetrayRate": 0.05,
+		"BetrayMax": 1
 	}
 }

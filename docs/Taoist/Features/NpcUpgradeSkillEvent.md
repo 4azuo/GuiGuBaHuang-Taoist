@@ -16,7 +16,7 @@ None.
 
 | Hook | What happens |
 |---|---|
-| `OnMonthlyForEachWUnit` | NPCs only; runs `UpgradeMartial(wunit)` once per month passed (`MonthsPassed`). |
+| `OnMonthlyForEachWUnit` | NPCs only; runs `UpgradeMartial(wunit)` once per [growth turn](SMGlobalConfigsEvent.md#growth-turns-growupspeed) |
 
 `UpgradeMartial(wunit)`:
 

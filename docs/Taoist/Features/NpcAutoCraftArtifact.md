@@ -16,12 +16,12 @@ None (`ArtifactConfs` is a static runtime cache).
 |---|---|
 | `OnLoadGame` | Caches every item config that is an artifact (`IsArtifact() != null`) into `ArtifactConfs`. |
 | `OnOpenUIEnd` | `ArtifactShapeMadeSuccess` (the player made an artifact): every attribute rate of the new artifact + `AttrBonus(CraftSkill(player))` %, once per artifact (`BoostedSoleIds`), then the window is refreshed. |
-| `OnMonthlyForEachWUnit` | NPCs only. Artifacts whose `initGrade <= unit grade`; on a successful roll: draws the grade, drops the kinds already owned at that grade, adds a random remaining one and randomizes it. |
+| `OnMonthlyForEachWUnit` | NPCs only, on their [growth turns](SMGlobalConfigsEvent.md#growth-turns-growupspeed). Artifacts whose `initGrade <= unit grade`; on a successful roll: draws the grade, drops the kinds already owned at that grade, adds a random remaining one and randomizes it. |
 
 ## Formulas
 
 ```
-chance (%) = ChanceOver(RefineWeapon / 1000 + Luck / 100, MonthsPassed)      (forge only, not the craft skill)
+chance (%) = ChanceOver(RefineWeapon / 1000 + Luck / 100, turns)      (forge only, not the craft skill)
 ```
 
 `ChanceOver(p, n)` = chance of at least one success in `n` tries (time skip).

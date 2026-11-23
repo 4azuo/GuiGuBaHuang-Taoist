@@ -37,12 +37,16 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Unit
                 {
                     if (npc == null) return;
                     if (g.ui.HasUI(UIType.NPCInfo)) g.ui.CloseUI(UIType.NPCInfo);
-                    for (var i = 0; i < 24; i++)
+                    // 24 growth turns (GrowUpSpeed: an NPC grows on its turn only, one NPC group a month)
+                    GrowTurnHelper.WithTurns(1, () =>
                     {
-                        NpcAutoEvent.Instance.OnMonthlyForEachWUnit(npc);
-                        NpcUpgradeSkillEvent.Instance.OnMonthlyForEachWUnit(npc);
-                        NpcAutoCraftArtifact.Instance.OnMonthlyForEachWUnit(npc);
-                    }
+                        for (var i = 0; i < 24; i++)
+                        {
+                            NpcAutoEvent.Instance.OnMonthlyForEachWUnit(npc);
+                            NpcUpgradeSkillEvent.Instance.OnMonthlyForEachWUnit(npc);
+                            NpcAutoCraftArtifact.Instance.OnMonthlyForEachWUnit(npc);
+                        }
+                    });
                     c.Assert(MartialExp(npc) > (long)c.Bag["mexp"], $"martial exp {c.Bag["mexp"]} -> {MartialExp(npc)}");
                     c.Assert(npc.GetExp() > (int)c.Bag["exp"] || npc.GetGradeLvl() > 0, $"exp {c.Bag["exp"]} -> {npc.GetExp()} (grade {npc.GetGradeLvl()})");
                     c.Info($"items {c.Bag["items"]} -> {npc.GetUnitProps().Count} (artifact crafting is random)");

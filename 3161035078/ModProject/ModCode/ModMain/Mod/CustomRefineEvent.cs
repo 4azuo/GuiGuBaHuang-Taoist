@@ -49,7 +49,7 @@ namespace MOD_nE7UL2.Mod
         public override void OnMonthlyForEachWUnit(WorldUnitBase wunit)
         {
             base.OnMonthlyForEachWUnit(wunit);
-            var ticks = ModLib.Mod.ModMaster.Ticks(SMLocalConfigsEvent.Instance.Configs.GrowUpSpeed);
+            var ticks = GrowTurnHelper.Turns(wunit); // the player every GrowUpSpeed months; NPCs one group a month
             for (var t = 0; t < ticks; t++)
             {
                 var location = wunit.GetUnitPos();

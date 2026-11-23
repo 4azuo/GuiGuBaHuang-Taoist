@@ -157,7 +157,10 @@ namespace MOD_nE7UL2.Mod
                 else if (mood <= max * 0.2f) Add(wunit, MOOD_BAD * months);
                 return;
             }
-            Add(wunit, CommonTool.Random(0, 3) * months);
+            // NPCs: on their growth turn only (GrowUpSpeed: one NPC group a month), the gain by turns
+            var turns = GrowTurnHelper.Turns(wunit);
+            if (turns > 0)
+                Add(wunit, CommonTool.Random(0, 3) * turns);
         }
 
         // ------------------------------------------------------------------ UI

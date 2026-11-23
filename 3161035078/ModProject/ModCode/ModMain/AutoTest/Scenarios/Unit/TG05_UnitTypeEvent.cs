@@ -22,9 +22,10 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Unit
                 {
                     var dic = UnitTypeEvent.Instance.UnitTypeDic;
                     c.Info($"units with a role before: {dic.Count}");
-                    if (UnitTypeEvent.GetUnitTypeEnum(Player) == null)
+                    // the player may have its role from the new save already (Startup Player Role): check the NPCs too
+                    if (UnitTypeEvent.GetUnitTypeEnum(Player) == null || Npcs.Take(20).Any(x => UnitTypeEvent.GetUnitTypeEnum(x) == null))
                     {
-                        c.Info("no role yet (first month not passed): running the monthly handler for the player and 20 NPCs");
+                        c.Info("units without a role yet (first month not passed): running the monthly handler for the player and 20 NPCs");
                         UnitTypeEvent.Instance.OnMonthlyForEachWUnit(Player);
                         foreach (var npc in Npcs.Take(20))
                             UnitTypeEvent.Instance.OnMonthlyForEachWUnit(npc);

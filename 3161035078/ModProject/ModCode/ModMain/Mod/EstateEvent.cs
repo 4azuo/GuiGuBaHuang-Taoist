@@ -694,7 +694,12 @@ namespace MOD_nE7UL2.Mod
             base.OnMonthlyForEachWUnit(wunit);
             if (!wunit.IsPlayer())
             {
-                try { NpcHouse(wunit, Math.Max(1, ModMaster.MonthsPassed), Roll); NpcHome(wunit, Math.Max(1, ModMaster.MonthsPassed), Roll); }
+                // on the growth turn of the NPC only (GrowUpSpeed: one NPC group a month), the chances over the months it stands for
+                var turns = GrowTurnHelper.Turns(wunit);
+                if (turns <= 0)
+                    return;
+                var months = GrowTurnHelper.Months(turns);
+                try { NpcHouse(wunit, months, Roll); NpcHome(wunit, months, Roll); }
                 catch (Exception ex) { DebugHelper.WriteLine($"EstateEvent.NpcHouse {wunit?.GetUnitId()}: {ex.Message}"); }
                 return;
             }

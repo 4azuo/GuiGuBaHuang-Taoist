@@ -27,7 +27,7 @@ namespace MOD_nE7UL2.Mod
         {
             base.OnMonthlyForEachWUnit(wunit);
 
-            var ticks = ModLib.Mod.ModMaster.Ticks(SMLocalConfigsEvent.Instance.Configs.GrowUpSpeed);
+            var ticks = GrowTurnHelper.Turns(wunit); // the player every GrowUpSpeed months; NPCs one group a month
             if (ticks > 0)
             {
                 foreach (var martial in wunit.GetActionMartials())

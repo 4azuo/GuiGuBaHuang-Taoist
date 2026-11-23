@@ -42,7 +42,7 @@ namespace MOD_nE7UL2.Mod
         }
 
         /// <summary>
-        /// Assigns a role on first sight (player role from S&amp;M configs), updates rank lucks, adds income and grows properties every GrowUpSpeed months.
+        /// Assigns a role on first sight (player role from S&amp;M configs); on the growth turn of the unit (GrowTurnHelper) updates rank lucks, adds income and grows properties.
         /// </summary>
         public override void OnMonthlyForEachWUnit(WorldUnitBase wunit)
         {
@@ -56,6 +56,12 @@ namespace MOD_nE7UL2.Mod
                 if (!AddStartupPlayerRole(wunit))
                     UnitTypeDic.Add(unitId, AddRandomUnitType(wunit));
             }
+
+            // growth turns (GrowUpSpeed): the player every period months; NPCs split in groups, one group a month, and
+            // an NPC updates its lucks, income and properties on its turn only (the income for the months it stands for)
+            var ticks = GrowTurnHelper.Turns(wunit);
+            if (!wunit.IsPlayer() && ticks <= 0)
+                return;
 
             //add apprentice luck
             AddApprenticeLuck(wunit);
@@ -81,11 +87,11 @@ namespace MOD_nE7UL2.Mod
                 income += (money * merchantLvl * MerchantLuckEnum.Merchant.IncPassiveIncomeEachLvl).Parse<int>();
             }
 
-            // one dispatch may stand for several months (time skip)
-            wunit.AddUnitMoney((int)Math.Min(int.MaxValue, (long)income * ModLib.Mod.ModMaster.MonthsPassed));
+            // one dispatch may stand for several months (time skip); an NPC turn stands for GrowUpSpeed months
+            var months = wunit.IsPlayer() ? ModLib.Mod.ModMaster.MonthsPassed : GrowTurnHelper.Months(ticks);
+            wunit.AddUnitMoney((int)Math.Min(int.MaxValue, (long)income * months));
 
             //add property
-            var ticks = ModLib.Mod.ModMaster.Ticks(SMLocalConfigsEvent.Instance.Configs.GrowUpSpeed);
             for (var t = 0; t < ticks; t++)
             {
                 if (wunit.IsPlayer())

@@ -203,14 +203,21 @@ namespace MOD_nE7UL2.Mod
         /// <summary>An elder deserts the clan (fled a war): it leaves and the clan hunts it.</summary>
         public static void Desert(Elder e)
         {
+            Outlaw(e);
+            var u = Unit(e.UnitId); var head = Unit(e.Head);
+            var town = Town(e.TownId);
+            TaoistLogEvent.Log("log_clan_elder_fled", town?.name ?? "-", u?.GetName() ?? "-", ClanEvent.ClanName(head));
+        }
+
+        /// <summary>An elder leaves its clan as a traitor (a deserter, a turncoat): the clan hunts it, its members' intimacy -100.</summary>
+        public static void Outlaw(Elder e)
+        {
             Instance.Elders.Remove(e);
             var u = Unit(e.UnitId); var head = Unit(e.Head);
             Instance.Hunts.RemoveAll(x => x.TargetId == e.UnitId && x.Head == e.Head);
             Instance.Hunts.Add(new Hunt { TownId = e.TownId, Head = e.Head, TargetId = e.UnitId, Since = Month, Salary = Salary(u) });
             foreach (var m in ClanEvent.Members(head).Where(x => !x.IsPlayer()))
                 if (u != null) FamilyEvent.ChangeIntim(m.data.unitData.relationData, e.UnitId, -100);
-            var town = Town(e.TownId);
-            TaoistLogEvent.Log("log_clan_elder_fled", town?.name ?? "-", u?.GetName() ?? "-", ClanEvent.ClanName(head));
         }
 
         /// <summary>The head of the clan died and its heir took over: the elders and the hunts follow; the elders lose SuccessionLoyalty.</summary>
@@ -645,6 +652,7 @@ namespace MOD_nE7UL2.Mod
         public override void OnBattleEndHandler(BattleEndHandler e)
         {
             base.OnBattleEndHandler(e);
+            try { EndWarBattle(e.isWin); } catch (Exception ex) { DebugHelper.WriteLine($"ClanElderEvent.EndWarBattle: {ex}"); }
             var h = Instance?.PendingHunt;
             if (h == null) return;
             Instance.PendingHunt = null;

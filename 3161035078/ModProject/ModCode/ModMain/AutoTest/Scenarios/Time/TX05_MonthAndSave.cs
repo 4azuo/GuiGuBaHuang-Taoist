@@ -72,6 +72,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Time
                 .Wait("save done", c => !DataMgr.isSaveData, 60000, 1000)
                 .Step("caches on disk", c =>
                 {
+                    c.Assert(CacheHelper.FlushWrites(), "cache files written (the save writes them in the background)");
                     var file = CacheHelper.GetGameCacheFilePath(ModMain.ModObj.ModId, ModConst.MONST_STRONGER_EVENT);
                     c.Assert(File.Exists(file) && File.GetLastWriteTime(file) >= start, $"cache file written: {Path.GetFileName(file)} at {(File.Exists(file) ? File.GetLastWriteTime(file).ToString("HH:mm:ss") : "-")}");
                     var ms = ReadCache<MonstStrongerEvent>(ModConst.MONST_STRONGER_EVENT);

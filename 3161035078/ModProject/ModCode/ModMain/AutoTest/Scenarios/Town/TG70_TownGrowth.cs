@@ -88,13 +88,15 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                 {
                     if (npc == null) return;
                     var house = EstateEvent.HouseOf(town, npc);
-                    c.Bag["houseText"] = string.Format(GameTool.LS("estate_info_owner"), npc.GetName(), EstateEvent.HouseName(house.Level), EstateEvent.DistrictName(house.District), house.Prosperity, EstateEvent.HouseTax(town, house));
+                    // the facts of the plot (InfoSheet rows since 6.1.01): the owner, the house
+                    c.Bag["houseText"] = string.Format(GameTool.LS("estate_val_owner"), npc.GetName());
+                    c.Bag["houseName"] = EstateEvent.HouseName(house.Level);
                     CloseAll(UIType.TextInfoLong);
                     EstateEvent.ClickPlot(town, house);
                     // the text window of the plot (InfoDialog, UITextInfo since 6.0): which plot and whose house
                     var shown = MOD_nE7UL2.Helper.InfoDialog.LastText ?? string.Empty;
                     c.Assert(g.ui.HasUI(MOD_nE7UL2.Helper.InfoDialog.LastUIType), "the window of the plot (UITextInfo, UITextInfoLong for a long text)");
-                    c.Assert(shown.Contains((string)c.Bag["houseText"]), $"the plot tells whose house it is: {c.Bag["houseText"]}");
+                    c.Assert(shown.Contains((string)c.Bag["houseText"]) && shown.Contains((string)c.Bag["houseName"]), $"the plot tells whose house it is: {c.Bag["houseText"]}, {c.Bag["houseName"]}");
                     c.Assert(shown.Contains(EstateEvent.PlotWhere(house)), $"and which plot: {EstateEvent.PlotWhere(house)}");
                     c.Info($"popup: {shown}");
                 }, 1200)
