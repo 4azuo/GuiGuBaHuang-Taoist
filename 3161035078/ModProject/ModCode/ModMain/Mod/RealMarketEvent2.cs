@@ -108,7 +108,9 @@ namespace MOD_nE7UL2.Mod
         /// </summary>
         public static float GetBuyRate(MapBuildTown town, WorldUnitBase wunit)
         {
-            var r = Instance.MarketPriceRate[town.buildData.id];
+            // a town without a pill shop (only a book/clothes shop, also built later) has no rate yet (bugsplat #11)
+            if (!Instance.MarketPriceRate.TryGetValue(town.buildData.id, out var r))
+                Instance.MarketPriceRate[town.buildData.id] = r = 100.00f;
             if (UnitTypeEvent.GetUnitTypeEnum(wunit) == UnitTypeEnum.Merchant)
                 r += UnitTypeEnum.Merchant.CustomLuck.CustomEffects[ModConst.UTYPE_LUCK_EFX_BUY_COST].Value0.Parse<float>() * 100f; // fraction (-0.10 = -10 %) on a rate in percent (was -0.1 %)
             if (MapBuildPropertyEvent.IsTownGuardian(town, wunit))

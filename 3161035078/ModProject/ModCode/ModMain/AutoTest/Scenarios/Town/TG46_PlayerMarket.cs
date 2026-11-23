@@ -353,12 +353,25 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                     c.Assert(g.ui.HasUI(UIType.TextInfoLong), "buy orders window");
                     var b = UIHelper.GetUICustomBase(UIType.TextInfoLong).SelectMany(x => x.Items).OfType<UIItemButton>().LastOrDefault(x => IsActive(x) && x.GetFormat() == GameTool.LS("market_buyorder_new"));
                     if (!c.Assert(b != null, "\u0027New buy order\u0027 button")) return;
+                    // bugsplat #8/#10: items seen in the market that are not plain (a martial book, an artifact) made the item list crash
+                    var odd = new System.Collections.Generic.List<int>();
+                    var book = Player.GetUnitProps().FirstOrDefault(x => x.propsType == DataProps.PropsDataType.Martial);
+                    if (book != null) odd.Add(book.propsID);
+                    var single = g.conf.itemProps._allConfList.ToArray().FirstOrDefault(x => x.sale > 0 && x.isOverlay != 1 && x.IsArtifact() != null);
+                    if (single != null) odd.Add(single.id);
+                    odd = odd.Where(x => !RealMarketEvent3.Instance.PriceHistory.ContainsKey(x)).ToList();
+                    foreach (var id in odd) RealMarketEvent3.Instance.PriceHistory[id] = new System.Collections.Generic.List<int> { 100 };
+                    c.Bag["odd"] = odd;
+                    c.Info($"non-plain items seen in the market: {string.Join(", ", odd)}");
                     b.Item.onClick.Invoke();
                 }, 1500)
                 .Step("orderable items", c =>
                 {
                     var ui = PropSelect;
                     c.Assert(ui != null && ui.allItems.allProps.ToArray().Any(x => x.propsID == HerbId), "the item list offers the herb");
+                    var odd = c.Bag.TryGetValue("odd", out var o) ? (System.Collections.Generic.List<int>)o : new System.Collections.Generic.List<int>();
+                    c.Assert(ui == null || !ui.allItems.allProps.ToArray().Any(x => odd.Contains(x.propsID) || x.propsItem?.isOverlay != 1), "only stackable items offered (no martial book / artifact)");
+                    foreach (var id in odd) RealMarketEvent3.Instance.PriceHistory.Remove(id);
                     CloseAll(UIType.PropSelect, UIType.TextInfoLong);
                 })
                 .Step("buy order filled", c =>

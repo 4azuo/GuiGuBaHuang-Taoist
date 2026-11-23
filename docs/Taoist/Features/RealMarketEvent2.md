@@ -19,6 +19,8 @@ Buying in a town shop: unit prices follow a monthly buy rate; the money paid goe
 | Hook | What happens |
 |---|---|
 | `OnLoadGame` | Every market town without a rate: 100 %. |
+
+`GetBuyRate` (and `RealMarketEvent.GetSellRate`) adds 100 % for a town without a rate: a shop of a town without a pill shop (book / clothes shop only, also one built later) opens `TownMarketBuy` too; before 6.1.06 it threw KeyNotFoundException (bugsplat #11, checked by TG-34).
 | `OnMonthly` | `rate = Random(90 + event, 115 + event)` per town. |
 | `OnOpenUIEnd(TownMarketBuy)` | Adds the town budget (live, `ui_market_budget_fmt`) and the rate of the player (`ui_price_rate`, red). |
 | `OnOpenUIEnd(PropSelectCount)` while the shop is open | Unit price `oneCost = oneCost x rate / 100`, count UI refreshed, rate shown above the info. A listener inserted **before** the game's OK action adds `count x oneCost` to the town budget. |

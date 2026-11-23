@@ -36,6 +36,8 @@ namespace MOD_nE7UL2.Mod
         private Text uiArtifactInfo_textRefineAdj4;
         private Text uiArtifactInfo_textRefineAdj5;
         private UINPCInfoPreview uiMartialExpertInfo;
+        /// <summary>True from OnUIMartialInfoAsync opening the expertise preview until OnUIOpen fills it.</summary>
+        private bool uiMartialExpertInfoPending;
         private Text uiMartialExpertInfo_textExpertLvl;
         private Text uiMartialExpertInfo_textAdj1;
         private Text uiMartialExpertInfo_textAdj2;
@@ -295,8 +297,13 @@ namespace MOD_nE7UL2.Mod
                 ModDelayEvent.Instance.DelayEvent(this, "OnUIMartialInfoAsync", e, 1000);
             }
             else
-            if (e.uiType.uiName == UIType.NPCInfoPreview.uiName && g.ui.HasUI(UIType.MartialInfo))
+            if (e.uiType.uiName == UIType.NPCInfoPreview.uiName && g.ui.HasUI(UIType.MartialInfo) && uiMartialExpertInfoPending)
             {
+                // only the preview opened by OnUIMartialInfoAsync (not one the game opens itself)
+                uiMartialExpertInfoPending = false;
+                uiMartialExpertInfo = g.ui.GetUI<UINPCInfoPreview>(UIType.NPCInfoPreview) ?? uiMartialExpertInfo;
+                if (uiMartialExpertInfo == null)
+                    return;
                 var uiMartialInfo = g.ui.GetUI<UIMartialInfo>(UIType.MartialInfo);
                 //var soleId = uiMartialInfo.martialData.martialInfo.propsData.soleID;
                 var soleId = uiMartialInfo.martialData.data.soleID;
@@ -309,7 +316,10 @@ namespace MOD_nE7UL2.Mod
 
                 uiMartialExpertInfo.transform.position = new Vector3(0f, 5f);
 
-                var texts = uiMartialExpertInfo.GetComponentsInChildren<Text>();
+                // inactive texts too: a reopened preview can be the same instance, with the texts hidden by the previous call (bugsplat #9)
+                var texts = uiMartialExpertInfo.GetComponentsInChildren<Text>(true);
+                if (texts.Length < 14)
+                    return;
                 uiMartialExpertInfo_textExpertLvl = texts[1];
                 uiMartialExpertInfo_textAdj1 = texts[5];
                 uiMartialExpertInfo_textAdj2 = texts[7];
@@ -317,7 +327,10 @@ namespace MOD_nE7UL2.Mod
                 uiMartialExpertInfo_textAdj4 = texts[11];
                 uiMartialExpertInfo_textAdj5 = texts[13];
 
-                uiMartialExpertInfo_textExpertLvl.fontSize++;
+                foreach (var t in new[] { uiMartialExpertInfo_textExpertLvl, uiMartialExpertInfo_textAdj1, uiMartialExpertInfo_textAdj2, uiMartialExpertInfo_textAdj3, uiMartialExpertInfo_textAdj4, uiMartialExpertInfo_textAdj5 })
+                    t.gameObject.SetActive(true);
+                if (uiMartialExpertInfo_textExpertLvl.fontStyle != FontStyle.Bold)
+                    uiMartialExpertInfo_textExpertLvl.fontSize++;
                 uiMartialExpertInfo_textExpertLvl.fontStyle = FontStyle.Bold;
                 uiMartialExpertInfo_textExpertLvl.Set(ModTextHelper.LSF("ui_expert_lvl", expertLvl, expertExp, expertNeedExp));
 
@@ -468,8 +481,10 @@ namespace MOD_nE7UL2.Mod
         /// </summary>
         public void OnUIMartialInfoAsync(OpenUIEnd e)
         {
-            if (g.ui.HasUI(UIType.MartialInfo))
+            // several MartialInfo opens in a row queue several calls: the preview already open serves the current MartialInfo
+            if (g.ui.HasUI(UIType.MartialInfo) && !g.ui.HasUI(UIType.NPCInfoPreview))
             {
+                uiMartialExpertInfoPending = true;
                 uiMartialExpertInfo = g.ui.OpenUISafe<UINPCInfoPreview>(UIType.NPCInfoPreview);
             }
         }

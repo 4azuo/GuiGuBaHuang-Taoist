@@ -704,14 +704,16 @@
       "kind": "auto",
       "feature": "RealMarketEvent2",
       "title": "Shop: town budget and buy price rate",
-      "description": "Shop: Taoist shows the town budget ('Market: x Spirit Stones') and the current buy price rate. The test opens the shop and checks those texts and that the rate is in range.",
+      "description": "Shop: Taoist shows the town budget ('Market: x Spirit Stones') and the current buy price rate. The test opens the shop and checks those texts and that the rate is in range. A town without a rate (a shop that is not a pill shop, bugsplat #11) opens with 100 % for buying and selling.",
       "preconditions": "Test save in a town with shop",
       "steps": [
-        "Open the shop"
+        "Open the shop",
+        "Remove the town's buy and sell rates, open the shop again"
       ],
       "expected": [
         "'Market: x Spirit Stones' and 'Price rate: y%' texts",
-        "Buy rate in range"
+        "Buy rate in range",
+        "Shop opened, buy and sell rates 100 % added (restored afterwards)"
       ]
     },
     {
@@ -947,7 +949,7 @@
       "kind": "auto",
       "feature": "RealMarketEvent3",
       "title": "Player market: VIP, register, my items, price, deals, sell, buy, barter, buy orders",
-      "description": "Player market end to end through its windows. Sell: buy VIP access (fee to the town), register a herb in the Register window, the same item cannot be registered twice, the listing is shown in My Items with its price, Up/Down change the price, an NPC offers, the offer is listed under Deals, the player opens that NPC deal and clicks Deal (money to the player, item to the NPC). Buy: an NPC lists a herb, Market shows that NPC, its sell list shows the herb, the player offers with Up (first offer = seller price) and the seller accepts (money to the NPC, item to the player). The monthly random parts (NPCs joining, accept chance) are not driven; the deals they lead to are. Additions: recent deal prices are recorded and shown; a new NPC offer on a player listing is notified once (and logged); a barter deal moves the item offered by the buyer to the seller; Buy Orders opens a window and the new-order item list; a buy order holds the spirit stones, is filled by an NPC owning the item (paid from the held stones) and a cancelled order is refunded; market events are in the Taoist log.",
+      "description": "Player market end to end through its windows. Sell: buy VIP access (fee to the town), register a herb in the Register window, the same item cannot be registered twice, the listing is shown in My Items with its price, Up/Down change the price, an NPC offers, the offer is listed under Deals, the player opens that NPC deal and clicks Deal (money to the player, item to the NPC). Buy: an NPC lists a herb, Market shows that NPC, its sell list shows the herb, the player offers with Up (first offer = seller price) and the seller accepts (money to the NPC, item to the player). The monthly random parts (NPCs joining, accept chance) are not driven; the deals they lead to are. Additions: recent deal prices are recorded and shown; a new NPC offer on a player listing is notified once (and logged); a barter deal moves the item offered by the buyer to the seller; Buy Orders opens a window and the new-order item list, with only stackable items even when a martial book or an artifact was seen in the market (bugsplat #8/#10); a buy order holds the spirit stones, is filled by an NPC owning the item (paid from the held stones) and a cancelled order is refunded; market events are in the Taoist log.",
       "preconditions": "Save loaded, player market on (NoMarketItem off)",
       "steps": [
         "Open the town market, buy VIP",
@@ -959,7 +961,7 @@
         "Check the price history",
         "Notify a new NPC offer",
         "Barter deal",
-        "Buy Orders window, new order list",
+        "Buy Orders window, new order list (a martial book and an artifact in the price history)",
         "Fill and cancel buy orders"
       ],
       "expected": [
@@ -972,7 +974,7 @@
         "Average price recorded and shown",
         "One message line with the offer, none without a new offer",
         "Offered item: buyer -1, seller +1",
-        "Window and item list with the herb",
+        "Window and item list with the herb, only stackable items (no martial book / artifact), no error",
         "Herbs delivered, NPC paid, refund on cancel, logged"
       ],
       "replaces": [
@@ -1097,17 +1099,21 @@
       "kind": "auto",
       "feature": "ExpertEvent",
       "title": "Expertise level of an equipped skill",
-      "description": "Expertise on a real equipped skill of the player: one use adds exp in the expected range (grade and insight scaled), enough exp raises the expertise level, and an ability with expertise gives stat bonuses. The skill exp is restored afterwards.",
+      "description": "Expertise on a real equipped skill of the player: one use adds exp in the expected range (grade and insight scaled), enough exp raises the expertise level, and an ability with expertise gives stat bonuses. In the player info the skill info shows the expertise panel, also after the skill info is closed and reopened quickly (bugsplat #9). The skill exp is restored afterwards.",
       "preconditions": "Save loaded, the player has an equipped skill",
       "steps": [
         "Pick an equipped skill (ability first)",
         "Add the exp of one use",
-        "Add the exp of the next level"
+        "Add the exp of the next level",
+        "Open the player info and the skill info",
+        "Close and reopen the skill info 3 times"
       ],
       "expected": [
         "Exp gain in range",
         "Expertise level +1",
-        "Ability bonus grows with the level"
+        "Ability bonus grows with the level",
+        "Expertise panel beside the skill info",
+        "Expertise panel shown again with the level text, no error"
       ],
       "replaces": [
         "TM-33"

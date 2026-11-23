@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-23T22:09:09",
+  "updatedAt": "2026-11-23T23:05:50",
   "counts": {
-    "OK": 9,
+    "OK": 10,
     "NG": 1,
-    "SKIP": 1,
-    "NOT RUN": 132,
+    "SKIP": 2,
+    "NOT RUN": 130,
     "-": 4
   },
   "scenarios": [
@@ -250,35 +250,12 @@
       "kind": "auto",
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
-      "result": "OK",
-      "lastRun": "2026-11-23T22:09:09",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-220226-s2",
+      "result": "SKIP",
+      "lastRun": "2026-11-23T23:05:50",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
-      "checks": {
-        "TP-01-01": "OK",
-        "TP-01-02": "OK",
-        "TP-01-03": "OK",
-        "TP-01-04": "OK",
-        "TP-01-05": "OK",
-        "TP-01-06": "OK",
-        "TP-01-07": "OK",
-        "TP-01-08": "OK",
-        "TP-01-09": "OK",
-        "TP-01-10": "OK",
-        "TP-01-11": "OK",
-        "TP-01-12": "OK",
-        "TP-01-13": "OK",
-        "TP-01-14": "OK",
-        "TP-01-15": "OK",
-        "TP-01-16": "OK",
-        "TP-01-17": "OK",
-        "TP-01-18": "OK",
-        "TP-01-19": "OK",
-        "TP-01-20": "OK",
-        "TP-01-21": "OK",
-        "TP-01-22": "OK"
-      }
+      "checks": {}
     },
     {
       "id": "TG-01",
@@ -882,9 +859,9 @@
       "kind": "auto",
       "feature": "RealMarketEvent2",
       "title": "Shop: town budget and buy price rate",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-23T23:05:50",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -893,7 +870,11 @@
         "TG-34-03": "OK",
         "TG-34-04": "OK",
         "TG-34-05": "OK",
-        "TG-34-06": "OK"
+        "TG-34-06": "OK",
+        "TG-34-07": "OK",
+        "TG-34-08": "OK",
+        "TG-34-09": "OK",
+        "TG-34-10": "OK"
       }
     },
     {
@@ -1119,8 +1100,8 @@
       "feature": "RealMarketEvent3",
       "title": "Player market: VIP, register, my items, price, deals, sell, buy, barter, buy orders",
       "result": "OK",
-      "lastRun": "2026-11-23T22:09:09",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-220226-s2",
+      "lastRun": "2026-11-23T23:05:50",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1196,7 +1177,8 @@
         "TG-46-70": "OK",
         "TG-46-71": "OK",
         "TG-46-72": "OK",
-        "TG-46-73": "OK"
+        "TG-46-73": "OK",
+        "TG-46-74": "OK"
       }
     },
     {
@@ -1359,9 +1341,9 @@
       "kind": "auto",
       "feature": "ExpertEvent",
       "title": "Expertise level of an equipped skill",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-23T23:05:50",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1369,7 +1351,11 @@
         "TG-52-02": "OK",
         "TG-52-03": "OK",
         "TG-52-04": "OK",
-        "TG-52-05": "OK"
+        "TG-52-05": "OK",
+        "TG-52-06": "OK",
+        "TG-52-07": "OK",
+        "TG-52-08": "OK",
+        "TG-52-09": "OK"
       }
     },
     {

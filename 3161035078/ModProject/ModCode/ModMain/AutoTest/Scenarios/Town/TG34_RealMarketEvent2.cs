@@ -33,6 +33,30 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                     c.Assert(texts.Any(x => x.StartsWith("Price rate:")), $"rate text: {texts.FirstOrDefault(x => x.StartsWith("Price rate:"))}");
                     c.AssertBetween(RealMarketEvent2.GetBuyRate(CurrentTown, Player), 1, 1000, "buy rate (%)");
                 })
+                // bugsplat #11: a town without a pill shop (only a book/clothes shop, also one built later) had no rate:
+                // opening its shop threw KeyNotFoundException in GetBuyRate (GetSellRate the same)
+                .Step("town without a rate", c =>
+                {
+                    CloseAll(UIType.TownMarketBuy);
+                    var town = CurrentTown;
+                    if (town == null || !town.allBuildSub.ContainsKey(MapBuildSubType.TownMarketPill)) { c.Skip("no shop"); return; }
+                    c.Bag["buy"] = RealMarketEvent2.Instance.MarketPriceRate.TryGetValue(town.buildData.id, out var b) ? (object)b : null;
+                    c.Bag["sell"] = RealMarketEvent.Instance.MarketPriceRate.TryGetValue(town.buildData.id, out var s) ? (object)s : null;
+                    RealMarketEvent2.Instance.MarketPriceRate.Remove(town.buildData.id);
+                    RealMarketEvent.Instance.MarketPriceRate.Remove(town.buildData.id);
+                    OpenTownUI<UITownMarketBuy>(UIType.TownMarketBuy, ui => ui.InitData(town));
+                }, 1500)
+                .Step("default rate", c =>
+                {
+                    if (!c.Bag.ContainsKey("buy")) return;
+                    var town = CurrentTown;
+                    c.Assert(g.ui.HasUI(UIType.TownMarketBuy), "shop opened without a rate");
+                    c.AssertEqual(100f, RealMarketEvent2.Instance.MarketPriceRate.TryGetValue(town.buildData.id, out var b) ? b : -1f, "buy rate 100 % added");
+                    c.Assert(RealMarketEvent.GetSellRate(town, Player) > 0, "sell rate without an entry");
+                    c.AssertEqual(100f, RealMarketEvent.Instance.MarketPriceRate.TryGetValue(town.buildData.id, out var s) ? s : -1f, "sell rate 100 % added");
+                    if (c.Bag["buy"] is float ob) RealMarketEvent2.Instance.MarketPriceRate[town.buildData.id] = ob;
+                    if (c.Bag["sell"] is float os) RealMarketEvent.Instance.MarketPriceRate[town.buildData.id] = os;
+                })
                 .Step("close", c =>
                 {
                     CloseAll(UIType.TownMarketBuy);

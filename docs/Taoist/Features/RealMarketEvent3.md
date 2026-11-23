@@ -69,11 +69,12 @@ Window flags (`IsOpenMarket`, `IsOpenSellingList`, `IsOpenNegotiatingList`, `IsO
 
 `MAX_BUY_ORDERS` 8, `BUY_ORDER_MONTHS` 12, `BUY_ORDER_RATE` 25.
 
-- **New** (`AddBuyOrder`): an item (`OrderableItems`: seen in deals / listings, or herb / ore / pill up to grade + 1), count, unit price >= 10; the stones are held at once; log `log_buyorder_new`.
+- **New** (`AddBuyOrder`): an item (`OrderableItems`: seen in deals / listings, or herb / ore / pill up to grade + 1; stackable items only, `isOverlay` 1 and not a martial book), count, unit price >= 10; the stones are held at once; log `log_buyorder_new`.
 - **Monthly** (`ProcessBuyOrders`): expired -> refunded (`log_buyorder_expired`); each NPC of the order town owning the item sells with chance `min(90, 25 x price / reference)` %, reference = average recent price or the sale value; paid from the held stones, +5 intimacy, `RecordPrice`, log / message `market_buyorder_filled`.
 - **Cancel**: refund of the remaining items (`log_buyorder_cancel`).
 - Window: a table per town (cancel, icon, item, quantity, price each, town, time left), 8 per page; new order in 2 steps (item, then count and price).
 - **Saved** in the cache: `BuyOrder.Town` / `Name` are `[JsonIgnore]`. Before 6.1.05 the save serialized the `MapBuildTown` game object, and the game closed at the month-end save while an order was open.
+- Before 6.1.06 the item list also offered the martial books, artifacts or outfits seen in the market: made from their id alone they have no data, and the item selector threw a NullReferenceException in `UIPropSelect.UpdateUI` (bugsplat #8/#10). TG-46 checks that only stackable items are offered.
 
 ## Tests
 

@@ -218,7 +218,8 @@ namespace MOD_nE7UL2.Mod
 
         // ------------------------------------------------------------------ buy orders UI
 
-        /// <summary>Items that can be ordered: seen in deals or listings, and herbs/ores/pills up to the player's grade + 1.</summary>
+        /// <summary>Items that can be ordered: seen in deals or listings, and herbs/ores/pills up to the player's grade + 1; stackable items only
+        /// (a martial book, an artifact or an outfit made from its id alone has no data: the item selector crashed drawing it, bugsplat #8/#10).</summary>
         public static List<int> OrderableItems()
         {
             var maxGrade = g.world.playerUnit.GetGradeLvl() + 1;
@@ -227,7 +228,7 @@ namespace MOD_nE7UL2.Mod
             foreach (var conf in g.conf.itemProps._allConfList.ToArray())
                 if (conf.sale > 0 && (conf.IsHerbItem() != null || conf.IsMineItem() != null || conf.IsPill() != null) && conf.Grade() <= maxGrade)
                     ids.Add(conf.id);
-            return ids.Where(x => x != ModLib.Const.ModLibConst.MONEY_PROP_ID && g.conf.itemProps.GetItem(x) != null).ToList();
+            return ids.Where(x => x != ModLib.Const.ModLibConst.MONEY_PROP_ID && g.conf.itemProps.GetItem(x)?.isOverlay == 1).ToList();
         }
 
         /// <summary>Buy orders window of a town: the player's orders (cancel), a new order.</summary>
@@ -309,7 +310,11 @@ namespace MOD_nE7UL2.Mod
             ui.selectOnePropID = true;
             ui.allItems.ClearAllProps();
             foreach (var id in OrderableItems())
-                ui.allItems.AddProps(DataProps.PropsData.NewProps(id, 1));
+            {
+                var prop = NewOrderableProp(id);
+                if (prop != null)
+                    ui.allItems.AddProps(prop);
+            }
             DataProps.PropsData selected = null;
             ui.onCustomSelectCall = ActionHelper.TracedFunc<DataProps.PropsData, string>(x =>
             {
@@ -329,6 +334,22 @@ namespace MOD_nE7UL2.Mod
                 OpenOrderPrice(town, id);
             }));
             ui.UpdateUI();
+        }
+
+        /// <summary>The item shown in the selector for an orderable id, null when the game cannot make a plain one (no info or a martial book).</summary>
+        private static DataProps.PropsData NewOrderableProp(int id)
+        {
+            try
+            {
+                var prop = DataProps.PropsData.NewProps(id, 1);
+                if (prop?.propsInfoBase == null || prop.propsType == DataProps.PropsDataType.Martial)
+                    return null;
+                return prop;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         /// <summary>New order step 2: count and unit price, OK holds the spirit stones.</summary>

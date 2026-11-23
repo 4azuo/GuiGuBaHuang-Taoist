@@ -30,7 +30,7 @@ None (only references to the texts it created).
 | `NPCInfo` | under the physical / magic / artisan bases: +HP (`GetMartialAdjHp`), +MP (`GetSpiritualAdjMp`), +SP (`GetArtisanshipAdjSp`); under the ability points: +HP, +MP (live) |
 | `PlayerInfo` | the same texts with tooltips (`other500020028`, `033`-`038`); for the player, on the top edge: "Damage Calc" (`dmginfo_button`, `DMG_BUTTON_DX` -190 from the close button) -> `DamageInfo.Open()`, and the S&M title line (`SCORE_DX` -1150) ([SMScoreEvent](SMScoreEvent.md)) |
 | `ArtifactInfo` (from item select, player info, storage, or NPC info when the player is a Merchant) | window moved to the center; **basic** Atk / Def / HP bonuses, **expertise** level (exp / next) and Atk / Def bonus, **refine** level, Atk / Def and slots 1-3 (colored by quality) |
-| `MartialInfo` (from player info) | 1 s later opens an `NPCInfoPreview` beside it as the **expertise** panel: level (exp / next); ability: Atk, Def, HP, MP, SP; step: speed, evade, MP cost; skill: damage, MP cost |
+| `MartialInfo` (from player info) | 1 s later opens an `NPCInfoPreview` beside it as the **expertise** panel (only when none is open; only the preview it opened is filled): level (exp / next); ability: Atk, Def, HP, MP, SP; step: speed, evade, MP cost; skill: damage, MP cost. The texts are read with the inactive ones: a quickly reopened preview keeps the texts hidden by the previous call (before 6.1.06: index out of range, bugsplat #9; checked by TG-52) |
 | `PropInfo` ring / outfit / mount (same contexts) | refine level, the item's refine bonus (ring HP; outfit HP and Def; mount MP), slots 1-2 |
 | `GameMemu` | save / reload buttons hidden by the switches |
 
