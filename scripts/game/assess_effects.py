@@ -1,11 +1,11 @@
-"""Assessment of the recorded effects (docs/Effects/<kind>): picture analysis of every webp + the labels of the AI
+"""Assessment of the recorded effects (GuiGuBaHuang-ModLib/docs/Effects/<kind>): picture analysis of every webp + the labels of the AI
 reviewer kept (label_effects.py). Every field added here starts with "ai-" (assessed, not measured).
 
 1. analyse (automatic): the effect separated from the ground (the first frame is the ground, before the effect):
    - ai-colors: main colours of the effect (hue / brightness of its pixels at its biggest frame);
    - ai-motion: static, expanding, shrinking, moving-<direction>, falling, rising, pulsing (area and centre over time);
    - ai-coverage: share of the screen the effect covers at its biggest (0..1);
-   - a crop of its biggest frame -> contact sheets (docs/Effects/<kind>/review/sheet-NN.png, not in git) to review.
+   - a crop of its biggest frame -> contact sheets (GuiGuBaHuang-ModLib/docs/Effects/<kind>/review/sheet-NN.png, not in git) to review.
 2. labels of the AI reviewer (ai-element, ai-usage, ai-shape, ai-size, ai-tags, ai-note, ai-skill-ideas): written in
    index.json by label_effects.py; this script only updates its own fields (ai-colors, ai-motion, ai-coverage).
 
@@ -144,7 +144,7 @@ def main():
     ap.add_argument("--per-sheet", type=int, default=30)
     a = ap.parse_args()
     repo = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    base = os.path.join(repo, "docs", "Effects", a.kind)
+    base = os.path.join(repo, "GuiGuBaHuang-ModLib", "docs", "Effects", a.kind)
     idx_file = os.path.join(base, "index.json")
     index = json.load(open(idx_file, encoding="utf-8-sig"))
     todo = [e for e in index if e.get("file") and e.get("visible")]

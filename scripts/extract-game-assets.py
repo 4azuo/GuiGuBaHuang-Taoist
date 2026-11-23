@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Extracts pictures of the game into docs/GameAssets (kept in git with LFS), so they are looked up there instead of
+Extracts pictures of the game into GuiGuBaHuang-ModLib/docs/GameAssets (kept in git with LFS), so they are looked up there instead of
 extracted again:
   - TextIcons/<name>.png: the icons of the game's TextMeshPro sprite asset "Emoj" ("[icon:NAME]" tokens of the
     localTexts, "<sprite name=NAME>"), cut from its atlas with the glyph table of the asset (read from the raw data:
@@ -30,7 +30,7 @@ import sys
 import UnityPy
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, 'docs', 'GameAssets')
+OUT = os.path.join(ROOT, 'GuiGuBaHuang-ModLib', 'docs', 'GameAssets')
 GAME_DATA = r'C:\Program Files (x86)\Steam\steamapps\common\鬼谷八荒\guigubahuang_Data'
 SAMPLE_CONFS = os.path.join(ROOT, '3385996759', 'SampleConfs')
 BG_WIDTH = 960
@@ -228,7 +228,7 @@ figcaption{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(
 .viewers a.on{background:#3b6fd8;color:#fff;font-weight:600}
 </style></head><body><header><b>Game Assets</b><span class="tabs"><button data-k="icons" class="on">Text icons</button><button data-k="bgs">Drama backgrounds</button><button data-k="items">Item icons</button><button data-k="builds">Buildings</button></span>
 <input id="q" type="search" placeholder="Filter by name..."><span class="count" id="count"></span>
-<nav class="viewers" aria-label="Viewers"><a href="../../test-viewer/index.html" title="Results of the autotest and the unit tests">Tests</a><a href="../../effect-viewer/index.html" title="Effects recorded by the galleries (TE-xx)">Effects</a><a href="../../promo-viewer/index.html" title="Steam Workshop pictures, promotion takes, marketing videos">Promo</a><a class="on" aria-current="page" href="index.html" title="Pictures extracted from the game">Assets</a></nav></header><main id="main"></main>
+<nav class="viewers" aria-label="Viewers"><a href="../../../test-viewer/index.html" title="Results of the autotest and the unit tests">Tests</a><a href="../../effect-viewer/index.html" title="Effects recorded by the galleries (TE-xx)">Effects</a><a href="../../../promo-viewer/index.html" title="Steam Workshop pictures, promotion takes, marketing videos">Promo</a><a class="on" aria-current="page" href="index.html" title="Pictures extracted from the game">Assets</a></nav></header><main id="main"></main>
 <script>const DATA=__DATA__;let kind='icons';const L=()=>DATA[{icons:'icons',bgs:'backgrounds',items:'items',builds:'buildings'}[kind]]||[];
 function show(){const q=document.getElementById('q').value.toLowerCase();const list=L().filter(x=>x.name.toLowerCase().includes(q));
 const m=document.getElementById('main');m.className=kind;m.innerHTML=list.map(x=>`<figure title="click: copy the name" data-n="${x.name}"><img loading="lazy" src="${x.file}" alt=""><figcaption>${x.name}${x.items?' ('+x.items.join(', ')+')':''}${x.w&&kind==='builds'?' '+x.w+'x'+x.h:''}</figcaption></figure>`).join('');

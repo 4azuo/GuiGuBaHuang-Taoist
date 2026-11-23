@@ -10,7 +10,7 @@ ModLib is a framework for creating mods for Gui Gu Ba Huang (鬼谷八荒).
 
 **Dependencies:** ModLib.dll, MelonLoader, UnhollowerBaseLib, Il2CppInterop, Game DLLs
 
-**Setting up a new machine:** follow [INSTALLATION.md](../../INSTALLATION.md) (automatic `scripts/setup/install.ps1`, or step-by-step manual install)
+**Setting up a new machine:** follow [INSTALLATION.md](../INSTALLATION.md) (automatic `scripts/setup/install.ps1`, or step-by-step manual install)
 
 ## Project Structure
 

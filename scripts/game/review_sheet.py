@@ -1,4 +1,4 @@
-"""Facts of the effects of one review strip (docs/Effects/<kind>/review/strip-NNN.png: index N*12 .. N*12+11), for the AI reviewer: the measures,
+"""Facts of the effects of one review strip (GuiGuBaHuang-ModLib/docs/Effects/<kind>/review/strip-NNN.png: index N*12 .. N*12+11), for the AI reviewer: the measures,
 the picture analysis and the asset summary of each tile, one line each.
 
 usage: python scripts/game/review_sheet.py <strip number> [--kind Skill] [--per-sheet 12]
@@ -10,7 +10,7 @@ ap.add_argument("sheet", type=int)
 ap.add_argument("--kind", default="Skill")
 ap.add_argument("--per-sheet", type=int, default=12)
 a = ap.parse_args()
-base = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "Effects", a.kind)
+base = os.path.join(os.path.dirname(__file__), "..", "..", "GuiGuBaHuang-ModLib", "docs", "Effects", a.kind)
 index = json.load(open(os.path.join(base, "index.json"), encoding="utf-8-sig"))
 todo = [e for e in index if e.get("file") and e.get("visible")]
 for e in [e for e in todo if a.sheet * a.per_sheet <= e['index'] < (a.sheet + 1) * a.per_sheet]:

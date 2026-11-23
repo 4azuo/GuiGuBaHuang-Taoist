@@ -1,4 +1,4 @@
-"""Labels of the AI reviewer -> docs/Effects/<kind>/index.json (fields "ai-*").
+"""Labels of the AI reviewer -> GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json (fields "ai-*").
 
 Families of effects named by a pattern get their labels by rule (attack_family); the others are written by the reviewer
 (per sheet) with set_labels. Field names without the "ai-" prefix here; it is added when written.
@@ -10,7 +10,7 @@ summon, trail, cast, charge, status-icon, teleport, decoration.
 """
 import json, os, re, sys
 
-BASE = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "Effects")
+BASE = os.path.join(os.path.dirname(__file__), "..", "..", "GuiGuBaHuang-ModLib", "docs", "Effects")
 
 WEAPONS = {  # pinyin -> (element, usage, shape, what)
     "dao": ("blade", ["slash", "hit"], "arc", "crescent blade slash"),
@@ -40,7 +40,7 @@ def attack_family(name):
 
 
 def set_labels(kind, entries):
-    """Labels {name: {field: value}} written into docs/Effects/<kind>/index.json (fields prefixed with "ai-")."""
+    """Labels {name: {field: value}} written into GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json (fields prefixed with "ai-")."""
     sys.path.insert(0, os.path.dirname(__file__))
     from collect_effects import locked, dump_aligned
     p = os.path.join(BASE, kind, "index.json")

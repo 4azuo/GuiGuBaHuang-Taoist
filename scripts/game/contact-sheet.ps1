@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
     Contact sheets: pictures in a grid with their names, to look through many screenshots at once (choosing the
-    promotion pictures, classifying the effects of docs/Effects).
+    promotion pictures, classifying the effects of GuiGuBaHuang-ModLib/docs/Effects).
 
 .PARAMETER Images
     Picture files (paths or wildcards).
@@ -11,7 +11,7 @@
 
 .EXAMPLE
     .\scripts\game\contact-sheet.ps1 -Images logs\autotest\20261117-074658\screens\*TS-0*.png -Out $env:TEMP\sheets
-    .\scripts\game\contact-sheet.ps1 -Images docs\Effects\Skill\*.jpg -Out $env:TEMP\efx -Cols 6 -Rows 5 -Thumb 240
+    .\scripts\game\contact-sheet.ps1 -Images GuiGuBaHuang-ModLib\docs\Effects\Skill\*.jpg -Out $env:TEMP\efx -Cols 6 -Rows 5 -Thumb 240
 #>
 param(
     [Parameter(Mandatory)][string[]]$Images,

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Effect galleries (TE-01 skill, TE-02 unit, TE-03 scene effects) of an autotest run -> docs/Effects (in git):
+    Effect galleries (TE-01 skill, TE-02 unit, TE-03 scene effects) of an autotest run -> GuiGuBaHuang-ModLib/docs/Effects (in git):
     animated webp per effect + index.json with the measures of the game (casting time, duration, direction, size, zoom)
     and the classification fields; the fresh effect lists of the game replace ModConf's. See collect_effects.py.
     Called by run-autotest.ps1 after a run with TE-xx; can be run alone on a former run. Needs Python + Pillow

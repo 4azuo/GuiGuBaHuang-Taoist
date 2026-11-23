@@ -20,4 +20,4 @@ lines M-P of 6.0 (the new cultivation paths and the estates; coded, tests TS-13.
 
 A narrated step (`Tell`) shows the drama background of its text key from `StoryLine.BACKGROUNDS` (a cave, a tomb,
 bandits, a storm, a lake, a grave...; `xinjianhualuo1` for the keys not listed). Pick new ones in
-`docs/GameAssets/index.html` (tab "Drama backgrounds").
+`GuiGuBaHuang-ModLib/docs/GameAssets/index.html` (tab "Drama backgrounds").

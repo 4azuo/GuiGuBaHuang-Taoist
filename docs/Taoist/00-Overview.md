@@ -2,7 +2,7 @@
 
 Taoist (Workshop `3161035078`, mod id / CacheId `nE7UL2`, namespace `MOD_nE7UL2`) is a large gameplay overhaul built on ModLib and the reference example of a ModLib mod.
 
-Related docs: [01-Features](01-Features.md) · [02-Configs](02-Configs.md) · [03-Test-Scenarios](03-Test-Scenarios.md) · [04-Autotest](04-Autotest.md) · ModLib: [../ModLib/00-Architecture.md](../ModLib/00-Architecture.md)
+Related docs: [01-Features](01-Features.md) · [02-Configs](02-Configs.md) · [03-Test-Scenarios](03-Test-Scenarios.md) · [04-Autotest](04-Autotest.md) · ModLib: [00-Architecture](../../GuiGuBaHuang-ModLib/docs/00-Architecture.md)
 
 ## Source layout (`3161035078/ModProject/ModCode/ModMain/`)
 

@@ -1,5 +1,5 @@
 """Effects read from the game files (offline, read only): the prefabs of Effect/Battle/<Skill|Unit|Scenes> in
-resources.assets (catalogue: ResourceManager of globalgamemanagers) -> docs/Effects/<kind>/index.json, "asset" of each
+resources.assets (catalogue: ResourceManager of globalgamemanagers) -> GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json, "asset" of each
 effect (kept next to the recorded measures and the classification fields of collect_effects.py):
 
 - castingTimeMs / durationMs from the ParticleSystem settings (exact, unlike the samples of the recording): the first
@@ -144,7 +144,7 @@ def main():
                 assets[name.lower()] = reader.effect(reader.catalogue[key])
             except Exception as e:
                 assets[name.lower()] = {"error": repr(e)[:160]}
-        out = os.path.join(repo, "docs", "Effects", kind)
+        out = os.path.join(repo, "GuiGuBaHuang-ModLib", "docs", "Effects", kind)
         os.makedirs(out, exist_ok=True)
         idx_file = os.path.join(out, "index.json")
         with locked(idx_file):

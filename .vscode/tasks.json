@@ -348,7 +348,7 @@
         },
         {
             "label": "Test: Open Effect Viewer",
-            "detail": "Effect viewer with saving (your own assessment: user-* fields of docs/Effects/*/index.json): local server http://localhost:8765/effect-viewer/ - stop it with the terminal",
+            "detail": "Effect viewer with saving (your own assessment: user-* fields of GuiGuBaHuang-ModLib/docs/Effects/*/index.json): local server http://localhost:8765/GuiGuBaHuang-ModLib/effect-viewer/ - stop it with the terminal",
             "type": "process",
             "command": "python",
             "args": ["${workspaceFolder}/scripts/effect-viewer-server.py", "--open"],

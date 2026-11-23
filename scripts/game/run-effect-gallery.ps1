@@ -6,7 +6,7 @@
     The effects of each gallery are cut into batches (-Batch effects each) put in one queue; every game slot (1 = the
     normal game, 2.. = copies made by new-game-slot.ps1) takes the next batch when it is free and runs it with
     run-autotest.ps1 -Slot <n> -NoSaveBackup (<autotest folder of the slot>\efx-range.txt = "start count"). Each run
-    collects its pictures to docs/Effects (collect-effects.ps1). A batch stopped early (watchdog: the game stopped
+    collects its pictures to GuiGuBaHuang-ModLib/docs/Effects (collect-effects.ps1). A batch stopped early (watchdog: the game stopped
     running the mod) goes back to the queue after the effect it stopped on, which is reported and skipped.
     Each game plays the test character of its slot, "AutoTest Slot<n>" (run-autotest.ps1 -SlotCharacter): created the
     first time, kept and played again by the next runs; the other saves are never loaded. The saves are backed up
@@ -36,7 +36,7 @@ param(
     # window size of the games ("" = as set in the game); several games: windowed
     [string]$Window = '1600x900',
     [switch]$Deploy,
-    # go on with an earlier gallery: only the effects without measures in docs/Effects/<kind>/index.json
+    # go on with an earlier gallery: only the effects without measures in GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json
     [switch]$Resume,
     # the user confirmed the gallery: no prompt
     [switch]$ConfirmTools
@@ -93,7 +93,7 @@ foreach ($g in $Id) {
     }
     # -Resume: done = measures in index.json (a webp alone is not enough: its measures may be lost; an invisible effect
     # has measures but no webp); the missing effects cut into batches of consecutive indexes (a batch is "start count")
-    $dir = Join-Path $repo "docs\Effects\$($kinds[$g])"
+    $dir = Join-Path $repo "GuiGuBaHuang-ModLib\docs\Effects\$($kinds[$g])"
     $done = New-Object 'System.Collections.Generic.HashSet[int]'
     $idxFile = Join-Path $dir 'index.json'
     if (Test-Path -LiteralPath $idxFile) {
@@ -215,5 +215,5 @@ finally {
     Write-Log 'games closed; global settings of the mods restored (saves and window kept)'
 }
 & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $repo 'scripts\update-test-viewer.ps1') | Out-Null
-$pics = @(Get-ChildItem (Join-Path $repo 'docs\Effects') -Recurse -Filter *.webp -ErrorAction SilentlyContinue).Count
-Write-Log "done: $pics webp in docs/Effects; skipped effects: $(@(Select-String -LiteralPath $logFile -Pattern '!!!').Count) (see $logFile)"
+$pics = @(Get-ChildItem (Join-Path $repo 'GuiGuBaHuang-ModLib\docs\Effects') -Recurse -Filter *.webp -ErrorAction SilentlyContinue).Count
+Write-Log "done: $pics webp in GuiGuBaHuang-ModLib/docs/Effects; skipped effects: $(@(Select-String -LiteralPath $logFile -Pattern '!!!').Count) (see $logFile)"

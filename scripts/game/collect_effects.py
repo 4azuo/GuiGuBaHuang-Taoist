@@ -1,9 +1,9 @@
-"""Effect galleries (TE-01/02/03) of an autotest run -> docs/Effects (in git).
+"""Effect galleries (TE-01/02/03) of an autotest run -> GuiGuBaHuang-ModLib/docs/Effects (in git).
 
 For each effect recorded by the run (<run>/effects/<TE-id>/<NNNN>_<name>/f###.jpg + frames.txt):
-- docs/Effects/<Skill|Unit|Scenes>/<NNNN>_<name>.webp: animated, the game area (no window title bar), 960x540, the real
+- GuiGuBaHuang-ModLib/docs/Effects/<Skill|Unit|Scenes>/<NNNN>_<name>.webp: animated, the game area (no window title bar), 960x540, the real
   timing of the frames;
-- docs/Effects/<kind>/index.json: one entry per effect with the measures of the game (<run>/effects-meta.jsonl:
+- GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json: one entry per effect with the measures of the game (<run>/effects-meta.jsonl:
   castingTimeMs, durationMs, loop, direction, width, height, zoom, camera, visible) and the classification fields
   (element, shape, range, color, motion, tags, note), kept from the former index.
 The fresh effect lists of the game (<run>/_Def_Res_Efx_Battle_*.txt) replace ModConf's (added / removed printed).
@@ -163,7 +163,7 @@ def main():
         by_kind.setdefault(KINDS.get(m["id"], "Other"), []).append(m)
     made = 0
     for kind, items in by_kind.items():
-        out = os.path.join(repo, "docs", "Effects", kind)
+        out = os.path.join(repo, "GuiGuBaHuang-ModLib", "docs", "Effects", kind)
         os.makedirs(out, exist_ok=True)
         # the pictures first (slow, no lock), then the index (locked read-modify-write)
         made_files = {}

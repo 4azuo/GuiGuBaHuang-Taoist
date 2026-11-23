@@ -20,7 +20,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Tool
     ///    (while something shows), size (union of the bounds) and direction (move of the centre);
     /// 2. record: the camera zoomed to its size and centred on it, the effect played again and recorded by
     ///    run-autotest.ps1 (a .rec request: frames of the game window for its duration).
-    /// collect-effects.ps1 then makes docs/Effects/&lt;kind&gt;/NNNN_&lt;effect&gt;.webp (animated) and index.json (with the
+    /// collect-effects.ps1 then makes GuiGuBaHuang-ModLib/docs/Effects/&lt;kind&gt;/NNNN_&lt;effect&gt;.webp (animated) and index.json (with the
     /// measures). The list of effects comes from the game's resources (the ModConf list files are only a fallback and
     /// are refreshed from it). Optional range: &lt;autotest folder&gt;\efx-range.txt = "start count".
     /// </summary>

@@ -35,8 +35,12 @@ Files in `docs/`:
 - **05-Helpers.md** - Helper functions
 - **06-Debug.md** - Debugging
 - **07-Build-Deploy.md** - Build scripts
-- **ModConf/00-SampleConfs-List.md** - Config samples list
-- **ModLib/** - ModLib architecture, event reference, cache, built-in events, UI framework
 - **Taoist/** - Taoist features, configs, test scenarios, autotest
+
+In the submodules:
+- **GuiGuBaHuang-ModLib/docs/** - ModLib architecture, event reference, cache, built-in events, UI framework
+- **GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md** - Config samples list
+- **GuiGuBaHuang-ModLib/docs/GameAssets/**, **Effects/** - Pictures and effects of the game (Git LFS)
+- **GuiGuBaHuang-ModCreator/docs/** - ModCreator tool
 
 Reference appropriate docs when answering questions.

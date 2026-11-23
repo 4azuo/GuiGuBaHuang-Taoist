@@ -1,4 +1,4 @@
-"""Review strips of the recorded effects (docs/Effects/<kind>/review/strip-NNN.png, not in git) for the AI reviewer,
+"""Review strips of the recorded effects (GuiGuBaHuang-ModLib/docs/Effects/<kind>/review/strip-NNN.png, not in git) for the AI reviewer,
 which can read one picture but not an animation: one row per effect, 12 frames from the moment it shows, one recorded
 frame apart (a whole multiple of it for longer effects, to reach the moment it is gone), each with its time; 12 effects per strip, by index
 (strip-000: 0000-0011).
@@ -53,7 +53,7 @@ def main():
     ap.add_argument("--per-strip", type=int, default=12)
     ap.add_argument("--start", type=int, default=0, help="first strip to make (resume)")
     a = ap.parse_args()
-    base = os.path.join(os.path.dirname(__file__), "..", "..", "docs", "Effects", a.kind)
+    base = os.path.join(os.path.dirname(__file__), "..", "..", "GuiGuBaHuang-ModLib", "docs", "Effects", a.kind)
     index = json.load(open(os.path.join(base, "index.json"), encoding="utf-8-sig"))
     todo = [e for e in index if e.get("file") and e.get("visible")]
     out = os.path.join(base, "review")

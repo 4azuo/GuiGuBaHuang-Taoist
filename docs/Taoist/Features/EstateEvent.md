@@ -11,7 +11,7 @@ private storage, the mortals of an estate (B3), the clan (B4).
 
 `EstateConfig` (`EstateEvent.Config.cs`), read in `OnLoadClass` (missing file or values: the defaults of the code, which
 are the same as the file; `FormulaTests.Estate_Config` checks both match). Pictures are `"Atlas/Sprite"` of the game
-(list: `docs/GameAssets/index.html`, Buildings tab), colors `"#RRGGBBAA"`.
+(list: `GuiGuBaHuang-ModLib/docs/GameAssets/index.html`, Buildings tab), colors `"#RRGGBBAA"`.
 
 | Section | What |
 |---|---|
@@ -121,7 +121,7 @@ is drawn once over all of them. Taken back / the owner dead: every plot is relea
 
 Loaded with the game's `SpriteTool.GetSprite(atlas, name)` (`GameSprite`; `g.res.Load<SpriteAtlas>("SpriteAtlas/<atlas>")`
 as a fallback: it finds `CommonMapGrid` but not `TownCommon`). Pictures of the atlases: `python
-scripts/extract-game-assets.py --buildings` -> `docs/GameAssets/Buildings/<atlas>/` (TownCommon, CommonMapGrid, VillageCommon, the `Build*` halls of SchoolCommon).
+scripts/extract-game-assets.py --buildings` -> `GuiGuBaHuang-ModLib/docs/GameAssets/Buildings/<atlas>/` (TownCommon, CommonMapGrid, VillageCommon, the `Build*` halls of SchoolCommon).
 
 Decoration (`Map` of the config): a wall around the town with gates where the main roads leave it, ripples on the
 water, rails on the bridges, trees on the woods (`Trees`), people on some main road cells (`People`, `PeopleChance`).

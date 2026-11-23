@@ -7,7 +7,7 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 - **GuiGuBaHuang-ModLib** - ModLib source (submodule, public repo `4azuo/GuiGuBaHuang-ModLib`): a change there is committed and pushed in the submodule, then the new submodule commit is committed here
 - **3385996759** - ModLib mod project (ModMain + configs; its solution builds `GuiGuBaHuang-ModLib/ModLib.csproj`, provides ModLib.dll)
 - **3161035078** - Taoist mod (uses ModLib, also the reference example mod)
-- **GuiGuBaHuang-ModCreator** - WPF tool for creating/editing mod projects (submodule)
+- **GuiGuBaHuang-ModCreator** - WPF tool for creating/editing mod projects (submodule; development on hold indefinitely)
 
 ## Structure
 
@@ -54,7 +54,7 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 
 Read the relevant doc from `docs/` before answering questions or making non-trivial changes:
 
-- `README.md` - Map of the documentation (tree, where to look); `GameAssets/` - icons and drama backgrounds extracted from the game (`scripts/extract-game-assets.py`)
+- `README.md` - Map of the documentation (tree, where to look)
 
 - `00-Getting-Started.md` - Setup and structure
 - `01-ModMain.md` - ModMain class and initialization
@@ -64,7 +64,11 @@ Read the relevant doc from `docs/` before answering questions or making non-triv
 - `05-Helpers.md` - Helper functions
 - `06-Debug.md` - Debugging, log locations
 - `07-Build-Deploy.md` - Build scripts
-- `ModConf/00-SampleConfs-List.md` - Index of config samples (per-category files `01`-`12`)
-- `ModCreator/00-Overview.md` - ModCreator tool (per-feature files `01`-`05`)
-- `ModLib/00-Architecture.md` - ModLib internals: dispatch, load sequence, monthly tick (`01` event reference, `02` cache/persistence, `03` built-in events, `04` UI framework, `05` attributes/objects/enums)
 - `Taoist/00-Overview.md` - Taoist structure and event order (`01` features per event + known issues, `Features/<Class>.md` one detailed page per Mod class, `02` configs, `03` test scenarios, `04` autotest/evidence/unit tests, `05` backlog: open work and former TODO notes, `06` storyline design, `Storylines/` dialogue per line)
+
+Docs of the submodules (in their own repositories):
+
+- `GuiGuBaHuang-ModLib/docs/README.md` - Map of the ModLib docs; `00-Architecture.md` - ModLib internals: dispatch, load sequence, monthly tick (`01` event reference, `02` cache/persistence, `03` built-in events, `04` UI framework, `05` attributes/objects/enums)
+- `GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md` - Index of config samples (per-category files `01`-`12`)
+- `GuiGuBaHuang-ModLib/docs/GameAssets/` - icons, item icons, buildings and drama backgrounds extracted from the game (`scripts/extract-game-assets.py`); `Effects/` - effects recorded by the galleries TE-xx (viewer: `GuiGuBaHuang-ModLib/effect-viewer/`) (both Git LFS, written by the scripts of this repository: commit them in the submodule)
+- `GuiGuBaHuang-ModCreator/docs/00-Overview.md` - ModCreator tool (per-feature files `01`-`05`)

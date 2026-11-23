@@ -576,7 +576,7 @@ if ($res -and (Test-Path -LiteralPath $timelineFile)) {
     }
 }
 $executedIds = @($results | ForEach-Object { ($_.id -split '#')[0] })
-# effect galleries (TE-xx): their pictures to docs/Effects (in git)
+# effect galleries (TE-xx): their pictures to GuiGuBaHuang-ModLib/docs/Effects (in git)
 if ($executedIds | Where-Object { $_ -like 'TE-*' }) {
     # a game slot (parallel galleries): in a background process, so the slot starts its next batch at once (the
     # collects of several runs lock index.json); otherwise here

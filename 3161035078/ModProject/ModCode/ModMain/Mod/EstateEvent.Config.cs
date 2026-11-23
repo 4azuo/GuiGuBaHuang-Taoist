@@ -10,7 +10,7 @@ namespace MOD_nE7UL2.Mod
     /// <summary>
     /// Settings of the town estates, read from ModConf/estate_configs.json (pictures, sizes, rates, prices); the defaults
     /// below are the same as the file, used when it is missing or a value is left out.
-    /// Pictures: "Atlas/Sprite" of the game (docs/GameAssets, Buildings tab).
+    /// Pictures: "Atlas/Sprite" of the game (GuiGuBaHuang-ModLib/docs/GameAssets, Buildings tab).
     /// </summary>
     public class EstateConfig
     {

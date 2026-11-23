@@ -1,7 +1,8 @@
-"""Viewers with saving: a local web server for effect-viewer/index.html (http://localhost:8765/effect-viewer/) and
+"""Viewers with saving: a local web server for the effect viewer of the ModLib submodule
+(GuiGuBaHuang-ModLib/effect-viewer/index.html, http://localhost:8765/GuiGuBaHuang-ModLib/effect-viewer/) and
 test-viewer/index.html (http://localhost:8765/test-viewer/).
 
-- GET  /effect-viewer/data/effects.js : built at every request from docs/Effects/<kind>/index.json (always fresh);
+- GET  /GuiGuBaHuang-ModLib/effect-viewer/data/effects.js : built at every request from GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json (always fresh);
 - POST /api/user-label {"kind", "name", "fields": {...}} : the tester's own assessment written into index.json as
   "user-*" fields (an empty value removes the field), under the lock of the effect scripts;
 - POST /api/pin-run {"kind": "auto"|"unit", "id", "pin": true|false, "note", "file" (unit: the trx)} : pins / unpins a test run (pinned.json
@@ -19,10 +20,11 @@ sys.path.insert(0, os.path.join(REPO, "scripts", "game"))
 from collect_effects import locked, dump_aligned  # noqa: E402
 
 KINDS = ("Skill", "Unit", "Scenes")
+PAGES = {"effect-viewer": "GuiGuBaHuang-ModLib/effect-viewer/", "test-viewer": "test-viewer/"}
 
 
 def index_file(kind):
-    return os.path.join(REPO, "docs", "Effects", kind, "index.json")
+    return os.path.join(REPO, "GuiGuBaHuang-ModLib", "docs", "Effects", kind, "index.json")
 
 
 def effects_js():
@@ -122,11 +124,11 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        if self.path.split("?")[0] == "/effect-viewer/data/effects.js":
+        if self.path.split("?")[0] == "/GuiGuBaHuang-ModLib/effect-viewer/data/effects.js":
             return self.send_body(200, effects_js(), "application/javascript; charset=utf-8")
-        if self.path in ("/", "/effect-viewer"):
+        if self.path in ("/", "/effect-viewer", "/effect-viewer/", "/GuiGuBaHuang-ModLib/effect-viewer"):
             self.send_response(302)
-            self.send_header("Location", "/effect-viewer/")
+            self.send_header("Location", "/GuiGuBaHuang-ModLib/effect-viewer/")
             self.end_headers()
             return
         return super().do_GET()
@@ -152,8 +154,8 @@ def main():
     ap.add_argument("--page", choices=("effect-viewer", "test-viewer"), default="effect-viewer")
     a = ap.parse_args()
     srv = ThreadingHTTPServer(("127.0.0.1", a.port), Handler)
-    url = f"http://localhost:{a.port}/{a.page}/"
-    print("Viewers:", f"http://localhost:{a.port}/effect-viewer/", f"http://localhost:{a.port}/test-viewer/", "(Ctrl+C to stop)")
+    url = f"http://localhost:{a.port}/" + PAGES[a.page]
+    print("Viewers:", *(f"http://localhost:{a.port}/{p}" for p in PAGES.values()), "(Ctrl+C to stop)")
     if a.open:
         webbrowser.open(url)
     try:

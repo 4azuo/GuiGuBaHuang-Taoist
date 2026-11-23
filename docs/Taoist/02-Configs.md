@@ -49,4 +49,4 @@ Edited on the title screen (`SMGlobalConfigsEvent`, saved in `mod\nE7UL2\globals
 
 ## Game config overrides and texts
 
-`<group>_<configName>.json` files add or replace rows of base game configs (`roleCreateFeature`, `roleEffect`, `dramaDialogue`, `taskBase`, `dungeonBase`...). Check ids with ModLib's title screen tool (duplicated ids). Formats: [../ModConf/00-SampleConfs-List.md](../ModConf/00-SampleConfs-List.md). Texts: `*_localText.json` (+ translated folders), see [../04-LocalText.md](../04-LocalText.md).
+`<group>_<configName>.json` files add or replace rows of base game configs (`roleCreateFeature`, `roleEffect`, `dramaDialogue`, `taskBase`, `dungeonBase`...). Check ids with ModLib's title screen tool (duplicated ids). Formats: [ModConf/00-SampleConfs-List.md](../../GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md). Texts: `*_localText.json` (+ translated folders), see [../04-LocalText.md](../04-LocalText.md).

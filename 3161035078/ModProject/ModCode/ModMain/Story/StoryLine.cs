@@ -54,7 +54,7 @@ namespace MOD_nE7UL2.Story
         public const string BG = "xinjianhualuo1";
 
         /// <summary>
-        /// Background of a step's narration by its text key (pictures of docs/GameAssets/DramaBackgrounds, chosen to match
+        /// Background of a step's narration by its text key (pictures of GuiGuBaHuang-ModLib/docs/GameAssets/DramaBackgrounds, chosen to match
         /// the scene: a cave, a tomb, bandits, a storm, a lake...); BG for the others.
         /// </summary>
         public static readonly Dictionary<string, string> BACKGROUNDS = new Dictionary<string, string>

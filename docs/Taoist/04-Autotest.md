@@ -169,7 +169,7 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
     recorded by `run-autotest.ps1` (`snaps\<n>.rec` = `<frame folder>|<ms>`: jpg frames ~10 a second + `frames.txt`).
   The unit commands of an effect (`Unit*Ctrl` components, e.g. `UnitCmdCtrl`) are removed when it is created: alone they throw
   inside the game's TimerMgr, which then stops every timer (the run hangs). `scripts/game/collect-effects.ps1`
-  (`collect_effects.py`, Python + Pillow; run by `run-autotest.ps1`) makes `docs/Effects/<Skill|Unit|Scenes>/NNNN_<effect>.webp`
+  (`collect_effects.py`, Python + Pillow; run by `run-autotest.ps1`) makes `GuiGuBaHuang-ModLib/docs/Effects/<Skill|Unit|Scenes>/NNNN_<effect>.webp`
   (animated, 960x540) and `index.json` (in git): `castingTimeMs`, `durationMs` (-1 = loops until the skill removes it), `loop`,
   `direction` (static or one of 8), `width` / `height` (world units), `zoom`, `camera`, `visible`, and the classification
   fields (element, shape, range, color, motion, tags, note) kept between runs.
@@ -181,18 +181,19 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
   a game update; the game's assets stay out of the repository (only these numbers).
   In a game slot the webp of a batch are made in a background process: the slot starts its next batch at once.
   `scripts/game/assess_effects.py --sheets` assesses the recorded effects (fields `ai-*`): picture analysis of every webp
-  (`ai-colors`, `ai-motion`, `ai-coverage`) and contact sheets (`docs/Effects/<kind>/review/`, not in git) for the AI
+  (`ai-colors`, `ai-motion`, `ai-coverage`) and contact sheets (`GuiGuBaHuang-ModLib/docs/Effects/<kind>/review/`, not in git) for the AI
   reviewer, whose labels (`ai-element`: the 12 attributes of the game + extended ones, `ai-usage`, `ai-shape`, `ai-size`,
   `ai-tags`, `ai-note`, `ai-skill-ideas`) are written into index.json by `label_effects.py` (one source: the scripts that
-  write index.json again keep every `ai-*` field and the `asset`). Effect viewer: `effect-viewer/index.html`; `python scripts/effect-viewer-server.py --open` (VS Code task "Test: Open Effect
+  write index.json again keep every `ai-*` field and the `asset`). Effect viewer (ModLib submodule): `GuiGuBaHuang-ModLib/effect-viewer/index.html`; `python scripts/effect-viewer-server.py --open` (VS Code task "Test: Open Effect
   Viewer") serves it with saving: the tester's own assessment next to the AI's, written as `user-*` fields (static data:
-  `python scripts/update-effect-viewer.py --open`, VS Code task "Test: Open Effect Viewer"; linked with the test viewer).
-  The webp are stored with Git LFS (`.gitattributes`).
+  `python GuiGuBaHuang-ModLib/effect-viewer/update-data.py --open`, VS Code task "Test: Open Effect Viewer"; linked with the test viewer).
+  The webp are stored with Git LFS (`.gitattributes` of the submodule): commit them in `GuiGuBaHuang-ModLib`, then the
+  new submodule commit here.
   A part of a list: `<autotest folder>\efx-range.txt` = `start count` (e.g. `0 300`; ~10 s an effect).
   `.\scripts\game\run-autotest.ps1 -Deploy -Scenario TE-01 -Timeout 7200`
   The whole galleries, on several games side by side (below): `.\scripts\game\run-effect-gallery.ps1 -Id TE-01 -Deploy`
   (4 games, batches of 100 effects: a failed run loses little; `-Resume` goes on with an earlier gallery - only the
-  effects without measures in docs/Effects/<kind>/index.json; `-Id TE-02,TE-03`, `-Slots`, `-Batch`, `-Start` / `-End`). The scene code is ModLib's
+  effects without measures in GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json; `-Id TE-02,TE-03`, `-Slots`, `-Batch`, `-Start` / `-End`). The scene code is ModLib's
   (`BattleSceneHelper`, `BattleEffectHelper`, docs/05-Helpers.md). The mouse is hidden (cursor and the objects following it).
 - **Games side by side** (game slots 2..5; the normal game is never used): every slot has its own game data folder
   `...\LocalLow\guigugame\guigubahuang-slot<n>` (saves, save index, mod data, autotest folder), from the MelonLoader
