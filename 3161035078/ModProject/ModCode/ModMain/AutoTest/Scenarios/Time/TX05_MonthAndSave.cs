@@ -55,6 +55,17 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Time
                     start = DateTime.Now;
                     c.Bag["month"] = GameHelper.GetGameTotalMonth();
                     c.Bag["fnf"] = CountInPlayerLog("FileNotFoundException");
+                    // an open buy order through the month-end save (the game closed there when the order saved its town object)
+                    var town = ModMain.Store.Towns.FirstOrDefault(x => x.GetBuildSub<MapBuildTownMarket>() != null);
+                    var propId = RealMarketEvent3.OrderableItems().FirstOrDefault();
+                    if (town != null && propId != 0)
+                    {
+                        g.world.playerUnit.AddUnitMoney(100000);
+                        var order = RealMarketEvent3.AddBuyOrder(town, propId, 99, RealMarketEvent3.MIN_PRICE);
+                        c.Assert(order != null, $"buy order open during the month ({propId} in {town.name})");
+                        c.Bag["order"] = order;
+                    }
+                    else c.Info("no market town / orderable item: no buy order");
                     g.world.run.AddDay(g.world.run.roundDayMax + 1);
                     EventHelper.CallGameEvent<WorldRunStart>(EGameType.WorldRunStart);
                     EventHelper.CallGameEvent<WorldRunEnd>(EGameType.WorldRunEnd);
@@ -86,6 +97,10 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Time
                     c.AssertEqual(ContributionExchangeEvent.Instance.CurMonthRatio, ce?.CurMonthRatio ?? -1, "sect exchange ratio saved");
                     var mk = ReadCache<RealMarketEvent3>(ModConst.REAL_MARKET_EVENT3);
                     c.AssertEqual(RealMarketEvent3.Instance.MarketStack.Count, mk?.MarketStack?.Count ?? -1, "player market listings saved");
+                    c.AssertEqual(RealMarketEvent3.Instance.BuyOrders.Count, mk?.BuyOrders?.Count ?? -1, "buy orders saved");
+                    var order = c.Bag.ContainsKey("order") ? c.Bag["order"] as RealMarketEvent3.BuyOrder : null;
+                    if (order != null && RealMarketEvent3.Instance.BuyOrders.Contains(order))
+                        c.Assert(mk?.BuyOrders?.Any(x => x.TownId == order.TownId && x.PropId == order.PropId) ?? false, "open buy order on disk with its town id");
                 })
                 .Step("two saves at once", c =>
                 {
@@ -106,6 +121,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Time
                 {
                     MonstStrongerEvent.Instance.Counter -= 7;
                     ExpertEvent.GetExpertExps().Remove(MARKER);
+                    if (c.Bag.ContainsKey("order")) RealMarketEvent3.CancelBuyOrder(c.Bag["order"] as RealMarketEvent3.BuyOrder);
                     GameHelper.SaveGame();
                     c.Assert(!ExpertEvent.GetExpertExps().ContainsKey(MARKER), "marker removed");
                 }, 1000)

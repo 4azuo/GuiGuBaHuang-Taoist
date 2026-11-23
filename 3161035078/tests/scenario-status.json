@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-23T21:28:29",
+  "updatedAt": "2026-11-23T22:09:09",
   "counts": {
-    "OK": 7,
+    "OK": 9,
     "NG": 1,
     "SKIP": 1,
-    "NOT RUN": 134,
+    "NOT RUN": 132,
     "-": 4
   },
   "scenarios": [
@@ -251,8 +251,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "OK",
-      "lastRun": "2026-11-23T21:28:29",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-212502",
+      "lastRun": "2026-11-23T22:09:09",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-220226-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1118,9 +1118,9 @@
       "kind": "auto",
       "feature": "RealMarketEvent3",
       "title": "Player market: VIP, register, my items, price, deals, sell, buy, barter, buy orders",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-23T22:09:09",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-220226-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1195,7 +1195,8 @@
         "TG-46-69": "OK",
         "TG-46-70": "OK",
         "TG-46-71": "OK",
-        "TG-46-72": "OK"
+        "TG-46-72": "OK",
+        "TG-46-73": "OK"
       }
     },
     {
@@ -1791,9 +1792,9 @@
       "kind": "auto",
       "feature": "ModLib save/monthly tick",
       "title": "Month passes and the Taoist data is saved to disk",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-23T22:09:09",
+      "evidence": "test-viewer/index.html#tab=auto&run=20261123-220226-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1808,7 +1809,10 @@
         "TX-05-09": "OK",
         "TX-05-10": "OK",
         "TX-05-11": "OK",
-        "TX-05-12": "OK"
+        "TX-05-12": "OK",
+        "TX-05-13": "OK",
+        "TX-05-14": "OK",
+        "TX-05-15": "OK"
       }
     },
     {

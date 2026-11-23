@@ -384,6 +384,9 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Town
                     if (Player.GetUnitMoney() < 200) Player.AddUnitMoney(200);
                     var m = Player.GetUnitMoney();
                     var order = RealMarketEvent3.AddBuyOrder(town, HerbId, 3, 20);
+                    // an open order is saved with the cache: only its data, not the town object (month-end save crash)
+                    var json = Newtonsoft.Json.JsonConvert.SerializeObject(order, ModLib.Helper.CacheHelper.JSON_SETTINGS);
+                    c.Assert(!json.Contains("\"Town\"") && json.Contains("\"TownId\""), "buy order saved without the town object");
                     RealMarketEvent3.CancelBuyOrder(order);
                     c.AssertEqual(m, Player.GetUnitMoney(), "cancel: the held stones come back");
                     var keys = TaoistLogEvent.Instance.Entries.Select(x => x.Key).ToList();

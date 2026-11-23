@@ -73,6 +73,7 @@ Window flags (`IsOpenMarket`, `IsOpenSellingList`, `IsOpenNegotiatingList`, `IsO
 - **Monthly** (`ProcessBuyOrders`): expired -> refunded (`log_buyorder_expired`); each NPC of the order town owning the item sells with chance `min(90, 25 x price / reference)` %, reference = average recent price or the sale value; paid from the held stones, +5 intimacy, `RecordPrice`, log / message `market_buyorder_filled`.
 - **Cancel**: refund of the remaining items (`log_buyorder_cancel`).
 - Window: a table per town (cancel, icon, item, quantity, price each, town, time left), 8 per page; new order in 2 steps (item, then count and price).
+- **Saved** in the cache: `BuyOrder.Town` / `Name` are `[JsonIgnore]`. Before 6.1.05 the save serialized the `MapBuildTown` game object, and the game closed at the month-end save while an order was open.
 
 ## Tests
 

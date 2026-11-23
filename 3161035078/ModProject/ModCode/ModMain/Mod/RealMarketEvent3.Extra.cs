@@ -35,7 +35,10 @@ namespace MOD_nE7UL2.Mod
             public int Price { get; set; }
             public int CreateMonth { get; set; }
 
+            // saved with the cache: the game objects must not be serialized (a MapBuildTown in the save crashed the game at the month-end save)
+            [Newtonsoft.Json.JsonIgnore]
             public MapBuildTown Town => g.world.build.GetBuild(TownId)?.TryCast<MapBuildTown>();
+            [Newtonsoft.Json.JsonIgnore]
             public string Name => GameTool.LS(g.conf.itemProps.GetItem(PropId)?.name ?? PropId.ToString());
         }
 
