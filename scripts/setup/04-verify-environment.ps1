@@ -22,7 +22,7 @@ function Add-Check([string]$Status, [string]$Name, [string]$Detail = '', [string
     $checks.Add([pscustomobject]@{ Status = $Status; Check = $Name; Detail = $Detail; Fix = $Fix })
 }
 
-Write-Title 'GuiGuBaHuang-ModLib - Verify Environment'
+Write-Title 'GuiGuBaHuang-Taoist - Verify Environment'
 Update-SessionPath
 
 # ---- tools
@@ -57,6 +57,9 @@ if ($repo) {
     $mcDir = Join-Path $repo 'GuiGuBaHuang-ModCreator'
     if (Test-Path (Join-Path $mcDir 'ModCreator.sln')) { Add-Check PASS 'ModCreator checked out' }
     else { Add-Check FAIL 'ModCreator checked out' "$mcDir is empty" '.\scripts\setup\01-clone-repository.ps1 -RepoPath <repo>' }
+    $mlDir = Join-Path $repo 'GuiGuBaHuang-ModLib'
+    if (Test-Path (Join-Path $mlDir 'ModLib.csproj')) { Add-Check PASS 'ModLib checked out' }
+    else { Add-Check FAIL 'ModLib checked out' "$mlDir is empty" 'git submodule update --init GuiGuBaHuang-ModLib' }
 
     # ---- settings files
     $rootSettingsFile = Join-Path $repo 'scripts\settings.json'
@@ -122,7 +125,7 @@ if ($repo) {
 
     # ---- game paths hardcoded in .csproj HintPath
     $missing = 0; $total = 0; $expected = $null
-    foreach ($proj in Get-ChildItem -Path (Join-Path $repo '*\ModProject\ModCode') -Recurse -Filter *.csproj -ErrorAction SilentlyContinue) {
+    foreach ($proj in @(Get-ChildItem -Path (Join-Path $repo '*\ModProject\ModCode') -Recurse -Filter *.csproj -ErrorAction SilentlyContinue) + @(Get-ChildItem -Path (Join-Path $repo 'GuiGuBaHuang-ModLib\ModLib.csproj') -ErrorAction SilentlyContinue)) {
         $text = [IO.File]::ReadAllText($proj.FullName, [Text.Encoding]::UTF8)
         foreach ($m in [regex]::Matches($text, '<HintPath>([A-Za-z]:\\[^<]+)</HintPath>')) {
             $total++
@@ -138,14 +141,6 @@ if ($repo) {
         $detail = "$missing of $total DLLs missing"
         if ($expected) { $detail += "; .csproj expects game at '$expected'" }
         Add-Check FAIL '.csproj game references' $detail 'see INSTALLATION.md "Game installed in another folder"'
-    }
-
-    $modLibProj = Join-Path $repo '3385996759\ModProject\ModCode\ModLib\ModLib.csproj'
-    if (Test-Path $modLibProj) {
-        $m = [regex]::Match([IO.File]::ReadAllText($modLibProj, [Text.Encoding]::UTF8), '<DocumentationFile>([^<]+)</DocumentationFile>')
-        if ($m.Success -and [IO.Path]::IsPathRooted($m.Groups[1].Value) -and -not (Test-Path (Split-Path $m.Groups[1].Value -Parent))) {
-            Add-Check WARN 'ModLib.csproj DocumentationFile' "folder of '$($m.Groups[1].Value)' does not exist" 'ModLib.xml for ModCreator is not refreshed on this machine'
-        }
     }
 }
 

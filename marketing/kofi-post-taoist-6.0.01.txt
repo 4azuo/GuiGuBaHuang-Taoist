@@ -16,6 +16,6 @@ What's new in 6.0:
 Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078
 (Requires Fouru's ModLib: https://steamcommunity.com/sharedfiles/filedetails/?id=3385996759 — put it at the top of the mod list and restart.)
 Nexus Mods: https://www.nexusmods.com/taleofimmortal/mods/60
-Feedback: https://github.com/4azuo/GuiGuBaHuang-ModLib/issues/13
+Feedback: https://github.com/4azuo/GuiGuBaHuang-Taoist/issues/13
 
 Thank you again, and have fun cultivating!

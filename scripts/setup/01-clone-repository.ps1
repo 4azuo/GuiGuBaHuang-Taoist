@@ -16,7 +16,7 @@
 [CmdletBinding()]
 param(
     [string]$RepoPath = 'C:\git\GuiGuBaHuang-ModLib',
-    [string]$RepoUrl = 'https://github.com/4azuo/GuiGuBaHuang-ModLib.git',
+    [string]$RepoUrl = 'https://github.com/4azuo/GuiGuBaHuang-Taoist.git',
     [string]$Branch,
     [switch]$SkipStar,
     [switch]$Force,
@@ -72,6 +72,12 @@ else {
 
 if (-not (Initialize-ModCreator -RepoPath $RepoPath)) {
     Write-Warn 'ModCreator is not ready. See INSTALLATION.md, "ModCreator folder is empty".'
+}
+# ModLib source (submodule GuiGuBaHuang-ModLib, built by the 3385996759 solution)
+if (-not (Test-Path (Join-Path $RepoPath 'GuiGuBaHuang-ModLib\ModLib.csproj'))) {
+    git -C $RepoPath submodule update --init GuiGuBaHuang-ModLib
+    if (Test-Path (Join-Path $RepoPath 'GuiGuBaHuang-ModLib\ModLib.csproj')) { Write-Ok 'ModLib submodule initialized' }
+    else { Write-Warn 'ModLib is not ready: run git submodule update --init GuiGuBaHuang-ModLib' }
 }
 
 # Star the repository (only when GitHub CLI is installed and logged in)

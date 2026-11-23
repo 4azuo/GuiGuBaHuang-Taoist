@@ -28,7 +28,7 @@
 [CmdletBinding()]
 param(
     [string]$RepoPath,
-    [string]$RepoUrl = 'https://github.com/4azuo/GuiGuBaHuang-ModLib.git',
+    [string]$RepoUrl = 'https://github.com/4azuo/GuiGuBaHuang-Taoist.git',
     [string]$ArchivePath,
     [switch]$Yes,
     [switch]$SkipCheckpoint,

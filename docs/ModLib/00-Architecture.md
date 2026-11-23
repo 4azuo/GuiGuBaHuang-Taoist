@@ -6,7 +6,7 @@ Related docs: [01-Event-Reference](01-Event-Reference.md) · [02-Cache-Persisten
 
 ## Source layout
 
-| Folder (`3385996759/ModProject/ModCode/`) | Content |
+| Folder (`ModMain/`: `3385996759/ModProject/ModCode/`; `ModLib/`: the submodule `GuiGuBaHuang-ModLib/` at the root, public repo [4azuo/GuiGuBaHuang-ModLib](https://github.com/4azuo/GuiGuBaHuang-ModLib)) | Content |
 |---|---|
 | `ModMain/ModMain.cs` | `MOD_flQrxq.ModMain : ModMaster` - the concrete core object (name, id, version) |
 | `ModLib/Mod/Base/` | `ModMaster` (partial: `ModMaster.cs`, `_GameEvent`, `_CommonEvent`, `_BattleEvent`, `_MapEvent`, `_TimerEvent`), `ModEvent`, `ModChild`, `ModSkill`, marker bases `BattleEvent`, `SkillEvent` |

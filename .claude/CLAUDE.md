@@ -1,10 +1,11 @@
-# GuiGuBaHuang-ModLib
+# GuiGuBaHuang-Taoist
 
 Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader/Harmony.
 
 ## Projects
 
-- **3385996759** - ModLib framework (core library, provides ModLib.dll)
+- **GuiGuBaHuang-ModLib** - ModLib source (submodule, public repo `4azuo/GuiGuBaHuang-ModLib`): a change there is committed and pushed in the submodule, then the new submodule commit is committed here
+- **3385996759** - ModLib mod project (ModMain + configs; its solution builds `GuiGuBaHuang-ModLib/ModLib.csproj`, provides ModLib.dll)
 - **3161035078** - Taoist mod (uses ModLib, also the reference example mod)
 - **GuiGuBaHuang-ModCreator** - WPF tool for creating/editing mod projects (submodule)
 

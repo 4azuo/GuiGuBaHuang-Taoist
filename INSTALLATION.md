@@ -150,7 +150,7 @@ Pick a folder (examples use `C:\git`) and clone:
 ```powershell
 mkdir C:\git -Force
 cd C:\git
-git clone --recurse-submodules https://github.com/4azuo/GuiGuBaHuang-ModLib.git
+git clone --recurse-submodules https://github.com/4azuo/GuiGuBaHuang-Taoist.git
 cd GuiGuBaHuang-ModLib
 ```
 
@@ -312,9 +312,6 @@ New-Item -ItemType Junction `
 
 `04-verify-environment.ps1` reports this as **".csproj game references – N DLLs missing"** and shows the path it expects.
 
-### Warning "ModLib.csproj DocumentationFile … does not exist"
-`ModLib.csproj` writes `ModLib.xml` (IntelliSense docs for ModCreator) to `C:\git\GuiGuBaHuang-ModLib\…`. If your repository is elsewhere, that file just isn't refreshed. The build still works.
-
 ### Settings files show as modified in git
 They now hold your local paths. See the skip-worktree note in [step 4](#step-4--configure-the-settings-files), or use `02-configure-settings.ps1 -SkipWorktree`.
 
@@ -340,6 +337,6 @@ Optional. System Protection may be disabled, or a restore point was created with
 
 ## Support
 
-- **Repository:** https://github.com/4azuo/GuiGuBaHuang-ModLib
-- **Issues:** https://github.com/4azuo/GuiGuBaHuang-ModLib/issues
+- **Repository:** https://github.com/4azuo/GuiGuBaHuang-Taoist
+- **Issues:** https://github.com/4azuo/GuiGuBaHuang-Taoist/issues
 - **Author:** 4azuo

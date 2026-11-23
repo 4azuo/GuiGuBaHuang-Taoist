@@ -4,7 +4,7 @@
 
 ※If you want to support the work: [Ko-fi](https://ko-fi.com/fouru)
 
-※Download: Steam Workshop (automatic updates), or the zips of the [latest GitHub release](https://github.com/4azuo/GuiGuBaHuang-ModLib/releases/latest) for a manual install (copy the `Mod_xxx` folder of the zip into the `ModExportData` folder of the game).
+※Download: Steam Workshop (automatic updates), or the zips of the [latest GitHub release](https://github.com/4azuo/GuiGuBaHuang-Taoist/releases/latest) for a manual install (copy the `Mod_xxx` folder of the zip into the `ModExportData` folder of the game).
 
 ※Error reports: ModLib can send the errors of a mod to its author (BugSplat) **only if you allow it** on the title screen (change it in ModCreator → Error reports). Sent: the error and its stack trace, the last lines of the mod log (your user folder, Windows account and player id removed), versions, loaded mod ids, language, an anonymous id. Never your saves or Steam account. Mod authors: set your own BugSplat database in `ModConf/crash_reports.json` (see [Error reports (BugSplat)](#error-reports-bugsplat)).
 
@@ -91,7 +91,7 @@ Hardcore rework of the base game. Most features can be tuned or turned off in **
 
 # How to create a mod
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/91921f05-251a-4f1e-a2e9-d1e5bdd853d3)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/91921f05-251a-4f1e-a2e9-d1e5bdd853d3)
 
 
 
@@ -132,7 +132,7 @@ Add BuildEvent for copying dll to "debug" folder.
 
 ![image](https://github.com/user-attachments/assets/34a75a28-38df-4922-aa43-732b8ab3b035)
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/84f35501-d6f2-4b8d-9cd6-2606bf397e59)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/84f35501-d6f2-4b8d-9cd6-2606bf397e59)
 
 １．Just inherit **ModChild** and config your mod. And then, you can use declared on-events.
 
@@ -140,7 +140,7 @@ Add BuildEvent for copying dll to "debug" folder.
 
 ２．You should use **ModEvent**↓↓↓ to process your mod. And use **ModMain**↑↑↑ to config your mod.
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/e8da9fd1-89d0-4870-ace4-b7153dace9f2)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/e8da9fd1-89d0-4870-ace4-b7153dace9f2)
 
 ![image](https://github.com/user-attachments/assets/5c1c364b-daf4-41c6-aa78-f39b2fcf9d6e)
 
@@ -170,7 +170,7 @@ Last, All properties of ModEvent will be cached (.json). You can ignore cache an
 
 You can use DebugHelper to write a log which will be saved to ↓ folder.
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/7cf4688f-8890-41e7-bf0a-aa6519bbf325)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/7cf4688f-8890-41e7-bf0a-aa6519bbf325)
 
 `xxx\AppData\LocalLow\guigugame\guigubahuang\mod\flQrxq`
 
@@ -257,19 +257,19 @@ Create a folder **ModConf** in **ModProject**, copy samples from below folder to
 
 1. About filename, split by '**_**'. The last part is the name of conf.
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/a1ff96de-6850-466d-a3fd-682faf38a7f3)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/a1ff96de-6850-466d-a3fd-682faf38a7f3)
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/81548d72-7c44-4fe7-abed-094ff507a38e)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/81548d72-7c44-4fe7-abed-094ff507a38e)
 
 2. You dont need rewrite all properties of conf. Just edit which you want.
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/7f9de987-89a8-441d-addc-a894d37ba746)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/7f9de987-89a8-441d-addc-a894d37ba746)
 
 ※**"__name"** is my comment.
 
 3. Use **|** to set same value to the properties.
 
-![image](https://github.com/4azuo/GuiGuBaHuang-ModLib/assets/11677054/cb95e58a-daf2-45f4-88d1-6ee1cb6cca1b)
+![image](https://github.com/4azuo/GuiGuBaHuang-Taoist/assets/11677054/cb95e58a-daf2-45f4-88d1-6ee1cb6cca1b)
 
 4. If **"id"** exists, conf will be override. If not exists, then will be created a new one.
 

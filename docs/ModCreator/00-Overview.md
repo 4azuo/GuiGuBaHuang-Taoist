@@ -59,6 +59,6 @@ Edit `ModCreator\Resources\embeded-settings.json`:
 
 ## Support
 
-- GitHub: https://github.com/4azuo/GuiGuBaHuang-ModLib
+- GitHub: https://github.com/4azuo/GuiGuBaHuang-Taoist
 - Issues: GitHub Issues
 - Docs: `docs/`

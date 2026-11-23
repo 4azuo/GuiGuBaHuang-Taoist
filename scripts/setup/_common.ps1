@@ -8,7 +8,7 @@
     so non-ASCII text (e.g. the game folder name) is built from char codes instead.
 #>
 
-$script:RepoUrlDefault       = 'https://github.com/4azuo/GuiGuBaHuang-ModLib.git'
+$script:RepoUrlDefault       = 'https://github.com/4azuo/GuiGuBaHuang-Taoist.git'
 $script:ModCreatorUrlDefault = 'https://github.com/4azuo/GuiGuBaHuang-ModCreator.git'
 $script:DefaultRepoPath      = 'C:\git\GuiGuBaHuang-ModLib'
 $script:GameAppId            = '1468810'

@@ -1,0 +1,6 @@
+[submodule "GuiGuBaHuang-ModCreator"]
+	path = GuiGuBaHuang-ModCreator
+	url = https://github.com/4azuo/GuiGuBaHuang-ModCreator.git
+[submodule "GuiGuBaHuang-ModLib"]
+	path = GuiGuBaHuang-ModLib
+	url = https://github.com/4azuo/GuiGuBaHuang-ModLib.git
