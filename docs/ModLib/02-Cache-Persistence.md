@@ -38,13 +38,25 @@ ModChild rules (checked in `CacheHelper.GetModChildCacheTypes`, the mod is ignor
 
 Serializer: `CacheHelper.JSON_SETTINGS` (type names, error tolerant). `EnumObject` values are written as `"TypeFullName|Name"` by `EnumObjectConverter` and resolved back to the singleton.
 
+### Writing (2.2.36)
+
+`CacheHelper.Save()` (every game save, also the monthly one) serializes every object on the game thread, then hands the text to `CacheHelper.Writer` (`FileWriteQueue`, `Helper/FileWriteQueue.cs`):
+
+* **Unchanged files skipped**: a file whose JSON equals the one last written to it, and still on disk as written (same size and time), is not written again. A file changed or deleted by someone else is written again. The log gets one line: `Save caches: <n> changed (written in the background), <m> unchanged`.
+* **Background write**: the changed files are written by a worker thread (only the disk write: reading game objects off the game thread is not safe). Only the newest text of a file waits in the queue.
+* **Safe write**: each file goes to `<file>.tmp` first, then replaces the file (`File.Replace`, `File.Copy` when Replace fails): a failed or interrupted write never leaves a half-written file.
+* **Failure**: logged (`Save cache failed: ...`) and forgotten, so the next save writes the file again.
+* **Waiting**: `CacheHelper.FlushWrites()` waits for the queue; done before loading the caches (`LoadGlobalCaches`, `LoadGameCaches`) and reading a cache file (`ReadGlobalCacheFile`, `ReadGameCacheFile`). The worker is a foreground thread: the game process does not exit before the queue is written. Left risk: the game killed during the write (the files then hold the previous save; never a half file).
+* `SaveGlobalCache(obj)` / `SaveGameCache(obj)` (one object, on demand) always write and wait for the write.
+
 ## Useful calls
 
 | Call | Purpose |
 |---|---|
 | `EventHelper.GetEvent<T>(cacheId)` / `CacheHelper.GetCachableObject<T>(id)` | Find a loaded object |
 | `CacheHelper.ReadGlobalCacheFile<T>(modId, cacheId)` | Read a Global object's file from a Local object (Taoist copies S&M configs this way) |
-| `CacheHelper.SaveGlobalCache(obj)` | Save a Global object immediately (e.g. after a title screen setting change) |
+| `CacheHelper.SaveGlobalCache(obj)` | Save a Global object immediately (e.g. after a title screen setting change; waits for the write) |
+| `CacheHelper.FlushWrites()` | Wait for the cache files of the last save (before reading or copying them yourself) |
 | `ModMaster.ModObj.ParameterStore` / `GetModChildParameterStore()` | Units/buildings snapshot of the month |
 
 ## Data of deleted saves

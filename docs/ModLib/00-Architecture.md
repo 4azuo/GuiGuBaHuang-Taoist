@@ -37,8 +37,10 @@ flowchart LR
 
 ## Two-layer dispatch
 
-1. Native callback `ModMaster._OnXxx(ETypeData e)` (registered in `Init`) calls `CallEvents<T>("OnXxx", e)`: reflection call of `ModMaster.OnXxx`, casting the Il2Cpp event data to the concrete type `T`, measuring time (`DebugMode >= Finest`) and logging exceptions.
+1. Native callback `ModMaster._OnXxx(ETypeData e)` (registered in `Init`) calls `CallEvents<T>("OnXxx", e)`: reflection call of `ModMaster.OnXxx` (its `MethodInfo` found once per name), casting the Il2Cpp event data to the concrete type `T`, measuring time (`DebugMode >= Finest`) and logging exceptions.
 2. `ModMaster.OnXxx` does framework work when needed (load sequence, save, monthly tick...) and then calls `EventHelper.RunMinorEvents("OnXxx", e)`, which iterates the cached `ModEvent`s **that declare** the method, in cache order, and for each:
+
+   The handlers of a method name (event, `MethodInfo`, `[EventCondition]`, `[ErrorIgnore]`, a delegate calling the method) are found **once** and kept until `CacheHelper.Version` changes (an object added or removed, caches cleared, re-ordered). Before 2.2.36 the lookup (reflection on every loaded object) ran at every call, i.e. once for every unit of `OnMonthlyForEachWUnit`. An exception thrown by a handler is the handler's own (no `TargetInvocationException`), so `[ErrorIgnore]` on the method that threw applies.
    * checks `[EventCondition(IsInGame, IsInBattle)]`,
    * defers through `ModDelayEvent` when `DelayMsec > 0`,
    * invokes the method and logs exceptions (with the in-game dialog in debug mode; `[ErrorIgnore]`: logged once per distinct error, no dialog).
@@ -74,7 +76,7 @@ sequenceDiagram
 
 1. `RefreshParameterStore()` - snapshot of units (with a valid area), buildings, towns, schools; ModChild overrides cleared.
 2. `OnRefreshParameterStoreOnMonthly` - mods can narrow the snapshot (`ModChild.SetParameterStore`, e.g. Taoist `PrepareEvent`).
-3. `OnFirstMonth` (once per save), `OnMonthly`, `OnMonthlyForEachWUnit(wunit)` for every unit of the store, `OnYearly` when a year boundary (month multiple of 12) was crossed.
+3. `OnFirstMonth` (once per save), `OnMonthly`, `OnMonthlyForEachWUnit(wunit)` for every unit of the store (`EventHelper.RunMinorEventsForEachWUnit`: unit by unit, then handler by handler; since 2.2.36 the handlers of a mod whose ModChild set its own `ParameterStore` this month get only the units of that store, e.g. Taoist "All functions apply to nearest units"), `OnYearly` when a year boundary (month multiple of 12) was crossed.
 4. `OnWorldRunEnd`, then `GameHelper.SaveGame()` (skipped while `ModMaster.NoSaveOnWorldRunEnd`).
 
 One dispatch can stand for several months: when the calendar moved N months since the previous dispatch (a time skip advancing months without dispatching them), `ModMaster.MonthsPassed` = N and `ModMaster.YearsPassed` = the year boundaries crossed (1 / 0 in normal play; formulas in `TimeScaleHelper`). Handlers scale by them:
@@ -89,4 +91,5 @@ One dispatch can stand for several months: when the calendar moved N months sinc
 
 * Logs: `%USERPROFILE%\AppData\LocalLow\guigugame\guigubahuang\mod\flQrxq\debug-YYYYMMDD.log` and `<playerId>_debug-YYYYMMDD.log` (see [06-Debug](../06-Debug.md)).
 * Cache files: `mod\<modId>\globals\<CacheId>.json` (Global) and `mod\<modId>\saves\<playerId>\<CacheId>.json` (Local); skills in the skill cache folder.
-* `ModConf/mod_configs.json` of ModLib: `{ "DebugMode": "Info" }` (`Info`, `Fine` = log each event start, `Finest` = also durations).
+* `ModConf/mod_configs.json` of ModLib: `{ "DebugMode": "Info" }` (`Info`, `Fine` = log each event start and a monthly profile, `Finest` = also the duration of each call).
+* **Monthly profile** (`DebugMode` `Fine` or `Finest`): after each month the log gets `【Profile】month <year>/<month>`: the time of each phase of the month (`month:RefreshParameterStore`, `month:OnMonthly`, `month:OnMonthlyForEachWUnit (<n> units)`, `month:OnYearly`, `month:OnWorldRunEnd + save`), then the 20 slowest handlers since the previous report with calls, total and average (`EventHelper.WriteProfile`; also `AddProfile` / `TakeProfile`). The per-unit handlers (`OnMonthlyForEachWUnit`) have no "Start" / duration line per call (one per unit and handler: far too many lines), only their total in the profile.
