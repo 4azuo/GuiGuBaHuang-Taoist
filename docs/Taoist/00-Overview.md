@@ -38,3 +38,11 @@ Events not listed get 9000+ automatically.
 * Difficulty switches live in `SMLocalConfigsEvent.Instance.Configs` (per save copy of the S&M configs); `SMLocalConfigsEvent.Calculate(base, rate)` applies an S&M rate.
 * Prices go through `InflationaryEvent.CalculateInflationary`; town/sect money through `MapBuildPropertyEvent.Get/AddBuildProperty`.
 * User text: `GameTool.LS("<key>")` with keys from `*_localText.json`.
+
+## Helper: `InfoDialog` (`3161035078/.../Helper/InfoDialog.cs`)
+
+Message windows of the Taoist mod; every `g.ui.MsgBox` of `Mod/` goes through it. `InfoDialog.Msg(title, text)` and
+`Msg(title, text, MsgBoxButtonEnum.YesNo, yes)` keep the game's message box for a short text (90 characters or less, one
+line) and open a text window (UITextInfo, `UICustom2`) for a longer one: the text wrapped by words (by characters in
+Chinese / Japanese / Thai), the buttons under it (Yes / No, OK). `InfoDialog.Show(title, text, (label, action)...)` opens
+the text window with any buttons (a button closes the window then runs its action). `LastText` for tests.

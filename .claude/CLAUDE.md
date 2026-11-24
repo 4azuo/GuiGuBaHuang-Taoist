@@ -46,7 +46,7 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 
 - Run the game and collect logs: `GuiGuBaHuang-ModLib/scripts/game/run-game.ps1` (e.g. `-UntilModLoaded -StopGame -Duration 600`); read `logs/game-runs/<latest>/summary.json` first, then `timeline.log`
 - Paths of game / Workshop / log folders: `GuiGuBaHuang-ModLib/scripts/open-folder.ps1 <target> -Print`
-- Details: `docs/06-Debug.md`
+- Details: `GuiGuBaHuang-ModLib/docs/guide/06-Debug.md`
 - Unit tests (no game): `GuiGuBaHuang-ModLib/scripts/run-unittests.ps1` (`tests/UnitTests`; `-IncludeKnownIssues` runs the tests reproducing open bugs)
 - Known bugs to check: `docs/Known-Issues.md`
 - Taoist autotest (scenarios + evidence): `GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1 -Save <test save>` -> evidence in `logs/autotest/<time>/`; OK/NG per scenario id in `3161035078/tests/scenario-status.json`. All results (autotest + unit tests, every run, screenshots by step): `logs/test-viewer/index.html` (data from `GuiGuBaHuang-ModLib/test-viewer/update-data.ps1`, run after every test run). Prefer `-Scenario` / `-Failed` (NG and NOT RUN ids) over full runs; TP-01 (new character) only runs for a full run or scenarios with `"newCharacter": true`. Keep a run: `GuiGuBaHuang-ModLib/scripts/pin-test-run.ps1` (a full all-pass run is pinned automatically). Several sessions may run autotests at once: each run takes a free game slot (slot copies 2..5) and never closes another run's game; `-Deploy` waits for the other games before copying a new build. Details: `docs/Taoist/04-Autotest.md`
@@ -56,19 +56,12 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 Read the relevant doc from `docs/` before answering questions or making non-trivial changes:
 
 - `README.md` - Map of the documentation (tree, where to look)
-
-- `00-Getting-Started.md` - Setup and structure
-- `01-ModMain.md` - ModMain class and initialization
-- `02-Events.md` - Event system
-- `03-Configs.md` - Configuration structure
-- `04-LocalText.md` - Localization
-- `05-Helpers.md` - Helper functions
-- `06-Debug.md` - Debugging, log locations
-- `07-Build-Deploy.md` - Build scripts
-- `Taoist/00-Overview.md` - Taoist structure and event order (`01` features per event + known issues, `Features/<Class>.md` one detailed page per Mod class, `02` configs, `03` test scenarios, `04` autotest/evidence/unit tests, `05` backlog: open work and former TODO notes, `06` storyline design, `Storylines/` dialogue per line)
+- `Known-Issues.md` - open bugs to check
+- `Taoist/00-Overview.md` - Taoist structure and event order (`01` features per event + known issues, `Features/<Class>.md` one detailed page per Mod class, `02` configs + LocalText files / id blocks, `03` test scenarios, `04` autotest/evidence/unit tests, `05` backlog: open work and former TODO notes, `06` storyline design, `Storylines/` dialogue per line, `08` build / deploy / release of Taoist)
 
 Docs of the submodules (in their own repositories):
 
+- `GuiGuBaHuang-ModLib/docs/guide/` - writing a mod with ModLib: `00-Getting-Started` (setup and structure), `01-ModMain`, `02-Events`, `03-Configs`, `04-LocalText`, `05-Helpers`, `06-Debug` (log locations), `07-Build-Deploy` (build / deploy / release scripts)
 - `GuiGuBaHuang-ModLib/docs/README.md` - Map of the ModLib docs; `00-Architecture.md` - ModLib internals: dispatch, load sequence, monthly tick (`01` event reference, `02` cache/persistence, `03` built-in events, `04` UI framework, `05` attributes/objects/enums, `06` shared tools of the mod repositories: what lives in ModLib, what a mod repository provides)
 - `GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md` - Index of config samples (per-category files `01`-`12`)
 - `GuiGuBaHuang-ModLib/docs/GameAssets/` - icons, item icons, buildings and drama backgrounds extracted from the game (`GuiGuBaHuang-ModLib/scripts/extract-game-assets.py`); `Effects/` - effects recorded by the galleries TE-xx (viewer: `GuiGuBaHuang-ModLib/effect-viewer/`) (both Git LFS, written by the scripts of this repository: commit them in the submodule)

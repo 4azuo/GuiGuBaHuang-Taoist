@@ -162,5 +162,5 @@ Write-Host ''
 Write-Info 'Next steps:'
 Write-Info "  1. Open a NEW terminal, then: cd `"$RepoPath`""
 Write-Info '  2. Build Taoist:  powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-project.ps1 (ModLib.dll: the build of the submodule)'
-Write-Info '  3. Read docs\00-Getting-Started.md'
+Write-Info '  3. Read docs\README.md (Taoist) and GuiGuBaHuang-ModLib\docs\guide\00-Getting-Started.md (writing a mod with ModLib)'
 exit 0

@@ -263,7 +263,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModCreator\bu
 ```
 
 Output goes to `3161035078\debug\Mod_nE7UL2\`. To build **and** copy Taoist (with the ModLib of the submodule) to the Steam Workshop folder: `.\GuiGuBaHuang-ModLib\scripts\rebuild-and-deploy-all.ps1`.
-In VS Code: **Terminal → Run Task…** (`Ctrl+Shift+B` = "All: Rebuild & Deploy"). More in [docs/07-Build-Deploy.md](docs/07-Build-Deploy.md).
+In VS Code: **Terminal → Run Task…** (`Ctrl+Shift+B` = "All: Rebuild & Deploy"). More in [docs/Taoist/08-Build-Release.md](docs/Taoist/08-Build-Release.md) and [the build guide of ModLib](GuiGuBaHuang-ModLib/docs/guide/07-Build-Deploy.md).
 
 ---
 

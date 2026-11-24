@@ -194,7 +194,7 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
   The whole galleries, on several games side by side (below): `.\scripts\game\run-effect-gallery.ps1 -Id TE-01 -Deploy`
   (4 games, batches of 100 effects: a failed run loses little; `-Resume` goes on with an earlier gallery - only the
   effects without measures in GuiGuBaHuang-ModLib/docs/Effects/<kind>/index.json; `-Id TE-02,TE-03`, `-Slots`, `-Batch`, `-Start` / `-End`). The scene code is ModLib's
-  (`BattleSceneHelper`, `BattleEffectHelper`, docs/05-Helpers.md). The mouse is hidden (cursor and the objects following it).
+  (`BattleSceneHelper`, `BattleEffectHelper`, GuiGuBaHuang-ModLib/docs/guide/05-Helpers.md). The mouse is hidden (cursor and the objects following it).
 - **Games side by side** (game slots 2..5; the normal game is never used): every slot has its own game data folder
   `...\LocalLow\guigugame\guigubahuang-slot<n>` (saves, save index, mod data, autotest folder), from the MelonLoader
   plugin `GuiGuBaHuang-ModLib/tools/SlotDataPath` (in the slot's own `Plugins` folder; the normal game does not load it). It patches
