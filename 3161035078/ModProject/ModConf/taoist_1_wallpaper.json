@@ -1,0 +1,7 @@
+{
+  "image": "taoist_1_wallpaper.png",
+  "order": 1,
+  "hideGameTitle": true,
+  "startupRate": 0.25,
+  "startupWhenChosen": false
+}

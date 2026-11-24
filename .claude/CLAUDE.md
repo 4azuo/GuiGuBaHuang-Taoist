@@ -61,7 +61,7 @@ Read the relevant doc from `docs/` before answering questions or making non-triv
 
 Docs of the submodules (in their own repositories):
 
-- `GuiGuBaHuang-ModLib/docs/guide/` - writing a mod with ModLib: `00-Getting-Started` (setup and structure), `01-ModMain`, `02-Events`, `03-Configs`, `04-LocalText`, `05-Helpers`, `06-Debug` (log locations), `07-Build-Deploy` (build / deploy / release scripts)
+- `GuiGuBaHuang-ModLib/docs/guide/` - writing a mod with ModLib: `00-Getting-Started` (setup and structure), `01-ModMain`, `02-Events`, `03-Configs`, `04-LocalText`, `05-Helpers`, `06-Debug` (log locations), `07-Build-Deploy` (build / deploy / release scripts), `08-Wallpapers` (title screen wallpapers: `ModConf/*_wallpaper.json`)
 - `GuiGuBaHuang-ModLib/docs/README.md` - Map of the ModLib docs; `00-Architecture.md` - ModLib internals: dispatch, load sequence, monthly tick (`01` event reference, `02` cache/persistence, `03` built-in events, `04` UI framework, `05` attributes/objects/enums, `06` shared tools of the mod repositories: what lives in ModLib, what a mod repository provides)
 - `GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md` - Index of config samples (per-category files `01`-`12`)
 - `GuiGuBaHuang-ModLib/docs/GameAssets/` - icons, item icons, buildings and drama backgrounds extracted from the game (`GuiGuBaHuang-ModLib/scripts/extract-game-assets.py`); `Effects/` - effects recorded by the galleries TE-xx (viewer: `GuiGuBaHuang-ModLib/effect-viewer/`) (both Git LFS, written by the scripts of this repository: commit them in the submodule)

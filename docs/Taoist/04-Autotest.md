@@ -246,7 +246,11 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
     every game did). One parallel script at a time (`logs\parallel.lock`); to stop one, stop its process tree
     (`taskkill /F /T /PID <pid>`): its children (jobs, runs, games) are cleaned at the next
     start or by its `finally`. Shared code: `GuiGuBaHuang-ModLib/scripts/game/_parallel.ps1`.
-  - Memory: ~3 GB a game in a battle (4 games ~12 GB on 32 GB; 6 games ran out of memory with other apps open). Shared logs (Player.log, the mod logs) mix the lines
+  - Memory: ~4 GB a game in a battle (4 games ~16 GB on 32 GB; 4 games with other apps open ran out of memory). A game
+    is started only when ~4 GB are free for it (`Wait-GameMemory` of `_parallel.ps1`: the available memory less what the
+    running games may still take, counted at 4 GB each, and the games about to start): else the slot waits (while the
+    queue has work, 30 min at most), then stops and the other slots run the queue (`parallel.log`: "not enough memory").
+  - Shared logs (Player.log, the mod logs) mix the lines
     of every game: the "errors in the game log" check of a scenario may then count the errors of another game.
 - **Promotion pictures**: `"promo"` of a scenario in `tests/scenarios.json` marks its best screenshots
   (`{ "step": "NPCs-joined", "nth": 1, "name": "battle_npcs_join", "caption": "..." }`; step = the step part of the screenshot name,

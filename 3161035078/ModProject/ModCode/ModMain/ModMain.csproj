@@ -207,6 +207,8 @@
     <Compile Include="AutoTest\Scenarios\Battle\TB10_LoseNoBodyItem.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TP01_NewCharacter.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT05_SMConfigsOk.cs" />
+    <Compile Include="AutoTest\Scenarios\Title\TT08_ModLibTitleFrame.cs" />
+    <Compile Include="AutoTest\Scenarios\Title\TT09_Wallpapers.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT06_CrashReports.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT07_ErrorDialogNotice.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX06_Yearly.cs" />

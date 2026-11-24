@@ -151,6 +151,49 @@
       ]
     },
     {
+      "id": "TT-08",
+      "kind": "auto",
+      "feature": "ModTitleEvent (ModLib)",
+      "title": "ModLib title buttons in the frame of the DLC buttons",
+      "description": "The 2 ModLib boxes of the title screen ('Powered by Fouru's ModLib', the panel of the language selector and the ModCreator button) use the frame of the game's DLC buttons (Ground of No Return, Five Blooms, Archive) instead of the plain grey button: a copy of the DLC button without its DLC icon and its 'Claimed' mark, and without the game's scripts that would set its text again.",
+      "preconditions": "Title screen",
+      "steps": [
+        "Look at the ModLib buttons of the title screen",
+        "Wait 2 s"
+      ],
+      "expected": [
+        "'Powered by ModLib' and the language panel show the picture of the DLC frame",
+        "No DLC icon and no 'Claimed' mark on them",
+        "The ModLib text stays (also after 2 s)"
+      ]
+    },
+    {
+      "id": "TT-09",
+      "kind": "auto",
+      "exclusive": true,
+      "feature": "WallpaperHelper (ModLib) / ModConf taoist_*_wallpaper.json",
+      "title": "Mod wallpapers: wallpaper files, Change Theme window, title screen, startup wallpaper",
+      "description": "ModLib reads one file '*_wallpaper.json' per wallpaper in the ModConf folder of every loaded mod (Taoist: taoist_1_wallpaper.json and taoist_2_wallpaper.json, images taoist_1_wallpaper.png and taoist_2_wallpaper.png of ModImg, each hideGameTitle true, startupRate 0.25) and adds their images to the game's Change Theme window after the game's wallpapers. Choosing one shows it on the title screen and saves the choice (ModLib global settings); choosing a wallpaper of the game removes it. Startup: at the first title screen of a game session, each wallpaper is shown with the chance of its startupRate (one draw over all of them; Taoist: half of the starts on one of its 2 wallpapers), for this session only (the player's choice is not changed); no draw of the wallpapers of a mod when the player already chose one of them (unless startupWhenChosen). The game's title is hidden over the mod wallpaper (hideGameTitle of the wallpaper file; the toggle of the Change Theme window saves the player's own choice). The test also reads wallpaper files with every setting, defaults, a missing image, a wrong type and a broken JSON, checks the draw with rates over 1 and startupWhenChosen, draws the startup wallpaper 200 times, then opens the Change Theme window, chooses Taoist wallpaper 1, then the game's wallpaper, then Taoist 1 again for the picture. The player's choices and the startup wallpaper are restored.",
+      "preconditions": "Title screen",
+      "steps": [
+        "List the mod wallpapers; read test wallpaper files (settings, defaults, missing image, wrong type, broken JSON)",
+        "Player on a Taoist wallpaper: draw 50 times; player on the game's: draw 200 times; rates over 1, startupWhenChosen; show Taoist wallpaper 2",
+        "Open Change Theme",
+        "Choose Taoist wallpaper 1",
+        "Choose the game's wallpaper",
+        "Choose Taoist wallpaper 1, close the window",
+        "Restore"
+      ],
+      "expected": [
+        "Both Taoist wallpapers found in their order with their settings; every setting and default read; missing image, wrong type and broken JSON skipped",
+        "No draw when the player uses a Taoist wallpaper; about half of the draws without a Taoist wallpaper, both wallpapers drawn; rates over 1 always draw; startupWhenChosen kept in; drawn once a session; not saved; game's title hidden (setting of the wallpaper file)",
+        "One item per mod wallpaper in the window, the wallpaper shown is selected; the 'hide the game's title' toggle above the list is on",
+        "Choosing a mod wallpaper: saved and shown on the title screen",
+        "Choosing the game's wallpaper: saved as the game's, removed from the title screen",
+        "Player's choice restored"
+      ]
+    },
+    {
       "id": "TP-01",
       "kind": "auto",
       "feature": "Pre-test (new character)",
