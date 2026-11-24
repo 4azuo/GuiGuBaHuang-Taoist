@@ -8,7 +8,7 @@ namespace UnitTests
 {
     /// <summary>
     /// Tests that reproduce the bugs listed in docs/Known-Issues.md. They FAIL until the bug is fixed and are
-    /// excluded by default (scripts\run-unittests.ps1 -IncludeKnownIssues runs them). When a bug is fixed,
+    /// excluded by default (GuiGuBaHuang-ModLib\scripts\run-unittests.ps1 -IncludeKnownIssues runs them). When a bug is fixed,
     /// move its test to the normal tests and remove its entry from the allow-lists below.
     /// </summary>
     [TestClass]

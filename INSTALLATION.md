@@ -262,7 +262,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-p
 powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModCreator\build.ps1
 ```
 
-Output goes to `3161035078\debug\Mod_nE7UL2\`. To build **and** copy Taoist (with the ModLib of the submodule) to the Steam Workshop folder: `.\scripts\rebuild-and-deploy-all.ps1`.
+Output goes to `3161035078\debug\Mod_nE7UL2\`. To build **and** copy Taoist (with the ModLib of the submodule) to the Steam Workshop folder: `.\GuiGuBaHuang-ModLib\scripts\rebuild-and-deploy-all.ps1`.
 In VS Code: **Terminal → Run Task…** (`Ctrl+Shift+B` = "All: Rebuild & Deploy"). More in [docs/07-Build-Deploy.md](docs/07-Build-Deploy.md).
 
 ---

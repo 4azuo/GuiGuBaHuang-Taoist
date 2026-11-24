@@ -64,7 +64,7 @@
             "detail": "Rebuild every project in scripts/settings.json and copy all to Steam Workshop",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/rebuild-and-deploy-all.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/rebuild-and-deploy-all.ps1", "-RepoRoot", "${workspaceFolder}"],
             "problemMatcher": "$msCompile",
             "group": { "kind": "build", "isDefault": true }
         },
@@ -73,7 +73,7 @@
             "detail": "Copy all projects to Steam Workshop folder",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/copy-both-to-steam.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/copy-both-to-steam.ps1", "-RepoRoot", "${workspaceFolder}"],
             "problemMatcher": []
         },
         {
@@ -81,7 +81,7 @@
             "detail": "Copy all projects from Steam Workshop folder back to the repository",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/copy-both-from-steam.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/copy-both-from-steam.ps1", "-RepoRoot", "${workspaceFolder}"],
             "problemMatcher": []
         },
         {
@@ -89,7 +89,7 @@
             "detail": "Compress debug/Mod_xxxxx of every project to .rar (WinRAR)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/compress-mods.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/compress-mods.ps1", "-RepoRoot", "${workspaceFolder}"],
             "problemMatcher": []
         },
 
@@ -225,7 +225,7 @@
             "detail": "Open a game / Workshop / build output / log folder in Explorer",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/open-folder.ps1", "${input:folder}"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/open-folder.ps1", "-RepoRoot", "${workspaceFolder}", "${input:folder}"],
             "problemMatcher": [],
             "presentation": { "reveal": "silent" }
         },
@@ -236,7 +236,7 @@
             "detail": "Build + run tests/UnitTests (no game), update the test viewer",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run-unittests.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/run-unittests.ps1", "-RepoRoot", "${workspaceFolder}"],
             "problemMatcher": "$msCompile",
             "group": "test",
             "presentation": { "panel": "dedicated", "clear": true }
@@ -246,7 +246,7 @@
             "detail": "Also run the KnownIssue tests reproducing the open bugs of docs/Known-Issues.md (they fail until fixed)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run-unittests.ps1", "-IncludeKnownIssues"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/run-unittests.ps1", "-RepoRoot", "${workspaceFolder}", "-IncludeKnownIssues"],
             "problemMatcher": "$msCompile",
             "group": "test",
             "presentation": { "panel": "dedicated", "clear": true }
@@ -313,7 +313,7 @@
             "detail": "Unit tests, then deploy + autotest in the game, then open the test viewer",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run-all-tests.ps1", "-Deploy", "-Save", "${input:autotestSave}"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/run-all-tests.ps1", "-RepoRoot", "${workspaceFolder}", "-Deploy", "-Save", "${input:autotestSave}"],
             "problemMatcher": [],
             "group": { "kind": "test", "isDefault": true },
             "presentation": { "panel": "dedicated", "clear": true }
@@ -354,7 +354,7 @@
             "detail": "git pull + update submodules (fails if there are local changes)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/update-repo.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/update-repo.ps1", "-RepoRoot", "${workspaceFolder}"],
             "problemMatcher": []
         },
         {
@@ -362,7 +362,7 @@
             "detail": "Auto-stash local changes, git pull + update submodules, then restore stash",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/update-repo.ps1", "-Force"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/update-repo.ps1", "-RepoRoot", "${workspaceFolder}", "-Force"],
             "problemMatcher": []
         },
 

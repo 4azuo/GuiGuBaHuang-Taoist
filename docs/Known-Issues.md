@@ -3,7 +3,7 @@
 Open issues of ModLib and Taoist. Fixed issues are removed from this file (cleared on 2026-11-19: BUG-01 .. BUG-21 and the fixes found while testing; their history is in git, `git log -p -- docs/Known-Issues.md`). Fixes of behaviour found while documenting the features are listed in [Taoist/Features/README.md](Taoist/Features/README.md).
 
 Status: `Open` (to check) · `Confirmed` · `Fixed` · `Won't fix`. Severity: High = wrong behaviour players will see, Medium = feature partly broken, Low = robustness / cosmetic.
-`Test` = unit test reproducing the issue (`tests/UnitTests/KnownIssues.cs`, run with `scripts\run-unittests.ps1 -IncludeKnownIssues`); when an issue is fixed, move its test to the normal tests, remove it from the allow-lists in `KnownIssues` and remove the row here. New ids continue from BUG-23.
+`Test` = unit test reproducing the issue (`tests/UnitTests/KnownIssues.cs`, run with `GuiGuBaHuang-ModLib\scripts\run-unittests.ps1 -IncludeKnownIssues`); when an issue is fixed, move its test to the normal tests, remove it from the allow-lists in `KnownIssues` and remove the row here. New ids continue from BUG-23.
 
 | Id | Severity | Status | Where | Issue | Suggested fix | Test |
 |---|---|---|---|---|---|---|

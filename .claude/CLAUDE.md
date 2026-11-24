@@ -35,7 +35,7 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 
 - Build one project: `<ProjectId>/scripts/build-project.ps1` (clean + build: `rebuild-project.ps1`)
 - Build + deploy to Steam Workshop: `<ProjectId>/scripts/rebuild-and-deploy.ps1`
-- All projects: `scripts/rebuild-and-deploy-all.ps1`
+- All projects: `GuiGuBaHuang-ModLib/scripts/rebuild-and-deploy-all.ps1`
 - Auto-build watcher writes failures to `<ProjectId>/scripts/auto-built-errors.log` (use `/fix-build-errors`)
 - 3161035078 references the ModLib.dll committed in the submodule (`GuiGuBaHuang-ModLib/3385996759/debug/Mod_flQrxq/ModCode/dll/`): after a ModLib change, build ModLib (`GuiGuBaHuang-ModLib/3385996759/scripts/build-project.ps1`), commit its DLL in the submodule, then build Taoist
 - Release: each repository releases its own mod (`GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1`; tasks **Release: Tag Taoist** / **Release: Tag ModLib**), no combined release
@@ -45,9 +45,9 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 ## Testing in game
 
 - Run the game and collect logs: `GuiGuBaHuang-ModLib/scripts/game/run-game.ps1` (e.g. `-UntilModLoaded -StopGame -Duration 600`); read `logs/game-runs/<latest>/summary.json` first, then `timeline.log`
-- Paths of game / Workshop / log folders: `scripts/open-folder.ps1 <target> -Print`
+- Paths of game / Workshop / log folders: `GuiGuBaHuang-ModLib/scripts/open-folder.ps1 <target> -Print`
 - Details: `docs/06-Debug.md`
-- Unit tests (no game): `scripts/run-unittests.ps1` (`tests/UnitTests`; `-IncludeKnownIssues` runs the tests reproducing open bugs)
+- Unit tests (no game): `GuiGuBaHuang-ModLib/scripts/run-unittests.ps1` (`tests/UnitTests`; `-IncludeKnownIssues` runs the tests reproducing open bugs)
 - Known bugs to check: `docs/Known-Issues.md`
 - Taoist autotest (scenarios + evidence): `GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1 -Save <test save>` -> evidence in `logs/autotest/<time>/`; OK/NG per scenario id in `3161035078/tests/scenario-status.json`. All results (autotest + unit tests, every run, screenshots by step): `logs/test-viewer/index.html` (data from `GuiGuBaHuang-ModLib/test-viewer/update-data.ps1`, run after every test run). Prefer `-Scenario` / `-Failed` (NG and NOT RUN ids) over full runs; TP-01 (new character) only runs for a full run or scenarios with `"newCharacter": true`. Keep a run: `GuiGuBaHuang-ModLib/scripts/pin-test-run.ps1` (a full all-pass run is pinned automatically). Several sessions may run autotests at once: each run takes a free game slot (slot copies 2..5) and never closes another run's game; `-Deploy` waits for the other games before copying a new build. Details: `docs/Taoist/04-Autotest.md`
 

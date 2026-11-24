@@ -72,7 +72,7 @@ The console shows only important lines (errors, MelonLoader, ModLib logs, mod lo
 Other options: `-Restart` (close a running game first), `-Direct` (start the exe instead of Steam), `-ExtraLog <path/glob>` (follow more log files), `-StartTimeout`, `-RestartGraceSec` (the game may restart itself, the new process is followed).
 Exit codes: `0` game ran, `1` setup error, `2` game did not start.
 
-VS Code tasks: **Game: Run & Watch Logs**, **Game: Run until Mods Loaded**, **Game: Watch Logs (attach)**, and **Open: Folder...** (game, MelonLoader, Workshop, build output, log folders; same as `scripts\open-folder.ps1 <target>`).
+VS Code tasks: **Game: Run & Watch Logs**, **Game: Run until Mods Loaded**, **Game: Watch Logs (attach)**, and **Open: Folder...** (game, MelonLoader, Workshop, build output, log folders; same as `GuiGuBaHuang-ModLib\scripts\open-folder.ps1 <target>`).
 
 ## Using DebugHelper
 
@@ -137,6 +137,6 @@ Version of the reports: `CrashReportHelper.SetModVersion(modId, version)` at ini
 
 **Sent**: `Callstack.txt` (`Exception.ToString()`), `log.txt` (last `LogLines` lines of the ModLib log of the day, with the game data folder, the user folder, the Windows account and the player id replaced by `<game data>`, `<user folder>`, `<user>`, `<player>`), application name/version of the mod, a one-line description, an anonymous random id (`user`) and attributes `modId`, `modLibVersion`, `caller`, `gameVersion`, `mods` (loaded mod ids), `language`. Not sent: saves, Steam account. Each distinct error (`DebugHelper.GetErrorKey`) is sent once per session, at most 5 per session, on a worker thread (one retry); the result is in the MelonLoader log (`[CrashReport] sent` / `not sent`).
 
-Protocol (BugSplat .NET Standard client): `GET https://<db>.bugsplat.com/api/getCrashUploadUrl` → `PUT` zip to the returned URL → `POST /api/commitS3CrashUpload` (crashTypeId 18). Check a database without the game: `$env:BUGSPLAT_TEST_DB="<db>"; scripts/run-unittests.ps1` runs `CrashReportHelperTests.Live_SendToBugSplat` (skipped when the variable is not set).
+Protocol (BugSplat .NET Standard client): `GET https://<db>.bugsplat.com/api/getCrashUploadUrl` → `PUT` zip to the returned URL → `POST /api/commitS3CrashUpload` (crashTypeId 18). Check a database without the game: `$env:BUGSPLAT_TEST_DB="<db>"; GuiGuBaHuang-ModLib/scripts/run-unittests.ps1` runs `CrashReportHelperTests.Live_SendToBugSplat` (skipped when the variable is not set).
 
 In the game: autotest **TT-06** (`.\scripts\game\run-autotest.ps1 -Deploy -Scenario TT-06`) drives the consent dialog and checks every request against a local stand-in of BugSplat (`AutoTest/MockBugSplatServer.cs`, through `CrashReportHelper.ServerUrlOverride`); evidence in the test viewer (screenshots: consent dialog, captured requests, ModCreator row) and in `logs/autotest/<run>/bugsplat/` (`requests.json`, uploaded zip, `Callstack.txt`, commit form). Set `$env:BUGSPLAT_TEST_DB` before the run to also send one real report.

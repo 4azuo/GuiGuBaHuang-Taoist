@@ -104,7 +104,7 @@ A scenario is **NG** when one of its checks fails, when a step throws, or when M
 
 ## VS Code tasks and retention
 
-Tasks (`Terminal > Run Task`, group `test`): **Test: Unit Tests**, **Test: Unit Tests (incl. Known Issues)**, **Test: Autotest** (deploy + all scenarios, asks for the save), **Test: Autotest (selected scenarios)**, **Test: All (Unit + Autotest)** (`scripts/run-all-tests.ps1`, then opens the viewer), **Test: Open Test Viewer**.
+Tasks (`Terminal > Run Task`, group `test`): **Test: Unit Tests**, **Test: Unit Tests (incl. Known Issues)**, **Test: Autotest** (deploy + all scenarios, asks for the save), **Test: Autotest (selected scenarios)**, **Test: All (Unit + Autotest)** (`GuiGuBaHuang-ModLib/scripts/run-all-tests.ps1`, then opens the viewer), **Test: Open Test Viewer**.
 
 Only the newest 10 runs of `logs/autotest`, `logs/unittests` and `logs/game-runs` are kept: `GuiGuBaHuang-ModLib/test-viewer/update-data.ps1` (called after every run) deletes older run folders (`-Keep N` to change, `-Keep 0` keeps everything).
 
@@ -359,9 +359,9 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
 Project `tests/UnitTests` (MSTest, .NET Framework 4.7.2) for the code that does not need the running game. Run:
 
 ```powershell
-.\scripts\run-unittests.ps1                       # builds ModLib + Taoist (Release), then runs the tests
-.\scripts\run-unittests.ps1 -NoBuild -Filter "FullyQualifiedName~Taoist"
-.\scripts\run-unittests.ps1 -NoBuild -IncludeKnownIssues   # also the tests reproducing open bugs (they fail)
+.\GuiGuBaHuang-ModLib\scripts\run-unittests.ps1                       # builds Taoist (Release), then runs the tests
+.\GuiGuBaHuang-ModLib\scripts\run-unittests.ps1 -NoBuild -Filter "FullyQualifiedName~Taoist"
+.\GuiGuBaHuang-ModLib\scripts\run-unittests.ps1 -NoBuild -IncludeKnownIssues   # also the tests reproducing open bugs (they fail)
 ```
 
 Results: console + `logs/unittests/unittests.trx`. The tests reference the mods' build output (`<project>/debug/.../dll`) and resolve the game assemblies from `<game>\MelonLoader\Managed` at runtime (`TestSetup.cs`); pass `-GameFolder` if the game is not in the default Steam folder.

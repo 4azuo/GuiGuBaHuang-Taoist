@@ -1,16 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <!--
-    Unit tests of ModLib and Taoist code that does not need the running game (pure helpers, formulas, configs).
-    Shared setup (framework, MSTest, game assemblies, TestSetup/Check, the ModLib tests): GuiGuBaHuang-ModLib\tests\UnitTests.props.
-    Here: the references to the build output of this repository and the Taoist tests (Taoist\, KnownIssues.cs).
-    Build Taoist first (Release; ModLib.dll: the build committed in the submodule); run: scripts\run-unittests.ps1
+    Unit tests of the Taoist code that does not need the running game (pure helpers, formulas, configs).
+    Shared setup (framework, MSTest, game assemblies, TestSetup/Check): GuiGuBaHuang-ModLib\tests\UnitTests.props.
+    The tests of ModLib run in its own repository (GuiGuBaHuang-ModLib\tests\ModLibTests.csproj).
+    Here: the references to the build output and the Taoist tests (Taoist\, KnownIssues.cs).
+    Build Taoist first (Release; ModLib.dll: the build committed in the submodule); run: GuiGuBaHuang-ModLib\scripts\run-unittests.ps1
   -->
-
-  <PropertyGroup>
-    <!-- the ModLib tests run here against the ModLib.dll of the submodule (GuiGuBaHuang-ModLib/3385996759) -->
-    <IncludeModLibTests>true</IncludeModLibTests>
-  </PropertyGroup>
 
   <Import Project="..\..\GuiGuBaHuang-ModLib\tests\UnitTests.props" />
 
