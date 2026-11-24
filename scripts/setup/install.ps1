@@ -3,11 +3,13 @@
     One-shot setup for GuiGuBaHuang-Taoist.
 .DESCRIPTION
     Steps (each can be skipped):
-      1. 00-install-dependencies.ps1   install tools (needs Administrator)
-      2. 01-clone-repository.ps1       clone repo + ModCreator (skipped if repo exists)
+      1. 00-install-dependencies.ps1   install tools (needs Administrator)              [ModLib]
+      2. 01-clone-repository.ps1       clone repo + ModLib + ModCreator (skipped if repo exists)
       3. 03-extract-resources.ps1      extract BaseGameResources (if the archive is found)
-      4. 02-configure-settings.ps1     write local paths into settings.json files
-      5. 04-verify-environment.ps1     check everything
+      4. 02-configure-settings.ps1     write local paths into settings.json files        [ModLib]
+      5. 04-verify-environment.ps1     check everything                                  [ModLib]
+    [ModLib]: shared setup scripts of GuiGuBaHuang-ModLib\scripts\setup (downloaded to modlib-setup\ next to this file
+    while the repository is not cloned yet).
 
     Where is the repository?
       - -RepoPath given           -> that folder (cloned there if it does not exist)
@@ -45,7 +47,7 @@ $scriptDir = if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }
 
 # ---- bootstrap: download helper scripts when install.ps1 was downloaded alone
 $rawBase = 'https://raw.githubusercontent.com/4azuo/GuiGuBaHuang-Taoist/main/scripts/setup'
-foreach ($name in '_common.ps1', '00-install-dependencies.ps1', '01-clone-repository.ps1') {
+foreach ($name in '_common.ps1', '01-clone-repository.ps1') {
     $local = Join-Path $scriptDir $name
     if (-not (Test-Path $local)) {
         Write-Host "Downloading $name ..." -ForegroundColor Cyan
@@ -98,7 +100,7 @@ try {
     Write-Title 'Step 1/5 - Dependencies'
     if ($SkipDependencies) { Write-Info 'Skipped (-SkipDependencies)' }
     else {
-        $code = Invoke-SetupScript (Join-Path $scriptDir '00-install-dependencies.ps1') @{}
+        $code = Invoke-SetupScript (Join-Path (Get-ModLibSetupDir $scriptDir) '00-install-dependencies.ps1') @{}
         if ($code -ne 0) { throw 'Dependency installation failed' }
         Update-SessionPath
     }
@@ -110,8 +112,9 @@ try {
     $code = Invoke-SetupScript $cloneScript $cloneArgs
     if ($code -ne 0) { throw 'Repository step failed' }
 
-    # use the scripts from the repository itself from here on
+    # use the scripts from the repository itself from here on (shared steps: its ModLib submodule)
     $setupDir = Join-Path $RepoPath 'scripts\setup'
+    $modLibSetupDir = Join-Path $RepoPath 'GuiGuBaHuang-ModLib\scripts\setup'
 
     # ---- 3. resources
     Write-Title 'Step 3/5 - BaseGameResources'
@@ -128,7 +131,7 @@ try {
     Write-Title 'Step 4/5 - Settings'
     if ($SkipConfigure) { Write-Info 'Skipped (-SkipConfigure)' }
     else {
-        $code = Invoke-SetupScript (Join-Path $setupDir '02-configure-settings.ps1') @{ RepoPath = $RepoPath; Yes = $Yes; OpenFiles = $OpenAll }
+        $code = Invoke-SetupScript (Join-Path $modLibSetupDir '02-configure-settings.ps1') @{ RepoPath = $RepoPath; Yes = $Yes; OpenFiles = $OpenAll }
         if ($code -ne 0) { $warnings.Add('Settings were not configured') }
     }
 
@@ -136,7 +139,7 @@ try {
     Write-Title 'Step 5/5 - Verify'
     if ($SkipVerify) { Write-Info 'Skipped (-SkipVerify)' }
     else {
-        $code = Invoke-SetupScript (Join-Path $setupDir '04-verify-environment.ps1') @{ RepoPath = $RepoPath }
+        $code = Invoke-SetupScript (Join-Path $modLibSetupDir '04-verify-environment.ps1') @{ RepoPath = $RepoPath }
         if ($code -ne 0) { $warnings.Add('Verification found problems - see the FAIL lines above') }
     }
 }
@@ -159,6 +162,5 @@ Write-Host ''
 Write-Info 'Next steps:'
 Write-Info "  1. Open a NEW terminal, then: cd `"$RepoPath`""
 Write-Info '  2. Build Taoist:  powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-project.ps1 (ModLib.dll: the build of the submodule)'
-Write-Info '  3. Build Taoist:        powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-project.ps1'
-Write-Info '  4. Read docs\00-Getting-Started.md'
+Write-Info '  3. Read docs\00-Getting-Started.md'
 exit 0

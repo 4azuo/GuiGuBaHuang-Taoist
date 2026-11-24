@@ -97,7 +97,7 @@ scripts and the guide in [docs/](docs/README.md).
 
 | | |
 |---|---|
-| Setup of a machine | [INSTALLATION.md](INSTALLATION.md) (`scripts\setup\04-verify-environment.ps1` checks it) |
+| Setup of a machine | [INSTALLATION.md](INSTALLATION.md) (`GuiGuBaHuang-ModLib\scripts\setup\04-verify-environment.ps1` checks it) |
 | Projects | `3161035078/` Taoist, `GuiGuBaHuang-ModLib/3385996759/` ModLib mod project, submodules `GuiGuBaHuang-ModLib` (ModLib source + its docs) and `GuiGuBaHuang-ModCreator` (on hold) |
 | Build / deploy | `<ProjectId>\scripts\build-project.ps1`, `rebuild-and-deploy.ps1`, always Release ([docs/07-Build-Deploy.md](docs/07-Build-Deploy.md)) |
 | Test in game | `GuiGuBaHuang-ModLib\scripts\game\run-game.ps1` (logs to `logs\game-runs\`), `GuiGuBaHuang-ModLib\scripts\game\run-autotest.ps1 -Save <test save>` (evidence to `logs\autotest\`, results in `logs\test-viewer\index.html`) — [docs/06-Debug.md](docs/06-Debug.md), [docs/Taoist/04-Autotest.md](docs/Taoist/04-Autotest.md) |

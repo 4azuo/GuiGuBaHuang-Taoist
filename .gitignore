@@ -138,3 +138,6 @@ logs/unittests/
 */debug/*/ModConf/
 */debug/*/ModImg/
 */debug/*/SteamImg/
+
+# Setup scripts of ModLib downloaded by scripts/setup/install.ps1 before the clone
+scripts/setup/modlib-setup/

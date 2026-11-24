@@ -31,7 +31,7 @@ if ($Yes) { $Global:SetupAssumeYes = $true }
 Write-Title 'GuiGuBaHuang-Taoist - Clone Repository'
 
 if (-not (Test-Command git)) {
-    Write-Err 'Git is not installed. Run .\00-install-dependencies.ps1 or install Git from https://git-scm.com/'
+    Write-Err 'Git is not installed. Run install.ps1 (it installs the tools with the ModLib script 00-install-dependencies.ps1) or install Git from https://git-scm.com/'
     exit 1
 }
 
@@ -97,5 +97,5 @@ if (-not $NoExplorer -and -not $Global:SetupAssumeYes) {
 
 Write-Host ''
 Write-Ok "Repository ready: $RepoPath"
-Write-Info 'Next: .\scripts\setup\03-extract-resources.ps1 then .\scripts\setup\02-configure-settings.ps1'
+Write-Info 'Next: .\scripts\setup\03-extract-resources.ps1 then .\GuiGuBaHuang-ModLib\scripts\setup\02-configure-settings.ps1'
 exit 0

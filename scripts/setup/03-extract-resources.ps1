@@ -128,5 +128,5 @@ if ($children.Count -eq 1 -and $children[0].PSIsContainer) {
 
 $count = @(Get-ChildItem -Path $Destination -Recurse -File).Count
 Write-Ok "Extracted $count files to: $Destination"
-Write-Info 'Next: .\scripts\setup\02-configure-settings.ps1 (detects this folder automatically)'
+Write-Info 'Next: .\GuiGuBaHuang-ModLib\scripts\setup\02-configure-settings.ps1 (detects this folder automatically)'
 exit 0

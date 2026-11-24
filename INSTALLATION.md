@@ -93,20 +93,20 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -RepoPath D:\d
 
 ### Running a single step
 
-All scripts live in `scripts\setup\`, can be run again at any time (finished work is detected and skipped), and accept `-Yes` to run without questions. Every step is also available as a VS Code task (**Terminal → Run Task → Setup: …**). For "Install Dependencies", VS Code must run as Administrator.
+The Taoist steps live in `scripts\setup\` (`install.ps1`, `01`, `03`), the shared steps in `GuiGuBaHuang-ModLib\scripts\setup\` (`00`, `02`, `04`, `setup-nexus.ps1`; before the clone `install.ps1` downloads `00` next to itself). All can be run again at any time (finished work is detected and skipped), and accept `-Yes` to run without questions. Every step is also available as a VS Code task (**Terminal → Run Task → Setup: …**). For "Install Dependencies", VS Code must run as Administrator.
 
 | Script | What it does | Admin | Useful parameters |
 |---|---|---|---|
-| `00-install-dependencies.ps1` | Installs missing tools with Chocolatey | Yes | `-SkipPython`, `-SkipGitHubCLI`, `-SkipNotepadPlusPlus`, `-Skip7Zip`, … |
+| `00-install-dependencies.ps1` (ModLib) | Installs missing tools with Chocolatey | Yes | `-SkipPython`, `-SkipGitHubCLI`, `-SkipNotepadPlusPlus`, `-Skip7Zip`, … |
 | `01-clone-repository.ps1` | Clones the repo (skipped if it already exists) and makes sure `GuiGuBaHuang-ModCreator` is checked out | No | `-RepoPath`, `-Branch`, `-SkipStar`, `-Force` |
 | `03-extract-resources.ps1` | Finds and extracts the BaseGameResources archive | No | `-ArchivePath`, `-Destination`, `-Force` |
-| `02-configure-settings.ps1` | Detects paths and writes them into every `settings.json` | No | `-GamePath`, `-WorkshopPath`, `-BaseGameResourcesDir`, `-DryRun`, `-SkipWorktree`, `-OpenFiles` |
-| `04-verify-environment.ps1` | Read-only health check (PASS / WARN / FAIL) | No | `-RepoPath` |
+| `02-configure-settings.ps1` (ModLib) | Detects paths and writes them into every `settings.json` | No | `-GamePath`, `-WorkshopPath`, `-BaseGameResourcesDir`, `-DryRun`, `-SkipWorktree`, `-OpenFiles` |
+| `04-verify-environment.ps1` (ModLib) | Read-only health check (PASS / WARN / FAIL) | No | `-RepoPath` |
 
 Example – see what the configure step would change without writing anything:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup\02-configure-settings.ps1 -DryRun
+powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModLib\scripts\setup\02-configure-settings.ps1 -DryRun
 ```
 
 ---
@@ -233,7 +233,7 @@ Example (`GuiGuBaHuang-ModLib\3385996759\scripts\settings.json`):
 ### Step 5 – Verify
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup\04-verify-environment.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModLib\scripts\setup\04-verify-environment.ps1
 ```
 
 Without the script, check by hand:

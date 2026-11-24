@@ -5,7 +5,7 @@
 # The zip is the folder 3161035078/debug/Mod_nE7UL2 (package-release.ps1). The CI cannot build (no game DLLs):
 # the DLLs of debug/ are the committed ones, ModConf/ModImg/SteamImg are copied by build-project.ps1 -ResourcesOnly.
 # Then a GitHub Release, and a new file version on Nexus Mods when set up (VS Code task "Setup: Nexus Mods (CI)",
-# scripts/setup/setup-nexus.ps1).
+# GuiGuBaHuang-ModLib/scripts/setup/setup-nexus.ps1).
 name: Release
 
 on:

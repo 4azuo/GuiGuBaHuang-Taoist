@@ -366,13 +366,13 @@
             "problemMatcher": []
         },
 
-        // ===== Setup (scripts/setup/) =====
+        // ===== Setup (shared steps: GuiGuBaHuang-ModLib/scripts/setup/; Taoist only: scripts/setup/) =====
         {
             "label": "Setup: Configure Settings",
             "detail": "Detect repo/Steam/game paths and write them into all settings.json files (asks to confirm each value)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/setup/02-configure-settings.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/02-configure-settings.ps1", "-RepoPath", "${workspaceFolder}"],
             "problemMatcher": []
         },
         {
@@ -380,15 +380,24 @@
             "detail": "Check tools, ModCreator, settings paths, game + MelonLoader and .csproj references (read-only)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/setup/04-verify-environment.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/04-verify-environment.ps1", "-RepoPath", "${workspaceFolder}"],
             "problemMatcher": []
         },
         {
             "label": "Setup: Nexus Mods (CI)",
-            "detail": "Set the GitHub secret NEXUSMODS_API_KEY and variables NEXUS_<MOD>_FILE_ID / _URL used by the release CI (needs gh)",
+            "detail": "Set the GitHub secret NEXUSMODS_API_KEY and variables NEXUS_TAOIST_FILE_ID / _URL used by the release CI of this repository (needs gh)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/setup/setup-nexus.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/setup-nexus.ps1", "-RepoPath", "${workspaceFolder}"],
+            "presentation": { "focus": true },
+            "problemMatcher": []
+        },
+        {
+            "label": "Setup: Nexus Mods ModLib (CI)",
+            "detail": "Same for the release CI of GuiGuBaHuang-ModLib: secret NEXUSMODS_API_KEY, variables NEXUS_MODLIB_FILE_ID / _URL of that repository (needs gh)",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/setup-nexus.ps1", "-RepoPath", "${workspaceFolder}/GuiGuBaHuang-ModLib"],
             "presentation": { "focus": true },
             "problemMatcher": []
         },
@@ -413,7 +422,7 @@
             "detail": "Install missing tools (.NET 4.7.2 DevPack, .NET 9 SDK, Git, Python, GitHub CLI, Notepad++, 7-Zip) via Chocolatey. VS Code must run as Administrator",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/setup/00-install-dependencies.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/00-install-dependencies.ps1"],
             "problemMatcher": []
         }
     ]

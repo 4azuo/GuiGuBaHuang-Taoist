@@ -16,7 +16,7 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 - **GuiGuBaHuang-ModLib/3385996759/SampleConfs/** - Templates for all game config types
 - **debug/Mod_xxxxx/** - Build output (`ModCode/dll/`, `ModConf/`, `ModImg/`)
 - **<ProjectId>/scripts/** - Per-project `settings.json` + 2-line wrappers of the shared build/deploy scripts (`GuiGuBaHuang-ModLib/scripts/project/`)
-- **scripts/** - Scripts for all projects + `settings.json` (also names the mod for the shared tools: `modProject`, `modName`, `modId`); `scripts/setup/` for first-time install
+- **scripts/** - Scripts for all projects + `settings.json` (also names the mod for the shared tools: `modProject`, `modName`, `modId`); `scripts/setup/` for first-time install (Taoist steps: install, clone, ModCreator resources; the shared steps are in `GuiGuBaHuang-ModLib/scripts/setup/`)
 - **Shared tools in ModLib** (used by every mod repository holding ModLib, e.g. Dao of Creation; the data stays in the mod repository): `GuiGuBaHuang-ModLib/scripts/game/` (game runs, autotest, game slots, promo, effect galleries), `scripts/project/` (build/deploy), `test-viewer/` + `promo-viewer/` (pages generated into `logs/test-viewer/` / `logs/promo-viewer/` here), `Translate/` (cache in `.translate-cache/` here), `tests/` (shared unit test setup + ModLib tests, `tests/UnitTests.props`), `tools/SlotDataPath/`. A change there is a ModLib change (commit + push in the submodule)
 
 ## Guidelines
@@ -40,7 +40,7 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 - 3161035078 references the ModLib.dll committed in the submodule (`GuiGuBaHuang-ModLib/3385996759/debug/Mod_flQrxq/ModCode/dll/`): after a ModLib change, build ModLib (`GuiGuBaHuang-ModLib/3385996759/scripts/build-project.ps1`), commit its DLL in the submodule, then build Taoist
 - Release: each repository releases its own mod (`GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1`; tasks **Release: Tag Taoist** / **Release: Tag ModLib**), no combined release
 - Same scripts are exposed as VS Code tasks in `.vscode/tasks.json`
-- Environment check: `scripts/setup/04-verify-environment.ps1` (many "missing type/member" build errors after a game update = stale `MelonLoader\Managed`, not code bugs)
+- Environment check: `GuiGuBaHuang-ModLib/scripts/setup/04-verify-environment.ps1` (many "missing type/member" build errors after a game update = stale `MelonLoader\Managed`, not code bugs)
 
 ## Testing in game
 

@@ -49,7 +49,7 @@ Located in `scripts/` (settings in `scripts/settings.json`):
 
 **update-repo.ps1** - Pulls latest changes and updates submodules (`-Force` to auto-stash, `-NoSubmodules` to skip submodules)
 
-**setup/** - One-time environment setup: `install.ps1` runs `00-install-dependencies.ps1` → `01-clone-repository.ps1` → `03-extract-resources.ps1` → `02-configure-settings.ps1` → `04-verify-environment.ps1` (shared helpers in `_common.ps1`). Every step is re-runnable and works from any repo folder; see [INSTALLATION.md](../../INSTALLATION.md)
+**setup/** - One-time environment setup: `install.ps1` runs `00-install-dependencies.ps1` → `01-clone-repository.ps1` → `03-extract-resources.ps1` → `02-configure-settings.ps1` → `04-verify-environment.ps1`. Here: `install.ps1`, `01`, `03` and `_common.ps1` (Taoist helpers); `00`, `02`, `04`, `setup-nexus.ps1` and the generic helpers are shared in `GuiGuBaHuang-ModLib/scripts/setup/`. Every step is re-runnable and works from any repo folder; see [INSTALLATION.md](../../INSTALLATION.md)
 
 Release scripts (shared, in `GuiGuBaHuang-ModLib/scripts/release/`; each repository releases its own projects: this repository Taoist, GuiGuBaHuang-ModLib ModLib; the repository is `-RepoRoot` or the git repository of the current folder):
 
@@ -59,7 +59,7 @@ Release scripts (shared, in `GuiGuBaHuang-ModLib/scripts/release/`; each reposit
 
 **_release.ps1** - Shared: repository, projects (`"projects"` of `scripts/settings.json`), versions (`versionFile` / `versionPattern` of each `<ProjectId>/scripts/settings.json`), targets and tags
 
-**setup/setup-nexus.ps1** - Nexus Mods setup of the CI on GitHub with `gh`: secret `NEXUSMODS_API_KEY` (checked with Nexus, given to gh on stdin) and variables `NEXUS_<MOD>_URL` / `NEXUS_<MOD>_FILE_ID`. Shows what is set; Enter keeps a value, `-` removes it. VS Code task **Setup: Nexus Mods (CI)**
+**GuiGuBaHuang-ModLib/scripts/setup/setup-nexus.ps1** `[-RepoPath <repository>]` - Nexus Mods setup of the CI on GitHub with `gh`: secret `NEXUSMODS_API_KEY` (checked with Nexus, given to gh on stdin) and variables `NEXUS_<MOD>_URL` / `NEXUS_<MOD>_FILE_ID`. Shows what is set; Enter keeps a value, `-` removes it. VS Code task **Setup: Nexus Mods (CI)**
 
 `build-project.ps1 -ResourcesOnly` (each project) - only the copy of ModConf/ModImg/SteamImg to `debug/` (no dotnet build)
 
