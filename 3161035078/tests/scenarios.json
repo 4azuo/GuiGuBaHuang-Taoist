@@ -2135,7 +2135,7 @@
       "kind": "tool",
       "feature": "Promo",
       "title": "Promotion pictures: Taoist 6.0",
-      "description": "Tool, not a test (run by scripts/game/run-promo.ps1 -Scenario TR-04, only when confirmed): the pictures of the 6.0 video (marketing/video-6.0.0), one chapter after the other. A city of the player (master, palace, wall, its buildings), a mortal house bought, a child born (family tree), the player's clan among the clans of the city, its elders (the Elders window, the war council voting a war, an NPC clan inviting the player, a deserter hunted), a clan war (the call, the battle stepped in, the victory, the enemy clan wiped out), the new paths of cultivation (body refining, spirit sense and its scan, Dao heart, merit, the Artisan Dao) and the massacre of a town (karma). The save is restored after the run.",
+      "description": "Tool, not a test (run by GuiGuBaHuang-ModLib/scripts/game/run-promo.ps1 -Scenario TR-04, only when confirmed): the pictures of the 6.0 video (marketing/video-6.0.0), one chapter after the other. A city of the player (master, palace, wall, its buildings), a mortal house bought, a child born (family tree), the player's clan among the clans of the city, its elders (the Elders window, the war council voting a war, an NPC clan inviting the player, a deserter hunted), a clan war (the call, the battle stepped in, the victory, the enemy clan wiped out), the new paths of cultivation (body refining, spirit sense and its scan, Dao heart, merit, the Artisan Dao) and the massacre of a town (karma). The save is restored after the run.",
       "preconditions": "An existing save",
       "steps": [
         "Travel to a city, master, the city developed",
@@ -3279,7 +3279,7 @@
       "kind": "tool",
       "feature": "Promo",
       "title": "Promotion pictures: S&M configs (title screen)",
-      "description": "Tool, not a test (run by scripts/game/run-promo.ps1): the S&M configs window and its 3 pages are captured for the Steam Workshop pictures (ModProject/SteamImg).",
+      "description": "Tool, not a test (run by GuiGuBaHuang-ModLib/scripts/game/run-promo.ps1): the S&M configs window and its 3 pages are captured for the Steam Workshop pictures (ModProject/SteamImg).",
       "preconditions": "Title screen",
       "steps": [
         "Open the S&M configs window",
@@ -3315,7 +3315,7 @@
       "kind": "tool",
       "feature": "Promo",
       "title": "Promotion pictures: feature windows (in the game)",
-      "description": "Tool, not a test (run by scripts/game/run-promo.ps1): in a town with a storage and a market, the windows of the features are opened one after the other and captured for the Steam Workshop pictures (ModProject/SteamImg): trainer, Taoist settings, bank account and loan, character info (stats, techniques, items), the 4 kinds of techniques with mastery, refined weapon / ring / outfit details, damage calculation (stats and recent foes), player market and buy orders, shop, NPC hiring and team, town master, bounties, family accounts, Taoist log. The save is restored after the run.",
+      "description": "Tool, not a test (run by GuiGuBaHuang-ModLib/scripts/game/run-promo.ps1): in a town with a storage and a market, the windows of the features are opened one after the other and captured for the Steam Workshop pictures (ModProject/SteamImg): trainer, Taoist settings, bank account and loan, character info (stats, techniques, items), the 4 kinds of techniques with mastery, refined weapon / ring / outfit details, damage calculation (stats and recent foes), player market and buy orders, shop, NPC hiring and team, town master, bounties, family accounts, Taoist log. The save is restored after the run.",
       "preconditions": "An existing save",
       "steps": [
         "Travel to a town, money and a bank account",

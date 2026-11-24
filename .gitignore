@@ -130,7 +130,7 @@ logs/
 logs/game-runs/
 
 
-# Autotest runs and status view (scripts/game/run-autotest.ps1)
+# Autotest runs and status view (GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1)
 logs/autotest/
 logs/unittests/
 
