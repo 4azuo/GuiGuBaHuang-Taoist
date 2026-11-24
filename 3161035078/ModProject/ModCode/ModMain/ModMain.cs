@@ -33,7 +33,16 @@ namespace MOD_nE7UL2
         {
             base.OnLoadClass(isNew, modId, attr);
             ModObj = this;
-            ModSettings = JsonConvert.DeserializeObject<ModStts>(ConfHelper.ReadConfData(modId, "mod_configs.json"));
+            //missing file: ModLib shows "files of a mod are missing"; broken JSON: "config file damaged" (KnownErrorHelper)
+            var settingsJson = ConfHelper.ReadConfData(modId, "mod_configs.json");
+            try
+            {
+                ModSettings = JsonConvert.DeserializeObject<ModStts>(settingsJson);
+            }
+            catch (JsonException ex)
+            {
+                throw KnownErrorHelper.InConfFile(ConfHelper.GetConfFilePath(modId, "mod_configs.json"), ex);
+            }
             //settings of the features in their own files (defaults in the code)
             MOD_nE7UL2.Mod.BattleConfig.Load(modId);
             MOD_nE7UL2.Mod.MarketItemConfig.Load(modId);

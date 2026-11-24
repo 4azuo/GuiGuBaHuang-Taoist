@@ -39,12 +39,13 @@ namespace MOD_nE7UL2.Enum
         }
 
         /// <summary>
-        /// True when the unit has this luck.
+        /// The luck must be loaded from ModConf/unitType_roleCreateFeature.json: otherwise the player is told to reinstall
+        /// the mod (ModConf missing or not loaded by the game).
         /// </summary>
         private void CheckExists()
         {
            if (g.conf.roleCreateFeature.GetItemIndex(Value.Parse<int>()) == -1)
-               throw new Exception("Instance Not Found");
+               throw KnownErrorHelper.ConfigMissing("roleCreateFeature", Value);
         }
     }
 }
