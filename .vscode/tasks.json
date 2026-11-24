@@ -201,13 +201,13 @@
             "presentation": { "panel": "dedicated", "clear": true }
         },
 
-        // ===== Game (scripts/game/) =====
+        // ===== Game (GuiGuBaHuang-ModLib/scripts/game/) =====
         {
             "label": "Game: Run & Watch Logs",
             "detail": "Start the game through Steam and follow Player.log, MelonLoader and ModLib logs live (saved to logs/game-runs/)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/game/run-game.ps1", "-Duration", "${input:gameRunDuration}"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/game/run-game.ps1", "-Duration", "${input:gameRunDuration}"],
             "problemMatcher": [],
             "presentation": { "panel": "dedicated", "clear": true }
         },
@@ -216,7 +216,7 @@
             "detail": "Start the game, wait until MelonLoader finished loading code mods (max 10 min), then close it",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/game/run-game.ps1", "-UntilModLoaded", "-StopGame", "-Duration", "600"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/game/run-game.ps1", "-UntilModLoaded", "-StopGame", "-Duration", "600"],
             "problemMatcher": [],
             "presentation": { "panel": "dedicated", "clear": true }
         },
@@ -225,7 +225,7 @@
             "detail": "Game already running: follow only the new log lines",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/game/run-game.ps1", "-Attach"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/game/run-game.ps1", "-Attach"],
             "problemMatcher": [],
             "presentation": { "panel": "dedicated", "clear": true }
         },
@@ -239,7 +239,7 @@
             "presentation": { "reveal": "silent" }
         },
 
-        // ===== Tests (scripts/, scripts/game/) - results: test-viewer/index.html, newest 10 runs kept =====
+        // ===== Tests (scripts/, GuiGuBaHuang-ModLib/scripts/game/) - results: logs/test-viewer/index.html, newest 10 runs kept =====
         {
             "label": "Test: Unit Tests",
             "detail": "Build + run tests/UnitTests (no game), update the test viewer",
@@ -265,7 +265,7 @@
             "detail": "Deploy ModLib + Taoist, start the game, load the save, run all scenarios with screenshots (saves restored after)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/game/run-autotest.ps1", "-Deploy", "-Timeout", "2700", "-Save", "${input:autotestSave}"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1", "-Deploy", "-Timeout", "2700", "-Save", "${input:autotestSave}"],
             "problemMatcher": [],
             "group": "test",
             "presentation": { "panel": "dedicated", "clear": true }
@@ -275,16 +275,16 @@
             "detail": "Deploy, run only the scenarios with promo pictures (no check panels, 1600x900) and copy them to 3161035078/ModProject/SteamImg",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/game/run-promo.ps1", "-Deploy", "-Save", "${input:autotestSave}"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/game/run-promo.ps1", "-Deploy", "-Save", "${input:autotestSave}"],
             "problemMatcher": [],
             "presentation": { "panel": "dedicated", "clear": true }
         },
         {
             "label": "Test: Open Promo Viewer",
-            "detail": "SteamImg pictures with their captions, the takes of every promotion run, the marketing videos (promo-viewer/index.html)",
+            "detail": "SteamImg pictures with their captions, the takes of every promotion run, the marketing videos (logs/promo-viewer/index.html)",
             "type": "process",
             "command": "python",
-            "args": ["${workspaceFolder}/scripts/update-promo-viewer.py", "--open"],
+            "args": ["${workspaceFolder}/GuiGuBaHuang-ModLib/promo-viewer/update-data.py", "--open"],
             "problemMatcher": [],
             "presentation": { "reveal": "silent" }
         },
@@ -312,7 +312,7 @@
             "detail": "Run only the given scenario ids (no deploy)",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/game/run-autotest.ps1", "-Save", "${input:autotestSave}", "-Scenario", "${input:autotestScenario}"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1", "-Save", "${input:autotestSave}", "-Scenario", "${input:autotestScenario}"],
             "problemMatcher": [],
             "group": "test",
             "presentation": { "panel": "dedicated", "clear": true }
@@ -329,19 +329,19 @@
         },
         {
             "label": "Test: Open Test Viewer",
-            "detail": "Regenerate test-viewer/data/runs.js and open test-viewer/index.html in the default browser",
+            "detail": "Regenerate logs/test-viewer/data/runs.js and open logs/test-viewer/index.html in the default browser",
             "type": "process",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/update-test-viewer.ps1", "-Open"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/test-viewer/update-data.ps1", "-Open"],
             "problemMatcher": [],
             "presentation": { "reveal": "silent" }
         },
         {
             "label": "Test: Open Test Viewer (server)",
-            "detail": "Test viewer with saving (Pin / Unpin a run): local server http://localhost:8765/test-viewer/ - stop it with the terminal; run 'Test: Open Test Viewer' first for fresh data",
+            "detail": "Test viewer with saving (Pin / Unpin a run): local server http://localhost:8765/logs/test-viewer/ - stop it with the terminal; run 'Test: Open Test Viewer' first for fresh data",
             "type": "process",
             "command": "python",
-            "args": ["${workspaceFolder}/scripts/effect-viewer-server.py", "--open", "--page", "test-viewer"],
+            "args": ["${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/effect-viewer-server.py", "--open", "--page", "test-viewer"],
             "isBackground": true,
             "problemMatcher": [],
             "presentation": { "reveal": "always", "panel": "dedicated" }
@@ -351,7 +351,7 @@
             "detail": "Effect viewer with saving (your own assessment: user-* fields of GuiGuBaHuang-ModLib/docs/Effects/*/index.json): local server http://localhost:8765/GuiGuBaHuang-ModLib/effect-viewer/ - stop it with the terminal",
             "type": "process",
             "command": "python",
-            "args": ["${workspaceFolder}/scripts/effect-viewer-server.py", "--open"],
+            "args": ["${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/effect-viewer-server.py", "--open"],
             "isBackground": true,
             "problemMatcher": [],
             "presentation": { "reveal": "always", "panel": "dedicated" }

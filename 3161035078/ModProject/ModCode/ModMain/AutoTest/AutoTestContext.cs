@@ -5,7 +5,7 @@ using System.Linq;
 namespace MOD_nE7UL2.AutoTest
 {
     /// <summary>
-    /// Request written by scripts/game/run-autotest.ps1 to &lt;mod cache&gt;\autotest\request.json.
+    /// Request written by GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1 to &lt;mod cache&gt;\autotest\request.json.
     /// The autotest runs only while this file exists, so players never trigger it.
     /// </summary>
     public class AutoTestRequest
@@ -43,7 +43,7 @@ namespace MOD_nE7UL2.AutoTest
         /// <summary>Capture the screen before the first step and after every step of each scenario.</summary>
         public bool SnapSteps { get; set; } = true;
         /// <summary>
-        /// Promotion run (scripts/game/run-promo.ps1): the scenarios run only for their pictures ("promo" of
+        /// Promotion run (GuiGuBaHuang-ModLib/scripts/game/run-promo.ps1): the scenarios run only for their pictures ("promo" of
         /// scenarios.json, copied to ModProject/SteamImg): no check panels over the screenshots.
         /// </summary>
         public bool Promo { get; set; } = false;

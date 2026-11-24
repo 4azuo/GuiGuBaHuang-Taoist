@@ -149,7 +149,7 @@ Test: extend TG-46 (register a hidden item, NPC buys it, check the drama has no 
 
 ## Autotest: games side by side
 
-* Game slots have their own game data folder (tools/SlotDataPath, 2026-11-18). Left: the save index read and written
+* Game slots have their own game data folder (GuiGuBaHuang-ModLib/tools/SlotDataPath, 2026-11-18). Left: the save index read and written
   back once at the start of a slot game, before the plugin moves the paths (a native hook of the game's path code
   would remove it); the extra save folders left in a slot by interrupted character creations are not cleaned.
 * TI-01 (investigation): start again from a save without closing the game. "Reload save" of the game menu
@@ -161,7 +161,7 @@ Test: extend TG-46 (register a hidden item, NPC buys it, check the drama has no 
 
 - **Manual install path**: the release notes say to copy `Mod_xxx` into `<game>\ModExportData\`.
   Not checked in the game yet: unsubscribe (or rename the Workshop folders), copy both zips' folders there, run
-  `scripts/game/run-game.ps1 -UntilModLoaded -StopGame` and look for `加载模组：...ModExportData...` in the log.
+  `GuiGuBaHuang-ModLib/scripts/game/run-game.ps1 -UntilModLoaded -StopGame` and look for `加载模组：...ModExportData...` in the log.
 - **Nexus Mods**: create the ModLib and Taoist pages and a first file on Nexus by hand, then run the VS Code task
   "Setup: Nexus Mods (CI)" (the CI only adds versions to an existing file). The game domain of Tale of Immortal on
   Nexus was not checked.

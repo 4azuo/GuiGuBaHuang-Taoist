@@ -122,7 +122,7 @@ if (Test-Path $modCreatorSettings) {
     $mc = [ordered]@{
         rootDir             = $repo
         modCreatorDir       = $modCreatorDir
-        translateScriptPath = Join-Path $repo 'Translate\run.py'
+        translateScriptPath = Join-Path $repo 'GuiGuBaHuang-ModLib\Translate\run.py'
         steamWorkshopDir    = $WorkshopPath
     }
     if ($GamePath) { $mc.gameFolderPath = $GamePath }

@@ -30,7 +30,7 @@ def cell(x):
 
 out = ['# Taoist - Test scenarios', '',
        'Source of truth: `3161035078/tests/scenarios.json` (this page is generated from it: `python scripts/game/export-scenarios-doc.py`).',
-       'Latest OK/NG result of every id: `3161035078/tests/scenario-status.json` (updated by `run-autotest.ps1`, manual results with `set-scenario-status.ps1`; view: `test-viewer/index.html`, tab Scenario status).', '',
+       'Latest OK/NG result of every id: `3161035078/tests/scenario-status.json` (updated by `run-autotest.ps1`, manual results with `set-scenario-status.ps1`; view: `logs/test-viewer/index.html`, tab Scenario status).', '',
        '## Ids', '',
        '| Prefix | Kind | Executed by |', '|---|---|---|',
        '| `TT-nn` | auto, title screen | `AutoTestEvent` before the save is loaded |',

@@ -15,7 +15,7 @@ using Application = UnityEngine.Application;
 namespace MOD_nE7UL2.Mod
 {
     /// <summary>
-    /// In-game test runner used by scripts/game/run-autotest.ps1.
+    /// In-game test runner used by GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1.
     /// Loaded only when &lt;mod cache&gt;\autotest\request.json exists (never for normal players).
     /// Phases: title screen scenarios -> load the save (automatically or by the tester) -> game scenarios
     /// -> optional battle watching. Results and screenshots are written to the request OutDir.
@@ -61,7 +61,7 @@ namespace MOD_nE7UL2.Mod
         private int _stepIndex;
 
         /// <summary>
-        /// Game slot of this game (scripts/game/new-game-slot.ps1): 1 for the normal game folder, N for a copy started from
+        /// Game slot of this game (GuiGuBaHuang-ModLib/scripts/game/new-game-slot.ps1): 1 for the normal game folder, N for a copy started from
         /// %LOCALAPPDATA%\ggbh-slotN (several games side by side, each with its own autotest folder).
         /// </summary>
         public static int Slot

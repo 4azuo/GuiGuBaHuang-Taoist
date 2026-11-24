@@ -74,6 +74,6 @@ GuiGuBaHuang-ModCreator/docs/     docs of the ModCreator submodule (on hold): 00
 ## Pictures extracted from the game
 
 The scripts stay in this repository and write into the ModLib submodule (commit them there, then the submodule here):
-`python scripts/extract-game-assets.py` -> `GuiGuBaHuang-ModLib/docs/GameAssets/`, the effect galleries TE-xx
-(`scripts/game/run-effect-gallery.ps1`, `collect-effects.ps1`) -> `GuiGuBaHuang-ModLib/docs/Effects/`. Details:
+`python GuiGuBaHuang-ModLib/scripts/extract-game-assets.py` -> `GuiGuBaHuang-ModLib/docs/GameAssets/`, the effect galleries TE-xx
+(`GuiGuBaHuang-ModLib/scripts/game/run-effect-gallery.ps1`, `collect-effects.ps1`) -> `GuiGuBaHuang-ModLib/docs/Effects/`. Details:
 `GuiGuBaHuang-ModLib/docs/README.md`.

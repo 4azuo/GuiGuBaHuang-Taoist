@@ -14,7 +14,7 @@
     debug-<id>      <repo>\<id>\debug (build output), e.g. debug-3161035078
     game-data       %USERPROFILE%\AppData\LocalLow\guigugame\guigubahuang (Player.log)
     mod-logs        <game-data>\mod (ModLib debug logs, per save game)
-    game-runs       <repo>\logs\game-runs (output of scripts\game\run-game.ps1)
+    game-runs       <repo>\logs\game-runs (output of GuiGuBaHuang-ModLib\scripts\game\run-game.ps1)
 .PARAMETER Print
     Only print the path, do not open Explorer.
 .EXAMPLE
@@ -28,7 +28,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-. (Join-Path $PSScriptRoot 'game\_game.ps1')
+. (Join-Path $PSScriptRoot '..\GuiGuBaHuang-ModLib\scripts\game\_game.ps1')
 
 $p = Get-GamePaths
 $targets = [ordered]@{

@@ -100,7 +100,7 @@ scripts and the guide in [docs/](docs/README.md).
 | Setup of a machine | [INSTALLATION.md](INSTALLATION.md) (`scripts\setup\04-verify-environment.ps1` checks it) |
 | Projects | `3161035078/` Taoist, `3385996759/` ModLib mod project, submodules `GuiGuBaHuang-ModLib` (ModLib source + its docs) and `GuiGuBaHuang-ModCreator` (on hold) |
 | Build / deploy | `<ProjectId>\scripts\build-project.ps1`, `rebuild-and-deploy.ps1`, always Release ([docs/07-Build-Deploy.md](docs/07-Build-Deploy.md)) |
-| Test in game | `scripts\game\run-game.ps1` (logs to `logs\game-runs\`), `scripts\game\run-autotest.ps1 -Save <test save>` (evidence to `logs\autotest\`, results in `test-viewer\index.html`) — [docs/06-Debug.md](docs/06-Debug.md), [docs/Taoist/04-Autotest.md](docs/Taoist/04-Autotest.md) |
+| Test in game | `GuiGuBaHuang-ModLib\scripts\game\run-game.ps1` (logs to `logs\game-runs\`), `GuiGuBaHuang-ModLib\scripts\game\run-autotest.ps1 -Save <test save>` (evidence to `logs\autotest\`, results in `logs\test-viewer\index.html`) — [docs/06-Debug.md](docs/06-Debug.md), [docs/Taoist/04-Autotest.md](docs/Taoist/04-Autotest.md) |
 | Docs | Taoist: [docs/Taoist/00-Overview.md](docs/Taoist/00-Overview.md); the map: [docs/README.md](docs/README.md); ModLib internals and game config samples: [GuiGuBaHuang-ModLib/docs](GuiGuBaHuang-ModLib/docs/README.md) |
 
 ### Known issues
@@ -122,7 +122,7 @@ Fix (pick one):
   "C:\Users\<you>\AppData\Local\ggbh-game-link\guigubahuang.exe" %command%
   ```
   (If your Windows user name is not ASCII, put the junction somewhere like `C:\ggbh` from an Admin prompt.)
-  `scripts\game\run-game.ps1` creates and uses this junction automatically.
+  `GuiGuBaHuang-ModLib\scripts\game\run-game.ps1` creates and uses this junction automatically.
 - **Or change the system locale**: Settings → Time & language → Language & region → Administrative language settings →
   *Change system locale* → Chinese (Simplified) or Japanese, then reboot. This affects other non-Unicode programs.
 

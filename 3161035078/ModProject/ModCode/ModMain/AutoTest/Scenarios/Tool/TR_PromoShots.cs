@@ -10,7 +10,7 @@ using static MOD_nE7UL2.AutoTest.TownTestHelper;
 namespace MOD_nE7UL2.AutoTest.Scenarios.Tool
 {
     /// <summary>
-    /// Promotion pictures (tools, run by scripts/game/run-promo.ps1): the windows of the features opened one after the
+    /// Promotion pictures (tools, run by GuiGuBaHuang-ModLib/scripts/game/run-promo.ps1): the windows of the features opened one after the
     /// other, each captured by a "promo-&lt;name&gt;" screenshot, copied to ModProject/SteamImg/promo-copied to ModProject/SteamImg/promo_&lt;name&gt;.jpg bylt;versioncopied to ModProject/SteamImg/promo_&lt;name&gt;.jpg bygt;/promo_copied to ModProject/SteamImg/promo_&lt;name&gt;.jpg bylt;idcopied to ModProject/SteamImg/promo_&lt;name&gt;.jpg bygt;_copied to ModProject/SteamImg/promo_&lt;name&gt;.jpg bylt;namecopied to ModProject/SteamImg/promo_&lt;name&gt;.jpg bygt;.jpg by
     /// collect-promo.ps1 ("promo" of the scenario in tests/scenarios.json: step = promo-&lt;name&gt;). Not tests: no
     /// check fails the run, a missing feature only skips its picture. The run restores the save afterwards.

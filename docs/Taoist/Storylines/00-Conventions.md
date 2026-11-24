@@ -2,7 +2,7 @@
 
 The dialogue of every step of the lines designed in `../06-Storylines-Draft.md` (same acts, names, time limits and
 endings; the design rules are there). English only; once approved, the texts go to the other languages
-(ch / tc / kr and the 8 locale languages, `Translate/ai_bridge.py`).
+(ch / tc / kr and the 8 locale languages, `GuiGuBaHuang-ModLib/Translate/ai_bridge.py`).
 
 Conventions:
 - `{p}` is the player's name; `{A}`, `{H}`... are the names of the cast NPCs (see 06, section 2).

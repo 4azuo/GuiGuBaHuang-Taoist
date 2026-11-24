@@ -14,7 +14,7 @@ namespace MOD_nE7UL2.Mod
     public partial class EstateEvent
     {
         // pictures, colors and sizes: ModConf/estate_configs.json (EstateConfig); the pictures are listed in
-        // GuiGuBaHuang-ModLib/docs/GameAssets (Buildings tab; scripts/extract-game-assets.py --buildings)
+        // GuiGuBaHuang-ModLib/docs/GameAssets (Buildings tab; GuiGuBaHuang-ModLib/scripts/extract-game-assets.py --buildings)
 
         /// <summary>A color of the config (Unity type: only used by the windows).</summary>
         private static Color ConfColor(string key)

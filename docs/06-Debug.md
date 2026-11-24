@@ -48,7 +48,7 @@ Shows the game's own mod loader: one `加载模组：<path>` line per mod config
 
 ## Run the Game and Collect Logs
 
-`scripts\game\run-game.ps1` starts the game (through Steam), follows **Player.log**, **MelonLoader\Latest.log** and the **ModLib logs** (`mod\<modId>\*.log`, incl. per save game) live, and saves each run to `logs\game-runs\<yyyyMMdd-HHmmss>\`:
+`GuiGuBaHuang-ModLib\scripts\game\run-game.ps1` starts the game (through Steam), follows **Player.log**, **MelonLoader\Latest.log** and the **ModLib logs** (`mod\<modId>\*.log`, incl. per save game) live, and saves each run to `logs\game-runs\<yyyyMMdd-HHmmss>\`:
 
 | File | Content |
 |---|---|

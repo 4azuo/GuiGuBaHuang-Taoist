@@ -2,7 +2,7 @@
 
 The design of the NPC storylines: casting, rules and the acts of every line. The dialogue of every step is in
 `Storylines/` (one file per line, same acts and names). Written in English; the other languages are translated from
-the game texts (`Translate/ai_bridge.py`). Code: `3161035078/ModProject/ModCode/ModMain/Story/`.
+the game texts (`GuiGuBaHuang-ModLib/Translate/ai_bridge.py`). Code: `3161035078/ModProject/ModCode/ModMain/Story/`.
 
 ## 0. Decisions (2026-11-16)
 

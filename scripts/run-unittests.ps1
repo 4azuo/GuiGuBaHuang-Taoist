@@ -23,7 +23,7 @@ if (-not $NoBuild) {
         if ($LASTEXITCODE -ne 0) { Write-Host "Build of $p failed" -ForegroundColor Red; exit 1 }
     }
 }
-# one folder per run (history shown by test-viewer\index.html)
+# one folder per run (history shown by logs\test-viewer\index.html)
 $runDir = Join-Path $repo ("logs\unittests\" + (Get-Date -Format 'yyyyMMdd-HHmmss'))
 $testArgs = @('test', (Join-Path $repo 'tests\UnitTests\UnitTests.csproj'), '--configuration', 'Release', '--logger', 'console;verbosity=normal',
     '--results-directory', $runDir, '--logger', 'trx;LogFileName=unittests.trx')
@@ -33,6 +33,6 @@ if ($Filter) { $testArgs += @('--filter', $Filter) }
 if ($GameFolder) { $testArgs += "-p:GameFolder=$GameFolder" }
 & dotnet @testArgs
 $code = $LASTEXITCODE
-& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'update-test-viewer.ps1')
-Write-Host "Results: $(Join-Path $repo 'test-viewer\index.html')#tab=unit" -ForegroundColor Cyan
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $repo 'GuiGuBaHuang-ModLib\test-viewer\update-data.ps1')
+Write-Host "Results: $(Join-Path $repo 'logs\test-viewer\index.html')#tab=unit" -ForegroundColor Cyan
 exit $code

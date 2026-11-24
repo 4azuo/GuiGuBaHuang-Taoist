@@ -15,7 +15,7 @@
       "title": "Title screen shows Taoist/ModLib buttons and versions are compatible",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -33,7 +33,7 @@
       "title": "S&M configs window: 3 pages, presets and cancel",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -72,7 +72,7 @@
       "title": "New game: difficulty and character creation screens",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -93,7 +93,7 @@
       "title": "ModLib title: language selector and tools",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -113,7 +113,7 @@
       "title": "S&M configs: OK without change keeps every value",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -131,7 +131,7 @@
       "title": "Error reports to BugSplat only with the player's consent",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -195,7 +195,7 @@
       "title": "Exception dialog says whether the error was sent to BugSplat",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -252,7 +252,7 @@
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "SKIP",
       "lastRun": "2026-11-23T23:05:50",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -264,7 +264,7 @@
       "title": "Taoist settings and events are loaded in the save",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -292,7 +292,7 @@
       "title": "Per-save S&M configs exist and Calculate applies rates",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -309,7 +309,7 @@
       "title": "Nearest-units option limits the units used by Taoist events",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -328,7 +328,7 @@
       "title": "World price index is applied to prices",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -345,7 +345,7 @@
       "title": "Units receive a role",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -361,7 +361,7 @@
       "title": "NPC without full exp gains exp monthly",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -375,7 +375,7 @@
       "title": "Expertise exp formulas",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -394,7 +394,7 @@
       "title": "Refine exp API",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -411,7 +411,7 @@
       "title": "Hire and dismiss a team member",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -429,7 +429,7 @@
       "title": "Town budget add/remove and taxes",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -446,7 +446,7 @@
       "title": "Bank account fee is positive for every area",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -472,7 +472,7 @@
       "title": "Storage fee rate and storage value",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -488,7 +488,7 @@
       "title": "Shop sell/buy rates exist for every market town",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -505,7 +505,7 @@
       "title": "Player market listings and VIP price are consistent",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -529,7 +529,7 @@
       "title": "Sect exchange ratio is positive",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -544,7 +544,7 @@
       "title": "Original buildings are known and building costs are valid",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -566,7 +566,7 @@
       "title": "Unit modifiers are hooked and bonuses are not negative",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -585,7 +585,7 @@
       "title": "Block table and damage multiplier rules",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -602,7 +602,7 @@
       "title": "Mana shield of the player",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -617,7 +617,7 @@
       "title": "Monster growth counters exist",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -634,7 +634,7 @@
       "title": "Quest chains have a consistent state",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -651,7 +651,7 @@
       "title": "Rebirth state and luck",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -665,7 +665,7 @@
       "title": "Running commissions are consistent",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -680,7 +680,7 @@
       "title": "Map screen shows Taoist buttons and hides vanilla widgets",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -695,7 +695,7 @@
       "title": "Cultivation screen shows Qi and cultivation buttons",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -710,7 +710,7 @@
       "title": "Game menu save/reload buttons follow the S&M configs",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -726,7 +726,7 @@
       "title": "Game settings: Taoist settings window and Taoist log",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -748,7 +748,7 @@
       "title": "Trainer: all pages open and an action changes the player",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -769,7 +769,7 @@
       "title": "Disabled features have no Instance (BUG-16)",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -783,7 +783,7 @@
       "title": "Enter the town: town UI with Taoist info",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -799,7 +799,7 @@
       "title": "Town storage: open a bank account",
       "result": "OK",
       "lastRun": "2026-11-23T21:03:12",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-210105",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-210105",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -820,7 +820,7 @@
       "title": "Bounty board: commission and hire people",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -840,7 +840,7 @@
       "title": "Town market: player market buttons and listings",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -861,7 +861,7 @@
       "title": "Shop: town budget and buy price rate",
       "result": "OK",
       "lastRun": "2026-11-23T23:05:50",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -884,7 +884,7 @@
       "title": "Rebirth button on the player info and forge custom refine",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -906,7 +906,7 @@
       "title": "Storage fee and debt",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -927,7 +927,7 @@
       "title": "Sell window: rate, town budget and over-budget block",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -949,7 +949,7 @@
       "title": "Commission delivered by the monthly handler",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -967,7 +967,7 @@
       "title": "Team: NPC info, hire, monthly payment, dismiss",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -988,7 +988,7 @@
       "title": "Become town master (trainer) and manage the town",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1008,7 +1008,7 @@
       "title": "Town rebuilds a destroyed building with its budget",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1026,7 +1026,7 @@
       "title": "Cultivate with spirit stones",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1042,7 +1042,7 @@
       "title": "Qi in NPC info and Qi transfer",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1060,7 +1060,7 @@
       "title": "NPC growth over 24 months",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1076,7 +1076,7 @@
       "title": "Buy from a shop: price rate, town budget, master discount",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1101,7 +1101,7 @@
       "title": "Player market: VIP, register, my items, price, deals, sell, buy, barter, buy orders",
       "result": "OK",
       "lastRun": "2026-11-23T23:05:50",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1188,7 +1188,7 @@
       "title": "Exchange items for sect contribution",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1211,7 +1211,7 @@
       "title": "Custom refine of an artifact: exp, level, adjustment quality, bonuses, progress, reroll",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1281,7 +1281,7 @@
       "title": "Repair a damaged god artifact",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1302,7 +1302,7 @@
       "title": "Break through without items",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1322,7 +1322,7 @@
       "title": "Trainer hotkeys Ctrl+1/2/3",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1343,7 +1343,7 @@
       "title": "Expertise level of an equipped skill",
       "result": "OK",
       "lastRun": "2026-11-23T23:05:50",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-230149",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-230149",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1365,7 +1365,7 @@
       "title": "Int limits: growing values do not overflow",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1385,7 +1385,7 @@
       "title": "Monthly town tax: NPC pays the town, or leaves",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1429,7 +1429,7 @@
       "title": "Monster wave battle: join, kill, win, back to the map",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1449,7 +1449,7 @@
       "title": "NPC duel: start, defeat the NPC, back to the map",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1467,7 +1467,7 @@
       "title": "Spiritlock circle: tortoises cannot move",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1483,7 +1483,7 @@
       "title": "Special monsters (shield, split) and monsters getting stronger",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1514,7 +1514,7 @@
       "title": "NPCs join battles, stalkers, challenge quest",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1554,7 +1554,7 @@
       "title": "Trial of lightning: damage scaled on the player, properties after surviving",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1573,7 +1573,7 @@
       "title": "Battle won: training growth and exp from damage",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1595,7 +1595,7 @@
       "title": "Battle lost without body reconstruction item: exp lost",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1613,7 +1613,7 @@
       "title": "Battle lost with a body reconstruction item: item used, exp kept",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1634,7 +1634,7 @@
       "title": "Battle lost with lost items when die: items go to the killer",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1653,7 +1653,7 @@
       "title": "Battle lost with lost money when die: spirit stones go to the killer",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1672,7 +1672,7 @@
       "title": "Battle lost with lost lifespan when die: life drained to the killer",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1691,7 +1691,7 @@
       "title": "Battle lost with auto save after lost: one month passes and the game saves",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1710,7 +1710,7 @@
       "title": "Skip 1 year with the map button",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1728,7 +1728,7 @@
       "title": "Currency reform when the price index passes the limit",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1747,7 +1747,7 @@
       "title": "Rebirth from the player info",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1768,7 +1768,7 @@
       "title": "Slice-of-life quest: monthly counter, reset by battle, completion luck",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -1780,7 +1780,7 @@
       "title": "Month passes and the Taoist data is saved to disk",
       "result": "OK",
       "lastRun": "2026-11-23T22:09:09",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-220226-s2",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-220226-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1808,7 +1808,7 @@
       "title": "Yearly handlers: NPC born, speed units, town masters",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1825,7 +1825,7 @@
       "title": "Battle lost with one-life: the character dies",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1842,7 +1842,7 @@
       "title": "Divine artifact hotkeys: bindings, map, battle",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1901,7 +1901,7 @@
       "title": "Damage calculation in a battle: button, hotkey, pause, last hits, recent foes",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1933,7 +1933,7 @@
       "title": "Random encounters: dramas, choices and rewards",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -1987,7 +1987,7 @@
       "title": "Drama texts: variants, chains and options",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2019,7 +2019,7 @@
       "title": "Bank loan: borrow, interest, overdue, collector, blacklist",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2061,7 +2061,7 @@
       "title": "Town master: tax statistics, called back to defend the town",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2084,7 +2084,7 @@
       "title": "Bounties: post, hunt, expire, wanted player, wanted list",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2127,7 +2127,7 @@
       "title": "S&M score (P): rewards, titles and records, rare encounter, start bonus, inheritance",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2162,7 +2162,7 @@
       "title": "Damage calculation window, Taoist log dates, buy order icons",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2199,7 +2199,7 @@
       "title": "Body refining: realms, breakthrough, bath, bonuses",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2263,7 +2263,7 @@
       "title": "Town mortals, plots and the player's house",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2317,7 +2317,7 @@
       "title": "House rooms and the town master's palace",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2368,7 +2368,7 @@
       "title": "Body refining: bonuses of a real breakthrough",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2393,7 +2393,7 @@
       "title": "Spirit notes: bank exchange and payments",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2431,7 +2431,7 @@
       "title": "Town maps of every landscape, a town grown into a city",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2472,7 +2472,7 @@
       "title": "Body refining levels and their materials",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2510,7 +2510,7 @@
       "title": "City master: the wall, a house paid with banknotes",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2537,7 +2537,7 @@
       "title": "Town map grows: mortal houses, NPC houses",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2573,7 +2573,7 @@
       "title": "Body refining: tempering place and body tribulation",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2605,7 +2605,7 @@
       "title": "Cultivator clans: relations, brawls, clan war",
       "result": "OK",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2665,7 +2665,7 @@
       "title": "NPC houses in depth: rules, tax, seizure, death",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2704,7 +2704,7 @@
       "title": "Clans in depth: relations, yearly fights, the player steps in",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2744,7 +2744,7 @@
       "title": "Merit: levels, bonuses, encounters, karma",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2783,7 +2783,7 @@
       "title": "Body refining of the NPCs: sects by style, tribulation, tempering place",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2812,7 +2812,7 @@
       "title": "Merit: the massacre of a town (the evil way)",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2853,7 +2853,7 @@
       "title": "Artisan Dao: crafting, ranks, masterpieces, exam",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2911,7 +2911,7 @@
       "title": "Where NPCs live: town of the area, family house, going home",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2947,7 +2947,7 @@
       "title": "Artisan Dao with the game's own gathering, alchemy and craft windows",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2998,7 +2998,7 @@
       "title": "Dao heart and spirit sense: max SP / MP, heart demon, betrayal, ambush, scan",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3045,7 +3045,7 @@
       "title": "Mine veins and herb valleys of every area",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3074,7 +3074,7 @@
       "title": "Estate: buy back a mortal house (text window)",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3099,7 +3099,7 @@
       "title": "Clan elders: invite, pay, war council, desertion, the player as an elder",
       "result": "OK",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3158,7 +3158,7 @@
       "title": "Clan succession: a child, else a sibling, heads the clan; a clan wiped out leaves a ruin",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3195,7 +3195,7 @@
       "title": "A clan elder betrays the player in the middle of a war battle",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3231,7 +3231,7 @@
       "title": "Taoist log in the month log of the game",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3246,7 +3246,7 @@
       "title": "Family, continue as a descendant, seclusion",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3305,7 +3305,7 @@
       "title": "Time skip: timings (full simulation, 10 years) and interruption",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3326,7 +3326,7 @@
       "title": "Household upkeep, gifts and accounts",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3361,7 +3361,7 @@
       "title": "Story A Cold Sword: A0-A5",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3381,7 +3381,7 @@
       "title": "Story B Old Huang's Debt: B0-B5",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3401,7 +3401,7 @@
       "title": "Story C Exploding Furnace: C0-C4 (opens line E)",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3421,7 +3421,7 @@
       "title": "Story D Sworn Brothers: D0-D4",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3441,7 +3441,7 @@
       "title": "Story E Granny's Herb Garden: E0-E4 (A Li adopted, Granny dies), garden seclusion choice",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3469,7 +3469,7 @@
       "title": "Story F Red Lotus: F1-F4 (allies of the good endings join, then are dismissed)",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3490,7 +3490,7 @@
       "title": "Story G Hundred-Year Wager: G0-G5 over a century, to an ending",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3510,7 +3510,7 @@
       "title": "Story H Roadside Inn: H0-H5, the wedding, the fire, her son, her last years",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3532,7 +3532,7 @@
       "title": "Story I Sealed Tomb: the map, the halls, Gu's betrayal, the tomb owner",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3552,7 +3552,7 @@
       "title": "Story J Cursed Disciple: the execution ground, 3 lessons, the hunters, the last duel",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3573,7 +3573,7 @@
       "title": "Story K Thunder Remnant: the voice, the platform, his descendants, the second tribulation",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3593,7 +3593,7 @@
       "title": "Story L Heart Demon: dreams of the other lines, the mirror lake, the copy, clear heart",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3614,7 +3614,7 @@
       "title": "Story M Old Tie's Forge",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3635,7 +3635,7 @@
       "title": "Story N House on the Old Street",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3656,7 +3656,7 @@
       "title": "Story O Ashes of the Town",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3676,7 +3676,7 @@
       "title": "Story P Heartbeat in the Stone",
       "result": "NOT RUN",
       "lastRun": "2026-11-23T08:27:45",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-082038",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3697,7 +3697,7 @@
       "title": "Effect gallery: skill effects",
       "result": "OK",
       "lastRun": "2026-11-18T15:06:27",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261118-150014-s4",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261118-150014-s4",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3735,7 +3735,7 @@
       "title": "Investigation: start again from a save without closing the game",
       "result": "NG",
       "lastRun": "2026-11-18T01:11:09",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261118-005106",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261118-005106",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3749,7 +3749,7 @@
       "title": "Investigation: sub-buildings of the town window",
       "result": "OK",
       "lastRun": "2026-11-23T21:28:29",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261123-212502",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-212502",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3764,7 +3764,7 @@
       "title": "Promotion pictures: S&M configs (title screen)",
       "result": "SKIP",
       "lastRun": "2026-11-19T01:46:39",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261119-013929",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261119-013929",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -3776,7 +3776,7 @@
       "title": "Promotion pictures: feature windows (in the game)",
       "result": "OK",
       "lastRun": "2026-11-19T01:36:26",
-      "evidence": "test-viewer/index.html#tab=auto&run=20261119-011835",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261119-011835",
       "tester": "autotest",
       "note": null,
       "checks": {

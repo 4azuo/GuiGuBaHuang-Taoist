@@ -16,8 +16,9 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 - **ModProject/ModImg/** - Assets
 - **3385996759/SampleConfs/** - Templates for all game config types
 - **debug/Mod_xxxxx/** - Build output (`ModCode/dll/`, `ModConf/`, `ModImg/`)
-- **<ProjectId>/scripts/** - Per-project build/deploy scripts + `settings.json`
-- **scripts/** - Scripts for all projects + `settings.json`; `scripts/setup/` for first-time install
+- **<ProjectId>/scripts/** - Per-project `settings.json` + 2-line wrappers of the shared build/deploy scripts (`GuiGuBaHuang-ModLib/scripts/project/`)
+- **scripts/** - Scripts for all projects + `settings.json` (also names the mod for the shared tools: `modProject`, `modName`, `modId`); `scripts/setup/` for first-time install
+- **Shared tools in ModLib** (used by every mod repository holding ModLib, e.g. Dao of Creation; the data stays in the mod repository): `GuiGuBaHuang-ModLib/scripts/game/` (game runs, autotest, game slots, promo, effect galleries), `scripts/project/` (build/deploy), `test-viewer/` + `promo-viewer/` (pages generated into `logs/test-viewer/` / `logs/promo-viewer/` here), `Translate/` (cache in `.translate-cache/` here), `tests/` (shared unit test setup + ModLib tests, `tests/UnitTests.props`), `tools/SlotDataPath/`. A change there is a ModLib change (commit + push in the submodule)
 
 ## Guidelines
 
@@ -43,12 +44,12 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 
 ## Testing in game
 
-- Run the game and collect logs: `scripts/game/run-game.ps1` (e.g. `-UntilModLoaded -StopGame -Duration 600`); read `logs/game-runs/<latest>/summary.json` first, then `timeline.log`
+- Run the game and collect logs: `GuiGuBaHuang-ModLib/scripts/game/run-game.ps1` (e.g. `-UntilModLoaded -StopGame -Duration 600`); read `logs/game-runs/<latest>/summary.json` first, then `timeline.log`
 - Paths of game / Workshop / log folders: `scripts/open-folder.ps1 <target> -Print`
 - Details: `docs/06-Debug.md`
 - Unit tests (no game): `scripts/run-unittests.ps1` (`tests/UnitTests`; `-IncludeKnownIssues` runs the tests reproducing open bugs)
 - Known bugs to check: `docs/Known-Issues.md`
-- Taoist autotest (scenarios + evidence): `scripts/game/run-autotest.ps1 -Save <test save>` -> evidence in `logs/autotest/<time>/`; OK/NG per scenario id in `3161035078/tests/scenario-status.json`. All results (autotest + unit tests, every run, screenshots by step): `test-viewer/index.html` (data from `scripts/update-test-viewer.ps1`). Prefer `-Scenario` / `-Failed` (NG and NOT RUN ids) over full runs; TP-01 (new character) only runs for a full run or scenarios with `"newCharacter": true`. Keep a run: `scripts/pin-test-run.ps1` (a full all-pass run is pinned automatically). Several sessions may run autotests at once: each run takes a free game slot (slot copies 2..5) and never closes another run's game; `-Deploy` waits for the other games before copying a new build. Details: `docs/Taoist/04-Autotest.md`
+- Taoist autotest (scenarios + evidence): `GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1 -Save <test save>` -> evidence in `logs/autotest/<time>/`; OK/NG per scenario id in `3161035078/tests/scenario-status.json`. All results (autotest + unit tests, every run, screenshots by step): `logs/test-viewer/index.html` (data from `GuiGuBaHuang-ModLib/test-viewer/update-data.ps1`, run after every test run). Prefer `-Scenario` / `-Failed` (NG and NOT RUN ids) over full runs; TP-01 (new character) only runs for a full run or scenarios with `"newCharacter": true`. Keep a run: `GuiGuBaHuang-ModLib/scripts/pin-test-run.ps1` (a full all-pass run is pinned automatically). Several sessions may run autotests at once: each run takes a free game slot (slot copies 2..5) and never closes another run's game; `-Deploy` waits for the other games before copying a new build. Details: `docs/Taoist/04-Autotest.md`
 
 ## Documentation
 
@@ -68,7 +69,7 @@ Read the relevant doc from `docs/` before answering questions or making non-triv
 
 Docs of the submodules (in their own repositories):
 
-- `GuiGuBaHuang-ModLib/docs/README.md` - Map of the ModLib docs; `00-Architecture.md` - ModLib internals: dispatch, load sequence, monthly tick (`01` event reference, `02` cache/persistence, `03` built-in events, `04` UI framework, `05` attributes/objects/enums)
+- `GuiGuBaHuang-ModLib/docs/README.md` - Map of the ModLib docs; `00-Architecture.md` - ModLib internals: dispatch, load sequence, monthly tick (`01` event reference, `02` cache/persistence, `03` built-in events, `04` UI framework, `05` attributes/objects/enums, `06` shared tools of the mod repositories: what lives in ModLib, what a mod repository provides)
 - `GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md` - Index of config samples (per-category files `01`-`12`)
-- `GuiGuBaHuang-ModLib/docs/GameAssets/` - icons, item icons, buildings and drama backgrounds extracted from the game (`scripts/extract-game-assets.py`); `Effects/` - effects recorded by the galleries TE-xx (viewer: `GuiGuBaHuang-ModLib/effect-viewer/`) (both Git LFS, written by the scripts of this repository: commit them in the submodule)
+- `GuiGuBaHuang-ModLib/docs/GameAssets/` - icons, item icons, buildings and drama backgrounds extracted from the game (`GuiGuBaHuang-ModLib/scripts/extract-game-assets.py`); `Effects/` - effects recorded by the galleries TE-xx (viewer: `GuiGuBaHuang-ModLib/effect-viewer/`) (both Git LFS, written by the scripts of this repository: commit them in the submodule)
 - `GuiGuBaHuang-ModCreator/docs/00-Overview.md` - ModCreator tool (per-feature files `01`-`05`)

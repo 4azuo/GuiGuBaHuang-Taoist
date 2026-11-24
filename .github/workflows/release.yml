@@ -29,7 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          lfs: true   # SteamImg pictures (Git LFS) are part of debug/<mod>
+          lfs: true          # SteamImg pictures (Git LFS) are part of debug/<mod>
+          submodules: true   # <ProjectId>/scripts/build-project.ps1 runs the shared script of GuiGuBaHuang-ModLib/scripts/project
 
       - name: Zip debug/<mod>
         id: pkg
