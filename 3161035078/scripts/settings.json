@@ -2,6 +2,7 @@
     "projectId": "3161035078",
     "modName": "Mod_nE7UL2",
     "releaseName": "Taoist",
+    "releaseRequires": "ModLib",
     "versionFile": "ModProject/ModCode/ModMain/Const/ModConst.cs",
     "versionPattern": "TAOIST_VERSION\\s*=\\s*\"([^\"]+)\"",
     "steamWorkshopPath": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1468810",

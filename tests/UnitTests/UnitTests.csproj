@@ -4,11 +4,11 @@
     Unit tests of ModLib and Taoist code that does not need the running game (pure helpers, formulas, configs).
     Shared setup (framework, MSTest, game assemblies, TestSetup/Check, the ModLib tests): GuiGuBaHuang-ModLib\tests\UnitTests.props.
     Here: the references to the build output of this repository and the Taoist tests (Taoist\, KnownIssues.cs).
-    Build ModLib and Taoist first (Release); run: scripts\run-unittests.ps1
+    Build Taoist first (Release; ModLib.dll: the build committed in the submodule); run: scripts\run-unittests.ps1
   -->
 
   <PropertyGroup>
-    <!-- this repository builds ModLib.dll (3385996759): its tests run here -->
+    <!-- the ModLib tests run here against the ModLib.dll of the submodule (GuiGuBaHuang-ModLib/3385996759) -->
     <IncludeModLibTests>true</IncludeModLibTests>
   </PropertyGroup>
 
@@ -17,7 +17,7 @@
   <ItemGroup>
     <!-- code under test (build output of the mods) -->
     <Reference Include="ModLib">
-      <HintPath>$(RepoRoot)\3385996759\debug\Mod_flQrxq\ModCode\dll\ModLib.dll</HintPath>
+      <HintPath>$(RepoRoot)\GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\ModLib.dll</HintPath>
       <Private>true</Private>
     </Reference>
     <Reference Include="MOD_nE7UL2">
@@ -25,7 +25,7 @@
       <Private>true</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>$(RepoRoot)\3385996759\debug\Mod_flQrxq\ModCode\dll\Newtonsoft.Json.dll</HintPath>
+      <HintPath>$(RepoRoot)\GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\Newtonsoft.Json.dll</HintPath>
       <Private>true</Private>
     </Reference>
   </ItemGroup>

@@ -1,7 +1,8 @@
 <#
 .SYNOPSIS
   Sets up the Nexus Mods upload of the release CI (.github/workflows/release.yml) on the GitHub repository:
-  secret NEXUSMODS_API_KEY and variables NEXUS_<MOD>_FILE_ID / NEXUS_<MOD>_URL for ModLib and Taoist.
+  secret NEXUSMODS_API_KEY and variables NEXUS_<MOD>_FILE_ID / NEXUS_<MOD>_URL for Taoist (ModLib: in its own repository
+  GuiGuBaHuang-ModLib, NEXUS_MODLIB_FILE_ID / NEXUS_MODLIB_URL).
 
 .DESCRIPTION
   Needs the GitHub CLI (gh) signed in with access to the repository ("gh auth login").
@@ -92,7 +93,7 @@ if ($key -eq "-") {
 } else { Write-Host "  kept" -ForegroundColor DarkGray }
 $key = $null
 
-foreach ($mod in @("ModLib", "Taoist")) {
+foreach ($mod in @("Taoist")) {
     $u = $mod.ToUpper()
     Write-Host ""
     Write-Host "$mod (Enter = keep, '-' = remove; no file id = no Nexus upload of $mod)" -ForegroundColor Cyan
@@ -101,4 +102,4 @@ foreach ($mod in @("ModLib", "Taoist")) {
 }
 
 Write-Host ""
-Write-Host "Done. Next release: VS Code task 'Release: Tag ...' (scripts/create-release-tag.ps1)." -ForegroundColor Green
+Write-Host "Done. Next release: VS Code task 'Release: Tag ...' (GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1)." -ForegroundColor Green

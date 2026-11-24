@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Build ModLib and Taoist (Release) and run the unit tests (tests\UnitTests).
+    Build Taoist (Release; ModLib.dll: the build of the submodule) and run the unit tests (tests\UnitTests).
 .DESCRIPTION
     The tests use the build output in <project>\debug\...\dll and the game assemblies in
     <game>\MelonLoader\Managed (compile/resolve only). Pass -NoBuild to skip the mod builds.
@@ -18,7 +18,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 if (-not $NoBuild) {
-    foreach ($p in '3385996759', '3161035078') {
+    foreach ($p in (Get-Content (Join-Path $repo 'scripts\settings.json') -Raw | ConvertFrom-Json).projects) {
         dotnet build (Join-Path $repo "$p\ModProject\ModCode\ModMain\ModMain.sln") --configuration Release -v q -nologo
         if ($LASTEXITCODE -ne 0) { Write-Host "Build of $p failed" -ForegroundColor Red; exit 1 }
     }

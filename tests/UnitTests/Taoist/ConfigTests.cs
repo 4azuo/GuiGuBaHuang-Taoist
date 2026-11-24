@@ -36,7 +36,7 @@ namespace UnitTests.Taoist
         public void LuckEffects_Exist()
         {
             IEnumerable<string> Ids(string file) => JArray.Parse(File.ReadAllText(file)).Select(x => (string)x["id"]);
-            var sample = TestSetup.Repo("3385996759", "SampleConfs");
+            var sample = TestSetup.Repo("GuiGuBaHuang-ModLib", "3385996759", "SampleConfs");
             var effects = new HashSet<string>(Directory.GetFiles(ModConf, "*roleEffect.json").SelectMany(Ids)
                 .Concat(new[] { "RoleEffect.json", "DLCRoleEffect.json" }.Select(f => Path.Combine(sample, f)).Where(File.Exists).SelectMany(Ids)));
             var missing = new List<string>();
@@ -174,13 +174,13 @@ namespace UnitTests.Taoist
         {
             var keys = new HashSet<string>();
             // Taoist texts + ModLib texts (ModLib is always loaded with Taoist; e.g. TT-04 uses ModLib's libtxt keys)
-            var libConf = TestSetup.Repo("3385996759", "ModProject", "ModConf");
+            var libConf = TestSetup.Repo("GuiGuBaHuang-ModLib", "3385996759", "ModProject", "ModConf");
             foreach (var f in Directory.GetFiles(ModConf, "*localText.json", SearchOption.TopDirectoryOnly)
                          .Concat(Directory.Exists(libConf) ? Directory.GetFiles(libConf, "*localText.json", SearchOption.TopDirectoryOnly) : new string[0]))
                 foreach (var t in JArray.Parse(File.ReadAllText(f)))
                     keys.Add((string)t["key"]);
             // the game's own texts (e.g. common_queding "OK"): SampleConfs/LocalText.json
-            var gameTexts = TestSetup.Repo("3385996759", "SampleConfs", "LocalText.json");
+            var gameTexts = TestSetup.Repo("GuiGuBaHuang-ModLib", "3385996759", "SampleConfs", "LocalText.json");
             if (File.Exists(gameTexts))
                 foreach (var t in JArray.Parse(File.ReadAllText(gameTexts)))
                     keys.Add((string)t["key"]);

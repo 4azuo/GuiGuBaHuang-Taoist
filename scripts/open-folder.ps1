@@ -37,11 +37,12 @@ $targets = [ordered]@{
     'melon-logs'  = if ($p.MelonDir) { Join-Path $p.MelonDir 'Logs' } else { $null }
     'workshop'    = $p.Workshop
 }
-foreach ($id in $p.Projects) {
+foreach ($dir in @($p.Mod.Dependencies) + @($p.Projects)) {
+    $id = Split-Path $dir -Leaf
     $targets["workshop-$id"] = if ($p.Workshop) { Join-Path $p.Workshop $id } else { $null }
 }
-foreach ($id in $p.Projects) {
-    $targets["debug-$id"] = Join-Path $p.Repo "$id\debug"
+foreach ($dir in @($p.Mod.Dependencies) + @($p.Projects)) {
+    $targets["debug-$(Split-Path $dir -Leaf)"] = Join-Path $p.Repo "$dir\debug"
 }
 $targets['game-data'] = $p.GameData
 $targets['mod-logs'] = $p.ModLogs

@@ -4,8 +4,7 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 
 ## Projects
 
-- **GuiGuBaHuang-ModLib** - ModLib source (submodule, public repo `4azuo/GuiGuBaHuang-ModLib`): a change there is committed and pushed in the submodule, then the new submodule commit is committed here
-- **3385996759** - ModLib mod project (ModMain + configs; its solution builds `GuiGuBaHuang-ModLib/ModLib.csproj`, provides ModLib.dll)
+- **GuiGuBaHuang-ModLib** - ModLib (submodule, public repo `4azuo/GuiGuBaHuang-ModLib`): sources `ModLib/` (`ModLib.csproj`), Workshop project `3385996759/` (ModMain + configs + SampleConfs; its solution builds `ModLib/ModLib.csproj`; build output `3385996759/debug/Mod_flQrxq` provides ModLib.dll), shared tools. A change there is committed and pushed in the submodule, then the new submodule commit is committed here. ModLib is built and released in its own repository
 - **3161035078** - Taoist mod (uses ModLib, also the reference example mod)
 - **GuiGuBaHuang-ModCreator** - WPF tool for creating/editing mod projects (submodule; development on hold indefinitely)
 
@@ -14,7 +13,7 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 - **ModProject/ModConf/** - JSON configs (name as `*_<original>.json`, reference SampleConfs)
 - **ModProject/ModCode/** - C# source (solution: `ModProject/ModCode/ModMain/ModMain.sln`)
 - **ModProject/ModImg/** - Assets
-- **3385996759/SampleConfs/** - Templates for all game config types
+- **GuiGuBaHuang-ModLib/3385996759/SampleConfs/** - Templates for all game config types
 - **debug/Mod_xxxxx/** - Build output (`ModCode/dll/`, `ModConf/`, `ModImg/`)
 - **<ProjectId>/scripts/** - Per-project `settings.json` + 2-line wrappers of the shared build/deploy scripts (`GuiGuBaHuang-ModLib/scripts/project/`)
 - **scripts/** - Scripts for all projects + `settings.json` (also names the mod for the shared tools: `modProject`, `modName`, `modId`); `scripts/setup/` for first-time install
@@ -38,7 +37,8 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 - Build + deploy to Steam Workshop: `<ProjectId>/scripts/rebuild-and-deploy.ps1`
 - All projects: `scripts/rebuild-and-deploy-all.ps1`
 - Auto-build watcher writes failures to `<ProjectId>/scripts/auto-built-errors.log` (use `/fix-build-errors`)
-- 3161035078 depends on ModLib.dll from `3385996759/CodeArtifacts/` — rebuild ModLib first when changing it
+- 3161035078 references the ModLib.dll committed in the submodule (`GuiGuBaHuang-ModLib/3385996759/debug/Mod_flQrxq/ModCode/dll/`): after a ModLib change, build ModLib (`GuiGuBaHuang-ModLib/3385996759/scripts/build-project.ps1`), commit its DLL in the submodule, then build Taoist
+- Release: each repository releases its own mod (`GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1`; tasks **Release: Tag Taoist** / **Release: Tag ModLib**), no combined release
 - Same scripts are exposed as VS Code tasks in `.vscode/tasks.json`
 - Environment check: `scripts/setup/04-verify-environment.ps1` (many "missing type/member" build errors after a game update = stale `MelonLoader\Managed`, not code bugs)
 

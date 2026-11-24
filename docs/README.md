@@ -44,7 +44,7 @@ GuiGuBaHuang-ModLib/docs/         docs of the ModLib submodule (also on github.c
 ├── README.md                     map of the ModLib docs
 ├── 00-Architecture.md .. 05-Attributes-Objects.md   ModLib internals: dispatch, load sequence, monthly tick,
 │                                 event reference, caches, built-in events, UI framework, attributes / objects
-├── ModConf/                      the game's config samples (3385996759/SampleConfs): 00-SampleConfs-List.md + 01..12
+├── ModConf/                      the game's config samples (GuiGuBaHuang-ModLib/3385996759/SampleConfs): 00-SampleConfs-List.md + 01..12
 ├── Effects/                      effects of the game recorded by the galleries TE-xx (WebP, Git LFS)
 └── GameAssets/                   pictures extracted from the game (Git LFS): index.html gallery, TextIcons, ItemIcons,
                                   Buildings, DramaBackgrounds

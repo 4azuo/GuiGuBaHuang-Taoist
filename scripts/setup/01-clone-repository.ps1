@@ -73,10 +73,10 @@ else {
 if (-not (Initialize-ModCreator -RepoPath $RepoPath)) {
     Write-Warn 'ModCreator is not ready. See INSTALLATION.md, "ModCreator folder is empty".'
 }
-# ModLib source (submodule GuiGuBaHuang-ModLib, built by the 3385996759 solution)
-if (-not (Test-Path (Join-Path $RepoPath 'GuiGuBaHuang-ModLib\ModLib.csproj'))) {
+# ModLib (submodule GuiGuBaHuang-ModLib: sources in ModLib/, Workshop project and its build in 3385996759/)
+if (-not (Test-Path (Join-Path $RepoPath 'GuiGuBaHuang-ModLib\ModLib\ModLib.csproj'))) {
     git -C $RepoPath submodule update --init GuiGuBaHuang-ModLib
-    if (Test-Path (Join-Path $RepoPath 'GuiGuBaHuang-ModLib\ModLib.csproj')) { Write-Ok 'ModLib submodule initialized' }
+    if (Test-Path (Join-Path $RepoPath 'GuiGuBaHuang-ModLib\ModLib\ModLib.csproj')) { Write-Ok 'ModLib submodule initialized' }
     else { Write-Warn 'ModLib is not ready: run git submodule update --init GuiGuBaHuang-ModLib' }
 }
 

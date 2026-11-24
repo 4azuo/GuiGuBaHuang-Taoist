@@ -466,7 +466,7 @@
     </Reference>
     <Reference Include="MethodBoundaryAspect, Version=2.0.149.0, Culture=neutral, PublicKeyToken=296379d5065c9d61, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\3385996759\debug\Mod_flQrxq\ModCode\dll\MethodBoundaryAspect.dll</HintPath>
+      <HintPath>..\..\..\..\GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\MethodBoundaryAspect.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -475,7 +475,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ModLib">
-      <HintPath>..\..\..\..\3385996759\debug\Mod_flQrxq\ModCode\dll\ModLib.dll</HintPath>
+      <HintPath>..\..\..\..\GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\ModLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.CompilerServices.SymbolWriter">
@@ -513,7 +513,7 @@
     <Reference Include="netstandard" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\3385996759\debug\Mod_flQrxq\ModCode\dll\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Novell.Directory.Ldap">
@@ -955,7 +955,7 @@
 rd "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModCode\dll" /s /q
 rd "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModConf" /s /q
 rd "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModImg" /s /q
-xcopy "$(ProjectDir)\..\..\..\..\3385996759\CodeArtifacts\*.dll" "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModCode\dll\" /y /i
+xcopy "$(ProjectDir)\..\..\..\..\GuiGuBaHuang-ModLib\3385996759\CodeArtifacts\*.dll" "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModCode\dll\" /y /i
 xcopy "$(ProjectDir)\bin\Release\*.dll" "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModCode\dll\" /y /i
 xcopy "$(ProjectDir)\..\..\ModConf\*.*" "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModConf\" /y /i /e /h /c
 xcopy "$(ProjectDir)\..\..\ModImg\*.*" "$(ProjectDir)\..\..\..\debug\Mod_nE7UL2\ModImg\" /y /i /e /h /c</PostBuildEvent>

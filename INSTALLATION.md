@@ -190,7 +190,7 @@ Find your paths first:
 
 Open each file below in a text editor (Notepad++, VS Code) and set the values. In JSON, **every backslash must be doubled**: `C:\\git\\GuiGuBaHuang-Taoist`.
 
-**`scripts\settings.json`** and **`3161035078\scripts\settings.json`** and **`3385996759\scripts\settings.json`**
+**`scripts\settings.json`** and **`3161035078\scripts\settings.json`** and **`GuiGuBaHuang-ModLib\3385996759\scripts\settings.json`**
 
 | Key | Value |
 |---|---|
@@ -210,7 +210,7 @@ Open each file below in a text editor (Notepad++, VS Code) and set the values. I
 | `steamWorkshopDir` | Workshop folder |
 | `gameFolderPath` | Game folder |
 
-Example (`3385996759\scripts\settings.json`):
+Example (`GuiGuBaHuang-ModLib\3385996759\scripts\settings.json`):
 
 ```json
 {
@@ -225,7 +225,7 @@ Example (`3385996759\scripts\settings.json`):
 
 > These files are tracked by git. If your paths differ from the committed ones, the files show up as changed.
 > To keep your local paths out of commits:
-> `git update-index --skip-worktree scripts/settings.json 3161035078/scripts/settings.json 3385996759/scripts/settings.json`
+> `git update-index --skip-worktree scripts/settings.json 3161035078/scripts/settings.json GuiGuBaHuang-ModLib/3385996759/scripts/settings.json`
 > (undo with `--no-skip-worktree`). Remember to undo it before you intentionally change other keys in those files.
 
 **Check:** each file still opens as valid JSON, e.g. `Get-Content scripts\settings.json -Raw | ConvertFrom-Json` prints the values without an error.
@@ -248,11 +248,12 @@ Without the script, check by hand:
 
 ## First build
 
-Always build ModLib first. The other mods reference `ModLib.dll` from `3385996759\CodeArtifacts\`.
+Taoist references the `ModLib.dll` committed in the submodule (`GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\`):
+build ModLib only when you change it.
 
 ```powershell
 cd <repository>
-powershell -NoProfile -ExecutionPolicy Bypass -File .\3385996759\scripts\build-project.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModLib\3385996759\scripts\build-project.ps1   # only after a ModLib change
 powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-project.ps1
 # ModCreator (WPF tool)
 powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModCreator\build.ps1

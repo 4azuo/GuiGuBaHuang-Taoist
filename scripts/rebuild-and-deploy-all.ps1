@@ -45,7 +45,7 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "`n========================================" -ForegroundColor Green
     Write-Host "🎉 ALL PROJECTS DEPLOYMENT COMPLETED! 🎉" -ForegroundColor Green
     Write-Host "========================================" -ForegroundColor Green
-    Write-Host "Both projects have been rebuilt and deployed to Steam Workshop!" -ForegroundColor White
+    Write-Host "The projects have been rebuilt and deployed (with the ModLib build of the submodule) to Steam Workshop!" -ForegroundColor White
 } else {
     Write-Host "❌ Copy to Steam script failed!" -ForegroundColor Red
     exit $LASTEXITCODE

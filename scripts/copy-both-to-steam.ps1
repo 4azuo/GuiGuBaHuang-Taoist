@@ -53,11 +53,12 @@ function Copy-WithExclusions {
     }
 }
 
-# Process each project
-foreach ($projectId in $settings.projects) {
-    Write-Host "`n[Project $projectId]" -ForegroundColor Yellow
+# Process each project: the dependencies (the ModLib build of the submodule) first
+foreach ($projectPath in @($settings.dependencies | Where-Object { $_ }) + @($settings.projects)) {
+    $projectId = Split-Path $projectPath -Leaf
+    Write-Host "`n[Project $projectPath]" -ForegroundColor Yellow
     
-    $source = Join-Path $repositoryPath $projectId
+    $source = Join-Path $repositoryPath $projectPath
     $dest = Join-Path $steamWorkshopPath $projectId
     
     # Check if source exists

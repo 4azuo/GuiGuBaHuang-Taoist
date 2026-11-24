@@ -86,7 +86,7 @@ function Test-SamePath([string]$A, [string]$B) {
 
 function Test-RepoRoot([string]$Path) {
     if ([string]::IsNullOrWhiteSpace($Path)) { return $false }
-    return (Test-Path (Join-Path $Path '3385996759')) -and (Test-Path (Join-Path $Path 'scripts\settings.json'))
+    return (Test-Path (Join-Path $Path '.gitmodules')) -and (Test-Path (Join-Path $Path 'scripts\settings.json'))
 }
 
 # Repo root when the script runs from <repo>\scripts\setup, otherwise $null.

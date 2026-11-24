@@ -58,7 +58,7 @@ if ($repo) {
     if (Test-Path (Join-Path $mcDir 'ModCreator.sln')) { Add-Check PASS 'ModCreator checked out' }
     else { Add-Check FAIL 'ModCreator checked out' "$mcDir is empty" '.\scripts\setup\01-clone-repository.ps1 -RepoPath <repo>' }
     $mlDir = Join-Path $repo 'GuiGuBaHuang-ModLib'
-    if (Test-Path (Join-Path $mlDir 'ModLib.csproj')) { Add-Check PASS 'ModLib checked out' }
+    if (Test-Path (Join-Path $mlDir 'ModLib\ModLib.csproj')) { Add-Check PASS 'ModLib checked out' }
     else { Add-Check FAIL 'ModLib checked out' "$mlDir is empty" 'git submodule update --init GuiGuBaHuang-ModLib' }
 
     # ---- settings files
@@ -162,5 +162,5 @@ if ($fail -gt 0) {
     exit 1
 }
 Write-Ok "All required checks passed ($warn warning(s))"
-Write-Info 'Build: powershell -NoProfile -ExecutionPolicy Bypass -File .\3385996759\scripts\build-project.ps1'
+Write-Info 'Build: powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-project.ps1'
 exit 0
