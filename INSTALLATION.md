@@ -1,6 +1,10 @@
 # GuiGuBaHuang-Taoist Installation Guide
 
-How to set up a Windows machine to build ModLib (3385996759), the Taoist mod (3161035078) and ModCreator (development on hold: optional).
+How to set up a Windows machine to build the Taoist mod (3161035078) and ModCreator (development on hold: optional).
+
+ModLib comes with the repository as the `GuiGuBaHuang-ModLib` submodule, already built: Taoist uses its `ModLib.dll`
+and its shared scripts, nothing to install or build for it. To work on ModLib itself, see the installation guide of
+its repository: [GuiGuBaHuang-ModLib/INSTALLATION.md](https://github.com/4azuo/GuiGuBaHuang-ModLib/blob/main/INSTALLATION.md).
 
 There are two ways:
 
@@ -26,9 +30,9 @@ Both end with the same result. If anything goes wrong, see [Troubleshooting](#tr
 
 | Tool | Needed for | Required? |
 |---|---|---|
-| .NET Framework **4.7.2** Developer Pack | Building ModLib and the mods (they target .NET Framework 4.7.2) | Yes |
+| .NET Framework **4.7.2** Developer Pack | Building the mod (it targets .NET Framework 4.7.2) | Yes |
 | .NET 9 SDK | `dotnet` command (build scripts) and building ModCreator | Yes |
-| Git | Downloading the repository | Yes |
+| Git + Git LFS | Downloading the repository (the DLLs and pictures are in Git LFS) | Yes |
 | Python 3 | Auto-build watcher, `Translate` tool | Recommended |
 | 7-Zip (or WinRAR) | Extracting `BaseGameResources` | Recommended |
 | GitHub CLI | Starring the repo, pull requests | Optional |
@@ -40,14 +44,15 @@ Both end with the same result. If anything goes wrong, see [Troubleshooting](#tr
 
 ### A1. New machine (repository not downloaded yet)
 
-1. Create a temporary folder, e.g. `C:\temp\modlib-install`.
+1. Create a temporary folder, e.g. `C:\temp\taoist-install`.
 2. Download **only** [`install.ps1`](https://raw.githubusercontent.com/4azuo/GuiGuBaHuang-Taoist/main/scripts/setup/install.ps1) into it
-   (right-click the link → *Save link as…*). The other setup scripts are downloaded automatically.
+   (right-click the link → *Save link as…*). The other setup scripts are downloaded automatically (the shared steps
+   from the ModLib repository).
 3. Open **PowerShell as Administrator**: press `Win + X` → **Terminal (Admin)**.
 4. Run:
 
    ```powershell
-   cd C:\temp\modlib-install
+   cd C:\temp\taoist-install
    powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
    ```
 
@@ -154,8 +159,8 @@ git clone --recurse-submodules https://github.com/4azuo/GuiGuBaHuang-Taoist.git
 cd GuiGuBaHuang-Taoist
 ```
 
-The two submodules are separate repositories: `GuiGuBaHuang-ModLib` (ModLib source and its `docs/`; the pictures of
-`docs/Effects` and `docs/GameAssets`, about 500 MB, are in Git LFS: run `git lfs install` once before cloning) and
+The two submodules are separate repositories: `GuiGuBaHuang-ModLib` (ModLib with its build `ModLib.dll` used by Taoist,
+and the shared scripts; its DLLs and pictures are in Git LFS: run `git lfs install` once before cloning) and
 `GuiGuBaHuang-ModCreator`.
 
 If the `GuiGuBaHuang-ModCreator` folder is empty after cloning (the submodule entry in `.gitmodules` may be missing), fetch it yourself at the commit this repository expects:
@@ -174,7 +179,7 @@ ModCreator's base-game config browser needs the archive `BaseGameResources <vers
 
 Extract it so the files end up in `GuiGuBaHuang-ModCreator\BaseGameResources <version>\`. With 7-Zip: right-click the archive → **7-Zip → Extract to "BaseGameResources <version>\"**.
 
-You can skip this step. ModLib and the mods build without it.
+You can skip this step. Taoist builds without it.
 
 **Check:** `GuiGuBaHuang-ModCreator\BaseGameResources <version>\` contains files directly (not one more nested folder).
 
@@ -190,14 +195,14 @@ Find your paths first:
 
 Open each file below in a text editor (Notepad++, VS Code) and set the values. In JSON, **every backslash must be doubled**: `C:\\git\\GuiGuBaHuang-Taoist`.
 
-**`scripts\settings.json`** and **`3161035078\scripts\settings.json`** and **`GuiGuBaHuang-ModLib\3385996759\scripts\settings.json`**
+**`scripts\settings.json`** and **`3161035078\scripts\settings.json`**
 
 | Key | Value |
 |---|---|
 | `repositoryPath` | Repository folder |
 | `steamWorkshopPath` | Workshop folder |
-| `projects` *(root file only)* | Project ids built by the "all" scripts. Keep `3385996759` first (ModLib must build before the mods) |
-| `projectId`, `modName`, `autoBuild…` *(project files)* | Leave as they are |
+| `projects`, `dependencies`, `modProject`, `modName`, `modId` *(root file only)* | Leave as they are (`projects`: built and released here; `dependencies`: the ModLib build of the submodule, deployed with Taoist, not built) |
+| `projectId`, `modName`, `release…`, `version…`, `autoBuild…` *(project file)* | Leave as they are |
 
 **`GuiGuBaHuang-ModCreator\ModCreator\Resources\settings.json`**
 
@@ -206,26 +211,24 @@ Open each file below in a text editor (Notepad++, VS Code) and set the values. I
 | `rootDir` | Repository folder |
 | `modCreatorDir` | `<repository>\GuiGuBaHuang-ModCreator` |
 | `baseGameResourcesDir` | Folder extracted in step 3 (leave as is if you skipped it) |
-| `translateScriptPath` | `<repository>\Translate\run.py` |
+| `translateScriptPath` | `<repository>\GuiGuBaHuang-ModLib\Translate\run.py` |
 | `steamWorkshopDir` | Workshop folder |
 | `gameFolderPath` | Game folder |
 
-Example (`GuiGuBaHuang-ModLib\3385996759\scripts\settings.json`):
+Example (`3161035078\scripts\settings.json`, other keys left out):
 
 ```json
 {
-    "projectId": "3385996759",
-    "modName": "Mod_flQrxq",
+    "projectId": "3161035078",
+    "modName": "Mod_nE7UL2",
     "steamWorkshopPath": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1468810",
-    "repositoryPath": "D:\\Projects\\GuiGuBaHuang-Taoist",
-    "autoBuildDebounceSeconds": 300,
-    "rapidChangeDebounceSeconds": 5
+    "repositoryPath": "D:\\Projects\\GuiGuBaHuang-Taoist"
 }
 ```
 
 > These files are tracked by git. If your paths differ from the committed ones, the files show up as changed.
 > To keep your local paths out of commits:
-> `git update-index --skip-worktree scripts/settings.json 3161035078/scripts/settings.json GuiGuBaHuang-ModLib/3385996759/scripts/settings.json`
+> `git update-index --skip-worktree scripts/settings.json 3161035078/scripts/settings.json`
 > (undo with `--no-skip-worktree`). Remember to undo it before you intentionally change other keys in those files.
 
 **Check:** each file still opens as valid JSON, e.g. `Get-Content scripts\settings.json -Raw | ConvertFrom-Json` prints the values without an error.
@@ -240,7 +243,8 @@ Without the script, check by hand:
 
 - [ ] Step 1 checks pass
 - [ ] `GuiGuBaHuang-ModCreator\ModCreator.sln` exists
-- [ ] `repositoryPath` in the 3 settings files is your repository folder
+- [ ] `GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\ModLib.dll` is a real DLL (about 200 KB, not a 130-byte Git LFS pointer)
+- [ ] `repositoryPath` in the 2 settings files is your repository folder
 - [ ] `<game folder>\MelonLoader\Managed\Assembly-CSharp.dll` exists
 - [ ] The game is at `C:\Program Files (x86)\Steam\steamapps\common\鬼谷八荒`, or you created the junction described in [Game installed in another folder](#game-installed-in-another-folder)
 
@@ -248,18 +252,17 @@ Without the script, check by hand:
 
 ## First build
 
-Taoist references the `ModLib.dll` committed in the submodule (`GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\`):
-build ModLib only when you change it.
+Taoist references the `ModLib.dll` of the submodule (`GuiGuBaHuang-ModLib\3385996759\debug\Mod_flQrxq\ModCode\dll\`): ModLib is
+not built here.
 
 ```powershell
 cd <repository>
-powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModLib\3385996759\scripts\build-project.ps1   # only after a ModLib change
 powershell -NoProfile -ExecutionPolicy Bypass -File .\3161035078\scripts\build-project.ps1
 # ModCreator (WPF tool)
 powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModCreator\build.ps1
 ```
 
-Output goes to `<ProjectId>\debug\Mod_xxxxx\`. To build **and** copy everything to the Steam Workshop folder: `.\scripts\rebuild-and-deploy-all.ps1`.
+Output goes to `3161035078\debug\Mod_nE7UL2\`. To build **and** copy Taoist (with the ModLib of the submodule) to the Steam Workshop folder: `.\scripts\rebuild-and-deploy-all.ps1`.
 In VS Code: **Terminal → Run Task…** (`Ctrl+Shift+B` = "All: Rebuild & Deploy"). More in [docs/07-Build-Deploy.md](docs/07-Build-Deploy.md).
 
 ---
@@ -281,6 +284,10 @@ Windows ships a fake `python` alias. Install Python from python.org with **Add t
 ### `GuiGuBaHuang-ModCreator` folder is empty / "no submodule mapping found in .gitmodules"
 Run `.\scripts\setup\01-clone-repository.ps1 -RepoPath <repository>`, or follow the manual commands in [step 2](#step-2--download-the-repository).
 
+### Build errors about ModLib types, or "ModLib.dll" is only a few hundred bytes
+The DLLs of the submodule are in Git LFS and were not downloaded (Git LFS was not installed when cloning). Run
+`git lfs install`, then `git -C GuiGuBaHuang-ModLib lfs pull`.
+
 ### Build error MSB3644: "reference assemblies for .NETFramework,Version=v4.7.2 were not found"
 The 4.7.2 **Developer Pack** is missing. Having .NET Framework 4.8 installed is not enough. Install `netfx-4.7.2-devpack` ([step 1](#step-1--install-the-tools)).
 
@@ -294,7 +301,7 @@ The 4.7.2 **Developer Pack** is missing. Having .NET Framework 4.8 installed is 
 Fix: let MelonLoader run once so it regenerates them (2–5 minutes), then build again:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\game\run-game.ps1 -UntilModLoaded -StopGame -Duration 900
+powershell -NoProfile -ExecutionPolicy Bypass -File .\GuiGuBaHuang-ModLib\scripts\game\run-game.ps1 -UntilModLoaded -StopGame -Duration 900
 ```
 
 Look for `Assembly Generation Successful!` in the output and `"assembliesRegenerated": true` in the run's `summary.json`.
