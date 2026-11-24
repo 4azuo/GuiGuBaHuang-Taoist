@@ -35,6 +35,18 @@ One file per feature in `ModProject/ModConf/`, read once in `ModMain.OnLoadClass
 | `expert_configs.json` | `ExpertConfig` (MartialType) | ExpertEvent, UnitModifyHelper | `SkillDmgRatios`, `SkillExpRatios`, artifact exp rates |
 | `battle_reward_configs.json` | `BattleRewardConfig` | BattleRewardEventV2 | `ExpPerDmgDealt`, `ExpPerDmgRecv` |
 
+## ModLib files (read by ModLib, not by Taoist code)
+
+| File | Read by | Settings |
+|---|---|---|
+| `crash_reports.json` | `CrashReportHelper` | error reports of Taoist: `Database` (BugSplat), `ModName`, `LogLines` |
+| `taoist_1_wallpaper.json`, `taoist_2_wallpaper.json` | `WallpaperHelper` (one file per wallpaper, `*_wallpaper.json`) | `image` (`ModImg/taoist_1_wallpaper.png`, `taoist_2_wallpaper.png`, 2560x1440), `order` (1, 2), `hideGameTitle` (true), `startupRate` (0.25 each: half of the starts on one of them), `startupWhenChosen` (false) |
+
+The wallpapers are listed in the game's Change Theme window and shown on the title screen; format and behavior:
+[guide/08-Wallpapers](../../GuiGuBaHuang-ModLib/docs/guide/08-Wallpapers.md), Taoist side:
+[Features/UITitleScreenEvent](Features/UITitleScreenEvent.md#wallpapers). Another wallpaper = an image in `ModImg` +
+a new `<name>_wallpaper.json` (no code); keep the total of the `startupRate` of the Taoist files at the wanted chance.
+
 ## S&M configs (difficulty)
 
 Edited on the title screen (`SMGlobalConfigsEvent`, saved in `mod\nE7UL2\globals\SMGlobalEvent.json`), copied into each **new** save (`SMLocalConfigsEvent`, `saves\<playerId>\SMLocalEvent.json`). Changing the global configs does not affect existing saves.

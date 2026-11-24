@@ -93,7 +93,7 @@ One row per event class; the detailed page of each class (saved data, switches, 
 | `UISettingScreenEvent` | Taoist settings (large window): hide damage multiplier, hide exception logs, market notifications, random encounters, Taoist log | TG-27, TM-27 |
 | `AnimaWeaponEvent` | Several divine artifacts: buttons side by side on the map and in battles; a hotkey per artifact bound in Settings > Bindings (rows added to the combat and map lists); map: opens the artifact window, battle: uses its skill (global) | TB-16 |
 | `TaoistLogEvent` | Taoist log of the save (taxes, fees, deals, buy orders, loans, encounters, stalkers...), shown in the current language from Taoist Settings; "Year 1, Month 2" and an icon per entry (`Icon(key)`) | TG-27 |
-| `UITitleScreenEvent` | Version button, Workshop description, ModLib version check | TT-01 |
+| `UITitleScreenEvent` | Version button, Workshop description, ModLib version check; Taoist wallpapers (no code: `ModConf/taoist_*_wallpaper.json`, shown by ModLib) | TT-01, TT-09 |
 | `UICreatePlayerEvent` | Prioritized destiny level at character creation | TM-02 |
 | `UIDifficultyEvent` | Hides vanilla difficulty descriptions | TM-01 |
 | `EncounterEvent` | Random monthly encounters (S&M EncounterRate, default 3 %) with choices and small rewards: wounded cultivator, chess hermit, hooded peddler, collapsed cave, spirit beast cub, town festival; NPCs get their own fortunes (0.2 %/year: exp) and ancient inheritances (0.02 %/year: exp, Talent, Luck), max 10 a year | TG-55, TX-08 |

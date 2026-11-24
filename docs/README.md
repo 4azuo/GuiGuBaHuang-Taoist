@@ -35,7 +35,7 @@ GuiGuBaHuang-ModLib/              the ModLib submodule (github.com/4azuo/GuiGuBa
 └── docs/
     ├── README.md                 map of the ModLib docs
     ├── guide/                    writing a mod with ModLib: 00-Getting-Started, 01-ModMain, 02-Events, 03-Configs,
-    │                             04-LocalText, 05-Helpers, 06-Debug, 07-Build-Deploy
+    │                             04-LocalText, 05-Helpers, 06-Debug, 07-Build-Deploy, 08-Wallpapers
     ├── 00-Architecture.md .. 05-Attributes-Objects.md   ModLib internals
     ├── 06-Shared-Tools.md        the tools shared by the mod repositories (scripts, viewers, Translate, tests, setup)
     ├── ModConf/                  the game's config samples (3385996759/SampleConfs): 00-SampleConfs-List.md + 01..12
@@ -52,6 +52,7 @@ GuiGuBaHuang-ModCreator/docs/     docs of the ModCreator submodule (on hold): 00
 | set up the machine | `../INSTALLATION.md` |
 | build, deploy, release Taoist | `Taoist/08-Build-Release.md`, `../GuiGuBaHuang-ModLib/docs/guide/07-Build-Deploy.md` |
 | write a feature (event, UI, config, text) | `../GuiGuBaHuang-ModLib/docs/guide/02-Events.md`, `../GuiGuBaHuang-ModLib/docs/04-UI-Framework.md`, `guide/03-Configs.md`, `guide/04-LocalText.md` (+ the Taoist files: `Taoist/02-Configs.md`) |
+| add or change a title screen wallpaper | `Taoist/02-Configs.md` (ModLib files), `../GuiGuBaHuang-ModLib/docs/guide/08-Wallpapers.md` |
 | find a config type of the game and its fields | `../GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md` |
 | know what a Taoist feature does, its hooks and tests | `Taoist/01-Features.md` (summary), `Taoist/Features/<Class>.md` (details, formulas) |
 | run / read the autotests, the viewers, the promo pictures, the video | `Taoist/04-Autotest.md` |
