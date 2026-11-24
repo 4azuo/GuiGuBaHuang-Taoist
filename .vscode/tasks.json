@@ -14,7 +14,6 @@
             "type": "pickString",
             "description": "Select project",
             "options": [
-                { "label": "3385996759 - ModLib (submodule)", "value": "GuiGuBaHuang-ModLib/3385996759" },
                 { "label": "3161035078 - Taoist", "value": "3161035078" }
             ],
             "default": "3161035078"
@@ -94,15 +93,6 @@
         },
 
         // ===== Release (tag -> CI .github/workflows/release.yml: zip debug/<mod>, GitHub Release, Nexus Mods) =====
-        {
-            "label": "Release: Tag ModLib",
-            "detail": "Tag ModLib-<version in ModMain.cs> on HEAD of GuiGuBaHuang-ModLib and push it: the CI of GuiGuBaHuang-ModLib zips debug/Mod_flQrxq and publishes the release",
-            "type": "process",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1", "-RepoRoot", "${workspaceFolder}/GuiGuBaHuang-ModLib"],
-            "presentation": { "focus": true },
-            "problemMatcher": []
-        },
         {
             "label": "Release: Tag Taoist",
             "detail": "Tag Taoist-<TAOIST_VERSION> on HEAD and push it: the CI zips debug/Mod_nE7UL2 and publishes the release",
@@ -389,15 +379,6 @@
             "type": "process",
             "command": "powershell.exe",
             "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/setup-nexus.ps1", "-RepoPath", "${workspaceFolder}"],
-            "presentation": { "focus": true },
-            "problemMatcher": []
-        },
-        {
-            "label": "Setup: Nexus Mods ModLib (CI)",
-            "detail": "Same for the release CI of GuiGuBaHuang-ModLib: secret NEXUSMODS_API_KEY, variables NEXUS_MODLIB_FILE_ID / _URL of that repository (needs gh)",
-            "type": "process",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/GuiGuBaHuang-ModLib/scripts/setup/setup-nexus.ps1", "-RepoPath", "${workspaceFolder}/GuiGuBaHuang-ModLib"],
             "presentation": { "focus": true },
             "problemMatcher": []
         },

@@ -38,7 +38,7 @@ Always build in Release. Run scripts with `powershell -NoProfile -ExecutionPolic
 - All projects: `GuiGuBaHuang-ModLib/scripts/rebuild-and-deploy-all.ps1`
 - Auto-build watcher writes failures to `<ProjectId>/scripts/auto-built-errors.log` (use `/fix-build-errors`)
 - 3161035078 references the ModLib.dll committed in the submodule (`GuiGuBaHuang-ModLib/3385996759/debug/Mod_flQrxq/ModCode/dll/`): after a ModLib change, build ModLib (`GuiGuBaHuang-ModLib/3385996759/scripts/build-project.ps1`), commit its DLL in the submodule, then build Taoist
-- Release: each repository releases its own mod (`GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1`; tasks **Release: Tag Taoist** / **Release: Tag ModLib**), no combined release
+- Release: each repository releases its own mod (`GuiGuBaHuang-ModLib/scripts/release/create-release-tag.ps1`; task **Release: Tag Taoist** here; ModLib from its own repository and its VS Code tasks), no combined release
 - Same scripts are exposed as VS Code tasks in `.vscode/tasks.json`
 - Environment check: `GuiGuBaHuang-ModLib/scripts/setup/04-verify-environment.ps1` (many "missing type/member" build errors after a game update = stale `MelonLoader\Managed`, not code bugs)
 
