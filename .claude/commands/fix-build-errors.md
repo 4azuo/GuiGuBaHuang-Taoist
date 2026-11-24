@@ -1,8 +1,9 @@
 ---
 description: Fix build errors from auto-built-errors.log, rebuild until clean
-argument-hint: "[projectId: 3161035078 | 3385996759]"
+argument-hint: "[projectId: 3161035078]"
 ---
-Project: $ARGUMENTS (if empty, check both `3161035078` and `3385996759`).
+Project: $ARGUMENTS (if empty, `3161035078`). ModLib (`GuiGuBaHuang-ModLib/3385996759`) is built in its own repository: for a
+ModLib error, follow `GuiGuBaHuang-ModLib/.claude/commands/fix-build-errors.md` there and commit the new ModLib DLLs in the submodule.
 
 1. Read `<ProjectId>/scripts/auto-built-errors.log`. If it does not exist, run `<ProjectId>/scripts/rebuild-project.ps1` to get the current errors.
 2. If there are compilation errors, fix the source code to resolve them.

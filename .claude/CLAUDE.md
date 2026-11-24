@@ -16,12 +16,12 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 - **GuiGuBaHuang-ModLib/3385996759/SampleConfs/** - Templates for all game config types
 - **debug/Mod_xxxxx/** - Build output (`ModCode/dll/`, `ModConf/`, `ModImg/`)
 - **<ProjectId>/scripts/** - Per-project `settings.json` + 2-line wrappers of the shared build/deploy scripts (`GuiGuBaHuang-ModLib/scripts/project/`)
-- **scripts/** - Scripts for all projects + `settings.json` (also names the mod for the shared tools: `modProject`, `modName`, `modId`); `scripts/setup/` for first-time install (Taoist steps: install, clone, ModCreator resources; the shared steps are in `GuiGuBaHuang-ModLib/scripts/setup/`)
-- **Shared tools in ModLib** (used by every mod repository holding ModLib, e.g. Dao of Creation; the data stays in the mod repository): `GuiGuBaHuang-ModLib/scripts/game/` (game runs, autotest, game slots, promo, effect galleries), `scripts/project/` (build/deploy), `test-viewer/` + `promo-viewer/` (pages generated into `logs/test-viewer/` / `logs/promo-viewer/` here), `Translate/` (cache in `.translate-cache/` here), `tests/` (shared unit test setup + ModLib tests, `tests/UnitTests.props`), `tools/SlotDataPath/`. A change there is a ModLib change (commit + push in the submodule)
+- **scripts/** - `settings.json` (projects, dependencies, and the mod for the shared tools: `modProject`, `modName`, `modId`), `setup/` (Taoist steps of the first-time install: install, clone, ModCreator resources), `game/export-scenarios-doc.py`; every other script is shared in `GuiGuBaHuang-ModLib/scripts/` (run from this repository: it works on the git repository of the current folder)
+- **Shared tools in ModLib** (used by every mod repository holding ModLib, e.g. Dao of Creation; the data stays in the mod repository): `GuiGuBaHuang-ModLib/scripts/game/` (game runs, autotest, game slots, promo, effect galleries), `scripts/project/` (build/deploy), `test-viewer/` + `promo-viewer/` (pages generated into `logs/test-viewer/` / `logs/promo-viewer/` here), `Translate/` (cache in `.translate-cache/` here), `tests/` (shared unit test setup `tests/UnitTests.props`; the ModLib tests run in ModLib), `tools/SlotDataPath/`, `docs/guide/` (writing a mod with ModLib). A change there is a ModLib change (commit + push in the submodule)
 
 ## Guidelines
 
-- Folder-specific rules live in `.claude/rules/` and load automatically for matching files
+- Folder-specific rules live in `.claude/rules/` (Taoist) and load automatically for matching files; for a change in the submodules, read their own `CLAUDE.md` and `.claude/rules/` first (`GuiGuBaHuang-ModLib/CLAUDE.md`, `GuiGuBaHuang-ModCreator/.claude/rules/`)
 - Use existing Helper utilities before creating new ones
 - Check SampleConfs when working with configs
 - Search for existing patterns before implementing new features

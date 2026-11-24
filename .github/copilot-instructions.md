@@ -1,15 +1,15 @@
 ## Project Context
 
-Two main projects:
-- **3385996759** - ModLib framework (core library)
 - **3161035078** - Taoist mod (uses ModLib)
+- **GuiGuBaHuang-ModLib** - submodule: ModLib (sources `ModLib/`, Workshop project `3385996759/` with `SampleConfs/`, the ModLib.dll used here) and the shared tools; its own instructions: `GuiGuBaHuang-ModLib/.github/`
+- **GuiGuBaHuang-ModCreator** - submodule: ModCreator tool (on hold); its own instructions: `GuiGuBaHuang-ModCreator/.github/`
 
 ## Working Principles
 
 ### Structure
 - **ModConf/** - JSON configs (name as `*_<original>.json`, reference SampleConfs)
 - **ModCode/** - C# source (compiles to ModCode/dll/)
-- **SampleConfs/** - Templates for all config types (project 3385996759)
+- **GuiGuBaHuang-ModLib/3385996759/SampleConfs/** - Templates for all config types
 
 ### Guidelines
 - Read instruction files before modifying matching code
@@ -26,19 +26,11 @@ Two main projects:
 
 ## Documentation
 
-Files in `docs/`:
-- **00-Getting-Started.md** - Setup and structure
-- **01-ModMain.md** - ModMain class and initialization
-- **02-Events.md** - Event system
-- **03-Configs.md** - Configuration structure
-- **04-LocalText.md** - Localization
-- **05-Helpers.md** - Helper functions
-- **06-Debug.md** - Debugging
-- **07-Build-Deploy.md** - Build scripts
-- **Taoist/** - Taoist features, configs, test scenarios, autotest
+Files in `docs/`: `README.md` (map), `Known-Issues.md`, `Taoist/` (Taoist features, configs, test scenarios, autotest, build / release).
 
 In the submodules:
-- **GuiGuBaHuang-ModLib/docs/** - ModLib architecture, event reference, cache, built-in events, UI framework
+- **GuiGuBaHuang-ModLib/docs/guide/** - writing a mod with ModLib (setup, ModMain, events, configs, LocalText, helpers, debug, build)
+- **GuiGuBaHuang-ModLib/docs/** - ModLib architecture, event reference, cache, built-in events, UI framework, shared tools
 - **GuiGuBaHuang-ModLib/docs/ModConf/00-SampleConfs-List.md** - Config samples list
 - **GuiGuBaHuang-ModLib/docs/GameAssets/**, **Effects/** - Pictures and effects of the game (Git LFS)
 - **GuiGuBaHuang-ModCreator/docs/** - ModCreator tool
