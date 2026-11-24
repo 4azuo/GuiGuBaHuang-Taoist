@@ -7,8 +7,8 @@ The scenarios of [03-Test-Scenarios](03-Test-Scenarios.md) run **inside the real
 | Piece | Location | Role |
 |---|---|---|
 | Orchestrator | `GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1` | Writes the request, starts the game (`run-game.ps1`), shows progress, collects evidence, writes the report and the OK/NG status |
-| In-game runner | `ModMain/Mod/AutoTestEvent.cs` | Loaded **only** while `<game data>\mod\nE7UL2\autotest\request.json` exists **and** the `run-autotest.ps1` that wrote it still runs (`OwnerPid` + `OwnerStart` of the request): a request left by a killed script (closed terminal: its `finally` never removes the file) is moved to `request.stale.json` and the game plays normally. State machine: title scenarios -> load save -> game scenarios -> battle watch -> done |
-| Framework | `ModMain/AutoTest/AutoTestContext.cs`, `AutoTestHelper.cs`, `AutoTestScenarios.cs` | Request/result models, `Assert/AssertEqual/AssertBetween/Info/Skip/Snap`, registry that finds every scenario class by reflection |
+| In-game runner | `GuiGuBaHuang-ModLib/ModLib/AutoTest/AutoTestRunner.cs` (ModLib, shared by the mods) + `ModMain/Mod/AutoTestEvent.cs` (the Taoist subclass: cache id, version, storylines off, TP-01, the data of the cultivation paths and S&M settings put back between scenarios, hired NPCs never fought) | Loaded **only** while `<game data>\mod\nE7UL2\autotest\request.json` exists **and** the `run-autotest.ps1` that wrote it still runs (`OwnerPid` + `OwnerStart` of the request): a request left by a killed script (closed terminal: its `finally` never removes the file) is moved to `request.stale.json` and the game plays normally. State machine: title scenarios -> load save -> game scenarios -> battle watch -> done |
+| Framework | `GuiGuBaHuang-ModLib/ModLib/AutoTest/` (`AutoTestContext.cs`: request/result models, `Assert/AssertEqual/AssertBetween/Info/Skip/Snap`; `ScenarioRegistry.cs`: finds every `IScenarioDefinition` by reflection; `MockBugSplatServer.cs`); Taoist: `ModMain/AutoTest/AutoTestHelper.cs`, `TownTestHelper.cs`, `AutoTestScenarios.cs` (the registry on Taoist + ModLib) | |
 | Scenarios | `ModMain/AutoTest/Scenarios/<Group>/<Id>_<Feature>.cs` | One class (`IScenarioDefinition`) per scenario id. Groups: Title, Core, Economy, Unit, BattleRule, Progression, UI, Battle |
 | Definitions | `3161035078/tests/scenarios.json` | All ids (auto, watch) with description/preconditions/steps/expected; there are no manual scenarios any more (every former `TM-nn` id is covered by an automatic one, see `replaces`) |
 | Status | `3161035078/tests/scenario-status.json` | Latest OK/NG of every id (and of every check id), JSON with 2-space indent |
@@ -158,8 +158,8 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
 - `kind: "tool"` scenarios (`ScenarioKind.Tool`) are not tests: they run only when asked by id (`-Scenario TE-01`), never in a
   full run or `-Failed`. They run long: only once the user confirmed it (a prompt in an interactive terminal,
   `-ConfirmTools` otherwise - `run-autotest.ps1` and `run-effect-gallery.ps1` refuse them without it).
-- **Effect galleries** (`AutoTest/Scenarios/Tool/TE_EffectGallery.cs`): TE-01 skill, TE-02 unit, TE-03 scene effects. The list is
-  read from the game (`Resources` + asset bundles) and written to the run folder; `ModConf/_Def_Res_Efx_Battle_*.txt` is the
+- **Effect galleries** (ModLib: `GuiGuBaHuang-ModLib/ModLib/AutoTest/Scenarios/EffectGallery.cs`, scenarios of every mod's runner): TE-01 skill, TE-02 unit, TE-03 scene effects. The list is
+  read from the game (`Resources` + asset bundles) and written to the run folder; `ModConf/_Def_Res_Efx_Battle_*.txt` of ModLib (3385996759) is the
   fallback and is replaced by the fresh list after the run (added / removed effects printed). In a battle with the other units
   moved away and hidden, their AI stopped, every effect removed, the HUD, the weather and the player's view (`PlayerMask`, the
   dark cover around the player) off, each effect is played twice:
@@ -227,7 +227,8 @@ windows until the end of the scenario (TG-32, TG-33, TG-40, TG-43, TG-59, TS-05)
     the game waiting in the save (AutoTestEvent phase Idle); every next scenario is given to that game
     (`run-autotest.ps1 -Attach`: a new request.json, read by the game within a second, no restart). Before every game
     scenario the player goes back to the state recorded when the save was loaded (grade, exp, money, lifespan, age,
-    place, HP / MP / SP full, S&M settings; `Mod/AutoTestEvent.KeepAlive.cs`), then the scenario's own set-up
+    place, HP / MP / SP full, bag; `AutoTestRunner.KeepAlive.cs` of ModLib; the Taoist data - cultivation paths, S&M settings - by
+    `AutoTestEvent.CaptureModState` / `RestoreModState`), then the scenario's own set-up
     (`Scenario.Pre(c => ...)`: a grade, a town, items...). A game that closed or stalled starts again from the snapshot.
     The save list of a slot game is waited for up to ~30 s (an empty list read too early made every group create a new
     character). TP-01 runs only when a slot creates its character. At the end the run of every scenario is merged

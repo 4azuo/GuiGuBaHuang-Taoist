@@ -1,3 +1,4 @@
+using ModLib.AutoTest;
 using ModLib.Helper;
 using ModLib.Mod;
 using ModLib.Object;

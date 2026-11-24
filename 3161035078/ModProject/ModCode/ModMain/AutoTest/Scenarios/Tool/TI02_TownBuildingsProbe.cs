@@ -1,3 +1,4 @@
+using ModLib.AutoTest;
 using ModLib.Helper;
 using System.Linq;
 using static MOD_nE7UL2.AutoTest.AutoTestHelper;

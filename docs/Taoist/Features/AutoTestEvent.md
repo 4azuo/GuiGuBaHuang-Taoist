@@ -2,6 +2,17 @@
 
 `3161035078/ModProject/ModCode/ModMain/Mod/AutoTestEvent.cs` - cache key `ModConst.AUTOTEST_EVENT` (Global cache, works everywhere) - group: Core (tests)
 
+The runner itself is ModLib's (`GuiGuBaHuang-ModLib/ModLib/AutoTest/AutoTestRunner.cs`, shared by the mods); `AutoTestEvent` is its Taoist subclass:
+
+| Hook | Taoist |
+|---|---|
+| `ModVersion` | `ModConst.TAOIST_VERSION` (results.json `modVersion`) |
+| `OnRequestLoaded` | `StoryEvent.NoAutoOpen` (the storylines do not open their dramas by themselves) |
+| `OnNewCharacterRequested` | `TP01_NewCharacter.Requested` |
+| `CaptureModState` / `RestoreModState` | the player's data of the cultivation paths (merit, body, artisan, Dao heart, spirit sense) and the S&M settings, put back before every game scenario |
+| `CanFightInTests` | never a hired NPC (`HirePeopleEvent.IsHired`) |
+| `CreateScenarios` (default) | the `IScenarioDefinition` classes of Taoist (`AutoTest/Scenarios/`) + ModLib's (effect galleries TE-xx) |
+
 The in-game test runner driven by `GuiGuBaHuang-ModLib/scripts/game/run-autotest.ps1`. It is **never loaded for players**: `OnCacheHandler` loads it only when `<mod cache>\autotest\request.json` exists (slot N: `autotest-slotN\`) and the `run-autotest.ps1` that wrote it still runs (`ReadActiveRequest`: `OwnerPid` / `OwnerStart`; a stale request is moved to `request.stale.json`, also when a game waiting in its save reads the next one). The full guide (requests, scenarios, evidence, slots, viewers) is [04-Autotest](../04-Autotest.md); the scenarios are in `ModMain/AutoTest/Scenarios/` and listed in [03-Test-Scenarios](../03-Test-Scenarios.md).
 
 ## Files
@@ -21,7 +32,7 @@ The in-game test runner driven by `GuiGuBaHuang-ModLib/scripts/game/run-autotest
 
 | Hook | What happens |
 |---|---|
-| `OnLoadClass` | reads the request, creates `OutDir\screens`, starts `EventTraceHelper` (hang finder), turns exception dialogs off, `StoryEvent.NoAutoOpen`, mutes the game |
+| `OnLoadClass` | reads the request, creates `OutDir\screens`, starts `EventTraceHelper` (hang finder), turns exception dialogs off, `OnRequestLoaded` (Taoist: `StoryEvent.NoAutoOpen`), mutes the game |
 | `OnMonoUpdate` | every second: exception dialogs kept off; a drama left open more than `DramaTimeoutSec` (5 s) is closed (dramas pause the game timers, so the step runner would stop) |
 | `OnTimeUpdate100ms` | the phase machine and the step runner |
 | `OnBattleStart`, `OnBattleEndHandler` | battle counting / watching for the scenarios |

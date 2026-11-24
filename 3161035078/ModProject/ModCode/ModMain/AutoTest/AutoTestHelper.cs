@@ -1,4 +1,5 @@
-﻿using ModLib.Helper;
+﻿using ModLib.AutoTest;
+using ModLib.Helper;
 using ModLib.Mod;
 using ModLib.Object;
 using System;
@@ -14,8 +15,8 @@ namespace MOD_nE7UL2.AutoTest
     /// </summary>
     public static class AutoTestHelper
     {
-        /// <summary>Popups seen on the title screen before the scenarios (closed by the runner).</summary>
-        public static List<string> TitlePopups { get; } = new List<string>();
+        /// <summary>Popups seen on the title screen before the scenarios (closed by the runner: AutoTestRunner.TitlePopups).</summary>
+        public static List<string> TitlePopups => AutoTestRunner.TitlePopups;
 
         /// <summary>Clicks the first button with one of the labels, outside the title / map screens (UIClickHelper.ClickButton).</summary>
         public static string ClickButton(params string[] labels) => UIClickHelper.ClickButton(labels);
@@ -44,8 +45,8 @@ namespace MOD_nE7UL2.AutoTest
         /// <summary>Labels of the buttons that confirm a dialog or leave a result screen (UIClickHelper.CONFIRM_LABELS).</summary>
         public static readonly string[] CONFIRM = UIClickHelper.CONFIRM_LABELS;
 
-        /// <summary>Result of the last watched battle (set by AutoTestEvent).</summary>
-        public static bool LastBattleWin { get; set; }
+        /// <summary>Result of the last watched battle (set by the runner: AutoTestRunner.LastBattleWin).</summary>
+        public static bool LastBattleWin { get => AutoTestRunner.LastBattleWin; set => AutoTestRunner.LastBattleWin = value; }
 
         /// <summary>The player world unit.</summary>
         public static WorldUnitBase Player => g.world.playerUnit;

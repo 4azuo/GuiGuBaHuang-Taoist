@@ -1,3 +1,4 @@
+using ModLib.AutoTest;
 using EGameTypeData;
 using ModLib.Helper;
 using MOD_nE7UL2.Const;

@@ -3199,7 +3199,7 @@
       "kind": "tool",
       "feature": "Effects",
       "title": "Effect gallery: skill effects",
-      "description": "Tool, not a test (runs only with -Scenario TE-01): in a battle, every effect of ModConf/_Def_Res_Efx_Battle_Skill.txt is created on the player, one per step, and captured (screenshot named after the effect), to classify the effects from their pictures for custom skills. Optional range: <autotest folder>/efx-range.txt = \"start count\".",
+      "description": "Tool, not a test (runs only with -Scenario TE-01): in a battle, every effect of ModConf/_Def_Res_Efx_Battle_Skill.txt (ModLib) is created on the player, one per step, and captured (screenshot named after the effect), to classify the effects from their pictures for custom skills. Optional range: <autotest folder>/efx-range.txt = \"start count\".",
       "preconditions": "A save with an NPC to fight",
       "steps": [
         "Start a battle with an NPC",
@@ -3215,7 +3215,7 @@
       "kind": "tool",
       "feature": "Effects",
       "title": "Effect gallery: unit effects",
-      "description": "Tool, not a test (runs only with -Scenario TE-02): in a battle, every effect of ModConf/_Def_Res_Efx_Battle_Unit.txt is created on the player, one per step, and captured (screenshot named after the effect), to classify the effects from their pictures for custom skills. Optional range: <autotest folder>/efx-range.txt = \"start count\".",
+      "description": "Tool, not a test (runs only with -Scenario TE-02): in a battle, every effect of ModConf/_Def_Res_Efx_Battle_Unit.txt (ModLib) is created on the player, one per step, and captured (screenshot named after the effect), to classify the effects from their pictures for custom skills. Optional range: <autotest folder>/efx-range.txt = \"start count\".",
       "preconditions": "A save with an NPC to fight",
       "steps": [
         "Start a battle with an NPC",
@@ -3231,7 +3231,7 @@
       "kind": "tool",
       "feature": "Effects",
       "title": "Effect gallery: scene effects",
-      "description": "Tool, not a test (runs only with -Scenario TE-03): in a battle, every effect of ModConf/_Def_Res_Efx_Battle_Scenes.txt is created on the player, one per step, and captured (screenshot named after the effect), to classify the effects from their pictures for custom skills. Optional range: <autotest folder>/efx-range.txt = \"start count\".",
+      "description": "Tool, not a test (runs only with -Scenario TE-03): in a battle, every effect of ModConf/_Def_Res_Efx_Battle_Scenes.txt (ModLib) is created on the player, one per step, and captured (screenshot named after the effect), to classify the effects from their pictures for custom skills. Optional range: <autotest folder>/efx-range.txt = \"start count\".",
       "preconditions": "A save with an NPC to fight",
       "steps": [
         "Start a battle with an NPC",

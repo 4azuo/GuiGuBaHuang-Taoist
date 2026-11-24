@@ -1,3 +1,4 @@
+using ModLib.AutoTest;
 using ModLib.Mod;
 
 namespace MOD_nE7UL2.AutoTest

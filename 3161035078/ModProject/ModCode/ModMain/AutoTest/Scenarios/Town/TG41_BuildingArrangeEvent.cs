@@ -1,3 +1,4 @@
+using ModLib.AutoTest;
 using ModLib.Helper;
 using MOD_nE7UL2.Enum;
 using MOD_nE7UL2.Mod;

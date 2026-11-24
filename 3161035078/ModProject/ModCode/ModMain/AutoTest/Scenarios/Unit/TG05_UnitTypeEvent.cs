@@ -1,4 +1,5 @@
-﻿using MOD_nE7UL2.Mod;
+﻿using ModLib.AutoTest;
+using MOD_nE7UL2.Mod;
 using ModLib.Helper;
 using System.Linq;
 using static MOD_nE7UL2.AutoTest.AutoTestHelper;

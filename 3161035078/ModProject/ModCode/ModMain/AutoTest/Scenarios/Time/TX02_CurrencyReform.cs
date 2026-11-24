@@ -1,4 +1,5 @@
-﻿using ModLib.Helper;
+﻿using ModLib.AutoTest;
+using ModLib.Helper;
 using MOD_nE7UL2.Mod;
 using static MOD_nE7UL2.AutoTest.AutoTestHelper;
 using static MOD_nE7UL2.AutoTest.TownTestHelper;

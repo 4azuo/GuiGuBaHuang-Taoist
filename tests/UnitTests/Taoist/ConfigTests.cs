@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MOD_nE7UL2;
 using MOD_nE7UL2.AutoTest;
+using ModLib.AutoTest;
 using MOD_nE7UL2.Mod;
 using MOD_nE7UL2.Object;
 using ModLib.Attributes;

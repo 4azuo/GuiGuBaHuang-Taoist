@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-23T23:05:50",
+  "updatedAt": "2026-11-24T10:07:37",
   "counts": {
-    "OK": 10,
+    "OK": 12,
     "NG": 1,
     "SKIP": 2,
-    "NOT RUN": 130,
+    "NOT RUN": 128,
     "-": 4
   },
   "scenarios": [
@@ -13,9 +13,9 @@
       "kind": "auto",
       "feature": "UITitleScreenEvent",
       "title": "Title screen shows Taoist/ModLib buttons and versions are compatible",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-24T10:07:37",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261124-100536",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -251,8 +251,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "SKIP",
-      "lastRun": "2026-11-23T23:05:50",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-230149",
+      "lastRun": "2026-11-24T10:07:37",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261124-100536",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -262,9 +262,9 @@
       "kind": "auto",
       "feature": "ModMain",
       "title": "Taoist settings and events are loaded in the save",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-23T08:27:45",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261123-082038",
+      "result": "OK",
+      "lastRun": "2026-11-24T10:07:37",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261124-100536",
       "tester": "autotest",
       "note": null,
       "checks": {
