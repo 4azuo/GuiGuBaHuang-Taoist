@@ -590,7 +590,7 @@ namespace MOD_nE7UL2.Mod
                 var ui = new UICover<UILogin>(e.ui);
                 {
                     var parentTransform = ui.UI.btnSet.transform.parent;
-                    TitleButton = ui.AddButton(ui.MidCol, ui.FirstRow + 5, OpenSMConfigs, TITLE, ui.UI.btnSet);
+                    TitleButton = ui.AddButton(ui.MidCol, ui.FirstRow + 2, OpenSMConfigs, TITLE, ui.UI.btnSet);   // top, level with the ModLib frames (the Taoist version is in the row of the mods)
                     TitleButton.Align(TextAnchor.MiddleCenter)
                         .Format(Color.black, 24)
                         .SetParentTransform(parentTransform);

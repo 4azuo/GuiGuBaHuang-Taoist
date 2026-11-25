@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T17:16:01",
+  "updatedAt": "2026-11-25T18:30:18",
   "counts": {
     "OK": 144,
     "NG": 0,
@@ -14,8 +14,8 @@
       "feature": "UITitleScreenEvent",
       "title": "Title screen shows Taoist/ModLib buttons and versions are compatible",
       "result": "OK",
-      "lastRun": "2026-11-25T17:16:01",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-171259",
+      "lastRun": "2026-11-25T18:24:48",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-180939-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -32,8 +32,8 @@
       "feature": "SMGlobalConfigsEvent",
       "title": "S&M configs window: 3 pages, presets and cancel",
       "result": "OK",
-      "lastRun": "2026-11-25T17:06:05",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-124850",
+      "lastRun": "2026-11-25T18:24:48",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-180939-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -72,8 +72,8 @@
       "feature": "UIDifficultyEvent/PriorityDestinyLevel",
       "title": "New game: difficulty and character creation screens",
       "result": "OK",
-      "lastRun": "2026-11-25T17:06:05",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-124850",
+      "lastRun": "2026-11-25T18:24:48",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-180939-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -253,8 +253,8 @@
       "feature": "ModTitleEvent (ModLib)",
       "title": "ModLib title buttons in the frame of the DLC buttons",
       "result": "OK",
-      "lastRun": "2026-11-25T17:06:05",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-124850",
+      "lastRun": "2026-11-25T18:24:48",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-180939-s2",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -355,8 +355,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "SKIP",
-      "lastRun": "2026-11-25T17:16:01",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-171259",
+      "lastRun": "2026-11-25T18:30:18",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-182600",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -3841,8 +3841,8 @@
       "feature": "StoryEvent",
       "title": "Story Q The Nameless Art",
       "result": "OK",
-      "lastRun": "2026-11-25T17:06:05",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-124850",
+      "lastRun": "2026-11-25T18:30:18",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261125-182600",
       "tester": "autotest",
       "note": null,
       "checks": {

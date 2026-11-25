@@ -1,68 +1,39 @@
 using ModLib.Helper;
-using System;
-using System.Linq;
-using System.Reflection;
 
 namespace MOD_nE7UL2.Helper
 {
     /// <summary>
-    /// Dao of Creation (optional mod), by reflection on its public API MOD_rLvJjS.Helper.DocApi (no reference: Taoist
-    /// builds and runs without it). Every call is safe: false / null / nothing when the mod is not loaded.
+    /// Dao of Creation (optional mod), through its public API MOD_rLvJjS.Helper.DocApi (ModLib ModApiHelper: by reflection,
+    /// no reference: Taoist builds and runs without it). Every call is safe: false / null / nothing when the mod is not
+    /// loaded or its API is older than API_VERSION.
     /// </summary>
     public static class DocHelper
     {
         public const string API_TYPE = "MOD_rLvJjS.Helper.DocApi";
+        /// <summary>The DocApi version Taoist is written for (1: IsReady, NpcForge, GiveCopy, BookName, ArtsOf, AddEssence).</summary>
+        public const int API_VERSION = 1;
 
-        private static Type _api;
-
-        private static Type Api
-        {
-            get
-            {
-                // looked for again until found: the mod may be loaded after Taoist
-                if (_api == null)
-                    _api = AppDomain.CurrentDomain.GetAssemblies().Select(a => { try { return a.GetType(API_TYPE, false); } catch { return null; } }).FirstOrDefault(t => t != null);
-                return _api;
-            }
-        }
-
-        private static object Call(string method, params object[] args)
-        {
-            if (!Ready) return null;
-            try
-            {
-                return Api.GetMethod(method, BindingFlags.Public | BindingFlags.Static)?.Invoke(null, args);
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteLine($"DocHelper.{method}: {(ex.InnerException ?? ex).Message}");
-                return null;
-            }
-        }
-
-        /// <summary>Dao of Creation is loaded in this game.</summary>
-        public static bool Ready
-        {
-            get
-            {
-                try { return Api?.GetProperty("IsReady", BindingFlags.Public | BindingFlags.Static)?.GetValue(null) is bool b && b; }
-                catch { return false; }
-            }
-        }
+        /// <summary>Dao of Creation is loaded in this game (its save data ready).</summary>
+        public static bool Ready => ModApiHelper.Has(API_TYPE, API_VERSION) && ModApiHelper.Get(API_TYPE, "IsReady", false);
 
         /// <summary>An NPC creates a martial art (soleID; null: it could not).</summary>
-        public static string NpcForge(string unitId) => Call("NpcForge", unitId) as string;
+        public static string NpcForge(string unitId) => Ready ? ModApiHelper.Call<string>(API_TYPE, "NpcForge", null, unitId) : null;
 
         /// <summary>A copy of a created martial art given to a unit, learnt at once or as a manual (soleID of the copy).</summary>
-        public static string GiveCopy(string soleId, string toUnitId, bool learn) => Call("GiveCopy", soleId, toUnitId, learn) as string;
+        public static string GiveCopy(string soleId, string toUnitId, bool learn) =>
+            Ready ? ModApiHelper.Call<string>(API_TYPE, "GiveCopy", null, soleId, toUnitId, learn) : null;
 
         /// <summary>The name of a created martial art (null: unknown).</summary>
-        public static string BookName(string soleId) => string.IsNullOrEmpty(soleId) ? null : Call("BookName", soleId) as string;
+        public static string BookName(string soleId) =>
+            string.IsNullOrEmpty(soleId) || !Ready ? null : ModApiHelper.Call<string>(API_TYPE, "BookName", null, soleId);
 
         /// <summary>The created martial arts a unit has learnt.</summary>
-        public static string[] ArtsOf(string unitId) => Call("ArtsOf", unitId) as string[] ?? new string[0];
+        public static string[] ArtsOf(string unitId) => (Ready ? ModApiHelper.Call<string[]>(API_TYPE, "ArtsOf", null, unitId) : null) ?? new string[0];
 
         /// <summary>Dao Essence given to a unit.</summary>
-        public static void AddEssence(string unitId, float amount) => Call("AddEssence", unitId, amount);
+        public static void AddEssence(string unitId, float amount)
+        {
+            if (Ready) ModApiHelper.Invoke(API_TYPE, "AddEssence", unitId, amount);
+        }
     }
 }

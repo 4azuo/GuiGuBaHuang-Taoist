@@ -24,12 +24,8 @@ namespace MOD_nE7UL2.Mod
             base.OnOpenUIEnd(e);
             if (e.uiType.uiName == UIType.Login.uiName)
             {
-                var ui = new UICover<UILogin>(e.ui);
-                var parentTransform = ui.UI.btnSet.transform.parent;
-                VersionButton = ui.AddButton(ui.MidCol, ui.FirstRow + 2, () => Process.Start("explorer.exe", CacheHelper.GetCacheFolderName(ModId)), $"Taoist {ModConst.TAOIST_VERSION}", ui.UI.btnPaperChange);
-                VersionButton.Align(TextAnchor.MiddleCenter)
-                    .Format(Color.white, 22)
-                    .SetParentTransform(parentTransform);
+                // the version button in the row of the mods at the bottom of the title screen (ModLib TitleModHelper)
+                VersionButton = TitleModHelper.AddModButton($"Taoist {ModConst.TAOIST_VERSION}", () => Process.Start("explorer.exe", CacheHelper.GetCacheFolderName(ModId)));
                 StripGameText(VersionButton);
 
                 // the game's UITextInfoLong / UITextInfo: one of each, so they wait for the windows of the other mods
