@@ -7,6 +7,7 @@ Mods for Gui Gu Ba Huang (鬼谷八荒), C# (.NET Framework 4.7.2) + MelonLoader
 - **GuiGuBaHuang-ModLib** - ModLib (submodule, public repo `4azuo/GuiGuBaHuang-ModLib`): sources `ModLib/` (`ModLib.csproj`), Workshop project `3385996759/` (ModMain + configs + SampleConfs; its solution builds `ModLib/ModLib.csproj`; build output `3385996759/debug/Mod_flQrxq` provides ModLib.dll), shared tools. A change there is committed and pushed in the submodule, then the new submodule commit is committed here. ModLib is built and released in its own repository
 - **3161035078** - Taoist mod (uses ModLib, also the reference example mod)
 - **GuiGuBaHuang-ModCreator** - WPF tool for creating/editing mod projects (submodule; development on hold indefinitely)
+- **GuiGuBaHuang-DaoOfCreation** - Dao of Creation mod (private submodule, may be absent): source for reference and for the optional Taoist features that only run when both mods are used; Taoist must build and run without it. `update = none` in `.gitmodules`: clones and CI skip it; with access: `git submodule update --init --checkout GuiGuBaHuang-DaoOfCreation`
 
 ## Structure
 

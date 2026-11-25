@@ -162,6 +162,7 @@ cd GuiGuBaHuang-Taoist
 The two submodules are separate repositories: `GuiGuBaHuang-ModLib` (ModLib with its build `ModLib.dll` used by Taoist,
 and the shared scripts; its DLLs and pictures are in Git LFS: run `git lfs install` once before cloning) and
 `GuiGuBaHuang-ModCreator`.
+n`GuiGuBaHuang-DaoOfCreation` (another mod, private) is skipped by the clone: its folder stays empty, Taoist does not need it.
 
 If the `GuiGuBaHuang-ModCreator` folder is empty after cloning (the submodule entry in `.gitmodules` may be missing), fetch it yourself at the commit this repository expects:
 

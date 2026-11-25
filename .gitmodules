@@ -4,3 +4,7 @@
 [submodule "GuiGuBaHuang-ModLib"]
 	path = GuiGuBaHuang-ModLib
 	url = https://github.com/4azuo/GuiGuBaHuang-ModLib.git
+[submodule "GuiGuBaHuang-DaoOfCreation"]
+	path = GuiGuBaHuang-DaoOfCreation
+	url = https://github.com/4azuo/GuiGuBaHuang-DaoOfCreation.git
+	update = none
