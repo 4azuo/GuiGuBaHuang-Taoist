@@ -296,3 +296,9 @@ the "Sealed" ending makes him an innkeeper there), I -> L (`L1_tomb`: the tomb l
 A-K -> L (`LineL_HeartDemon.Dreams`: the endings of every other line in the dreams and the clear-heart ending),
 A-E, G -> H5 (the guests of the hundredth-year feast). Acts of the long lines open at the later of their year and
 realm (`StoryLine.Gate`, tests: `StoryEvent.NoGates`).
+
+## 6. Dao of Creation (optional mod, 2026-11-25; coded)
+
+`Helper/DocHelper.cs` calls `MOD_rLvJjS.Helper.DocApi` (API version 1) by reflection, never a reference: without the mod nothing changes.
+- Lines Q and R (an art created, taught, handed on): `StoryLine.Forge` / `Teach`; the soleID of the art is in `Roles["art"]`, its name is the token `{art}`. The API creates a random art and names it.
+- Epilogues of the other lines (`StoryLine.DocEpilogue`, after `End`): an art and its manual (`DOC_ARTS`: A Companion / Sect Master, D Three Sworn, G Friend, J Righteous, P Brothers), Dao Essence (`DOC_ESSENCE`: I Heir 30, K Guided 30, L Clear Heart 50).

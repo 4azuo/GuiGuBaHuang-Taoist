@@ -808,5 +808,15 @@
 		"id": "-1000001211",
 		"key": "smcfgs211",
 		"en|ch|tc|kr": "Un battement dans la pierre : ton sens spirituel trouve un raffineur corporel à moitié pétrifié par sa tribulation (sens spirituel, raffinement corporel)."
+	},
+	{
+		"id": -1000001212,
+		"key": "smcfgs212",
+		"en|ch|tc|kr": "L'Art sans nom : un disciple chassé crée un art martial, et l'ancienne secte le veut (nécessite le mod Dao of Creation)."
+	},
+	{
+		"id": -1000001213,
+		"key": "smcfgs213",
+		"en|ch|tc|kr": "Pour un seul héritier : un vieux maître écrit un dernier art et met deux héritiers à l'épreuve (nécessite le mod Dao of Creation)."
 	}
 ]

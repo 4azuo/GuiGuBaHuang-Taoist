@@ -28,5 +28,55 @@
 		"id": "-1000005005",
 		"key": "newgame005",
 		"en|ch|tc|kr": "Les artefacts cochés sont donnés au départ (plusieurs possibles). Passer l'introduction : pas d'histoire d'ouverture ni de premier combat."
+	},
+	{
+		"id": "-1000005006",
+		"key": "newgame010",
+		"en|ch|tc|kr": "Choisir ses destins librement"
+	},
+	{
+		"id": "-1000005007",
+		"key": "newgame011",
+		"en|ch|tc|kr": "Destins choisis : {0} (-{1} P)"
+	},
+	{
+		"id": "-1000005008",
+		"key": "newgame012",
+		"en|ch|tc|kr": "Choisir ses destins"
+	},
+	{
+		"id": "-1000005009",
+		"key": "newgame013",
+		"en|ch|tc|kr": "Chaque destin choisi ici baisse le score S&M (P) de la nouvelle partie : de -{0} P (blanc) à -{1} P (rouge) chacun. Continuer ?"
+	},
+	{
+		"id": "-1000005010",
+		"key": "newgame014",
+		"en|ch|tc|kr": "Nom"
+	},
+	{
+		"id": "-1000005011",
+		"key": "newgame015",
+		"en|ch|tc|kr": "Description"
+	},
+	{
+		"id": "-1000005012",
+		"key": "newgame016",
+		"en|ch|tc|kr": "Qualité"
+	},
+	{
+		"id": "-1000005013",
+		"key": "newgame017",
+		"en|ch|tc|kr": "Tous"
+	},
+	{
+		"id": "-1000005014",
+		"key": "newgame018",
+		"en|ch|tc|kr": "Choisis ({0})"
+	},
+	{
+		"id": "-1000005015",
+		"key": "newgame019",
+		"en|ch|tc|kr": "Score S&M : {0} P - {1} P = {2} P (chaque destin choisi le baisse)"
 	}
 ]

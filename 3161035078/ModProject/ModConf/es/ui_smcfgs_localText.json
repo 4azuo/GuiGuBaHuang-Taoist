@@ -808,5 +808,15 @@
 		"id": "-1000001211",
 		"key": "smcfgs211",
 		"en|ch|tc|kr": "Un latido en la piedra: tu sentido espiritual encuentra a un refinador corporal medio petrificado por su tribulación (sentido espiritual, refinamiento corporal)."
+	},
+	{
+		"id": -1000001212,
+		"key": "smcfgs212",
+		"en|ch|tc|kr": "El arte sin nombre: un discípulo expulsado crea un arte marcial y la antigua secta lo quiere (requiere el mod Dao of Creation)."
+	},
+	{
+		"id": -1000001213,
+		"key": "smcfgs213",
+		"en|ch|tc|kr": "Para un solo heredero: un viejo maestro escribe un último arte y pone a prueba a dos herederos (requiere el mod Dao of Creation)."
 	}
 ]

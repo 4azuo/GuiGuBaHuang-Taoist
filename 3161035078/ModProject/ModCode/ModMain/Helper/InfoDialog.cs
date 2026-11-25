@@ -43,18 +43,22 @@ namespace MOD_nE7UL2.Helper
 
         /// <summary>
         /// The text window: the text wrapped by words (a paragraph a line break), the buttons in a row under it (none: the
-        /// window's own OK). A button closes the window, then runs its action.
+        /// window's own OK). A button closes the window, then runs its action. The window replaces a window of Taoist, and
+        /// waits for the window of another mod (TaoistWindows): returns it, or null while it waits.
         /// </summary>
         public static UICustomBase Show(string title, string text, params (string label, Action act)[] buttons)
         {
-            g.ui.CloseUI(UIType.TextInfo);
-            g.ui.CloseUI(UIType.TextInfoLong);
+            TaoistWindows.CloseMine(false);
+            TaoistWindows.CloseMine(true);
             var paras = (text ?? string.Empty).Split('\n');
             var reserved = buttons.Length > 0 ? 2 : 0;
             // the small window (UITextInfo) while the text fits; a longer one opens the big window (UITextInfoLong):
             // nothing cut (the mortal house of the estate: 12 lines), its title wide enough for "<town> - plots"
             var smallRows = (int)Math.Floor(UIHelper.GetUIScreenHeight() * 0.2f / UIHelper.GetUIDeltaY()) + 1;
             var big = paras.Sum(x => Wrap(x, WRAP_CHARS).Count) > smallRows - reserved;
+            UICustomBase shown = null;
+            void Open()
+            {
             UICustomBase ui;
             UnityEngine.UI.Button ok;
             if (big) { var u = new UICustom1(title); ui = u; ok = u.UI.btnOK; LastUIType = UIType.TextInfoLong; }
@@ -86,7 +90,10 @@ namespace MOD_nE7UL2.Helper
                 }
             }
             LastText = text;
-            return ui;
+            shown = ui;
+            }
+            if (big) TaoistWindows.Open1(Open); else TaoistWindows.Open2(Open);
+            return shown;
         }
 
         /// <summary>Line length of the big window (UITextInfoLong, about twice as wide as UITextInfo).</summary>

@@ -25,71 +25,74 @@ namespace MOD_nE7UL2.Mod
 
         public static void OpenWindow()
         {
-            var ui = new UICustom1(GameTool.LS("artisan_title_window"));
-            var x0 = ui.Columns[ui.FirstCol];
-            var width = ui.Columns[ui.LastCol] - x0;
-            var row = ui.FirstRow + 1;
-            for (var i = 0; i < CRAFTS.Length; i++)
+            TaoistWindows.Open1(() =>
             {
-                var c = CRAFTS[i];
-                var cx = x0 + width * (i % 2 == 0 ? 0.27f : 0.73f);
-                var r0 = row + (i / 2) * 5;
-                Card(ui, c, cx, r0);
-            }
-            row += 15;
-
-            // the bonuses
-            var steps = TotalEssenceSteps(Player);
-            if (steps > 0)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_essence_bonus"), Math.Round(StatRate(steps) * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 13);
-            var returned = ReturnedCrafts(Player);
-            if (returned.Count > 0)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_returned"), string.Join(", ", returned.Select(CraftName)))).Format(new Color(0.55f, 0.4f, 0f), 14);
-            if (BestRank(Player) > 0)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_sell"), SellRate(Player))).Format(new Color(0.1f, 0.4f, 0.1f), 13);
-
-            // commissions and apprentices: the text left of the middle, the button right of it, on the same line
-            var textX = ui.Columns[ui.MidCol] - 140f;
-            var buttonX = ui.Columns[ui.MidCol] + 300f;
-            if (Instance.Commissions.Count > 0)
-            {
-                ui.AddText(ui.MidCol, row++, GameTool.LS("artisan_section_commissions")).Format(SECTION, 15, FontStyle.Bold);
-                foreach (var cm in Instance.Commissions.ToList())
+                var ui = new UICustom1(GameTool.LS("artisan_title_window"));
+                var x0 = ui.Columns[ui.FirstCol];
+                var width = ui.Columns[ui.LastCol] - x0;
+                var row = ui.FirstRow + 1;
+                for (var i = 0; i < CRAFTS.Length; i++)
                 {
-                    var com = cm;
-                    var client = Unit(cm.ClientId);
-                    ui.AddText(textX, ui.Rows[row], string.Format(GameTool.LS("artisan_commission_line"), client?.GetName() ?? "?", CraftName((Craft)cm.Craft), cm.Level, cm.Reward,
-                        Math.Max(0, cm.Deadline - GameHelper.GetGameTotalMonth()))).Format(null, 13);
-                    ui.AddButton(buttonX, ui.Rows[row], () =>
+                    var c = CRAFTS[i];
+                    var cx = x0 + width * (i % 2 == 0 ? 0.27f : 0.73f);
+                    var r0 = row + (i / 2) * 5;
+                    Card(ui, c, cx, r0);
+                }
+                row += 15;
+
+                // the bonuses
+                var steps = TotalEssenceSteps(Player);
+                if (steps > 0)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_essence_bonus"), Math.Round(StatRate(steps) * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 13);
+                var returned = ReturnedCrafts(Player);
+                if (returned.Count > 0)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_returned"), string.Join(", ", returned.Select(CraftName)))).Format(new Color(0.55f, 0.4f, 0f), 14);
+                if (BestRank(Player) > 0)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_sell"), SellRate(Player))).Format(new Color(0.1f, 0.4f, 0.1f), 13);
+
+                // commissions and apprentices: the text left of the middle, the button right of it, on the same line
+                var textX = ui.Columns[ui.MidCol] - 140f;
+                var buttonX = ui.Columns[ui.MidCol] + 300f;
+                if (Instance.Commissions.Count > 0)
+                {
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("artisan_section_commissions")).Format(SECTION, 15, FontStyle.Bold);
+                    foreach (var cm in Instance.Commissions.ToList())
                     {
-                        if (!Deliver(Player, com)) InfoDialog.Msg(GameTool.LS("artisan_title_window"), GameTool.LS("artisan_no_item"));
-                        else OpenWindow();
-                    }, GameTool.LS("artisan_deliver")).Format(Color.black, 12).Size(200, 28);
-                    row++;
+                        var com = cm;
+                        var client = Unit(cm.ClientId);
+                        ui.AddText(textX, ui.Rows[row], string.Format(GameTool.LS("artisan_commission_line"), client?.GetName() ?? "?", CraftName((Craft)cm.Craft), cm.Level, cm.Reward,
+                            Math.Max(0, cm.Deadline - GameHelper.GetGameTotalMonth()))).Format(null, 13);
+                        ui.AddButton(buttonX, ui.Rows[row], () =>
+                        {
+                            if (!Deliver(Player, com)) InfoDialog.Msg(GameTool.LS("artisan_title_window"), GameTool.LS("artisan_no_item"));
+                            else OpenWindow();
+                        }, GameTool.LS("artisan_deliver")).Format(Color.black, 12).Size(200, 28);
+                        row++;
+                    }
                 }
-            }
-            if (Instance.Apprentices.Count > 0)
-            {
-                ui.AddText(ui.MidCol, row++, GameTool.LS("artisan_section_apprentices")).Format(SECTION, 15, FontStyle.Bold);
-                foreach (var a in Instance.Apprentices.ToList())
+                if (Instance.Apprentices.Count > 0)
                 {
-                    var ap = a;
-                    var npc = Unit(a.UnitId);
-                    ui.AddText(textX, ui.Rows[row], CraftIcon((Craft)a.Craft) + string.Format(GameTool.LS("artisan_apprentice_line"), npc?.GetName() ?? "?",
-                        CraftName((Craft)a.Craft), RankName(Rank(npc, (Craft)a.Craft)))).Format(null, 13);
-                    ui.AddButton(buttonX, ui.Rows[row], () => { Instance.Apprentices.Remove(ap); OpenWindow(); }, GameTool.LS("artisan_dismiss")).Format(Color.black, 12).Size(200, 28);
-                    row++;
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("artisan_section_apprentices")).Format(SECTION, 15, FontStyle.Bold);
+                    foreach (var a in Instance.Apprentices.ToList())
+                    {
+                        var ap = a;
+                        var npc = Unit(a.UnitId);
+                        ui.AddText(textX, ui.Rows[row], CraftIcon((Craft)a.Craft) + string.Format(GameTool.LS("artisan_apprentice_line"), npc?.GetName() ?? "?",
+                            CraftName((Craft)a.Craft), RankName(Rank(npc, (Craft)a.Craft)))).Format(null, 13);
+                        ui.AddButton(buttonX, ui.Rows[row], () => { Instance.Apprentices.Remove(ap); OpenWindow(); }, GameTool.LS("artisan_dismiss")).Format(Color.black, 12).Size(200, 28);
+                        row++;
+                    }
                 }
-            }
-            if (Instance.Masterpieces.Count > 0)
-            {
-                ui.AddText(ui.MidCol, row++, GameTool.LS("artisan_masterpieces")).Format(new Color(0.45f, 0.2f, 0.55f), 14);
-                foreach (var m in Instance.Masterpieces.Skip(Math.Max(0, Instance.Masterpieces.Count - 3)).Reverse())
-                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_masterpiece_line"), GameTool.LS(g.conf.itemProps.GetItem(m.PropsId)?.name ?? "?"), m.Maker, CraftName((Craft)m.Craft)))
-                        .Format(new Color(0.35f, 0.35f, 0.35f), 12);
-            }
-            ui.AddText(ui.MidCol, ui.LastRow - 2, string.Format(GameTool.LS("artisan_usual"), UsualLevel(Player.GetGradeLvl()))).Format(Color.gray, 12);
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("artisan_help")).Format(null, 13);
+                if (Instance.Masterpieces.Count > 0)
+                {
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("artisan_masterpieces")).Format(new Color(0.45f, 0.2f, 0.55f), 14);
+                    foreach (var m in Instance.Masterpieces.Skip(Math.Max(0, Instance.Masterpieces.Count - 3)).Reverse())
+                        ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("artisan_masterpiece_line"), GameTool.LS(g.conf.itemProps.GetItem(m.PropsId)?.name ?? "?"), m.Maker, CraftName((Craft)m.Craft)))
+                            .Format(new Color(0.35f, 0.35f, 0.35f), 12);
+                }
+                ui.AddText(ui.MidCol, ui.LastRow - 2, string.Format(GameTool.LS("artisan_usual"), UsualLevel(Player.GetGradeLvl()))).Format(Color.gray, 12);
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("artisan_help")).Format(null, 13);
+            });
         }
 
         /// <summary>The card of a craft at (cx, row): 4 lines.</summary>

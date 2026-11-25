@@ -142,104 +142,110 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Inside the player's house: the house, its rooms, upgrade, herbs.</summary>
         public static void OpenHouse(MapBuildTown town, Plot p)
         {
-            var ui = new UICustom1(string.Format(GameTool.LS("estate_house_title"), HouseName(p.Level), town.name));
-            // the house on the left, its facts on the right
-            var px = ui.Columns[ui.FirstCol + 6];
-            var py = ui.Rows[ui.FirstRow + 3];
-            Rect(ui, px, py, 250f, 150f, DistrictColor(p.District));
-            Picture(ui, EstateConfig.SplitSprite(HouseConf(p.Level).Sprite), px, py, 240f, 140f);
-            var row = ui.FirstRow;
-            var col = ui.MidCol + 4;
-            var used = p.Rooms?.Count(x => x.Value > 0) ?? 0;
-            ui.AddText(col, row++, string.Format(GameTool.LS("estate_house_facts"), DistrictName(p.District), p.Prosperity, p.Level, HouseTax(town, p))).Format(null, 14);
-            ui.AddText(col, row++, string.Format(GameTool.LS("estate_house_rooms"), used, RoomSlots(p.Level))).Format(null, 14);
-            row++;
-            // upgrade of the house
-            if (p.Level < MAX_LEVEL)
+            TaoistWindows.Open1(() =>
             {
-                var (add, land, cost) = UpgradeCost(town, p);
-                if (add == null)
+                var ui = new UICustom1(string.Format(GameTool.LS("estate_house_title"), HouseName(p.Level), town.name));
+                // the house on the left, its facts on the right
+                var px = ui.Columns[ui.FirstCol + 6];
+                var py = ui.Rows[ui.FirstRow + 3];
+                Rect(ui, px, py, 250f, 150f, DistrictColor(p.District));
+                Picture(ui, EstateConfig.SplitSprite(HouseConf(p.Level).Sprite), px, py, 240f, 140f);
+                var row = ui.FirstRow;
+                var col = ui.MidCol + 4;
+                var used = p.Rooms?.Count(x => x.Value > 0) ?? 0;
+                ui.AddText(col, row++, string.Format(GameTool.LS("estate_house_facts"), DistrictName(p.District), p.Prosperity, p.Level, HouseTax(town, p))).Format(null, 14);
+                ui.AddText(col, row++, string.Format(GameTool.LS("estate_house_rooms"), used, RoomSlots(p.Level))).Format(null, 14);
+                row++;
+                // upgrade of the house
+                if (p.Level < MAX_LEVEL)
                 {
-                    // the plots around are roads, water or other owners': no room for the next level here
-                    ui.AddText(col, row, NoRoomText(p.Level + 1)).Format(Color.gray, 13);
-                    row += 2;
-                }
-                else
-                {
-                    var up = ui.AddButton(col, row, () =>
+                    var (add, land, cost) = UpgradeCost(town, p);
+                    if (add == null)
                     {
-                        var rs = Upgrade(town, p, Player);
-                        if (rs == BuildResult.Ok) { OpenHouse(town, p); InfoDialog.Msg(HouseName(p.Level), string.Format(GameTool.LS("estate_done"), HouseName(p.Level))); }
-                        else Result(town, p, rs, cost, p.Level + 1);
-                    }, string.Format(GameTool.LS("estate_upgrade_btn"), HouseName(p.Level + 1), SpiritNoteEvent.NotesFor(cost), RequiredGrade(p.Level + 1))).Size(480, 36);
-                    SpiritNoteEvent.WithIcon(ui, up, ui.Columns[col], ui.Rows[row]);
-                    row += 2;
-                    if (add.Count > 0)
-                    {
-                        ui.AddText(col, row, string.Format(GameTool.LS("estate_upgrade_land"), add.Count, SpiritNoteEvent.NotesFor(land))).Format(new Color(0.55f, 0.35f, 0f), 12);
+                        // the plots around are roads, water or other owners': no room for the next level here
+                        ui.AddText(col, row, NoRoomText(p.Level + 1)).Format(Color.gray, 13);
                         row += 2;
                     }
+                    else
+                    {
+                        var up = ui.AddButton(col, row, () =>
+                        {
+                            var rs = Upgrade(town, p, Player);
+                            if (rs == BuildResult.Ok) { OpenHouse(town, p); InfoDialog.Msg(HouseName(p.Level), string.Format(GameTool.LS("estate_done"), HouseName(p.Level))); }
+                            else Result(town, p, rs, cost, p.Level + 1);
+                        }, string.Format(GameTool.LS("estate_upgrade_btn"), HouseName(p.Level + 1), SpiritNoteEvent.NotesFor(cost), RequiredGrade(p.Level + 1))).Size(480, 36);
+                        SpiritNoteEvent.WithIcon(ui, up, ui.Columns[col], ui.Rows[row]);
+                        row += 2;
+                        if (add.Count > 0)
+                        {
+                            ui.AddText(col, row, string.Format(GameTool.LS("estate_upgrade_land"), add.Count, SpiritNoteEvent.NotesFor(land))).Format(new Color(0.55f, 0.35f, 0f), 12);
+                            row += 2;
+                        }
+                    }
                 }
-            }
-            // herbs of the garden
-            if (RoomLevel(p, RoomKind.Garden) > 0)
-            {
-                ui.AddButton(col, row, () =>
+                // herbs of the garden
+                if (RoomLevel(p, RoomKind.Garden) > 0)
                 {
-                    var n = CollectHerbs(p, Player);
-                    OpenHouse(town, p);
-                    InfoDialog.Msg(RoomName(RoomKind.Garden), string.Format(GameTool.LS("estate_herbs_done"), n));
-                }, string.Format(GameTool.LS("estate_herbs_btn"), p.Herbs?.Count ?? 0)).Size(480, 36);
-                row += 2;
-            }
-            ui.AddButton(col, row, () => OpenPlots(town), GameTool.LS("estate_back_map")).Size(480, 36);
+                    ui.AddButton(col, row, () =>
+                    {
+                        var n = CollectHerbs(p, Player);
+                        OpenHouse(town, p);
+                        InfoDialog.Msg(RoomName(RoomKind.Garden), string.Format(GameTool.LS("estate_herbs_done"), n));
+                    }, string.Format(GameTool.LS("estate_herbs_btn"), p.Herbs?.Count ?? 0)).Size(480, 36);
+                    row += 2;
+                }
+                ui.AddButton(col, row, () => OpenPlots(town), GameTool.LS("estate_back_map")).Size(480, 36);
 
-            // rooms: built ones, then the empty slots (a line every 2 rows: the buttons are taller than a row)
-            row = Math.Max(row + 2, ui.FirstRow + 8);
-            ui.AddText(ui.MidCol, row++, GameTool.LS("estate_rooms_title")).Format(null, 16);
-            row++;
-            var textX = ui.Columns[ui.FirstCol + 3];
-            var btnCol = ui.LastCol - 6;
-            foreach (var kind in ROOM_KINDS.Where(k => RoomLevel(p, k) > 0))
-            {
-                var k = kind;
-                var lvl = RoomLevel(p, k);
-                LeftText(ui, textX, row, $"{RoomName(k)} {lvl}/{RoomMax}:  {RoomEffect(k, lvl)}", Color.black);
-                if (lvl < RoomMax)
+                // rooms: built ones, then the empty slots (a line every 2 rows: the buttons are taller than a row)
+                row = Math.Max(row + 2, ui.FirstRow + 8);
+                ui.AddText(ui.MidCol, row++, GameTool.LS("estate_rooms_title")).Format(null, 16);
+                row++;
+                var textX = ui.Columns[ui.FirstCol + 3];
+                var btnCol = ui.LastCol - 6;
+                foreach (var kind in ROOM_KINDS.Where(k => RoomLevel(p, k) > 0))
                 {
-                    var cost = RoomCost(town, lvl + 1);
-                    SpiritNoteEvent.WithIcon(ui, ui.AddButton(btnCol, row, () => RoomResult(town, p, k, BuildRoom(town, p, k, Player), cost),
-                        string.Format(GameTool.LS("estate_room_up"), SpiritNoteEvent.NotesFor(cost))).Size(220, 30), ui.Columns[btnCol], ui.Rows[row], 22f);
+                    var k = kind;
+                    var lvl = RoomLevel(p, k);
+                    LeftText(ui, textX, row, $"{RoomName(k)} {lvl}/{RoomMax}:  {RoomEffect(k, lvl)}", Color.black);
+                    if (lvl < RoomMax)
+                    {
+                        var cost = RoomCost(town, lvl + 1);
+                        SpiritNoteEvent.WithIcon(ui, ui.AddButton(btnCol, row, () => RoomResult(town, p, k, BuildRoom(town, p, k, Player), cost),
+                            string.Format(GameTool.LS("estate_room_up"), SpiritNoteEvent.NotesFor(cost))).Size(220, 30), ui.Columns[btnCol], ui.Rows[row], 22f);
+                    }
+                    row += 2;
                 }
-                row += 2;
-            }
-            for (var i = used; i < RoomSlots(p.Level); i++)
-            {
-                LeftText(ui, textX, row, GameTool.LS("estate_room_empty"), Color.gray);
-                ui.AddButton(btnCol, row, () => OpenRoomChoice(town, p), GameTool.LS("estate_room_build")).Size(220, 30);
-                row += 2;
-            }
-            if (RoomSlots(p.Level) < MAX_LEVEL)
-                ui.AddText(ui.MidCol, row, GameTool.LS("estate_room_more")).Format(Color.gray, 13);
+                for (var i = used; i < RoomSlots(p.Level); i++)
+                {
+                    LeftText(ui, textX, row, GameTool.LS("estate_room_empty"), Color.gray);
+                    ui.AddButton(btnCol, row, () => OpenRoomChoice(town, p), GameTool.LS("estate_room_build")).Size(220, 30);
+                    row += 2;
+                }
+                if (RoomSlots(p.Level) < MAX_LEVEL)
+                    ui.AddText(ui.MidCol, row, GameTool.LS("estate_room_more")).Format(Color.gray, 13);
+            });
         }
 
         /// <summary>The rooms that can be built in an empty slot.</summary>
         public static void OpenRoomChoice(MapBuildTown town, Plot p)
         {
-            var ui = new UICustom1(GameTool.LS("estate_room_build"));
-            var row = ui.FirstRow + 1;
-            var cost = RoomCost(town, 1);
-            var textX = ui.Columns[ui.FirstCol + 3];
-            foreach (var kind in ROOM_KINDS.Where(k => RoomLevel(p, k) == 0))
+            TaoistWindows.Open1(() =>
             {
-                var k = kind;
-                LeftText(ui, textX, row, $"{RoomName(k)}:  {RoomEffect(k, 1)}", Color.black);
-                SpiritNoteEvent.WithIcon(ui, ui.AddButton(ui.LastCol - 6, row, () => RoomResult(town, p, k, BuildRoom(town, p, k, Player), cost),
-                    string.Format(GameTool.LS("estate_room_new"), SpiritNoteEvent.NotesFor(cost))).Size(220, 30), ui.Columns[ui.LastCol - 6], ui.Rows[row], 22f);
-                row += 2;
-            }
-            ui.AddText(ui.MidCol, row + 1, GameTool.LS("estate_room_hint")).Format(null, 13);
-            ui.AddButton(ui.MidCol, ui.LastRow - 2, () => OpenHouse(town, p), GameTool.LS("estate_back_house")).Size(240, 36);
+                var ui = new UICustom1(GameTool.LS("estate_room_build"));
+                var row = ui.FirstRow + 1;
+                var cost = RoomCost(town, 1);
+                var textX = ui.Columns[ui.FirstCol + 3];
+                foreach (var kind in ROOM_KINDS.Where(k => RoomLevel(p, k) == 0))
+                {
+                    var k = kind;
+                    LeftText(ui, textX, row, $"{RoomName(k)}:  {RoomEffect(k, 1)}", Color.black);
+                    SpiritNoteEvent.WithIcon(ui, ui.AddButton(ui.LastCol - 6, row, () => RoomResult(town, p, k, BuildRoom(town, p, k, Player), cost),
+                        string.Format(GameTool.LS("estate_room_new"), SpiritNoteEvent.NotesFor(cost))).Size(220, 30), ui.Columns[ui.LastCol - 6], ui.Rows[row], 22f);
+                    row += 2;
+                }
+                ui.AddText(ui.MidCol, row + 1, GameTool.LS("estate_room_hint")).Format(null, 13);
+                ui.AddButton(ui.MidCol, ui.LastRow - 2, () => OpenHouse(town, p), GameTool.LS("estate_back_house")).Size(240, 36);
+            });
         }
 
         /// <summary>A text left aligned at x (canvas units) on a row of the window.</summary>

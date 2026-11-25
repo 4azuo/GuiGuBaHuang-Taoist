@@ -1,3 +1,4 @@
+using MOD_nE7UL2.Helper;
 using EGameTypeData;
 using MOD_nE7UL2.Const;
 using ModLib.Attributes;
@@ -52,35 +53,38 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Taoist settings window.</summary>
         public void OpenTaoistSettings()
         {
-            var ui = new UICustom1(GameTool.LS("setting000"));
+            TaoistWindows.Open1(() =>
             {
-                var col = ui.MidCol;
-                var row = ui.FirstRow + 1;
-                ui.AddText(col, row++, GameTool.LS("setting010")).Format(null, 17, FontStyle.Italic);
-                AddToggle(ui, col, row++, "setting002", HideDamageMultiplier, v => HideDamageMultiplier = v);
-                AddToggle(ui, col, row++, "setting017", HideDamageCalcButton, v => HideDamageCalcButton = v);
-                AddToggle(ui, col, row++, "setting003", !DebugHelper.IsDebugMode, v =>
+                var ui = new UICustom1(GameTool.LS("setting000"));
                 {
-                    DebugHelper.IsDebugMode = !v;
-                    HideExceptionLogs = v;
-                });
-                ui.AddText(col, row++, GameTool.LS("setting004")).Format(null, 13);
-                row++;
-                ui.AddText(col, row++, GameTool.LS("setting011")).Format(null, 17, FontStyle.Italic);
-                AddToggle(ui, col, row++, "setting012", NotifyMarketOffers, v => NotifyMarketOffers = v);
-                AddToggle(ui, col, row++, "setting014", EncounterEvent.Instance?.Enabled ?? true, v => { if (EncounterEvent.Instance != null) EncounterEvent.Instance.Enabled = v; });
-                ui.AddButton(col - 3, row, () => TaoistLogEvent.Instance?.OpenLog(), GameTool.LS("setting013")).Size(240, 40);
-                ui.AddButton(col + 3, row++, SMScoreEvent.OpenRecords, GameTool.LS("setting016")).Size(240, 40);
-                row++;
-                // divine artifact hotkeys, then the other hotkeys of the mod (damage calculation)
-                ui.AddText(col, row++, GameTool.LS("setting005")).Format(null, 17, FontStyle.Italic);
-                foreach (var line in BankLoanEvent.WrapWords(GameTool.LS("setting006"), 110))
-                    ui.AddText(col, row++, line).Format(null, 13);
-                row = AnimaWeaponEvent.Instance?.AddBindingRows(ui, row, AnimaWeaponEvent.WEAPONS) ?? row;
-                ui.AddText(col, row++, GameTool.LS("setting015")).Format(null, 17, FontStyle.Italic);
-                row = AnimaWeaponEvent.Instance?.AddBindingRows(ui, row, new[] { AnimaWeaponEvent.DamageInfoRow }, false) ?? row;
-                ui.AddText(col, ui.LastRow, GameTool.LS("setting001")).Format(Color.red, 15);
-            }
+                    var col = ui.MidCol;
+                    var row = ui.FirstRow + 1;
+                    ui.AddText(col, row++, GameTool.LS("setting010")).Format(null, 17, FontStyle.Italic);
+                    AddToggle(ui, col, row++, "setting002", HideDamageMultiplier, v => HideDamageMultiplier = v);
+                    AddToggle(ui, col, row++, "setting017", HideDamageCalcButton, v => HideDamageCalcButton = v);
+                    AddToggle(ui, col, row++, "setting003", !DebugHelper.IsDebugMode, v =>
+                    {
+                        DebugHelper.IsDebugMode = !v;
+                        HideExceptionLogs = v;
+                    });
+                    ui.AddText(col, row++, GameTool.LS("setting004")).Format(null, 13);
+                    row++;
+                    ui.AddText(col, row++, GameTool.LS("setting011")).Format(null, 17, FontStyle.Italic);
+                    AddToggle(ui, col, row++, "setting012", NotifyMarketOffers, v => NotifyMarketOffers = v);
+                    AddToggle(ui, col, row++, "setting014", EncounterEvent.Instance?.Enabled ?? true, v => { if (EncounterEvent.Instance != null) EncounterEvent.Instance.Enabled = v; });
+                    ui.AddButton(col - 3, row, () => TaoistLogEvent.Instance?.OpenLog(), GameTool.LS("setting013")).Size(240, 40);
+                    ui.AddButton(col + 3, row++, SMScoreEvent.OpenRecords, GameTool.LS("setting016")).Size(240, 40);
+                    row++;
+                    // divine artifact hotkeys, then the other hotkeys of the mod (damage calculation)
+                    ui.AddText(col, row++, GameTool.LS("setting005")).Format(null, 17, FontStyle.Italic);
+                    foreach (var line in BankLoanEvent.WrapWords(GameTool.LS("setting006"), 110))
+                        ui.AddText(col, row++, line).Format(null, 13);
+                    row = AnimaWeaponEvent.Instance?.AddBindingRows(ui, row, AnimaWeaponEvent.WEAPONS) ?? row;
+                    ui.AddText(col, row++, GameTool.LS("setting015")).Format(null, 17, FontStyle.Italic);
+                    row = AnimaWeaponEvent.Instance?.AddBindingRows(ui, row, new[] { AnimaWeaponEvent.DamageInfoRow }, false) ?? row;
+                    ui.AddText(col, ui.LastRow, GameTool.LS("setting001")).Format(Color.red, 15);
+                }
+            });
         }
 
         private static void AddToggle(UICustom1 ui, int col, int row, string labelKey, bool value, System.Action<bool> set)

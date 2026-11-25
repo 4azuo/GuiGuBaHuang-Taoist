@@ -808,5 +808,15 @@
 		"id": "-1000001211",
 		"key": "smcfgs211",
 		"en|ch|tc|kr": "Ein Herzschlag im Stein: Dein Geistessinn findet einen Körperveredler, den seine Trübsal halb versteinert hat (Geistessinn, Körperveredelung)."
+	},
+	{
+		"id": -1000001212,
+		"key": "smcfgs212",
+		"en|ch|tc|kr": "Die namenlose Kunst: Ein verstoßener Schüler erschafft eine Kampfkunst, und die alte Sekte will sie (benötigt die Mod Dao of Creation)."
+	},
+	{
+		"id": -1000001213,
+		"key": "smcfgs213",
+		"en|ch|tc|kr": "Nur für einen Erben: Ein alter Meister schreibt eine letzte Kunst und prüft zwei Erben (benötigt die Mod Dao of Creation)."
 	}
 ]

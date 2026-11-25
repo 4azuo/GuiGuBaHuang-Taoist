@@ -24,8 +24,6 @@ namespace MOD_nE7UL2.Mod
         public const float PAGE1_BTN_WIDTH = 200;
         public const float PAGE1_BTN_HEIGHT = 38;
         public const int PAGE1_FONT_SIZE = 15;
-        public const float PAGE2_BTN_WIDTH = 250;
-        public const float PAGE2_BTN_HEIGHT = 28;
         public const int PAGE2_FONT_SIZE = 13;
         public const float PAGE3_BTN_WIDTH = 210;
         public const float PAGE3_BTN_HEIGHT = 50;
@@ -108,300 +106,279 @@ namespace MOD_nE7UL2.Mod
 
             var player = g.world.playerUnit;
 
-            uiTrainer = new UICustom1(TITLE, okAct: () => uiTrainer = null);
-            uiTrainer.IsShowNavigationButtons = true;
-            uiTrainer.UI.isFastClose = true;
-
-            //page 1
-            uiTrainer.AddPage((ui) =>
+            TaoistWindows.Open1(() =>
             {
-                int col, row;
-                uiTrainer.AddText(uiTrainer.MidCol, uiTrainer.FirstRow, GameTool.LS("trainer000")).Format(Color.red, 17);
+                uiTrainer = new UICustom1(TITLE, okAct: () => uiTrainer = null);
+                uiTrainer.IsShowNavigationButtons = true;
+                uiTrainer.UI.isFastClose = true;
 
-                col = 2; row = 2;
-                uiTrainer.AddText(col - 1, row - 1, GameTool.LS("trainer001")).Format(null, 13).Align(TextAnchor.MiddleLeft);
-                FormatButton1(uiTrainer.AddButton(col, row, Recover, GameTool.LS("trainer002")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddMaxHP, GameTool.LS("trainer003")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMaxHP, GameTool.LS("trainer004")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddMaxMP, GameTool.LS("trainer005")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMaxMP, GameTool.LS("trainer006")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddMaxSP, GameTool.LS("trainer007")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMaxSP, GameTool.LS("trainer008")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddBasis, GameTool.LS("trainer009")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceBasis, GameTool.LS("trainer010")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddAtk, GameTool.LS("trainer011")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceAtk, GameTool.LS("trainer012")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddDef, GameTool.LS("trainer013")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceDef, GameTool.LS("trainer014")));
+                //page 1
+                uiTrainer.AddPage((ui) =>
+                {
+                    int col, row;
+                    uiTrainer.AddText(uiTrainer.MidCol, uiTrainer.FirstRow, GameTool.LS("trainer000")).Format(Color.red, 17);
 
-                col = 8; row = 2;
-                FormatButton1(uiTrainer.AddButton(col, row, () => uiTrainer.Pages[1].Active(), GameTool.LS("trainer015")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddMoney, GameTool.LS("trainer016")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMoney, GameTool.LS("trainer017")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddDegree, GameTool.LS("trainer018")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceDegree, GameTool.LS("trainer019")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddContribution, GameTool.LS("trainer020")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceContribution, GameTool.LS("trainer021")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddAbilityExp, GameTool.LS("trainer022")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceAbilityExp, GameTool.LS("trainer023")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddReputation, GameTool.LS("trainer042")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceReputation, GameTool.LS("trainer043")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, BecomeTownMaster, GameTool.LS("trainer047")));
-                FormatButton1(uiTrainer.AddSelect(col, row += 2, GodWeaponSelections.Select(x => x.Item1).ToArray(), GodWeaponSelections.IndexOf(x => x.Item2 == (GodArtifactHelper.GetAnimaWeapon().Count > 0 ? GodArtifactHelper.GetAnimaWeapon()[0] : GameAnimaWeapon.None)).FixValue(0, GodWeaponSelections.Count - 1))
-                    .SetWork(new UIItemWork
-                    {
-                        ChangeAct = ModLib.Helper.ActionHelper.WTracedAction<UIItemBase, object>((comp, selectedIndex) =>
+                    col = 2; row = 2;
+                    uiTrainer.AddText(col - 1, row - 1, GameTool.LS("trainer001")).Format(null, 13).Align(TextAnchor.MiddleLeft);
+                    FormatButton1(uiTrainer.AddButton(col, row, Recover, GameTool.LS("trainer002")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddMaxHP, GameTool.LS("trainer003")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMaxHP, GameTool.LS("trainer004")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddMaxMP, GameTool.LS("trainer005")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMaxMP, GameTool.LS("trainer006")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddMaxSP, GameTool.LS("trainer007")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMaxSP, GameTool.LS("trainer008")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddBasis, GameTool.LS("trainer009")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceBasis, GameTool.LS("trainer010")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddAtk, GameTool.LS("trainer011")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceAtk, GameTool.LS("trainer012")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddDef, GameTool.LS("trainer013")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceDef, GameTool.LS("trainer014")));
+
+                    col = 8; row = 2;
+                    FormatButton1(uiTrainer.AddButton(col, row, () => uiTrainer.Pages[1].Active(), GameTool.LS("trainer015")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddMoney, GameTool.LS("trainer016")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceMoney, GameTool.LS("trainer017")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddDegree, GameTool.LS("trainer018")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceDegree, GameTool.LS("trainer019")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddContribution, GameTool.LS("trainer020")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceContribution, GameTool.LS("trainer021")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddAbilityExp, GameTool.LS("trainer022")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceAbilityExp, GameTool.LS("trainer023")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddReputation, GameTool.LS("trainer042")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceReputation, GameTool.LS("trainer043")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, BecomeTownMaster, GameTool.LS("trainer047")));
+                    FormatButton1(uiTrainer.AddSelect(col, row += 2, GodWeaponSelections.Select(x => x.Item1).ToArray(), GodWeaponSelections.IndexOf(x => x.Item2 == (GodArtifactHelper.GetAnimaWeapon().Count > 0 ? GodArtifactHelper.GetAnimaWeapon()[0] : GameAnimaWeapon.None)).FixValue(0, GodWeaponSelections.Count - 1))
+                        .SetWork(new UIItemWork
                         {
-                            GodWeaponSelections[(comp as UIItemSelect).SelectedIndex].Item3.Invoke();
-                        })
-                    }) as UIItemSelect);
+                            ChangeAct = ModLib.Helper.ActionHelper.WTracedAction<UIItemBase, object>((comp, selectedIndex) =>
+                            {
+                                GodWeaponSelections[(comp as UIItemSelect).SelectedIndex].Item3.Invoke();
+                            })
+                        }) as UIItemSelect);
 
-                col = 14; row = 2;
-                FormatButton1((UIItemButton)uiTrainer.AddButton(col, row, GameHelper.ChangeGameSpeed, "{0}").SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { Time.timeScale == 0 ? GameTool.LS("trainer024") : GameTool.LS("trainer025") }),
-                }));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, () => GameHelper.SpeedGame(1), GameTool.LS("trainer026")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, () => GameHelper.SpeedGame(2), GameTool.LS("trainer027")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, () => GameHelper.SpeedGame(3), GameTool.LS("trainer028")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, Levelup, GameTool.LS("trainer029")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, Leveldown, GameTool.LS("trainer030")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddExp, GameTool.LS("trainer031")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddLife, GameTool.LS("trainer032")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceLife, GameTool.LS("trainer033")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddFootspeed, GameTool.LS("trainer034")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceFootspeed, GameTool.LS("trainer035")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, AddViewRange, GameTool.LS("trainer036")));
-                FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceViewRange, GameTool.LS("trainer037")));
-
-                col = 23; row = 2;
-                uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer038")).Format(null, 17, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_hp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Hp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.HpMax).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_money")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetUnitMoney().ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_mp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Mp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.MpMax).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_degree")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetUnitMayorDegree().ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_sp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Sp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.SpMax).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_contribution")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetUnitContribution().ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("ui_atk")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Attack).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_def")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Defense).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_mood")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Mood).value, player.GetDynProperty(UnitDynPropertyEnum.MoodMax).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_stamina")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Energy).value, player.GetDynProperty(UnitDynPropertyEnum.EnergyMax).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_health")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Health).value, player.GetDynProperty(UnitDynPropertyEnum.HealthMax).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_life")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Age).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.Life).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_travel_speed")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.FootSpeed).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_view_range")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.PlayerView).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_battle_speed")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.MoveSpeed).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_ability")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.AbilityExp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.AbilityPoint).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_luck")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Luck).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_insight")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Talent).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_exp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetExp().ToString(ModConst.FORMAT_NUMBER), player.GetMaxExpCurrentPhase().ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_reputation")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Reputation).value.ToString(ModConst.FORMAT_NUMBER) }),
-                });
-                uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer_lbl_grade")).Align(TextAnchor.MiddleCenter).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) =>
+                    col = 14; row = 2;
+                    FormatButton1((UIItemButton)uiTrainer.AddButton(col, row, GameHelper.ChangeGameSpeed, "{0}").SetWork(new UIItemWork
                     {
-                        var grade = player.GetGradeConf();
-                        return new object[]
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { Time.timeScale == 0 ? GameTool.LS("trainer024") : GameTool.LS("trainer025") }),
+                    }));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, () => GameHelper.SpeedGame(1), GameTool.LS("trainer026")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, () => GameHelper.SpeedGame(2), GameTool.LS("trainer027")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, () => GameHelper.SpeedGame(3), GameTool.LS("trainer028")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, Levelup, GameTool.LS("trainer029")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, Leveldown, GameTool.LS("trainer030")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddExp, GameTool.LS("trainer031")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddLife, GameTool.LS("trainer032")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceLife, GameTool.LS("trainer033")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddFootspeed, GameTool.LS("trainer034")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceFootspeed, GameTool.LS("trainer035")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, AddViewRange, GameTool.LS("trainer036")));
+                    FormatButton1(uiTrainer.AddButton(col, row += 2, ReduceViewRange, GameTool.LS("trainer037")));
+
+                    col = 23; row = 2;
+                    uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer038")).Format(null, 17, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_hp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Hp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.HpMax).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_money")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetUnitMoney().ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_mp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Mp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.MpMax).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_degree")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetUnitMayorDegree().ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_sp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Sp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.SpMax).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_contribution")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetUnitContribution().ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("ui_atk")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Attack).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_def")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Defense).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_mood")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Mood).value, player.GetDynProperty(UnitDynPropertyEnum.MoodMax).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_stamina")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Energy).value, player.GetDynProperty(UnitDynPropertyEnum.EnergyMax).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_health")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Health).value, player.GetDynProperty(UnitDynPropertyEnum.HealthMax).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_life")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Age).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.Life).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_travel_speed")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.FootSpeed).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_view_range")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.PlayerView).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_battle_speed")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.MoveSpeed).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_ability")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.AbilityExp).value.ToString(ModConst.FORMAT_NUMBER), player.GetDynProperty(UnitDynPropertyEnum.AbilityPoint).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_luck")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Luck).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_insight")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Talent).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_exp")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetExp().ToString(ModConst.FORMAT_NUMBER), player.GetMaxExpCurrentPhase().ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_reputation")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Reputation).value.ToString(ModConst.FORMAT_NUMBER) }),
+                    });
+                    uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer_lbl_grade")).Align(TextAnchor.MiddleCenter).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) =>
                         {
-                            GameTool.LS(g.conf.roleGrade.GetItem(grade.id).gradeName),
-                            GameTool.LS(g.conf.roleGrade.GetItem(grade.id).phaseName),
-                            GameTool.LS(g.conf.roleGrade.GetItem(grade.id).qualityName)
-                        };
-                    }),
-                });
+                            var grade = player.GetGradeConf();
+                            return new object[]
+                            {
+                                GameTool.LS(g.conf.roleGrade.GetItem(grade.id).gradeName),
+                                GameTool.LS(g.conf.roleGrade.GetItem(grade.id).phaseName),
+                                GameTool.LS(g.conf.roleGrade.GetItem(grade.id).qualityName)
+                            };
+                        }),
+                    });
 
-                row++;
-                uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer039")).Format(null, 17, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_fire")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFire).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_blade")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisBlade).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_water")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFroze).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_spear")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisSpear).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_lightning")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisThunder).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_sword")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisSword).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_wind")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisWind).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_fist")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFist).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_earth")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisEarth).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_palm")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisPalm).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_wood")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisWood).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_finger")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFinger).value }),
-                });
-
-                row++;
-                uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer040")).Format(null, 17, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
-                uiTrainer.AddText(col, row, GameTool.LS("trainer049")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.RefineElixir).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer050")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.RefineWeapon).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer051")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Geomancy).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer052")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Symbol).value }),
-                });
-                uiTrainer.AddText(col, row, GameTool.LS("trainer053")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Herbal).value }),
-                });
-                uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer054")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
-                {
-                    Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Mine).value }),
-                });
-            });
-
-            //page 2
-            uiTrainer.AddPage((ui) =>
-            {
-                uiTrainer.AddText(uiTrainer.MidCol, uiTrainer.FirstRow, GameTool.LS("trainer041")).Format(Color.red, 17);
-
-                var row = new Dictionary<int, int>
-                {
-                    [0] = 0,
-                    [1] = 0,
-                    [2] = 0,
-                    [3] = 0,
-                    [4] = 0,
-                };
-                int col = 0, areaId = -1;
-                foreach (var build in ModMain.Store.Buildings.Where(x => !string.IsNullOrEmpty(x.name) && TELE_AREA_COL[x.gridData.areaBaseID].Value0.Parse<int>() >= 0 && ((Func<MapBuildBase, bool>)TELE_AREA_COL[x.gridData.areaBaseID].Value1).Invoke(x))
-                    .OrderBy(x => TELE_AREA_COL[x.gridData.areaBaseID].Value0.Parse<int>()).ThenBy(x => x.gridData.areaBaseID).ThenBy(x => x.name))
-                {
-                    if (areaId != build.gridData.areaBaseID)
+                    row++;
+                    uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer039")).Format(null, 17, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_fire")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
                     {
-                        areaId = build.gridData.areaBaseID;
-                        col = TELE_AREA_COL[areaId].Value0.Parse<int>() * 6 + 2;
-                        uiTrainer.AddText(col, 1 + row[TELE_AREA_COL[areaId].Value0.Parse<int>()]++, ModTextHelper.LSF("trainer_lbl_area", areaId)).Format(null, 16, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
-                    }
-                    FormatButton2(uiTrainer.AddButton(col, 1 + row[TELE_AREA_COL[areaId].Value0.Parse<int>()]++, () => Tele(build.GetOpenBuildPoints()[0]), build.name));
-                }
-            });
-
-            //page 3
-            uiTrainer.AddPage((ui) =>
-            {
-                uiTrainer.AddText(uiTrainer.MidCol, uiTrainer.FirstRow, GameTool.LS("trainer045")).Format(Color.red, 17);
-
-                int col = 3, row = 2, c = 0;
-                foreach (var conf in g.conf.roleGrade._allConfList)
-                {
-                    if (conf.itemShowA != "0" || conf.itemShowB != "0")
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFire).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_blade")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
                     {
-                        FormatButton3(uiTrainer.AddButton(col + 6 * (c / 13), row + 2 * (c % 13), () => AddBreakthroughItems(conf), $"{GameTool.LS(conf.gradeName)} - {GameTool.LS(conf.phaseName)}\n{GameTool.LS(conf.qualityName)}"));
-                        c++;
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisBlade).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_water")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFroze).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_spear")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisSpear).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_lightning")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisThunder).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_sword")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisSword).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_wind")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisWind).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_fist")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFist).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_earth")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisEarth).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_palm")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisPalm).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer_lbl_wood")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisWood).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer_lbl_finger")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.BasisFinger).value }),
+                    });
+
+                    row++;
+                    uiTrainer.AddText(col - 1, row++, GameTool.LS("trainer040")).Format(null, 17, FontStyle.Italic).Align(TextAnchor.MiddleCenter);
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer049")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.RefineElixir).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer050")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.RefineWeapon).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer051")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Geomancy).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer052")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Symbol).value }),
+                    });
+                    uiTrainer.AddText(col, row, GameTool.LS("trainer053")).Align(TextAnchor.MiddleLeft).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Herbal).value }),
+                    });
+                    uiTrainer.AddText(col - 3, row++, GameTool.LS("trainer054")).Align(TextAnchor.MiddleRight).Format(Color.black, 15).SetWork(new UIItemWork
+                    {
+                        Formatter = ModLib.Helper.ActionHelper.WTracedFunc<UIItemBase, object[]>((x) => new object[] { player.GetDynProperty(UnitDynPropertyEnum.Mine).value }),
+                    });
+                });
+
+                //page 2: teleport, by area (the areas on the left, the places of the chosen one on the right)
+                uiTrainer.AddPage((ui) => BuildTelePage(uiTrainer));
+
+                //page 3
+                uiTrainer.AddPage((ui) =>
+                {
+                    uiTrainer.AddText(uiTrainer.MidCol, uiTrainer.FirstRow, GameTool.LS("trainer045")).Format(Color.red, 17);
+
+                    int col = 3, row = 2, c = 0;
+                    foreach (var conf in g.conf.roleGrade._allConfList)
+                    {
+                        if (conf.itemShowA != "0" || conf.itemShowB != "0")
+                        {
+                            FormatButton3(uiTrainer.AddButton(col + 6 * (c / 13), row + 2 * (c % 13), () => AddBreakthroughItems(conf), $"{GameTool.LS(conf.gradeName)} - {GameTool.LS(conf.phaseName)}\n{GameTool.LS(conf.qualityName)}"));
+                            c++;
+                        }
                     }
-                }
+                });
+
+                //page 4
+                uiTrainer.AddPage((ui) =>
+                {
+                    int col, row;
+
+                    col = 2; row = 2;
+                    uiTrainer.AddText(col, row++, string.Format(GameTool.LS("trainer048"), g.world.unit.allUnits.Count)).Align(TextAnchor.MiddleLeft).Format(Color.black, 15);
+                });
+
+                uiTrainer.Pages[defPage].Active();
             });
-
-            //page 4
-            uiTrainer.AddPage((ui) =>
-            {
-                int col, row;
-
-                col = 2; row = 2;
-                uiTrainer.AddText(col, row++, string.Format(GameTool.LS("trainer048"), g.world.unit.allUnits.Count)).Align(TextAnchor.MiddleLeft).Format(Color.black, 15);
-            });
-
-            uiTrainer.Pages[defPage].Active();
         }
 
         /// <summary>
@@ -423,10 +400,6 @@ namespace MOD_nE7UL2.Mod
         /// <summary>
         /// Applies the trainer page button style (size and font).
         /// </summary>
-        private void FormatButton2(UIItemButton btn)
-        {
-            btn.Format(Color.black, PAGE2_FONT_SIZE).Size(PAGE2_BTN_WIDTH, PAGE2_BTN_HEIGHT);
-        }
 
         /// <summary>
         /// Applies the trainer page button style (size and font).
@@ -470,6 +443,103 @@ namespace MOD_nE7UL2.Mod
             player.SetProperty<int>(UnitPropertyEnum.Mood, int.MaxValue);
             player.SetProperty<int>(UnitPropertyEnum.Energy, int.MaxValue);
             player.SetProperty<int>(UnitPropertyEnum.Health, int.MaxValue);
+        }
+
+        // ------------------------------------------------------------------ page 2: teleport
+
+        /// <summary>The area shown on the teleport page (its places), 0 before the page is built.</summary>
+        public int TeleArea { get; private set; }
+        /// <summary>The buttons of the teleport page: area -> its button; the places with their area (tests).</summary>
+        public Dictionary<int, UIItemButton> TeleAreaButtons { get; } = new Dictionary<int, UIItemButton>();
+        public List<Tuple<int, MapBuildBase, UIItemButton, UIItemText>> TelePlaces { get; } = new List<Tuple<int, MapBuildBase, UIItemButton, UIItemText>>();
+        private UIItemImage teleGlow;
+
+        public const float AREA_BTN_WIDTH = 150, AREA_BTN_HEIGHT = 30, PLACE_BTN_WIDTH = 205, PLACE_BTN_HEIGHT = 26;
+        /// <summary>Columns of the places of an area.</summary>
+        public const int PLACE_COLUMNS = 4;
+
+        /// <summary>The places of the trainer: towns and sects (and every place of some areas), by area then name.</summary>
+        public List<MapBuildBase> TeleBuilds() => ModMain.Store.Buildings
+            .Where(x => !string.IsNullOrEmpty(x.name) && TELE_AREA_COL.ContainsKey(x.gridData.areaBaseID) && ((Func<MapBuildBase, bool>)TELE_AREA_COL[x.gridData.areaBaseID].Value1).Invoke(x))
+            .OrderBy(x => x.gridData.areaBaseID).ThenBy(x => KindOrder(x)).ThenBy(x => x.name).ToList();
+
+        /// <summary>Cities, then towns, sects, the other places.</summary>
+        private static int KindOrder(MapBuildBase x) => x.IsCity() ? 0 : x.IsTown() ? 1 : x.IsSchool() ? 2 : 3;
+
+        /// <summary>The icon of a place (text icons of the game): city, town, sect, other.</summary>
+        public static string PlaceIcon(MapBuildBase x) => x.IsCity() ? "zm_fanrongdu" : x.IsTown() ? "zm_lingdi" : x.IsSchool() ? "shenmizuzhi1001" : "daodian";
+
+        private void BuildTelePage(UICustom1 ui)
+        {
+            TeleAreaButtons.Clear();
+            TelePlaces.Clear();
+            // the page of the teleport (its items are shown only while it is the current page)
+            var page = ui.CurrentPage;
+            ui.AddText(ui.MidCol, ui.FirstRow, GameTool.LS("trainer041")).Format(Color.red, 17);
+            var builds = TeleBuilds();
+            var areas = builds.Select(x => x.gridData.areaBaseID).Distinct().OrderBy(x => x).ToList();
+            var left = ui.Columns[ui.FirstCol];
+            var width = ui.Columns[ui.LastCol] - left;
+            var dy = UIHelper.GetUIDeltaY();
+            var top = ui.Rows[ui.FirstRow + 2];
+            // the areas: one column on the left, the count of places in each
+            var ax = left + AREA_BTN_WIDTH / 2f + 10f;
+            for (var k = 0; k < areas.Count; k++)
+            {
+                var area = areas[k];
+                var count = builds.Count(x => x.gridData.areaBaseID == area);
+                var btn = ui.AddButton(ax, top - k * (AREA_BTN_HEIGHT + 6f), () => SelectTeleArea(area), $"{ModTextHelper.LSF("trainer_lbl_area", area).TrimEnd(':', '：')} ({count})");
+                btn.Format(Color.black, PAGE2_FONT_SIZE + 1).Size(AREA_BTN_WIDTH, AREA_BTN_HEIGHT);
+                TeleAreaButtons[area] = btn;
+            }
+            // the places: a grid right of the areas, icon + name, the places of every area (only the chosen area shown)
+            var gx = left + AREA_BTN_WIDTH + 40f;
+            var colW = (width - (gx - left)) / PLACE_COLUMNS;
+            var rowH = Math.Max(PLACE_BTN_HEIGHT + 4f, dy * 0.95f);
+            foreach (var area in areas)
+            {
+                var n = 0;
+                foreach (var build in builds.Where(x => x.gridData.areaBaseID == area))
+                {
+                    var b = build;
+                    var x = gx + colW * (n % PLACE_COLUMNS) + colW / 2f + 12f;
+                    var y = top - rowH * (n / PLACE_COLUMNS);
+                    var bw = Math.Min(PLACE_BTN_WIDTH, colW - 36f);
+                    var icon = ui.AddText(x - bw / 2f - 18f, y, TextIconHelper.ToSprites($"[icon:{PlaceIcon(b)}]")).Format(Color.black, 22).Align(TextAnchor.MiddleCenter);
+                    var btn = ui.AddButton(x, y, () => Tele(b.GetOpenBuildPoints()[0]), b.name);
+                    btn.Format(Color.black, PAGE2_FONT_SIZE).Size(bw, PLACE_BTN_HEIGHT);
+                    // only the places of the chosen area (the page shows all its items when it is opened)
+                    var a = area;
+                    btn.SetWork(new UIItemWork { UpdateAct = ActionHelper.WTracedAction<UIItemBase>(z => { var show = a == TeleArea && ui.CurrentPage == page; if (z.IsActive() != show) z.Active(show); }) });
+                    icon.SetWork(new UIItemWork { UpdateAct = ActionHelper.WTracedAction<UIItemBase>(z => { var show = a == TeleArea && ui.CurrentPage == page; if (z.IsActive() != show) z.Active(show); }) });
+                    TelePlaces.Add(Tuple.Create(area, b, btn, icon));
+                    n++;
+                }
+            }
+            teleGlow = UIGlowHelper.Add(ui, AREA_BTN_WIDTH, AREA_BTN_HEIGHT);
+            // the page shows all its items when it is opened (the frame too): the frame back on the chosen area
+            ui.AddText(0f, 0f, string.Empty).SetWork(new UIItemWork
+            {
+                UpdateAct = ActionHelper.WTracedAction<UIItemBase>(z =>
+                {
+                    if (ui.CurrentPage == page && TeleAreaButtons.TryGetValue(TeleArea, out var chosen)) UIGlowHelper.Place(teleGlow, chosen);
+                }),
+            });
+            ui.IsAutoUpdate = true;   // the frame of the chosen area pulses
+            var here = g.world.playerUnit.GetUnitPosAreaId();
+            SelectTeleArea(areas.Contains(here) ? here : areas.FirstOrDefault());
+        }
+
+        /// <summary>Shows the places of an area, the gold frame on its button.</summary>
+        public void SelectTeleArea(int area)
+        {
+            TeleArea = area;
+            foreach (var p in TelePlaces)
+            {
+                p.Item3.Active(p.Item1 == area);
+                p.Item4.Active(p.Item1 == area);
+            }
+            UIGlowHelper.Place(teleGlow, TeleAreaButtons.TryGetValue(area, out var btn) ? btn : null);
         }
 
         /// <summary>

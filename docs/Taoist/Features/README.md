@@ -26,7 +26,7 @@ Each page follows the same order: file and cache key, summary, **Saved data**, *
 
 ## UI
 
-[UIEvent](UIEvent.md) - [UISettingScreenEvent](UISettingScreenEvent.md) - [AnimaWeaponEvent](AnimaWeaponEvent.md) - [TaoistLogEvent](TaoistLogEvent.md) - [UITitleScreenEvent](UITitleScreenEvent.md) - [UICreatePlayerEvent](UICreatePlayerEvent.md) - [UIDifficultyEvent](UIDifficultyEvent.md) - [NewGameEvent](NewGameEvent.md)
+[CustomDestinyEvent](CustomDestinyEvent.md) - [UIEvent](UIEvent.md) - [UISettingScreenEvent](UISettingScreenEvent.md) - [AnimaWeaponEvent](AnimaWeaponEvent.md) - [TaoistLogEvent](TaoistLogEvent.md) - [UITitleScreenEvent](UITitleScreenEvent.md) - [UICreatePlayerEvent](UICreatePlayerEvent.md) - [UIDifficultyEvent](UIDifficultyEvent.md) - [NewGameEvent](NewGameEvent.md)
 
 Storylines (`ModMain/Story/`, not in `Mod/`): [06-Storylines-Draft](../06-Storylines-Draft.md) and [Storylines/](../Storylines/).
 

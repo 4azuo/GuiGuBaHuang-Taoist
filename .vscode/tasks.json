@@ -23,17 +23,74 @@
             "type": "pickString",
             "description": "Folder to open",
             "options": [
-                { "label": "Game install folder", "value": "game" },
-                { "label": "Game: MelonLoader", "value": "melonloader" },
-                { "label": "Game: MelonLoader logs", "value": "melon-logs" },
-                { "label": "Steam Workshop (all subscribed mods)", "value": "workshop" },
-                { "label": "Steam Workshop: 3385996759 - ModLib", "value": "workshop-3385996759" },
-                { "label": "Steam Workshop: 3161035078 - Taoist", "value": "workshop-3161035078" },
-                { "label": "Build output: 3385996759 - ModLib (debug/)", "value": "debug-3385996759" },
-                { "label": "Build output: 3161035078 - Taoist (debug/)", "value": "debug-3161035078" },
-                { "label": "Game data (Player.log, LocalLow)", "value": "game-data" },
-                { "label": "ModLib logs (per save game)", "value": "mod-logs" },
-                { "label": "Game run logs (run-game.ps1 output)", "value": "game-runs" }
+                {
+                    "label": "Game install folder",
+                    "value": "game"
+                },
+                {
+                    "label": "Game: MelonLoader",
+                    "value": "melonloader"
+                },
+                {
+                    "label": "Game: MelonLoader logs",
+                    "value": "melon-logs"
+                },
+                {
+                    "label": "Steam Workshop (all subscribed mods)",
+                    "value": "workshop"
+                },
+                {
+                    "label": "Steam Workshop: 3385996759 - ModLib",
+                    "value": "workshop-3385996759"
+                },
+                {
+                    "label": "Steam Workshop: 3161035078 - Taoist",
+                    "value": "workshop-3161035078"
+                },
+                {
+                    "label": "Steam Workshop: 3844723387 - Dao of Creation",
+                    "value": "workshop-3844723387"
+                },
+                {
+                    "label": "Build output: 3385996759 - ModLib (debug/)",
+                    "value": "debug-3385996759"
+                },
+                {
+                    "label": "Build output: 3161035078 - Taoist (debug/)",
+                    "value": "debug-3161035078"
+                },
+                {
+                    "label": "Build output: 3844723387 - Dao of Creation (debug/)",
+                    "value": "debug-3844723387"
+                },
+                {
+                    "label": "Mod data: 3385996759 - ModLib (logs, settings, options, saves)",
+                    "value": "data-3385996759"
+                },
+                {
+                    "label": "Mod data: 3161035078 - Taoist (logs, settings, options, saves)",
+                    "value": "data-3161035078"
+                },
+                {
+                    "label": "Mod data: 3844723387 - Dao of Creation (logs, settings, options, saves)",
+                    "value": "data-3844723387"
+                },
+                {
+                    "label": "Game data (Player.log, LocalLow)",
+                    "value": "game-data"
+                },
+                {
+                    "label": "Data of every mod (LocalLow\\...\\mod)",
+                    "value": "mod-logs"
+                },
+                {
+                    "label": "Game run logs (run-game.ps1 output)",
+                    "value": "game-runs"
+                },
+                {
+                    "label": "Autotest evidence (logs/autotest)",
+                    "value": "autotest"
+                }
             ],
             "default": "workshop"
         },

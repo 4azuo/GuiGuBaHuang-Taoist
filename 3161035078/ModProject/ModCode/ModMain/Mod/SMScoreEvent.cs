@@ -1,3 +1,4 @@
+using MOD_nE7UL2.Helper;
 using MOD_nE7UL2.Const;
 using ModLib.Attributes;
 using ModLib.Enum;
@@ -166,20 +167,23 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Records window (Taoist Settings): every character, best P first.</summary>
         public static void OpenRecords()
         {
-            var ui = new UICustom1(GameTool.LS("sm_records_title"));
-            var row = ui.FirstRow + 1;
-            if (g.world?.playerUnit != null)
-                ui.AddText(ui.MidCol, row++, TitleLine(P)).Format(new Color(0.45f, 0.12f, 0.08f), 17, FontStyle.Bold);
-            ui.AddText(ui.MidCol, row++, GameTool.LS("sm_records_desc")).Format(null, 13);
-            row++;
-            var records = SMScoreRecordsEvent.Instance?.Records.OrderByDescending(x => x.P).ThenByDescending(x => x.BestGrade).Take(SMScoreRecordsEvent.SHOWN).ToList()
-                ?? new List<SMScoreRecordsEvent.Record>();
-            if (records.Count == 0)
-                ui.AddText(ui.MidCol, row++, GameTool.LS("sm_records_none")).Format(null, 14);
-            var rank = 1;
-            foreach (var r in records)
-                ui.AddText(ui.MidCol, row++, TextIconHelper.ToSprites($"[icon:{TIER_ICONS[Tier(r.P)]}]") + " " +
-                    string.Format(GameTool.LS("sm_records_line"), rank++, r.Name, TitleText(r.P), r.P, r.BestGrade, r.Years, r.Generation, r.Updated)).Format(null, 14);
+            TaoistWindows.Open1(() =>
+            {
+                var ui = new UICustom1(GameTool.LS("sm_records_title"));
+                var row = ui.FirstRow + 1;
+                if (g.world?.playerUnit != null)
+                    ui.AddText(ui.MidCol, row++, TitleLine(P)).Format(new Color(0.45f, 0.12f, 0.08f), 17, FontStyle.Bold);
+                ui.AddText(ui.MidCol, row++, GameTool.LS("sm_records_desc")).Format(null, 13);
+                row++;
+                var records = SMScoreRecordsEvent.Instance?.Records.OrderByDescending(x => x.P).ThenByDescending(x => x.BestGrade).Take(SMScoreRecordsEvent.SHOWN).ToList()
+                    ?? new List<SMScoreRecordsEvent.Record>();
+                if (records.Count == 0)
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("sm_records_none")).Format(null, 14);
+                var rank = 1;
+                foreach (var r in records)
+                    ui.AddText(ui.MidCol, row++, TextIconHelper.ToSprites($"[icon:{TIER_ICONS[Tier(r.P)]}]") + " " +
+                        string.Format(GameTool.LS("sm_records_line"), rank++, r.Name, TitleText(r.P), r.P, r.BestGrade, r.Years, r.Generation, r.Updated)).Format(null, 14);
+            });
         }
     }
 

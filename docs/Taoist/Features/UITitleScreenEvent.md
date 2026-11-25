@@ -9,7 +9,7 @@ wallpapers come from ModLib (see below).
 
 | Hook | What happens |
 |---|---|
-| `OnOpenUIEnd(Login)` | 1. Button `Taoist {TAOIST_VERSION}` (white, 22, styled like `btnPaperChange`) in the button group: opens the Taoist cache folder in Explorer (`CacheHelper.GetCacheFolderName`). 2. Opens a `UITextInfoLong` titled `other500020046` with the Workshop description downloaded from the Workshop page (`HttpHelper.GetWorkshopDescription`, id 3161035078). 3. If ModLib's version < `ModConst.MODLIB_REQUIRED_VERSION`: a `UITextInfo` warning `ui_modlib_too_old` (Taoist version, ModLib version, required). |
+| `OnOpenUIEnd(Login)` | 1. Button `Taoist {TAOIST_VERSION}` (white, 22, styled like `btnPaperChange`) in the button group: opens the Taoist cache folder in Explorer (`CacheHelper.GetCacheFolderName`). 2. Opens (`ShowWorkshopInfo`, through `UICustom1.WhenFree`: after the window of another mod, e.g. the error reports consent of ModLib, never over it) a `UITextInfoLong` titled `other500020046` with the Workshop description downloaded from the Workshop page (`HttpHelper.GetWorkshopDescription`, id 3161035078). 3. If ModLib's version < `ModConst.MODLIB_REQUIRED_VERSION`: a `UITextInfo` warning `ui_modlib_too_old` (`UICustom2.WhenFree`) (Taoist version, ModLib version, required). |
 
 ## Version compare
 

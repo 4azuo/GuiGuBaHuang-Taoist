@@ -164,3 +164,7 @@ by `WrapText` (about 140 Latin characters).
 ## Tests
 
 TT-02.
+
+## Options of the other mods (6.2.0)
+
+After page 4, a page (or more) per loaded mod shipping `ModConf/*_options.json` (ModLib `ModOptionsHelper.LoadedOptions`, `ModOptionsPage`), e.g. Dao of Creation (`doc_options.json`). OK writes their values file (the mod applies it at the next world load). They do not change the score and the presets leave them alone.

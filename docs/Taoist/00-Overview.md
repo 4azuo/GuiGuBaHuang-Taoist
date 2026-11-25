@@ -39,6 +39,14 @@ Events not listed get 9000+ automatically.
 * Prices go through `InflationaryEvent.CalculateInflationary`; town/sect money through `MapBuildPropertyEvent.Get/AddBuildProperty`.
 * User text: `GameTool.LS("<key>")` with keys from `*_localText.json`.
 
+## Helper: `TaoistWindows` (`3161035078/.../Helper/TaoistWindows.cs`)
+
+Every window of Taoist (`UICustom1` = the game's `UITextInfoLong`, `UICustom2` = `UITextInfo`; the game keeps one of
+each) opens through `TaoistWindows.Open1` / `Open2`: a window of Taoist open in that UI is replaced at once (refresh, next
+page); a window of another mod or of the game (the error reports consent of ModLib...) is never written over or closed:
+the window of Taoist waits (ModLib `UICustom1.WhenFree` / `UICustom2.WhenFree`). `CloseMine(big)` closes the UI only when
+it shows a window of Taoist. A game window opened directly (`OpenUISafe<UITextInfoLong>`) also goes through `WhenFree`.
+
 ## Helper: `InfoDialog` (`3161035078/.../Helper/InfoDialog.cs`)
 
 Message windows of the Taoist mod; every `g.ui.MsgBox` of `Mod/` goes through it. `InfoDialog.Msg(title, text)` and

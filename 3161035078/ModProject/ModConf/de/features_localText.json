@@ -1278,5 +1278,10 @@
 		"id": -1000006299,
 		"key": "market_bo_left",
 		"en|ch|tc|kr": "{0} Monate"
+	},
+	{
+		"id": "-1000006300",
+		"key": "log_custom_destiny",
+		"en|ch|tc|kr": "{0} gewählte Schicksale, S&M-Punktzahl -{1} P."
 	}
 ]

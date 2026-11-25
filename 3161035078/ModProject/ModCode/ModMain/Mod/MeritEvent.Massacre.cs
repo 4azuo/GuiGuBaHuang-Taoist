@@ -1,3 +1,4 @@
+using MOD_nE7UL2.Helper;
 using EBattleTypeData;
 using EGameTypeData;
 using ModLib.Attributes;
@@ -111,7 +112,7 @@ namespace MOD_nE7UL2.Mod
             foreach (var f in flee)
                 f.data.unitData.relationData.AddHate(Player.GetUnitId(), MASSACRE_HATE / 5);
             TaoistLogEvent.Log("log_merit_massacre_start", town.name, defend.Count + (master == null ? 0 : 1), flee.Count);
-            if (g.ui.HasUI(UIType.TextInfoLong)) g.ui.CloseUI(UIType.TextInfoLong);
+            TaoistWindows.CloseMine(true);
             var lead = master ?? defend.FirstOrDefault();
             if (lead == null)
             {

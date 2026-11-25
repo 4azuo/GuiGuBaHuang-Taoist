@@ -3488,5 +3488,405 @@
 		"id": "-1000007697",
 		"key": "story_end_P_Devourer",
 		"en|ch|tc|kr": "Dévoreur"
+	},
+	{
+		"id": "-1000007698",
+		"key": "story_name_Q",
+		"en|ch|tc|kr": "L'Art sans nom"
+	},
+	{
+		"id": "-1000007699",
+		"key": "story_task_desc_Q",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": "-1000007700",
+		"key": "story_task_Q0",
+		"en|ch|tc|kr": "{D} a été chassé d'une secte pour avoir modifié l'art de son fondateur."
+	},
+	{
+		"id": "-1000007701",
+		"key": "story_task_Q1",
+		"en|ch|tc|kr": "{D} crée un art à soi."
+	},
+	{
+		"id": "-1000007702",
+		"key": "story_task_Q2",
+		"en|ch|tc|kr": "L'ancienne secte veut l'art de {D}."
+	},
+	{
+		"id": "-1000007703",
+		"key": "story_task_Q3",
+		"en|ch|tc|kr": "{D} a quelque chose à vous donner."
+	},
+	{
+		"id": "-1000007704",
+		"key": "story_task_Q4",
+		"en|ch|tc|kr": "Vous avez livré {D} à la secte. Ce n'est pas oublié."
+	},
+	{
+		"id": "-1000007705",
+		"key": "story_task_Q9",
+		"en|ch|tc|kr": "{D} n'est plus."
+	},
+	{
+		"id": "-1000007706",
+		"key": "story_Q0_1",
+		"en|ch|tc|kr": "Au bord de la route, {D} répète un même geste, encore et encore. Chaque fois le dernier temps est faux, et chaque fois différemment.\n{D} : \"Pendant trois cents ans, ma secte a pratiqué ce geste avec un défaut. Je l'ai corrigé. Ils ont brisé mon sceau et m'ont chassé.\""
+	},
+	{
+		"id": "-1000007707",
+		"key": "story_Q0_1_o1",
+		"en|ch|tc|kr": "Écouter toute l'histoire"
+	},
+	{
+		"id": "-1000007708",
+		"key": "story_Q0_1_o2",
+		"en|ch|tc|kr": "\"Montre-moi. Sur moi.\""
+	},
+	{
+		"id": "-1000007709",
+		"key": "story_Q0_1_o3",
+		"en|ch|tc|kr": "Passer son chemin"
+	},
+	{
+		"id": "-1000007710",
+		"key": "story_Q0_2",
+		"en|ch|tc|kr": "{D} : \"Tu le vois aussi. Le défaut était la porte.\"\n{D} : \"Je ne réparerai plus leur art. Je créerai le mien.\""
+	},
+	{
+		"id": "-1000007711",
+		"key": "story_Q1_1",
+		"en|ch|tc|kr": "{D} n'a pas dormi depuis neuf jours ; l'air autour de la hutte vibre comme une corde.\n{D} : \"Il ne me manque qu'un souffle. Mes méridiens ne tiendront pas - et les bêtes sentent le qi.\""
+	},
+	{
+		"id": "-1000007712",
+		"key": "story_Q1_1_o1",
+		"en|ch|tc|kr": "Donner une pilule"
+	},
+	{
+		"id": "-1000007713",
+		"key": "story_Q1_1_o2",
+		"en|ch|tc|kr": "Monter la garde dehors"
+	},
+	{
+		"id": "-1000007714",
+		"key": "story_Q1_2",
+		"en|ch|tc|kr": "Un seul temps. La vibration cesse ; toute la vallée semble inspirer.\n{D} : \"{art}. Ce matin, cela n'existait pas.\" {D} rit jusqu'aux larmes."
+	},
+	{
+		"id": "-1000007715",
+		"key": "story_Q1_2_none",
+		"en|ch|tc|kr": "La vibration se brise. {D} ouvre les deux mains ; elles sont vides, et pourtant un sourire demeure.\n{D} : \"Pas aujourd'hui. Mais je l'ai vu de dos, quand il s'en allait.\""
+	},
+	{
+		"id": "-1000007716",
+		"key": "story_Q2_1",
+		"en|ch|tc|kr": "Un ancien de l'ancienne secte se tient à la porte, des disciples derrière lui.\nL'ancien : \"Quoi que {D} ait créé, c'est fait de notre enseignement. Le manuel, ou les mains qui l'ont écrit.\"\n{D} vous regarde sans rien dire."
+	},
+	{
+		"id": "-1000007717",
+		"key": "story_Q2_1_o1",
+		"en|ch|tc|kr": "Combattre l'ancien"
+	},
+	{
+		"id": "-1000007718",
+		"key": "story_Q2_1_o2",
+		"en|ch|tc|kr": "Racheter la dette ({0} pierres spirituelles)"
+	},
+	{
+		"id": "-1000007719",
+		"key": "story_Q2_1_o3",
+		"en|ch|tc|kr": "S'écarter"
+	},
+	{
+		"id": "-1000007720",
+		"key": "story_Q3_1",
+		"en|ch|tc|kr": "{D} pose un mince livre sur la table. La couverture est vierge.\n{D} : \"Un art qui n'a qu'un maître meurt avec ce maître. Apprends-le ici, avec moi - ou garde le livre, et laisse-le t'enseigner lentement.\""
+	},
+	{
+		"id": "-1000007721",
+		"key": "story_Q3_1_o1",
+		"en|ch|tc|kr": "L'apprendre maintenant"
+	},
+	{
+		"id": "-1000007722",
+		"key": "story_Q3_1_o2",
+		"en|ch|tc|kr": "Garder le livre et méditer dessus"
+	},
+	{
+		"id": "-1000007723",
+		"key": "story_endQ_Founder",
+		"en|ch|tc|kr": "{D} grave une planche au-dessus de la porte de la hutte, de travers et fière : la première école d'un seul maître et sans ancêtres.\n{D} : \"Quand on demandera qui l'a fondée, je dirai que nous étions deux.\""
+	},
+	{
+		"id": "-1000007724",
+		"key": "story_endQ_Lost",
+		"en|ch|tc|kr": "{D} : \"Ils ont pris le manuel et l'ont brûlé sous mes yeux. J'ai écrit ce dont mes mains se souviennent encore.\"\n{D} : \"Garde-le. Un demi-art entre tes mains vaut mieux qu'un art entier entre les leurs.\""
+	},
+	{
+		"id": "-1000007725",
+		"key": "story_Q4_1",
+		"en|ch|tc|kr": "{D} attend sur la route, amaigri, le regard très calme.\n{D} : \"Tu t'es écarté. J'ai beaucoup appris de la façon dont tu l'as fait.\" Les mains de {D} s'ouvrent sur le geste dont vous avez vu la naissance."
+	},
+	{
+		"id": "-1000007726",
+		"key": "story_Q4_1_o1",
+		"en|ch|tc|kr": "Se défendre"
+	},
+	{
+		"id": "-1000007727",
+		"key": "story_endQ_Traitor",
+		"en|ch|tc|kr": "Le geste né au bord d'une route s'achève sur une route. Personne n'en reparle, et personne n'oublie."
+	},
+	{
+		"id": "-1000007728",
+		"key": "story_Q_dead",
+		"en|ch|tc|kr": "La nouvelle de la mort de {D} vous parvient avec un paquet : un livre à la couverture vierge, et une ligne : \"C'était presque fini. Tu sauras comment.\""
+	},
+	{
+		"id": "-1000007729",
+		"key": "story_end_Q_Founder",
+		"en|ch|tc|kr": "Le Fondateur"
+	},
+	{
+		"id": "-1000007730",
+		"key": "story_end_Q_Lost",
+		"en|ch|tc|kr": "L'Art perdu"
+	},
+	{
+		"id": "-1000007731",
+		"key": "story_end_Q_Traitor",
+		"en|ch|tc|kr": "Le Traître"
+	},
+	{
+		"id": "-1000007732",
+		"key": "story_name_R",
+		"en|ch|tc|kr": "Pour un seul héritier"
+	},
+	{
+		"id": "-1000007733",
+		"key": "story_task_desc_R",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": "-1000007734",
+		"key": "story_task_R0",
+		"en|ch|tc|kr": "Le vieux maître {O} cherche un héritier."
+	},
+	{
+		"id": "-1000007735",
+		"key": "story_task_R1",
+		"en|ch|tc|kr": "Trois épreuves de {O} ; {W} est l'autre candidat."
+	},
+	{
+		"id": "-1000007736",
+		"key": "story_task_R2",
+		"en|ch|tc|kr": "{W} a une proposition."
+	},
+	{
+		"id": "-1000007737",
+		"key": "story_task_R3",
+		"en|ch|tc|kr": "{O} écrit l'art et choisit un héritier."
+	},
+	{
+		"id": "-1000007738",
+		"key": "story_task_R4",
+		"en|ch|tc|kr": "L'art attend d'être transmis."
+	},
+	{
+		"id": "-1000007739",
+		"key": "story_task_R9",
+		"en|ch|tc|kr": "{O} n'est plus."
+	},
+	{
+		"id": "-1000007740",
+		"key": "story_R0_1",
+		"en|ch|tc|kr": "{O} : \"Il me reste un art. Il n'est pas écrit ; j'ai eu peur de l'écrire.\"\n{O} : \"Quand il le sera, une seule personne l'aura. Laisseras-tu un vieux fou t'observer un moment ?\""
+	},
+	{
+		"id": "-1000007741",
+		"key": "story_R0_1_o1",
+		"en|ch|tc|kr": "\"Observez autant qu'il vous plaira.\""
+	},
+	{
+		"id": "-1000007742",
+		"key": "story_R0_1_o2",
+		"en|ch|tc|kr": "\"Je ne cherche pas de maître.\""
+	},
+	{
+		"id": "-1000007743",
+		"key": "story_R1_1",
+		"en|ch|tc|kr": "{O} place un bol d'eau sous un rocher qui goutte.\n{O} : \"Quand il sera plein, viens me le dire.\" Une goutte tombe. Bien plus tard, une autre."
+	},
+	{
+		"id": "-1000007744",
+		"key": "story_R1_1_o1",
+		"en|ch|tc|kr": "S'asseoir et attendre (un an)"
+	},
+	{
+		"id": "-1000007745",
+		"key": "story_R1_1_o2",
+		"en|ch|tc|kr": "Le remplir au ruisseau"
+	},
+	{
+		"id": "-1000007746",
+		"key": "story_R1_2",
+		"en|ch|tc|kr": "{W} : \"Alors c'est toi, l'autre. {O} dit qu'on devrait voir de quoi on est faits.\"\n{W} : \"J'en ai plus besoin que toi. Je ne me retiendrai pas.\""
+	},
+	{
+		"id": "-1000007747",
+		"key": "story_R1_2_o1",
+		"en|ch|tc|kr": "S'affronter"
+	},
+	{
+		"id": "-1000007748",
+		"key": "story_R1_3",
+		"en|ch|tc|kr": "Trois mois plus tard, {W} gît au pied d'une falaise, une jambe brisée, et la nuit tombe, froide.\n{W} : \"Va. Sans moi, il est à toi.\""
+	},
+	{
+		"id": "-1000007749",
+		"key": "story_R1_3_o1",
+		"en|ch|tc|kr": "Donner une pilule et veiller la nuit"
+	},
+	{
+		"id": "-1000007750",
+		"key": "story_R1_3_o2",
+		"en|ch|tc|kr": "Partir"
+	},
+	{
+		"id": "-1000007751",
+		"key": "story_R2_1",
+		"en|ch|tc|kr": "{W} : \"Le vieux ne choisira jamais. Chaque nuit, il y a de la lumière dans le cabinet - c'est presque écrit.\"\n{W} : \"Tu gardes la porte, je prends le livre, on le recopie. Personne n'a à perdre.\""
+	},
+	{
+		"id": "-1000007752",
+		"key": "story_R2_1_o1",
+		"en|ch|tc|kr": "\"Non.\""
+	},
+	{
+		"id": "-1000007753",
+		"key": "story_R2_1_o2",
+		"en|ch|tc|kr": "\"Quand ?\""
+	},
+	{
+		"id": "-1000007754",
+		"key": "story_R3_chosen",
+		"en|ch|tc|kr": "{O} referme le livre : {art}.\n{O} : \"Tu as attendu quand il n'y avait rien à gagner, et tu n'as pas pris ce qui n'était pas donné. Il est à toi.\"\n{O} : \"Un seul héritier, ai-je toujours dit. Mais le livre est à toi maintenant, et la règle aussi.\""
+	},
+	{
+		"id": "-1000007755",
+		"key": "story_R3_chosen_o1",
+		"en|ch|tc|kr": "Garder la règle : un seul héritier"
+	},
+	{
+		"id": "-1000007756",
+		"key": "story_R3_chosen_o2",
+		"en|ch|tc|kr": "Le partager avec {W}"
+	},
+	{
+		"id": "-1000007757",
+		"key": "story_R3_passed",
+		"en|ch|tc|kr": "{O} donne le livre - {art} - à {W}, et vous regarde sans reproche.\n{O} : \"Tu es plus fort que cet art. {W}, lui, sera protégé par lui. Le laisseras-tu partir ?\""
+	},
+	{
+		"id": "-1000007758",
+		"key": "story_R3_passed_o1",
+		"en|ch|tc|kr": "S'incliner devant {O} et {W}"
+	},
+	{
+		"id": "-1000007759",
+		"key": "story_R3_passed_o2",
+		"en|ch|tc|kr": "Défier {W} pour l'obtenir"
+	},
+	{
+		"id": "-1000007760",
+		"key": "story_endR_Stolen",
+		"en|ch|tc|kr": "Deux copies à la lueur des bougies, et une lumière dans le cabinet qui ne s'éteint pas. Au matin, la porte du vieux maître est ouverte, la pièce vide, la dernière page arrachée.\nL'art fonctionne. Il semble toujours manquer d'une page."
+	},
+	{
+		"id": "-1000007761",
+		"key": "story_R4_1",
+		"en|ch|tc|kr": "Des années plus tard, vous retrouvez le bol de {O} sous le même rocher. Il est plein.\nVous pensez à l'art, et à {0}."
+	},
+	{
+		"id": "-1000007762",
+		"key": "story_R4_1_o1",
+		"en|ch|tc|kr": "L'enseigner à {0}"
+	},
+	{
+		"id": "-1000007763",
+		"key": "story_R4_1_o2",
+		"en|ch|tc|kr": "Le laisser finir avec vous"
+	},
+	{
+		"id": "-1000007764",
+		"key": "story_endR_Lineage",
+		"en|ch|tc|kr": "{0} répète le premier mouvement jusqu'à la tombée du jour. Vous posez un bol vide sous le rocher.\nQuelque part, un vieux fou aurait ri."
+	},
+	{
+		"id": "-1000007765",
+		"key": "story_endR_Buried",
+		"en|ch|tc|kr": "Vous enterrez le livre sous le rocher, où l'eau emportera l'encre goutte à goutte. Ce qu'il vous a appris demeure."
+	},
+	{
+		"id": "-1000007766",
+		"key": "story_R_dead",
+		"en|ch|tc|kr": "{O} est mort. Dans le cabinet, la lampe est encore tiède."
+	},
+	{
+		"id": "-1000007767",
+		"key": "story_end_R_Lineage",
+		"en|ch|tc|kr": "La Lignée"
+	},
+	{
+		"id": "-1000007768",
+		"key": "story_end_R_Buried",
+		"en|ch|tc|kr": "Le Livre enterré"
+	},
+	{
+		"id": "-1000007769",
+		"key": "story_end_R_Stolen",
+		"en|ch|tc|kr": "La Page volée"
+	},
+	{
+		"id": "-1000007770",
+		"key": "story_doc_art_A",
+		"en|ch|tc|kr": "{A} : \"Mon épée a appris une chose de plus. Je l'appelle {art}.\"\n{A} : \"Personne ne me l'a enseignée. Je veux que tu l'aies en premier.\""
+	},
+	{
+		"id": "-1000007771",
+		"key": "story_doc_art_D",
+		"en|ch|tc|kr": "{N} : \"J'ai frappé un rocher, le rocher m'a frappé en retour, et là j'ai compris un truc. {art} !\"\n{N} : \"Je l'ai fait écrire par quelqu'un. Les dessins sont de moi.\""
+	},
+	{
+		"id": "-1000007772",
+		"key": "story_doc_art_G",
+		"en|ch|tc|kr": "{W} : \"Cent ans à perdre contre toi, et à gagner, et voilà ce qu'il en reste : {art}.\"\n{W} : \"Bats quelqu'un d'autre avec, pour changer.\""
+	},
+	{
+		"id": "-1000007773",
+		"key": "story_doc_art_J",
+		"en|ch|tc|kr": "{J} : \"Maître. La marque me disait comment tuer. Je lui ai demandé comment protéger, et elle a répondu : {art}.\""
+	},
+	{
+		"id": "-1000007774",
+		"key": "story_doc_art_P",
+		"en|ch|tc|kr": "{B} : \"Dix ans d'eau sur la pierre. Elle m'a laissé un geste : {art}. Prends-le, frère.\""
+	},
+	{
+		"id": "-1000007775",
+		"key": "story_doc_essence_I",
+		"en|ch|tc|kr": "Sur les murs du tombeau, l'ancien maître n'avait pas gravé des techniques, mais la façon dont naissent les techniques. Vous lisez jusqu'à ce que la torche meure. Votre Essence du Dao s'approfondit."
+	},
+	{
+		"id": "-1000007776",
+		"key": "story_doc_essence_K",
+		"en|ch|tc|kr": "Entre deux coups de tonnerre, le vestige vous montre la seule chose qu'il a gardée de son ascension : la forme d'une loi avant qu'elle ait un nom. Votre Essence du Dao s'approfondit."
+	},
+	{
+		"id": "-1000007777",
+		"key": "story_doc_essence_L",
+		"en|ch|tc|kr": "Le cœur clair, chaque art que vous connaissez s'étend comme un lac paisible, et vous voyez la main qui a tracé chacun. Votre Essence du Dao s'approfondit."
 	}
 ]

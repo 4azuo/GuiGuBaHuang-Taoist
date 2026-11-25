@@ -136,6 +136,15 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Story
             return true;
         }
 
+        /// <summary>Dao of Creation loaded: the art of the line was created and the player knows it.</summary>
+        public static void CheckArt(AutoTestContext c, StoryState s)
+        {
+            if (!MOD_nE7UL2.Helper.DocHelper.Ready) { c.Info("Dao of Creation not loaded: no art to check"); return; }
+            c.Assert(s.Roles.TryGetValue(StoryLine.ART, out var art), "the art of the line was created");
+            var known = MOD_nE7UL2.Helper.DocHelper.ArtsOf(Player.GetUnitId()).Length;
+            c.Assert(known > 0, $"art '{MOD_nE7UL2.Helper.DocHelper.BookName(art)}': {known} created art(s) learnt by the player");
+        }
+
         public static Scenario Build(string scenarioId, string line, string title, Action<AutoTestContext> before, Action<StoryState> prep, string[] endings, int[] plan = null, Action<AutoTestContext, StoryState> after = null)
         {
             var sc = new Scenario { Id = scenarioId, Feature = "StoryEvent", Title = title, Overlay = false }
@@ -395,5 +404,21 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Story
         public Scenario Create() => StoryDriver.Build(Id, "P", "Story P Heartbeat in the Stone: the sense finds him, the stone man, the body, his tribulation", c => StoryDriver.LeaveTown(), null,
             new[] { "P_Brothers", "P_Alone", "P_Devourer" }, null, (c, s) =>
                 c.Assert(!BodyCulEvent.Enabled || BodyCulEvent.GetLevel(Player) >= 1, $"the player refines the body (level {BodyCulEvent.GetLevel(Player)})"));
+    }
+
+    // ---- the lines of 6.2 (Dao of Creation; without it the dialogue is tested, not the arts)
+
+    public class TS17_NamelessArt : IScenarioDefinition
+    {
+        public string Id => "TS-17";
+        public Scenario Create() => StoryDriver.Build(Id, "Q", "Story Q Nameless Art: the outcast, the first art, the sect's claim, the manual", null, null,
+            new[] { "Q_Founder", "Q_Lost", "Q_Traitor" }, null, StoryDriver.CheckArt);
+    }
+
+    public class TS18_LastHeir : IScenarioDefinition
+    {
+        public string Id => "TS-18";
+        public Scenario Create() => StoryDriver.Build(Id, "R", "Story R For One Heir Only: three trials, the theft, the heir, the art handed on", null, null,
+            new[] { "R_Lineage", "R_Buried", "R_Stolen" }, null, StoryDriver.CheckArt);
     }
 }

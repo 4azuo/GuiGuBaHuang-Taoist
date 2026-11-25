@@ -194,6 +194,25 @@
       ]
     },
     {
+      "id": "TT-10",
+      "kind": "auto",
+      "exclusive": true,
+      "feature": "CustomDestinyEvent",
+      "title": "New game: pick any destinies",
+      "description": "The character creation has a button which opens a window with every born destiny, sorted by quality then name, with filters (quality, name, description); any number can be picked, each lowers the S&M score of the new save. Nothing is created.",
+      "preconditions": "Title screen",
+      "steps": [
+        "Open the character creation, the button, accept the notice",
+        "Pick 5 destinies, use every filter",
+        "OK, close"
+      ],
+      "expected": [
+        "Notice about the score",
+        "List sorted and filtered, picked ones in their own column",
+        "5 destinies kept, their cost"
+      ]
+    },
+    {
       "id": "TP-01",
       "kind": "auto",
       "feature": "Pre-test (new character)",
@@ -2783,6 +2802,24 @@
       ]
     },
     {
+      "id": "TG-99",
+      "kind": "auto",
+      "feature": "CustomDestinyEvent",
+      "title": "Chosen destinies given to the player",
+      "description": "The destinies chosen at the character creation are given as born ones on the first map of the new game and paid by the S&M score.",
+      "preconditions": "Save loaded",
+      "steps": [
+        "Give destinies to the player",
+        "Give them again",
+        "Open the player info"
+      ],
+      "expected": [
+        "Born destinies added, effects active",
+        "Score lowered once",
+        "Player info shows them"
+      ]
+    },
+    {
       "id": "TX-07",
       "kind": "auto",
       "feature": "TaoistLogEvent",
@@ -3238,6 +3275,42 @@
       ]
     },
     {
+      "id": "TS-17",
+      "kind": "auto",
+      "feature": "StoryEvent",
+      "title": "Story Q The Nameless Art",
+      "description": "Dao of Creation line: an outcast disciple creates a martial art, the old sect claims it. Endings Founder / Lost / Traitor. Without Dao of Creation only the dialogue is tested.",
+      "preconditions": "Save loaded (battles won at once, acts open without waiting)",
+      "steps": [
+        "Open the line, its quest",
+        "Every act of line Q",
+        "The ending"
+      ],
+      "expected": [
+        "Roles cast, quest shown",
+        "Dramas of Q0..Q3",
+        "An ending, the art learnt (Dao of Creation loaded)"
+      ]
+    },
+    {
+      "id": "TS-18",
+      "kind": "auto",
+      "feature": "StoryEvent",
+      "title": "Story R For One Heir Only",
+      "description": "Dao of Creation line: an old master writes one last art and tests two heirs. Endings Lineage / Buried / Stolen. Without Dao of Creation only the dialogue is tested.",
+      "preconditions": "Save loaded (battles won at once, acts open without waiting)",
+      "steps": [
+        "Open the line, its quest",
+        "Every act of line R",
+        "The ending"
+      ],
+      "expected": [
+        "Roles cast, quest shown",
+        "Dramas of R0..R4",
+        "An ending, the art learnt (Dao of Creation loaded)"
+      ]
+    },
+    {
       "id": "TE-01",
       "kind": "tool",
       "feature": "Effects",
@@ -3283,22 +3356,6 @@
       ],
       "expected": [
         "One screenshot per effect"
-      ]
-    },
-    {
-      "id": "TI-01",
-      "kind": "tool",
-      "feature": "Autotest",
-      "title": "Investigation: start again from a save without closing the game",
-      "description": "Tool, not a test (runs only with -Scenario TI-01): the save files of the character are put back while the game runs, then the save is opened again with the game menu's 'Reload save' (A) or by returning to the main menu and loading it (B). The money (game save) and an S&M value (mod save) must be the snapshot's again, and the timings are logged, to know whether run-autotest-parallel.ps1 can skip closing the game between groups.",
-      "preconditions": "An existing save",
-      "steps": [
-        "Snapshot the save",
-        "Change money and an S&M value, save",
-        "Put the files back, reload (A) / return to main menu and load (B)"
-      ],
-      "expected": [
-        "Money and S&M value of the snapshot after A and B"
       ]
     },
     {

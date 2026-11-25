@@ -47,6 +47,8 @@
     <Compile Include="Helper\ItemHelper.cs" />
     <Compile Include="Helper\InfoDialog.cs" />
     <Compile Include="Helper\InfoSheet.cs" />
+    <Compile Include="Helper\DocHelper.cs" />
+    <Compile Include="Helper\TaoistWindows.cs" />
     <Compile Include="Helper\UnitPowerCalHelper.cs" />
     <Compile Include="Helper\UILocalHelper.cs" />
     <Compile Include="Helper\UnitModifyHelper.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Mod\RepairShinkiEvent.cs" />
     <Compile Include="Mod\UIDifficultyEvent.cs" />
     <Compile Include="Mod\NewGameEvent.cs" />
+    <Compile Include="Mod\CustomDestinyEvent.cs" />
     <Compile Include="Mod\AnimaWeaponEvent.cs" />
     <Compile Include="Mod\TaoistLogEvent.cs" />
     <Compile Include="Mod\EncounterEvent.cs" />
@@ -121,6 +124,8 @@
     <Compile Include="Story\Lines\LineN_HouseSeven.cs" />
     <Compile Include="Story\Lines\LineO_AshesOfTown.cs" />
     <Compile Include="Story\Lines\LineP_SenseVoice.cs" />
+    <Compile Include="Story\Lines\LineQ_NamelessArt.cs" />
+    <Compile Include="Story\Lines\LineR_LastHeir.cs" />
     <Compile Include="Mod\RealMarketEvent3.Extra.cs" />
     <Compile Include="Helper\ModTextHelper.cs" />
     <Compile Include="Mod\UICreatePlayerEvent.cs" />
@@ -209,6 +214,8 @@
     <Compile Include="AutoTest\Scenarios\Title\TT05_SMConfigsOk.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT08_ModLibTitleFrame.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT09_Wallpapers.cs" />
+    <Compile Include="AutoTest\Scenarios\Title\TT10_CustomDestiny.cs" />
+    <Compile Include="AutoTest\Scenarios\Unit\TG99_CustomDestinies.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT06_CrashReports.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT07_ErrorDialogNotice.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX06_Yearly.cs" />
@@ -239,7 +246,6 @@
     <Compile Include="AutoTest\Scenarios\Progression\TG60_SMScore.cs" />
     <Compile Include="AutoTest\Scenarios\Progression\TG23_MissionDeclareEvent.cs" />
     <Compile Include="AutoTest\Scenarios\Title\TT01_UITitleScreenEvent.cs" />
-    <Compile Include="AutoTest\Scenarios\Tool\TI01_SaveReloadProbe.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TI02_TownBuildingsProbe.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TR_PromoShots.cs" />
     <Compile Include="AutoTest\Scenarios\Tool\TR04_Promo60.cs" />

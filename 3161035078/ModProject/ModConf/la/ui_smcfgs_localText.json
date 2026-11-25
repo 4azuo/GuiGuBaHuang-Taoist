@@ -808,5 +808,15 @@
 		"id": "-1000001211",
 		"key": "smcfgs211",
 		"en|ch|tc|kr": "Pulsus in Lapide: sensus spiritalis tuus purificatorem corporis invenit tribulatione dimidium in lapidem versum (sensus spiritalis, purificatio corporis)."
+	},
+	{
+		"id": -1000001212,
+		"key": "smcfgs212",
+		"en|ch|tc|kr": "Ars sine nomine: discipulus expulsus artem martialem fingit, et vetus secta eam cupit (opus est mod Dao of Creation)."
+	},
+	{
+		"id": -1000001213,
+		"key": "smcfgs213",
+		"en|ch|tc|kr": "Uni tantum heredi: senex magister ultimam artem scribit et duos heredes probat (opus est mod Dao of Creation)."
 	}
 ]

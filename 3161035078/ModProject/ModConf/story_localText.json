@@ -5582,5 +5582,645 @@
     "ch": "吞噬者",
     "tc": "吞噬者",
     "kr": "포식자"
+  },
+  {
+    "id": -1000007698,
+    "key": "story_name_Q",
+    "en": "The Nameless Art",
+    "ch": "无名之技",
+    "tc": "無名之技",
+    "kr": "이름 없는 무공"
+  },
+  {
+    "id": -1000007699,
+    "key": "story_task_desc_Q",
+    "en": "{0}",
+    "ch": "{0}",
+    "tc": "{0}",
+    "kr": "{0}"
+  },
+  {
+    "id": -1000007700,
+    "key": "story_task_Q0",
+    "en": "{D} was cast out of a sect for changing its founder's art.",
+    "ch": "{D}因擅改祖师绝技被逐出师门。",
+    "tc": "{D}因擅改祖師絕技被逐出師門。",
+    "kr": "{D}은(는) 조사의 무공을 고쳤다는 이유로 문파에서 쫓겨났다."
+  },
+  {
+    "id": -1000007701,
+    "key": "story_task_Q1",
+    "en": "{D} is creating an art of their own.",
+    "ch": "{D}正在自创武技。",
+    "tc": "{D}正在自創武技。",
+    "kr": "{D}이(가) 자신만의 무공을 창안하고 있다."
+  },
+  {
+    "id": -1000007702,
+    "key": "story_task_Q2",
+    "en": "The old sect wants the art of {D}.",
+    "ch": "旧宗门想要{D}的武技。",
+    "tc": "舊宗門想要{D}的武技。",
+    "kr": "옛 문파가 {D}의 무공을 노린다."
+  },
+  {
+    "id": -1000007703,
+    "key": "story_task_Q3",
+    "en": "{D} has something to give you.",
+    "ch": "{D}有东西要交给你。",
+    "tc": "{D}有東西要交給你。",
+    "kr": "{D}이(가) 당신에게 줄 것이 있다."
+  },
+  {
+    "id": -1000007704,
+    "key": "story_task_Q4",
+    "en": "You gave {D} up to the sect. It is not forgotten.",
+    "ch": "你把{D}交给了宗门。此事未被遗忘。",
+    "tc": "你把{D}交給了宗門。此事未被遺忘。",
+    "kr": "당신은 {D}을(를) 문파에 넘겼다. 그 일은 잊히지 않았다."
+  },
+  {
+    "id": -1000007705,
+    "key": "story_task_Q9",
+    "en": "{D} is gone.",
+    "ch": "{D}已逝。",
+    "tc": "{D}已逝。",
+    "kr": "{D}은(는) 세상을 떠났다."
+  },
+  {
+    "id": -1000007706,
+    "key": "story_Q0_1",
+    "en": "By the road, {D} repeats one move again and again. Each time the last beat is wrong, and each time different.\n{D}: \"Three hundred years my sect practised this move with a flaw in it. I mended it. They broke my seal and threw me out.\"",
+    "ch": "路旁，{D}一遍遍重复同一招。每次最后一拍都不对，每次又都不同。\n{D}：“宗门带着破绽练了这招三百年。我补上了。他们就毁了我的印信，把我赶了出来。”",
+    "tc": "路旁，{D}一遍遍重複同一招。每次最後一拍都不對，每次又都不同。\n{D}：“宗門帶著破綻練了這招三百年。我補上了。他們就毀了我的印信，把我趕了出來。”",
+    "kr": "길가에서 {D}이(가) 같은 초식을 몇 번이고 반복한다. 매번 마지막 박자가 어긋나고, 매번 다르게 어긋난다.\n{D}: \"우리 문파는 삼백 년 동안 결함이 있는 이 초식을 수련했다. 내가 고쳤지. 그러자 그들은 내 인장을 부수고 나를 내쫓았다.\""
+  },
+  {
+    "id": -1000007707,
+    "key": "story_Q0_1_o1",
+    "en": "Listen to the whole story",
+    "ch": "听完整个故事",
+    "tc": "聽完整個故事",
+    "kr": "이야기를 끝까지 듣는다"
+  },
+  {
+    "id": -1000007708,
+    "key": "story_Q0_1_o2",
+    "en": "\"Show me. On me.\"",
+    "ch": "“来，用在我身上。”",
+    "tc": "“來，用在我身上。”",
+    "kr": "\"보여 줘. 나한테 써 봐.\""
+  },
+  {
+    "id": -1000007709,
+    "key": "story_Q0_1_o3",
+    "en": "Walk on",
+    "ch": "继续赶路",
+    "tc": "繼續趕路",
+    "kr": "지나간다"
+  },
+  {
+    "id": -1000007710,
+    "key": "story_Q0_2",
+    "en": "{D}: \"You see it too. The flaw was the door.\"\n{D}: \"I will not mend their art any more. I will make my own.\"",
+    "ch": "{D}：“你也看出来了。那破绽，其实是门。”\n{D}：“我不再补他们的招了。我要创自己的。”",
+    "tc": "{D}：“你也看出來了。那破綻，其實是門。”\n{D}：“我不再補他們的招了。我要創自己的。”",
+    "kr": "{D}: \"너도 봤구나. 그 결함이 바로 문이었다.\"\n{D}: \"이제 그들의 무공은 고치지 않겠다. 내 것을 만들겠다.\""
+  },
+  {
+    "id": -1000007711,
+    "key": "story_Q1_1",
+    "en": "{D} has not slept for nine days; the air around the hut hums like a string.\n{D}: \"I am one breath away. My meridians will not last - and the beasts can smell the qi.\"",
+    "ch": "{D}九日未眠，草庐四周的空气如弦般嗡鸣。\n{D}：“只差一口气了。可我的经脉撑不住，妖兽也嗅到了灵气。”",
+    "tc": "{D}九日未眠，草廬四周的空氣如弦般嗡鳴。\n{D}：“只差一口氣了。可我的經脈撐不住，妖獸也嗅到了靈氣。”",
+    "kr": "{D}은(는) 아흐레째 잠들지 못했다. 초막 주위의 공기가 현처럼 웅웅 울린다.\n{D}: \"한 호흡만 더 있으면 된다. 그런데 경맥이 버티지 못하고, 요수들이 영기 냄새를 맡았다.\""
+  },
+  {
+    "id": -1000007712,
+    "key": "story_Q1_1_o1",
+    "en": "Give a pill",
+    "ch": "给一枚丹药",
+    "tc": "給一枚丹藥",
+    "kr": "단약을 준다"
+  },
+  {
+    "id": -1000007713,
+    "key": "story_Q1_1_o2",
+    "en": "Stand guard outside",
+    "ch": "在外护法",
+    "tc": "在外護法",
+    "kr": "밖에서 호법을 선다"
+  },
+  {
+    "id": -1000007714,
+    "key": "story_Q1_2",
+    "en": "A single beat. The hum stops; the whole valley seems to breathe in.\n{D}: \"{art}. It did not exist this morning.\" {D} laughs until the tears come.",
+    "ch": "只一拍。嗡鸣骤止，整座山谷仿佛吸了一口气。\n{D}：“{art}。今早它还不存在。”{D}笑到落泪。",
+    "tc": "只一拍。嗡鳴驟止，整座山谷彷彿吸了一口氣。\n{D}：“{art}。今早它還不存在。”{D}笑到落淚。",
+    "kr": "단 한 박자. 웅웅거림이 멎고, 골짜기 전체가 숨을 들이쉬는 듯하다.\n{D}: \"{art}. 오늘 아침까지만 해도 존재하지 않던 것이다.\" {D}은(는) 눈물이 날 때까지 웃는다."
+  },
+  {
+    "id": -1000007715,
+    "key": "story_Q1_2_none",
+    "en": "The hum breaks off. {D} opens both hands; nothing is in them, and still a smile.\n{D}: \"Not today. But I saw its back as it left.\"",
+    "ch": "嗡鸣中断。{D}摊开双手，空空如也，却仍在笑。\n{D}：“今天不成。可我看见了它离去的背影。”",
+    "tc": "嗡鳴中斷。{D}攤開雙手，空空如也，卻仍在笑。\n{D}：“今天不成。可我看見了它離去的背影。”",
+    "kr": "웅웅거림이 끊긴다. {D}이(가) 두 손을 펼친다. 아무것도 없는데도 미소가 남아 있다.\n{D}: \"오늘은 아니야. 하지만 떠나가는 그 뒷모습은 보았다.\""
+  },
+  {
+    "id": -1000007716,
+    "key": "story_Q2_1",
+    "en": "An elder of the old sect stands at the door, disciples behind.\nThe elder: \"Whatever {D} made, it was made with our teaching. The manual, or the hands that wrote it.\"\n{D} looks at you and says nothing.",
+    "ch": "旧宗门的长老站在门口，身后是一众弟子。\n长老：“{D}所创，皆出自我宗所授。交出秘籍，或者交出写它的手。”\n{D}看着你，一言不发。",
+    "tc": "舊宗門的長老站在門口，身後是一眾弟子。\n長老：“{D}所創，皆出自我宗所授。交出秘籍，或者交出寫它的手。”\n{D}看著你，一言不發。",
+    "kr": "옛 문파의 장로가 문 앞에 서 있고, 제자들이 뒤에 있다.\n장로: \"{D}이(가) 무엇을 만들었든 우리 가르침으로 만든 것이다. 비급을 내놓든가, 그것을 쓴 손을 내놓아라.\"\n{D}은(는) 아무 말 없이 당신을 바라본다."
+  },
+  {
+    "id": -1000007717,
+    "key": "story_Q2_1_o1",
+    "en": "Fight the elder",
+    "ch": "与长老一战",
+    "tc": "與長老一戰",
+    "kr": "장로와 싸운다"
+  },
+  {
+    "id": -1000007718,
+    "key": "story_Q2_1_o2",
+    "en": "Buy the debt ({0} spirit stones)",
+    "ch": "替其还债（{0}灵石）",
+    "tc": "替其還債（{0}靈石）",
+    "kr": "빚을 대신 갚는다 (영석 {0})"
+  },
+  {
+    "id": -1000007719,
+    "key": "story_Q2_1_o3",
+    "en": "Step aside",
+    "ch": "让开",
+    "tc": "讓開",
+    "kr": "물러선다"
+  },
+  {
+    "id": -1000007720,
+    "key": "story_Q3_1",
+    "en": "{D} puts a thin book on the table. The cover is blank.\n{D}: \"An art with one master dies with that master. Learn it here, with me - or keep the book, and let it teach you slowly.\"",
+    "ch": "{D}把一本薄册放在桌上，封面空白。\n{D}：“只有一个主人的武技，会随主人而死。在这里跟我学，或者收下书，慢慢参悟。”",
+    "tc": "{D}把一本薄冊放在桌上，封面空白。\n{D}：“只有一個主人的武技，會隨主人而死。在這裡跟我學，或者收下書，慢慢參悟。”",
+    "kr": "{D}이(가) 얇은 책 한 권을 탁자에 올려놓는다. 표지는 비어 있다.\n{D}: \"주인이 하나뿐인 무공은 그 주인과 함께 죽는다. 여기서 나와 함께 익히든가, 책을 가져가 천천히 깨우치든가.\""
+  },
+  {
+    "id": -1000007721,
+    "key": "story_Q3_1_o1",
+    "en": "Learn it now",
+    "ch": "现在就学",
+    "tc": "現在就學",
+    "kr": "지금 익힌다"
+  },
+  {
+    "id": -1000007722,
+    "key": "story_Q3_1_o2",
+    "en": "Keep the book and meditate on it",
+    "ch": "收下书，慢慢参悟",
+    "tc": "收下書，慢慢參悟",
+    "kr": "책을 가져가 깨우친다"
+  },
+  {
+    "id": -1000007723,
+    "key": "story_endQ_Founder",
+    "en": "{D} carves a board over the hut's door, crooked and proud: the first school of one teacher and no ancestors.\n{D}: \"When they ask who founded it, I will say there were two of us.\"",
+    "ch": "{D}在草庐门上刻了块匾，歪歪扭扭，却很得意：一师开宗，没有祖师。\n{D}：“若有人问是谁创的，我会说，是两个人。”",
+    "tc": "{D}在草廬門上刻了塊匾，歪歪扭扭，卻很得意：一師開宗，沒有祖師。\n{D}：“若有人問是誰創的，我會說，是兩個人。”",
+    "kr": "{D}이(가) 초막 문 위에 비뚤지만 자랑스러운 현판을 새긴다. 스승은 하나, 조사는 없는 첫 문파.\n{D}: \"누가 세웠냐고 물으면, 둘이었다고 말하겠다.\""
+  },
+  {
+    "id": -1000007724,
+    "key": "story_endQ_Lost",
+    "en": "{D}: \"They took the manual and burned it in front of me. I wrote down what my hands still remember.\"\n{D}: \"Keep it. Half an art is better in your hands than a whole one in theirs.\"",
+    "ch": "{D}：“他们夺走秘籍，当着我的面烧了。我把双手还记得的写了下来。”\n{D}：“你收着。半招在你手里，胜过全招在他们手里。”",
+    "tc": "{D}：“他們奪走秘籍，當著我的面燒了。我把雙手還記得的寫了下來。”\n{D}：“你收著。半招在你手裡，勝過全招在他們手裡。”",
+    "kr": "{D}: \"그들은 비급을 빼앗아 내 눈앞에서 태웠다. 내 손이 아직 기억하는 것만 적어 두었다.\"\n{D}: \"가져가라. 반쪽 무공이라도 네 손에 있는 편이 그들 손에 있는 온전한 무공보다 낫다.\""
+  },
+  {
+    "id": -1000007725,
+    "key": "story_Q4_1",
+    "en": "{D} waits on the road, thinner, eyes very calm.\n{D}: \"You stepped aside. I learned a great deal from how you did it.\" {D}'s hands open into a move you have seen born.",
+    "ch": "{D}在路上等你，瘦了，眼神却极平静。\n{D}：“你让开了。你让开的样子，教会了我许多。”{D}双手展开，正是你亲眼见其诞生的那一招。",
+    "tc": "{D}在路上等你，瘦了，眼神卻極平靜。\n{D}：“你讓開了。你讓開的樣子，教會了我許多。”{D}雙手展開，正是你親眼見其誕生的那一招。",
+    "kr": "{D}이(가) 길 위에서 기다린다. 더 야위었지만 눈빛은 무척 고요하다.\n{D}: \"너는 물러섰지. 네가 물러서는 모습에서 많은 것을 배웠다.\" {D}의 두 손이 당신이 탄생을 지켜본 그 초식으로 펼쳐진다."
+  },
+  {
+    "id": -1000007726,
+    "key": "story_Q4_1_o1",
+    "en": "Defend yourself",
+    "ch": "迎战",
+    "tc": "迎戰",
+    "kr": "맞선다"
+  },
+  {
+    "id": -1000007727,
+    "key": "story_endQ_Traitor",
+    "en": "The move that began beside a road ends on one. Nobody speaks of it again, and nobody forgets.",
+    "ch": "始于路旁的一招，终于路上。无人再提，也无人忘记。",
+    "tc": "始於路旁的一招，終於路上。無人再提，也無人忘記。",
+    "kr": "길가에서 태어난 초식이 길 위에서 끝난다. 아무도 다시 입에 올리지 않고, 아무도 잊지 않는다."
+  },
+  {
+    "id": -1000007728,
+    "key": "story_Q_dead",
+    "en": "News of {D}'s death reaches you with a parcel: a blank-covered book, and one line: \"It was nearly finished. You will know how.\"",
+    "ch": "{D}的死讯与一个包裹一同送到：一本无字封面的册子，和一行字：“只差一点了。你会懂的。”",
+    "tc": "{D}的死訊與一個包裹一同送到：一本無字封面的冊子，和一行字：“只差一點了。你會懂的。”",
+    "kr": "{D}의 부고가 꾸러미와 함께 도착한다. 표지가 빈 책 한 권과 한 줄의 글: \"거의 완성됐다. 너라면 알 거다.\""
+  },
+  {
+    "id": -1000007729,
+    "key": "story_end_Q_Founder",
+    "en": "The Founder",
+    "ch": "开宗",
+    "tc": "開宗",
+    "kr": "개파"
+  },
+  {
+    "id": -1000007730,
+    "key": "story_end_Q_Lost",
+    "en": "The Lost Art",
+    "ch": "失传",
+    "tc": "失傳",
+    "kr": "실전"
+  },
+  {
+    "id": -1000007731,
+    "key": "story_end_Q_Traitor",
+    "en": "The Traitor",
+    "ch": "背弃",
+    "tc": "背棄",
+    "kr": "배신"
+  },
+  {
+    "id": -1000007732,
+    "key": "story_name_R",
+    "en": "For One Heir Only",
+    "ch": "一人之传",
+    "tc": "一人之傳",
+    "kr": "단 한 명의 전인"
+  },
+  {
+    "id": -1000007733,
+    "key": "story_task_desc_R",
+    "en": "{0}",
+    "ch": "{0}",
+    "tc": "{0}",
+    "kr": "{0}"
+  },
+  {
+    "id": -1000007734,
+    "key": "story_task_R0",
+    "en": "The old master {O} is looking for an heir.",
+    "ch": "老前辈{O}在寻找传人。",
+    "tc": "老前輩{O}在尋找傳人。",
+    "kr": "노선배 {O}이(가) 전인을 찾고 있다."
+  },
+  {
+    "id": -1000007735,
+    "key": "story_task_R1",
+    "en": "Three trials of {O}; {W} is the other candidate.",
+    "ch": "{O}的三重考验；另一人选是{W}。",
+    "tc": "{O}的三重考驗；另一人選是{W}。",
+    "kr": "{O}의 세 가지 시험. 또 다른 후보는 {W}이다."
+  },
+  {
+    "id": -1000007736,
+    "key": "story_task_R2",
+    "en": "{W} has a proposal.",
+    "ch": "{W}有个提议。",
+    "tc": "{W}有個提議。",
+    "kr": "{W}에게 제안이 있다."
+  },
+  {
+    "id": -1000007737,
+    "key": "story_task_R3",
+    "en": "{O} is writing the art and choosing an heir.",
+    "ch": "{O}正在写下绝技，择定传人。",
+    "tc": "{O}正在寫下絕技，擇定傳人。",
+    "kr": "{O}이(가) 절학을 쓰고 전인을 고르고 있다."
+  },
+  {
+    "id": -1000007738,
+    "key": "story_task_R4",
+    "en": "The art waits to be handed on.",
+    "ch": "绝技等待传承。",
+    "tc": "絕技等待傳承。",
+    "kr": "절학이 전해지기를 기다린다."
+  },
+  {
+    "id": -1000007739,
+    "key": "story_task_R9",
+    "en": "{O} is gone.",
+    "ch": "{O}已逝。",
+    "tc": "{O}已逝。",
+    "kr": "{O}은(는) 세상을 떠났다."
+  },
+  {
+    "id": -1000007740,
+    "key": "story_R0_1",
+    "en": "{O}: \"I have one art left in me. It is not written; I have been afraid to write it.\"\n{O}: \"When it is, one person will have it. Will you let an old fool look at you for a while?\"",
+    "ch": "{O}：“我心中还剩一门绝技。没写下来，我一直不敢写。”\n{O}：“写成之日，只传一人。可愿让我这老糊涂瞧你些时日？”",
+    "tc": "{O}：“我心中還剩一門絕技。沒寫下來，我一直不敢寫。”\n{O}：“寫成之日，只傳一人。可願讓我這老糊塗瞧你些時日？”",
+    "kr": "{O}: \"내 안에 절학이 하나 남았다. 아직 쓰지 않았다. 쓰기가 두려웠지.\"\n{O}: \"다 쓰면 단 한 사람만 가질 수 있다. 이 늙은이가 한동안 너를 지켜봐도 되겠느냐?\""
+  },
+  {
+    "id": -1000007741,
+    "key": "story_R0_1_o1",
+    "en": "\"Look as long as you like.\"",
+    "ch": "“前辈尽管看。”",
+    "tc": "“前輩儘管看。”",
+    "kr": "\"마음껏 보십시오.\""
+  },
+  {
+    "id": -1000007742,
+    "key": "story_R0_1_o2",
+    "en": "\"I am not looking for a master.\"",
+    "ch": "“我不寻师父。”",
+    "tc": "“我不尋師父。”",
+    "kr": "\"저는 스승을 찾지 않습니다.\""
+  },
+  {
+    "id": -1000007743,
+    "key": "story_R1_1",
+    "en": "{O} sets a bowl of water under a dripping rock.\n{O}: \"When it is full, come and tell me.\" One drop falls. Much later, another.",
+    "ch": "{O}在滴水的岩下放了一只碗。\n{O}：“满了，来告诉我。”一滴落下。许久，又是一滴。",
+    "tc": "{O}在滴水的巖下放了一隻碗。\n{O}：“滿了，來告訴我。”一滴落下。許久，又是一滴。",
+    "kr": "{O}이(가) 물방울이 떨어지는 바위 아래 물그릇을 놓는다.\n{O}: \"가득 차면 와서 알려라.\" 한 방울이 떨어진다. 한참 뒤, 또 한 방울."
+  },
+  {
+    "id": -1000007744,
+    "key": "story_R1_1_o1",
+    "en": "Sit down and wait (a year)",
+    "ch": "坐下等待（一年）",
+    "tc": "坐下等待（一年）",
+    "kr": "앉아서 기다린다 (1년)"
+  },
+  {
+    "id": -1000007745,
+    "key": "story_R1_1_o2",
+    "en": "Fill it from the stream",
+    "ch": "去溪里舀满",
+    "tc": "去溪裡舀滿",
+    "kr": "개울물로 채운다"
+  },
+  {
+    "id": -1000007746,
+    "key": "story_R1_2",
+    "en": "{W}: \"So you are the other one. {O} says we should see what we are made of.\"\n{W}: \"I need this more than you do. I won't hold back.\"",
+    "ch": "{W}：“你就是另一个人。{O}说，让我们看看彼此的斤两。”\n{W}：“我比你更需要它，不会留手。”",
+    "tc": "{W}：“你就是另一個人。{O}說，讓我們看看彼此的斤兩。”\n{W}：“我比你更需要它，不會留手。”",
+    "kr": "{W}: \"네가 그 다른 한 명이구나. {O} 어르신이 서로의 실력을 보라고 하셨다.\"\n{W}: \"나는 너보다 이게 더 필요하다. 사정 봐주지 않겠다.\""
+  },
+  {
+    "id": -1000007747,
+    "key": "story_R1_2_o1",
+    "en": "Spar",
+    "ch": "切磋",
+    "tc": "切磋",
+    "kr": "비무한다"
+  },
+  {
+    "id": -1000007748,
+    "key": "story_R1_3",
+    "en": "Three months later {W} lies at the foot of a cliff, a leg broken, the night coming down cold.\n{W}: \"Go on. Without me, it is yours.\"",
+    "ch": "三个月后，{W}倒在崖下，断了一条腿，寒夜将至。\n{W}：“走吧。没了我，它就是你的。”",
+    "tc": "三個月後，{W}倒在崖下，斷了一條腿，寒夜將至。\n{W}：“走吧。沒了我，它就是你的。”",
+    "kr": "석 달 뒤, {W}이(가) 다리가 부러진 채 절벽 아래 쓰러져 있고, 차가운 밤이 내려온다.\n{W}: \"가. 내가 없으면 그건 네 거다.\""
+  },
+  {
+    "id": -1000007749,
+    "key": "story_R1_3_o1",
+    "en": "Give a pill and stay the night",
+    "ch": "给丹药，守一夜",
+    "tc": "給丹藥，守一夜",
+    "kr": "단약을 주고 밤새 곁에 있는다"
+  },
+  {
+    "id": -1000007750,
+    "key": "story_R1_3_o2",
+    "en": "Leave",
+    "ch": "离开",
+    "tc": "離開",
+    "kr": "떠난다"
+  },
+  {
+    "id": -1000007751,
+    "key": "story_R2_1",
+    "en": "{W}: \"The old one will never choose. Every night there is a light in the study - it is nearly written.\"\n{W}: \"You hold the door, I take the book, we copy it. Nobody has to lose.\"",
+    "ch": "{W}：“老人家永远选不出来。书房夜夜有灯，快写成了。”\n{W}：“你守门，我拿书，抄一份。谁都不必输。”",
+    "tc": "{W}：“老人家永遠選不出來。書房夜夜有燈，快寫成了。”\n{W}：“你守門，我拿書，抄一份。誰都不必輸。”",
+    "kr": "{W}: \"노인은 절대 고르지 못할 거다. 서재에 밤마다 불이 켜져 있어. 거의 다 썼다.\"\n{W}: \"네가 문을 지키고, 내가 책을 가져와 베끼자. 아무도 질 필요 없어.\""
+  },
+  {
+    "id": -1000007752,
+    "key": "story_R2_1_o1",
+    "en": "\"No.\"",
+    "ch": "“不。”",
+    "tc": "“不。”",
+    "kr": "\"안 돼.\""
+  },
+  {
+    "id": -1000007753,
+    "key": "story_R2_1_o2",
+    "en": "\"When?\"",
+    "ch": "“何时动手？”",
+    "tc": "“何時動手？”",
+    "kr": "\"언제?\""
+  },
+  {
+    "id": -1000007754,
+    "key": "story_R3_chosen",
+    "en": "{O} closes the book: {art}.\n{O}: \"You waited when there was nothing to gain, and you would not take what was not given. It is yours.\"\n{O}: \"One heir, I always said. But the book is yours now, and so is the rule.\"",
+    "ch": "{O}合上书：{art}。\n{O}：“无利可图时你能等，不属于你的你不取。它是你的了。”\n{O}：“我总说只传一人。可书已归你，规矩也归你了。”",
+    "tc": "{O}合上書：{art}。\n{O}：“無利可圖時你能等，不屬於你的你不取。它是你的了。”\n{O}：“我總說只傳一人。可書已歸你，規矩也歸你了。”",
+    "kr": "{O}이(가) 책을 덮는다. {art}.\n{O}: \"얻을 것이 없을 때도 기다렸고, 주어지지 않은 것은 취하지 않았다. 이것은 네 것이다.\"\n{O}: \"늘 한 명에게만 전한다고 했지. 하지만 이제 책도 네 것이고, 규칙도 네 것이다.\""
+  },
+  {
+    "id": -1000007755,
+    "key": "story_R3_chosen_o1",
+    "en": "Keep the rule: one heir",
+    "ch": "守规矩：一人之传",
+    "tc": "守規矩：一人之傳",
+    "kr": "규칙을 지킨다: 한 명의 전인"
+  },
+  {
+    "id": -1000007756,
+    "key": "story_R3_chosen_o2",
+    "en": "Share it with {W}",
+    "ch": "与{W}共享",
+    "tc": "與{W}共享",
+    "kr": "{W}와(과) 나눈다"
+  },
+  {
+    "id": -1000007757,
+    "key": "story_R3_passed",
+    "en": "{O} gives the book - {art} - to {W}, and looks at you without reproach.\n{O}: \"You are stronger than this art. {W} will be kept by it. Will you let it go?\"",
+    "ch": "{O}把书——{art}——交给{W}，看向你，并无责备。\n{O}：“你比这门绝技强。而它能护住{W}。你放得下吗？”",
+    "tc": "{O}把書——{art}——交給{W}，看向你，並無責備。\n{O}：“你比這門絕技強。而它能護住{W}。你放得下嗎？”",
+    "kr": "{O}이(가) 책, {art}을(를) {W}에게 건네고, 나무람 없이 당신을 바라본다.\n{O}: \"너는 이 절학보다 강하다. {W}은(는) 이것이 지켜 줄 것이다. 놓아줄 수 있겠느냐?\""
+  },
+  {
+    "id": -1000007758,
+    "key": "story_R3_passed_o1",
+    "en": "Bow to {O} and {W}",
+    "ch": "向{O}与{W}行礼",
+    "tc": "向{O}與{W}行禮",
+    "kr": "{O}와(과) {W}에게 예를 표한다"
+  },
+  {
+    "id": -1000007759,
+    "key": "story_R3_passed_o2",
+    "en": "Challenge {W} for it",
+    "ch": "为此挑战{W}",
+    "tc": "為此挑戰{W}",
+    "kr": "그것을 걸고 {W}에게 도전한다"
+  },
+  {
+    "id": -1000007760,
+    "key": "story_endR_Stolen",
+    "en": "Two copies by candlelight, and a light in the study that does not go out. In the morning the old master's door is open, the room empty, the last page torn away.\nThe art works. It always feels one page short.",
+    "ch": "烛光下抄了两份，书房的灯一直未灭。清晨，老人的房门敞开，人去屋空，末页已被撕去。\n绝技能用。只是总觉得缺了一页。",
+    "tc": "燭光下抄了兩份，書房的燈一直未滅。清晨，老人的房門敞開，人去屋空，末頁已被撕去。\n絕技能用。只是總覺得缺了一頁。",
+    "kr": "촛불 아래 두 권의 필사본, 그리고 꺼지지 않는 서재의 불빛. 아침이 되자 노인의 방문은 열려 있고 방은 비어 있으며, 마지막 장이 찢겨 나갔다.\n절학은 통한다. 다만 언제나 한 장이 모자란 느낌이다."
+  },
+  {
+    "id": -1000007761,
+    "key": "story_R4_1",
+    "en": "Years later you find the water bowl of {O} under the same rock. It is full.\nYou think of the art, and of {0}.",
+    "ch": "多年后，你在同一块岩石下找到{O}的水碗。已经满了。\n你想到那门绝技，又想到{0}。",
+    "tc": "多年後，你在同一塊岩石下找到{O}的水碗。已經滿了。\n你想到那門絕技，又想到{0}。",
+    "kr": "수년 뒤, 같은 바위 아래에서 {O}의 물그릇을 발견한다. 가득 차 있다.\n당신은 그 절학을 떠올리고, {0}을(를) 떠올린다."
+  },
+  {
+    "id": -1000007762,
+    "key": "story_R4_1_o1",
+    "en": "Teach it to {0}",
+    "ch": "传给{0}",
+    "tc": "傳給{0}",
+    "kr": "{0}에게 전한다"
+  },
+  {
+    "id": -1000007763,
+    "key": "story_R4_1_o2",
+    "en": "Let it end with you",
+    "ch": "让它止于你",
+    "tc": "讓它止於你",
+    "kr": "자신과 함께 끝낸다"
+  },
+  {
+    "id": -1000007764,
+    "key": "story_endR_Lineage",
+    "en": "{0} repeats the first movement until the light goes. You set an empty bowl under the rock.\nSomewhere, an old fool would have laughed.",
+    "ch": "{0}反复练着第一式，直到天黑。你在岩下放了一只空碗。\n某处，那位老糊涂大概会笑吧。",
+    "tc": "{0}反覆練著第一式，直到天黑。你在巖下放了一隻空碗。\n某處，那位老糊塗大概會笑吧。",
+    "kr": "{0}은(는) 날이 저물 때까지 첫 초식을 반복한다. 당신은 바위 아래 빈 그릇을 놓는다.\n어딘가에서 그 늙은이가 웃었을 것이다."
+  },
+  {
+    "id": -1000007765,
+    "key": "story_endR_Buried",
+    "en": "You bury the book under the rock, where the water will take the ink one drop at a time. What it taught you stays.",
+    "ch": "你把书埋在岩下，任水一滴滴带走墨迹。它教给你的，仍留在心中。",
+    "tc": "你把書埋在巖下，任水一滴滴帶走墨跡。它教給你的，仍留在心中。",
+    "kr": "당신은 책을 바위 아래 묻는다. 물방울이 한 방울씩 먹을 씻어 갈 것이다. 책이 가르쳐 준 것은 남는다."
+  },
+  {
+    "id": -1000007766,
+    "key": "story_R_dead",
+    "en": "{O} has died. In the study the lamp is still warm.",
+    "ch": "{O}去世了。书房的灯尚有余温。",
+    "tc": "{O}去世了。書房的燈尚有餘溫。",
+    "kr": "{O}이(가) 세상을 떠났다. 서재의 등잔은 아직 따뜻하다."
+  },
+  {
+    "id": -1000007767,
+    "key": "story_end_R_Lineage",
+    "en": "The Lineage",
+    "ch": "传承",
+    "tc": "傳承",
+    "kr": "전승"
+  },
+  {
+    "id": -1000007768,
+    "key": "story_end_R_Buried",
+    "en": "The Buried Book",
+    "ch": "埋书",
+    "tc": "埋書",
+    "kr": "묻힌 책"
+  },
+  {
+    "id": -1000007769,
+    "key": "story_end_R_Stolen",
+    "en": "The Stolen Page",
+    "ch": "窃页",
+    "tc": "竊頁",
+    "kr": "훔친 한 장"
+  },
+  {
+    "id": -1000007770,
+    "key": "story_doc_art_A",
+    "en": "{A}: \"My sword has learned one more thing. I call it {art}.\"\n{A}: \"Nobody taught it to me. I want you to have it first.\"",
+    "ch": "{A}：“我的剑又悟了一招，名为{art}。”\n{A}：“无人教我。我想先给你。”",
+    "tc": "{A}：“我的劍又悟了一招，名為{art}。”\n{A}：“無人教我。我想先給你。”",
+    "kr": "{A}: \"내 검이 하나를 더 깨우쳤다. {art}라 부르겠다.\"\n{A}: \"아무도 가르쳐 주지 않았다. 네가 가장 먼저 가졌으면 한다.\""
+  },
+  {
+    "id": -1000007771,
+    "key": "story_doc_art_D",
+    "en": "{N}: \"I hit a rock, and the rock hit back, and then I understood something. {art}!\"\n{N}: \"I had someone write it down. The drawings are mine.\"",
+    "ch": "{N}：“我打石头，石头也打我，然后我就悟了。{art}！”\n{N}：“我请人写了下来。画是我画的。”",
+    "tc": "{N}：“我打石頭，石頭也打我，然後我就悟了。{art}！”\n{N}：“我請人寫了下來。畫是我畫的。”",
+    "kr": "{N}: \"바위를 쳤더니 바위가 되받아쳤고, 그러다 뭔가 깨달았어. {art}!\"\n{N}: \"누구한테 받아 적어 달라고 했어. 그림은 내가 그렸고.\""
+  },
+  {
+    "id": -1000007772,
+    "key": "story_doc_art_G",
+    "en": "{W}: \"A hundred years of losing to you, and winning, and this is what is left: {art}.\"\n{W}: \"Beat someone else with it for a change.\"",
+    "ch": "{W}：“与你输输赢赢一百年，只剩下这个：{art}。”\n{W}：“换个人去打吧。”",
+    "tc": "{W}：“與你輸輸贏贏一百年，只剩下這個：{art}。”\n{W}：“換個人去打吧。”",
+    "kr": "{W}: \"백 년 동안 너한테 지고 이기고 하다 보니 남은 건 이것뿐이다. {art}.\"\n{W}: \"이번엔 다른 놈을 이겨 봐라.\""
+  },
+  {
+    "id": -1000007773,
+    "key": "story_doc_art_J",
+    "en": "{J}: \"Master. The mark used to tell me how to kill. I asked it how to protect, and it answered: {art}.\"",
+    "ch": "{J}：“师父。那印记从前教我如何杀人。我问它如何守护，它答了：{art}。”",
+    "tc": "{J}：“師父。那印記從前教我如何殺人。我問它如何守護，它答了：{art}。”",
+    "kr": "{J}: \"사부님. 낙인은 예전엔 죽이는 법만 알려 주었습니다. 지키는 법을 물었더니 답했습니다. {art}.\""
+  },
+  {
+    "id": -1000007774,
+    "key": "story_doc_art_P",
+    "en": "{B}: \"Ten years of water on stone. It left me one move: {art}. Take it, brother.\"",
+    "ch": "{B}：“水滴石十年，给我留下一招：{art}。拿去吧，兄弟。”",
+    "tc": "{B}：“水滴石十年，給我留下一招：{art}。拿去吧，兄弟。”",
+    "kr": "{B}: \"바위 위로 십 년 흐른 물이 초식 하나를 남겼다. {art}. 받아라, 형제여.\""
+  },
+  {
+    "id": -1000007775,
+    "key": "story_doc_essence_I",
+    "en": "On the walls of the tomb the old owner had carved not techniques, but how techniques are made. You read until the torch dies. Your Dao Essence deepens.",
+    "ch": "墓壁上，墓主刻的并非武技，而是武技如何诞生。你读到火把燃尽。道蕴加深了。",
+    "tc": "墓壁上，墓主刻的並非武技，而是武技如何誕生。你讀到火把燃盡。道蘊加深了。",
+    "kr": "무덤 벽에 옛 주인은 초식이 아니라 초식이 태어나는 법을 새겨 두었다. 횃불이 꺼질 때까지 읽는다. 도온이 깊어진다."
+  },
+  {
+    "id": -1000007776,
+    "key": "story_doc_essence_K",
+    "en": "Between two thunderclaps the remnant shows you the one thing it kept from its ascension: the shape of a law before it has a name. Your Dao Essence deepens.",
+    "ch": "两道雷声之间，残魂让你看见它自飞升中留下的唯一之物：法则未得名时的形状。道蕴加深了。",
+    "tc": "兩道雷聲之間，殘魂讓你看見它自飛昇中留下的唯一之物：法則未得名時的形狀。道蘊加深了。",
+    "kr": "두 번의 천둥 사이, 잔혼이 비승에서 건진 유일한 것을 보여 준다. 이름 붙기 전 법칙의 모습. 도온이 깊어진다."
+  },
+  {
+    "id": -1000007777,
+    "key": "story_doc_essence_L",
+    "en": "With the heart clear, every art you know lies open like a still lake, and you see the hand that drew each one. Your Dao Essence deepens.",
+    "ch": "心境澄明，所学诸技如静湖般展开，你看见了绘出每一招的手。道蕴加深了。",
+    "tc": "心境澄明，所學諸技如靜湖般展開，你看見了繪出每一招的手。道蘊加深了。",
+    "kr": "마음이 맑아지자 익힌 모든 무공이 고요한 호수처럼 펼쳐지고, 각 초식을 그린 손이 보인다. 도온이 깊어진다."
   }
 ]

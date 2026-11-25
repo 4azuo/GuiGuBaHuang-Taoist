@@ -23,6 +23,7 @@ Taoist is a hardcore rework of Tale of Immortal (鬼谷八荒): a living world, 
 ▶ Fouru's ModLib (required, Steam Workshop): https://steamcommunity.com/sharedfiles/filedetails/?id=3385996759
 💻 GitHub (source, bugs, ideas): https://github.com/4azuo/GuiGuBaHuang-Taoist
 ♥ Support the work on Ko-fi: https://ko-fi.com/fouru
+💬 Discord (news, questions, bug reports): https://discord.gg/XKaP3EYfw
 
 ⚙ How to install
 1. Subscribe to Fouru's ModLib and Taoist on the Steam Workshop

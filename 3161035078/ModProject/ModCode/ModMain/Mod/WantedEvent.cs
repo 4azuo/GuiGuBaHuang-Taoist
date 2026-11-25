@@ -309,25 +309,28 @@ namespace MOD_nE7UL2.Mod
             var town = PlayerTowns().FirstOrDefault();
             if (town == null || target == null)
                 return;
-            g.ui.CloseUI(UIType.TextInfoLong);
-            var ui = new UICustom1(GameTool.LS("wanted_title"));
-            var row = ui.FirstRow + 2;
-            var min = MinReward(target);
-            var max = (int)Math.Min(int.MaxValue / 2, Math.Max(min, MapBuildPropertyEvent.GetBuildProperty(town)));
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("wanted_post_desc"), target.GetName(), target.GetGradeLvl(), town.name)).Format(null, 16);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("wanted_post_budget"), MapBuildPropertyEvent.GetBuildProperty(town), min)).Format(null, 14);
-            row++;
-            var reward = ui.AddCompositeSlider(ui.MidCol - 3, row++, GameTool.LS("wanted_reward"), min, max, min, "{0}");
-            reward.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { reward.MainComponent.Get().Parse<int>() }) });
-            ui.AddText(ui.MidCol, row++, GameTool.LS("wanted_post_rule")).Format(null, 13);
-            ui.IsAutoUpdate = true;
-            row++;
-            ui.AddButton(ui.MidCol, row, () =>
+            TaoistWindows.CloseMine(true);
+            TaoistWindows.Open1(() =>
             {
-                var err = Post(town, Player, target, reward.MainComponent.Get().Parse<int>());
-                InfoDialog.Msg(GameTool.LS("wanted_title"), err == null ? string.Format(GameTool.LS("wanted_posted"), target.GetName()) : GameTool.LS(err));
-                if (err == null) g.ui.CloseUI(UIType.TextInfoLong);
-            }, GameTool.LS("wanted_post")).Size(200, 40);
+                var ui = new UICustom1(GameTool.LS("wanted_title"));
+                var row = ui.FirstRow + 2;
+                var min = MinReward(target);
+                var max = (int)Math.Min(int.MaxValue / 2, Math.Max(min, MapBuildPropertyEvent.GetBuildProperty(town)));
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("wanted_post_desc"), target.GetName(), target.GetGradeLvl(), town.name)).Format(null, 16);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("wanted_post_budget"), MapBuildPropertyEvent.GetBuildProperty(town), min)).Format(null, 14);
+                row++;
+                var reward = ui.AddCompositeSlider(ui.MidCol - 3, row++, GameTool.LS("wanted_reward"), min, max, min, "{0}");
+                reward.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { reward.MainComponent.Get().Parse<int>() }) });
+                ui.AddText(ui.MidCol, row++, GameTool.LS("wanted_post_rule")).Format(null, 13);
+                ui.IsAutoUpdate = true;
+                row++;
+                ui.AddButton(ui.MidCol, row, () =>
+                {
+                    var err = Post(town, Player, target, reward.MainComponent.Get().Parse<int>());
+                    InfoDialog.Msg(GameTool.LS("wanted_title"), err == null ? string.Format(GameTool.LS("wanted_posted"), target.GetName()) : GameTool.LS(err));
+                    if (err == null) TaoistWindows.CloseMine(true);
+                }, GameTool.LS("wanted_post")).Size(200, 40);
+            });
         }
 
         /// <summary>The wanted list (NPC search) is open: the NPC info shows the bounty details, first tab only.</summary>

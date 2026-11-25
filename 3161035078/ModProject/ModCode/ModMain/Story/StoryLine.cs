@@ -1,5 +1,6 @@
 using ModLib.Enum;
 using ModLib.Helper;
+using MOD_nE7UL2.Helper;
 using MOD_nE7UL2.Mod;
 using System;
 using System.Collections.Generic;
@@ -173,12 +174,84 @@ namespace MOD_nE7UL2.Story
             ["O0_butcher"] = "shanzei2",
             ["endO_Ashes"] = "shibei2",
             ["endO_Atonement"] = "zhanshengwuluo",
+            ["Q_dead"] = "shibei2",
+            ["endQ_Traitor"] = "zhuanshenjianxue1",
+            ["R_dead"] = "shibei2",
+            ["R4_1"] = "gaoshanshnag",
+            ["endR_Stolen"] = "heipaoansha1",
+            ["endR_Lineage"] = "baojuanziji",
+            ["endR_Buried"] = "shibei2",
+            ["doc_essence_I"] = "shenguan",
+            ["doc_essence_K"] = "lingqixuanwo",
+            ["doc_essence_L"] = "lianhua2",
             ["P0_1"] = "ayuluoshui1",
             ["P1_1"] = "ayuluoshui1",
             ["P3_1"] = "dengxianleijie",
             ["endP_Alone"] = "dengxianleijie",
             ["endP_Devourer"] = "ayuluoshui1",
         };
+
+        // ------------------------------------------------------------------ Dao of Creation (optional)
+
+        /// <summary>The martial art of a line (in StoryState.Roles: its soleID; text token {art}).</summary>
+        public const string ART = "art";
+        private const int FORGE_TRIES = 3;
+
+        /// <summary>
+        /// The role creates the martial art of the line (Dao of Creation). False: not now, tried again in 3 months; after 3
+        /// tries the line goes on without it (true).
+        /// </summary>
+        protected static bool Forge(StoryState s, string role)
+        {
+            if (s.Roles.ContainsKey(ART) || !DocHelper.Ready) return true;
+            var u = U(s, role);
+            var art = u == null ? null : DocHelper.NpcForge(u.GetUnitId());
+            if (art != null) { s.Roles[ART] = art; return true; }
+            Count(s, "forge_tries");
+            if (u == null || s.Flag("forge_tries") >= FORGE_TRIES) return true;
+            Wait(s, 3);
+            return false;
+        }
+
+        /// <summary>The art of the line taught to a unit (learnt, or its manual).</summary>
+        protected static bool Teach(StoryState s, WorldUnitBase to, bool learn) =>
+            to != null && s.Roles.TryGetValue(ART, out var art) && DocHelper.GiveCopy(art, to.GetUnitId(), learn) != null;
+
+        /// <summary>Endings of the other lines after which a role creates an art and gives its manual (drama doc_art_&lt;line&gt;).</summary>
+        public static readonly Dictionary<string, string> DOC_ARTS = new Dictionary<string, string>
+        {
+            ["A_Companion"] = "A", ["A_SectMaster"] = "A", ["D_ThreeSworn"] = "N", ["G_Friend"] = "W", ["J_Righteous"] = "J", ["P_Brothers"] = "B",
+        };
+
+        /// <summary>Endings of the other lines which give Dao Essence (drama doc_essence_&lt;line&gt;).</summary>
+        public static readonly Dictionary<string, float> DOC_ESSENCE = new Dictionary<string, float>
+        {
+            ["I_Heir"] = 30f, ["K_Guided"] = 30f, ["L_ClearHeart"] = 50f,
+        };
+
+        /// <summary>With Dao of Creation: the epilogue of an ending (an art or Dao Essence). Without it: nothing.</summary>
+        private static void DocEpilogue(StoryState s, string ending)
+        {
+            if (!DocHelper.Ready) return;
+            try
+            {
+                if (DOC_ARTS.TryGetValue(ending, out var role))
+                {
+                    var u = U(s, role);
+                    if (u == null || u.isDie) return;
+                    var art = DocHelper.NpcForge(u.GetUnitId());
+                    if (art == null) return;
+                    s.Roles[ART] = art;
+                    if (Teach(s, Player, false)) Say(s, role, "doc_art_" + s.Id, null, null);
+                }
+                else if (DOC_ESSENCE.TryGetValue(ending, out var essence))
+                {
+                    DocHelper.AddEssence(Player.GetUnitId(), essence);
+                    Tell(s, "doc_essence_" + s.Id, null, null);
+                }
+            }
+            catch (Exception ex) { DebugHelper.WriteLine($"Story {s.Id}: epilogue of {ending}: {ex.Message}"); }
+        }
 
         /// <summary>The background of a text key.</summary>
         public static string Bg(string key) => key != null && BACKGROUNDS.TryGetValue(key, out var bg) ? bg : BG;
@@ -211,6 +284,7 @@ namespace MOD_nE7UL2.Story
             // a place not set (null id: the game's GetBuild throws on it) is "?"
             ["S"] = s => s.Roles.TryGetValue("S", out var id) && !string.IsNullOrEmpty(id) ? (g.world.build.GetBuild<MapBuildSchool>(id)?.name ?? "?") : "?",
             ["T"] = s => s.Roles.TryGetValue("T", out var id) && !string.IsNullOrEmpty(id) ? (g.world.build.GetBuild(id)?.name ?? "?") : "?",
+            [ART] = s => s.Roles.TryGetValue(ART, out var id) ? (DocHelper.BookName(id) ?? "?") : "?",
             ["T2"] = s => s.Roles.TryGetValue("T2", out var id) && !string.IsNullOrEmpty(id) ? (g.world.build.GetBuild(id)?.name ?? "?") : "?",
         };
 
@@ -452,6 +526,7 @@ namespace MOD_nE7UL2.Story
             s.LastPerkMonth = Now;
             TaoistLogEvent.Log("log_story_end", T(s, "name_" + s.Id), T(s, "end_" + ending));
             DebugHelper.WriteLine($"Story {s.Id}: ending {ending}");
+            DocEpilogue(s, ending);
         }
 
         /// <summary>The line closes without an ending (refused, a role died).</summary>

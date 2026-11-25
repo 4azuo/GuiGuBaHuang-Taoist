@@ -152,9 +152,6 @@ Test: extend TG-46 (register a hidden item, NPC buys it, check the drama has no 
 * Game slots have their own game data folder (GuiGuBaHuang-ModLib/tools/SlotDataPath, 2026-11-18). Left: the save index read and written
   back once at the start of a slot game, before the plugin moves the paths (a native hook of the game's path code
   would remove it); the extra save folders left in a slot by interrupted character creations are not cleaned.
-* TI-01 (investigation): start again from a save without closing the game. "Reload save" of the game menu
-  (`UIGameMemu.ReloadCache`) left the runner waiting (first run, 2026-11-18): to look at again with the logs of
-  `logs/autotest/20261118-005106`; the "return to main menu" path was not reached.
 
 
 ## Release CI, Nexus Mods and error reports (2026-11-19)

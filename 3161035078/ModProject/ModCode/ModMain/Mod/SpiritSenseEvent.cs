@@ -1,3 +1,4 @@
+using MOD_nE7UL2.Helper;
 using EGameTypeData;
 using MOD_nE7UL2.Const;
 using ModLib.Attributes;
@@ -203,35 +204,38 @@ namespace MOD_nE7UL2.Mod
 
         public static void OpenWindow()
         {
-            var ui = new UICustom1(GameTool.LS("sense_title"));
-            var row = ui.FirstRow + 1;
-            var d = Get(Player, true);
-            var level = LevelOf(d.Exp);
-            var steps = EssenceSteps(d.Essence);
-            ui.AddText(ui.MidCol, row++, LevelName(level)).Format(new Color(0.1f, 0.45f, 0.4f), 20);
-            ui.AddText(ui.MidCol, row++, level >= MAX_LEVEL ? string.Format(GameTool.LS("sense_exp_top"), d.Exp) : string.Format(GameTool.LS("sense_exp"), d.Exp, NextOf(d.Exp))).Format(null, 15);
-            if (d.Essence > 0 || level >= MAX_LEVEL)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("sense_essence"), d.Essence, steps, steps)).Format(new Color(0.45f, 0.2f, 0.55f), 14);
-            row++;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("sense_effects"), Math.Round(SpRateOf(level, steps) * 100, 1), Math.Round(MpRateOf(level) * 100, 1), AmbushChanceOf(level),
-                Math.Round((1 - HeartDemonRateOf(level)) * 100), ScanRange(level), d.Avoided)).Format(null, 15);
-            row++;
-            if (d.LastScanMonth == GameHelper.GetGameTotalMonth())
-                ui.AddText(ui.MidCol, row++, GameTool.LS("sense_scan_done")).Format(Color.gray, 13);
-            else
-                ui.AddButton(ui.MidCol, ui.Rows[row++], () =>
-                {
-                    d.LastScanMonth = GameHelper.GetGameTotalMonth();
-                    AddExp(Player, SCAN_EXP);
-                    var r = Scan(Player);
-                    LastScan = r;
-                    OpenScanWindow(r);
-                }, string.Format(GameTool.LS("sense_scan_button"), ScanRange(level), SCAN_EXP)).Format(Color.black, 14).Size(420, 34);
-            row++;
-            for (var l = 1; l <= MAX_LEVEL; l++)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("sense_level_line"), LevelName(l), LEVELS[l - 1], Math.Round(SpRateOf(l, 0) * 100), Math.Round(MpRateOf(l) * 100), AmbushChanceOf(l)))
-                    .Format(l == level ? new Color(0.1f, 0.4f, 0.1f) : new Color(0.35f, 0.35f, 0.35f), 13);
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("sense_help")).Format(null, 13);
+            TaoistWindows.Open1(() =>
+            {
+                var ui = new UICustom1(GameTool.LS("sense_title"));
+                var row = ui.FirstRow + 1;
+                var d = Get(Player, true);
+                var level = LevelOf(d.Exp);
+                var steps = EssenceSteps(d.Essence);
+                ui.AddText(ui.MidCol, row++, LevelName(level)).Format(new Color(0.1f, 0.45f, 0.4f), 20);
+                ui.AddText(ui.MidCol, row++, level >= MAX_LEVEL ? string.Format(GameTool.LS("sense_exp_top"), d.Exp) : string.Format(GameTool.LS("sense_exp"), d.Exp, NextOf(d.Exp))).Format(null, 15);
+                if (d.Essence > 0 || level >= MAX_LEVEL)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("sense_essence"), d.Essence, steps, steps)).Format(new Color(0.45f, 0.2f, 0.55f), 14);
+                row++;
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("sense_effects"), Math.Round(SpRateOf(level, steps) * 100, 1), Math.Round(MpRateOf(level) * 100, 1), AmbushChanceOf(level),
+                    Math.Round((1 - HeartDemonRateOf(level)) * 100), ScanRange(level), d.Avoided)).Format(null, 15);
+                row++;
+                if (d.LastScanMonth == GameHelper.GetGameTotalMonth())
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("sense_scan_done")).Format(Color.gray, 13);
+                else
+                    ui.AddButton(ui.MidCol, ui.Rows[row++], () =>
+                    {
+                        d.LastScanMonth = GameHelper.GetGameTotalMonth();
+                        AddExp(Player, SCAN_EXP);
+                        var r = Scan(Player);
+                        LastScan = r;
+                        OpenScanWindow(r);
+                    }, string.Format(GameTool.LS("sense_scan_button"), ScanRange(level), SCAN_EXP)).Format(Color.black, 14).Size(420, 34);
+                row++;
+                for (var l = 1; l <= MAX_LEVEL; l++)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("sense_level_line"), LevelName(l), LEVELS[l - 1], Math.Round(SpRateOf(l, 0) * 100), Math.Round(MpRateOf(l) * 100), AmbushChanceOf(l)))
+                        .Format(l == level ? new Color(0.1f, 0.4f, 0.1f) : new Color(0.35f, 0.35f, 0.35f), 13);
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("sense_help")).Format(null, 13);
+            });
         }
         /// <summary>A fixed roll for the ambush (tests), null: random.</summary>
         public static float? TestRoll { get; set; }

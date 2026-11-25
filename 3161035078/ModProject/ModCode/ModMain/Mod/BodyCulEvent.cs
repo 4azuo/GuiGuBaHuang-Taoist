@@ -239,7 +239,7 @@ namespace MOD_nE7UL2.Mod
         private static void CloseWindow()
         {
             if (g.ui.HasUI(UIType.TextInfoLong))
-                g.ui.CloseUI(UIType.TextInfoLong);
+                TaoistWindows.CloseMine(true);
         }
 
         public static string PlaceBackground(Place p) => p == Place.Waterfall ? "ayuluoshui1" : p == Place.Lava ? "penchuyanjiang" : "dengxianleijie";
@@ -987,89 +987,118 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Body refining window of the player.</summary>
         public static void OpenWindow()
         {
-            var ui = new UICustom1(GameTool.LS("body_title"));
-            var row = ui.FirstRow + 1;
-            var d = Get(Player);
-            if (d == null)
+            TaoistWindows.Open1(() =>
             {
-                ui.AddText(ui.MidCol, row++, GameTool.LS("body_intro")).Format(null, 15);
-                row += 3;
-                ui.AddButton(ui.MidCol, row, () =>
+                var ui = new UICustom1(GameTool.LS("body_title"));
+                var row = ui.FirstRow + 1;
+                var d = Get(Player);
+                if (d == null)
                 {
-                    InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_start_confirm"), MsgBoxButtonEnum.YesNo, () =>
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("body_intro")).Format(null, 15);
+                    row += 3;
+                    ui.AddButton(ui.MidCol, row, () =>
                     {
-                        Start(Player);
-                        OpenWindow();
-                    });
-                }, GameTool.LS("body_start")).Size(240, 40);
-                return;
-            }
+                        InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_start_confirm"), MsgBoxButtonEnum.YesNo, () =>
+                        {
+                            Start(Player);
+                            OpenWindow();
+                        });
+                    }, GameTool.LS("body_start")).Size(240, 40);
+                    return;
+                }
 
-            var lvl = d.Level;
-            ui.AddText(ui.MidCol, row++, RealmName(lvl)).Format(null, 20);
-            var left = LifeLeft(Player);
-            ui.AddText(ui.Columns[ui.LastCol] - 150f, ui.Rows[ui.FirstRow], string.Format(GameTool.LS("body_life_left"), left / 12, left % 12)).Format(left < 120 ? Color.red : new Color(0.3f, 0.3f, 0.3f), 13);
-            ui.AddText(ui.MidCol, row++, IsBottleneck(d)
-                ? (lvl >= MAX_LEVEL ? GameTool.LS("body_top") : GameTool.LS("body_bottleneck"))
-                : string.Format(GameTool.LS("body_exp"), d.Exp, NeedExp(lvl))).Format(null, 15);
-            if (d.Essence > 0 || IsBottleneck(d))
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_essence"), d.Essence, Math.Round(ESSENCE_HP * EssenceSteps(d.Essence) * 100, 1), Math.Round(ESSENCE_DEF * EssenceSteps(d.Essence) * 100, 1), (int)EssenceSteps(d.Essence))).Format(new Color(0.45f, 0.2f, 0.55f), 15);
-            if (d.InjuryMonths > 0)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_injured"), d.InjuryMonths)).Format(Color.red, 15);
-            row++;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_hp"), AdjHp(Player, Player.GetDynProperty(UnitDynPropertyEnum.HpMax).baseValue))).Format(null, 15);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_def"), AdjDef(Player, Player.GetDynProperty(UnitDynPropertyEnum.Defense).baseValue))).Format(null, 15);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_basis"), AdjBasis(Player))).Format(null, 15);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_break"), d.BonusHp, d.BonusDef, d.BonusAtk)).Format(null, 15);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_break_rates"),
-                Math.Round(BREAK_HP_PER_REALM * Realm(lvl) * 100), Math.Round(BREAK_DEF_PER_REALM * Realm(lvl) * 100), Math.Round(BREAK_ATK_PER_REALM * Realm(lvl) * 100))).Format(null, 14);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_exp_rate"), ExpRate(lvl), d.Absorbed)).Format(new Color(0.5f, 0.15f, 0.1f), 14);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_qi"), (int)Math.Round((1 - QiRateOf(lvl)) * 100))).Format(new Color(0.5f, 0.15f, 0.1f), 14);
-            row++;
+                var lvl = d.Level;
+                ui.AddText(ui.MidCol, row++, RealmName(lvl)).Format(null, 20);
+                var left = LifeLeft(Player);
+                ui.AddText(ui.Columns[ui.LastCol] - 150f, ui.Rows[ui.FirstRow], string.Format(GameTool.LS("body_life_left"), left / 12, left % 12)).Format(left < 120 ? Color.red : new Color(0.3f, 0.3f, 0.3f), 13);
+                ui.AddText(ui.MidCol, row++, IsBottleneck(d)
+                    ? (lvl >= MAX_LEVEL ? GameTool.LS("body_top") : GameTool.LS("body_bottleneck"))
+                    : string.Format(GameTool.LS("body_exp"), d.Exp, NeedExp(lvl))).Format(null, 15);
+                if (d.Essence > 0 || IsBottleneck(d))
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_essence"), d.Essence, Math.Round(ESSENCE_HP * EssenceSteps(d.Essence) * 100, 1), Math.Round(ESSENCE_DEF * EssenceSteps(d.Essence) * 100, 1), (int)EssenceSteps(d.Essence))).Format(new Color(0.45f, 0.2f, 0.55f), 15);
+                if (d.InjuryMonths > 0)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_injured"), d.InjuryMonths)).Format(Color.red, 15);
+                row++;
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_hp"), AdjHp(Player, Player.GetDynProperty(UnitDynPropertyEnum.HpMax).baseValue))).Format(null, 15);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_def"), AdjDef(Player, Player.GetDynProperty(UnitDynPropertyEnum.Defense).baseValue))).Format(null, 15);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_basis"), AdjBasis(Player))).Format(null, 15);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_break"), d.BonusHp, d.BonusDef, d.BonusAtk)).Format(null, 15);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_break_rates"),
+                    Math.Round(BREAK_HP_PER_REALM * Realm(lvl) * 100), Math.Round(BREAK_DEF_PER_REALM * Realm(lvl) * 100), Math.Round(BREAK_ATK_PER_REALM * Realm(lvl) * 100))).Format(null, 14);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_exp_rate"), ExpRate(lvl), d.Absorbed)).Format(new Color(0.5f, 0.15f, 0.1f), 14);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_qi"), (int)Math.Round((1 - QiRateOf(lvl)) * 100))).Format(new Color(0.5f, 0.15f, 0.1f), 14);
+                row++;
 
-            if (d.Temper > 0)
-                ui.AddText(ui.MidCol, row - 1, string.Format(GameTool.LS("body_temper"), Math.Round(HP_PER_LEVEL * LAYERS * d.Temper * 100, 1), Math.Round(DEF_PER_LEVEL * LAYERS * d.Temper * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 14);
-            var tough = Toughness(Player);
+                if (d.Temper > 0)
+                    ui.AddText(ui.MidCol, row - 1, string.Format(GameTool.LS("body_temper"), Math.Round(HP_PER_LEVEL * LAYERS * d.Temper * 100, 1), Math.Round(DEF_PER_LEVEL * LAYERS * d.Temper * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 14);
+                var tough = Toughness(Player);
 
-            // medicinal bath: a column a dose (button, risk, its materials)
-            var used = 0;
-            for (var k = 1; k <= DOSE_MAX; k++)
-            {
-                var dose = k;
-                var cx = DoseColumn(ui, k);
-                ui.AddButton(cx, ui.Rows[row], () =>
-                {
-                    var rs = Bath(Player, dose, CommonTool.Random(0f, 100f));
-                    if (rs == BathResult.NotNow)
-                        InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS(IsBottleneck(Get(Player)) && GetLevel(Player) < MAX_LEVEL ? "body_bath_bottleneck" : "body_bath_done"));
-                    else if (rs == BathResult.NoMaterials)
-                        InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_bath_need"));
-                    else
-                    {
-                        OpenWindow();
-                        if (rs == BathResult.Backlash)
-                            InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_backlash"), LastLifeLost) + (LifeLeft(Player) <= 0 ? "\n" + GameTool.LS("body_deadly") : ""));
-                    }
-                }, string.Format(GameTool.LS("body_bath_dose"), dose, BathExp(lvl, dose))).Size(300, 36);
-                // its risk right under the button, then its materials
-                ui.AddText(cx, ui.Rows[row + 1], string.Format(GameTool.LS("body_risk"), BathRisk(dose, tough), (int)Math.Round(BACKLASH_LIFE[dose - 1] * (1 - TOUGH_LIFE * tough)))).Format(new Color(0.5f, 0.15f, 0.1f), 12);
-                used = Math.Max(used, NeedsRows(ui, cx, row + 2, Scale(BathNeeds(lvl), dose)));
-            }
-            row += 2 + used;
-
-            // breakthrough: a column a dose too (the materials are used, kept or not)
-            if (IsBottleneck(d) && lvl < MAX_LEVEL)
-            {
-                var grade = RealmGrade(lvl + 1);
-                used = 0;
+                // medicinal bath: a column a dose (button, risk, its materials)
+                var used = 0;
                 for (var k = 1; k <= DOSE_MAX; k++)
                 {
                     var dose = k;
                     var cx = DoseColumn(ui, k);
                     ui.AddButton(cx, ui.Rows[row], () =>
                     {
-                        var rs = Breakthrough(Player, CommonTool.Random(0f, 100f), dose);
-                        switch (rs)
+                        var rs = Bath(Player, dose, CommonTool.Random(0f, 100f));
+                        if (rs == BathResult.NotNow)
+                            InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS(IsBottleneck(Get(Player)) && GetLevel(Player) < MAX_LEVEL ? "body_bath_bottleneck" : "body_bath_done"));
+                        else if (rs == BathResult.NoMaterials)
+                            InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_bath_need"));
+                        else
+                        {
+                            OpenWindow();
+                            if (rs == BathResult.Backlash)
+                                InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_backlash"), LastLifeLost) + (LifeLeft(Player) <= 0 ? "\n" + GameTool.LS("body_deadly") : ""));
+                        }
+                    }, string.Format(GameTool.LS("body_bath_dose"), dose, BathExp(lvl, dose))).Size(300, 36);
+                    // its risk right under the button, then its materials
+                    ui.AddText(cx, ui.Rows[row + 1], string.Format(GameTool.LS("body_risk"), BathRisk(dose, tough), (int)Math.Round(BACKLASH_LIFE[dose - 1] * (1 - TOUGH_LIFE * tough)))).Format(new Color(0.5f, 0.15f, 0.1f), 12);
+                    used = Math.Max(used, NeedsRows(ui, cx, row + 2, Scale(BathNeeds(lvl), dose)));
+                }
+                row += 2 + used;
+
+                // breakthrough: a column a dose too (the materials are used, kept or not)
+                if (IsBottleneck(d) && lvl < MAX_LEVEL)
+                {
+                    var grade = RealmGrade(lvl + 1);
+                    used = 0;
+                    for (var k = 1; k <= DOSE_MAX; k++)
+                    {
+                        var dose = k;
+                        var cx = DoseColumn(ui, k);
+                        ui.AddButton(cx, ui.Rows[row], () =>
+                        {
+                            var rs = Breakthrough(Player, CommonTool.Random(0f, 100f), dose);
+                            switch (rs)
+                            {
+                                case BreakResult.GradeTooLow:
+                                    InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_grade"), GameTool.LS($"body_realm_{Realm(lvl + 1)}"), grade));
+                                    return;
+                                case BreakResult.NoMaterials:
+                                    InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_break_need"));
+                                    return;
+                                case BreakResult.Success:
+                                    OpenWindow();
+                                    InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_ok"), RealmName(GetLevel(Player))));
+                                    return;
+                                case BreakResult.Failure:
+                                    OpenWindow();
+                                    InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_fail"), INJURY_MONTHS) + "\n"
+                                        + string.Format(GameTool.LS("body_life_lost"), LastLifeLost) + (LifeLeft(Player) <= 0 ? "\n" + GameTool.LS("body_deadly") : ""));
+                                    return;
+                            }
+                        }, string.Format(GameTool.LS("body_break_dose"), dose, BreakChance(lvl, dose), Math.Round(DOSE_GAIN[dose - 1] * 100))).Size(300, 36);
+                        ui.AddText(cx, ui.Rows[row + 1], string.Format(GameTool.LS("body_break_risk"), BreakLifeLoss(lvl, dose, tough))).Format(new Color(0.5f, 0.15f, 0.1f), 12);
+                        used = Math.Max(used, NeedsRows(ui, cx, row + 2, Scale(BreakNeeds(lvl), dose)));
+                    }
+                    row += 2 + used;
+
+                    // or the body tribulation: a trial battle of lightning with little MP (materials of a x1 dose, no chance roll)
+                    ui.AddButton(DoseColumn(ui, 1), ui.Rows[row], () =>
+                    {
+                        switch (StartTribulation(Player))
                         {
                             case BreakResult.GradeTooLow:
                                 InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_grade"), GameTool.LS($"body_realm_{Realm(lvl + 1)}"), grade));
@@ -1077,45 +1106,19 @@ namespace MOD_nE7UL2.Mod
                             case BreakResult.NoMaterials:
                                 InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_break_need"));
                                 return;
-                            case BreakResult.Success:
-                                OpenWindow();
-                                InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_ok"), RealmName(GetLevel(Player))));
-                                return;
-                            case BreakResult.Failure:
-                                OpenWindow();
-                                InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_fail"), INJURY_MONTHS) + "\n"
-                                    + string.Format(GameTool.LS("body_life_lost"), LastLifeLost) + (LifeLeft(Player) <= 0 ? "\n" + GameTool.LS("body_deadly") : ""));
-                                return;
                         }
-                    }, string.Format(GameTool.LS("body_break_dose"), dose, BreakChance(lvl, dose), Math.Round(DOSE_GAIN[dose - 1] * 100))).Size(300, 36);
-                    ui.AddText(cx, ui.Rows[row + 1], string.Format(GameTool.LS("body_break_risk"), BreakLifeLoss(lvl, dose, tough))).Format(new Color(0.5f, 0.15f, 0.1f), 12);
-                    used = Math.Max(used, NeedsRows(ui, cx, row + 2, Scale(BreakNeeds(lvl), dose)));
+                    }, GameTool.LS("body_trib_button")).Size(300, 36);
+                    ui.AddText(DoseColumn(ui, 2) + 165f, ui.Rows[row], string.Format(GameTool.LS("body_trib_hint"), Math.Round(TRIBULATION_MP * 100), Math.Round(DOSE_GAIN[TRIBULATION_DOSE - 1] * 100)))
+                        .Format(new Color(0.5f, 0.15f, 0.1f), 12);
+                    row += 2;
                 }
-                row += 2 + used;
 
-                // or the body tribulation: a trial battle of lightning with little MP (materials of a x1 dose, no chance roll)
-                ui.AddButton(DoseColumn(ui, 1), ui.Rows[row], () =>
-                {
-                    switch (StartTribulation(Player))
-                    {
-                        case BreakResult.GradeTooLow:
-                            InfoDialog.Msg(GameTool.LS("body_title"), string.Format(GameTool.LS("body_break_grade"), GameTool.LS($"body_realm_{Realm(lvl + 1)}"), grade));
-                            return;
-                        case BreakResult.NoMaterials:
-                            InfoDialog.Msg(GameTool.LS("body_title"), GameTool.LS("body_break_need"));
-                            return;
-                    }
-                }, GameTool.LS("body_trib_button")).Size(300, 36);
-                ui.AddText(DoseColumn(ui, 2) + 165f, ui.Rows[row], string.Format(GameTool.LS("body_trib_hint"), Math.Round(TRIBULATION_MP * 100), Math.Round(DOSE_GAIN[TRIBULATION_DOSE - 1] * 100)))
-                    .Format(new Color(0.5f, 0.15f, 0.1f), 12);
-                row += 2;
-            }
-
-            if (InBodySect(Player))
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_sect"), Player.data.school?.name, SECT_TRAIN_RATE)).Format(new Color(0.1f, 0.4f, 0.1f), 13);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_materials_hint"), HerbFloor(Player.GetGradeLvl()))).Format(Color.gray, 12);
-            ui.AddText(ui.MidCol, row, GameTool.LS("body_dose_hint")).Format(new Color(0.55f, 0.1f, 0.1f), 12);
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("body_help")).Format(null, 13);
+                if (InBodySect(Player))
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_sect"), Player.data.school?.name, SECT_TRAIN_RATE)).Format(new Color(0.1f, 0.4f, 0.1f), 13);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_materials_hint"), HerbFloor(Player.GetGradeLvl()))).Format(Color.gray, 12);
+                ui.AddText(ui.MidCol, row, GameTool.LS("body_dose_hint")).Format(new Color(0.55f, 0.1f, 0.1f), 12);
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("body_help")).Format(null, 13);
+            });
         }
     }
 }

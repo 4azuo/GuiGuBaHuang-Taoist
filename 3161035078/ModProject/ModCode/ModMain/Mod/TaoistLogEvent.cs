@@ -1,4 +1,5 @@
-﻿using MOD_nE7UL2.Const;
+﻿using MOD_nE7UL2.Helper;
+using MOD_nE7UL2.Const;
 using ModLib.Attributes;
 using ModLib.Helper;
 using ModLib.Mod;
@@ -124,38 +125,41 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Log window: newest first, page by page; 2 columns: the date, then the icon and the text.</summary>
         public void OpenLog()
         {
-            var ui = new UICustom1(GameTool.LS("log_title"));
-            var lines = Entries.AsEnumerable().Reverse()
-                .Select(x => Tuple.Create(string.Format(GameTool.LS("log_date"), x.Year, x.Month), TextIconHelper.ToSprites($"[icon:{Icon(x.Key)}]") + " " + x.RenderText()))
-                .ToList();
-            if (lines.Count == 0)
-                lines.Add(Tuple.Create(string.Empty, GameTool.LS("log_empty")));
-            var pages = Math.Max(1, (lines.Count + ROWS_PER_PAGE - 1) / ROWS_PER_PAGE);
-            var page = 0;
-            var dates = new List<UIItemText>();
-            var texts = new List<UIItemText>();
-            for (var i = 0; i < ROWS_PER_PAGE; i++)
+            TaoistWindows.Open1(() =>
             {
-                dates.Add(ui.AddText(ui.FirstCol + 1, ui.FirstRow + i, string.Empty).Format(new Color(0.45f, 0.12f, 0.08f), 14).Align(TextAnchor.MiddleLeft));
-                texts.Add(ui.AddText(ui.FirstCol + DATE_COLS + 1, ui.FirstRow + i, string.Empty).Format(null, 14).Align(TextAnchor.MiddleLeft));
-            }
-            var pageText = ui.AddText(ui.MidCol, ui.LastRow, string.Empty).Format(null, 14);
-            Action show = () =>
-            {
+                var ui = new UICustom1(GameTool.LS("log_title"));
+                var lines = Entries.AsEnumerable().Reverse()
+                    .Select(x => Tuple.Create(string.Format(GameTool.LS("log_date"), x.Year, x.Month), TextIconHelper.ToSprites($"[icon:{Icon(x.Key)}]") + " " + x.RenderText()))
+                    .ToList();
+                if (lines.Count == 0)
+                    lines.Add(Tuple.Create(string.Empty, GameTool.LS("log_empty")));
+                var pages = Math.Max(1, (lines.Count + ROWS_PER_PAGE - 1) / ROWS_PER_PAGE);
+                var page = 0;
+                var dates = new List<UIItemText>();
+                var texts = new List<UIItemText>();
                 for (var i = 0; i < ROWS_PER_PAGE; i++)
                 {
-                    var idx = page * ROWS_PER_PAGE + i;
-                    dates[i].Item.Set(idx < lines.Count ? lines[idx].Item1 : string.Empty);
-                    texts[i].Item.Set(idx < lines.Count ? lines[idx].Item2 : string.Empty);
+                    dates.Add(ui.AddText(ui.FirstCol + 1, ui.FirstRow + i, string.Empty).Format(new Color(0.45f, 0.12f, 0.08f), 14).Align(TextAnchor.MiddleLeft));
+                    texts.Add(ui.AddText(ui.FirstCol + DATE_COLS + 1, ui.FirstRow + i, string.Empty).Format(null, 14).Align(TextAnchor.MiddleLeft));
                 }
-                pageText.Item.Set($"{page + 1} / {pages}");
-            };
-            ui.AddButton(ui.MidCol - 4, ui.LastRow, () => { if (page > 0) { page--; show(); } }, "<").Size(60, 32);
-            ui.AddButton(ui.MidCol + 4, ui.LastRow, () => { if (page < pages - 1) { page++; show(); } }, ">").Size(60, 32);
-            // left aligned columns: the rect of each text starts at its column
-            foreach (var r in dates.Concat(texts))
-                r.Pos(r.Item.rectTransform.anchoredPosition.x + r.Item.rectTransform.rect.width / 2f, r.Item.rectTransform.anchoredPosition.y);
-            show();
+                var pageText = ui.AddText(ui.MidCol, ui.LastRow, string.Empty).Format(null, 14);
+                Action show = () =>
+                {
+                    for (var i = 0; i < ROWS_PER_PAGE; i++)
+                    {
+                        var idx = page * ROWS_PER_PAGE + i;
+                        dates[i].Item.Set(idx < lines.Count ? lines[idx].Item1 : string.Empty);
+                        texts[i].Item.Set(idx < lines.Count ? lines[idx].Item2 : string.Empty);
+                    }
+                    pageText.Item.Set($"{page + 1} / {pages}");
+                };
+                ui.AddButton(ui.MidCol - 4, ui.LastRow, () => { if (page > 0) { page--; show(); } }, "<").Size(60, 32);
+                ui.AddButton(ui.MidCol + 4, ui.LastRow, () => { if (page < pages - 1) { page++; show(); } }, ">").Size(60, 32);
+                // left aligned columns: the rect of each text starts at its column
+                foreach (var r in dates.Concat(texts))
+                    r.Pos(r.Item.rectTransform.anchoredPosition.x + r.Item.rectTransform.rect.width / 2f, r.Item.rectTransform.anchoredPosition.y);
+                show();
+            });
         }
 
         /// <summary>Grid columns of the date column of the log window.</summary>

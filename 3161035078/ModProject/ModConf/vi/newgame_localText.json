@@ -28,5 +28,55 @@
 		"id": "-1000005005",
 		"key": "newgame005",
 		"en|ch|tc|kr": "Các thần khí được chọn sẽ có ngay từ đầu (chọn được nhiều). Bỏ qua mở đầu: không có cốt truyện mở màn và trận đánh đầu tiên."
+	},
+	{
+		"id": -1000005006,
+		"key": "newgame010",
+		"en|ch|tc|kr": "Tự chọn thiên mệnh"
+	},
+	{
+		"id": -1000005007,
+		"key": "newgame011",
+		"en|ch|tc|kr": "Thiên mệnh tự chọn: {0} (-{1} P)"
+	},
+	{
+		"id": -1000005008,
+		"key": "newgame012",
+		"en|ch|tc|kr": "Chọn thiên mệnh"
+	},
+	{
+		"id": -1000005009,
+		"key": "newgame013",
+		"en|ch|tc|kr": "Mỗi thiên mệnh chọn ở đây sẽ trừ điểm S&M (P) của save mới: từ -{0} P (trắng) đến -{1} P (đỏ) mỗi cái. Tiếp tục?"
+	},
+	{
+		"id": -1000005010,
+		"key": "newgame014",
+		"en|ch|tc|kr": "Tên"
+	},
+	{
+		"id": -1000005011,
+		"key": "newgame015",
+		"en|ch|tc|kr": "Mô tả"
+	},
+	{
+		"id": -1000005012,
+		"key": "newgame016",
+		"en|ch|tc|kr": "Phẩm chất"
+	},
+	{
+		"id": -1000005013,
+		"key": "newgame017",
+		"en|ch|tc|kr": "Tất cả"
+	},
+	{
+		"id": -1000005014,
+		"key": "newgame018",
+		"en|ch|tc|kr": "Đã chọn ({0})"
+	},
+	{
+		"id": -1000005015,
+		"key": "newgame019",
+		"en|ch|tc|kr": "Điểm S&M: {0} P - {1} P = {2} P (mỗi thiên mệnh chọn thêm đều bị trừ)"
 	}
 ]

@@ -236,62 +236,65 @@ namespace MOD_nE7UL2.Mod
         {
             if (town == null)
                 return;
-            g.ui.CloseUI(UIType.TextInfoLong);
-            var ui = new UICustom1(GameTool.LS("market_buyorders"));
-            var row = ui.FirstRow + 1;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("market_buyorders_desc"), BUY_ORDER_MONTHS)).Format(null, 14);
-            // the "new order" button at a fixed place (under the description), whatever the number of orders
-            ui.AddButton(ui.MidCol, row + 1, () => SelectOrderItem(town), GameTool.LS("market_buyorder_new")).Size(220, 40);
-            row += 4;
-            var orders = BuyOrders.ToArray();
-            if (orders.Length == 0)
-                ui.AddText(ui.MidCol, row++, GameTool.LS("market_buyorders_none")).Format(null, 15);
-            // a page of orders (MAX_BUY_ORDERS fit on one page; pages when there are more, e.g. a bigger limit later)
-            // orders that fit between the header of the table and the pager (the rows depend on the size of the game window)
-            var perPage = Math.Max(1, Math.Min(BUY_ORDERS_PER_PAGE, (ui.LastRow - 3 - (row + 2)) / 2 + 1));
-            var pages = Math.Max(1, (orders.Length + perPage - 1) / perPage);
-            page = Math.Max(0, Math.Min(page, pages - 1));
-            // a table: cancel, icon, item | quantity | price | town | time left (headers over the columns)
-            var colItem = ui.Columns[ui.FirstCol + 7] + 10f;
-            int colCount = ui.MidCol + 3, colPrice = ui.MidCol + 6, colTown = ui.MidCol + 9, colLeft = ui.MidCol + 12;
-            UIItemText Left(float x, int r, string t, Color? color = null)
+            TaoistWindows.CloseMine(true);
+            TaoistWindows.Open1(() =>
             {
-                var text = ui.AddText(x, ui.Rows[r], t).Format(color ?? Color.black, 15).Align(TextAnchor.MiddleLeft);
-                text.Pos(x + text.Item.rectTransform.rect.width / 2f, ui.Rows[r]);
-                return text;
-            }
-            if (orders.Length > 0)
-            {
-                var head = new Color(0.45f, 0.12f, 0.08f);
-                Left(colItem, row, GameTool.LS("market_bo_h_item"), head);
-                foreach (var (col, key) in new[] { (colCount, "market_bo_h_count"), (colPrice, "market_bo_h_price"), (colTown, "market_bo_h_town"), (colLeft, "market_bo_h_left") })
-                    ui.AddText(col, row, GameTool.LS(key)).Format(head, 15);
-                row += 2;
-            }
-            foreach (var order in orders.Skip(page * perPage).Take(perPage))
-            {
-                var o = order;
-                // left to right: cancel, the item's icon (as in the bag), the columns; one order every 2 rows (icon height)
-                ui.AddButton(ui.FirstCol + 3, row, () =>
+                var ui = new UICustom1(GameTool.LS("market_buyorders"));
+                var row = ui.FirstRow + 1;
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("market_buyorders_desc"), BUY_ORDER_MONTHS)).Format(null, 14);
+                // the "new order" button at a fixed place (under the description), whatever the number of orders
+                ui.AddButton(ui.MidCol, row + 1, () => SelectOrderItem(town), GameTool.LS("market_buyorder_new")).Size(220, 40);
+                row += 4;
+                var orders = BuyOrders.ToArray();
+                if (orders.Length == 0)
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("market_buyorders_none")).Format(null, 15);
+                // a page of orders (MAX_BUY_ORDERS fit on one page; pages when there are more, e.g. a bigger limit later)
+                // orders that fit between the header of the table and the pager (the rows depend on the size of the game window)
+                var perPage = Math.Max(1, Math.Min(BUY_ORDERS_PER_PAGE, (ui.LastRow - 3 - (row + 2)) / 2 + 1));
+                var pages = Math.Max(1, (orders.Length + perPage - 1) / perPage);
+                page = Math.Max(0, Math.Min(page, pages - 1));
+                // a table: cancel, icon, item | quantity | price | town | time left (headers over the columns)
+                var colItem = ui.Columns[ui.FirstCol + 7] + 10f;
+                int colCount = ui.MidCol + 3, colPrice = ui.MidCol + 6, colTown = ui.MidCol + 9, colLeft = ui.MidCol + 12;
+                UIItemText Left(float x, int r, string t, Color? color = null)
                 {
-                    CancelBuyOrder(o);
-                    OpenBuyOrders(town, page);
-                }, GameTool.LS("other500020090")).Size(120, 32);
-                ui.AddPropIcon(ui.Columns[ui.FirstCol + 6], ui.Rows[row], o.PropId, 46f);
-                Left(colItem, row, o.Name);
-                ui.AddText(colCount, row, $"x{o.Count:#,##0}").Format(null, 15);
-                ui.AddText(colPrice, row, TextIconHelper.ToSprites($"{o.Price:#,##0} [icon:zm_lingshi]")).Format(null, 15);
-                ui.AddText(colTown, row, o.Town?.name ?? "?").Format(null, 15);
-                ui.AddText(colLeft, row, string.Format(GameTool.LS("market_bo_left"), BUY_ORDER_MONTHS - (GameHelper.GetGameTotalMonth() - o.CreateMonth))).Format(null, 15);
-                row += 2;
-            }
-            if (pages > 1)
-            {
-                var p = page;
-                ui.AddButton(ui.MidCol - 4, ui.LastRow - 2, () => OpenBuyOrders(town, p - 1), "<").Size(60, 32);
-                ui.AddText(ui.MidCol, ui.LastRow - 2, $"{page + 1} / {pages}").Format(null, 14);
-                ui.AddButton(ui.MidCol + 4, ui.LastRow - 2, () => OpenBuyOrders(town, p + 1), ">").Size(60, 32);
-            }
+                    var text = ui.AddText(x, ui.Rows[r], t).Format(color ?? Color.black, 15).Align(TextAnchor.MiddleLeft);
+                    text.Pos(x + text.Item.rectTransform.rect.width / 2f, ui.Rows[r]);
+                    return text;
+                }
+                if (orders.Length > 0)
+                {
+                    var head = new Color(0.45f, 0.12f, 0.08f);
+                    Left(colItem, row, GameTool.LS("market_bo_h_item"), head);
+                    foreach (var (col, key) in new[] { (colCount, "market_bo_h_count"), (colPrice, "market_bo_h_price"), (colTown, "market_bo_h_town"), (colLeft, "market_bo_h_left") })
+                        ui.AddText(col, row, GameTool.LS(key)).Format(head, 15);
+                    row += 2;
+                }
+                foreach (var order in orders.Skip(page * perPage).Take(perPage))
+                {
+                    var o = order;
+                    // left to right: cancel, the item's icon (as in the bag), the columns; one order every 2 rows (icon height)
+                    ui.AddButton(ui.FirstCol + 3, row, () =>
+                    {
+                        CancelBuyOrder(o);
+                        OpenBuyOrders(town, page);
+                    }, GameTool.LS("other500020090")).Size(120, 32);
+                    ui.AddPropIcon(ui.Columns[ui.FirstCol + 6], ui.Rows[row], o.PropId, 46f);
+                    Left(colItem, row, o.Name);
+                    ui.AddText(colCount, row, $"x{o.Count:#,##0}").Format(null, 15);
+                    ui.AddText(colPrice, row, TextIconHelper.ToSprites($"{o.Price:#,##0} [icon:zm_lingshi]")).Format(null, 15);
+                    ui.AddText(colTown, row, o.Town?.name ?? "?").Format(null, 15);
+                    ui.AddText(colLeft, row, string.Format(GameTool.LS("market_bo_left"), BUY_ORDER_MONTHS - (GameHelper.GetGameTotalMonth() - o.CreateMonth))).Format(null, 15);
+                    row += 2;
+                }
+                if (pages > 1)
+                {
+                    var p = page;
+                    ui.AddButton(ui.MidCol - 4, ui.LastRow - 2, () => OpenBuyOrders(town, p - 1), "<").Size(60, 32);
+                    ui.AddText(ui.MidCol, ui.LastRow - 2, $"{page + 1} / {pages}").Format(null, 14);
+                    ui.AddButton(ui.MidCol + 4, ui.LastRow - 2, () => OpenBuyOrders(town, p + 1), ">").Size(60, 32);
+                }
+            });
         }
 
         /// <summary>Most orders on a page of the buy orders window (2 rows each, under the fixed header; fewer when the window has fewer rows).</summary>
@@ -300,7 +303,7 @@ namespace MOD_nE7UL2.Mod
         /// <summary>New order step 1: choose the item.</summary>
         private void SelectOrderItem(MapBuildTown town)
         {
-            g.ui.CloseUI(UIType.TextInfoLong);
+            TaoistWindows.CloseMine(true);
             var ui = g.ui.OpenUISafe<UIPropSelect>(UIType.PropSelect);
             ui.textTitle1.Set(GameTool.LS("market_buyorder_new"));
             ui.textSearchTip.Set(GameTool.LS("market_buyorder_pick"));
@@ -357,36 +360,39 @@ namespace MOD_nE7UL2.Mod
         {
             var conf = g.conf.itemProps.GetItem(propId);
             var reference = AvgPrice(propId) ?? Math.Max(MIN_PRICE, conf?.sale ?? MIN_PRICE);
-            var ui = new UICustom1(GameTool.LS("market_buyorder_new"));
-            var row = ui.FirstRow + 2;
-            ui.AddText(ui.MidCol, row++, GameTool.LS(conf?.name ?? string.Empty)).Format(null, 18);
-            ui.AddText(ui.MidCol, row++, PriceHint(propId)).Format(null, 14);
-            row++;
-            var count = ui.AddCompositeSlider(ui.MidCol - 3, row++, GameTool.LS("other500020096"), 1, 20, 1, "{0}");
-            var price = ui.AddCompositeSlider(ui.MidCol - 3, row++, GameTool.LS("market_buyorder_unitprice"), MIN_PRICE, Math.Max(MIN_PRICE * 2, reference * 3), reference, "{0}");
-            count.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { count.MainComponent.Get().Parse<int>() }) });
-            price.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { price.MainComponent.Get().Parse<int>() }) });
-            ui.AddText(ui.MidCol, row++, "{0}").SetWork(new UIItemWork
+            TaoistWindows.Open1(() =>
             {
-                Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x =>
+                var ui = new UICustom1(GameTool.LS("market_buyorder_new"));
+                var row = ui.FirstRow + 2;
+                ui.AddText(ui.MidCol, row++, GameTool.LS(conf?.name ?? string.Empty)).Format(null, 18);
+                ui.AddText(ui.MidCol, row++, PriceHint(propId)).Format(null, 14);
+                row++;
+                var count = ui.AddCompositeSlider(ui.MidCol - 3, row++, GameTool.LS("other500020096"), 1, 20, 1, "{0}");
+                var price = ui.AddCompositeSlider(ui.MidCol - 3, row++, GameTool.LS("market_buyorder_unitprice"), MIN_PRICE, Math.Max(MIN_PRICE * 2, reference * 3), reference, "{0}");
+                count.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { count.MainComponent.Get().Parse<int>() }) });
+                price.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { price.MainComponent.Get().Parse<int>() }) });
+                ui.AddText(ui.MidCol, row++, "{0}").SetWork(new UIItemWork
                 {
-                    var o = new BuyOrder { PropId = propId, Price = price.MainComponent.Get().Parse<int>() };
-                    var total = count.MainComponent.Get().Parse<int>() * o.Price;
-                    return new object[] { string.Format(GameTool.LS("market_buyorder_total"), total, BuyOrderChance(o)) };
-                })
+                    Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x =>
+                    {
+                        var o = new BuyOrder { PropId = propId, Price = price.MainComponent.Get().Parse<int>() };
+                        var total = count.MainComponent.Get().Parse<int>() * o.Price;
+                        return new object[] { string.Format(GameTool.LS("market_buyorder_total"), total, BuyOrderChance(o)) };
+                    })
+                });
+                ui.IsAutoUpdate = true;
+                row++;
+                ui.AddButton(ui.MidCol, row, () =>
+                {
+                    var order = AddBuyOrder(town, propId, count.MainComponent.Get().Parse<int>(), price.MainComponent.Get().Parse<int>());
+                    if (order == null)
+                    {
+                        InfoDialog.Msg(GameTool.LS("other500020102"), string.Format(GameTool.LS("market_buyorder_fail"), MAX_BUY_ORDERS));
+                        return;
+                    }
+                    OpenBuyOrders(town);
+                }, GameTool.LS("market_buyorder_place")).Size(220, 40);
             });
-            ui.IsAutoUpdate = true;
-            row++;
-            ui.AddButton(ui.MidCol, row, () =>
-            {
-                var order = AddBuyOrder(town, propId, count.MainComponent.Get().Parse<int>(), price.MainComponent.Get().Parse<int>());
-                if (order == null)
-                {
-                    InfoDialog.Msg(GameTool.LS("other500020102"), string.Format(GameTool.LS("market_buyorder_fail"), MAX_BUY_ORDERS));
-                    return;
-                }
-                OpenBuyOrders(town);
-            }, GameTool.LS("market_buyorder_place")).Size(220, 40);
         }
     }
 }

@@ -27,6 +27,7 @@ Taoist 6.0 brings the cultivator clans to Tale of Immortal (鬼谷八荒): build
 ▶ Fouru's ModLib (required, Steam Workshop): https://steamcommunity.com/sharedfiles/filedetails/?id=3385996759
 💻 GitHub (source, bugs, ideas): https://github.com/4azuo/GuiGuBaHuang-Taoist
 ♥ Support the work on Ko-fi: https://ko-fi.com/fouru
+💬 Discord (news, questions, bug reports): https://discord.gg/XKaP3EYfw
 📺 The previous video (every feature up to 5.5.45): https://www.youtube.com/watch?v=_aV8PC5sAQ4
 
 ⚙ How to install

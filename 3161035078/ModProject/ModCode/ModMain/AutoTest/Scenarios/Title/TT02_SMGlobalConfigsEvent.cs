@@ -40,7 +40,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                 .Step("page 1", c =>
                 {
                     c.Assert(g.ui.HasUI(UIType.TextInfoLong) && Window != null, "S&M window is open");
-                    c.Assert(Window?.Pages.Count == 4, $"4 pages ({Window?.Pages.Count}): the storylines on their own page");
+                    var modPages = ModOptionsHelper.LoadedOptions().Count;   // at least a page per mod with options (Dao of Creation)
+                    c.Assert(Window?.Pages.Count >= 4 + modPages && (modPages > 0 || Window?.Pages.Count == 4), $"4 pages and those of {modPages} mod(s) with options ({Window?.Pages.Count})");
                     c.AssertEqual(0, Window?.CurrentPageIndex ?? -1, "page 1 shown first");
                     c.Bag["score"] = SMGlobalConfigsEvent.CalSMTotalScore();
                     c.Info($"total score: {c.Bag["score"]}");
@@ -99,6 +100,13 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     c.Assert(Window.Items.OfType<ModLib.Object.UIItemText>().Count(x => lines.Any(l => (x.GetFormat() ?? string.Empty).Contains(l.Substring(0, System.Math.Min(20, l.Length))))) >= 4,
                         "the lines A..P described");
                 }, 1000)
+                .Step("options of the mods", c =>
+                {
+                    if (Window.Pages.Count <= 4) { c.Info("no mod with options"); return; }
+                    Window.NextPage();
+                    c.AssertEqual(4, Window.CurrentPageIndex, "page 5: options of a mod");
+                }, 1500)
+                .Step("back to page 4", c => { if (Window.CurrentPageIndex == 4) Window.PrevPage(); })
                 .Step("back to page 3", c => Window.PrevPage())
                 .Step("back to page 2", c => Window.PrevPage())
                 .Step("preset level 3", c =>

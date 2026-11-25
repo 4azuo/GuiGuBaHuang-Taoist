@@ -335,50 +335,53 @@ namespace MOD_nE7UL2.Mod
         public void OpenLoan(MapBuildTown town)
         {
             // a small window (TextInfo): the loan has few lines; long texts are wrapped by words
-            g.ui.CloseUI(UIType.TextInfo);
-            var ui = new UICustom2(GameTool.LS("loan_title"));
-            var col = ui.MidCol;
-            var row = ui.FirstRow;
-            foreach (var line in WrapWords(string.Format(GameTool.LS("loan_terms"), INTEREST * 100, TERM_MONTHS, PENALTY * 100), WRAP_CHARS))
-                ui.AddText(col, row++, line).Format(null, 13);
-            foreach (var line in WrapWords(GameTool.LS("loan_warning"), WRAP_CHARS))
-                ui.AddText(col, row++, line).Format(Color.red, 12);
-            if (Blacklisted)
+            TaoistWindows.CloseMine(false);
+            TaoistWindows.Open2(() =>
             {
-                ui.AddText(col, row++, string.Format(GameTool.LS("loan_state_blacklist"), g.world.build.GetBuild(BlacklistTownId)?.name)).Format(Color.red, 16);
-                return;
-            }
-            if (HasLoan)
-            {
-                var due = DueMonth - GameHelper.GetGameTotalMonth();
-                ui.AddText(col, row++, string.Format(GameTool.LS("loan_state"), Town?.name, Borrowed, Debt, due)).Format(due < 0 ? Color.red : Color.black, 16);
-                row++;
-                var pay = ui.AddCompositeSlider(col - 3, row++, GameTool.LS("loan_repay_amount"), 1, Math.Max(1, (float)Math.Min(Debt, Player.GetUnitMoney())), Math.Max(1, (float)Math.Min(Debt, Player.GetUnitMoney())), "{0}");
-                pay.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { pay.MainComponent.Get().Parse<int>() }) });
-                ui.AddButton(col, row++, () =>
+                var ui = new UICustom2(GameTool.LS("loan_title"));
+                var col = ui.MidCol;
+                var row = ui.FirstRow;
+                foreach (var line in WrapWords(string.Format(GameTool.LS("loan_terms"), INTEREST * 100, TERM_MONTHS, PENALTY * 100), WRAP_CHARS))
+                    ui.AddText(col, row++, line).Format(null, 13);
+                foreach (var line in WrapWords(GameTool.LS("loan_warning"), WRAP_CHARS))
+                    ui.AddText(col, row++, line).Format(Color.red, 12);
+                if (Blacklisted)
                 {
-                    Repay(pay.MainComponent.Get().Parse<int>());
-                    OpenLoan(town);
-                }, GameTool.LS("loan_repay")).Size(200, 40);
-                ui.IsAutoUpdate = true;
-                return;
-            }
-            var limit = Limit();
-            ui.AddText(col, row++, string.Format(GameTool.LS("loan_limit"), limit, MapBuildPropertyEvent.GetBuildProperty(town))).Format(null, 16);
-            row++;
-            var amount = ui.AddCompositeSlider(col - 3, row++, GameTool.LS("loan_amount"), Math.Min(100, limit), limit, Math.Min(100, limit), "{0}");
-            amount.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { amount.MainComponent.Get().Parse<int>() }) });
-            ui.AddButton(col, row++, () =>
-            {
-                var err = Borrow(town, amount.MainComponent.Get().Parse<int>());
-                if (err != null)
-                {
-                    InfoDialog.Msg(GameTool.LS("loan_title"), GameTool.LS(err));
+                    ui.AddText(col, row++, string.Format(GameTool.LS("loan_state_blacklist"), g.world.build.GetBuild(BlacklistTownId)?.name)).Format(Color.red, 16);
                     return;
                 }
-                OpenLoan(town);
-            }, GameTool.LS("loan_borrow")).Size(200, 40);
-            ui.IsAutoUpdate = true;
+                if (HasLoan)
+                {
+                    var due = DueMonth - GameHelper.GetGameTotalMonth();
+                    ui.AddText(col, row++, string.Format(GameTool.LS("loan_state"), Town?.name, Borrowed, Debt, due)).Format(due < 0 ? Color.red : Color.black, 16);
+                    row++;
+                    var pay = ui.AddCompositeSlider(col - 3, row++, GameTool.LS("loan_repay_amount"), 1, Math.Max(1, (float)Math.Min(Debt, Player.GetUnitMoney())), Math.Max(1, (float)Math.Min(Debt, Player.GetUnitMoney())), "{0}");
+                    pay.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { pay.MainComponent.Get().Parse<int>() }) });
+                    ui.AddButton(col, row++, () =>
+                    {
+                        Repay(pay.MainComponent.Get().Parse<int>());
+                        OpenLoan(town);
+                    }, GameTool.LS("loan_repay")).Size(200, 40);
+                    ui.IsAutoUpdate = true;
+                    return;
+                }
+                var limit = Limit();
+                ui.AddText(col, row++, string.Format(GameTool.LS("loan_limit"), limit, MapBuildPropertyEvent.GetBuildProperty(town))).Format(null, 16);
+                row++;
+                var amount = ui.AddCompositeSlider(col - 3, row++, GameTool.LS("loan_amount"), Math.Min(100, limit), limit, Math.Min(100, limit), "{0}");
+                amount.Postfix.SetWork(new UIItemWork { Formatter = ActionHelper.WTracedFunc<UIItemBase, object[]>(x => new object[] { amount.MainComponent.Get().Parse<int>() }) });
+                ui.AddButton(col, row++, () =>
+                {
+                    var err = Borrow(town, amount.MainComponent.Get().Parse<int>());
+                    if (err != null)
+                    {
+                        InfoDialog.Msg(GameTool.LS("loan_title"), GameTool.LS(err));
+                        return;
+                    }
+                    OpenLoan(town);
+                }, GameTool.LS("loan_borrow")).Size(200, 40);
+                ui.IsAutoUpdate = true;
+            });
         }
     }
 }

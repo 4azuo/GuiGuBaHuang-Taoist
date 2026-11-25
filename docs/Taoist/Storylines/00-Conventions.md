@@ -14,7 +14,8 @@ Files: `A-Cold-Sword.md`, `B-Old-Huang-Debt.md`, `C-Exploding-Furnace.md`, `D-Sw
 lines G-L (approved 2026-11-19, coded, tests TS-07..TS-12): `G-Hundred-Year-Wager.md`, `H-Roadside-Inn.md`,
 `I-Sealed-Tomb.md`, `J-Cursed-Disciple.md`, `K-Thunder-Remnant.md`, `L-Heart-Demon.md`;
 lines M-P of 6.0 (the new cultivation paths and the estates; coded, tests TS-13..TS-16): `M-Old-Tie-Forge.md`,
-`N-House-Seven.md`, `O-Ashes-Of-Town.md`, `P-Sense-Voice.md`.
+`N-House-Seven.md`, `O-Ashes-Of-Town.md`, `P-Sense-Voice.md`;
+lines Q-R of 6.2 (only with Dao of Creation; coded, tests TS-17, TS-18): `Q-Nameless-Art.md`, `R-Last-Heir.md`.
 
 ## Backgrounds
 

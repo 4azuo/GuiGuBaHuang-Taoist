@@ -30,7 +30,13 @@ Increases stop at `MAX_NUMBER`; decreases do not go under one step.
 
 ## Page 2: teleport
 
-Buttons for every named building, grouped in columns by area (`TELE_AREA_COL`: which areas and buildings are shown); click -> the player moves to its first open point.
+By area (6.2.0, `BuildTelePage`): the areas on the left (`Area n (places)`), the places of the chosen area on the right
+in a grid of `PLACE_COLUMNS` (cities, towns, sects, other places, then by name), each with a text icon of its kind
+(`PlaceIcon`: city `zm_fanrongdu`, town `zm_lingdi`, sect `shenmizuzhi1001`, other `daodian`). The area of the player is
+chosen first; the chosen area has the pulsing gold frame of ModLib (`UIGlowHelper`). Which areas and buildings:
+`TELE_AREA_COL`. Click a place -> the player moves to its first open point. The place buttons show only while the page
+is the current one (their `UpdateAct`: the page shows all its items when it is opened). Tests: `TeleArea`,
+`TeleAreaButtons`, `TelePlaces`, `SelectTeleArea` (TG-28).
 
 ## Page 3: breakthrough items
 

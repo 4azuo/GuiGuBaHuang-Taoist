@@ -49,7 +49,24 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.UI
                     if (Window == null || Window.Pages.Count < page) { c.Skip($"no page {page}"); return; }
                     Window.NextPage();
                     c.AssertEqual(page - 1, Window.CurrentPageIndex, $"page {page} active");
-                });
+                    if (page > 2) c.Assert(trainer.TelePlaces.All(x => !x.Item3.IsActive()), "the teleport buttons are not shown on this page");
+                }, 500);
+                if (page == 2)
+                    s.Step("teleport by area", c =>
+                    {
+                        // the areas on the left; only the places of the chosen area (the area of the player first)
+                        c.Assert(trainer.TeleAreaButtons.Count > 0, $"areas: {string.Join(", ", trainer.TeleAreaButtons.Keys)}");
+                        c.AssertEqual(Player.GetUnitPosAreaId(), trainer.TeleArea, "the area of the player is chosen first");
+                        var other = trainer.TeleAreaButtons.Keys.FirstOrDefault(a => a != trainer.TeleArea);
+                        if (other == 0) { c.Skip("one area only"); return; }
+                        trainer.TeleAreaButtons[other].Item.onClick.Invoke();
+                        var shown = trainer.TelePlaces.Where(x => x.Item3.IsActive()).ToList();
+                        c.Assert(shown.Count > 0 && shown.All(x => x.Item1 == other), $"area {other}: {shown.Count} places shown, all of it");
+                        c.Assert(trainer.TelePlaces.Where(x => x.Item1 != other).All(x => !x.Item3.IsActive()), "the places of the other areas hidden");
+                        c.Bag["tele_to"] = shown[0].Item2.name;
+                        shown[0].Item3.Item.onClick.Invoke();
+                        c.AssertEqual(other, Player.GetUnitPosAreaId(), $"teleported to {shown[0].Item2.name} (area {other})");
+                    }, 1500);
             }
             return s.Step("close", c =>
             {

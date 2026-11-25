@@ -414,58 +414,61 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Merit window of the player.</summary>
         public static void OpenWindow()
         {
-            var ui = new UICustom1(GameTool.LS("merit_title"));
-            var row = ui.FirstRow + 1;
-            var d = Get(Player, true);
-            var level = LevelOf(d.Merit);
-            var steps = EssenceSteps(d.Essence);
-            ui.AddText(ui.MidCol, row++, LevelName(level)).Format(level >= 0 ? new Color(0.55f, 0.4f, 0f) : new Color(0.6f, 0.1f, 0.1f), 20);
-            ui.AddText(ui.MidCol, row++, level >= MAX_LEVEL
-                ? string.Format(GameTool.LS("merit_points_top"), d.Merit)
-                : string.Format(GameTool.LS("merit_points"), d.Merit, NextOf(d.Merit))).Format(null, 15);
-            if (d.Essence > 0 || level >= MAX_LEVEL)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_essence"), d.Essence, (int)steps,
-                    Math.Round(ESSENCE_ATK * steps * 100, 1), Math.Round(ESSENCE_DEF * steps * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 15);
-            row++;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_bonus"),
-                Math.Round(AtkRate(level, steps) * 100, 1), Math.Round(DefRate(level, steps) * 100, 1), LuckOf(level, steps))).Format(null, 15);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_flat"), FlatAtk(level), FlatDef(level))).Format(null, 14);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_lightning"), (int)Math.Round((LightningRateOf(level) - 1) * 100))).Format(null, 15);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_intim"), IntimOf(level, true), IntimOf(level, false))).Format(null, 15);
-            if (level <= -2)
-                ui.AddText(ui.MidCol, row++, GameTool.LS("merit_bounty_warn")).Format(Color.red, 14);
-            row++;
-            // levels
-            for (var l = MIN_LEVEL; l <= MAX_LEVEL; l++)
+            TaoistWindows.Open1(() =>
             {
-                if (l == 0) continue;
-                var at = l > 0 ? LEVELS[l - 1] : KARMA[-l - 1];
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_level_line"), LevelName(l), at,
-                    Math.Round(AtkRate(l, 0) * 100, 1), Math.Round(DefRate(l, 0) * 100, 1), LuckOf(l, 0)))
-                    .Format(l == level ? new Color(0.1f, 0.4f, 0.1f) : new Color(0.35f, 0.35f, 0.35f), 13);
-            }
-            row++;
-            var town = Player.GetMapBuild<MapBuildTown>();
-            if (town != null)
-            {
-                ui.AddButton(ui.MidCol, row, () =>
+                var ui = new UICustom1(GameTool.LS("merit_title"));
+                var row = ui.FirstRow + 1;
+                var d = Get(Player, true);
+                var level = LevelOf(d.Merit);
+                var steps = EssenceSteps(d.Essence);
+                ui.AddText(ui.MidCol, row++, LevelName(level)).Format(level >= 0 ? new Color(0.55f, 0.4f, 0f) : new Color(0.6f, 0.1f, 0.1f), 20);
+                ui.AddText(ui.MidCol, row++, level >= MAX_LEVEL
+                    ? string.Format(GameTool.LS("merit_points_top"), d.Merit)
+                    : string.Format(GameTool.LS("merit_points"), d.Merit, NextOf(d.Merit))).Format(null, 15);
+                if (d.Essence > 0 || level >= MAX_LEVEL)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_essence"), d.Essence, (int)steps,
+                        Math.Round(ESSENCE_ATK * steps * 100, 1), Math.Round(ESSENCE_DEF * steps * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 15);
+                row++;
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_bonus"),
+                    Math.Round(AtkRate(level, steps) * 100, 1), Math.Round(DefRate(level, steps) * 100, 1), LuckOf(level, steps))).Format(null, 15);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_flat"), FlatAtk(level), FlatDef(level))).Format(null, 14);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_lightning"), (int)Math.Round((LightningRateOf(level) - 1) * 100))).Format(null, 15);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_intim"), IntimOf(level, true), IntimOf(level, false))).Format(null, 15);
+                if (level <= -2)
+                    ui.AddText(ui.MidCol, row++, GameTool.LS("merit_bounty_warn")).Format(Color.red, 14);
+                row++;
+                // levels
+                for (var l = MIN_LEVEL; l <= MAX_LEVEL; l++)
                 {
-                    if (!Donate(Player))
-                        InfoDialog.Msg(GameTool.LS("merit_title"), GameTool.LS(Get(Player)?.LastDonateMonth == GameHelper.GetGameTotalMonth() ? "merit_donate_done" : "enc_nomoney"));
-                    else
-                        OpenWindow();
-                }, string.Format(GameTool.LS("merit_donate"), town.name, EncounterEvent.Cost(DONATE_COST), DONATE_MERIT * Math.Max(1, Player.GetGradeLvl()))).Format(Color.black, 13).Size(760, 36);
-                row += 2;
-                // the evil way: the massacre of the town
-                if (CanMassacre(Player, town))
-                {
-                    ui.AddButton(ui.MidCol, row, () => OfferMassacre(town), string.Format(GameTool.LS("merit_massacre_button"), town.name)).Format(Color.black, 13).Size(760, 36);
-                    row += 2;
+                    if (l == 0) continue;
+                    var at = l > 0 ? LEVELS[l - 1] : KARMA[-l - 1];
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_level_line"), LevelName(l), at,
+                        Math.Round(AtkRate(l, 0) * 100, 1), Math.Round(DefRate(l, 0) * 100, 1), LuckOf(l, 0)))
+                        .Format(l == level ? new Color(0.1f, 0.4f, 0.1f) : new Color(0.35f, 0.35f, 0.35f), 13);
                 }
-                else if (IsRuin(town))
-                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_ruin"), town.name)).Format(new Color(0.6f, 0.1f, 0.1f), 14);
-            }
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("merit_help")).Format(null, 13);
+                row++;
+                var town = Player.GetMapBuild<MapBuildTown>();
+                if (town != null)
+                {
+                    ui.AddButton(ui.MidCol, row, () =>
+                    {
+                        if (!Donate(Player))
+                            InfoDialog.Msg(GameTool.LS("merit_title"), GameTool.LS(Get(Player)?.LastDonateMonth == GameHelper.GetGameTotalMonth() ? "merit_donate_done" : "enc_nomoney"));
+                        else
+                            OpenWindow();
+                    }, string.Format(GameTool.LS("merit_donate"), town.name, EncounterEvent.Cost(DONATE_COST), DONATE_MERIT * Math.Max(1, Player.GetGradeLvl()))).Format(Color.black, 13).Size(760, 36);
+                    row += 2;
+                    // the evil way: the massacre of the town
+                    if (CanMassacre(Player, town))
+                    {
+                        ui.AddButton(ui.MidCol, row, () => OfferMassacre(town), string.Format(GameTool.LS("merit_massacre_button"), town.name)).Format(Color.black, 13).Size(760, 36);
+                        row += 2;
+                    }
+                    else if (IsRuin(town))
+                        ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("merit_ruin"), town.name)).Format(new Color(0.6f, 0.1f, 0.1f), 14);
+                }
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("merit_help")).Format(null, 13);
+            });
         }
     }
 }

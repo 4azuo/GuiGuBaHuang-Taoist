@@ -1294,5 +1294,21 @@
 		"ch": "石中心跳：你的神识发现一位在体劫中半身化石的炼体修士（神识、炼体）。",
 		"tc": "石中心跳：你的神識發現一位在體劫中半身化石的煉體修士（神識、煉體）。",
 		"kr": "돌 속의 심장 소리: 신식이 체겁으로 반쯤 돌이 된 연체 수사를 찾아낸다 (신식, 연체)."
+	},
+	{
+		"id": -1000001212,
+		"key": "smcfgs212",
+		"en": "The Nameless Art: an outcast disciple creates a martial art, and the old sect wants it (needs the mod Dao of Creation).",
+		"ch": "无名之技：被逐弟子自创武技，旧宗门欲夺之（需要Dao of Creation模组）。",
+		"tc": "無名之技：被逐弟子自創武技，舊宗門欲奪之（需要Dao of Creation模組）。",
+		"kr": "이름 없는 무공: 쫓겨난 제자가 무공을 창안하고, 옛 문파가 그것을 노린다 (Dao of Creation 모드 필요)."
+	},
+	{
+		"id": -1000001213,
+		"key": "smcfgs213",
+		"en": "For One Heir Only: an old master writes one last art and tests two heirs (needs the mod Dao of Creation).",
+		"ch": "一人之传：老前辈写下最后的绝技，考验两位传人（需要Dao of Creation模组）。",
+		"tc": "一人之傳：老前輩寫下最後的絕技，考驗兩位傳人（需要Dao of Creation模組）。",
+		"kr": "단 한 명의 전인: 노선배가 마지막 절학을 쓰고 두 후보를 시험한다 (Dao of Creation 모드 필요)."
 	}
 ]

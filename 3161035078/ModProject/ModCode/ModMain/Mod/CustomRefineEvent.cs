@@ -201,31 +201,34 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Reroll window: every slot with its value, a reroll button on the unlocked ones.</summary>
         public void OpenReroll(DataProps.PropsData props)
         {
-            g.ui.CloseUI(UIType.TextInfoLong);
+            TaoistWindows.CloseMine(true);
             var player = g.world.playerUnit;
             var lvl = GetRefineLvl(props);
-            var ui = new UICustom1(GameTool.LS("refine_reroll"));
-            var row = ui.FirstRow + 1;
-            ui.AddText(ui.MidCol, row++, props.propsInfoBase.name).Format(null, 18);
-            ui.AddText(ui.MidCol, row++, ProgressText(props)).Format(null, 14);
-            row++;
-            for (var i = 1; i <= MAX_ADJ_PER_PROP; i++)
+            TaoistWindows.Open1(() =>
             {
-                var index = i;
-                var slot = GetCustomAdjType(props, index);
-                ui.AddText(ui.MidCol - 3, row, $"#{index}  {slot.GetText(player, props, lvl)}").Format(slot.GetColor(lvl), 15);
-                if (slot.IsEnable(lvl))
-                {
-                    ui.AddButton(ui.MidCol + 8, row, () =>
-                    {
-                        if (!Reroll(props, index))
-                            InfoDialog.Msg(GameTool.LS("refine_reroll"), GameTool.LS("other500020087"));
-                        OpenReroll(props);
-                    }, string.Format(GameTool.LS("refine_reroll_btn"), RerollCost(props, index))).Size(200, 32);
-                }
+                var ui = new UICustom1(GameTool.LS("refine_reroll"));
+                var row = ui.FirstRow + 1;
+                ui.AddText(ui.MidCol, row++, props.propsInfoBase.name).Format(null, 18);
+                ui.AddText(ui.MidCol, row++, ProgressText(props)).Format(null, 14);
                 row++;
-            }
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("refine_reroll_desc")).Format(null, 13);
+                for (var i = 1; i <= MAX_ADJ_PER_PROP; i++)
+                {
+                    var index = i;
+                    var slot = GetCustomAdjType(props, index);
+                    ui.AddText(ui.MidCol - 3, row, $"#{index}  {slot.GetText(player, props, lvl)}").Format(slot.GetColor(lvl), 15);
+                    if (slot.IsEnable(lvl))
+                    {
+                        ui.AddButton(ui.MidCol + 8, row, () =>
+                        {
+                            if (!Reroll(props, index))
+                                InfoDialog.Msg(GameTool.LS("refine_reroll"), GameTool.LS("other500020087"));
+                            OpenReroll(props);
+                        }, string.Format(GameTool.LS("refine_reroll_btn"), RerollCost(props, index))).Size(200, 32);
+                    }
+                    row++;
+                }
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("refine_reroll_desc")).Format(null, 13);
+            });
         }
 
         /// <summary>

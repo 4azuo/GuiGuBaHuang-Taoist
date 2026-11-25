@@ -1,8 +1,8 @@
-**Title:** [Mod] Taoist 6.1 — clan elders who vote, fight and betray, plus body refining, karma and your own house (hardcore overhaul, free)
+**Title:** [Mod] Taoist 6.2 — choose any destinies (for a price), NPCs who invent martial arts, clan elders who betray (hardcore overhaul, free)
 
 ---
 
-Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been working on for a long time. Version **6.1** builds on 6.0, the biggest update so far.
+Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been working on for a long time. Version **6.2** is out.
 
 ## What Taoist is (short version)
 
@@ -13,6 +13,21 @@ Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been
 - **Storylines**: long NPC storylines with portraits, real battles and several endings — some of them last over a hundred years.
 - **Tougher battles**: mana shields, growing monsters, reworked damage, and a Damage Calc window (F9) that shows every number.
 - **S&M Configs**: almost everything can be tuned or turned off. Harder settings = higher S&M score = better rewards.
+
+## New in 6.2
+
+**Choose your destinies**
+
+- Character creation has a new window with every innate destiny of the game, sorted by quality and name, with filters by quality, name and description.
+- Take as many as you like, on top of the 3 you roll. Each one lowers the S&M score of the new save (3,000 to 8,000 points by quality), so an easy start costs you rewards.
+
+**Taoist × Dao of Creation** (optional, only when you play both of my mods)
+
+- 2 new storylines: *The Nameless Art* (an outcast invents a martial art, and the old sect wants it) and *For One Heir Only* (a dying master, one last art, two candidates).
+- Characters create martial arts of their own and teach them to you; 9 endings of the older storylines reward you with an art or Dao Essence.
+- The options of Dao of Creation have their own page in S&M Configs.
+
+**Also**: Taoist wallpapers for the title screen, trainer teleport by area, and the windows of several mods no longer open over each other.
 
 ## New in 6.1
 
@@ -50,7 +65,7 @@ Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been
 
 **Also**
 
-- 4 new storylines (16 in total): *Old Tie's Forge*, *The House on the Old Street*, *Ashes of the Town*, *A Heartbeat in the Stone*.
+- 4 storylines of 6.0 (16 in total, 18 with Dao of Creation): *Old Tie's Forge*, *The House on the Old Street*, *Ashes of the Town*, *A Heartbeat in the Stone*.
 - New S&M options for every new system, many fixes, 12 languages.
 
 ## Links
@@ -59,6 +74,7 @@ Hi everyone! Taoist is a hardcore overhaul for Tale of Immortal that I have been
 - Nexus Mods: [Taoist](https://www.nexusmods.com/taleofimmortal/mods/60)
 - Source code / releases: [GitHub](https://github.com/4azuo/GuiGuBaHuang-Taoist/)
 - Make your own mod: [Fouru's ModLib on GitHub](https://github.com/4azuo/GuiGuBaHuang-ModLib/) (source, docs, how to create a mod)
+- Community: [Discord server](https://discord.gg/XKaP3EYfw) (news, questions, bug reports)
 - Feedback & bugs: [feedback page](https://github.com/4azuo/GuiGuBaHuang-Taoist/issues/13)
 
 The mod is free and stays free. If you enjoy it, you can support me on [Ko-fi](https://ko-fi.com/fouru). Feedback is very welcome — and sorry for my English!

@@ -808,5 +808,15 @@
 		"id": "-1000001211",
 		"key": "smcfgs211",
 		"en|ch|tc|kr": "Nhịp tim trong đá: thần thức tìm thấy một luyện thể sư nửa thân hóa đá vì thể kiếp (thần thức, luyện thể)."
+	},
+	{
+		"id": -1000001212,
+		"key": "smcfgs212",
+		"en|ch|tc|kr": "Chiêu thức vô danh: một đệ tử bị trục xuất sáng tạo võ học, tông môn cũ muốn đoạt lấy (cần mod Dao of Creation)."
+	},
+	{
+		"id": -1000001213,
+		"key": "smcfgs213",
+		"en|ch|tc|kr": "Chỉ truyền một người: lão tiền bối viết tuyệt học cuối cùng và thử thách hai truyền nhân (cần mod Dao of Creation)."
 	}
 ]

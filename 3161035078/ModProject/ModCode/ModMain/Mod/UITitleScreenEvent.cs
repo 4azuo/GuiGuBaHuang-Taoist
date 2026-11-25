@@ -32,16 +32,28 @@ namespace MOD_nE7UL2.Mod
                     .SetParentTransform(parentTransform);
                 StripGameText(VersionButton);
 
-                var uiInfo = g.ui.OpenUISafe<UITextInfoLong>(UIType.TextInfoLong);
-                uiInfo.InitData(GameTool.LS("other500020046"), GetWorkshopDescription());
+                // the game's UITextInfoLong / UITextInfo: one of each, so they wait for the windows of the other mods
+                // (the error reports consent of ModLib...) instead of writing over them
+                ShowWorkshopInfo();
 
                 if (!CompareVersion(ModConst.MODLIB_REQUIRED_VERSION, ModMaster.ModObj.Version))
                 {
-                    var uiWarning = g.ui.OpenUISafe<UITextInfo>(UIType.TextInfo);
-                    uiWarning.InitData(GameTool.LS("other500020022"), ModTextHelper.LSF("ui_modlib_too_old", ModConst.TAOIST_VERSION, ModMaster.ModObj.Version, ModConst.MODLIB_REQUIRED_VERSION));
+                    UICustom2.WhenFree(() =>
+                    {
+                        var uiWarning = g.ui.OpenUISafe<UITextInfo>(UIType.TextInfo);
+                        uiWarning.InitData(GameTool.LS("other500020022"), ModTextHelper.LSF("ui_modlib_too_old", ModConst.TAOIST_VERSION, ModMaster.ModObj.Version, ModConst.MODLIB_REQUIRED_VERSION));
+                    });
                 }
             }
         }
+
+        /// <summary>The Workshop description of Taoist ([INFO] window of the title screen), after the window of its type
+        /// open now (the error reports consent...). True when shown now (tests).</summary>
+        public static bool ShowWorkshopInfo() => UICustom1.WhenFree(() =>
+        {
+            var uiInfo = g.ui.OpenUISafe<UITextInfoLong>(UIType.TextInfoLong);
+            uiInfo.InitData(GameTool.LS("other500020046"), GetWorkshopDescription());
+        });
 
         /// <summary>The version button of the title screen (tests).</summary>
         public static UIItemButton VersionButton { get; private set; }
@@ -102,7 +114,7 @@ namespace MOD_nE7UL2.Mod
         /// <summary>
         /// Downloads the Workshop description.
         /// </summary>
-        private string GetWorkshopDescription()
+        private static string GetWorkshopDescription()
         {
             return HttpHelper.GetWorkshopDescription("https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078");
         }

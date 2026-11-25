@@ -70,12 +70,19 @@ namespace MOD_nE7UL2.Helper
 
         /// <summary>
         /// Opens the window. picture: a game sprite (atlas, name; null: none); buttons: a row under the facts (none: the
-        /// window's own OK); a button closes the window, then runs its action.
+        /// window's own OK); a button closes the window, then runs its action. It replaces a window of Taoist and waits for
+        /// the window of another mod (TaoistWindows): returns it, or null while it waits.
         /// </summary>
         public static UICustom1 Show(string title, string subtitle, string[] picture, IList<Row> rows, string note, params (string label, Action act)[] buttons)
         {
-            g.ui.CloseUI(UIType.TextInfo);
-            g.ui.CloseUI(UIType.TextInfoLong);
+            TaoistWindows.CloseMine(false);
+            UICustom1 shown = null;
+            TaoistWindows.Open1(() => shown = Fill(title, subtitle, picture, rows, note, buttons));
+            return shown;
+        }
+
+        private static UICustom1 Fill(string title, string subtitle, string[] picture, IList<Row> rows, string note, (string label, Action act)[] buttons)
+        {
             var ui = new UICustom1(title);
             var dy = RowHeight(ui);
             var left = ui.Columns[ui.FirstCol];
@@ -118,7 +125,7 @@ namespace MOD_nE7UL2.Helper
                     var x = left + width * (i + 0.5f) / buttons.Length;
                     ui.AddButton(x, ui.Rows[y], () =>
                     {
-                        g.ui.CloseUI(UIType.TextInfoLong);
+                        TaoistWindows.CloseMine(true);
                         b.act?.Invoke();
                     }, b.label).Format(Color.black, 14).Size(w, 34f);
                 }

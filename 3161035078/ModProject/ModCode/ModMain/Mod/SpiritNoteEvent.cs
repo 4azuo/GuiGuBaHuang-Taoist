@@ -192,28 +192,31 @@ namespace MOD_nE7UL2.Mod
         public static void OpenBank(MapBuildTown town)
         {
             var player = g.world.playerUnit;
-            var ui = new UICustom1(GameTool.LS("note_title"));
-            var row = ui.FirstRow + 1;
-            var fee = FeeRate();
-            // the banknote item, as in the bag
-            ui.AddPropIcon(ui.Columns[ui.MidCol], ui.Rows[row] + 10f, NOTE_ID, 64f);
-            row += 3;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("note_have"), player.GetUnitMoney(), Notes(player), NoteValue)).Format(null, 16);
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("note_fee"), Math.Round(fee * 100, 2), BuyPrice(1, NoteValue, fee), SellPrice(1, NoteValue, fee))).Format(null, 14);
-            ui.AddText(ui.MidCol, row++, GameTool.LS("note_hint")).Format(Color.gray, 13);
-            row += 2;
-            var counts = new[] { 1, 10, 100 };
-            for (var i = 0; i <= counts.Length; i++)
+            TaoistWindows.Open1(() =>
             {
-                var all = i == counts.Length;
-                var n = all ? 0 : counts[i];
-                // four buttons a row, 220 px apart around the middle of the window
-                var x = ui.Columns[ui.MidCol] + (i - 1.5f) * 220f;
-                ui.AddButton(x, ui.Rows[row], () => Exchange(town, true, all ? MaxBuy(player) : n),
-                    all ? GameTool.LS("note_buy_max") : string.Format(GameTool.LS("note_buy"), n)).Size(200, 36);
-                ui.AddButton(x, ui.Rows[row + 3], () => Exchange(town, false, all ? MaxSell(player) : n),
-                    all ? GameTool.LS("note_sell_all") : string.Format(GameTool.LS("note_sell"), n)).Size(200, 36);
-            }
+                var ui = new UICustom1(GameTool.LS("note_title"));
+                var row = ui.FirstRow + 1;
+                var fee = FeeRate();
+                // the banknote item, as in the bag
+                ui.AddPropIcon(ui.Columns[ui.MidCol], ui.Rows[row] + 10f, NOTE_ID, 64f);
+                row += 3;
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("note_have"), player.GetUnitMoney(), Notes(player), NoteValue)).Format(null, 16);
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("note_fee"), Math.Round(fee * 100, 2), BuyPrice(1, NoteValue, fee), SellPrice(1, NoteValue, fee))).Format(null, 14);
+                ui.AddText(ui.MidCol, row++, GameTool.LS("note_hint")).Format(Color.gray, 13);
+                row += 2;
+                var counts = new[] { 1, 10, 100 };
+                for (var i = 0; i <= counts.Length; i++)
+                {
+                    var all = i == counts.Length;
+                    var n = all ? 0 : counts[i];
+                    // four buttons a row, 220 px apart around the middle of the window
+                    var x = ui.Columns[ui.MidCol] + (i - 1.5f) * 220f;
+                    ui.AddButton(x, ui.Rows[row], () => Exchange(town, true, all ? MaxBuy(player) : n),
+                        all ? GameTool.LS("note_buy_max") : string.Format(GameTool.LS("note_buy"), n)).Size(200, 36);
+                    ui.AddButton(x, ui.Rows[row + 3], () => Exchange(town, false, all ? MaxSell(player) : n),
+                        all ? GameTool.LS("note_sell_all") : string.Format(GameTool.LS("note_sell"), n)).Size(200, 36);
+                }
+            });
         }
 
         private static void Exchange(MapBuildTown town, bool buy, int count)

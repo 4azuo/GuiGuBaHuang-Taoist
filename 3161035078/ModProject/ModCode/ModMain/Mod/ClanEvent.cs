@@ -597,70 +597,73 @@ namespace MOD_nE7UL2.Mod
         /// </summary>
         public static void OpenClans(MapBuildTown town)
         {
-            var ui = new UICustom1(string.Format(GameTool.LS("clan_title"), town.name));
-            var heads = Heads(town).Select(Unit).ToList();
-            var row = ui.FirstRow + 1;
-            if (heads.Count == 0)
+            TaoistWindows.Open1(() =>
             {
-                ui.AddText(ui.MidCol, row, GameTool.LS("clan_none")).Format(Color.gray, 15);
+                var ui = new UICustom1(string.Format(GameTool.LS("clan_title"), town.name));
+                var heads = Heads(town).Select(Unit).ToList();
+                var row = ui.FirstRow + 1;
+                if (heads.Count == 0)
+                {
+                    ui.AddText(ui.MidCol, row, GameTool.LS("clan_none")).Format(Color.gray, 15);
+                    ClanElderEvent.AddClansButtons(ui, town);
+                    return;
+                }
+                var dy = InfoSheet.RowHeight(ui);
+                var left = ui.Columns[ui.FirstCol];
+                var width = ui.Columns[ui.LastCol] - left;
+                var shown = heads.OrderByDescending(x => IsPlayerClan(x.GetUnitId())).Take(10).ToList();
+                var pairs = new List<(int rel, string text)>();
+                for (var i = 0; i < heads.Count; i++)
+                    for (var j = i + 1; j < heads.Count; j++)
+                    {
+                        var rel = Relation(town, heads[i], heads[j]);
+                        pairs.Add((rel, string.Format(GameTool.LS("clan_relation"), ClanName(heads[i]), ClanName(heads[j]), rel, GameTool.LS(RelationKey(rel)))));
+                    }
+                var relCols = Math.Min(3, Math.Min(9, pairs.Count));
+                var relRows = relCols == 0 ? 0 : (Math.Min(9, pairs.Count) + relCols - 1) / relCols;
+                // the cards: 5 a row; at most 7.5 rows high, less when the relations, the buttons and the hint need the room
+                var perRow = Math.Min(5, shown.Count);
+                var cardRows = (shown.Count + perRow - 1) / perRow;
+                var top = ui.Rows[row] + dy / 2f;
+                var bottom = ui.Rows[Math.Max(row + 1, ui.LastRow - 4 - relRows - (relRows > 0 ? 1 : 0))];
+                var cardH = Math.Min(dy * 7.5f, (top - bottom) / cardRows);
+                var cardW = width / perRow;
+                var picH = Math.Max(dy * 1.5f, cardH - dy * 3.3f);
+                for (var k = 0; k < shown.Count; k++)
+                {
+                    var h = shown[k];
+                    var cx = left + cardW * (k % perRow + 0.5f);
+                    var cardTop = top - cardH * (k / perRow);
+                    var level = EstateEvent.HouseOf(town, h)?.Level ?? 1;
+                    var mine = IsPlayerClan(h.GetUnitId());
+                    EstateEvent.Picture(ui, EstateEvent.HouseSprite(level), cx, cardTop - picH / 2f, cardW - 24f, picH);
+                    var y = cardTop - picH - dy * 0.6f;
+                    ui.AddText(cx, y, ClanName(h)).Format(mine ? new Color(0.55f, 0.35f, 0f) : Color.black, 15, FontStyle.Bold);
+                    ui.AddText(cx, y - dy, string.Format(GameTool.LS("clan_card_members"), Members(h).Count, EstateEvent.HouseName(level))).Format(new Color(0.3f, 0.3f, 0.3f), 13);
+                    var elders = ClanElderEvent.ElderNames(town, h);
+                    if (elders.Count > 0)
+                        ui.AddText(cx, y - dy * 2f, string.Format(GameTool.LS("clan_card_elders"), elders.Count > 2 ? string.Join(", ", elders.Take(2)) + ", ..." : string.Join(", ", elders)))
+                            .Format(new Color(0.1f, 0.35f, 0.3f), 12);
+                }
+                // the relations: right under the cards, up to three columns
+                if (relRows > 0)
+                {
+                    var cardsBottom = top - cardH * cardRows;
+                    var relRow = row;
+                    while (relRow < ui.LastRow - 4 - relRows && ui.Rows[relRow] > cardsBottom - dy * 0.2f) relRow++;
+                    ui.AddText(ui.MidCol, relRow, GameTool.LS("clan_relations")).Format(new Color(0.55f, 0.35f, 0f), 14);
+                    var list = pairs.OrderBy(x => x.rel).Take(9).ToList();
+                    for (var i = 0; i < list.Count; i++)
+                    {
+                        var p = list[i];
+                        ui.AddText(left + width * (i % relCols + 0.5f) / relCols, ui.Rows[relRow + 1 + i / relCols], p.text)
+                            .Format(p.rel <= Conf.HostileAt ? new Color(0.6f, 0.1f, 0.1f) : p.rel >= Conf.AllyAt ? new Color(0.1f, 0.45f, 0.1f) : Color.black, 13);
+                    }
+                }
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("clan_hint")).Format(Color.gray, 13);
+                // the elders of the player's clan, its war council, the player's post (ClanElderEvent)
                 ClanElderEvent.AddClansButtons(ui, town);
-                return;
-            }
-            var dy = InfoSheet.RowHeight(ui);
-            var left = ui.Columns[ui.FirstCol];
-            var width = ui.Columns[ui.LastCol] - left;
-            var shown = heads.OrderByDescending(x => IsPlayerClan(x.GetUnitId())).Take(10).ToList();
-            var pairs = new List<(int rel, string text)>();
-            for (var i = 0; i < heads.Count; i++)
-                for (var j = i + 1; j < heads.Count; j++)
-                {
-                    var rel = Relation(town, heads[i], heads[j]);
-                    pairs.Add((rel, string.Format(GameTool.LS("clan_relation"), ClanName(heads[i]), ClanName(heads[j]), rel, GameTool.LS(RelationKey(rel)))));
-                }
-            var relCols = Math.Min(3, Math.Min(9, pairs.Count));
-            var relRows = relCols == 0 ? 0 : (Math.Min(9, pairs.Count) + relCols - 1) / relCols;
-            // the cards: 5 a row; at most 7.5 rows high, less when the relations, the buttons and the hint need the room
-            var perRow = Math.Min(5, shown.Count);
-            var cardRows = (shown.Count + perRow - 1) / perRow;
-            var top = ui.Rows[row] + dy / 2f;
-            var bottom = ui.Rows[Math.Max(row + 1, ui.LastRow - 4 - relRows - (relRows > 0 ? 1 : 0))];
-            var cardH = Math.Min(dy * 7.5f, (top - bottom) / cardRows);
-            var cardW = width / perRow;
-            var picH = Math.Max(dy * 1.5f, cardH - dy * 3.3f);
-            for (var k = 0; k < shown.Count; k++)
-            {
-                var h = shown[k];
-                var cx = left + cardW * (k % perRow + 0.5f);
-                var cardTop = top - cardH * (k / perRow);
-                var level = EstateEvent.HouseOf(town, h)?.Level ?? 1;
-                var mine = IsPlayerClan(h.GetUnitId());
-                EstateEvent.Picture(ui, EstateEvent.HouseSprite(level), cx, cardTop - picH / 2f, cardW - 24f, picH);
-                var y = cardTop - picH - dy * 0.6f;
-                ui.AddText(cx, y, ClanName(h)).Format(mine ? new Color(0.55f, 0.35f, 0f) : Color.black, 15, FontStyle.Bold);
-                ui.AddText(cx, y - dy, string.Format(GameTool.LS("clan_card_members"), Members(h).Count, EstateEvent.HouseName(level))).Format(new Color(0.3f, 0.3f, 0.3f), 13);
-                var elders = ClanElderEvent.ElderNames(town, h);
-                if (elders.Count > 0)
-                    ui.AddText(cx, y - dy * 2f, string.Format(GameTool.LS("clan_card_elders"), elders.Count > 2 ? string.Join(", ", elders.Take(2)) + ", ..." : string.Join(", ", elders)))
-                        .Format(new Color(0.1f, 0.35f, 0.3f), 12);
-            }
-            // the relations: right under the cards, up to three columns
-            if (relRows > 0)
-            {
-                var cardsBottom = top - cardH * cardRows;
-                var relRow = row;
-                while (relRow < ui.LastRow - 4 - relRows && ui.Rows[relRow] > cardsBottom - dy * 0.2f) relRow++;
-                ui.AddText(ui.MidCol, relRow, GameTool.LS("clan_relations")).Format(new Color(0.55f, 0.35f, 0f), 14);
-                var list = pairs.OrderBy(x => x.rel).Take(9).ToList();
-                for (var i = 0; i < list.Count; i++)
-                {
-                    var p = list[i];
-                    ui.AddText(left + width * (i % relCols + 0.5f) / relCols, ui.Rows[relRow + 1 + i / relCols], p.text)
-                        .Format(p.rel <= Conf.HostileAt ? new Color(0.6f, 0.1f, 0.1f) : p.rel >= Conf.AllyAt ? new Color(0.1f, 0.45f, 0.1f) : Color.black, 13);
-                }
-            }
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("clan_hint")).Format(Color.gray, 13);
-            // the elders of the player's clan, its war council, the player's post (ClanElderEvent)
-            ClanElderEvent.AddClansButtons(ui, town);
+            });
         }
 
         public static string RelationKey(int rel) =>

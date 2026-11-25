@@ -97,6 +97,7 @@ One row per event class; the detailed page of each class (saved data, switches, 
 | `UICreatePlayerEvent` | Prioritized destiny level at character creation | TM-02 |
 | `UIDifficultyEvent` | Hides vanilla difficulty descriptions | TM-01 |
 | `EncounterEvent` | Random monthly encounters (S&M EncounterRate, default 3 %) with choices and small rewards: wounded cultivator, chess hermit, hooded peddler, collapsed cave, spirit beast cub, town festival; NPCs get their own fortunes (0.2 %/year: exp) and ancient inheritances (0.02 %/year: exp, Talent, Luck), max 10 a year | TG-55, TX-08 |
+| `CustomDestinyEvent` | Character creation: any number of born destinies (window with filters), each lowers the S&M score | TT-10, TG-99 |
 | `NewGameEvent` | Character creation checkboxes (one line level with START GAME): starting divine artifacts (Bagua Jade, God Eye, Devil Demon pot; any combination) and skip the intro + first battle; choices kept globally, applied on the new map | TP-01 |
 
 ## Known issues

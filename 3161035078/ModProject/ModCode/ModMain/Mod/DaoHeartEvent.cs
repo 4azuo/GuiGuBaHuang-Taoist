@@ -1,3 +1,4 @@
+using MOD_nE7UL2.Helper;
 using EBattleTypeData;
 using EGameTypeData;
 using MOD_nE7UL2.Const;
@@ -195,22 +196,25 @@ namespace MOD_nE7UL2.Mod
 
         public static void OpenWindow()
         {
-            var ui = new UICustom1(GameTool.LS("heart_title"));
-            var row = ui.FirstRow + 1;
-            var d = Get(Player, true);
-            var level = LevelOf(d.Value);
-            var steps = EssenceSteps(d.Essence);
-            ui.AddText(ui.MidCol, row++, LevelName(level)).Format(new Color(0.2f, 0.3f, 0.6f), 20);
-            ui.AddText(ui.MidCol, row++, level >= MAX_LEVEL ? string.Format(GameTool.LS("heart_value_top"), d.Value) : string.Format(GameTool.LS("heart_value"), d.Value, NextOf(d.Value))).Format(null, 15);
-            if (d.Essence > 0 || level >= MAX_LEVEL)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("heart_essence"), d.Essence, steps, Math.Round(SP_STEP * steps * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 14);
-            row++;
-            ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("heart_effects"), Math.Round(SpRateOf(level, steps) * 100, 1), Math.Round(MpRateOf(level) * 100, 1), HeartDemonWinOf(level), BreakBonusOf(level), Math.Round((1 - RiskRateOf(level)) * 100))).Format(null, 15);
-            row++;
-            for (var l = 0; l <= MAX_LEVEL; l++)
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("heart_level_line"), LevelName(l), l == 0 ? 0 : LEVELS[l - 1], Math.Round(SpRateOf(l, 0) * 100), Math.Round(MpRateOf(l) * 100), HeartDemonWinOf(l)))
-                    .Format(l == level ? new Color(0.1f, 0.4f, 0.1f) : new Color(0.35f, 0.35f, 0.35f), 13);
-            ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("heart_help")).Format(null, 13);
+            TaoistWindows.Open1(() =>
+            {
+                var ui = new UICustom1(GameTool.LS("heart_title"));
+                var row = ui.FirstRow + 1;
+                var d = Get(Player, true);
+                var level = LevelOf(d.Value);
+                var steps = EssenceSteps(d.Essence);
+                ui.AddText(ui.MidCol, row++, LevelName(level)).Format(new Color(0.2f, 0.3f, 0.6f), 20);
+                ui.AddText(ui.MidCol, row++, level >= MAX_LEVEL ? string.Format(GameTool.LS("heart_value_top"), d.Value) : string.Format(GameTool.LS("heart_value"), d.Value, NextOf(d.Value))).Format(null, 15);
+                if (d.Essence > 0 || level >= MAX_LEVEL)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("heart_essence"), d.Essence, steps, Math.Round(SP_STEP * steps * 100, 1))).Format(new Color(0.45f, 0.2f, 0.55f), 14);
+                row++;
+                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("heart_effects"), Math.Round(SpRateOf(level, steps) * 100, 1), Math.Round(MpRateOf(level) * 100, 1), HeartDemonWinOf(level), BreakBonusOf(level), Math.Round((1 - RiskRateOf(level)) * 100))).Format(null, 15);
+                row++;
+                for (var l = 0; l <= MAX_LEVEL; l++)
+                    ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("heart_level_line"), LevelName(l), l == 0 ? 0 : LEVELS[l - 1], Math.Round(SpRateOf(l, 0) * 100), Math.Round(MpRateOf(l) * 100), HeartDemonWinOf(l)))
+                        .Format(l == level ? new Color(0.1f, 0.4f, 0.1f) : new Color(0.35f, 0.35f, 0.35f), 13);
+                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("heart_help")).Format(null, 13);
+            });
         }
     }
 }

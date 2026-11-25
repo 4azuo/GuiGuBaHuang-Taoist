@@ -3488,5 +3488,405 @@
 		"id": "-1000007697",
 		"key": "story_end_P_Devourer",
 		"en|ch|tc|kr": "Kẻ thôn phệ"
+	},
+	{
+		"id": -1000007698,
+		"key": "story_name_Q",
+		"en|ch|tc|kr": "Chiêu thức vô danh"
+	},
+	{
+		"id": -1000007699,
+		"key": "story_task_desc_Q",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007700,
+		"key": "story_task_Q0",
+		"en|ch|tc|kr": "{D} bị trục xuất khỏi tông môn vì dám sửa chiêu của tổ sư."
+	},
+	{
+		"id": -1000007701,
+		"key": "story_task_Q1",
+		"en|ch|tc|kr": "{D} đang tự sáng tạo một chiêu thức."
+	},
+	{
+		"id": -1000007702,
+		"key": "story_task_Q2",
+		"en|ch|tc|kr": "Tông môn cũ muốn đoạt chiêu thức của {D}."
+	},
+	{
+		"id": -1000007703,
+		"key": "story_task_Q3",
+		"en|ch|tc|kr": "{D} có thứ muốn trao cho bạn."
+	},
+	{
+		"id": -1000007704,
+		"key": "story_task_Q4",
+		"en|ch|tc|kr": "Bạn đã giao {D} cho tông môn. Chuyện đó chưa bị lãng quên."
+	},
+	{
+		"id": -1000007705,
+		"key": "story_task_Q9",
+		"en|ch|tc|kr": "{D} đã mất."
+	},
+	{
+		"id": -1000007706,
+		"key": "story_Q0_1",
+		"en|ch|tc|kr": "Bên đường, {D} lặp đi lặp lại một chiêu. Lần nào nhịp cuối cũng sai, mà mỗi lần sai một khác.\n{D}: \"Ba trăm năm tông môn ta luyện chiêu này với một sơ hở. Ta vá lại. Họ phá ấn tín rồi đuổi ta đi.\""
+	},
+	{
+		"id": -1000007707,
+		"key": "story_Q0_1_o1",
+		"en|ch|tc|kr": "Nghe hết câu chuyện"
+	},
+	{
+		"id": -1000007708,
+		"key": "story_Q0_1_o2",
+		"en|ch|tc|kr": "\"Cho ta xem. Cứ đánh vào ta.\""
+	},
+	{
+		"id": -1000007709,
+		"key": "story_Q0_1_o3",
+		"en|ch|tc|kr": "Đi tiếp"
+	},
+	{
+		"id": -1000007710,
+		"key": "story_Q0_2",
+		"en|ch|tc|kr": "{D}: \"Ngươi cũng thấy rồi. Sơ hở ấy chính là cánh cửa.\"\n{D}: \"Ta không vá chiêu của họ nữa. Ta sẽ tạo chiêu của riêng mình.\""
+	},
+	{
+		"id": -1000007711,
+		"key": "story_Q1_1",
+		"en|ch|tc|kr": "{D} chín ngày không ngủ; không khí quanh lều ngân như dây đàn.\n{D}: \"Chỉ còn cách một hơi thở. Kinh mạch ta không chịu nổi, mà yêu thú đã ngửi thấy linh khí.\""
+	},
+	{
+		"id": -1000007712,
+		"key": "story_Q1_1_o1",
+		"en|ch|tc|kr": "Cho một viên đan"
+	},
+	{
+		"id": -1000007713,
+		"key": "story_Q1_1_o2",
+		"en|ch|tc|kr": "Đứng ngoài hộ pháp"
+	},
+	{
+		"id": -1000007714,
+		"key": "story_Q1_2",
+		"en|ch|tc|kr": "Chỉ một nhịp. Tiếng ngân dứt; cả thung lũng như hít vào.\n{D}: \"{art}. Sáng nay nó còn chưa tồn tại.\" {D} cười đến chảy nước mắt."
+	},
+	{
+		"id": -1000007715,
+		"key": "story_Q1_2_none",
+		"en|ch|tc|kr": "Tiếng ngân đứt đoạn. {D} xòe hai tay; chẳng có gì, vậy mà vẫn cười.\n{D}: \"Hôm nay chưa được. Nhưng ta đã thấy bóng lưng nó.\""
+	},
+	{
+		"id": -1000007716,
+		"key": "story_Q2_1",
+		"en|ch|tc|kr": "Một trưởng lão tông môn cũ đứng trước cửa, đệ tử theo sau.\nTrưởng lão: \"Thứ {D} tạo ra đều từ những gì bổn tông dạy. Giao bí kíp, hoặc giao đôi tay đã viết nó.\"\n{D} nhìn bạn, không nói gì."
+	},
+	{
+		"id": -1000007717,
+		"key": "story_Q2_1_o1",
+		"en|ch|tc|kr": "Đánh với trưởng lão"
+	},
+	{
+		"id": -1000007718,
+		"key": "story_Q2_1_o2",
+		"en|ch|tc|kr": "Trả món nợ ({0} linh thạch)"
+	},
+	{
+		"id": -1000007719,
+		"key": "story_Q2_1_o3",
+		"en|ch|tc|kr": "Tránh sang một bên"
+	},
+	{
+		"id": -1000007720,
+		"key": "story_Q3_1",
+		"en|ch|tc|kr": "{D} đặt một quyển sách mỏng lên bàn, bìa để trống.\n{D}: \"Chiêu thức chỉ có một chủ sẽ chết theo chủ. Học ngay ở đây với ta, hoặc giữ sách mà từ từ lĩnh ngộ.\""
+	},
+	{
+		"id": -1000007721,
+		"key": "story_Q3_1_o1",
+		"en|ch|tc|kr": "Học ngay"
+	},
+	{
+		"id": -1000007722,
+		"key": "story_Q3_1_o2",
+		"en|ch|tc|kr": "Giữ sách và tham ngộ"
+	},
+	{
+		"id": -1000007723,
+		"key": "story_endQ_Founder",
+		"en|ch|tc|kr": "{D} khắc tấm biển treo trên cửa lều, xiêu vẹo mà đầy kiêu hãnh: môn phái một thầy, không tổ sư.\n{D}: \"Khi người ta hỏi ai khai tông, ta sẽ nói có hai người.\""
+	},
+	{
+		"id": -1000007724,
+		"key": "story_endQ_Lost",
+		"en|ch|tc|kr": "{D}: \"Họ cướp bí kíp rồi đốt trước mặt ta. Ta đã chép lại những gì đôi tay còn nhớ.\"\n{D}: \"Giữ lấy. Nửa chiêu trong tay ngươi còn hơn cả chiêu trong tay họ.\""
+	},
+	{
+		"id": -1000007725,
+		"key": "story_Q4_1",
+		"en|ch|tc|kr": "{D} chờ trên đường, gầy hơn, ánh mắt rất bình thản.\n{D}: \"Ngươi đã tránh sang bên. Ta học được nhiều từ cách ngươi làm thế.\" Hai tay {D} mở ra chiêu mà bạn từng thấy ra đời."
+	},
+	{
+		"id": -1000007726,
+		"key": "story_Q4_1_o1",
+		"en|ch|tc|kr": "Chống đỡ"
+	},
+	{
+		"id": -1000007727,
+		"key": "story_endQ_Traitor",
+		"en|ch|tc|kr": "Chiêu thức bắt đầu bên đường cũng kết thúc trên đường. Không ai nhắc lại, cũng không ai quên."
+	},
+	{
+		"id": -1000007728,
+		"key": "story_Q_dead",
+		"en|ch|tc|kr": "Tin {D} qua đời đến cùng một gói nhỏ: quyển sách bìa trống và một dòng chữ: \"Gần xong rồi. Ngươi sẽ biết cách.\""
+	},
+	{
+		"id": -1000007729,
+		"key": "story_end_Q_Founder",
+		"en|ch|tc|kr": "Khai tông"
+	},
+	{
+		"id": -1000007730,
+		"key": "story_end_Q_Lost",
+		"en|ch|tc|kr": "Thất truyền"
+	},
+	{
+		"id": -1000007731,
+		"key": "story_end_Q_Traitor",
+		"en|ch|tc|kr": "Phản bội"
+	},
+	{
+		"id": -1000007732,
+		"key": "story_name_R",
+		"en|ch|tc|kr": "Chỉ truyền một người"
+	},
+	{
+		"id": -1000007733,
+		"key": "story_task_desc_R",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007734,
+		"key": "story_task_R0",
+		"en|ch|tc|kr": "Lão tiền bối {O} đang tìm truyền nhân."
+	},
+	{
+		"id": -1000007735,
+		"key": "story_task_R1",
+		"en|ch|tc|kr": "Ba bài thử của {O}; {W} là ứng viên còn lại."
+	},
+	{
+		"id": -1000007736,
+		"key": "story_task_R2",
+		"en|ch|tc|kr": "{W} có một đề nghị."
+	},
+	{
+		"id": -1000007737,
+		"key": "story_task_R3",
+		"en|ch|tc|kr": "{O} đang viết tuyệt học và chọn truyền nhân."
+	},
+	{
+		"id": -1000007738,
+		"key": "story_task_R4",
+		"en|ch|tc|kr": "Tuyệt học chờ được truyền lại."
+	},
+	{
+		"id": -1000007739,
+		"key": "story_task_R9",
+		"en|ch|tc|kr": "{O} đã mất."
+	},
+	{
+		"id": -1000007740,
+		"key": "story_R0_1",
+		"en|ch|tc|kr": "{O}: \"Trong ta còn một môn tuyệt học. Chưa viết ra; ta vẫn không dám viết.\"\n{O}: \"Khi viết xong, chỉ một người có được. Ngươi có chịu để lão già này xem xét ít lâu không?\""
+	},
+	{
+		"id": -1000007741,
+		"key": "story_R0_1_o1",
+		"en|ch|tc|kr": "\"Tiền bối cứ xem.\""
+	},
+	{
+		"id": -1000007742,
+		"key": "story_R0_1_o2",
+		"en|ch|tc|kr": "\"Ta không tìm sư phụ.\""
+	},
+	{
+		"id": -1000007743,
+		"key": "story_R1_1",
+		"en|ch|tc|kr": "{O} đặt cái bát dưới tảng đá nhỏ giọt.\n{O}: \"Khi nào đầy thì đến báo ta.\" Một giọt rơi. Rất lâu sau, thêm một giọt."
+	},
+	{
+		"id": -1000007744,
+		"key": "story_R1_1_o1",
+		"en|ch|tc|kr": "Ngồi xuống chờ (một năm)"
+	},
+	{
+		"id": -1000007745,
+		"key": "story_R1_1_o2",
+		"en|ch|tc|kr": "Múc nước suối cho đầy"
+	},
+	{
+		"id": -1000007746,
+		"key": "story_R1_2",
+		"en|ch|tc|kr": "{W}: \"Thì ra ngươi là người kia. {O} bảo chúng ta thử xem bản lĩnh của nhau.\"\n{W}: \"Ta cần nó hơn ngươi. Ta sẽ không nương tay.\""
+	},
+	{
+		"id": -1000007747,
+		"key": "story_R1_2_o1",
+		"en|ch|tc|kr": "Tỉ thí"
+	},
+	{
+		"id": -1000007748,
+		"key": "story_R1_3",
+		"en|ch|tc|kr": "Ba tháng sau {W} nằm dưới chân vách đá, gãy chân, đêm lạnh đang xuống.\n{W}: \"Đi đi. Không có ta, nó là của ngươi.\""
+	},
+	{
+		"id": -1000007749,
+		"key": "story_R1_3_o1",
+		"en|ch|tc|kr": "Cho đan và ở lại qua đêm"
+	},
+	{
+		"id": -1000007750,
+		"key": "story_R1_3_o2",
+		"en|ch|tc|kr": "Bỏ đi"
+	},
+	{
+		"id": -1000007751,
+		"key": "story_R2_1",
+		"en|ch|tc|kr": "{W}: \"Lão ấy sẽ chẳng bao giờ chọn. Đêm nào thư phòng cũng sáng đèn, sắp viết xong rồi.\"\n{W}: \"Ngươi giữ cửa, ta lấy sách, cùng chép lại. Không ai phải thua cả.\""
+	},
+	{
+		"id": -1000007752,
+		"key": "story_R2_1_o1",
+		"en|ch|tc|kr": "\"Không.\""
+	},
+	{
+		"id": -1000007753,
+		"key": "story_R2_1_o2",
+		"en|ch|tc|kr": "\"Khi nào?\""
+	},
+	{
+		"id": -1000007754,
+		"key": "story_R3_chosen",
+		"en|ch|tc|kr": "{O} gấp sách lại: {art}.\n{O}: \"Không được lợi gì ngươi vẫn chờ, thứ không được trao ngươi không lấy. Nó là của ngươi.\"\n{O}: \"Ta luôn nói chỉ truyền một người. Nhưng sách giờ là của ngươi, quy củ cũng vậy.\""
+	},
+	{
+		"id": -1000007755,
+		"key": "story_R3_chosen_o1",
+		"en|ch|tc|kr": "Giữ quy củ: một truyền nhân"
+	},
+	{
+		"id": -1000007756,
+		"key": "story_R3_chosen_o2",
+		"en|ch|tc|kr": "Chia sẻ với {W}"
+	},
+	{
+		"id": -1000007757,
+		"key": "story_R3_passed",
+		"en|ch|tc|kr": "{O} trao sách - {art} - cho {W}, nhìn bạn không chút trách móc.\n{O}: \"Ngươi mạnh hơn tuyệt học này. Còn nó sẽ che chở cho {W}. Ngươi buông được không?\""
+	},
+	{
+		"id": -1000007758,
+		"key": "story_R3_passed_o1",
+		"en|ch|tc|kr": "Cúi chào {O} và {W}"
+	},
+	{
+		"id": -1000007759,
+		"key": "story_R3_passed_o2",
+		"en|ch|tc|kr": "Thách đấu {W} để giành lấy"
+	},
+	{
+		"id": -1000007760,
+		"key": "story_endR_Stolen",
+		"en|ch|tc|kr": "Hai bản chép dưới ánh nến, và ngọn đèn thư phòng không tắt. Sáng ra cửa phòng lão mở toang, trong phòng trống không, trang cuối đã bị xé.\nTuyệt học dùng được. Chỉ là luôn cảm thấy thiếu một trang."
+	},
+	{
+		"id": -1000007761,
+		"key": "story_R4_1",
+		"en|ch|tc|kr": "Nhiều năm sau bạn thấy chiếc bát của {O} dưới tảng đá cũ. Bát đã đầy.\nBạn nghĩ đến tuyệt học, rồi nghĩ đến {0}."
+	},
+	{
+		"id": -1000007762,
+		"key": "story_R4_1_o1",
+		"en|ch|tc|kr": "Truyền cho {0}"
+	},
+	{
+		"id": -1000007763,
+		"key": "story_R4_1_o2",
+		"en|ch|tc|kr": "Để nó kết thúc ở bạn"
+	},
+	{
+		"id": -1000007764,
+		"key": "story_endR_Lineage",
+		"en|ch|tc|kr": "{0} lặp lại thức đầu tiên đến khi trời tối. Bạn đặt chiếc bát trống dưới tảng đá.\nĐâu đó, lão già ngốc kia hẳn đã bật cười."
+	},
+	{
+		"id": -1000007765,
+		"key": "story_endR_Buried",
+		"en|ch|tc|kr": "Bạn chôn quyển sách dưới tảng đá, để nước cuốn mực đi từng giọt. Điều nó dạy vẫn ở lại."
+	},
+	{
+		"id": -1000007766,
+		"key": "story_R_dead",
+		"en|ch|tc|kr": "{O} đã qua đời. Trong thư phòng, ngọn đèn vẫn còn ấm."
+	},
+	{
+		"id": -1000007767,
+		"key": "story_end_R_Lineage",
+		"en|ch|tc|kr": "Truyền thừa"
+	},
+	{
+		"id": -1000007768,
+		"key": "story_end_R_Buried",
+		"en|ch|tc|kr": "Quyển sách chôn vùi"
+	},
+	{
+		"id": -1000007769,
+		"key": "story_end_R_Stolen",
+		"en|ch|tc|kr": "Trang sách bị đánh cắp"
+	},
+	{
+		"id": -1000007770,
+		"key": "story_doc_art_A",
+		"en|ch|tc|kr": "{A}: \"Kiếm của ta vừa ngộ thêm một chiêu. Ta gọi là {art}.\"\n{A}: \"Không ai dạy ta cả. Ta muốn ngươi có nó đầu tiên.\""
+	},
+	{
+		"id": -1000007771,
+		"key": "story_doc_art_D",
+		"en|ch|tc|kr": "{N}: \"Ta đấm tảng đá, tảng đá đấm lại, rồi ta ngộ ra. {art}!\"\n{N}: \"Ta nhờ người chép lại. Hình vẽ là của ta.\""
+	},
+	{
+		"id": -1000007772,
+		"key": "story_doc_art_G",
+		"en|ch|tc|kr": "{W}: \"Trăm năm thua ngươi rồi thắng ngươi, chỉ còn lại thứ này: {art}.\"\n{W}: \"Đổi người khác mà đánh đi.\""
+	},
+	{
+		"id": -1000007773,
+		"key": "story_doc_art_J",
+		"en|ch|tc|kr": "{J}: \"Sư phụ. Ấn ký từng chỉ con cách giết. Con hỏi nó cách bảo vệ, nó đáp: {art}.\""
+	},
+	{
+		"id": -1000007774,
+		"key": "story_doc_art_P",
+		"en|ch|tc|kr": "{B}: \"Mười năm nước chảy trên đá, để lại cho ta một chiêu: {art}. Cầm lấy, huynh đệ.\""
+	},
+	{
+		"id": -1000007775,
+		"key": "story_doc_essence_I",
+		"en|ch|tc|kr": "Trên vách mộ, chủ nhân xưa không khắc chiêu thức mà khắc cách chiêu thức ra đời. Bạn đọc đến khi đuốc tàn. Đạo Vận của bạn sâu thêm."
+	},
+	{
+		"id": -1000007776,
+		"key": "story_doc_essence_K",
+		"en|ch|tc|kr": "Giữa hai tiếng sấm, tàn hồn cho bạn thấy thứ duy nhất nó giữ được từ lần phi thăng: hình dạng của pháp tắc khi chưa có tên. Đạo Vận của bạn sâu thêm."
+	},
+	{
+		"id": -1000007777,
+		"key": "story_doc_essence_L",
+		"en|ch|tc|kr": "Tâm đã sáng, mọi chiêu thức bạn biết trải ra như mặt hồ lặng, và bạn thấy bàn tay đã vẽ nên từng chiêu. Đạo Vận của bạn sâu thêm."
 	}
 ]

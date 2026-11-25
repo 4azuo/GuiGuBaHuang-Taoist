@@ -3488,5 +3488,405 @@
 		"id": "-1000007697",
 		"key": "story_end_P_Devourer",
 		"en|ch|tc|kr": "Verschlinger"
+	},
+	{
+		"id": "-1000007698",
+		"key": "story_name_Q",
+		"en|ch|tc|kr": "Die namenlose Kunst"
+	},
+	{
+		"id": "-1000007699",
+		"key": "story_task_desc_Q",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": "-1000007700",
+		"key": "story_task_Q0",
+		"en|ch|tc|kr": "{D} wurde aus einer Sekte verstoßen, wegen einer Änderung an der Kunst des Gründers."
+	},
+	{
+		"id": "-1000007701",
+		"key": "story_task_Q1",
+		"en|ch|tc|kr": "{D} erschafft eine eigene Kunst."
+	},
+	{
+		"id": "-1000007702",
+		"key": "story_task_Q2",
+		"en|ch|tc|kr": "Die alte Sekte will die Kunst von {D}."
+	},
+	{
+		"id": "-1000007703",
+		"key": "story_task_Q3",
+		"en|ch|tc|kr": "{D} hat etwas für dich."
+	},
+	{
+		"id": "-1000007704",
+		"key": "story_task_Q4",
+		"en|ch|tc|kr": "Du hast {D} der Sekte ausgeliefert. Das ist nicht vergessen."
+	},
+	{
+		"id": "-1000007705",
+		"key": "story_task_Q9",
+		"en|ch|tc|kr": "{D} ist nicht mehr."
+	},
+	{
+		"id": "-1000007706",
+		"key": "story_Q0_1",
+		"en|ch|tc|kr": "Am Wegesrand wiederholt {D} immer wieder dieselbe Bewegung. Jedes Mal ist der letzte Takt falsch, und jedes Mal anders.\n{D}: \"Dreihundert Jahre lang übte meine Sekte diese Bewegung mit einem Fehler darin. Ich habe ihn behoben. Sie haben mein Siegel zerbrochen und mich hinausgeworfen.\""
+	},
+	{
+		"id": "-1000007707",
+		"key": "story_Q0_1_o1",
+		"en|ch|tc|kr": "Die ganze Geschichte anhören"
+	},
+	{
+		"id": "-1000007708",
+		"key": "story_Q0_1_o2",
+		"en|ch|tc|kr": "\"Zeig es mir. An mir.\""
+	},
+	{
+		"id": "-1000007709",
+		"key": "story_Q0_1_o3",
+		"en|ch|tc|kr": "Weitergehen"
+	},
+	{
+		"id": "-1000007710",
+		"key": "story_Q0_2",
+		"en|ch|tc|kr": "{D}: \"Du siehst es auch. Der Fehler war die Tür.\"\n{D}: \"Ich flicke ihre Kunst nicht mehr. Ich erschaffe meine eigene.\""
+	},
+	{
+		"id": "-1000007711",
+		"key": "story_Q1_1",
+		"en|ch|tc|kr": "{D} hat neun Tage nicht geschlafen; die Luft um die Hütte summt wie eine Saite.\n{D}: \"Mir fehlt nur noch ein Atemzug. Meine Meridiane halten nicht mehr lange - und die Bestien riechen das Qi.\""
+	},
+	{
+		"id": "-1000007712",
+		"key": "story_Q1_1_o1",
+		"en|ch|tc|kr": "Eine Pille geben"
+	},
+	{
+		"id": "-1000007713",
+		"key": "story_Q1_1_o2",
+		"en|ch|tc|kr": "Draußen Wache halten"
+	},
+	{
+		"id": "-1000007714",
+		"key": "story_Q1_2",
+		"en|ch|tc|kr": "Ein einziger Takt. Das Summen verstummt; das ganze Tal scheint einzuatmen.\n{D}: \"{art}. Heute Morgen gab es das noch nicht.\" {D} lacht, bis die Tränen kommen."
+	},
+	{
+		"id": "-1000007715",
+		"key": "story_Q1_2_none",
+		"en|ch|tc|kr": "Das Summen bricht ab. {D} öffnet beide Hände; nichts ist darin, und doch bleibt ein Lächeln.\n{D}: \"Nicht heute. Aber ich habe seinen Rücken gesehen, als es ging.\""
+	},
+	{
+		"id": "-1000007716",
+		"key": "story_Q2_1",
+		"en|ch|tc|kr": "Ein Ältester der alten Sekte steht an der Tür, Schüler hinter sich.\nDer Älteste: \"Was {D} auch erschaffen hat, es entstand aus unserer Lehre. Das Handbuch, oder die Hände, die es schrieben.\"\n{D} sieht dich an und schweigt."
+	},
+	{
+		"id": "-1000007717",
+		"key": "story_Q2_1_o1",
+		"en|ch|tc|kr": "Gegen den Ältesten kämpfen"
+	},
+	{
+		"id": "-1000007718",
+		"key": "story_Q2_1_o2",
+		"en|ch|tc|kr": "Die Schuld begleichen ({0} Geistersteine)"
+	},
+	{
+		"id": "-1000007719",
+		"key": "story_Q2_1_o3",
+		"en|ch|tc|kr": "Beiseitetreten"
+	},
+	{
+		"id": "-1000007720",
+		"key": "story_Q3_1",
+		"en|ch|tc|kr": "{D} legt ein dünnes Buch auf den Tisch. Der Einband ist leer.\n{D}: \"Eine Kunst mit nur einem Meister stirbt mit diesem Meister. Lerne sie hier, mit mir - oder behalte das Buch und lass es dich langsam lehren.\""
+	},
+	{
+		"id": "-1000007721",
+		"key": "story_Q3_1_o1",
+		"en|ch|tc|kr": "Jetzt lernen"
+	},
+	{
+		"id": "-1000007722",
+		"key": "story_Q3_1_o2",
+		"en|ch|tc|kr": "Das Buch behalten und darüber meditieren"
+	},
+	{
+		"id": "-1000007723",
+		"key": "story_endQ_Founder",
+		"en|ch|tc|kr": "{D} schnitzt ein Brett über die Tür der Hütte, schief und stolz: die erste Schule mit einem Lehrer und ohne Ahnen.\n{D}: \"Wenn man fragt, wer sie gegründet hat, sage ich: Wir waren zu zweit.\""
+	},
+	{
+		"id": "-1000007724",
+		"key": "story_endQ_Lost",
+		"en|ch|tc|kr": "{D}: \"Sie haben das Handbuch genommen und vor meinen Augen verbrannt. Ich habe aufgeschrieben, was meine Hände noch wissen.\"\n{D}: \"Behalte es. Eine halbe Kunst in deinen Händen ist besser als eine ganze in ihren.\""
+	},
+	{
+		"id": "-1000007725",
+		"key": "story_Q4_1",
+		"en|ch|tc|kr": "{D} wartet auf der Straße, dünner, die Augen sehr ruhig.\n{D}: \"Du bist beiseitegetreten. Ich habe viel daraus gelernt, wie du es getan hast.\" Die Hände von {D} öffnen sich zu der Bewegung, deren Geburt du gesehen hast."
+	},
+	{
+		"id": "-1000007726",
+		"key": "story_Q4_1_o1",
+		"en|ch|tc|kr": "Dich verteidigen"
+	},
+	{
+		"id": "-1000007727",
+		"key": "story_endQ_Traitor",
+		"en|ch|tc|kr": "Die Bewegung, die am Wegesrand begann, endet auf dem Weg. Niemand spricht je wieder davon, und niemand vergisst es."
+	},
+	{
+		"id": "-1000007728",
+		"key": "story_Q_dead",
+		"en|ch|tc|kr": "Die Nachricht vom Tod von {D} erreicht dich mit einem Päckchen: ein Buch mit leerem Einband und eine Zeile: \"Es war fast fertig. Du wirst wissen, wie.\""
+	},
+	{
+		"id": "-1000007729",
+		"key": "story_end_Q_Founder",
+		"en|ch|tc|kr": "Der Gründer"
+	},
+	{
+		"id": "-1000007730",
+		"key": "story_end_Q_Lost",
+		"en|ch|tc|kr": "Die verlorene Kunst"
+	},
+	{
+		"id": "-1000007731",
+		"key": "story_end_Q_Traitor",
+		"en|ch|tc|kr": "Der Verräter"
+	},
+	{
+		"id": "-1000007732",
+		"key": "story_name_R",
+		"en|ch|tc|kr": "Nur für einen Erben"
+	},
+	{
+		"id": "-1000007733",
+		"key": "story_task_desc_R",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": "-1000007734",
+		"key": "story_task_R0",
+		"en|ch|tc|kr": "Der alte Meister {O} sucht einen Erben."
+	},
+	{
+		"id": "-1000007735",
+		"key": "story_task_R1",
+		"en|ch|tc|kr": "Drei Prüfungen von {O}; {W} ist der andere Anwärter."
+	},
+	{
+		"id": "-1000007736",
+		"key": "story_task_R2",
+		"en|ch|tc|kr": "{W} hat einen Vorschlag."
+	},
+	{
+		"id": "-1000007737",
+		"key": "story_task_R3",
+		"en|ch|tc|kr": "{O} schreibt die Kunst nieder und wählt einen Erben."
+	},
+	{
+		"id": "-1000007738",
+		"key": "story_task_R4",
+		"en|ch|tc|kr": "Die Kunst wartet darauf, weitergegeben zu werden."
+	},
+	{
+		"id": "-1000007739",
+		"key": "story_task_R9",
+		"en|ch|tc|kr": "{O} ist nicht mehr."
+	},
+	{
+		"id": "-1000007740",
+		"key": "story_R0_1",
+		"en|ch|tc|kr": "{O}: \"Eine Kunst ist noch in mir. Sie ist nicht aufgeschrieben; ich hatte Angst, sie zu schreiben.\"\n{O}: \"Wenn sie es ist, wird nur einer sie haben. Lässt du einen alten Narren dich eine Weile ansehen?\""
+	},
+	{
+		"id": "-1000007741",
+		"key": "story_R0_1_o1",
+		"en|ch|tc|kr": "\"Seht, so lange Ihr wollt.\""
+	},
+	{
+		"id": "-1000007742",
+		"key": "story_R0_1_o2",
+		"en|ch|tc|kr": "\"Ich suche keinen Meister.\""
+	},
+	{
+		"id": "-1000007743",
+		"key": "story_R1_1",
+		"en|ch|tc|kr": "{O} stellt eine Schale unter einen tropfenden Felsen.\n{O}: \"Wenn sie voll ist, sag es mir.\" Ein Tropfen fällt. Viel später, noch einer."
+	},
+	{
+		"id": "-1000007744",
+		"key": "story_R1_1_o1",
+		"en|ch|tc|kr": "Sich setzen und warten (ein Jahr)"
+	},
+	{
+		"id": "-1000007745",
+		"key": "story_R1_1_o2",
+		"en|ch|tc|kr": "Sie am Bach füllen"
+	},
+	{
+		"id": "-1000007746",
+		"key": "story_R1_2",
+		"en|ch|tc|kr": "{W}: \"Du bist also der andere. {O} meint, wir sollten sehen, was in uns steckt.\"\n{W}: \"Ich brauche das mehr als du. Ich halte mich nicht zurück.\""
+	},
+	{
+		"id": "-1000007747",
+		"key": "story_R1_2_o1",
+		"en|ch|tc|kr": "Kräfte messen"
+	},
+	{
+		"id": "-1000007748",
+		"key": "story_R1_3",
+		"en|ch|tc|kr": "Drei Monate später liegt {W} am Fuß einer Klippe, ein Bein gebrochen, und die Nacht wird kalt.\n{W}: \"Geh nur. Ohne mich gehört sie dir.\""
+	},
+	{
+		"id": "-1000007749",
+		"key": "story_R1_3_o1",
+		"en|ch|tc|kr": "Eine Pille geben und die Nacht bleiben"
+	},
+	{
+		"id": "-1000007750",
+		"key": "story_R1_3_o2",
+		"en|ch|tc|kr": "Gehen"
+	},
+	{
+		"id": "-1000007751",
+		"key": "story_R2_1",
+		"en|ch|tc|kr": "{W}: \"Der Alte wird sich nie entscheiden. Jede Nacht brennt Licht im Studierzimmer - es ist fast fertig.\"\n{W}: \"Du hältst die Tür, ich nehme das Buch, wir schreiben es ab. Keiner muss verlieren.\""
+	},
+	{
+		"id": "-1000007752",
+		"key": "story_R2_1_o1",
+		"en|ch|tc|kr": "\"Nein.\""
+	},
+	{
+		"id": "-1000007753",
+		"key": "story_R2_1_o2",
+		"en|ch|tc|kr": "\"Wann?\""
+	},
+	{
+		"id": "-1000007754",
+		"key": "story_R3_chosen",
+		"en|ch|tc|kr": "{O} schließt das Buch: {art}.\n{O}: \"Du hast gewartet, als es nichts zu gewinnen gab, und du wolltest nicht nehmen, was nicht gegeben wurde. Sie gehört dir.\"\n{O}: \"Ein Erbe, habe ich immer gesagt. Aber das Buch gehört jetzt dir, und die Regel auch.\""
+	},
+	{
+		"id": "-1000007755",
+		"key": "story_R3_chosen_o1",
+		"en|ch|tc|kr": "Die Regel halten: ein Erbe"
+	},
+	{
+		"id": "-1000007756",
+		"key": "story_R3_chosen_o2",
+		"en|ch|tc|kr": "Sie mit {W} teilen"
+	},
+	{
+		"id": "-1000007757",
+		"key": "story_R3_passed",
+		"en|ch|tc|kr": "{O} gibt das Buch - {art} - an {W} und sieht dich ohne Vorwurf an.\n{O}: \"Du bist stärker als diese Kunst. {W} wird von ihr beschützt werden. Lässt du sie gehen?\""
+	},
+	{
+		"id": "-1000007758",
+		"key": "story_R3_passed_o1",
+		"en|ch|tc|kr": "Sich vor {O} und {W} verneigen"
+	},
+	{
+		"id": "-1000007759",
+		"key": "story_R3_passed_o2",
+		"en|ch|tc|kr": "{W} darum herausfordern"
+	},
+	{
+		"id": "-1000007760",
+		"key": "story_endR_Stolen",
+		"en|ch|tc|kr": "Zwei Abschriften bei Kerzenlicht, und ein Licht im Studierzimmer, das nicht erlischt. Am Morgen steht die Tür des alten Meisters offen, das Zimmer ist leer, die letzte Seite herausgerissen.\nDie Kunst wirkt. Sie fühlt sich immer eine Seite zu kurz an."
+	},
+	{
+		"id": "-1000007761",
+		"key": "story_R4_1",
+		"en|ch|tc|kr": "Jahre später findest du die Wasserschale von {O} unter demselben Felsen. Sie ist voll.\nDu denkst an die Kunst, und an {0}."
+	},
+	{
+		"id": "-1000007762",
+		"key": "story_R4_1_o1",
+		"en|ch|tc|kr": "Sie {0} lehren"
+	},
+	{
+		"id": "-1000007763",
+		"key": "story_R4_1_o2",
+		"en|ch|tc|kr": "Sie mit dir enden lassen"
+	},
+	{
+		"id": "-1000007764",
+		"key": "story_endR_Lineage",
+		"en|ch|tc|kr": "{0} wiederholt die erste Bewegung, bis das Licht schwindet. Du stellst eine leere Schale unter den Felsen.\nIrgendwo hätte ein alter Narr gelacht."
+	},
+	{
+		"id": "-1000007765",
+		"key": "story_endR_Buried",
+		"en|ch|tc|kr": "Du vergräbst das Buch unter dem Felsen, wo das Wasser die Tinte Tropfen für Tropfen davontragen wird. Was es dich gelehrt hat, bleibt."
+	},
+	{
+		"id": "-1000007766",
+		"key": "story_R_dead",
+		"en|ch|tc|kr": "{O} ist gestorben. Im Studierzimmer ist die Lampe noch warm."
+	},
+	{
+		"id": "-1000007767",
+		"key": "story_end_R_Lineage",
+		"en|ch|tc|kr": "Die Linie"
+	},
+	{
+		"id": "-1000007768",
+		"key": "story_end_R_Buried",
+		"en|ch|tc|kr": "Das vergrabene Buch"
+	},
+	{
+		"id": "-1000007769",
+		"key": "story_end_R_Stolen",
+		"en|ch|tc|kr": "Die gestohlene Seite"
+	},
+	{
+		"id": "-1000007770",
+		"key": "story_doc_art_A",
+		"en|ch|tc|kr": "{A}: \"Mein Schwert hat noch etwas gelernt. Ich nenne es {art}.\"\n{A}: \"Niemand hat es mich gelehrt. Ich will, dass du es als Erster hast.\""
+	},
+	{
+		"id": "-1000007771",
+		"key": "story_doc_art_D",
+		"en|ch|tc|kr": "{N}: \"Ich hab einen Felsen geschlagen, und der Felsen hat zurückgeschlagen, und dann hab ich was verstanden. {art}!\"\n{N}: \"Ich hab's mir aufschreiben lassen. Die Bilder sind von mir.\""
+	},
+	{
+		"id": "-1000007772",
+		"key": "story_doc_art_G",
+		"en|ch|tc|kr": "{W}: \"Hundert Jahre gegen dich verloren und gewonnen, und das ist, was übrig ist: {art}.\"\n{W}: \"Besieg damit zur Abwechslung mal jemand anderen.\""
+	},
+	{
+		"id": "-1000007773",
+		"key": "story_doc_art_J",
+		"en|ch|tc|kr": "{J}: \"Meister. Das Mal hat mir früher gesagt, wie man tötet. Ich habe es gefragt, wie man schützt, und es antwortete: {art}.\""
+	},
+	{
+		"id": "-1000007774",
+		"key": "story_doc_art_P",
+		"en|ch|tc|kr": "{B}: \"Zehn Jahre Wasser auf Stein. Es hat mir eine Bewegung hinterlassen: {art}. Nimm sie, Bruder.\""
+	},
+	{
+		"id": "-1000007775",
+		"key": "story_doc_essence_I",
+		"en|ch|tc|kr": "An die Wände des Grabes hatte der alte Besitzer keine Techniken geritzt, sondern wie Techniken entstehen. Du liest, bis die Fackel erlischt. Deine Dao-Essenz vertieft sich."
+	},
+	{
+		"id": "-1000007776",
+		"key": "story_doc_essence_K",
+		"en|ch|tc|kr": "Zwischen zwei Donnerschlägen zeigt dir der Überrest das Einzige, was er aus seinem Aufstieg bewahrt hat: die Gestalt eines Gesetzes, bevor es einen Namen hat. Deine Dao-Essenz vertieft sich."
+	},
+	{
+		"id": "-1000007777",
+		"key": "story_doc_essence_L",
+		"en|ch|tc|kr": "Mit klarem Herzen liegt jede Kunst, die du kennst, offen wie ein stiller See, und du siehst die Hand, die jede gezeichnet hat. Deine Dao-Essenz vertieft sich."
 	}
 ]

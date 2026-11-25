@@ -28,5 +28,55 @@
 		"id": "-1000005005",
 		"key": "newgame005",
 		"en|ch|tc|kr": "Artefacta signata initio dantur (plura licent). Prooemium omittere: nulla fabula initialis neque primum proelium."
+	},
+	{
+		"id": "-1000005006",
+		"key": "newgame010",
+		"en|ch|tc|kr": "Fata libere eligere"
+	},
+	{
+		"id": "-1000005007",
+		"key": "newgame011",
+		"en|ch|tc|kr": "Fata electa: {0} (-{1} P)"
+	},
+	{
+		"id": "-1000005008",
+		"key": "newgame012",
+		"en|ch|tc|kr": "Fata eligere"
+	},
+	{
+		"id": "-1000005009",
+		"key": "newgame013",
+		"en|ch|tc|kr": "Quodque fatum hic electum punctum S&M (P) novae servationis minuit: singula -{0} P (album) ad -{1} P (rubrum). Pergere?"
+	},
+	{
+		"id": "-1000005010",
+		"key": "newgame014",
+		"en|ch|tc|kr": "Nomen"
+	},
+	{
+		"id": "-1000005011",
+		"key": "newgame015",
+		"en|ch|tc|kr": "Descriptio"
+	},
+	{
+		"id": "-1000005012",
+		"key": "newgame016",
+		"en|ch|tc|kr": "Qualitas"
+	},
+	{
+		"id": "-1000005013",
+		"key": "newgame017",
+		"en|ch|tc|kr": "Omnia"
+	},
+	{
+		"id": "-1000005014",
+		"key": "newgame018",
+		"en|ch|tc|kr": "Electa ({0})"
+	},
+	{
+		"id": "-1000005015",
+		"key": "newgame019",
+		"en|ch|tc|kr": "Punctum S&M: {0} P - {1} P = {2} P (quodque fatum electum id minuit)"
 	}
 ]

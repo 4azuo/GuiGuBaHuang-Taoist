@@ -155,8 +155,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     if (!c.Assert(ui.uiProperty.selectLuck.Count >= 3 && ui.ChechIsCanCreate(), "3 destinies selected, creation allowed")) return;
                     // NewGameEvent: its checkboxes are on the screen; all 3 divine artifacts + skip the intro and the first battle
                     // ticked like a player (the checkboxes save the choice through their change action)
-                    var cover = UIHelper.UIs.FirstOrDefault(x => x.UITypeName == UIType.CreatePlayer.uiName);
-                    var boxes = cover?.Items.OfType<ModLib.Object.UIItemToggle>().ToList() ?? new System.Collections.Generic.List<ModLib.Object.UIItemToggle>();
+                    // several covers on the screen (NewGameEvent, CustomDestinyEvent)
+                    var boxes = UIHelper.UIs.Where(x => x.UITypeName == UIType.CreatePlayer.uiName).SelectMany(x => x.Items.OfType<ModLib.Object.UIItemToggle>()).ToList();
                     if (!c.AssertEqual(4, boxes.Count, "NewGameEvent checkboxes on the creation screen")) return;
                     foreach (var b in boxes) b.Item.isOn = true;
                     var ng = NewGameEvent.Instance;
@@ -172,6 +172,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     if (!Requested || slot < 0) return;
                     var ui = g.ui.GetUI<UICreatePlayer>(UIType.CreatePlayer);
                     if (!c.Assert(ui != null, "creation screen open")) return;
+                    // CustomDestinyEvent: a destiny chosen freely (Deadly Fingers), on top of the 3 rolled
+                    CustomDestinyEvent.Picked.Add(1414);
                     ui.OnOkClick();
                 }, 3000)
                 .Wait("world created", c =>
@@ -205,6 +207,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     c.AssertEqual(1, Player.GetGradeLvl(), "grade 1");
                     c.AssertEqual(GameLevelType.CrueltyShura.ToString(), GameHelper.GetGameLevel().ToString(), "difficulty");
                     c.Assert(SMLocalConfigsEvent.Instance.Configs.EnableTrainer, "trainer on in the save configs");
+                    c.Assert(Player.GetLuck(1414) != null && Player.data.unitData.propertyData.bornLuck.Any(x => x.id == 1414), "the destiny chosen freely is a born one");
+                    c.Assert(SMLocalConfigsEvent.Instance.Configs.Score < 0, $"score of the save lowered: {SMLocalConfigsEvent.Instance.Configs.Score}");
                     c.Assert(IsLoaded(ModConst.TRAINER_EVENT), "TrainerEvent loaded");
                     // NewGameEvent: the 3 artifacts, no intro screen / first battle left
                     c.Assert(GodArtifactHelper.IsEnabledPiscesPendant() && GodArtifactHelper.IsEnabledGodEye() && GodArtifactHelper.IsEnabledDevilDemon(),

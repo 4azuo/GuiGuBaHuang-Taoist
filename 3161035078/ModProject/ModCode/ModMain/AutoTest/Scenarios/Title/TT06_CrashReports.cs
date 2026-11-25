@@ -44,10 +44,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
 
         private static MockBugSplatServer Mock(AutoTestContext c) => c.Bag.TryGetValue("mock", out var m) ? (MockBugSplatServer)m : null;
 
-        private static UICheckPopup Popup() => g.ui.HasUI(UIType.CheckPopup) ? g.ui.GetUI<UICheckPopup>(UIType.CheckPopup) : null;
-
-        private static string PopupText(UICheckPopup p) =>
-            string.Join(" / ", p.GetComponentsInChildren<UnityEngine.UI.Text>().Select(t => t.text?.Trim()).Where(t => !string.IsNullOrEmpty(t)));
+        /// <summary>The consent window of ModLib (2.2.40: a window of its own, UITextInfoLong), null when closed.</summary>
+        private static ModLib.Object.UICustom1 Window() => ModTitleEvent.ConsentWindow != null && g.ui.HasUI(UIType.TextInfoLong) ? ModTitleEvent.ConsentWindow : null;
 
         private static string EvidenceDir => Path.Combine(AutoTestEvent.OutDir ?? Path.GetTempPath(), "bugsplat");
 
@@ -91,40 +89,51 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                 })
                 .Step("consent dialog", c =>
                 {
+                    // a window of its type may still be closing: the consent waits for it (UICustom1.WhenFree)
                     ModTitleEvent.Instance.AskCrashReportConsent(null);
-                    var p = Popup();
-                    if (!c.Assert(p != null, "consent dialog opened")) return;
-                    var text = PopupText(p);
+                }, delayMs: 500)
+                .Wait("consent window", c => Window() != null, 10000)
+                .Step("consent window texts", c =>
+                {
+                    var text = ModTitleEvent.ConsentText ?? string.Empty;
                     c.Info($"dialog: {text}");
                     c.Assert(text.Contains("BugSplat"), "the dialog names the service (BugSplat)");
                     c.Assert(text.Contains(GameTool.LS("libtxt999990009")), "the dialog says where to change the answer (ModCreator)");
                     c.Assert(text.Contains(MOD_NAME), $"the dialog lists the mods sending reports ({MOD_NAME})");
                 }, delayMs: 1000)
+                .Step("Taoist notice waits", c =>
+                {
+                    // the [INFO] Taoist window of the title screen opened while the consent is shown: it waits (the
+                    // game keeps one UITextInfoLong: it was drawn over the consent)
+                    var consent = ModTitleEvent.ConsentText;
+                    c.Assert(!UITitleScreenEvent.ShowWorkshopInfo(), "the Taoist notice waits for the consent window");
+                    c.Assert(Window() != null && ModTitleEvent.ConsentText == consent, "the consent window is still shown, unchanged");
+                    c.AssertEqual(1, ModLib.Object.UICustomQueue.CountOf(UIType.TextInfoLong.uiName), "one window waiting");
+                }, 1000)
                 .Step("answer No", c =>
                 {
-                    var p = Popup();
-                    var clicked = p == null ? null : ClickIn(p, "No", "Cancel", "否", "取消");
-                    c.Assert(clicked != null, $"'No' clicked ({clicked})");
+                    c.Assert(ModTitleEvent.AnswerConsent(false), "'Do not send' clicked");
                     c.AssertEqual(CrashReportConsentEnum.Denied, ModTitleEvent.Instance.CrashReportConsent, "answer saved");
                     DebugHelper.WriteLine(MakeError(ERROR_MSG + " (denied)"));
                     c.Info("an error logged after 'No'");
                 })
+                .Wait("Taoist notice after the consent", c => g.ui.HasUI(UIType.TextInfoLong) && ModTitleEvent.ConsentWindow == null && ModLib.Object.UICustomQueue.Count == 0, 10000)
+                .Step("close the Taoist notice", c =>
+                {
+                    c.Info("the Taoist notice opened once the consent was answered (screenshot)");
+                    g.ui.CloseUI(UIType.TextInfoLong);
+                }, 1500)
                 .Step("nothing sent", c =>
                 {
                     var n = Mock(c).Requests.Count;
                     c.AssertEqual(0, n, "requests received before the answer and after 'No'");
                     c.AssertEqual(string.Empty, CrashReportHelper.LastResult, "no upload tried");
                 }, delayMs: 3000)
-                .Step("consent dialog again", c =>
-                {
-                    ModTitleEvent.Instance.AskCrashReportConsent(null);
-                    c.Assert(Popup() != null, "consent dialog opened");
-                }, delayMs: 1000)
+                .Step("consent dialog again", c => ModTitleEvent.Instance.AskCrashReportConsent(null), delayMs: 500)
+                .Wait("consent window again", c => Window() != null, 10000)
                 .Step("answer Yes", c =>
                 {
-                    var p = Popup();
-                    var clicked = p == null ? null : ClickIn(p, "Yes", "OK", "是", "确定", "確定");
-                    c.Assert(clicked != null, $"'Yes' clicked ({clicked})");
+                    c.Assert(ModTitleEvent.AnswerConsent(true), "'Allow' clicked");
                     c.AssertEqual(CrashReportConsentEnum.Allowed, ModTitleEvent.Instance.CrashReportConsent, "answer saved");
                     c.Assert(CrashReportHelper.IsAllowed, "reports allowed");
                 })

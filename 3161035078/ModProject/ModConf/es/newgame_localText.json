@@ -28,5 +28,55 @@
 		"id": "-1000005005",
 		"key": "newgame005",
 		"en|ch|tc|kr": "Los artefactos marcados se reciben al inicio (se permiten varios). Saltar la introducción: sin historia inicial ni primera batalla."
+	},
+	{
+		"id": "-1000005006",
+		"key": "newgame010",
+		"en|ch|tc|kr": "Elegir destinos libremente"
+	},
+	{
+		"id": "-1000005007",
+		"key": "newgame011",
+		"en|ch|tc|kr": "Destinos elegidos: {0} (-{1} P)"
+	},
+	{
+		"id": "-1000005008",
+		"key": "newgame012",
+		"en|ch|tc|kr": "Elegir destinos"
+	},
+	{
+		"id": "-1000005009",
+		"key": "newgame013",
+		"en|ch|tc|kr": "Cada destino que elijas aquí reduce la puntuación S&M (P) de la nueva partida: de -{0} P (blanco) a -{1} P (rojo) cada uno. ¿Continuar?"
+	},
+	{
+		"id": "-1000005010",
+		"key": "newgame014",
+		"en|ch|tc|kr": "Nombre"
+	},
+	{
+		"id": "-1000005011",
+		"key": "newgame015",
+		"en|ch|tc|kr": "Descripción"
+	},
+	{
+		"id": "-1000005012",
+		"key": "newgame016",
+		"en|ch|tc|kr": "Calidad"
+	},
+	{
+		"id": "-1000005013",
+		"key": "newgame017",
+		"en|ch|tc|kr": "Todos"
+	},
+	{
+		"id": "-1000005014",
+		"key": "newgame018",
+		"en|ch|tc|kr": "Elegidos ({0})"
+	},
+	{
+		"id": "-1000005015",
+		"key": "newgame019",
+		"en|ch|tc|kr": "Puntuación S&M: {0} P - {1} P = {2} P (cada destino elegido la reduce)"
 	}
 ]

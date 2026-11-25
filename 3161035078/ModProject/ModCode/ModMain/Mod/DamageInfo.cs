@@ -1,3 +1,4 @@
+using MOD_nE7UL2.Helper;
 using MOD_nE7UL2.Const;
 using ModLib.Attributes;
 using ModLib.Enum;
@@ -374,14 +375,17 @@ namespace MOD_nE7UL2.Mod
                 foeTitle = GameTool.LS("dmginfo_target_self");
             }
 
-            g.ui.CloseUI(UIType.TextInfoLong);
-            window = new UICustom1(GameTool.LS("dmginfo_title"), okAct: Close);
-            window.IsShowNavigationButtons = true;
-            window.AddPage();
-            StatsPage(window, me, foe, foeTitle, inBattle);
-            window.AddPage();
-            FoesPage(window, me);
-            window.Pages[Math.Max(0, Math.Min(page, window.Pages.Count - 1))].Active();
+            TaoistWindows.CloseMine(true);
+            TaoistWindows.Open1(() =>
+            {
+                window = new UICustom1(GameTool.LS("dmginfo_title"), okAct: Close);
+                window.IsShowNavigationButtons = true;
+                window.AddPage();
+                StatsPage(window, me, foe, foeTitle, inBattle);
+                window.AddPage();
+                FoesPage(window, me);
+                window.Pages[Math.Max(0, Math.Min(page, window.Pages.Count - 1))].Active();
+            });
         }
 
         /// <summary>A text of the window, left aligned at (x, y) (canvas units of the window).</summary>
@@ -577,7 +581,7 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Closes the window and lets the battle run again when it was paused by it.</summary>
         public static void Close()
         {
-            if (g.ui.HasUI(UIType.TextInfoLong)) g.ui.CloseUI(UIType.TextInfoLong);
+            TaoistWindows.CloseMine(true);
             window = null;
             if (pausedByUs) { pausedByUs = false; GameHelper.UnPauseGame(); }
         }
