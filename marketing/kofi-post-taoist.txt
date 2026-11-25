@@ -1,4 +1,4 @@
-Taoist 6.2 is out! (v6.2.0, ModLib v2.2.40)
+Taoist 6.2 is out! (v6.2.0, ModLib v2.3.00)
 
 Thank you so much to everyone who supports the mod — your coffees keep it going, and the mod stays free for everyone.
 
