@@ -430,5 +430,269 @@
     "ch": "“城与宗唯一的门户”已关闭：小镇可以重新拥有传送阵。",
     "tc": "「城與宗唯一的門戶」已關閉：小鎮可以重新擁有傳送陣。",
     "kr": "\"도시와 종파의 유일한 포털\"이 꺼졌다: 작은 마을이 다시 전송진을 가질 수 있다."
-  }
+  },
+	{
+		"id": -1000008054,
+		"key": "ui_appr_title",
+		"en": "Artisan ranks",
+		"ch": "技艺品阶",
+		"tc": "技藝品階",
+		"kr": "기예 품계"
+	},
+	{
+		"id": -1000008055,
+		"key": "ui_appr_header",
+		"en": "{0}: {1} points, {2}",
+		"ch": "{0}：{1}点，{2}",
+		"tc": "{0}：{1}點，{2}",
+		"kr": "{0}: {1}점, {2}"
+	},
+	{
+		"id": -1000008056,
+		"key": "ui_appr_none",
+		"en": "no rank yet",
+		"ch": "尚无品阶",
+		"tc": "尚無品階",
+		"kr": "아직 품계 없음"
+	},
+	{
+		"id": -1000008057,
+		"key": "ui_appr_rank",
+		"en": "rank {0}: {1}",
+		"ch": "第{0}阶：{1}",
+		"tc": "第{0}階：{1}",
+		"kr": "{0}단계: {1}"
+	},
+	{
+		"id": -1000008058,
+		"key": "ui_appr_line",
+		"en": "Rank {0} {1}: {2} {3}+, {4}",
+		"ch": "第{0}阶 {1}：{2}≥{3}，{4}",
+		"tc": "第{0}階 {1}：{2}≥{3}，{4}",
+		"kr": "{0}단계 {1}: {2} {3} 이상, {4}"
+	},
+	{
+		"id": -1000008059,
+		"key": "ui_appr_note",
+		"en": "Each rank is a destiny: it comes when the value of the art reaches the threshold, and changes with it.",
+		"ch": "每个品阶都是一个气运：技艺数值达到门槛即获得，并随数值变化。",
+		"tc": "每個品階都是一個氣運：技藝數值達到門檻即獲得，並隨數值變化。",
+		"kr": "각 품계는 기운입니다: 기예 수치가 기준에 이르면 얻고, 수치에 따라 바뀝니다."
+	},
+	{
+		"id": -1000008060,
+		"key": "ui_appr_prev",
+		"en": "Previous",
+		"ch": "上一页",
+		"tc": "上一頁",
+		"kr": "이전"
+	},
+	{
+		"id": -1000008061,
+		"key": "ui_appr_next",
+		"en": "Next",
+		"ch": "下一页",
+		"tc": "下一頁",
+		"kr": "다음"
+	},
+	{
+		"id": -1000008062,
+		"key": "ui_appr_alchemy",
+		"en": "Alchemy",
+		"ch": "炼丹",
+		"tc": "煉丹",
+		"kr": "연단"
+	},
+	{
+		"id": -1000008063,
+		"key": "ui_appr_forge",
+		"en": "Forge",
+		"ch": "炼器",
+		"tc": "煉器",
+		"kr": "연기"
+	},
+	{
+		"id": -1000008064,
+		"key": "ui_appr_fengshui",
+		"en": "Feng Shui",
+		"ch": "风水",
+		"tc": "風水",
+		"kr": "풍수"
+	},
+	{
+		"id": -1000008065,
+		"key": "ui_appr_talismans",
+		"en": "Talismans",
+		"ch": "画符",
+		"tc": "畫符",
+		"kr": "부적"
+	},
+	{
+		"id": -1000008066,
+		"key": "ui_appr_herbology",
+		"en": "Herbology",
+		"ch": "采药",
+		"tc": "採藥",
+		"kr": "채약"
+	},
+	{
+		"id": -1000008067,
+		"key": "ui_appr_mining",
+		"en": "Mining",
+		"ch": "采矿",
+		"tc": "採礦",
+		"kr": "채광"
+	},
+	{
+		"id": -1000008068,
+		"key": "ui_trainee_title_martial",
+		"en": "Martial ranks",
+		"ch": "武道品阶",
+		"tc": "武道品階",
+		"kr": "무도 품계"
+	},
+	{
+		"id": -1000008069,
+		"key": "ui_trainee_title_magic",
+		"en": "Spell ranks",
+		"ch": "法道品阶",
+		"tc": "法道品階",
+		"kr": "법도 품계"
+	},
+	{
+		"id": -1000008070,
+		"key": "ui_trainee_martial",
+		"en": "Martial bases (sum)",
+		"ch": "武学资质（合计）",
+		"tc": "武學資質（合計）",
+		"kr": "무학 자질 (합계)"
+	},
+	{
+		"id": -1000008071,
+		"key": "ui_trainee_magic",
+		"en": "Spiritual roots (sum)",
+		"ch": "灵根资质（合计）",
+		"tc": "靈根資質（合計）",
+		"kr": "영근 자질 (합계)"
+	},
+	{
+		"id": -1000008072,
+		"key": "ui_panel_ranks",
+		"en": "Ranks",
+		"ch": "品阶",
+		"tc": "品階",
+		"kr": "품계"
+	},
+	{
+		"id": -1000008073,
+		"key": "ui_panel_rank",
+		"en": "Rank",
+		"ch": "阶",
+		"tc": "階",
+		"kr": "단계"
+	},
+	{
+		"id": -1000008074,
+		"key": "ui_panel_title",
+		"en": "Title",
+		"ch": "称号",
+		"tc": "稱號",
+		"kr": "칭호"
+	},
+	{
+		"id": -1000008075,
+		"key": "ui_panel_needs",
+		"en": "Needs",
+		"ch": "条件",
+		"tc": "條件",
+		"kr": "조건"
+	},
+	{
+		"id": -1000008076,
+		"key": "ui_panel_effect",
+		"en": "Effect",
+		"ch": "效果",
+		"tc": "效果",
+		"kr": "효과"
+	},
+	{
+		"id": -1000008077,
+		"key": "ui_panel_next",
+		"en": "Next: {0} at {1} ({2}%)",
+		"ch": "下一阶：{0}，需{1}（{2}%）",
+		"tc": "下一階：{0}，需{1}（{2}%）",
+		"kr": "다음: {0}, {1} 필요 ({2}%)"
+	},
+	{
+		"id": -1000008078,
+		"key": "ui_panel_top",
+		"en": "Highest rank reached",
+		"ch": "已达最高品阶",
+		"tc": "已達最高品階",
+		"kr": "최고 품계 도달"
+	},
+	{
+		"id": -1000008079,
+		"key": "ui_panel_back",
+		"en": "Back",
+		"ch": "返回",
+		"tc": "返回",
+		"kr": "뒤로"
+	},
+	{
+		"id": -1000008080,
+		"key": "ui_appr_overview",
+		"en": "The six arts",
+		"ch": "六艺",
+		"tc": "六藝",
+		"kr": "육예"
+	},
+	{
+		"id": -1000008081,
+		"key": "ui_appr_value",
+		"en": "{0} points",
+		"ch": "{0}点",
+		"tc": "{0}點",
+		"kr": "{0}점"
+	},
+	{
+		"id": -1000008082,
+		"key": "ui_appr_to_next",
+		"en": "next rank at {0}",
+		"ch": "下一阶：{0}",
+		"tc": "下一階：{0}",
+		"kr": "다음 품계: {0}"
+	},
+	{
+		"id": -1000008083,
+		"key": "ui_appr_overview_hint",
+		"en": "Press ? on an art for its 10 ranks.",
+		"ch": "点击各技艺的 ? 查看其10个品阶。",
+		"tc": "點擊各技藝的 ? 查看其10個品階。",
+		"kr": "각 기예의 ?를 눌러 10개 품계를 확인하세요."
+	},
+	{
+		"id": -1000008084,
+		"key": "ui_merchant_title",
+		"en": "Merchant ranks",
+		"ch": "商道品阶",
+		"tc": "商道品階",
+		"kr": "상도 품계"
+	},
+	{
+		"id": -1000008085,
+		"key": "ui_merchant_money",
+		"en": "Spirit stones",
+		"ch": "灵石",
+		"tc": "靈石",
+		"kr": "영석"
+	},
+	{
+		"id": -1000008086,
+		"key": "ui_merchant_note",
+		"en": "A merchant rank reached is kept, even when the spirit stones go down.",
+		"ch": "已达到的商道品阶不会因灵石减少而降低。",
+		"tc": "已達到的商道品階不會因靈石減少而降低。",
+		"kr": "도달한 상도 품계는 영석이 줄어도 유지됩니다."
+	}
 ]

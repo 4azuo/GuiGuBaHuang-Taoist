@@ -818,5 +818,155 @@
 		"id": -1000001213,
 		"key": "smcfgs213",
 		"en|ch|tc|kr": "Chỉ truyền một người: lão tiền bối viết tuyệt học cuối cùng và thử thách hai truyền nhân (cần mod Dao of Creation)."
+	},
+	{
+		"id": -1000001214,
+		"key": "smcfgs214",
+		"en|ch|tc|kr": "Tỉ lệ khiên"
+	},
+	{
+		"id": -1000001215,
+		"key": "smcfgs215",
+		"en|ch|tc|kr": "Tỉ lệ nổ"
+	},
+	{
+		"id": -1000001216,
+		"key": "smcfgs216",
+		"en|ch|tc|kr": "Tỉ lệ phân thân"
+	},
+	{
+		"id": -1000001217,
+		"key": "smcfgs217",
+		"en|ch|tc|kr": "Quái không có khiên"
+	},
+	{
+		"id": -1000001218,
+		"key": "smcfgs218",
+		"en|ch|tc|kr": "Tư chất (basis): chỉ số vũ khí và linh căn của quái.\n- Đòn cùng loại của quái mạnh hơn.\n- Đòn cùng loại của bạn gây ít sát thương hơn.\n- Tăng đỡ đòn; Phong: né và tốc độ; Thổ, Quyền, Chưởng, Chỉ: thủ; Mộc: hồi HP.\nTư chất vốn đã tăng theo cảnh giới và độ khó, tỉ lệ này cộng thêm."
+	},
+	{
+		"id": -1000001219,
+		"key": "smcfgs219",
+		"en|ch|tc|kr": "Cộng HP tối đa cho quái theo công của bạn:\ncông của bạn x độ khó (Normal 1 - Chaos 5) x\n- {0} với quái thường\n- {1} với tinh anh\n- {2} với boss\n- {3} với quái dạng NPC\nBạn đánh càng mạnh thì quái càng nhiều HP."
+	},
+	{
+		"id": -1000001220,
+		"key": "smcfgs220",
+		"en|ch|tc|kr": "Số tháng của một lượt trưởng thành (bạn, NPC và quái).\n- Thấp: mọi thứ lớn nhanh, khó hơn, xử lý tháng lâu hơn.\n- Cao: lớn chậm, dễ hơn, xử lý tháng nhanh hơn.\nMỗi lượt tăng công, thủ, HP của quái (x cảnh giới x độ khó), kể cả khi các thanh trượt phía trên bằng 0."
+	},
+	{
+		"id": -1000001221,
+		"key": "smcfgs221",
+		"en|ch|tc|kr": "Tỉ lệ = giá trị x cảnh giới x độ khó (Normal 1 - Chaos 5), chỉnh theo từng thanh (-100%: tắt).\n- Khiên {0}%: hấp thụ {3}% HP tối đa (thường), {4}% (tinh anh)\n- Nổ khi chết {1}%\n- Phân thân khi chết {2}%\nBoss có khiên: luôn có, {5}% HP tối đa. Quái không có khiên: tắt toàn bộ các khiên này."
+	},
+	{
+		"id": -1000001222,
+		"key": "smcfgs222",
+		"en|ch|tc|kr": "Độ khó cũng làm tăng chỉ số NPC và quái vật (chưa bao gồm S&M Configs).\n\nQuái vật (Taoist):\n- Tư chất x{0}\n- Trưởng thành (thời gian, số giết, vùng, chuyển sinh) x{0}\n- Tỉ lệ khiên, nổ, phân thân x{0}\n- Sát thương tối thiểu x{0}"
+	},
+	{
+		"id": -1000001223,
+		"key": "smcfgs223",
+		"en|ch|tc|kr": "Điểm S&M khuyến nghị: tối đa {0:#,##0} P."
+	},
+	{
+		"id": -1000001224,
+		"key": "smcfgs224",
+		"en|ch|tc|kr": "Khuyến nghị cho người mới và mọi mức điểm S&M."
+	},
+	{
+		"id": -1000001225,
+		"key": "smcfgs225",
+		"en|ch|tc|kr": "Công pháp & đan dược"
+	},
+	{
+		"id": -1000001226,
+		"key": "smcfgs226",
+		"en|ch|tc|kr": "Kinh nghiệm thuần thục"
+	},
+	{
+		"id": -1000001227,
+		"key": "smcfgs227",
+		"en|ch|tc|kr": "Tiêu hao linh lực"
+	},
+	{
+		"id": -1000001228,
+		"key": "smcfgs228",
+		"en|ch|tc|kr": "Thời gian hồi chiêu"
+	},
+	{
+		"id": -1000001229,
+		"key": "smcfgs229",
+		"en|ch|tc|kr": "Tư chất yêu cầu (gốc)"
+	},
+	{
+		"id": -1000001230,
+		"key": "smcfgs230",
+		"en|ch|tc|kr": "Tư chất yêu cầu (mỗi bậc)"
+	},
+	{
+		"id": -1000001231,
+		"key": "smcfgs231",
+		"en|ch|tc|kr": "Đạo điểm yêu cầu (gốc)"
+	},
+	{
+		"id": -1000001232,
+		"key": "smcfgs232",
+		"en|ch|tc|kr": "Đạo điểm yêu cầu (mỗi bậc)"
+	},
+	{
+		"id": -1000001233,
+		"key": "smcfgs233",
+		"en|ch|tc|kr": "Hiệu quả đan tăng lực"
+	},
+	{
+		"id": -1000001234,
+		"key": "smcfgs234",
+		"en|ch|tc|kr": "Mỗi tỉ lệ cộng vào x1 của giá trị trong ModConf/mod_configs.json (theo phẩm 1-10): -50% là giảm một nửa, +100% là gấp đôi. Công pháp tốn hơn, chậm hơn, yêu cầu cao hơn thì khó hơn (+P); đan tăng lực mạnh hơn thì dễ hơn (-P). Giá trị được tính lại mỗi lần tải save."
+	},
+	{
+		"id": -1000001235,
+		"key": "smcfgs235",
+		"en|ch|tc|kr": "Dược Vương di thư: một lão luyện đan sư giữ những trang rách của một thần y huyền thoại (từ Kết Đan trở lên)."
+	},
+	{
+		"id": -1000001236,
+		"key": "smcfgs236",
+		"en|ch|tc|kr": "Tùy chọn của mod {0} (không tính vào điểm S&M)"
+	},
+	{
+		"id": -1000001237,
+		"key": "smcfgs237",
+		"en|ch|tc|kr": "Không có thể chất"
+	},
+	{
+		"id": -1000001238,
+		"key": "smcfgs238",
+		"en|ch|tc|kr": "Thể chất: các cơ thể đặc biệt (Dược Thể, Kiếm Cốt, Kim Cương Thể, Tiên Thiên Linh Thể, Long Huyết Thể, Lôi Thể, Độc Thể), tu được bao nhiêu có bấy nhiêu, mỗi loại một cách tu (đan dược, võ học, thiên tài địa bảo, lôi kiếp, cốt truyện, bẩm sinh). Tắt: +1.000 P."
+	},
+	{
+		"id": -1000001239,
+		"key": "smcfgs239",
+		"en|ch|tc|kr": "Lưu số liệu cân bằng"
+	},
+	{
+		"id": -1000001240,
+		"key": "smcfgs240",
+		"en|ch|tc|kr": "chỉ lưu trên máy này; gửi kèm khi báo cáo cân bằng"
+	},
+	{
+		"id": -1000001241,
+		"key": "smcfgs241",
+		"en|ch|tc|kr": "Hiệu năng: {0}"
+	},
+	{
+		"id": -1000001242,
+		"key": "smcfgs242",
+		"en|ch|tc|kr": "BẬT"
+	},
+	{
+		"id": -1000001243,
+		"key": "smcfgs243",
+		"en|ch|tc|kr": "TẮT"
 	}
 ]

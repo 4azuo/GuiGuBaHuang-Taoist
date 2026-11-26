@@ -32,6 +32,16 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     var items = ui.itemList.ToArray();
                     c.Assert(items.Length > 0, $"difficulty items: {items.Length}");
                     c.Assert(items.All(x => !x.goRoot1.activeSelf && !x.goRoot2.activeSelf), "vanilla difficulty descriptions hidden on every item");
+                    foreach (var x in items)
+                    {
+                        var d = x.goGroupRoot.transform.Find(UIDifficultyEvent.DESC_NAME)?.GetComponentInChildren<UnityEngine.UI.Text>();
+                        c.Assert(d != null && d.gameObject.activeInHierarchy && d.text == UIDifficultyEvent.Description((int)x.gameLevel), $"Taoist description of {x.gameLevel} ({(int)x.gameLevel})");
+                    }
+                    // the note shared by every difficulty: once, a red line at the top right (not in every card)
+                    var note = ui.transform.Find(UIDifficultyEvent.NOTE_NAME)?.GetComponent<UnityEngine.UI.Text>();
+                    c.Assert(note != null && note.gameObject.activeInHierarchy && note.text == UIDifficultyEvent.Note && !string.IsNullOrEmpty(note.text), $"shared note at the top right: {note?.text}");
+                    c.Assert(items.All(x => !UIDifficultyEvent.Description((int)x.gameLevel).Contains(UIDifficultyEvent.Note)), "the note is not repeated in the cards");
+                    c.Snap("difficulty");
                 })
                 .Step("character creation", c =>
                 {

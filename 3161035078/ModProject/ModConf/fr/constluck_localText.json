@@ -1,0 +1,702 @@
+[
+	{
+		"id": -1000018000,
+		"key": "constluck420301001",
+		"en|ch|tc|kr": "Chair d'Herbes"
+	},
+	{
+		"id": -1000018001,
+		"key": "constluck420301001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +10% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018002,
+		"key": "constluck420301002",
+		"en|ch|tc|kr": "Peau d'Élixir"
+	},
+	{
+		"id": -1000018003,
+		"key": "constluck420301002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +20% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018004,
+		"key": "constluck420301003",
+		"en|ch|tc|kr": "Cent Herbes"
+	},
+	{
+		"id": -1000018005,
+		"key": "constluck420301003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +30% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018006,
+		"key": "constluck420301004",
+		"en|ch|tc|kr": "Moelle de Pilule"
+	},
+	{
+		"id": -1000018007,
+		"key": "constluck420301004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +40% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018008,
+		"key": "constluck420301005",
+		"en|ch|tc|kr": "Esprit des Herbes"
+	},
+	{
+		"id": -1000018009,
+		"key": "constluck420301005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +50% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018010,
+		"key": "constluck420301006",
+		"en|ch|tc|kr": "Élixir d'Or"
+	},
+	{
+		"id": -1000018011,
+		"key": "constluck420301006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +60% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018012,
+		"key": "constluck420301007",
+		"en|ch|tc|kr": "Mille Pilules"
+	},
+	{
+		"id": -1000018013,
+		"key": "constluck420301007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +70% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018014,
+		"key": "constluck420301008",
+		"en|ch|tc|kr": "Herbe Immortelle"
+	},
+	{
+		"id": -1000018015,
+		"key": "constluck420301008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +80% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018016,
+		"key": "constluck420301009",
+		"en|ch|tc|kr": "Sage des Pilules"
+	},
+	{
+		"id": -1000018017,
+		"key": "constluck420301009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +90% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018018,
+		"key": "constluck420301010",
+		"en|ch|tc|kr": "Roi des Remèdes"
+	},
+	{
+		"id": -1000018019,
+		"key": "constluck420301010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +100% de soin des potions (en combat)"
+	},
+	{
+		"id": -1000018020,
+		"key": "constluck420302001",
+		"en|ch|tc|kr": "Germe d'Épée"
+	},
+	{
+		"id": -1000018021,
+		"key": "constluck420302001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +1% attaque, +5% épée (en combat)"
+	},
+	{
+		"id": -1000018022,
+		"key": "constluck420302002",
+		"en|ch|tc|kr": "Épée de Fer"
+	},
+	{
+		"id": -1000018023,
+		"key": "constluck420302002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +2% attaque, +10% épée (en combat)"
+	},
+	{
+		"id": -1000018024,
+		"key": "constluck420302003",
+		"en|ch|tc|kr": "Intention d'Épée"
+	},
+	{
+		"id": -1000018025,
+		"key": "constluck420302003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +3% attaque, +15% épée (en combat)"
+	},
+	{
+		"id": -1000018026,
+		"key": "constluck420302004",
+		"en|ch|tc|kr": "Lame Spirituelle"
+	},
+	{
+		"id": -1000018027,
+		"key": "constluck420302004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +4% attaque, +20% épée (en combat)"
+	},
+	{
+		"id": -1000018028,
+		"key": "constluck420302005",
+		"en|ch|tc|kr": "Cœur d'Épée"
+	},
+	{
+		"id": -1000018029,
+		"key": "constluck420302005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +5% attaque, +25% épée (en combat)"
+	},
+	{
+		"id": -1000018030,
+		"key": "constluck420302006",
+		"en|ch|tc|kr": "Âme d'Épée"
+	},
+	{
+		"id": -1000018031,
+		"key": "constluck420302006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +6% attaque, +30% épée (en combat)"
+	},
+	{
+		"id": -1000018032,
+		"key": "constluck420302007",
+		"en|ch|tc|kr": "Fend-le-Ciel"
+	},
+	{
+		"id": -1000018033,
+		"key": "constluck420302007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +7% attaque, +35% épée (en combat)"
+	},
+	{
+		"id": -1000018034,
+		"key": "constluck420302008",
+		"en|ch|tc|kr": "Souverain d'Épée"
+	},
+	{
+		"id": -1000018035,
+		"key": "constluck420302008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +8% attaque, +40% épée (en combat)"
+	},
+	{
+		"id": -1000018036,
+		"key": "constluck420302009",
+		"en|ch|tc|kr": "Épée Suprême"
+	},
+	{
+		"id": -1000018037,
+		"key": "constluck420302009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +9% attaque, +45% épée (en combat)"
+	},
+	{
+		"id": -1000018038,
+		"key": "constluck420302010",
+		"en|ch|tc|kr": "Épée Primordiale"
+	},
+	{
+		"id": -1000018039,
+		"key": "constluck420302010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +10% attaque, +50% épée (en combat)"
+	},
+	{
+		"id": -1000018040,
+		"key": "constluck420303001",
+		"en|ch|tc|kr": "Peau de Bronze"
+	},
+	{
+		"id": -1000018041,
+		"key": "constluck420303001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +3% défense, +2% PV max (en combat)"
+	},
+	{
+		"id": -1000018042,
+		"key": "constluck420303002",
+		"en|ch|tc|kr": "Os de Fer"
+	},
+	{
+		"id": -1000018043,
+		"key": "constluck420303002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +6% défense, +4% PV max (en combat)"
+	},
+	{
+		"id": -1000018044,
+		"key": "constluck420303003",
+		"en|ch|tc|kr": "Brise-Roc"
+	},
+	{
+		"id": -1000018045,
+		"key": "constluck420303003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +9% défense, +6% PV max (en combat)"
+	},
+	{
+		"id": -1000018046,
+		"key": "constluck420303004",
+		"en|ch|tc|kr": "Cloche d'Or"
+	},
+	{
+		"id": -1000018047,
+		"key": "constluck420303004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +12% défense, +8% PV max (en combat)"
+	},
+	{
+		"id": -1000018048,
+		"key": "constluck420303005",
+		"en|ch|tc|kr": "Vajra"
+	},
+	{
+		"id": -1000018049,
+		"key": "constluck420303005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +15% défense, +10% PV max (en combat)"
+	},
+	{
+		"id": -1000018050,
+		"key": "constluck420303006",
+		"en|ch|tc|kr": "Incassable"
+	},
+	{
+		"id": -1000018051,
+		"key": "constluck420303006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +18% défense, +12% PV max (en combat)"
+	},
+	{
+		"id": -1000018052,
+		"key": "constluck420303007",
+		"en|ch|tc|kr": "Or d'Arhat"
+	},
+	{
+		"id": -1000018053,
+		"key": "constluck420303007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +21% défense, +14% PV max (en combat)"
+	},
+	{
+		"id": -1000018054,
+		"key": "constluck420303008",
+		"en|ch|tc|kr": "Vajra Bodhi"
+	},
+	{
+		"id": -1000018055,
+		"key": "constluck420303008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +24% défense, +16% PV max (en combat)"
+	},
+	{
+		"id": -1000018056,
+		"key": "constluck420303009",
+		"en|ch|tc|kr": "Lumière de Bouddha"
+	},
+	{
+		"id": -1000018057,
+		"key": "constluck420303009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +27% défense, +18% PV max (en combat)"
+	},
+	{
+		"id": -1000018058,
+		"key": "constluck420303010",
+		"en|ch|tc|kr": "Impérissable"
+	},
+	{
+		"id": -1000018059,
+		"key": "constluck420303010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +30% défense, +20% PV max (en combat)"
+	},
+	{
+		"id": -1000018060,
+		"key": "constluck420304001",
+		"en|ch|tc|kr": "Touche d'Esprit"
+	},
+	{
+		"id": -1000018061,
+		"key": "constluck420304001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +4% PM max, +1% attaque (en combat)"
+	},
+	{
+		"id": -1000018062,
+		"key": "constluck420304002",
+		"en|ch|tc|kr": "Esprit Limpide"
+	},
+	{
+		"id": -1000018063,
+		"key": "constluck420304002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +8% PM max, +2% attaque (en combat)"
+	},
+	{
+		"id": -1000018064,
+		"key": "constluck420304003",
+		"en|ch|tc|kr": "Source d'Esprit"
+	},
+	{
+		"id": -1000018065,
+		"key": "constluck420304003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +12% PM max, +3% attaque (en combat)"
+	},
+	{
+		"id": -1000018066,
+		"key": "constluck420304004",
+		"en|ch|tc|kr": "Veine d'Esprit"
+	},
+	{
+		"id": -1000018067,
+		"key": "constluck420304004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +16% PM max, +4% attaque (en combat)"
+	},
+	{
+		"id": -1000018068,
+		"key": "constluck420304005",
+		"en|ch|tc|kr": "Esprit Inné"
+	},
+	{
+		"id": -1000018069,
+		"key": "constluck420304005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +20% PM max, +5% attaque (en combat)"
+	},
+	{
+		"id": -1000018070,
+		"key": "constluck420304006",
+		"en|ch|tc|kr": "Qi Pourpre"
+	},
+	{
+		"id": -1000018071,
+		"key": "constluck420304006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +24% PM max, +6% attaque (en combat)"
+	},
+	{
+		"id": -1000018072,
+		"key": "constluck420304007",
+		"en|ch|tc|kr": "Né du Ciel"
+	},
+	{
+		"id": -1000018073,
+		"key": "constluck420304007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +28% PM max, +7% attaque (en combat)"
+	},
+	{
+		"id": -1000018074,
+		"key": "constluck420304008",
+		"en|ch|tc|kr": "Esprit Stellaire"
+	},
+	{
+		"id": -1000018075,
+		"key": "constluck420304008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +32% PM max, +8% attaque (en combat)"
+	},
+	{
+		"id": -1000018076,
+		"key": "constluck420304009",
+		"en|ch|tc|kr": "Chaos Primordial"
+	},
+	{
+		"id": -1000018077,
+		"key": "constluck420304009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +36% PM max, +9% attaque (en combat)"
+	},
+	{
+		"id": -1000018078,
+		"key": "constluck420304010",
+		"en|ch|tc|kr": "Corps du Dao"
+	},
+	{
+		"id": -1000018079,
+		"key": "constluck420304010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +40% PM max, +10% attaque (en combat)"
+	},
+	{
+		"id": -1000018080,
+		"key": "constluck420305001",
+		"en|ch|tc|kr": "Sang d'Écailles"
+	},
+	{
+		"id": -1000018081,
+		"key": "constluck420305001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +4% PV max, +1% attaque (en combat)"
+	},
+	{
+		"id": -1000018082,
+		"key": "constluck420305002",
+		"en|ch|tc|kr": "Sang de Serpent"
+	},
+	{
+		"id": -1000018083,
+		"key": "constluck420305002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +8% PV max, +2% attaque (en combat)"
+	},
+	{
+		"id": -1000018084,
+		"key": "constluck420305003",
+		"en|ch|tc|kr": "Sang de Jiao"
+	},
+	{
+		"id": -1000018085,
+		"key": "constluck420305003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +12% PV max, +3% attaque (en combat)"
+	},
+	{
+		"id": -1000018086,
+		"key": "constluck420305004",
+		"en|ch|tc|kr": "Sang de Qiu"
+	},
+	{
+		"id": -1000018087,
+		"key": "constluck420305004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +16% PV max, +4% attaque (en combat)"
+	},
+	{
+		"id": -1000018088,
+		"key": "constluck420305005",
+		"en|ch|tc|kr": "Sang de Dragon"
+	},
+	{
+		"id": -1000018089,
+		"key": "constluck420305005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +20% PV max, +5% attaque (en combat)"
+	},
+	{
+		"id": -1000018090,
+		"key": "constluck420305006",
+		"en|ch|tc|kr": "Vrai Dragon"
+	},
+	{
+		"id": -1000018091,
+		"key": "constluck420305006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +24% PV max, +6% attaque (en combat)"
+	},
+	{
+		"id": -1000018092,
+		"key": "constluck420305007",
+		"en|ch|tc|kr": "Dragon Azur"
+	},
+	{
+		"id": -1000018093,
+		"key": "constluck420305007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +28% PV max, +7% attaque (en combat)"
+	},
+	{
+		"id": -1000018094,
+		"key": "constluck420305008",
+		"en|ch|tc|kr": "Dragon Ancestral"
+	},
+	{
+		"id": -1000018095,
+		"key": "constluck420305008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +32% PV max, +8% attaque (en combat)"
+	},
+	{
+		"id": -1000018096,
+		"key": "constluck420305009",
+		"en|ch|tc|kr": "Empereur Dragon"
+	},
+	{
+		"id": -1000018097,
+		"key": "constluck420305009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +36% PV max, +9% attaque (en combat)"
+	},
+	{
+		"id": -1000018098,
+		"key": "constluck420305010",
+		"en|ch|tc|kr": "Dieu Dragon"
+	},
+	{
+		"id": -1000018099,
+		"key": "constluck420305010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +40% PV max, +10% attaque (en combat)"
+	},
+	{
+		"id": -1000018100,
+		"key": "constluck420306001",
+		"en|ch|tc|kr": "Foudroyé"
+	},
+	{
+		"id": -1000018101,
+		"key": "constluck420306001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +1% attaque, +5% foudre (en combat)"
+	},
+	{
+		"id": -1000018102,
+		"key": "constluck420306002",
+		"en|ch|tc|kr": "Forgé de Foudre"
+	},
+	{
+		"id": -1000018103,
+		"key": "constluck420306002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +2% attaque, +10% foudre (en combat)"
+	},
+	{
+		"id": -1000018104,
+		"key": "constluck420306003",
+		"en|ch|tc|kr": "Veine de Foudre"
+	},
+	{
+		"id": -1000018105,
+		"key": "constluck420306003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +3% attaque, +15% foudre (en combat)"
+	},
+	{
+		"id": -1000018106,
+		"key": "constluck420306004",
+		"en|ch|tc|kr": "Foudre Pourpre"
+	},
+	{
+		"id": -1000018107,
+		"key": "constluck420306004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +4% attaque, +20% foudre (en combat)"
+	},
+	{
+		"id": -1000018108,
+		"key": "constluck420306005",
+		"en|ch|tc|kr": "Esprit de Foudre"
+	},
+	{
+		"id": -1000018109,
+		"key": "constluck420306005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +5% attaque, +25% foudre (en combat)"
+	},
+	{
+		"id": -1000018110,
+		"key": "constluck420306006",
+		"en|ch|tc|kr": "Cinq Foudres"
+	},
+	{
+		"id": -1000018111,
+		"key": "constluck420306006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +6% attaque, +30% foudre (en combat)"
+	},
+	{
+		"id": -1000018112,
+		"key": "constluck420306007",
+		"en|ch|tc|kr": "Foudre Céleste"
+	},
+	{
+		"id": -1000018113,
+		"key": "constluck420306007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +7% attaque, +35% foudre (en combat)"
+	},
+	{
+		"id": -1000018114,
+		"key": "constluck420306008",
+		"en|ch|tc|kr": "Tribulation"
+	},
+	{
+		"id": -1000018115,
+		"key": "constluck420306008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +8% attaque, +40% foudre (en combat)"
+	},
+	{
+		"id": -1000018116,
+		"key": "constluck420306009",
+		"en|ch|tc|kr": "Empereur de Foudre"
+	},
+	{
+		"id": -1000018117,
+		"key": "constluck420306009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +9% attaque, +45% foudre (en combat)"
+	},
+	{
+		"id": -1000018118,
+		"key": "constluck420306010",
+		"en|ch|tc|kr": "Foudre Divine"
+	},
+	{
+		"id": -1000018119,
+		"key": "constluck420306010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +10% attaque, +50% foudre (en combat)"
+	},
+	{
+		"id": -1000018120,
+		"key": "constluck420307001",
+		"en|ch|tc|kr": "Goûte-Poison"
+	},
+	{
+		"id": -1000018121,
+		"key": "constluck420307001desc",
+		"en|ch|tc|kr": "Constitution, palier 1 : +2% défense, +5% bois (en combat)"
+	},
+	{
+		"id": -1000018122,
+		"key": "constluck420307002",
+		"en|ch|tc|kr": "Antipoison"
+	},
+	{
+		"id": -1000018123,
+		"key": "constluck420307002desc",
+		"en|ch|tc|kr": "Constitution, palier 2 : +4% défense, +10% bois (en combat)"
+	},
+	{
+		"id": -1000018124,
+		"key": "constluck420307003",
+		"en|ch|tc|kr": "Cent Poisons"
+	},
+	{
+		"id": -1000018125,
+		"key": "constluck420307003desc",
+		"en|ch|tc|kr": "Constitution, palier 3 : +6% défense, +15% bois (en combat)"
+	},
+	{
+		"id": -1000018126,
+		"key": "constluck420307004",
+		"en|ch|tc|kr": "Veine Venimeuse"
+	},
+	{
+		"id": -1000018127,
+		"key": "constluck420307004desc",
+		"en|ch|tc|kr": "Constitution, palier 4 : +8% défense, +20% bois (en combat)"
+	},
+	{
+		"id": -1000018128,
+		"key": "constluck420307005",
+		"en|ch|tc|kr": "Esprit Venimeux"
+	},
+	{
+		"id": -1000018129,
+		"key": "constluck420307005desc",
+		"en|ch|tc|kr": "Constitution, palier 5 : +10% défense, +25% bois (en combat)"
+	},
+	{
+		"id": -1000018130,
+		"key": "constluck420307006",
+		"en|ch|tc|kr": "Mange-Poison"
+	},
+	{
+		"id": -1000018131,
+		"key": "constluck420307006desc",
+		"en|ch|tc|kr": "Constitution, palier 6 : +12% défense, +30% bois (en combat)"
+	},
+	{
+		"id": -1000018132,
+		"key": "constluck420307007",
+		"en|ch|tc|kr": "Mille Venins"
+	},
+	{
+		"id": -1000018133,
+		"key": "constluck420307007desc",
+		"en|ch|tc|kr": "Constitution, palier 7 : +14% défense, +35% bois (en combat)"
+	},
+	{
+		"id": -1000018134,
+		"key": "constluck420307008",
+		"en|ch|tc|kr": "Roi des Venins"
+	},
+	{
+		"id": -1000018135,
+		"key": "constluck420307008desc",
+		"en|ch|tc|kr": "Constitution, palier 8 : +16% défense, +40% bois (en combat)"
+	},
+	{
+		"id": -1000018136,
+		"key": "constluck420307009",
+		"en|ch|tc|kr": "Saint des Venins"
+	},
+	{
+		"id": -1000018137,
+		"key": "constluck420307009desc",
+		"en|ch|tc|kr": "Constitution, palier 9 : +18% défense, +45% bois (en combat)"
+	},
+	{
+		"id": -1000018138,
+		"key": "constluck420307010",
+		"en|ch|tc|kr": "Ancêtre des Venins"
+	},
+	{
+		"id": -1000018139,
+		"key": "constluck420307010desc",
+		"en|ch|tc|kr": "Constitution, palier 10 : +20% défense, +50% bois (en combat)"
+	}
+]

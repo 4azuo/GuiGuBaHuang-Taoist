@@ -268,5 +268,170 @@
 		"id": "-1000008053",
 		"key": "ui_town_portal_off",
 		"en|ch|tc|kr": "Đã TẮT \"Cổng thông tin duy nhất tại Thành phố và Giáo phái\": thị trấn nhỏ có thể có lại truyền tống trận."
+	},
+	{
+		"id": -1000008054,
+		"key": "ui_appr_title",
+		"en|ch|tc|kr": "Phẩm giai kỹ nghệ"
+	},
+	{
+		"id": -1000008055,
+		"key": "ui_appr_header",
+		"en|ch|tc|kr": "{0}: {1} điểm, {2}"
+	},
+	{
+		"id": -1000008056,
+		"key": "ui_appr_none",
+		"en|ch|tc|kr": "chưa có phẩm giai"
+	},
+	{
+		"id": -1000008057,
+		"key": "ui_appr_rank",
+		"en|ch|tc|kr": "bậc {0}: {1}"
+	},
+	{
+		"id": -1000008058,
+		"key": "ui_appr_line",
+		"en|ch|tc|kr": "Bậc {0} {1}: {2} từ {3}, {4}"
+	},
+	{
+		"id": -1000008059,
+		"key": "ui_appr_note",
+		"en|ch|tc|kr": "Mỗi bậc là một khí vận: có được khi chỉ số kỹ nghệ đạt ngưỡng, và đổi theo chỉ số."
+	},
+	{
+		"id": -1000008060,
+		"key": "ui_appr_prev",
+		"en|ch|tc|kr": "Trước"
+	},
+	{
+		"id": -1000008061,
+		"key": "ui_appr_next",
+		"en|ch|tc|kr": "Tiếp"
+	},
+	{
+		"id": -1000008062,
+		"key": "ui_appr_alchemy",
+		"en|ch|tc|kr": "Luyện đan"
+	},
+	{
+		"id": -1000008063,
+		"key": "ui_appr_forge",
+		"en|ch|tc|kr": "Luyện khí"
+	},
+	{
+		"id": -1000008064,
+		"key": "ui_appr_fengshui",
+		"en|ch|tc|kr": "Phong thủy"
+	},
+	{
+		"id": -1000008065,
+		"key": "ui_appr_talismans",
+		"en|ch|tc|kr": "Họa phù"
+	},
+	{
+		"id": -1000008066,
+		"key": "ui_appr_herbology",
+		"en|ch|tc|kr": "Thải dược"
+	},
+	{
+		"id": -1000008067,
+		"key": "ui_appr_mining",
+		"en|ch|tc|kr": "Khai khoáng"
+	},
+	{
+		"id": -1000008068,
+		"key": "ui_trainee_title_martial",
+		"en|ch|tc|kr": "Phẩm giai võ đạo"
+	},
+	{
+		"id": -1000008069,
+		"key": "ui_trainee_title_magic",
+		"en|ch|tc|kr": "Phẩm giai pháp đạo"
+	},
+	{
+		"id": -1000008070,
+		"key": "ui_trainee_martial",
+		"en|ch|tc|kr": "Tư chất võ học (tổng)"
+	},
+	{
+		"id": -1000008071,
+		"key": "ui_trainee_magic",
+		"en|ch|tc|kr": "Tư chất linh căn (tổng)"
+	},
+	{
+		"id": -1000008072,
+		"key": "ui_panel_ranks",
+		"en|ch|tc|kr": "Các bậc"
+	},
+	{
+		"id": -1000008073,
+		"key": "ui_panel_rank",
+		"en|ch|tc|kr": "Bậc"
+	},
+	{
+		"id": -1000008074,
+		"key": "ui_panel_title",
+		"en|ch|tc|kr": "Danh hiệu"
+	},
+	{
+		"id": -1000008075,
+		"key": "ui_panel_needs",
+		"en|ch|tc|kr": "Cần"
+	},
+	{
+		"id": -1000008076,
+		"key": "ui_panel_effect",
+		"en|ch|tc|kr": "Hiệu ứng"
+	},
+	{
+		"id": -1000008077,
+		"key": "ui_panel_next",
+		"en|ch|tc|kr": "Tiếp: {0} khi đạt {1} ({2}%)"
+	},
+	{
+		"id": -1000008078,
+		"key": "ui_panel_top",
+		"en|ch|tc|kr": "Đã đạt bậc cao nhất"
+	},
+	{
+		"id": -1000008079,
+		"key": "ui_panel_back",
+		"en|ch|tc|kr": "Quay lại"
+	},
+	{
+		"id": -1000008080,
+		"key": "ui_appr_overview",
+		"en|ch|tc|kr": "Lục nghệ"
+	},
+	{
+		"id": -1000008081,
+		"key": "ui_appr_value",
+		"en|ch|tc|kr": "{0} điểm"
+	},
+	{
+		"id": -1000008082,
+		"key": "ui_appr_to_next",
+		"en|ch|tc|kr": "bậc tiếp ở {0}"
+	},
+	{
+		"id": -1000008083,
+		"key": "ui_appr_overview_hint",
+		"en|ch|tc|kr": "Nhấn ? ở mỗi nghề để xem 10 bậc."
+	},
+	{
+		"id": -1000008084,
+		"key": "ui_merchant_title",
+		"en|ch|tc|kr": "Phẩm giai thương đạo"
+	},
+	{
+		"id": -1000008085,
+		"key": "ui_merchant_money",
+		"en|ch|tc|kr": "Linh thạch"
+	},
+	{
+		"id": -1000008086,
+		"key": "ui_merchant_note",
+		"en|ch|tc|kr": "Bậc thương đạo đã đạt được giữ nguyên, kể cả khi linh thạch giảm."
 	}
 ]

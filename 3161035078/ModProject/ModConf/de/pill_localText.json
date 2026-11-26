@@ -1,0 +1,87 @@
+[
+	{
+		"id": -1000016000,
+		"key": "pill_title",
+		"en|ch|tc|kr": "Pillenkörper"
+	},
+	{
+		"id": -1000016001,
+		"key": "pill_summary",
+		"en|ch|tc|kr": "Pillenkörper Stufe {0} (Grenze des Reichs {1}), {2} Pillenpunkte (nächste Stufe: {3}).\nJede Heilpille im Kampf zählt ihren Grad.\n- Stufen: +{4}% Heilung der Pillen\n- Alchemie: +{5}% mit einer selbst gebrauten Pillenart\n- Neunfach gedrehte Goldpille: {6} (+10% der max. HP / MP je Pille)\n- Vermächtnis des Medizinkönigs: {7}"
+	},
+	{
+		"id": -1000016002,
+		"key": "pill_yes",
+		"en|ch|tc|kr": "ja"
+	},
+	{
+		"id": -1000016003,
+		"key": "pill_no",
+		"en|ch|tc|kr": "nein"
+	},
+	{
+		"id": -1000016004,
+		"key": "pill_king_heal",
+		"en|ch|tc|kr": "+30% Heilung"
+	},
+	{
+		"id": -1000016005,
+		"key": "pill_king_focus",
+		"en|ch|tc|kr": "die Hälfte der Konzentration einer Pille zurück"
+	},
+	{
+		"id": -1000016006,
+		"key": "log_pill_tier",
+		"en|ch|tc|kr": "Pillenkörper: Stufe {0} (+{1}% Heilung der Pillen)."
+	},
+	{
+		"id": -1000016007,
+		"key": "log_pill_capped",
+		"en|ch|tc|kr": "Pillenkörper: Stufe {0} ist die Grenze deines Reichs; durchbrich es, um weiterzukommen."
+	},
+	{
+		"id": -1000016008,
+		"key": "log_pill_nineturn",
+		"en|ch|tc|kr": "Du hast die neunfach gedrehte Goldpille verfeinert: jede Pille gibt nun 10% deiner max. HP / MP mehr."
+	},
+	{
+		"id": -1000016009,
+		"key": "log_pill_king_heal",
+		"en|ch|tc|kr": "Vermächtnis des Medizinkönigs: deine Pillen heilen 30% mehr."
+	},
+	{
+		"id": -1000016010,
+		"key": "log_pill_king_focus",
+		"en|ch|tc|kr": "Vermächtnis des Medizinkönigs: die Hälfte der Konzentration einer Pille kommt zurück."
+	},
+	{
+		"id": -1000016011,
+		"key": "pill_nineturn",
+		"en|ch|tc|kr": "Aus einem zerstörten Ofen steigt neunfarbiger Rauch. Darin dreht sich eine Pille von selbst - die neunfach gedrehte Goldpille, seit tausend Jahren unvollendet.\nSie braucht {1} Kräuter und {0:#,##0} [icon:zm_lingshi] Geistersteine für das Feuer."
+	},
+	{
+		"id": -1000016012,
+		"key": "pill_nineturn_o1",
+		"en|ch|tc|kr": "Die Pille vollenden"
+	},
+	{
+		"id": -1000016013,
+		"key": "pill_nineturn_o2",
+		"en|ch|tc|kr": "Gehen"
+	},
+	{
+		"id": -1000016014,
+		"key": "pill_nineturn_leave",
+		"en|ch|tc|kr": "Du gehst. Hinter dir verblasst der neunfarbige Rauch, der Ofen erkaltet."
+	},
+	{
+		"id": -1000016015,
+		"key": "pill_nineturn_noherb",
+		"en|ch|tc|kr": "Du brauchst {1} Kräuter für den Ofen. Der Rauch verblasst, bevor du sie findest."
+	},
+	{
+		"id": -1000016016,
+		"key": "pill_nineturn_done",
+		"en|ch|tc|kr": "Neun Tage und neun Nächte. Am letzten Morgen hört die Pille auf, sich zu drehen, und sinkt warm wie ein Herzschlag in deine Hand.\nVon nun an gibt jede Pille 10% deiner max. HP / MP mehr."
+	}
+]

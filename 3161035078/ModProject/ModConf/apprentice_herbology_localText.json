@@ -2,10 +2,10 @@
 	{
 		"id": "420052001",
 		"key": "apprentice420051001",
-		"en": "Herbology Lvl-1",
-		"ch": "草药学 Lvl-1",
-		"tc": "草藥學 Lvl-1",
-		"kr": "약초학 Lvl-1"
+		"en": "Herb Picker",
+		"ch": "采药童",
+		"tc": "採藥童",
+		"kr": "채약동"
 	},
 	{
 		"id": "420053001",
@@ -18,10 +18,10 @@
 	{
 		"id": "420052002",
 		"key": "apprentice420051002",
-		"en": "Herbology Lvl-2",
-		"ch": "草药学 Lvl-2",
-		"tc": "草藥學 Lvl-2",
-		"kr": "약초학 Lvl-2"
+		"en": "Herb Seeker",
+		"ch": "寻药徒",
+		"tc": "尋藥徒",
+		"kr": "심약도"
 	},
 	{
 		"id": "420053002",
@@ -34,10 +34,10 @@
 	{
 		"id": "420052003",
 		"key": "apprentice420051003",
-		"en": "Herbology Lvl-3",
-		"ch": "草药学 Lvl-3",
-		"tc": "草藥學 Lvl-3",
-		"kr": "약초학 Lvl-3"
+		"en": "Herb Farmer",
+		"ch": "药农",
+		"tc": "藥農",
+		"kr": "약농"
 	},
 	{
 		"id": "420053003",
@@ -50,10 +50,10 @@
 	{
 		"id": "420052004",
 		"key": "apprentice420051004",
-		"en": "Herbology Lvl-4",
-		"ch": "草药学 Lvl-4",
-		"tc": "草藥學 Lvl-4",
-		"kr": "약초학 Lvl-4"
+		"en": "Spirit Gardener",
+		"ch": "灵植师",
+		"tc": "靈植師",
+		"kr": "영식사"
 	},
 	{
 		"id": "420053004",
@@ -66,10 +66,10 @@
 	{
 		"id": "420052005",
 		"key": "apprentice420051005",
-		"en": "Herbology Lvl-5",
-		"ch": "草药学 Lvl-5",
-		"tc": "草藥學 Lvl-5",
-		"kr": "약초학 Lvl-5"
+		"en": "Herbalist",
+		"ch": "药师",
+		"tc": "藥師",
+		"kr": "약사"
 	},
 	{
 		"id": "420053005",
@@ -82,10 +82,10 @@
 	{
 		"id": "420052006",
 		"key": "apprentice420051006",
-		"en": "Herbology Lvl-6",
-		"ch": "草药学 Lvl-6",
-		"tc": "草藥學 Lvl-6",
-		"kr": "약초학 레벨-6"
+		"en": "Grand Herbalist",
+		"ch": "大药师",
+		"tc": "大藥師",
+		"kr": "대약사"
 	},
 	{
 		"id": "420053006",
@@ -93,15 +93,15 @@
 		"en": "+12% Max HP",
 		"ch": "+12% 最大值 HP",
 		"tc": "+12% 最大值 HP",
-		"kr": "+12% 최대 {⑪}0{/⑪⑪}"
+		"kr": "+12% 최대 HP"
 	},
 	{
 		"id": "420052007",
 		"key": "apprentice420051007",
-		"en": "Herbology Lvl-7",
-		"ch": "草药学 Lvl-7",
-		"tc": "草藥學 Lvl-7",
-		"kr": "약초학 Lvl-7"
+		"en": "Herb Patriarch",
+		"ch": "药宗",
+		"tc": "藥宗",
+		"kr": "약종"
 	},
 	{
 		"id": "420053007",
@@ -109,15 +109,15 @@
 		"en": "+14% Max HP",
 		"ch": "+14% 最大值 HP",
 		"tc": "+14% 最大值 HP",
-		"kr": "+14% 최대 {⑪}0{/⑪⑪}"
+		"kr": "+14% 최대 HP"
 	},
 	{
 		"id": "420052008",
 		"key": "apprentice420051008",
-		"en": "Herbology Lvl-8",
-		"ch": "草药学 Lvl-8",
-		"tc": "草藥學 Lvl-8",
-		"kr": "약초학 Lvl-8"
+		"en": "Herb Venerable",
+		"ch": "药尊",
+		"tc": "藥尊",
+		"kr": "약존"
 	},
 	{
 		"id": "420053008",
@@ -130,10 +130,10 @@
 	{
 		"id": "420052009",
 		"key": "apprentice420051009",
-		"en": "Herbology Lvl-9",
-		"ch": "草药学 Lvl-9",
-		"tc": "草藥學 Lvl-9",
-		"kr": "약초학 Lvl-9"
+		"en": "Herb Saint",
+		"ch": "药圣",
+		"tc": "藥聖",
+		"kr": "약성"
 	},
 	{
 		"id": "420053009",
@@ -146,10 +146,10 @@
 	{
 		"id": "420052010",
 		"key": "apprentice420051010",
-		"en": "Herbology Lvl-10",
-		"ch": "草药学 Lvl-10",
-		"tc": "草藥學 Lvl-10",
-		"kr": "약초학 Lvl-10"
+		"en": "Shennong's Heir",
+		"ch": "神农传人",
+		"tc": "神農傳人",
+		"kr": "신농전인"
 	},
 	{
 		"id": "420053010",

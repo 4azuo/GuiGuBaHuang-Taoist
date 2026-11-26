@@ -6222,5 +6222,237 @@
     "ch": "心境澄明，所学诸技如静湖般展开，你看见了绘出每一招的手。道蕴加深了。",
     "tc": "心境澄明，所學諸技如靜湖般展開，你看見了繪出每一招的手。道蘊加深了。",
     "kr": "마음이 맑아지자 익힌 모든 무공이 고요한 호수처럼 펼쳐지고, 각 초식을 그린 손이 보인다. 도온이 깊어진다."
-  }
+  },
+	{
+		"id": -1000007778,
+		"key": "story_name_S",
+		"en": "The Medicine King's Testament",
+		"ch": "药王遗书",
+		"tc": "藥王遺書",
+		"kr": "약왕의 유서"
+	},
+	{
+		"id": -1000007779,
+		"key": "story_task_desc_S",
+		"en": "{0}",
+		"ch": "{0}",
+		"tc": "{0}",
+		"kr": "{0}"
+	},
+	{
+		"id": -1000007780,
+		"key": "story_task_S0",
+		"en": "{O} keeps three torn pages of the Medicine King. The first one lies in a beast's lair.",
+		"ch": "{O}守着药王的三张残页。第一张在一头妖兽的巢穴里。",
+		"tc": "{O}守著藥王的三張殘頁。第一張在一頭妖獸的巢穴裡。",
+		"kr": "{O}는 약왕의 찢어진 세 장을 지키고 있다. 첫 장은 요수의 소굴에 있다."
+	},
+	{
+		"id": -1000007781,
+		"key": "story_task_S1",
+		"en": "A village is dying of a plague. The second page says: a healer who walks past is no healer.",
+		"ch": "一个村子正被瘟疫吞噬。第二张残页写着：见死不救者，不配为医。",
+		"tc": "一個村子正被瘟疫吞噬。第二張殘頁寫著：見死不救者，不配為醫。",
+		"kr": "한 마을이 역병으로 죽어 간다. 두 번째 장에는 '지나치는 의원은 의원이 아니다'라고 적혀 있다."
+	},
+	{
+		"id": -1000007782,
+		"key": "story_task_S2",
+		"en": "The third page is a poison. Someone has to taste it to read the cure.",
+		"ch": "第三张残页是一味毒药。必须有人尝过，才能读出解方。",
+		"tc": "第三張殘頁是一味毒藥。必須有人嘗過，才能讀出解方。",
+		"kr": "세 번째 장은 독이다. 누군가 맛을 봐야 해독법을 읽을 수 있다."
+	},
+	{
+		"id": -1000007783,
+		"key": "story_task_S3",
+		"en": "The testament is almost whole. Read its last page.",
+		"ch": "遗书几乎完整了。读完最后一页。",
+		"tc": "遺書幾乎完整了。讀完最後一頁。",
+		"kr": "유서가 거의 완성되었다. 마지막 장을 읽는다."
+	},
+	{
+		"id": -1000007784,
+		"key": "story_S0_1",
+		"en": "An old alchemist sits by a dead fire, a bundle of burnt paper on his knees.\n{O} says, \"These are the last words of the Medicine King. Three pages are missing - and my hands shake too much to look for them. Will you?\"",
+		"ch": "一位老丹师坐在熄灭的火堆旁，膝上放着一捆烧焦的纸。\n{O}说道，“这是药王最后的遗言。缺了三页——我的手抖得太厉害，找不动了。你愿意帮我吗？”",
+		"tc": "一位老丹師坐在熄滅的火堆旁，膝上放著一捆燒焦的紙。\n{O}說道，「這是藥王最後的遺言。缺了三頁——我的手抖得太厲害，找不動了。你願意幫我嗎？」",
+		"kr": "늙은 연단사가 꺼진 불 옆에 앉아 있다. 무릎 위에는 그을린 종이 뭉치가 놓여 있다.\n{O}가 말한다, \"약왕의 마지막 말씀이오. 세 장이 빠졌소 - 내 손은 너무 떨려 찾을 수가 없소. 대신 찾아 주겠소?\""
+	},
+	{
+		"id": -1000007785,
+		"key": "story_S0_1_o1",
+		"en": "I will find them",
+		"ch": "我去找",
+		"tc": "我去找",
+		"kr": "찾아 드리겠습니다"
+	},
+	{
+		"id": -1000007786,
+		"key": "story_S0_1_o2",
+		"en": "Not my business",
+		"ch": "与我无关",
+		"tc": "與我無關",
+		"kr": "제 일이 아닙니다"
+	},
+	{
+		"id": -1000007787,
+		"key": "story_S0_2",
+		"en": "The first page smells of musk. You follow it to a cave full of gnawed bones; something big breathes in the dark.",
+		"ch": "第一张残页带着麝香味。你循味找到一个满是啃过骨头的山洞，黑暗中有个庞然大物在呼吸。",
+		"tc": "第一張殘頁帶著麝香味。你循味找到一個滿是啃過骨頭的山洞，黑暗中有個龐然大物在呼吸。",
+		"kr": "첫 장에서는 사향 냄새가 난다. 냄새를 따라가니 갉아 먹힌 뼈로 가득한 동굴이 나오고, 어둠 속에서 거대한 무언가가 숨을 쉰다."
+	},
+	{
+		"id": -1000007788,
+		"key": "story_S0_2_o1",
+		"en": "Go in",
+		"ch": "进去",
+		"tc": "進去",
+		"kr": "들어간다"
+	},
+	{
+		"id": -1000007789,
+		"key": "story_S1_1",
+		"en": "Coughing behind every door. {O} reads the second page aloud: \"A healer who walks past is no healer.\"\nThe sick need potions, or spirit stones for a doctor of the town ({0:#,##0} [icon:zm_lingshi]).",
+		"ch": "家家户户都在咳嗽。{O}念出第二张残页：“见死不救者，不配为医。”\n病人需要丹药，或者请城里大夫的灵石（{0:#,##0}[icon:zm_lingshi]）。",
+		"tc": "家家戶戶都在咳嗽。{O}念出第二張殘頁：「見死不救者，不配為醫。」\n病人需要丹藥，或者請城裡大夫的靈石（{0:#,##0}[icon:zm_lingshi]）。",
+		"kr": "문마다 기침 소리가 들린다. {O}가 두 번째 장을 소리 내어 읽는다: \"지나치는 의원은 의원이 아니다.\"\n환자들에게는 단약이나 마을 의원을 부를 영석({0:#,##0}[icon:zm_lingshi])이 필요하다."
+	},
+	{
+		"id": -1000007790,
+		"key": "story_S1_1_o1",
+		"en": "Give a potion",
+		"ch": "给一颗丹药",
+		"tc": "給一顆丹藥",
+		"kr": "단약을 준다"
+	},
+	{
+		"id": -1000007791,
+		"key": "story_S1_1_o2",
+		"en": "Pay for a doctor",
+		"ch": "出钱请大夫",
+		"tc": "出錢請大夫",
+		"kr": "의원 비용을 낸다"
+	},
+	{
+		"id": -1000007792,
+		"key": "story_S1_1_o3",
+		"en": "Walk on",
+		"ch": "继续赶路",
+		"tc": "繼續趕路",
+		"kr": "그냥 지나간다"
+	},
+	{
+		"id": -1000007793,
+		"key": "story_S1_nopill",
+		"en": "You have no recovery potion to give.",
+		"ch": "你没有可以给的恢复丹药。",
+		"tc": "你沒有可以給的恢復丹藥。",
+		"kr": "줄 수 있는 회복 단약이 없다."
+	},
+	{
+		"id": -1000007794,
+		"key": "story_S2_1",
+		"en": "The third page is not ink but a dried black paste. {O} turns it in the light: \"The cure is written in the poison. Someone has to taste it.\"",
+		"ch": "第三张残页上不是墨，而是干了的黑膏。{O}对着光转动它：“解方就写在毒里。总得有人尝一尝。”",
+		"tc": "第三張殘頁上不是墨，而是乾了的黑膏。{O}對著光轉動它：「解方就寫在毒裡。總得有人嘗一嘗。」",
+		"kr": "세 번째 장은 먹이 아니라 말라붙은 검은 고약이다. {O}가 빛에 비춰 보며 말한다: \"해독법은 독 안에 쓰여 있소. 누군가는 맛을 봐야 하오.\""
+	},
+	{
+		"id": -1000007795,
+		"key": "story_S2_1_o1",
+		"en": "Taste it yourself",
+		"ch": "自己尝",
+		"tc": "自己嘗",
+		"kr": "직접 맛본다"
+	},
+	{
+		"id": -1000007796,
+		"key": "story_S2_1_o2",
+		"en": "Let {O} taste it",
+		"ch": "让{O}尝",
+		"tc": "讓{O}嘗",
+		"kr": "{O}에게 맡긴다"
+	},
+	{
+		"id": -1000007797,
+		"key": "story_S2_1_o3",
+		"en": "Nobody tastes it",
+		"ch": "谁也不尝",
+		"tc": "誰也不嘗",
+		"kr": "아무도 맛보지 않는다"
+	},
+	{
+		"id": -1000007798,
+		"key": "story_S3_1",
+		"en": "The last page is whole. The Medicine King's hand is small and steady: \"A healer chooses what to keep - the strength of the medicine, or the calm of the one who takes it.\"",
+		"ch": "最后一页完整无缺。药王的字迹小而稳：“医者须择其一——留住药力，或留住服药之人的心神。”",
+		"tc": "最後一頁完整無缺。藥王的字跡小而穩：「醫者須擇其一——留住藥力，或留住服藥之人的心神。」",
+		"kr": "마지막 장은 온전하다. 약왕의 글씨는 작고 단정하다: \"의원은 하나를 택한다 - 약의 힘을 남길지, 약을 먹는 이의 평정을 남길지.\""
+	},
+	{
+		"id": -1000007799,
+		"key": "story_S3_1_o1",
+		"en": "The strength of the medicine (+30% recovery)",
+		"ch": "药力（恢复+30%）",
+		"tc": "藥力（恢復+30%）",
+		"kr": "약의 힘 (회복 +30%)"
+	},
+	{
+		"id": -1000007800,
+		"key": "story_S3_1_o2",
+		"en": "The calm of the one who takes it (half of the focus back)",
+		"ch": "服药之人的心神（返还一半念力）",
+		"tc": "服藥之人的心神（返還一半念力）",
+		"kr": "약을 먹는 이의 평정 (염력 절반 반환)"
+	},
+	{
+		"id": -1000007801,
+		"key": "story_endS_Heal",
+		"en": "You copy the last page into your own book. From now on, every potion you swallow burns hotter in your veins.",
+		"ch": "你把最后一页抄进自己的书里。从此你服下的每颗丹药，在血脉中都烧得更旺。",
+		"tc": "你把最後一頁抄進自己的書裡。從此你服下的每顆丹藥，在血脈中都燒得更旺。",
+		"kr": "마지막 장을 자신의 책에 옮겨 적는다. 이제부터 삼키는 단약마다 혈맥 속에서 더 뜨겁게 타오른다."
+	},
+	{
+		"id": -1000007802,
+		"key": "story_endS_Focus",
+		"en": "You copy the last page into your own book. From now on, a potion barely troubles your mind - half of the focus it takes comes back.",
+		"ch": "你把最后一页抄进自己的书里。从此服药几乎不扰心神——耗去的念力会回来一半。",
+		"tc": "你把最後一頁抄進自己的書裡。從此服藥幾乎不擾心神——耗去的念力會回來一半。",
+		"kr": "마지막 장을 자신의 책에 옮겨 적는다. 이제 단약은 마음을 거의 흐트러뜨리지 않는다 - 쓴 염력의 절반이 돌아온다."
+	},
+	{
+		"id": -1000007803,
+		"key": "story_endS_Fragment",
+		"en": "Without the village, without the taste of the poison, the last page stays blank. {O} gives you a potion of his own and says nothing more.",
+		"ch": "没有救那个村子，也没人尝那味毒，最后一页依然空白。{O}送了你一颗他自己炼的丹药，再没多说一句。",
+		"tc": "沒有救那個村子，也沒人嘗那味毒，最後一頁依然空白。{O}送了你一顆他自己煉的丹藥，再沒多說一句。",
+		"kr": "마을도 구하지 않고 독도 맛보지 않았기에 마지막 장은 비어 있다. {O}는 직접 만든 단약 하나를 건넬 뿐 더 말하지 않는다."
+	},
+	{
+		"id": -1000007804,
+		"key": "story_end_S_Heal",
+		"en": "The strength of the medicine",
+		"ch": "药力",
+		"tc": "藥力",
+		"kr": "약의 힘"
+	},
+	{
+		"id": -1000007805,
+		"key": "story_end_S_Focus",
+		"en": "The calm mind",
+		"ch": "宁神",
+		"tc": "寧神",
+		"kr": "평정한 마음"
+	},
+	{
+		"id": -1000007806,
+		"key": "story_end_S_Fragment",
+		"en": "A blank page",
+		"ch": "空白的一页",
+		"tc": "空白的一頁",
+		"kr": "빈 장"
+	}
 ]

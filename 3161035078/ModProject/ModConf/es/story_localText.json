@@ -3888,5 +3888,150 @@
 		"id": "-1000007777",
 		"key": "story_doc_essence_L",
 		"en|ch|tc|kr": "Con el corazón claro, cada arte que conoces se abre como un lago en calma, y ves la mano que trazó cada uno. Tu Esencia del Dao se profundiza."
+	},
+	{
+		"id": -1000007778,
+		"key": "story_name_S",
+		"en|ch|tc|kr": "El testamento del Rey de la Medicina"
+	},
+	{
+		"id": -1000007779,
+		"key": "story_task_desc_S",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007780,
+		"key": "story_task_S0",
+		"en|ch|tc|kr": "{O} guarda tres páginas rotas del Rey de la Medicina. La primera está en la guarida de una bestia."
+	},
+	{
+		"id": -1000007781,
+		"key": "story_task_S1",
+		"en|ch|tc|kr": "Una aldea muere de una plaga. La segunda página dice: un sanador que pasa de largo no es sanador."
+	},
+	{
+		"id": -1000007782,
+		"key": "story_task_S2",
+		"en|ch|tc|kr": "La tercera página es un veneno. Alguien debe probarlo para leer la cura."
+	},
+	{
+		"id": -1000007783,
+		"key": "story_task_S3",
+		"en|ch|tc|kr": "El testamento está casi completo. Lee su última página."
+	},
+	{
+		"id": -1000007784,
+		"key": "story_S0_1",
+		"en|ch|tc|kr": "Un viejo alquimista está sentado junto a un fuego apagado, con un fajo de papel quemado en las rodillas.\n{O} dice: \"Son las últimas palabras del Rey de la Medicina. Faltan tres páginas, y mis manos tiemblan demasiado para buscarlas. ¿Lo harás tú?\""
+	},
+	{
+		"id": -1000007785,
+		"key": "story_S0_1_o1",
+		"en|ch|tc|kr": "Las encontraré"
+	},
+	{
+		"id": -1000007786,
+		"key": "story_S0_1_o2",
+		"en|ch|tc|kr": "No es asunto mío"
+	},
+	{
+		"id": -1000007787,
+		"key": "story_S0_2",
+		"en|ch|tc|kr": "La primera página huele a almizcle. La sigues hasta una cueva llena de huesos roídos; algo enorme respira en la oscuridad."
+	},
+	{
+		"id": -1000007788,
+		"key": "story_S0_2_o1",
+		"en|ch|tc|kr": "Entrar"
+	},
+	{
+		"id": -1000007789,
+		"key": "story_S1_1",
+		"en|ch|tc|kr": "Tos detrás de cada puerta. {O} lee en voz alta la segunda página: \"Un sanador que pasa de largo no es sanador.\"\nLos enfermos necesitan pociones, o piedras espirituales para un médico de la ciudad ({0:#,##0} [icon:zm_lingshi])."
+	},
+	{
+		"id": -1000007790,
+		"key": "story_S1_1_o1",
+		"en|ch|tc|kr": "Dar una poción"
+	},
+	{
+		"id": -1000007791,
+		"key": "story_S1_1_o2",
+		"en|ch|tc|kr": "Pagar un médico"
+	},
+	{
+		"id": -1000007792,
+		"key": "story_S1_1_o3",
+		"en|ch|tc|kr": "Seguir el camino"
+	},
+	{
+		"id": -1000007793,
+		"key": "story_S1_nopill",
+		"en|ch|tc|kr": "No tienes ninguna poción de recuperación que dar."
+	},
+	{
+		"id": -1000007794,
+		"key": "story_S2_1",
+		"en|ch|tc|kr": "La tercera página no tiene tinta, sino una pasta negra seca. {O} la gira a la luz: \"La cura está escrita en el veneno. Alguien tiene que probarlo.\""
+	},
+	{
+		"id": -1000007795,
+		"key": "story_S2_1_o1",
+		"en|ch|tc|kr": "Probarlo tú"
+	},
+	{
+		"id": -1000007796,
+		"key": "story_S2_1_o2",
+		"en|ch|tc|kr": "Que lo pruebe {O}"
+	},
+	{
+		"id": -1000007797,
+		"key": "story_S2_1_o3",
+		"en|ch|tc|kr": "Nadie lo prueba"
+	},
+	{
+		"id": -1000007798,
+		"key": "story_S3_1",
+		"en|ch|tc|kr": "La última página está entera. La letra del Rey de la Medicina es pequeña y firme: \"Un sanador elige qué conservar: la fuerza de la medicina, o la calma de quien la toma.\""
+	},
+	{
+		"id": -1000007799,
+		"key": "story_S3_1_o1",
+		"en|ch|tc|kr": "La fuerza de la medicina (+30% de recuperación)"
+	},
+	{
+		"id": -1000007800,
+		"key": "story_S3_1_o2",
+		"en|ch|tc|kr": "La calma de quien la toma (la mitad de la concentración devuelta)"
+	},
+	{
+		"id": -1000007801,
+		"key": "story_endS_Heal",
+		"en|ch|tc|kr": "Copias la última página en tu propio libro. Desde ahora, cada poción que tragas arde más en tus venas."
+	},
+	{
+		"id": -1000007802,
+		"key": "story_endS_Focus",
+		"en|ch|tc|kr": "Copias la última página en tu propio libro. Desde ahora, una poción apenas turba tu mente: la mitad de la concentración vuelve."
+	},
+	{
+		"id": -1000007803,
+		"key": "story_endS_Fragment",
+		"en|ch|tc|kr": "Sin la aldea, sin el sabor del veneno, la última página queda en blanco. {O} te da una poción suya y no dice nada más."
+	},
+	{
+		"id": -1000007804,
+		"key": "story_end_S_Heal",
+		"en|ch|tc|kr": "La fuerza de la medicina"
+	},
+	{
+		"id": -1000007805,
+		"key": "story_end_S_Focus",
+		"en|ch|tc|kr": "La mente en calma"
+	},
+	{
+		"id": -1000007806,
+		"key": "story_end_S_Fragment",
+		"en|ch|tc|kr": "Una página en blanco"
 	}
 ]

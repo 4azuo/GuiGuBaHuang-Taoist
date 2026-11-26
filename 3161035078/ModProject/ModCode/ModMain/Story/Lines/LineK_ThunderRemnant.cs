@@ -59,17 +59,20 @@ namespace MOD_nE7UL2.Story
                     var key = rival != null && gEnd == "G_Friend" ? "K4_friend" : rival != null && gEnd == "G_Rival" ? "K4_rival" : "K4_1";
                     Tell(s, key, new[] { "K4_1_o1", "K4_1_o2", "K4_1_o3" }, i =>
                     {
-                        if (i == 0) Tell(s, "endK_Guided", null, _ => { Player.AddExp(5000 * Player.GetGradeLvl()); End(s, "K_Guided"); });
+                        if (i == 0) Tell(s, "endK_Guided", null, _ => { Player.AddExp(5000 * Player.GetGradeLvl()); Thunder(); End(s, "K_Guided"); });
                         else if (i == 1)
                         {
                             if (key == "K4_rival") Fight(s, rival, "K4_rival_fight");
                             else FightBeast(s, "K4_fight", 8);
                         }
-                        else Tell(s, "endK_SecondChance", null, _ => { Give(x => x.IsPill() != null, Player.GetGradeLvl() + 1); End(s, "K_SecondChance"); });
+                        else Tell(s, "endK_SecondChance", null, _ => { Give(x => x.IsPill() != null, Player.GetGradeLvl() + 1); Thunder(); End(s, "K_SecondChance"); });
                     }, BG, rival?.GetName() ?? "?");
                     break;
             }
         }
+
+        /// <summary>Every ending: Thunder Body points (ConstitutionEvent).</summary>
+        private static void Thunder() => ConstitutionEvent.Instance?.Add(Player, ConstitutionEvent.Kind.Thunder, ConstitutionEvent.THUNDER_STORY_POINTS);
 
         public override void OnBattle(StoryState s, string tag, bool won)
         {
@@ -80,7 +83,7 @@ namespace MOD_nE7UL2.Story
                 case "K2_sect": Act(s, 3, 6); break;
                 case "K4_rival_fight": FightBeast(s, "K4_fight", 8); break;
                 case "K4_fight":
-                    if (won) Tell(s, "endK_Devourer", null, _ => { Player.AddProperty<int>(UnitPropertyEnum.BasisThunder, 10); End(s, "K_Devourer"); });
+                    if (won) Tell(s, "endK_Devourer", null, _ => { Player.AddProperty<int>(UnitPropertyEnum.BasisThunder, 10); Thunder(); End(s, "K_Devourer"); });
                     else Wait(s, 12);
                     break;
                 default: Next(s); break;

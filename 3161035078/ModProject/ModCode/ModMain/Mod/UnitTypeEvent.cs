@@ -6,6 +6,8 @@ using ModLib.Mod;
 using ModLib.Helper;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace MOD_nE7UL2.Mod
 {
@@ -286,6 +288,197 @@ namespace MOD_nE7UL2.Mod
         {
             var unitId = wunit.GetUnitId();
             return Instance.UnitTypeDic.ContainsKey(unitId) ? Instance.UnitTypeDic[unitId] : null;
+        }
+
+        // ------------------------------------------------------------------ artisan ranks: the "?" of the player info
+
+        /// <summary>The arts of the ranks in the order of the window, with their text keys (ui_appr_&lt;art&gt;).</summary>
+        public static readonly (ApprenticeLuckEnum luck, string key)[] APPRENTICE_ARTS =
+        {
+            (ApprenticeLuckEnum.Alchemy, "ui_appr_alchemy"), (ApprenticeLuckEnum.Forge, "ui_appr_forge"),
+            (ApprenticeLuckEnum.FengShui, "ui_appr_fengshui"), (ApprenticeLuckEnum.Talismans, "ui_appr_talismans"),
+            (ApprenticeLuckEnum.Herbology, "ui_appr_herbology"), (ApprenticeLuckEnum.Mining, "ui_appr_mining"),
+        };
+
+        /// <summary>The ranks of an art: the value of the unit and its rank, then a line a rank (name, the value it needs,
+        /// its effect), the rank of the unit marked.</summary>
+        public static string ApprenticeSummary(WorldUnitBase w, int art)
+        {
+            var (luck, key) = APPRENTICE_ARTS[Math.Max(0, Math.Min(APPRENTICE_ARTS.Length - 1, art))];
+            var value = w?.GetDynProperty(luck.PropertyEnum).value ?? 0;
+            var lvl = w == null ? 0 : luck.GetApprenticeLevel(w);
+            var lines = new List<string>
+            {
+                string.Format(GameTool.LS("ui_appr_header"), GameTool.LS(key), value,
+                    lvl <= 0 ? GameTool.LS("ui_appr_none") : string.Format(GameTool.LS("ui_appr_rank"), lvl, GameTool.LS("apprentice" + luck.GetApprenticeLuckId(lvl)))),
+                string.Empty,
+            };
+            for (var i = 1; i <= ApprenticeLuckEnum.ApprenticeLevels.Length; i++)
+            {
+                var id = luck.GetApprenticeLuckId(i);
+                lines.Add((i == lvl ? "[icon:daodian] " : i < lvl ? "+ " : "- ") + string.Format(GameTool.LS("ui_appr_line"), i, GameTool.LS("apprentice" + id),
+                    GameTool.LS(key), ApprenticeLuckEnum.ApprenticeLevels[i - 1], GameTool.LS("apprentice" + id + "desc")));
+            }
+            lines.Add(string.Empty);
+            lines.Add(GameTool.LS("ui_appr_note"));
+            return TextIconHelper.ToSprites(string.Join("\n", lines));
+        }
+
+        /// <summary>The ranks of the martial (physical bases) or magic (spiritual roots) trainee: the sum of the unit and its rank,
+        /// a line a rank (name, the sum it needs, its effect), the rank of the unit marked.</summary>
+        public static string TraineeSummary(WorldUnitBase w, bool martial)
+        {
+            var luck = martial ? TraineeLuckEnum.Martial : TraineeLuckEnum.Magic;
+            var key = martial ? "ui_trainee_martial" : "ui_trainee_magic";
+            var value = w == null ? 0 : luck.CalFunc(w);
+            var lvl = w == null ? 0 : luck.GetTraineeLevel(w);
+            var lines = new List<string>
+            {
+                string.Format(GameTool.LS("ui_appr_header"), GameTool.LS(key), value,
+                    lvl <= 0 ? GameTool.LS("ui_appr_none") : string.Format(GameTool.LS("ui_appr_rank"), lvl, GameTool.LS("trainee" + luck.GetTraineeLuckId(lvl)))),
+                string.Empty,
+            };
+            for (var i = 1; i <= TraineeLuckEnum.TraineeLevels.Length; i++)
+            {
+                var id = luck.GetTraineeLuckId(i);
+                lines.Add((i == lvl ? "[icon:daodian] " : i < lvl ? "+ " : "- ") + string.Format(GameTool.LS("ui_appr_line"), i, GameTool.LS("trainee" + id),
+                    GameTool.LS(key), TraineeLuckEnum.TraineeLevels[i - 1].ToString("#,##0"), GameTool.LS("trainee" + id + "desc")));
+            }
+            lines.Add(string.Empty);
+            lines.Add(GameTool.LS("ui_appr_note"));
+            return TextIconHelper.ToSprites(string.Join("\n", lines));
+        }
+
+        /// <summary>Game text icons of the arts (APPRENTICE_ARTS order) and of the trainee / merchant ranks.</summary>
+        public static readonly string[] APPRENTICE_ICONS = { "liandan", "lianqi", "fengshui", "huafu", "yaocai", "zm_kuangshi" };
+        public const string MARTIAL_ICON = "quanfa", MAGIC_ICON = "lingli", MERCHANT_ICON = "zm_lingshi";
+
+        /// <summary>Share of the way from the threshold of the rank now to the next one.</summary>
+        public static double Progress(double value, int lvl, IList<long> thresholds)
+        {
+            if (lvl >= thresholds.Count) return 1d;
+            var from = lvl <= 0 ? 0d : thresholds[lvl - 1];
+            var to = (double)thresholds[lvl];
+            return to <= from ? 1d : Math.Max(0d, Math.Min(1d, (value - from) / (to - from)));
+        }
+
+        /// <summary>The ranks of an art (a ranks window of InfoPanel).</summary>
+        public static Helper.InfoPanel.Ranks ApprenticeRanks(WorldUnitBase w, int art)
+        {
+            art = Math.Max(0, Math.Min(APPRENTICE_ARTS.Length - 1, art));
+            var (luck, key) = APPRENTICE_ARTS[art];
+            var value = w?.GetDynProperty(luck.PropertyEnum).value ?? 0;
+            var lvl = w == null ? 0 : luck.GetApprenticeLevel(w);
+            var r = new Helper.InfoPanel.Ranks
+            {
+                Title = GameTool.LS("ui_appr_title") + " - " + GameTool.LS(key), Icon = APPRENTICE_ICONS[art], ValueName = GameTool.LS(key),
+                Value = value.ToString("#,##0"), Current = lvl, Note = GameTool.LS("ui_appr_note"),
+                Progress = Progress(value, lvl, ApprenticeLuckEnum.ApprenticeLevels.Select(x => (long)x).ToList()),
+            };
+            for (var i = 1; i <= ApprenticeLuckEnum.ApprenticeLevels.Length; i++)
+            {
+                var id = luck.GetApprenticeLuckId(i);
+                r.List.Add(new Helper.InfoPanel.Rank(GameTool.LS("apprentice" + id), ApprenticeLuckEnum.ApprenticeLevels[i - 1].ToString("#,##0") + "+", GameTool.LS("apprentice" + id + "desc")));
+            }
+            return r;
+        }
+
+        /// <summary>The ranks of the martial (physical bases) or magic (spiritual roots) trainee.</summary>
+        public static Helper.InfoPanel.Ranks TraineeRanks(WorldUnitBase w, bool martial)
+        {
+            var luck = martial ? TraineeLuckEnum.Martial : TraineeLuckEnum.Magic;
+            var value = w == null ? 0 : luck.CalFunc(w);
+            var lvl = w == null ? 0 : luck.GetTraineeLevel(w);
+            var r = new Helper.InfoPanel.Ranks
+            {
+                Title = GameTool.LS(martial ? "ui_trainee_title_martial" : "ui_trainee_title_magic"), Icon = martial ? MARTIAL_ICON : MAGIC_ICON,
+                ValueName = GameTool.LS(martial ? "ui_trainee_martial" : "ui_trainee_magic"), Value = value.ToString("#,##0"), Current = lvl,
+                Note = GameTool.LS("ui_appr_note"), Progress = Progress(value, lvl, TraineeLuckEnum.TraineeLevels.Select(x => (long)x).ToList()),
+            };
+            for (var i = 1; i <= TraineeLuckEnum.TraineeLevels.Length; i++)
+            {
+                var id = luck.GetTraineeLuckId(i);
+                r.List.Add(new Helper.InfoPanel.Rank(GameTool.LS("trainee" + id), TraineeLuckEnum.TraineeLevels[i - 1].ToString("#,##0") + "+", GameTool.LS("trainee" + id + "desc")));
+            }
+            return r;
+        }
+
+        /// <summary>The merchant ranks (spirit stones owned; a rank reached is kept).</summary>
+        public static Helper.InfoPanel.Ranks MerchantRanks(WorldUnitBase w)
+        {
+            var luck = MerchantLuckEnum.Merchant;
+            var value = w == null ? 0 : luck.CalFunc(w);
+            var lvl = w == null ? 0 : Math.Max(luck.GetCurLevel(w), luck.GetNxtLevel(w));
+            var r = new Helper.InfoPanel.Ranks
+            {
+                Title = GameTool.LS("ui_merchant_title"), Icon = MERCHANT_ICON, ValueName = GameTool.LS("ui_merchant_money"),
+                Value = value.ToString("#,##0"), Current = lvl, Note = GameTool.LS("ui_merchant_note"),
+                Progress = Progress(value, lvl, MerchantLuckEnum.MerchantLevels),
+            };
+            for (var i = 1; i <= MerchantLuckEnum.MerchantLevels.Length; i++)
+            {
+                var id = luck.GetMerchantLuckId(i);
+                r.List.Add(new Helper.InfoPanel.Rank(GameTool.LS("merchant" + id), MerchantLuckEnum.MerchantLevels[i - 1].ToString("#,##0") + "+", GameTool.LS("merchant" + id + "desc")));
+            }
+            return r;
+        }
+
+        /// <summary>The window of the martial / magic trainee ranks (the "?" of the Martial Arts / Spiritual Root columns).</summary>
+        public static void OpenTraineeHelp(bool martial) => Helper.InfoPanel.OpenRanks(TraineeRanks(g.world.playerUnit, martial));
+
+        /// <summary>The window of the merchant ranks (the "?" beside the bag).</summary>
+        public static void OpenMerchantHelp() => Helper.InfoPanel.OpenRanks(MerchantRanks(g.world.playerUnit));
+
+        /// <summary>The 10 ranks of an art ("?" of its card in the overview; Back: the overview).</summary>
+        public static void OpenApprenticeDetail(int art)
+        {
+            var r = ApprenticeRanks(g.world.playerUnit, art);
+            r.Back = () => ModDelayEvent.Instance.DelayEvent(Instance, () => OpenApprenticeHelp(), 300);
+            Helper.InfoPanel.OpenRanks(r);
+        }
+
+        /// <summary>The overview of the 6 arts (the "?" of the Artisanship column): a card an art (value, rank, bar to the
+        /// next rank, effect now) with a "?" for its 10 ranks.</summary>
+        public static void OpenApprenticeHelp()
+        {
+            var w = g.world.playerUnit;
+            var all = Enumerable.Range(0, APPRENTICE_ARTS.Length).Select(i => ApprenticeRanks(w, i)).ToList();
+            Helper.InfoPanel.Open(GameTool.LS("ui_appr_title"), ui =>
+            {
+                var dy = Helper.InfoPanel.Dy(ui);
+                var left = Helper.InfoPanel.Left(ui) + 20f;
+                var width = Helper.InfoPanel.Right(ui) - Helper.InfoPanel.Left(ui) - 40f;
+                var top = Helper.InfoPanel.Top(ui);
+                var y = Helper.InfoPanel.Section(ui, left, top, width, "jineng", GameTool.LS("ui_appr_overview"));
+                const int cols = 3;
+                var gap = 18f;
+                var ch = dy * 6.6f;
+                var cards = ModLib.Helper.UIPanelHelper.Grid(all.Count, cols, left, y - dy * 0.4f, width, ch, gap, out var cw);
+                for (var i = 0; i < all.Count; i++)
+                {
+                    var r = all[i];
+                    var art = i;
+                    var cx = cards[i].x;
+                    var cy = cards[i].y;
+                    var on = r.Current > 0;
+                    Helper.InfoPanel.Box(ui, cx, cy, cw, ch, on ? Helper.InfoPanel.CARD_ON : Helper.InfoPanel.CARD);
+                    Helper.InfoPanel.Text(ui, cx + 12f, cy - dy * 0.75f, Helper.InfoPanel.I(r.Icon) + r.ValueName, Helper.InfoPanel.TITLE, 17, FontStyle.Bold);
+                    Helper.InfoPanel.Help(ui, cx + cw - 22f, cy - dy * 0.75f, () => OpenApprenticeDetail(art));
+                    Helper.InfoPanel.Text(ui, cx + 12f, cy - dy * 1.85f, string.Format(GameTool.LS("ui_appr_value"), r.Value), Helper.InfoPanel.TEXT, 13);
+                    var now = on ? r.List[r.Current - 1] : null;
+                    Helper.InfoPanel.Text(ui, cx + 12f, cy - dy * 2.8f, now == null ? GameTool.LS("ui_appr_none") : string.Format(GameTool.LS("ui_appr_rank"), r.Current, now.Name),
+                        now == null ? Helper.InfoPanel.GREY : Helper.InfoPanel.GOLD, 14, FontStyle.Bold);
+                    Helper.InfoPanel.Text(ui, cx + 12f, cy - dy * 3.75f, now == null ? "-" : now.Effect, now == null ? Helper.InfoPanel.GREY : Helper.InfoPanel.GOOD, 13);
+                    var next = r.Current < r.List.Count ? r.List[r.Current] : null;
+                    Helper.InfoPanel.Bar(ui, cx + 12f, cy - dy * 4.5f, cw - 24f, dy * 0.85f, next == null ? 1d : r.Progress,
+                        next == null ? GameTool.LS("ui_panel_top") : string.Format(GameTool.LS("ui_appr_to_next"), next.Needs));
+                    Helper.InfoPanel.Text(ui, cx + 12f, cy - dy * 5.95f, next == null ? string.Empty : next.Name + ": " + next.Effect, Helper.InfoPanel.GREY, 12, FontStyle.Italic);
+                }
+                var by = ModLib.Helper.UIPanelHelper.GridBottom(all.Count, cols, y - dy * 0.4f, ch, gap);
+                Helper.InfoPanel.Center(ui, left + width / 2f, by - dy * 0.2f, GameTool.LS("ui_appr_note"), Helper.InfoPanel.NOTE, 12, FontStyle.Italic);
+                Helper.InfoPanel.Center(ui, left + width / 2f, by - dy * 1.1f, GameTool.LS("ui_appr_overview_hint"), Helper.InfoPanel.NOTE, 12, FontStyle.Italic);
+                Helper.InfoPanel.Buttons(ui, by - dy * 2.6f, (GameTool.LS("dlg_ok"), null));
+            }, () => string.Join("\n", all.Select(r => $"{r.ValueName}: {r.Value}, " + (r.Current > 0 ? r.List[r.Current - 1].Name : "-"))));
         }
     }
 }

@@ -46,7 +46,12 @@ namespace MOD_nE7UL2.Helper
         /// window's own OK). A button closes the window, then runs its action. The window replaces a window of Taoist, and
         /// waits for the window of another mod (TaoistWindows): returns it, or null while it waits.
         /// </summary>
-        public static UICustomBase Show(string title, string text, params (string label, Action act)[] buttons)
+        public static UICustomBase Show(string title, string text, params (string label, Action act)[] buttons) => Show(title, text, false, buttons);
+
+        /// <summary>The text in the big window (UITextInfoLong) whatever its length (a list of lines that the small window cuts).</summary>
+        public static UICustomBase ShowLong(string title, string text) => Show(title, text, true);
+
+        private static UICustomBase Show(string title, string text, bool forceBig, params (string label, Action act)[] buttons)
         {
             TaoistWindows.CloseMine(false);
             TaoistWindows.CloseMine(true);
@@ -55,7 +60,7 @@ namespace MOD_nE7UL2.Helper
             // the small window (UITextInfo) while the text fits; a longer one opens the big window (UITextInfoLong):
             // nothing cut (the mortal house of the estate: 12 lines), its title wide enough for "<town> - plots"
             var smallRows = (int)Math.Floor(UIHelper.GetUIScreenHeight() * 0.2f / UIHelper.GetUIDeltaY()) + 1;
-            var big = paras.Sum(x => Wrap(x, WRAP_CHARS).Count) > smallRows - reserved;
+            var big = forceBig || paras.Sum(x => Wrap(x, WRAP_CHARS).Count) > smallRows - reserved;
             UICustomBase shown = null;
             void Open()
             {
@@ -64,6 +69,7 @@ namespace MOD_nE7UL2.Helper
             if (big) { var u = new UICustom1(title); ui = u; ok = u.UI.btnOK; LastUIType = UIType.TextInfoLong; }
             else { var u = new UICustom2(title); ui = u; ok = u.UI.btnOK; LastUIType = UIType.TextInfo; }
             var type = LastUIType;
+            LastUI = ui;
             var row = ui.FirstRow;
             foreach (var para in paras)
                 foreach (var line in Wrap(para, big ? WRAP_CHARS_LONG : WRAP_CHARS))
@@ -104,6 +110,8 @@ namespace MOD_nE7UL2.Helper
 
         /// <summary>The window of the last text: UIType.TextInfo, or UIType.TextInfoLong for a long text (tests).</summary>
         public static UIType.UITypeBase LastUIType { get; private set; } = UIType.TextInfo;
+        /// <summary>The last text window of Show (tests: its buttons).</summary>
+        public static UICustomBase LastUI { get; private set; }
 
         /// <summary>Another window of text (InfoSheet) tells what it shows (tests).</summary>
         public static void Remember(string text, UIType.UITypeBase type)

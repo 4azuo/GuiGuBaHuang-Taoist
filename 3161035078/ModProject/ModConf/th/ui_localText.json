@@ -268,5 +268,170 @@
 		"id": "-1000008053",
 		"key": "ui_town_portal_off",
 		"en|ch|tc|kr": "ปิด \"พอร์ทัลเฉพาะที่เมืองและนิกาย\" แล้ว: เมืองเล็กมีประตูมิติได้อีกครั้ง"
+	},
+	{
+		"id": -1000008054,
+		"key": "ui_appr_title",
+		"en|ch|tc|kr": "ลำดับขั้นช่างฝีมือ"
+	},
+	{
+		"id": -1000008055,
+		"key": "ui_appr_header",
+		"en|ch|tc|kr": "{0}: {1} แต้ม, {2}"
+	},
+	{
+		"id": -1000008056,
+		"key": "ui_appr_none",
+		"en|ch|tc|kr": "ยังไม่มีขั้น"
+	},
+	{
+		"id": -1000008057,
+		"key": "ui_appr_rank",
+		"en|ch|tc|kr": "ขั้น {0}: {1}"
+	},
+	{
+		"id": -1000008058,
+		"key": "ui_appr_line",
+		"en|ch|tc|kr": "ขั้น {0} {1}: {2} ตั้งแต่ {3}, {4}"
+	},
+	{
+		"id": -1000008059,
+		"key": "ui_appr_note",
+		"en|ch|tc|kr": "แต่ละขั้นคือชะตา: ได้มาเมื่อค่าฝีมือถึงเกณฑ์ และเปลี่ยนตามค่านั้น"
+	},
+	{
+		"id": -1000008060,
+		"key": "ui_appr_prev",
+		"en|ch|tc|kr": "ก่อนหน้า"
+	},
+	{
+		"id": -1000008061,
+		"key": "ui_appr_next",
+		"en|ch|tc|kr": "ถัดไป"
+	},
+	{
+		"id": -1000008062,
+		"key": "ui_appr_alchemy",
+		"en|ch|tc|kr": "ปรุงโอสถ"
+	},
+	{
+		"id": -1000008063,
+		"key": "ui_appr_forge",
+		"en|ch|tc|kr": "หลอมอาวุธ"
+	},
+	{
+		"id": -1000008064,
+		"key": "ui_appr_fengshui",
+		"en|ch|tc|kr": "ฮวงจุ้ย"
+	},
+	{
+		"id": -1000008065,
+		"key": "ui_appr_talismans",
+		"en|ch|tc|kr": "ยันต์"
+	},
+	{
+		"id": -1000008066,
+		"key": "ui_appr_herbology",
+		"en|ch|tc|kr": "เก็บสมุนไพร"
+	},
+	{
+		"id": -1000008067,
+		"key": "ui_appr_mining",
+		"en|ch|tc|kr": "ขุดแร่"
+	},
+	{
+		"id": -1000008068,
+		"key": "ui_trainee_title_martial",
+		"en|ch|tc|kr": "ลำดับขั้นยุทธ์"
+	},
+	{
+		"id": -1000008069,
+		"key": "ui_trainee_title_magic",
+		"en|ch|tc|kr": "ลำดับขั้นเวท"
+	},
+	{
+		"id": -1000008070,
+		"key": "ui_trainee_martial",
+		"en|ch|tc|kr": "พื้นฐานยุทธ์ (รวม)"
+	},
+	{
+		"id": -1000008071,
+		"key": "ui_trainee_magic",
+		"en|ch|tc|kr": "รากวิญญาณ (รวม)"
+	},
+	{
+		"id": -1000008072,
+		"key": "ui_panel_ranks",
+		"en|ch|tc|kr": "ลำดับขั้น"
+	},
+	{
+		"id": -1000008073,
+		"key": "ui_panel_rank",
+		"en|ch|tc|kr": "ขั้น"
+	},
+	{
+		"id": -1000008074,
+		"key": "ui_panel_title",
+		"en|ch|tc|kr": "ฉายา"
+	},
+	{
+		"id": -1000008075,
+		"key": "ui_panel_needs",
+		"en|ch|tc|kr": "ต้องการ"
+	},
+	{
+		"id": -1000008076,
+		"key": "ui_panel_effect",
+		"en|ch|tc|kr": "ผล"
+	},
+	{
+		"id": -1000008077,
+		"key": "ui_panel_next",
+		"en|ch|tc|kr": "ถัดไป: {0} ที่ {1} ({2}%)"
+	},
+	{
+		"id": -1000008078,
+		"key": "ui_panel_top",
+		"en|ch|tc|kr": "ถึงขั้นสูงสุดแล้ว"
+	},
+	{
+		"id": -1000008079,
+		"key": "ui_panel_back",
+		"en|ch|tc|kr": "กลับ"
+	},
+	{
+		"id": -1000008080,
+		"key": "ui_appr_overview",
+		"en|ch|tc|kr": "หกศาสตร์"
+	},
+	{
+		"id": -1000008081,
+		"key": "ui_appr_value",
+		"en|ch|tc|kr": "{0} แต้ม"
+	},
+	{
+		"id": -1000008082,
+		"key": "ui_appr_to_next",
+		"en|ch|tc|kr": "ขั้นถัดไปที่ {0}"
+	},
+	{
+		"id": -1000008083,
+		"key": "ui_appr_overview_hint",
+		"en|ch|tc|kr": "กด ? ที่แต่ละศาสตร์เพื่อดู 10 ขั้น"
+	},
+	{
+		"id": -1000008084,
+		"key": "ui_merchant_title",
+		"en|ch|tc|kr": "ลำดับขั้นพ่อค้า"
+	},
+	{
+		"id": -1000008085,
+		"key": "ui_merchant_money",
+		"en|ch|tc|kr": "หินวิญญาณ"
+	},
+	{
+		"id": -1000008086,
+		"key": "ui_merchant_note",
+		"en|ch|tc|kr": "ขั้นที่ถึงแล้วจะคงอยู่ แม้หินวิญญาณลดลง"
 	}
 ]

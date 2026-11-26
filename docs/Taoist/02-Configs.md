@@ -6,7 +6,7 @@ Read once in `ModMain.OnLoadClass` (`ModMain.ModObj.ModSettings`). Static balanc
 
 | Section | Used by | Content |
 |---|---|---|
-| `BaseConfigs` | ModMain | Ratios applied to base configs: level exp, artifact durability/SP/HP/Atk/Def, skill mastery exp, skill MP cost / CD / requirements per grade, power-up pill effects |
+| `BaseConfigs` | ModMain | Ratios applied to base configs: level exp, artifact durability/SP/HP/Atk/Def, skill mastery exp, skill MP cost / CD / requirements per grade, power-up pill effects; the skill and pill ratios are multiplied by the S&M rates of the save ([ConfBalance](Features/ConfBalance.md)) |
 
 The settings of the features are in their own files (below).
 
@@ -52,7 +52,7 @@ a new `<name>_wallpaper.json` (no code); keep the total of the `startupRate` of 
 Edited on the title screen (`SMGlobalConfigsEvent`, saved in `mod\nE7UL2\globals\SMGlobalEvent.json`), copied into each **new** save (`SMLocalConfigsEvent`, `saves\<playerId>\SMLocalEvent.json`). Changing the global configs does not affect existing saves.
 
 * Rates (`Add...Rate`, applied with `Calculate(base, rate)` = base x (1 + rate)): monster Atk/Def/HP/basis, special monsters, tax, inflation, building cost, bank account cost/fee, refine cost, sect exchange, NPC growth, level-up exp, item value, market NPC join/attack.
-* Switches: HideSaveButton, HideReloadButton, HideBattleMap, NoRebirth, Onelife, OnlyPortalAtCityAndSect, NoExpFromBattles, SectNoExchange, BossHasShield, NoGrowupFromBattles, AllowUpgradeNaturally, EnableTrainer, AllowTownBuildupOverTime(+_IncludeFirstTown), LostItemWhenDie, MonsterPropertiesDependOnPlayerProperties, AutoSaveAfterLostInBattle, NoMarketItem, NoStalker, NoTaxing, NoQiCultivation, NoBodyCultivation, NoMerit, NoArtisan, NoDaoHeart, NoSpiritSense, LostLifespanWhenDie, LostMoneyWhenDie, OnlyActiveOnCurOrNearArea, DestroyBuildingAfterTownWar, AllowRepairGodWeapon, AllFunctionsApplyToNearestUnits.
+* Switches: HideSaveButton, HideReloadButton, HideBattleMap, NoRebirth, Onelife, OnlyPortalAtCityAndSect, NoExpFromBattles, SectNoExchange, NoMonsterShield, BossHasShield, NoGrowupFromBattles, AllowUpgradeNaturally, EnableTrainer, AllowTownBuildupOverTime(+_IncludeFirstTown), LostItemWhenDie, MonsterPropertiesDependOnPlayerProperties, AutoSaveAfterLostInBattle, NoMarketItem, NoStalker, NoTaxing, NoQiCultivation, NoBodyCultivation, NoMerit, NoArtisan, NoDaoHeart, NoSpiritSense, LostLifespanWhenDie, LostMoneyWhenDie, OnlyActiveOnCurOrNearArea, DestroyBuildingAfterTownWar, AllowRepairGodWeapon, AllFunctionsApplyToNearestUnits.
 * Values: PriorityDestinyLevel, NPCAmount, GrowUpSpeed (months between growth ticks), StartupPlayerRole, MaxSellersEachTown, MaxItemsOnSeller, MaxBuyersOnSellingItem.
 
 ## _EventOrderIndex.json
@@ -84,7 +84,10 @@ One `<feature>_localText.json` per feature, key prefix = feature, one block of i
 | Taoist | `merit_localText.json` | `merit_`, `log_merit_`, merit encounters `enc_flood/plague/raid` | `-1000013000`… |
 | Taoist | `artisan_localText.json` | `artisan_`, `log_artisan_` (Artisan Dao) | `-1000014000`… |
 | Taoist | `mind_localText.json` | `heart_`, `sense_`, `log_heart_`, `log_sense_` (Dao heart, spirit sense) | `-1000015000`… |
+| Taoist | `pill_localText.json` | `pill_`, `log_pill_` (pill body, Nine-Turn Golden Pill) | `-1000016000`… |
+| Taoist | `const_localText.json` | `const_`, `log_const_` (constitutions) | `-1000017000`… |
+| Taoist | `constluck_localText.json` | `constluck<luck id>`, `…desc` (destinies of the constitutions, a unique name a tier) | `-1000018000`… |
 | Taoist | older files (`other_`, `team_`, `townmaster_`…) | their prefix | positive ids of the game's style |
 
-A new feature with many texts gets a new file and the next free block (`-1000016000`…); the ids of a block go down
+A new feature with many texts gets a new file and the next free block (`-1000019000`…); the ids of a block go down
 (-1000008000, -1000008001…).

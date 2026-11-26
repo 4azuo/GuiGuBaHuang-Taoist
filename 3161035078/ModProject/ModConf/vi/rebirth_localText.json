@@ -2,7 +2,7 @@
 	{
 		"id": "420102001",
 		"key": "rebirth420101001",
-		"en|ch|tc|kr": "Tái sinh 1"
+		"en|ch|tc|kr": "Tái Thế"
 	},
 	{
 		"id": "420103001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420102002",
 		"key": "rebirth420101002",
-		"en|ch|tc|kr": "Tái sinh 2"
+		"en|ch|tc|kr": "Túc Tuệ"
 	},
 	{
 		"id": "420103002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420102003",
 		"key": "rebirth420101003",
-		"en|ch|tc|kr": "Tái Sinh 3"
+		"en|ch|tc|kr": "Túc Hồn"
 	},
 	{
 		"id": "420103003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420102004",
 		"key": "rebirth420101004",
-		"en|ch|tc|kr": "Tái sinh 4"
+		"en|ch|tc|kr": "Luân Hồi Khách"
 	},
 	{
 		"id": "420103004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420102005",
 		"key": "rebirth420101005",
-		"en|ch|tc|kr": "Tái sinh 5"
+		"en|ch|tc|kr": "Niết Bàn Thân"
 	},
 	{
 		"id": "420103005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420102006",
 		"key": "rebirth420101006",
-		"en|ch|tc|kr": "Tái Sinh 6"
+		"en|ch|tc|kr": "Phượng Hoàng Thân"
 	},
 	{
 		"id": "420103006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420102007",
 		"key": "rebirth420101007",
-		"en|ch|tc|kr": "Tái Sinh 7"
+		"en|ch|tc|kr": "Vạn Thế Thân"
 	},
 	{
 		"id": "420103007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420102008",
 		"key": "rebirth420101008",
-		"en|ch|tc|kr": "Tái Sinh 8"
+		"en|ch|tc|kr": "Phá Luân Hồi"
 	},
 	{
 		"id": "420103008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420102009",
 		"key": "rebirth420101009",
-		"en|ch|tc|kr": "Tái sinh 9"
+		"en|ch|tc|kr": "Bất Tử Hồn"
 	},
 	{
 		"id": "420103009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420102010",
 		"key": "rebirth420101010",
-		"en|ch|tc|kr": "Tái Sinh 10"
+		"en|ch|tc|kr": "Vĩnh Thế Giả"
 	},
 	{
 		"id": "420103010",
@@ -143,5 +143,95 @@
 		"id": "420103106",
 		"key": "rebirth_need_town",
 		"en|ch|tc|kr": "Tái sinh tại thành có vùng {1} trở lên (cao hơn lần tái sinh trước, {0}, và không thấp hơn cảnh giới của bạn)."
+	},
+	{
+		"id": "420103107",
+		"key": "rebirth_button",
+		"en|ch|tc|kr": "Trùng sinh {0}"
+	},
+	{
+		"id": "420103108",
+		"key": "rebirth_help_now",
+		"en|ch|tc|kr": "Đã trùng sinh {0} lần, lần cuối ở cảnh giới {1}, tổng cảnh giới các lần: {2}"
+	},
+	{
+		"id": "420103109",
+		"key": "rebirth_help_cond",
+		"en|ch|tc|kr": "Điều kiện"
+	},
+	{
+		"id": "420103110",
+		"key": "rebirth_help_c_on",
+		"en|ch|tc|kr": "Bật trùng sinh (cài đặt S&M)"
+	},
+	{
+		"id": "420103111",
+		"key": "rebirth_help_c_grade",
+		"en|ch|tc|kr": "Cảnh giới {0} trở lên (cao hơn lần trùng sinh trước)"
+	},
+	{
+		"id": "420103112",
+		"key": "rebirth_help_c_town",
+		"en|ch|tc|kr": "Ở trong thành của vùng {0} trở lên (cao hơn lần trước và không thấp hơn cảnh giới)"
+	},
+	{
+		"id": "420103113",
+		"key": "rebirth_help_c_sect",
+		"en|ch|tc|kr": "Không thuộc tông môn nào"
+	},
+	{
+		"id": "420103114",
+		"key": "rebirth_help_gain",
+		"en|ch|tc|kr": "Lợi"
+	},
+	{
+		"id": "420103115",
+		"key": "rebirth_help_g1",
+		"en|ch|tc|kr": "Mỗi lần trùng sinh một khí vận, mỗi cấp +5% HP tối đa (tối đa 10)"
+	},
+	{
+		"id": "420103116",
+		"key": "rebirth_help_g2",
+		"en|ch|tc|kr": "Giữ công pháp, vật phẩm, tư chất và thuộc tính: về lại cùng cảnh giới sẽ mạnh hơn"
+	},
+	{
+		"id": "420103117",
+		"key": "rebirth_help_g3",
+		"en|ch|tc|kr": "Sát thương tối thiểu và thưởng tinh luyện DP/SP tăng theo tổng cảnh giới các lần (hiện +{0})"
+	},
+	{
+		"id": "420103118",
+		"key": "rebirth_help_cost",
+		"en|ch|tc|kr": "Hại"
+	},
+	{
+		"id": "420103119",
+		"key": "rebirth_help_x1",
+		"en|ch|tc|kr": "Cảnh giới và kinh nghiệm về lại từ đầu, danh vọng về 0"
+	},
+	{
+		"id": "420103120",
+		"key": "rebirth_help_x2",
+		"en|ch|tc|kr": "Yêu thú mạnh hơn: hiện +{0}% công, thủ, HP (tổng cảnh giới các lần x {1}% x độ khó)"
+	},
+	{
+		"id": "420103121",
+		"key": "rebirth_help_x3",
+		"en|ch|tc|kr": "Rời tông môn; sửa pháp bảo đắt hơn"
+	},
+	{
+		"id": "420103122",
+		"key": "rebirth_help_levels",
+		"en|ch|tc|kr": "Khí vận trùng sinh"
+	},
+	{
+		"id": "420103123",
+		"key": "rebirth_help_ready",
+		"en|ch|tc|kr": "Có thể trùng sinh"
+	},
+	{
+		"id": "420103124",
+		"key": "rebirth_help_notready",
+		"en|ch|tc|kr": "Chưa đủ điều kiện"
 	}
 ]

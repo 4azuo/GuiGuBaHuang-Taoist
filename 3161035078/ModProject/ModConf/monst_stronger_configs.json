@@ -3,9 +3,11 @@
 	"__help": [
 		"A value left out (or a broken file): the default of the mod.",
 		"Every growth is shared out: attack x AtkR, defense x DefR, max HP x MHpR.",
-		"GrowRate: growth a month, KillGrowRate: growth per monster of the type killed, by type (Common, Elite, BOSS, NPC); x grade x game level.",
+		"GrowRate: growth a growth turn, KillGrowRate: growth per monster of the type killed, by type (Common, Elite, BOSS, NPC).",
 		"PlayerAtk2Hp (S&M MonsterPropertiesDependOnPlayerProperties): HP from the attack of the player, by type.",
 		"AreaBonus: growth by area 1-13. RebirthAffect: growth per total grade of the rebirths.",
+		"Basis of a monster: x (1 + BasisGradeRate x (grade - 1)) x (1 + BasisGameLvlRate x (game level - 1)).",
+		"Growth with time: GrowRate x counter^GrowExponent (+ KillGrowRate x kills), x (1 + GrowGradeRate x (grade - 1)) x (1 + GrowGameLvlRate x (game level - 1)).",
 		"PlayerAffectSummon: summons of the player get this share of the player's Atk, Def, MHp and basis (Bas)."
 	],
 	"AtkR": 1.05,
@@ -13,6 +15,11 @@
 	"MHpR": 1.5,
 	"Additionnal": 0.02,
 	"RebirthAffect": 0.04,
+	"BasisGradeRate": 0.5,
+	"BasisGameLvlRate": 0.25,
+	"GrowExponent": 0.75,
+	"GrowGradeRate": 0.5,
+	"GrowGameLvlRate": 0.25,
 	"GrowRate": {
 		"Common": 0.004,
 		"Elite": 0.002,

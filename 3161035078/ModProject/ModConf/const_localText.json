@@ -1,0 +1,330 @@
+[
+	{
+		"id": -1000017000,
+		"key": "const_title",
+		"en": "Constitutions",
+		"ch": "体质",
+		"tc": "體質",
+		"kr": "체질"
+	},
+	{
+		"id": -1000017001,
+		"key": "const_line",
+		"en": "{0}: tier {1} ({2})",
+		"ch": "{0}：第{1}层（{2}）",
+		"tc": "{0}：第{1}層（{2}）",
+		"kr": "{0}: {1}단계 ({2})"
+	},
+	{
+		"id": -1000017002,
+		"key": "const_progress",
+		"en": "{0} / {1} points, realm cap {2}",
+		"ch": "{0} / {1} 点，境界上限 {2}",
+		"tc": "{0} / {1} 點，境界上限 {2}",
+		"kr": "{0} / {1}점, 경지 상한 {2}"
+	},
+	{
+		"id": -1000017003,
+		"key": "const_innate",
+		"en": "innate: grows with your realm",
+		"ch": "天生：随境界成长",
+		"tc": "天生：隨境界成長",
+		"kr": "선천: 경지와 함께 자람"
+	},
+	{
+		"id": -1000017004,
+		"key": "const_not_born",
+		"en": "only for those born with it",
+		"ch": "唯有天生者才有",
+		"tc": "唯有天生者才有",
+		"kr": "타고난 자만 가진다"
+	},
+	{
+		"id": -1000017005,
+		"key": "const_absorb",
+		"en": "Absorb a treasure",
+		"ch": "炼化天材地宝",
+		"tc": "煉化天材地寶",
+		"kr": "천재지보 흡수"
+	},
+	{
+		"id": -1000017006,
+		"key": "const_taste",
+		"en": "Taste a raw herb",
+		"ch": "生尝草药",
+		"tc": "生嘗草藥",
+		"kr": "약초를 날로 맛본다"
+	},
+	{
+		"id": -1000017007,
+		"key": "const_no_treasure",
+		"en": "No heaven-and-earth treasure in the bag (herbs or ores of level 4 and above).",
+		"ch": "背包中没有天材地宝（4级及以上的草药或矿石）。",
+		"tc": "背包中沒有天材地寶（4級及以上的草藥或礦石）。",
+		"kr": "가방에 천재지보가 없다 (4레벨 이상의 약초나 광석)."
+	},
+	{
+		"id": -1000017008,
+		"key": "const_absorbed",
+		"en": "The treasure melts into your blood. Something old and scaled stirs in your veins (Dragon Blood Body).",
+		"ch": "天材地宝化入血中，血脉里有古老的鳞甲之物在苏醒（龙血体）。",
+		"tc": "天材地寶化入血中，血脈裡有古老的鱗甲之物在甦醒（龍血體）。",
+		"kr": "보물이 피 속으로 녹아든다. 혈맥 속에서 오래된 비늘 달린 무언가가 꿈틀댄다 (용혈체)."
+	},
+	{
+		"id": -1000017009,
+		"key": "const_no_herb",
+		"en": "No herb in the bag.",
+		"ch": "背包中没有草药。",
+		"tc": "背包中沒有草藥。",
+		"kr": "가방에 약초가 없다."
+	},
+	{
+		"id": -1000017010,
+		"key": "const_tasted",
+		"en": "Bitter, then burning. You lose some HP, and your body remembers the poison (Venom Body).",
+		"ch": "先苦后烧。你损失了些体力，身体记住了这味毒（毒体）。",
+		"tc": "先苦後燒。你損失了些體力，身體記住了這味毒（毒體）。",
+		"kr": "쓰다가 타오른다. HP를 조금 잃고, 몸이 독을 기억한다 (독체)."
+	},
+	{
+		"id": -1000017011,
+		"key": "log_const_tier",
+		"en": "Constitution {0}: tier {1}.",
+		"ch": "体质 {0}：第{1}层。",
+		"tc": "體質 {0}：第{1}層。",
+		"kr": "체질 {0}: {1}단계."
+	},
+	{
+		"id": -1000017012,
+		"key": "log_const_born",
+		"en": "You were born with a rare constitution: {0}.",
+		"ch": "你天生拥有罕见体质：{0}。",
+		"tc": "你天生擁有罕見體質：{0}。",
+		"kr": "당신은 희귀한 체질을 타고났다: {0}."
+	},
+	{
+		"id": -1000017013,
+		"key": "const_pill",
+		"en": "Pill Body",
+		"ch": "药体",
+		"tc": "藥體",
+		"kr": "약체"
+	},
+	{
+		"id": -1000017014,
+		"key": "const_pill_how",
+		"en": "Potions taken in battles (their grade).",
+		"ch": "战斗中服用的丹药（按品阶）。",
+		"tc": "戰鬥中服用的丹藥（按品階）。",
+		"kr": "전투에서 먹은 단약 (품계만큼)."
+	},
+	{
+		"id": -1000017015,
+		"key": "const_pill_gain",
+		"en": "A tier: +10% potion recovery.",
+		"ch": "每层：丹药恢复+10%。",
+		"tc": "每層：丹藥恢復+10%。",
+		"kr": "단계마다: 단약 회복 +10%."
+	},
+	{
+		"id": -1000017016,
+		"key": "const_swordbone",
+		"en": "Sword Bone",
+		"ch": "剑骨",
+		"tc": "劍骨",
+		"kr": "검골"
+	},
+	{
+		"id": -1000017017,
+		"key": "const_swordbone_how",
+		"en": "Hits dealt with sword arts (a point a hit, x50 a tier).",
+		"ch": "以剑法命中（每次命中1点，每层所需x50）。",
+		"tc": "以劍法命中（每次命中1點，每層所需x50）。",
+		"kr": "검법으로 적중 (적중마다 1점, 단계마다 x50)."
+	},
+	{
+		"id": -1000017018,
+		"key": "const_swordbone_gain",
+		"en": "A tier: +5% sword basis, +1% attack.",
+		"ch": "每层：剑法资质+5%，攻击+1%。",
+		"tc": "每層：劍法資質+5%，攻擊+1%。",
+		"kr": "단계마다: 검법 자질 +5%, 공격 +1%."
+	},
+	{
+		"id": -1000017019,
+		"key": "const_vajra",
+		"en": "Vajra Body",
+		"ch": "金刚体",
+		"tc": "金剛體",
+		"kr": "금강체"
+	},
+	{
+		"id": -1000017020,
+		"key": "const_vajra_how",
+		"en": "Hits dealt with fist, palm or finger arts (a point a hit, x50 a tier).",
+		"ch": "以拳、掌、指法命中（每次1点，每层所需x50）。",
+		"tc": "以拳、掌、指法命中（每次1點，每層所需x50）。",
+		"kr": "권, 장, 지법으로 적중 (적중마다 1점, 단계마다 x50)."
+	},
+	{
+		"id": -1000017021,
+		"key": "const_vajra_gain",
+		"en": "A tier: +3% defense, +2% max HP.",
+		"ch": "每层：防御+3%，体力上限+2%。",
+		"tc": "每層：防禦+3%，體力上限+2%。",
+		"kr": "단계마다: 방어 +3%, 최대 HP +2%."
+	},
+	{
+		"id": -1000017022,
+		"key": "const_innatespirit",
+		"en": "Innate Spirit Body",
+		"ch": "先天灵体",
+		"tc": "先天靈體",
+		"kr": "선천영체"
+	},
+	{
+		"id": -1000017023,
+		"key": "const_innatespirit_how",
+		"en": "Born with it (rare); grows with your realm.",
+		"ch": "天生（罕见），随境界成长。",
+		"tc": "天生（罕見），隨境界成長。",
+		"kr": "타고남 (희귀), 경지와 함께 자람."
+	},
+	{
+		"id": -1000017024,
+		"key": "const_innatespirit_gain",
+		"en": "A tier: +4% max MP, +1% attack.",
+		"ch": "每层：灵力上限+4%，攻击+1%。",
+		"tc": "每層：靈力上限+4%，攻擊+1%。",
+		"kr": "단계마다: 최대 MP +4%, 공격 +1%."
+	},
+	{
+		"id": -1000017025,
+		"key": "const_dragonblood",
+		"en": "Dragon Blood Body",
+		"ch": "龙血体",
+		"tc": "龍血體",
+		"kr": "용혈체"
+	},
+	{
+		"id": -1000017026,
+		"key": "const_dragonblood_how",
+		"en": "Born with it (very rare), or by absorbing heaven-and-earth treasures (level² points, x2 a tier).",
+		"ch": "天生（极罕见），或炼化天材地宝（等级²点，每层所需x2）。",
+		"tc": "天生（極罕見），或煉化天材地寶（等級²點，每層所需x2）。",
+		"kr": "타고나거나 (매우 희귀) 천재지보 흡수 (레벨² 점, 단계마다 x2)."
+	},
+	{
+		"id": -1000017027,
+		"key": "const_dragonblood_gain",
+		"en": "A tier: +4% max HP, +1% attack.",
+		"ch": "每层：体力上限+4%，攻击+1%。",
+		"tc": "每層：體力上限+4%，攻擊+1%。",
+		"kr": "단계마다: 최대 HP +4%, 공격 +1%."
+	},
+	{
+		"id": -1000017028,
+		"key": "const_thunder",
+		"en": "Thunder Body",
+		"ch": "雷体",
+		"tc": "雷體",
+		"kr": "뇌체"
+	},
+	{
+		"id": -1000017029,
+		"key": "const_thunder_how",
+		"en": "Lightning trials survived (10 x realm points), storyline K (200).",
+		"ch": "渡过雷劫（境界x10点），故事K（200点）。",
+		"tc": "渡過雷劫（境界x10點），故事K（200點）。",
+		"kr": "뇌겁 생존 (경지 x10점), 이야기 K (200점)."
+	},
+	{
+		"id": -1000017030,
+		"key": "const_thunder_gain",
+		"en": "A tier: +5% thunder basis, +1% attack.",
+		"ch": "每层：雷灵根+5%，攻击+1%。",
+		"tc": "每層：雷靈根+5%，攻擊+1%。",
+		"kr": "단계마다: 뇌 자질 +5%, 공격 +1%."
+	},
+	{
+		"id": -1000017031,
+		"key": "const_venom",
+		"en": "Venom Body",
+		"ch": "毒体",
+		"tc": "毒體",
+		"kr": "독체"
+	},
+	{
+		"id": -1000017032,
+		"key": "const_venom_how",
+		"en": "Raw herbs tasted (their level + 1, -10% HP each), storyline S: the poison tasted (100).",
+		"ch": "生尝草药（等级+1点，每次-10%体力），故事S：亲尝毒药（100点）。",
+		"tc": "生嘗草藥（等級+1點，每次-10%體力），故事S：親嘗毒藥（100點）。",
+		"kr": "약초를 날로 맛봄 (레벨+1점, 매번 HP -10%), 이야기 S: 독을 맛봄 (100)."
+	},
+	{
+		"id": -1000017033,
+		"key": "const_venom_gain",
+		"en": "A tier: +2% defense, +5% wood basis (HP recovery).",
+		"ch": "每层：防御+2%，木灵根+5%（体力恢复）。",
+		"tc": "每層：防禦+2%，木靈根+5%（體力恢復）。",
+		"kr": "단계마다: 방어 +2%, 나무 자질 +5% (HP 회복)."
+	},
+	{
+		"id": -1000017034,
+		"key": "const_awakening",
+		"en": "not awakened: {0} / {1} points, then {2}% chance each time (at most {3}%)",
+		"ch": "未觉醒：{0} / {1} 点，达到后每次有 {2}% 几率觉醒（最多 {3}%）",
+		"tc": "未覺醒：{0} / {1} 點，達到後每次有 {2}% 機率覺醒（最多 {3}%）",
+		"kr": "미각성: {0} / {1}점, 도달 후 매번 {2}% 확률로 각성 (최대 {3}%)"
+	},
+	{
+		"id": -1000017035,
+		"key": "log_const_awaken",
+		"en": "Your {0} awakened!",
+		"ch": "你的{0}觉醒了！",
+		"tc": "你的{0}覺醒了！",
+		"kr": "당신의 {0}가 각성했다!"
+	},
+	{
+		"id": -1000017036,
+		"key": "const_ui_header",
+		"en": "Realm {0}: constitutions reach tier {1} at most. Awakening: the points of tier 1, then a small chance (under 1%) each time points come.",
+		"ch": "第{0}境界：体质最高第{1}阶。觉醒：达到第1阶点数后，每次获得点数有小几率（低于1%）。",
+		"tc": "第{0}境界：體質最高第{1}階。覺醒：達到第1階點數後，每次獲得點數有小機率（低於1%）。",
+		"kr": "{0}경지: 체질은 최대 {1}단계. 각성: 1단계 점수 후, 점수를 얻을 때마다 작은 확률(1% 미만)."
+	},
+	{
+		"id": -1000017037,
+		"key": "const_ui_tier",
+		"en": "Tier {0}: {1}",
+		"ch": "第{0}阶：{1}",
+		"tc": "第{0}階：{1}",
+		"kr": "{0}단계: {1}"
+	},
+	{
+		"id": -1000017038,
+		"key": "const_ui_locked",
+		"en": "Not awakened",
+		"ch": "未觉醒",
+		"tc": "未覺醒",
+		"kr": "미각성"
+	},
+	{
+		"id": -1000017039,
+		"key": "const_ui_owned",
+		"en": "Awakened ({0})",
+		"ch": "已觉醒（{0}）",
+		"tc": "已覺醒（{0}）",
+		"kr": "각성함 ({0})"
+	},
+	{
+		"id": -1000017040,
+		"key": "const_ui_notyet",
+		"en": "Not yet awakened ({0})",
+		"ch": "尚未觉醒（{0}）",
+		"tc": "尚未覺醒（{0}）",
+		"kr": "아직 미각성 ({0})"
+	}
+]

@@ -2,7 +2,7 @@
 	{
 		"id": "420092001",
 		"key": "merchant420091001",
-		"en|ch|tc|kr": "Mercator Lvl-1"
+		"en|ch|tc|kr": "Circulator"
 	},
 	{
 		"id": "420093001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420092002",
 		"key": "merchant420091002",
-		"en|ch|tc|kr": "Mercator Lvl-2"
+		"en|ch|tc|kr": "Tabernarius"
 	},
 	{
 		"id": "420093002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420092003",
 		"key": "merchant420091003",
-		"en|ch|tc|kr": "Mercator Lvl-3"
+		"en|ch|tc|kr": "Institor"
 	},
 	{
 		"id": "420093003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420092004",
 		"key": "merchant420091004",
-		"en|ch|tc|kr": "Mercator Lvl-4"
+		"en|ch|tc|kr": "Mercator Viae"
 	},
 	{
 		"id": "420093004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420092005",
 		"key": "merchant420091005",
-		"en|ch|tc|kr": "Mercator Lvl-5"
+		"en|ch|tc|kr": "Mercator Dives"
 	},
 	{
 		"id": "420093005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420092006",
 		"key": "merchant420091006",
-		"en|ch|tc|kr": "Mercator Lvl-6"
+		"en|ch|tc|kr": "Magnus Mercator"
 	},
 	{
 		"id": "420093006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420092007",
 		"key": "merchant420091007",
-		"en|ch|tc|kr": "Mercator Lvl-7"
+		"en|ch|tc|kr": "Magnas"
 	},
 	{
 		"id": "420093007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420092008",
 		"key": "merchant420091008",
-		"en|ch|tc|kr": "Mercator Lvl-8"
+		"en|ch|tc|kr": "Rex Mercatorum"
 	},
 	{
 		"id": "420093008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420092009",
 		"key": "merchant420091009",
-		"en|ch|tc|kr": "Mercator Lvl-9"
+		"en|ch|tc|kr": "Legatus Divitiarum"
 	},
 	{
 		"id": "420093009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420092010",
 		"key": "merchant420091010",
-		"en|ch|tc|kr": "Mercator Lvl-10"
+		"en|ch|tc|kr": "Deus Divitiarum"
 	},
 	{
 		"id": "420093010",

@@ -1,60 +1,60 @@
 [
 	{
-		"__name": "Forge Lvl-1",
+		"__name": "forge 1: Bellows Boy",
 		"id": "420021001",
 		"effectType": "1",
 		"value": "def_0_5"
 	},
 	{
-		"__name": "Forge Lvl-2",
+		"__name": "forge 2: Anvil Student",
 		"id": "420021002",
 		"effectType": "1",
 		"value": "def_0_10"
 	},
 	{
-		"__name": "Forge Lvl-3",
+		"__name": "forge 3: Smith",
 		"id": "420021003",
 		"effectType": "1",
 		"value": "def_0_15"
 	},
 	{
-		"__name": "Forge Lvl-4",
+		"__name": "forge 4: Artificer",
 		"id": "420021004",
 		"effectType": "1",
 		"value": "def_0_20"
 	},
 	{
-		"__name": "Forge Lvl-5",
+		"__name": "forge 5: Forge Master",
 		"id": "420021005",
 		"effectType": "1",
 		"value": "def_0_25"
 	},
 	{
-		"__name": "Forge Lvl-6",
+		"__name": "forge 6: Grand Artificer",
 		"id": "420021006",
 		"effectType": "1",
 		"value": "def_0_30"
 	},
 	{
-		"__name": "Forge Lvl-7",
+		"__name": "forge 7: Forge Patriarch",
 		"id": "420021007",
 		"effectType": "1",
 		"value": "def_0_35"
 	},
 	{
-		"__name": "Forge Lvl-8",
+		"__name": "forge 8: Forge Venerable",
 		"id": "420021008",
 		"effectType": "1",
 		"value": "def_0_40"
 	},
 	{
-		"__name": "Forge Lvl-9",
+		"__name": "forge 9: Forge Saint",
 		"id": "420021009",
 		"effectType": "1",
 		"value": "def_0_45"
 	},
 	{
-		"__name": "Forge Lvl-10",
+		"__name": "forge 10: Forge Emperor",
 		"id": "420021010",
 		"effectType": "1",
 		"value": "def_0_50"

@@ -1,0 +1,87 @@
+[
+	{
+		"id": -1000016000,
+		"key": "pill_title",
+		"en|ch|tc|kr": "Corps des pilules"
+	},
+	{
+		"id": -1000016001,
+		"key": "pill_summary",
+		"en|ch|tc|kr": "Corps des pilules palier {0} (limite du royaume {1}), {2} points (palier suivant : {3}).\nChaque potion prise en combat ajoute son grade.\n- Paliers : +{4}% de récupération\n- Alchimie : +{5}% avec une sorte de potion que vous avez fabriquée\n- Pilule d'or aux neuf tours : {6} (+10% des PV / PM max par potion)\n- Testament du Roi des remèdes : {7}"
+	},
+	{
+		"id": -1000016002,
+		"key": "pill_yes",
+		"en|ch|tc|kr": "oui"
+	},
+	{
+		"id": -1000016003,
+		"key": "pill_no",
+		"en|ch|tc|kr": "non"
+	},
+	{
+		"id": -1000016004,
+		"key": "pill_king_heal",
+		"en|ch|tc|kr": "+30% de récupération"
+	},
+	{
+		"id": -1000016005,
+		"key": "pill_king_focus",
+		"en|ch|tc|kr": "la moitié de la concentration d'une potion rendue"
+	},
+	{
+		"id": -1000016006,
+		"key": "log_pill_tier",
+		"en|ch|tc|kr": "Corps des pilules : palier {0} (+{1}% de récupération)."
+	},
+	{
+		"id": -1000016007,
+		"key": "log_pill_capped",
+		"en|ch|tc|kr": "Corps des pilules : le palier {0} est la limite de votre royaume ; percez pour aller plus loin."
+	},
+	{
+		"id": -1000016008,
+		"key": "log_pill_nineturn",
+		"en|ch|tc|kr": "Vous avez raffiné la pilule d'or aux neuf tours : chaque potion rend désormais 10% de vos PV / PM max en plus."
+	},
+	{
+		"id": -1000016009,
+		"key": "log_pill_king_heal",
+		"en|ch|tc|kr": "Testament du Roi des remèdes : vos potions soignent 30% de plus."
+	},
+	{
+		"id": -1000016010,
+		"key": "log_pill_king_focus",
+		"en|ch|tc|kr": "Testament du Roi des remèdes : la moitié de la concentration d'une potion vous revient."
+	},
+	{
+		"id": -1000016011,
+		"key": "pill_nineturn",
+		"en|ch|tc|kr": "Une fumée de neuf couleurs s'élève d'un four en ruine. À l'intérieur, une pilule tourne seule : la pilule d'or aux neuf tours, inachevée depuis mille ans.\nIl faut {1} herbes et {0:#,##0} [icon:zm_lingshi] pierres spirituelles pour le feu."
+	},
+	{
+		"id": -1000016012,
+		"key": "pill_nineturn_o1",
+		"en|ch|tc|kr": "Achever la pilule"
+	},
+	{
+		"id": -1000016013,
+		"key": "pill_nineturn_o2",
+		"en|ch|tc|kr": "Partir"
+	},
+	{
+		"id": -1000016014,
+		"key": "pill_nineturn_leave",
+		"en|ch|tc|kr": "Vous partez. Derrière vous, la fumée de neuf couleurs s'efface et le four refroidit."
+	},
+	{
+		"id": -1000016015,
+		"key": "pill_nineturn_noherb",
+		"en|ch|tc|kr": "Il vous faut {1} herbes pour le four. La fumée s'efface avant que vous les trouviez."
+	},
+	{
+		"id": -1000016016,
+		"key": "pill_nineturn_done",
+		"en|ch|tc|kr": "Neuf jours et neuf nuits. Le dernier matin, la pilule cesse de tourner et se pose dans votre paume, chaude comme un battement de cœur.\nDésormais chaque potion rend 10% de vos PV / PM max en plus."
+	}
+]

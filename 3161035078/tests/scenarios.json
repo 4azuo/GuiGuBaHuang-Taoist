@@ -24,7 +24,7 @@
       "exclusive": true,
       "feature": "SMGlobalConfigsEvent",
       "title": "S&M configs window: 3 pages, presets and cancel",
-      "description": "S&M (Settings & Modes) is the global Taoist settings window opened from the title screen: game speed, NPC amount, difficulty presets, etc. The test pages through the window, clicks a difficulty preset to check that the total difficulty score is recalculated, then presses Cancel to check that nothing is saved. Page 3 holds the toggles of the additional features (encounters, bank loans, buy orders, bounties); they do not change the difficulty score.",
+      "description": "S&M (Settings & Modes) is the global Taoist settings window opened from the title screen: game speed, NPC amount, difficulty presets, etc. The test pages through the window, clicks a difficulty preset to check that the total difficulty score is recalculated, then presses Cancel to check that nothing is saved. Page 3 holds the toggles of the additional features (encounters, bank loans, buy orders, bounties); they do not change the difficulty score. Page 4 also holds the toggle 'Keep balance numbers' (balance numbers of the play, not in the score); the button 'Performance' under Level 10 turns the balance numbers off and the processing options on (Only Active On Cur/Near Area, All Functions Apply To Nearest Units).",
       "preconditions": "Title screen",
       "steps": [
         "Open S&M Configs",
@@ -38,7 +38,9 @@
         "Valid saved values (GrowUpSpeed >= 1, NPCAmount > 0, StartupPlayerRole in range)",
         "Preset changes the total score",
         "Cancel keeps the saved configs",
-        "4 toggles, score unchanged"
+        "4 toggles, score unchanged",
+        "Toggle 'Keep balance numbers' on page 4",
+        "Performance on: balance numbers off, processing options on, the button shows ON"
       ]
     },
     {
@@ -47,7 +49,7 @@
       "exclusive": true,
       "feature": "UIDifficultyEvent/PriorityDestinyLevel",
       "title": "New game: difficulty and character creation screens",
-      "description": "Taoist changes the new-game screens: the vanilla difficulty descriptions are replaced, and the S&M option 'priority destiny level' makes destinies of a chosen level appear first when creating a character. The test opens both screens (no character is created) and checks those two behaviours.",
+      "description": "Taoist changes the new-game screens: the vanilla difficulty descriptions are replaced, and the S&M option 'priority destiny level' makes destinies of a chosen level appear first when creating a character. The test opens both screens (no character is created) and checks those two behaviours. The note shared by every difficulty ('The difficulty also raises the stats...') is shown once, a red line at the top right, not in every card.",
       "preconditions": "Title screen",
       "steps": [
         "Open the difficulty screen",
@@ -57,7 +59,8 @@
       "expected": [
         "Vanilla difficulty descriptions are hidden",
         "Level-2 destinies are prioritised in the creation screen",
-        "Config restored"
+        "Config restored",
+        "Shared note once at the top right, not in the cards"
       ],
       "replaces": [
         "TR-01",
@@ -1665,7 +1668,7 @@
       "kind": "auto",
       "feature": "DamageInfo",
       "title": "Damage calculation in a battle: button, hotkey, pause, last hits, recent foes",
-      "description": "In a duel: the battle screen has the 'Damage Calc' button under the damage multiplier (top centre, away from the skill bar); a hit dealt and a hit taken are recorded step by step, the foe becomes the target of the window and the newest recent cultivator with its numbers of that time (kept in the save); the hotkey opens the window (lines with icons, the foe as the target) and pauses the battle, page 2 shows the foe's card, the hotkey again closes it and the battle runs again.",
+      "description": "In a duel: the battle screen has the 'Damage Calc' button under the damage multiplier (top centre, away from the skill bar); a hit dealt and a hit taken are recorded step by step, the foe becomes the target of the window and the newest recent cultivator with its numbers of that time (kept in the save); the hotkey opens the window (lines with icons, the foe as the target) and pauses the battle, page 2 shows the foe's card, the hotkey again closes it and the battle runs again. The hits of the duel are kept in the balance numbers (TaoistStats: % of the max HP, dealt and taken) when the S&M option keeps them.",
       "preconditions": "Save loaded (an NPC to fight)",
       "steps": [
         "Start a duel",
@@ -1683,7 +1686,8 @@
         "Window open, battle paused, foe as the target, icons",
         "The foe's card",
         "Window closed, battle running",
-        "The foe is still in the recent foes"
+        "The foe is still in the recent foes",
+        "Balance numbers of the hits recorded"
       ],
       "promoVersion": "5.5.45",
       "promo": [
@@ -1693,6 +1697,43 @@
           "name": "damage-calc-battle",
           "caption": "Damage calculation in battle: every step of your hits"
         }
+      ]
+    },
+    {
+      "id": "TB-18",
+      "kind": "auto",
+      "feature": "PillBodyEvent/BattleModifyEvent",
+      "title": "Potion bonus of the pill body in a battle",
+      "description": "NPC duel (started by code): a recovery potion of the player gets the bonus of the pill body tier, the Nine-Turn Golden Pill (+10 % of the max HP) and the focus back of storyline S; the pill points grow by the grade of the potion. The time bonus of the damage is about 0 at the start of the battle; the HP regeneration keeps its fractions. The constitutions add their stats when the player enters the battle (Sword Bone + Dragon Blood tier 1: attack +2 %, max HP +4 %).",
+      "preconditions": "Save with an NPC to fight",
+      "steps": [
+        "Start a duel",
+        "Use a potion through PillBodyEvent with tier 3, then with the Nine-Turn pill, then with the focus perk",
+        "Watch the regeneration",
+        "Win, back to the map"
+      ],
+      "expected": [
+        "HP added = base x tier bonus (+ 10 % of the max HP)",
+        "Points + grade, half of the focus back",
+        "No time bonus at x1"
+      ]
+    },
+    {
+      "id": "TB-19",
+      "kind": "auto",
+      "feature": "BattleModifyEvent",
+      "title": "NPC duels of every realm: real hits, guard cap, hits to kill",
+      "description": "For every realm 1-10 found in the world, two NPCs of that realm fight each other for 20 s in a real battle (one on each side, BattleEvent.NPCJoin; they cannot die): their own skills, items and AI. Every hit between them is recorded (BattleModifyEvent.RecordedHits): damage before the MP / SP / DP blocks, the part they took (never over 80 %, GUARD_MAX), the final damage against the max HP, the hits at the minimum damage, the hits to kill. Table duels-by-realm.csv in the evidence folder.",
+      "preconditions": "Save with NPCs of several realms",
+      "steps": [
+        "Start a duel, the opponent cannot die",
+        "For each realm: two NPCs join on both sides, fight 20 s, hits recorded, then removed",
+        "Write the table, win, back to the map"
+      ],
+      "expected": [
+        "The MP / SP / DP blocks never take over 80 % of a hit",
+        "Never under the minimum damage",
+        "At least one realm measured"
       ]
     },
     {
@@ -2802,6 +2843,72 @@
       ]
     },
     {
+      "id": "TG-91",
+      "kind": "auto",
+      "feature": "MonstStrongerEvent/BattleModifyEvent/ConfBalance/PillBodyEvent",
+      "title": "Balance by realm with NPCs, over 15 years",
+      "description": "The NPCs of the world are the test cultivators (their own stats, skills and items). For each realm 1-10 the weakest, middle and strongest NPC by attack: example hit between NPCs of the realm (hits to kill, MP block), regeneration, skill MP cost against MP, potions of the realm against max HP and focus, skill basis requirement, monster basis multiplier (new / old) and monster growth. Measured now, after 5 years and after 10 more years (time skips); tables balance-<checkpoint>.csv in the evidence folder. Long (15 years of time skip).",
+      "preconditions": "Save loaded (time passes, restored by run-autotest.ps1)",
+      "steps": [
+        "Measure every realm",
+        "Skip 5 years, measure",
+        "Skip 10 years, measure",
+        "Compare"
+      ],
+      "expected": [
+        "NPCs of at least 3 realms, every hit does damage, no overflow",
+        "Potions for every realm measured",
+        "Monster basis never above the old x grade x level",
+        "Skill values not multiplied again after the years"
+      ]
+    },
+    {
+      "id": "TG-92",
+      "kind": "auto",
+      "feature": "ConfBalance/PillBodyEvent",
+      "title": "Skill values by S&M, pill body, Nine-Turn Golden Pill",
+      "description": "The skill values follow the S&M rates of the save from the values of the game (applied twice: the same); the recovery potions of every grade; the pill body (tier capped by the realm, the summary, the button of the player info); the Nine-Turn Golden Pill encounter (herbs and spirit stones, once); the reward of storyline S. The flags of the save are put back.",
+      "preconditions": "Save loaded",
+      "steps": [
+        "Skill MP cost with S&M +50 % / -50 %",
+        "Potions of grades 1-10",
+        "Pill body summary from the constitutions window of the player info",
+        "Nine-Turn encounter",
+        "Storyline S rewards"
+      ],
+      "expected": [
+        "value = game value x ratio x (1 + rate), never multiplied twice",
+        "Every potion recovers",
+        "The button opens the summary",
+        "The pill is kept, the stones paid",
+        "Heal / Focus perks"
+      ]
+    },
+    {
+      "id": "TG-93",
+      "kind": "auto",
+      "feature": "ConstitutionEvent",
+      "title": "Constitutions: many at once, treasures, herbs, NPCs, window",
+      "description": "The player cultivates several constitutions at once (Sword Bone, Vajra Body, Thunder Body: tiers, realm cap, the stats they give); a heaven-and-earth treasure absorbed (Dragon Blood, level² points); a raw herb tasted (Venom Body, HP lost); the NPCs born with a constitution (tier = realm); the window of the player info. The points of the save are put back. The destinies of the tiers (a unique name a tier); the windows of the player info: constitutions (awakened in gold cards, not yet in grey), the 6 arts overview and the 10 ranks of an art, the martial / magic trainee ranks, the merchant ranks (the '?' beside the bag) and the rebirth (conditions, gains, costs, destinies).",
+      "preconditions": "Save loaded",
+      "steps": [
+        "Points of 3 constitutions",
+        "Absorb a level 4+ herb",
+        "Taste a common herb",
+        "NPC constitutions",
+        "Open the window from the player info"
+      ],
+      "expected": [
+        "Tiers by points, capped by the realm, bonuses added",
+        "Dragon Blood + level²",
+        "Venom points, HP lower",
+        "Innate tier = realm",
+        "The window is shown",
+        "A destiny of the tier, none of another tier",
+        "Windows of the constitutions, arts, trainee, merchant and rebirth shown"
+      ]
+    },
+    {
       "id": "TG-99",
       "kind": "auto",
       "feature": "CustomDestinyEvent",
@@ -3308,6 +3415,24 @@
         "Roles cast, quest shown",
         "Dramas of R0..R4",
         "An ending, the art learnt (Dao of Creation loaded)"
+      ]
+    },
+    {
+      "id": "TS-19",
+      "kind": "auto",
+      "feature": "StoryEvent",
+      "title": "Story S The Medicine King's Testament",
+      "description": "Realm 5+ line outside towns: an old alchemist keeps the torn testament of the Medicine King. The lair, the plague village, the test of the poison, the last page. Endings Heal (+30 % potion recovery) / Focus (half of the focus back) / Fragment (no perk).",
+      "preconditions": "Save loaded (battles won at once, acts open without waiting)",
+      "steps": [
+        "Open the line, its quest",
+        "Every act of line S",
+        "The ending"
+      ],
+      "expected": [
+        "Role cast, quest shown",
+        "Dramas of S0..S3",
+        "An ending, its perk kept by PillBodyEvent"
       ]
     },
     {

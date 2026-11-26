@@ -2,7 +2,7 @@
 	{
 		"id": "420062001",
 		"key": "apprentice420061001",
-		"en|ch|tc|kr": "Exploitation minière niveau 1"
+		"en|ch|tc|kr": "Garçon de Mine"
 	},
 	{
 		"id": "420063001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420062002",
 		"key": "apprentice420061002",
-		"en|ch|tc|kr": "Exploitation minière niveau 2"
+		"en|ch|tc|kr": "Élève à la Pioche"
 	},
 	{
 		"id": "420063002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420062003",
 		"key": "apprentice420061003",
-		"en|ch|tc|kr": "Exploitation minière niveau 3"
+		"en|ch|tc|kr": "Mineur"
 	},
 	{
 		"id": "420063003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420062004",
 		"key": "apprentice420061004",
-		"en|ch|tc|kr": "Exploitation minière niveau 4"
+		"en|ch|tc|kr": "Prospecteur"
 	},
 	{
 		"id": "420063004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420062005",
 		"key": "apprentice420061005",
-		"en|ch|tc|kr": "Exploitation minière niveau 5"
+		"en|ch|tc|kr": "Maître Mineur"
 	},
 	{
 		"id": "420063005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420062006",
 		"key": "apprentice420061006",
-		"en|ch|tc|kr": "Exploitation minière niveau 6"
+		"en|ch|tc|kr": "Grand Mineur"
 	},
 	{
 		"id": "420063006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420062007",
 		"key": "apprentice420061007",
-		"en|ch|tc|kr": "Exploitation minière niveau 7"
+		"en|ch|tc|kr": "Patriarche Mineur"
 	},
 	{
 		"id": "420063007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420062008",
 		"key": "apprentice420061008",
-		"en|ch|tc|kr": "Exploitation minière niveau 8"
+		"en|ch|tc|kr": "Vénérable des Filons"
 	},
 	{
 		"id": "420063008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420062009",
 		"key": "apprentice420061009",
-		"en|ch|tc|kr": "Exploitation minière niveau 9"
+		"en|ch|tc|kr": "Saint des Montagnes"
 	},
 	{
 		"id": "420063009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420062010",
 		"key": "apprentice420061010",
-		"en|ch|tc|kr": "Exploitation minière niveau 10"
+		"en|ch|tc|kr": "Souverain Terrestre"
 	},
 	{
 		"id": "420063010",

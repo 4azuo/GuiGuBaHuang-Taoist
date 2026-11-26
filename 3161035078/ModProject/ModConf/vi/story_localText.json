@@ -3888,5 +3888,150 @@
 		"id": -1000007777,
 		"key": "story_doc_essence_L",
 		"en|ch|tc|kr": "Tâm đã sáng, mọi chiêu thức bạn biết trải ra như mặt hồ lặng, và bạn thấy bàn tay đã vẽ nên từng chiêu. Đạo Vận của bạn sâu thêm."
+	},
+	{
+		"id": -1000007778,
+		"key": "story_name_S",
+		"en|ch|tc|kr": "Dược Vương di thư"
+	},
+	{
+		"id": -1000007779,
+		"key": "story_task_desc_S",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007780,
+		"key": "story_task_S0",
+		"en|ch|tc|kr": "{O} giữ ba trang rách của Dược Vương. Trang đầu nằm trong hang một con yêu thú."
+	},
+	{
+		"id": -1000007781,
+		"key": "story_task_S1",
+		"en|ch|tc|kr": "Một ngôi làng đang chết vì dịch bệnh. Trang thứ hai viết: thầy thuốc đi ngang qua thì không phải thầy thuốc."
+	},
+	{
+		"id": -1000007782,
+		"key": "story_task_S2",
+		"en|ch|tc|kr": "Trang thứ ba là một vị độc. Phải có người nếm thử mới đọc được phương giải."
+	},
+	{
+		"id": -1000007783,
+		"key": "story_task_S3",
+		"en|ch|tc|kr": "Di thư gần như đã đủ. Đọc trang cuối cùng."
+	},
+	{
+		"id": -1000007784,
+		"key": "story_S0_1",
+		"en|ch|tc|kr": "Một lão luyện đan sư ngồi bên đống lửa đã tắt, trên gối là một xấp giấy cháy sém.\n{O} nói, \"Đây là di ngôn cuối cùng của Dược Vương. Thiếu ba trang - tay lão run quá, không đi tìm nổi nữa. Ngươi tìm giúp lão chứ?\""
+	},
+	{
+		"id": -1000007785,
+		"key": "story_S0_1_o1",
+		"en|ch|tc|kr": "Ta sẽ tìm"
+	},
+	{
+		"id": -1000007786,
+		"key": "story_S0_1_o2",
+		"en|ch|tc|kr": "Không phải việc của ta"
+	},
+	{
+		"id": -1000007787,
+		"key": "story_S0_2",
+		"en|ch|tc|kr": "Trang đầu có mùi xạ hương. Bạn lần theo đến một hang đầy xương bị gặm; có thứ gì to lớn đang thở trong bóng tối."
+	},
+	{
+		"id": -1000007788,
+		"key": "story_S0_2_o1",
+		"en|ch|tc|kr": "Đi vào"
+	},
+	{
+		"id": -1000007789,
+		"key": "story_S1_1",
+		"en|ch|tc|kr": "Sau mỗi cánh cửa đều có tiếng ho. {O} đọc to trang thứ hai: \"Thầy thuốc đi ngang qua thì không phải thầy thuốc.\"\nNgười bệnh cần thuốc, hoặc linh thạch để mời đại phu trong thành ({0:#,##0} [icon:zm_lingshi])."
+	},
+	{
+		"id": -1000007790,
+		"key": "story_S1_1_o1",
+		"en|ch|tc|kr": "Cho một viên thuốc"
+	},
+	{
+		"id": -1000007791,
+		"key": "story_S1_1_o2",
+		"en|ch|tc|kr": "Trả tiền mời đại phu"
+	},
+	{
+		"id": -1000007792,
+		"key": "story_S1_1_o3",
+		"en|ch|tc|kr": "Đi tiếp"
+	},
+	{
+		"id": -1000007793,
+		"key": "story_S1_nopill",
+		"en|ch|tc|kr": "Bạn không có viên thuốc hồi nào để cho."
+	},
+	{
+		"id": -1000007794,
+		"key": "story_S2_1",
+		"en|ch|tc|kr": "Trang thứ ba không phải mực mà là một lớp cao đen đã khô. {O} xoay nó dưới ánh sáng: \"Phương giải viết trong chính chất độc. Phải có người nếm thử.\""
+	},
+	{
+		"id": -1000007795,
+		"key": "story_S2_1_o1",
+		"en|ch|tc|kr": "Tự mình nếm"
+	},
+	{
+		"id": -1000007796,
+		"key": "story_S2_1_o2",
+		"en|ch|tc|kr": "Để {O} nếm"
+	},
+	{
+		"id": -1000007797,
+		"key": "story_S2_1_o3",
+		"en|ch|tc|kr": "Không ai nếm"
+	},
+	{
+		"id": -1000007798,
+		"key": "story_S3_1",
+		"en|ch|tc|kr": "Trang cuối còn nguyên. Nét chữ của Dược Vương nhỏ mà vững: \"Thầy thuốc phải chọn điều cần giữ - sức mạnh của thuốc, hay sự bình tâm của người dùng thuốc.\""
+	},
+	{
+		"id": -1000007799,
+		"key": "story_S3_1_o1",
+		"en|ch|tc|kr": "Sức mạnh của thuốc (+30% lượng hồi)"
+	},
+	{
+		"id": -1000007800,
+		"key": "story_S3_1_o2",
+		"en|ch|tc|kr": "Sự bình tâm của người dùng (hoàn lại nửa niệm lực)"
+	},
+	{
+		"id": -1000007801,
+		"key": "story_endS_Heal",
+		"en|ch|tc|kr": "Bạn chép trang cuối vào sách của mình. Từ nay mỗi viên thuốc bạn nuốt đều cháy mạnh hơn trong huyết mạch."
+	},
+	{
+		"id": -1000007802,
+		"key": "story_endS_Focus",
+		"en|ch|tc|kr": "Bạn chép trang cuối vào sách của mình. Từ nay dùng thuốc hầu như không làm loạn tâm thần - một nửa niệm lực tiêu hao sẽ quay về."
+	},
+	{
+		"id": -1000007803,
+		"key": "story_endS_Fragment",
+		"en|ch|tc|kr": "Không cứu ngôi làng, không ai nếm độc, trang cuối vẫn trắng. {O} đưa bạn một viên thuốc tự luyện rồi không nói thêm lời nào."
+	},
+	{
+		"id": -1000007804,
+		"key": "story_end_S_Heal",
+		"en|ch|tc|kr": "Sức mạnh của thuốc"
+	},
+	{
+		"id": -1000007805,
+		"key": "story_end_S_Focus",
+		"en|ch|tc|kr": "Tâm bình"
+	},
+	{
+		"id": -1000007806,
+		"key": "story_end_S_Fragment",
+		"en|ch|tc|kr": "Trang giấy trắng"
 	}
 ]

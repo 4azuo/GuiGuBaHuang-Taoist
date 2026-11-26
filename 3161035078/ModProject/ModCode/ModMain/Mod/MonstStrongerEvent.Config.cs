@@ -18,6 +18,14 @@ namespace MOD_nE7UL2.Mod
         public float DefR { get; set; } = 0.5f;
         public float MHpR { get; set; } = 1.5f;
         public float Additionnal { get; set; } = 0.02f;
+        /// <summary>Basis of a monster: x (1 + BasisGradeRate x (grade - 1)) x (1 + BasisGameLvlRate x (game level - 1)).</summary>
+        public float BasisGradeRate { get; set; } = 0.5f;
+        public float BasisGameLvlRate { get; set; } = 0.25f;
+        /// <summary>Growth of the monsters with time (6.3, slower): GrowRate x counter^GrowExponent, x (1 + GrowGradeRate x (grade - 1))
+        /// x (1 + GrowGameLvlRate x (game level - 1)); until 6.3 GrowRate x counter x grade x game level (x50 at grade 10 of Chaos).</summary>
+        public float GrowExponent { get; set; } = 0.75f;
+        public float GrowGradeRate { get; set; } = 0.5f;
+        public float GrowGameLvlRate { get; set; } = 0.25f;
         /// <summary>Growth per total grade of the rebirths.</summary>
         public float RebirthAffect { get; set; } = 0.04f;
         /// <summary>Growth a month, by monster type.</summary>
@@ -70,8 +78,27 @@ namespace MOD_nE7UL2.Mod
             ["Bas"] = 0.01,
         };
 
+        /// <summary>Multiplier of the basis of a monster of the grade at the game level (1 at grade 1 of the normal level).</summary>
+        public double BasisMultiplier(int grade, int gameLvl) => BasisMultiplier(BasisGradeRate, BasisGameLvlRate, grade, gameLvl);
+
+        /// <summary>Share added to the stats of a monster by time and kills (see GrowExponent).</summary>
+        public double Growth(int counter, int kills, float growRate, float killRate, int grade, int gameLvl) =>
+            Growth(counter, kills, growRate, killRate, grade, gameLvl, GrowExponent, GrowGradeRate, GrowGameLvlRate);
+
+        public static double Growth(int counter, int kills, double growRate, double killRate, int grade, int gameLvl, double exponent, double gradeRate, double lvlRate) =>
+            (Math.Pow(Math.Max(0, counter), exponent) * growRate + Math.Max(0, kills) * killRate) * BasisMultiplier(gradeRate, lvlRate, grade, gameLvl);
+
+        /// <summary>(1 + gradeRate x (grade - 1)) x (1 + lvlRate x (game level - 1)).</summary>
+        public static double BasisMultiplier(double gradeRate, double lvlRate, int grade, int gameLvl) =>
+            (1d + gradeRate * Math.Max(0, grade - 1)) * (1d + lvlRate * Math.Max(0, gameLvl - 1));
+
         protected override void Fix(MonstStrongerConfig d)
         {
+            BasisGradeRate = Math.Max(0f, BasisGradeRate);
+            GrowExponent = Math.Max(0.1f, Math.Min(1f, GrowExponent));
+            GrowGradeRate = Math.Max(0f, GrowGradeRate);
+            GrowGameLvlRate = Math.Max(0f, GrowGameLvlRate);
+            BasisGameLvlRate = Math.Max(0f, BasisGameLvlRate);
             GrowRate = GrowRate ?? d.GrowRate;
             // read as KillGrowRate[type] when GrowRate has the type
             KillGrowRate = Fill(KillGrowRate, d.KillGrowRate);

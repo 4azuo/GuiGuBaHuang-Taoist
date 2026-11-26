@@ -13,6 +13,10 @@ namespace MOD_nE7UL2.Object
         public class _BaseConfigs
         {
             public float LevelExpRatio { get; set; }
+            /// <summary>HP / MP of a recovery potion: x (PotionHealBase + PotionHealGradeRatio x grade + PotionHealLevelRatio x level) (6.3; was x (grade x 4 + level + grade / 2 x 4)).</summary>
+            public float PotionHealBase { get; set; } = 1.0f;
+            public float PotionHealGradeRatio { get; set; } = 1.5f;
+            public float PotionHealLevelRatio { get; set; } = 1.0f;
 
 
 

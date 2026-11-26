@@ -55,6 +55,15 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
                     c.Assert(DamageInfo.LastDealt != null && DamageInfo.LastDealt.Steps.Count > 0, $"hit dealt recorded: {DamageInfo.LastDealt?.Attacker} -> {DamageInfo.LastDealt?.Target}: {(DamageInfo.LastDealt == null ? "-" : DamageInfo.Steps(DamageInfo.LastDealt.Steps))}");
                     c.Assert(DamageInfo.LastTaken != null && DamageInfo.LastTaken.Steps.Count > 0, $"hit taken recorded: {(DamageInfo.LastTaken == null ? "-" : DamageInfo.Steps(DamageInfo.LastTaken.Steps))}");
                     c.Assert(DamageInfo.LastFoe != null && DamageInfo.LastFoe.Pointer == foe.Pointer, "the foe is the target of the window");
+                    // the balance numbers of the hits (TaoistStats, ModLib BalanceStatsHelper) when the S&M option keeps them
+                    if (SMGlobalConfigsEvent.Instance.KeepBalanceStats)
+                    {
+                        var mod = ModMain.ModObj.ModId;
+                        var dealt = BalanceStatsHelper.Get(mod, "hit", MOD_nE7UL2.Helper.TaoistStats.HitKey(true, "cultivator", npc.GetGradeLvl()));
+                        var taken = BalanceStatsHelper.Get(mod, "hit", MOD_nE7UL2.Helper.TaoistStats.HitKey(false, "cultivator", npc.GetGradeLvl()));
+                        c.Assert(dealt != null && dealt.Count > 0 && taken != null && taken.Count > 0, $"balance numbers of the hits: dealt n {dealt?.Count}, mean {dealt?.Mean:0.0} % of the max HP; taken n {taken?.Count}, mean {taken?.Mean:0.0} %");
+                    }
+                    else c.Info("balance numbers off (S&M)");
                     var rec = DamageInfo.RecentFoes(true).FirstOrDefault();
                     c.Assert(rec != null && rec.UnitId == npc.GetUnitId(), $"the foe is the newest recent cultivator ({rec?.Name})");
                     if (rec != null)

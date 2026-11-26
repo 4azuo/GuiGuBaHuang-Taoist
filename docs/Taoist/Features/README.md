@@ -22,7 +22,7 @@ Each page follows the same order: file and cache key, summary, **Saved data**, *
 
 ## Battle
 
-[BattleEvent](BattleEvent.md) - [BattleAfterEvent](BattleAfterEvent.md) - [MapBuildBattleEvent](MapBuildBattleEvent.md) - [MonstStrongerEvent](MonstStrongerEvent.md) - [SpecialMonsterEvent](SpecialMonsterEvent.md) - [SpiritlockEvent](SpiritlockEvent.md) - [RealTrialEvent](RealTrialEvent.md) - [BattleModifyEvent](BattleModifyEvent.md) - [DamageInfo](DamageInfo.md) - [SMScoreEvent](SMScoreEvent.md) - [BattleManashieldEvent](BattleManashieldEvent.md) - [BattleRewardEventV2](BattleRewardEventV2.md)
+[BattleEvent](BattleEvent.md) - [BattleAfterEvent](BattleAfterEvent.md) - [MapBuildBattleEvent](MapBuildBattleEvent.md) - [MonstStrongerEvent](MonstStrongerEvent.md) - [SpecialMonsterEvent](SpecialMonsterEvent.md) - [PillBodyEvent](PillBodyEvent.md) - [ConstitutionEvent](ConstitutionEvent.md) - [ConfBalance](ConfBalance.md) - [SpiritlockEvent](SpiritlockEvent.md) - [RealTrialEvent](RealTrialEvent.md) - [BattleModifyEvent](BattleModifyEvent.md) - [DamageInfo](DamageInfo.md) - [SMScoreEvent](SMScoreEvent.md) - [BattleManashieldEvent](BattleManashieldEvent.md) - [BattleRewardEventV2](BattleRewardEventV2.md)
 
 ## UI
 

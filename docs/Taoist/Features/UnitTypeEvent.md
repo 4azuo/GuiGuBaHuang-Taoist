@@ -69,6 +69,37 @@ Each rank is a luck `base id + level`; when the rank changes, all levels of that
 | Martial / Magic trainee | 420071000 / 420081000 | sum of physical / magic bases | 200, 400, 800 ... 102,400 (x2 each) |
 | Merchant | 420091000 | money | 10k, 20k, 40k, 80k, 160k, 480k, 1.44M, 4.32M, 12.96M, 38.88M |
 
+Windows of the ranks (drawn with `Helper/InfoPanel`, itself on ModLib `UIPanelHelper`; texts `ui_appr_*`, `ui_panel_*`,
+`ui_trainee_*`, `ui_merchant_*` in `ui_localText.json`; checked by TG-93):
+- a "?" right of the Artisanship title of the player info (`UIEvent`, `APPR_HELP_DX/DY` from `goItem8_En`): the overview of
+  the 6 arts (`OpenApprenticeHelp`): a card an art (icon, points, rank now, its effect, a bar to the next rank, the next
+  rank), a "?" on a card opens its 10 ranks (`OpenApprenticeDetail`, Back to the overview);
+- a "?" right of the titles of the Martial Arts / Spiritual Root columns (`OpenTraineeHelp`, `MARTIAL_HELP_DX` /
+  `MAGIC_HELP_DX`): the sum of the physical bases / spiritual roots;
+- a "?" right of the search button of the bag (Item tab; `OpenMerchantHelp`, `MERCHANT_HELP_DX`): the spirit stones.
+A ranks window (`InfoPanel.OpenRanks`, data from `ApprenticeRanks` / `TraineeRanks` / `MerchantRanks`): a header card (the
+value, the rank now, a bar to the next rank), then the table of the 10 ranks (title, value needed, effect): the reached
+ones in black, the current one highlighted, the next ones in grey. `ApprenticeSummary` / `TraineeSummary`: the same as text.
+
+The artisan ranks have a title of their own a level (`apprentice_<art>_localText.json`, 6.3; were "Alchemy Lvl-1"...):
+
+| Art | Levels 1 -> 10 |
+|---|---|
+| Alchemy | Herb Boy, Furnace Boy, Pill Student, Pill Refiner, Pill Master, Grand Alchemist, Pill Patriarch, Pill Venerable, Pill Saint, Pill Emperor |
+| Forge | Bellows Boy, Anvil Student, Smith, Artificer, Forge Master, Grand Artificer, Forge Patriarch, Forge Venerable, Forge Saint, Forge Emperor |
+| Talismans | Ink Boy, Copyist, Scribe, Runecrafter, Rune Master, Grand Runemaster, Rune Patriarch, Rune Venerable, Rune Saint, Rune Emperor |
+| Feng Shui | Compass Boy, Land Reader, Geomancer, Vein Seeker, Feng Shui Master, Grand Geomancer, Geomancy Patriarch, Earth Venerable, Geomancy Saint, Sky-Earth Sage |
+| Herbology | Herb Picker, Herb Seeker, Herb Farmer, Spirit Gardener, Herbalist, Grand Herbalist, Herb Patriarch, Herb Venerable, Herb Saint, Shennong's Heir |
+| Mining | Ore Boy, Pick Student, Miner, Prospector, Mine Master, Grand Miner, Mine Patriarch, Vein Venerable, Mountain Saint, Earth Sovereign |
+
+The trainee and merchant ranks too (were "Martial Lvl-1", "Merchant Lvl-1"...):
+
+| Rank | Levels 1 -> 10 |
+|---|---|
+| Martial trainee | Martial Novice, Martial Disciple, Warrior, Martial Master, War General, Martial King, Martial Sovereign, Martial Venerable, Martial Saint, War God |
+| Magic trainee | Spell Novice, Spell Disciple, Sorcerer, Spell Master, Perfected One, Dharma King, Spell Sovereign, Dharma Venerable, Dharma Saint, Dharma God |
+| Merchant | Peddler, Stall Keeper, Shopkeeper, Caravan Trader, Rich Merchant, Great Merchant, Magnate, Merchant King, Wealth Envoy, God of Wealth |
+
 Merchant rank: sell value +0.3 % and passive income +0.1 % of money per level. The merchant rank never goes down (search starts at the current level).
 
 ## Passive income (per month)

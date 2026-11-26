@@ -1,0 +1,702 @@
+[
+	{
+		"id": -1000018000,
+		"key": "constluck420301001",
+		"en|ch|tc|kr": "Carne Herbal"
+	},
+	{
+		"id": -1000018001,
+		"key": "constluck420301001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +10% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018002,
+		"key": "constluck420301002",
+		"en|ch|tc|kr": "Piel de Elixir"
+	},
+	{
+		"id": -1000018003,
+		"key": "constluck420301002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +20% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018004,
+		"key": "constluck420301003",
+		"en|ch|tc|kr": "Cien Hierbas"
+	},
+	{
+		"id": -1000018005,
+		"key": "constluck420301003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +30% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018006,
+		"key": "constluck420301004",
+		"en|ch|tc|kr": "Médula de Píldora"
+	},
+	{
+		"id": -1000018007,
+		"key": "constluck420301004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +40% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018008,
+		"key": "constluck420301005",
+		"en|ch|tc|kr": "Espíritu Herbal"
+	},
+	{
+		"id": -1000018009,
+		"key": "constluck420301005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +50% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018010,
+		"key": "constluck420301006",
+		"en|ch|tc|kr": "Elixir Dorado"
+	},
+	{
+		"id": -1000018011,
+		"key": "constluck420301006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +60% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018012,
+		"key": "constluck420301007",
+		"en|ch|tc|kr": "Mil Píldoras"
+	},
+	{
+		"id": -1000018013,
+		"key": "constluck420301007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +70% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018014,
+		"key": "constluck420301008",
+		"en|ch|tc|kr": "Hierba Inmortal"
+	},
+	{
+		"id": -1000018015,
+		"key": "constluck420301008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +80% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018016,
+		"key": "constluck420301009",
+		"en|ch|tc|kr": "Sabio de Píldoras"
+	},
+	{
+		"id": -1000018017,
+		"key": "constluck420301009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +90% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018018,
+		"key": "constluck420301010",
+		"en|ch|tc|kr": "Rey Medicinal"
+	},
+	{
+		"id": -1000018019,
+		"key": "constluck420301010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +100% recuperación de pociones (en combate)"
+	},
+	{
+		"id": -1000018020,
+		"key": "constluck420302001",
+		"en|ch|tc|kr": "Germen de Espada"
+	},
+	{
+		"id": -1000018021,
+		"key": "constluck420302001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +1% ataque, +5% espada (en combate)"
+	},
+	{
+		"id": -1000018022,
+		"key": "constluck420302002",
+		"en|ch|tc|kr": "Espada de Hierro"
+	},
+	{
+		"id": -1000018023,
+		"key": "constluck420302002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +2% ataque, +10% espada (en combate)"
+	},
+	{
+		"id": -1000018024,
+		"key": "constluck420302003",
+		"en|ch|tc|kr": "Intención de Espada"
+	},
+	{
+		"id": -1000018025,
+		"key": "constluck420302003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +3% ataque, +15% espada (en combate)"
+	},
+	{
+		"id": -1000018026,
+		"key": "constluck420302004",
+		"en|ch|tc|kr": "Hoja Espiritual"
+	},
+	{
+		"id": -1000018027,
+		"key": "constluck420302004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +4% ataque, +20% espada (en combate)"
+	},
+	{
+		"id": -1000018028,
+		"key": "constluck420302005",
+		"en|ch|tc|kr": "Corazón de Espada"
+	},
+	{
+		"id": -1000018029,
+		"key": "constluck420302005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +5% ataque, +25% espada (en combate)"
+	},
+	{
+		"id": -1000018030,
+		"key": "constluck420302006",
+		"en|ch|tc|kr": "Alma de Espada"
+	},
+	{
+		"id": -1000018031,
+		"key": "constluck420302006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +6% ataque, +30% espada (en combate)"
+	},
+	{
+		"id": -1000018032,
+		"key": "constluck420302007",
+		"en|ch|tc|kr": "Partecielos"
+	},
+	{
+		"id": -1000018033,
+		"key": "constluck420302007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +7% ataque, +35% espada (en combate)"
+	},
+	{
+		"id": -1000018034,
+		"key": "constluck420302008",
+		"en|ch|tc|kr": "Soberano Espada"
+	},
+	{
+		"id": -1000018035,
+		"key": "constluck420302008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +8% ataque, +40% espada (en combate)"
+	},
+	{
+		"id": -1000018036,
+		"key": "constluck420302009",
+		"en|ch|tc|kr": "Espada Suprema"
+	},
+	{
+		"id": -1000018037,
+		"key": "constluck420302009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +9% ataque, +45% espada (en combate)"
+	},
+	{
+		"id": -1000018038,
+		"key": "constluck420302010",
+		"en|ch|tc|kr": "Espada Primordial"
+	},
+	{
+		"id": -1000018039,
+		"key": "constluck420302010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +10% ataque, +50% espada (en combate)"
+	},
+	{
+		"id": -1000018040,
+		"key": "constluck420303001",
+		"en|ch|tc|kr": "Piel de Bronce"
+	},
+	{
+		"id": -1000018041,
+		"key": "constluck420303001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +3% defensa, +2% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018042,
+		"key": "constluck420303002",
+		"en|ch|tc|kr": "Hueso de Hierro"
+	},
+	{
+		"id": -1000018043,
+		"key": "constluck420303002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +6% defensa, +4% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018044,
+		"key": "constluck420303003",
+		"en|ch|tc|kr": "Rompepiedras"
+	},
+	{
+		"id": -1000018045,
+		"key": "constluck420303003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +9% defensa, +6% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018046,
+		"key": "constluck420303004",
+		"en|ch|tc|kr": "Campana Dorada"
+	},
+	{
+		"id": -1000018047,
+		"key": "constluck420303004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +12% defensa, +8% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018048,
+		"key": "constluck420303005",
+		"en|ch|tc|kr": "Vajra"
+	},
+	{
+		"id": -1000018049,
+		"key": "constluck420303005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +15% defensa, +10% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018050,
+		"key": "constluck420303006",
+		"en|ch|tc|kr": "Irrompible"
+	},
+	{
+		"id": -1000018051,
+		"key": "constluck420303006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +18% defensa, +12% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018052,
+		"key": "constluck420303007",
+		"en|ch|tc|kr": "Oro de Arhat"
+	},
+	{
+		"id": -1000018053,
+		"key": "constluck420303007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +21% defensa, +14% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018054,
+		"key": "constluck420303008",
+		"en|ch|tc|kr": "Vajra Bodhi"
+	},
+	{
+		"id": -1000018055,
+		"key": "constluck420303008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +24% defensa, +16% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018056,
+		"key": "constluck420303009",
+		"en|ch|tc|kr": "Luz de Buda"
+	},
+	{
+		"id": -1000018057,
+		"key": "constluck420303009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +27% defensa, +18% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018058,
+		"key": "constluck420303010",
+		"en|ch|tc|kr": "Imperecedero"
+	},
+	{
+		"id": -1000018059,
+		"key": "constluck420303010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +30% defensa, +20% PV máx. (en combate)"
+	},
+	{
+		"id": -1000018060,
+		"key": "constluck420304001",
+		"en|ch|tc|kr": "Toque Espiritual"
+	},
+	{
+		"id": -1000018061,
+		"key": "constluck420304001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +4% PM máx., +1% ataque (en combate)"
+	},
+	{
+		"id": -1000018062,
+		"key": "constluck420304002",
+		"en|ch|tc|kr": "Espíritu Claro"
+	},
+	{
+		"id": -1000018063,
+		"key": "constluck420304002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +8% PM máx., +2% ataque (en combate)"
+	},
+	{
+		"id": -1000018064,
+		"key": "constluck420304003",
+		"en|ch|tc|kr": "Fuente Espiritual"
+	},
+	{
+		"id": -1000018065,
+		"key": "constluck420304003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +12% PM máx., +3% ataque (en combate)"
+	},
+	{
+		"id": -1000018066,
+		"key": "constluck420304004",
+		"en|ch|tc|kr": "Vena Espiritual"
+	},
+	{
+		"id": -1000018067,
+		"key": "constluck420304004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +16% PM máx., +4% ataque (en combate)"
+	},
+	{
+		"id": -1000018068,
+		"key": "constluck420304005",
+		"en|ch|tc|kr": "Espíritu Innato"
+	},
+	{
+		"id": -1000018069,
+		"key": "constluck420304005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +20% PM máx., +5% ataque (en combate)"
+	},
+	{
+		"id": -1000018070,
+		"key": "constluck420304006",
+		"en|ch|tc|kr": "Qi Púrpura"
+	},
+	{
+		"id": -1000018071,
+		"key": "constluck420304006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +24% PM máx., +6% ataque (en combate)"
+	},
+	{
+		"id": -1000018072,
+		"key": "constluck420304007",
+		"en|ch|tc|kr": "Nacido del Cielo"
+	},
+	{
+		"id": -1000018073,
+		"key": "constluck420304007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +28% PM máx., +7% ataque (en combate)"
+	},
+	{
+		"id": -1000018074,
+		"key": "constluck420304008",
+		"en|ch|tc|kr": "Espíritu Estelar"
+	},
+	{
+		"id": -1000018075,
+		"key": "constluck420304008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +32% PM máx., +8% ataque (en combate)"
+	},
+	{
+		"id": -1000018076,
+		"key": "constluck420304009",
+		"en|ch|tc|kr": "Caos Primordial"
+	},
+	{
+		"id": -1000018077,
+		"key": "constluck420304009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +36% PM máx., +9% ataque (en combate)"
+	},
+	{
+		"id": -1000018078,
+		"key": "constluck420304010",
+		"en|ch|tc|kr": "Cuerpo del Dao"
+	},
+	{
+		"id": -1000018079,
+		"key": "constluck420304010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +40% PM máx., +10% ataque (en combate)"
+	},
+	{
+		"id": -1000018080,
+		"key": "constluck420305001",
+		"en|ch|tc|kr": "Sangre Escamada"
+	},
+	{
+		"id": -1000018081,
+		"key": "constluck420305001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +4% PV máx., +1% ataque (en combate)"
+	},
+	{
+		"id": -1000018082,
+		"key": "constluck420305002",
+		"en|ch|tc|kr": "Sangre de Serpiente"
+	},
+	{
+		"id": -1000018083,
+		"key": "constluck420305002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +8% PV máx., +2% ataque (en combate)"
+	},
+	{
+		"id": -1000018084,
+		"key": "constluck420305003",
+		"en|ch|tc|kr": "Sangre Jiao"
+	},
+	{
+		"id": -1000018085,
+		"key": "constluck420305003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +12% PV máx., +3% ataque (en combate)"
+	},
+	{
+		"id": -1000018086,
+		"key": "constluck420305004",
+		"en|ch|tc|kr": "Sangre Qiu"
+	},
+	{
+		"id": -1000018087,
+		"key": "constluck420305004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +16% PV máx., +4% ataque (en combate)"
+	},
+	{
+		"id": -1000018088,
+		"key": "constluck420305005",
+		"en|ch|tc|kr": "Sangre de Dragón"
+	},
+	{
+		"id": -1000018089,
+		"key": "constluck420305005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +20% PV máx., +5% ataque (en combate)"
+	},
+	{
+		"id": -1000018090,
+		"key": "constluck420305006",
+		"en|ch|tc|kr": "Dragón Verdadero"
+	},
+	{
+		"id": -1000018091,
+		"key": "constluck420305006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +24% PV máx., +6% ataque (en combate)"
+	},
+	{
+		"id": -1000018092,
+		"key": "constluck420305007",
+		"en|ch|tc|kr": "Dragón Azur"
+	},
+	{
+		"id": -1000018093,
+		"key": "constluck420305007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +28% PV máx., +7% ataque (en combate)"
+	},
+	{
+		"id": -1000018094,
+		"key": "constluck420305008",
+		"en|ch|tc|kr": "Dragón Ancestral"
+	},
+	{
+		"id": -1000018095,
+		"key": "constluck420305008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +32% PV máx., +8% ataque (en combate)"
+	},
+	{
+		"id": -1000018096,
+		"key": "constluck420305009",
+		"en|ch|tc|kr": "Emperador Dragón"
+	},
+	{
+		"id": -1000018097,
+		"key": "constluck420305009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +36% PV máx., +9% ataque (en combate)"
+	},
+	{
+		"id": -1000018098,
+		"key": "constluck420305010",
+		"en|ch|tc|kr": "Dios Dragón"
+	},
+	{
+		"id": -1000018099,
+		"key": "constluck420305010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +40% PV máx., +10% ataque (en combate)"
+	},
+	{
+		"id": -1000018100,
+		"key": "constluck420306001",
+		"en|ch|tc|kr": "Fulminado"
+	},
+	{
+		"id": -1000018101,
+		"key": "constluck420306001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +1% ataque, +5% trueno (en combate)"
+	},
+	{
+		"id": -1000018102,
+		"key": "constluck420306002",
+		"en|ch|tc|kr": "Forjado en Trueno"
+	},
+	{
+		"id": -1000018103,
+		"key": "constluck420306002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +2% ataque, +10% trueno (en combate)"
+	},
+	{
+		"id": -1000018104,
+		"key": "constluck420306003",
+		"en|ch|tc|kr": "Vena de Trueno"
+	},
+	{
+		"id": -1000018105,
+		"key": "constluck420306003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +3% ataque, +15% trueno (en combate)"
+	},
+	{
+		"id": -1000018106,
+		"key": "constluck420306004",
+		"en|ch|tc|kr": "Trueno Púrpura"
+	},
+	{
+		"id": -1000018107,
+		"key": "constluck420306004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +4% ataque, +20% trueno (en combate)"
+	},
+	{
+		"id": -1000018108,
+		"key": "constluck420306005",
+		"en|ch|tc|kr": "Espíritu del Trueno"
+	},
+	{
+		"id": -1000018109,
+		"key": "constluck420306005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +5% ataque, +25% trueno (en combate)"
+	},
+	{
+		"id": -1000018110,
+		"key": "constluck420306006",
+		"en|ch|tc|kr": "Cinco Truenos"
+	},
+	{
+		"id": -1000018111,
+		"key": "constluck420306006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +6% ataque, +30% trueno (en combate)"
+	},
+	{
+		"id": -1000018112,
+		"key": "constluck420306007",
+		"en|ch|tc|kr": "Trueno Celestial"
+	},
+	{
+		"id": -1000018113,
+		"key": "constluck420306007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +7% ataque, +35% trueno (en combate)"
+	},
+	{
+		"id": -1000018114,
+		"key": "constluck420306008",
+		"en|ch|tc|kr": "Tribulación"
+	},
+	{
+		"id": -1000018115,
+		"key": "constluck420306008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +8% ataque, +40% trueno (en combate)"
+	},
+	{
+		"id": -1000018116,
+		"key": "constluck420306009",
+		"en|ch|tc|kr": "Emperador del Trueno"
+	},
+	{
+		"id": -1000018117,
+		"key": "constluck420306009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +9% ataque, +45% trueno (en combate)"
+	},
+	{
+		"id": -1000018118,
+		"key": "constluck420306010",
+		"en|ch|tc|kr": "Trueno Divino"
+	},
+	{
+		"id": -1000018119,
+		"key": "constluck420306010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +10% ataque, +50% trueno (en combate)"
+	},
+	{
+		"id": -1000018120,
+		"key": "constluck420307001",
+		"en|ch|tc|kr": "Catavenenos"
+	},
+	{
+		"id": -1000018121,
+		"key": "constluck420307001desc",
+		"en|ch|tc|kr": "Constitución, nivel 1: +2% defensa, +5% madera (en combate)"
+	},
+	{
+		"id": -1000018122,
+		"key": "constluck420307002",
+		"en|ch|tc|kr": "Inmune al Veneno"
+	},
+	{
+		"id": -1000018123,
+		"key": "constluck420307002desc",
+		"en|ch|tc|kr": "Constitución, nivel 2: +4% defensa, +10% madera (en combate)"
+	},
+	{
+		"id": -1000018124,
+		"key": "constluck420307003",
+		"en|ch|tc|kr": "Cien Venenos"
+	},
+	{
+		"id": -1000018125,
+		"key": "constluck420307003desc",
+		"en|ch|tc|kr": "Constitución, nivel 3: +6% defensa, +15% madera (en combate)"
+	},
+	{
+		"id": -1000018126,
+		"key": "constluck420307004",
+		"en|ch|tc|kr": "Vena Venenosa"
+	},
+	{
+		"id": -1000018127,
+		"key": "constluck420307004desc",
+		"en|ch|tc|kr": "Constitución, nivel 4: +8% defensa, +20% madera (en combate)"
+	},
+	{
+		"id": -1000018128,
+		"key": "constluck420307005",
+		"en|ch|tc|kr": "Espíritu Venenoso"
+	},
+	{
+		"id": -1000018129,
+		"key": "constluck420307005desc",
+		"en|ch|tc|kr": "Constitución, nivel 5: +10% defensa, +25% madera (en combate)"
+	},
+	{
+		"id": -1000018130,
+		"key": "constluck420307006",
+		"en|ch|tc|kr": "Devoravenenos"
+	},
+	{
+		"id": -1000018131,
+		"key": "constluck420307006desc",
+		"en|ch|tc|kr": "Constitución, nivel 6: +12% defensa, +30% madera (en combate)"
+	},
+	{
+		"id": -1000018132,
+		"key": "constluck420307007",
+		"en|ch|tc|kr": "Mil Venenos"
+	},
+	{
+		"id": -1000018133,
+		"key": "constluck420307007desc",
+		"en|ch|tc|kr": "Constitución, nivel 7: +14% defensa, +35% madera (en combate)"
+	},
+	{
+		"id": -1000018134,
+		"key": "constluck420307008",
+		"en|ch|tc|kr": "Rey del Veneno"
+	},
+	{
+		"id": -1000018135,
+		"key": "constluck420307008desc",
+		"en|ch|tc|kr": "Constitución, nivel 8: +16% defensa, +40% madera (en combate)"
+	},
+	{
+		"id": -1000018136,
+		"key": "constluck420307009",
+		"en|ch|tc|kr": "Santo del Veneno"
+	},
+	{
+		"id": -1000018137,
+		"key": "constluck420307009desc",
+		"en|ch|tc|kr": "Constitución, nivel 9: +18% defensa, +45% madera (en combate)"
+	},
+	{
+		"id": -1000018138,
+		"key": "constluck420307010",
+		"en|ch|tc|kr": "Ancestro Venenoso"
+	},
+	{
+		"id": -1000018139,
+		"key": "constluck420307010desc",
+		"en|ch|tc|kr": "Constitución, nivel 10: +20% defensa, +50% madera (en combate)"
+	}
+]

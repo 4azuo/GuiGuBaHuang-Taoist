@@ -1,0 +1,138 @@
+[
+	{
+		"id": -1000016000,
+		"key": "pill_title",
+		"en": "Pill Body",
+		"ch": "药体",
+		"tc": "藥體",
+		"kr": "약체"
+	},
+	{
+		"id": -1000016001,
+		"key": "pill_summary",
+		"en": "Pill Body tier {0} (realm cap {1}), {2} pill points (next tier: {3}).\nEach potion taken in a battle adds its grade.\n- Tiers: +{4}% recovery of the potions\n- Alchemy: +{5}% with a kind of potion you crafted\n- Nine-Turn Golden Pill: {6} (+10% of the max HP / MP a potion)\n- Medicine King's Testament: {7}",
+		"ch": "药体第{0}层（境界上限{1}），药力{2}点（下一层：{3}）。\n战斗中每服一颗丹药，加上其品阶。\n- 层数：丹药恢复+{4}%\n- 炼丹：自己炼过的丹药+{5}%\n- 九转金丹：{6}（每颗丹药额外恢复10%最大体力/灵力）\n- 药王遗书：{7}",
+		"tc": "藥體第{0}層（境界上限{1}），藥力{2}點（下一層：{3}）。\n戰鬥中每服一顆丹藥，加上其品階。\n- 層數：丹藥恢復+{4}%\n- 煉丹：自己煉過的丹藥+{5}%\n- 九轉金丹：{6}（每顆丹藥額外恢復10%最大體力/靈力）\n- 藥王遺書：{7}",
+		"kr": "약체 {0}단계 (경지 상한 {1}), 약력 {2}점 (다음 단계: {3}).\n전투에서 단약을 먹을 때마다 그 품계만큼 더해집니다.\n- 단계: 단약 회복 +{4}%\n- 연단: 직접 만든 종류의 단약 +{5}%\n- 구전금단: {6} (단약마다 최대 HP/MP의 10% 추가)\n- 약왕의 유서: {7}"
+	},
+	{
+		"id": -1000016002,
+		"key": "pill_yes",
+		"en": "yes",
+		"ch": "有",
+		"tc": "有",
+		"kr": "있음"
+	},
+	{
+		"id": -1000016003,
+		"key": "pill_no",
+		"en": "no",
+		"ch": "无",
+		"tc": "無",
+		"kr": "없음"
+	},
+	{
+		"id": -1000016004,
+		"key": "pill_king_heal",
+		"en": "+30% recovery",
+		"ch": "恢复+30%",
+		"tc": "恢復+30%",
+		"kr": "회복 +30%"
+	},
+	{
+		"id": -1000016005,
+		"key": "pill_king_focus",
+		"en": "half of the focus of a potion back",
+		"ch": "返还丹药一半的念力消耗",
+		"tc": "返還丹藥一半的念力消耗",
+		"kr": "단약 염력 소모의 절반 반환"
+	},
+	{
+		"id": -1000016006,
+		"key": "log_pill_tier",
+		"en": "Pill Body: tier {0} (+{1}% recovery of the potions).",
+		"ch": "药体：第{0}层（丹药恢复+{1}%）。",
+		"tc": "藥體：第{0}層（丹藥恢復+{1}%）。",
+		"kr": "약체: {0}단계 (단약 회복 +{1}%)."
+	},
+	{
+		"id": -1000016007,
+		"key": "log_pill_capped",
+		"en": "Pill Body: tier {0} is the limit of your realm; break through to go further.",
+		"ch": "药体：第{0}层已是你境界的极限，突破后才能继续。",
+		"tc": "藥體：第{0}層已是你境界的極限，突破後才能繼續。",
+		"kr": "약체: {0}단계가 지금 경지의 한계입니다. 돌파해야 더 오를 수 있습니다."
+	},
+	{
+		"id": -1000016008,
+		"key": "log_pill_nineturn",
+		"en": "You refined the Nine-Turn Golden Pill: every potion now gives 10% of your max HP / MP more.",
+		"ch": "你炼成了九转金丹：今后每颗丹药额外恢复10%最大体力/灵力。",
+		"tc": "你煉成了九轉金丹：今後每顆丹藥額外恢復10%最大體力/靈力。",
+		"kr": "구전금단을 완성했다: 이제 단약마다 최대 HP/MP의 10%를 더 회복한다."
+	},
+	{
+		"id": -1000016009,
+		"key": "log_pill_king_heal",
+		"en": "The Medicine King's Testament: your potions heal 30% more.",
+		"ch": "药王遗书：你的丹药恢复提高30%。",
+		"tc": "藥王遺書：你的丹藥恢復提高30%。",
+		"kr": "약왕의 유서: 단약 회복량이 30% 늘었다."
+	},
+	{
+		"id": -1000016010,
+		"key": "log_pill_king_focus",
+		"en": "The Medicine King's Testament: half of the focus of a potion comes back.",
+		"ch": "药王遗书：服用丹药返还一半念力。",
+		"tc": "藥王遺書：服用丹藥返還一半念力。",
+		"kr": "약왕의 유서: 단약을 먹으면 염력의 절반이 돌아온다."
+	},
+	{
+		"id": -1000016011,
+		"key": "pill_nineturn",
+		"en": "Smoke of nine colours rises from a ruined furnace. Inside, a pill turns by itself - the Nine-Turn Golden Pill, unfinished for a thousand years.\nIt needs {1} herbs and {0:#,##0} [icon:zm_lingshi] of spirit stones for the fire.",
+		"ch": "一座残破的丹炉冒出九色烟雾，炉中一颗丹药自行旋转——千年未成的九转金丹。\n需要{1}株草药与{0:#,##0}[icon:zm_lingshi]灵石生火。",
+		"tc": "一座殘破的丹爐冒出九色煙霧，爐中一顆丹藥自行旋轉——千年未成的九轉金丹。\n需要{1}株草藥與{0:#,##0}[icon:zm_lingshi]靈石生火。",
+		"kr": "부서진 단로에서 아홉 빛깔 연기가 피어오른다. 안에서 단약 하나가 저절로 돈다 - 천 년 동안 완성되지 못한 구전금단.\n약초 {1}개와 불을 지필 영석 {0:#,##0}[icon:zm_lingshi]이 필요하다."
+	},
+	{
+		"id": -1000016012,
+		"key": "pill_nineturn_o1",
+		"en": "Finish the pill",
+		"ch": "炼成此丹",
+		"tc": "煉成此丹",
+		"kr": "단약을 완성한다"
+	},
+	{
+		"id": -1000016013,
+		"key": "pill_nineturn_o2",
+		"en": "Leave it",
+		"ch": "离开",
+		"tc": "離開",
+		"kr": "떠난다"
+	},
+	{
+		"id": -1000016014,
+		"key": "pill_nineturn_leave",
+		"en": "You walk away. Behind you, the nine-coloured smoke fades, and the furnace is cold.",
+		"ch": "你转身离去。身后九色烟雾散去，丹炉冷了下来。",
+		"tc": "你轉身離去。身後九色煙霧散去，丹爐冷了下來。",
+		"kr": "당신은 떠난다. 등 뒤에서 아홉 빛깔 연기가 사라지고 단로가 식는다."
+	},
+	{
+		"id": -1000016015,
+		"key": "pill_nineturn_noherb",
+		"en": "You need {1} herbs to feed the furnace. The smoke fades before you can find them.",
+		"ch": "你需要{1}株草药来喂炉。还没找齐，烟雾就散了。",
+		"tc": "你需要{1}株草藥來餵爐。還沒找齊，煙霧就散了。",
+		"kr": "단로에 넣을 약초 {1}개가 필요하다. 찾기도 전에 연기가 사라진다."
+	},
+	{
+		"id": -1000016016,
+		"key": "pill_nineturn_done",
+		"en": "Nine days and nine nights. On the last morning the pill stops turning and sinks into your palm, warm as a heartbeat.\nFrom now on, every potion you take gives 10% of your max HP / MP more.",
+		"ch": "九天九夜。最后一个清晨，丹药停止旋转，落入你的掌心，温热如心跳。\n今后你服用的每颗丹药额外恢复10%最大体力/灵力。",
+		"tc": "九天九夜。最後一個清晨，丹藥停止旋轉，落入你的掌心，溫熱如心跳。\n今後你服用的每顆丹藥額外恢復10%最大體力/靈力。",
+		"kr": "아흐레 밤낮. 마지막 아침, 단약이 회전을 멈추고 심장 박동처럼 따뜻하게 손바닥에 내려앉는다.\n이제부터 단약마다 최대 HP/MP의 10%를 더 회복한다."
+	}
+]

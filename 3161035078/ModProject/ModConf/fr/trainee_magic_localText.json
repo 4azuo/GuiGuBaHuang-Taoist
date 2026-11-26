@@ -2,7 +2,7 @@
 	{
 		"id": "420082001",
 		"key": "trainee420081001",
-		"en|ch|tc|kr": "Magie niveau 1"
+		"en|ch|tc|kr": "Novice des Sorts"
 	},
 	{
 		"id": "420083001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420082002",
 		"key": "trainee420081002",
-		"en|ch|tc|kr": "Magie niveau 2"
+		"en|ch|tc|kr": "Disciple des Sorts"
 	},
 	{
 		"id": "420083002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420082003",
 		"key": "trainee420081003",
-		"en|ch|tc|kr": "Magie niveau 3"
+		"en|ch|tc|kr": "Sorcier"
 	},
 	{
 		"id": "420083003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420082004",
 		"key": "trainee420081004",
-		"en|ch|tc|kr": "Magie niveau 4"
+		"en|ch|tc|kr": "Maître des Sorts"
 	},
 	{
 		"id": "420083004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420082005",
 		"key": "trainee420081005",
-		"en|ch|tc|kr": "Magie niveau 5"
+		"en|ch|tc|kr": "Être Parfait"
 	},
 	{
 		"id": "420083005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420082006",
 		"key": "trainee420081006",
-		"en|ch|tc|kr": "Magie niveau 6"
+		"en|ch|tc|kr": "Roi du Dharma"
 	},
 	{
 		"id": "420083006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420082007",
 		"key": "trainee420081007",
-		"en|ch|tc|kr": "Magie niveau 7"
+		"en|ch|tc|kr": "Souverain des Sorts"
 	},
 	{
 		"id": "420083007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420082008",
 		"key": "trainee420081008",
-		"en|ch|tc|kr": "Magie niveau 8"
+		"en|ch|tc|kr": "Vénérable du Dharma"
 	},
 	{
 		"id": "420083008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420082009",
 		"key": "trainee420081009",
-		"en|ch|tc|kr": "Magie niveau 9"
+		"en|ch|tc|kr": "Saint du Dharma"
 	},
 	{
 		"id": "420083009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420082010",
 		"key": "trainee420081010",
-		"en|ch|tc|kr": "Magie niveau 10"
+		"en|ch|tc|kr": "Dieu du Dharma"
 	},
 	{
 		"id": "420083010",

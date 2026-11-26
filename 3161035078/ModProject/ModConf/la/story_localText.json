@@ -3888,5 +3888,150 @@
 		"id": "-1000007777",
 		"key": "story_doc_essence_L",
 		"en|ch|tc|kr": "Corde claro, omnis ars quam scis aperitur ut lacus tranquillus, et manum vides quae quamque delineavit. Essentia Dao tua altior fit."
+	},
+	{
+		"id": -1000007778,
+		"key": "story_name_S",
+		"en|ch|tc|kr": "Testamentum Regis Medicinae"
+	},
+	{
+		"id": -1000007779,
+		"key": "story_task_desc_S",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007780,
+		"key": "story_task_S0",
+		"en|ch|tc|kr": "{O} tres paginas laceras Regis Medicinae servat. Prima in cubili beluae iacet."
+	},
+	{
+		"id": -1000007781,
+		"key": "story_task_S1",
+		"en|ch|tc|kr": "Vicus peste perit. Secunda pagina dicit: medicus qui praeterit medicus non est."
+	},
+	{
+		"id": -1000007782,
+		"key": "story_task_S2",
+		"en|ch|tc|kr": "Tertia pagina venenum est. Aliquis gustare debet ut remedium legat."
+	},
+	{
+		"id": -1000007783,
+		"key": "story_task_S3",
+		"en|ch|tc|kr": "Testamentum paene integrum est. Ultimam paginam lege."
+	},
+	{
+		"id": -1000007784,
+		"key": "story_S0_1",
+		"en|ch|tc|kr": "Senex alchimista ad ignem exstinctum sedet, fasciculum chartae ustae in genibus.\n{O} dicit: \"Haec sunt ultima verba Regis Medicinae. Tres paginae desunt - et manus meae nimis tremunt ut eas quaeram. Tune quaeres?\""
+	},
+	{
+		"id": -1000007785,
+		"key": "story_S0_1_o1",
+		"en|ch|tc|kr": "Inveniam"
+	},
+	{
+		"id": -1000007786,
+		"key": "story_S0_1_o2",
+		"en|ch|tc|kr": "Non mea res"
+	},
+	{
+		"id": -1000007787,
+		"key": "story_S0_2",
+		"en|ch|tc|kr": "Prima pagina moschum olet. Odorem sequeris ad specum ossibus arrosis plenum; aliquid magnum in tenebris spirat."
+	},
+	{
+		"id": -1000007788,
+		"key": "story_S0_2_o1",
+		"en|ch|tc|kr": "Intrare"
+	},
+	{
+		"id": -1000007789,
+		"key": "story_S1_1",
+		"en|ch|tc|kr": "Tussis post omnem ianuam. {O} secundam paginam recitat: \"Medicus qui praeterit medicus non est.\"\nAegri potionibus egent, aut lapidibus spiritalibus pro medico oppidi ({0:#,##0} [icon:zm_lingshi])."
+	},
+	{
+		"id": -1000007790,
+		"key": "story_S1_1_o1",
+		"en|ch|tc|kr": "Potionem dare"
+	},
+	{
+		"id": -1000007791,
+		"key": "story_S1_1_o2",
+		"en|ch|tc|kr": "Medicum solvere"
+	},
+	{
+		"id": -1000007792,
+		"key": "story_S1_1_o3",
+		"en|ch|tc|kr": "Praeterire"
+	},
+	{
+		"id": -1000007793,
+		"key": "story_S1_nopill",
+		"en|ch|tc|kr": "Nullam potionem sanandi habes."
+	},
+	{
+		"id": -1000007794,
+		"key": "story_S2_1",
+		"en|ch|tc|kr": "Tertia pagina non atramentum sed pastam nigram siccam habet. {O} eam ad lucem vertit: \"Remedium in veneno scriptum est. Aliquis gustare debet.\""
+	},
+	{
+		"id": -1000007795,
+		"key": "story_S2_1_o1",
+		"en|ch|tc|kr": "Ipse gustare"
+	},
+	{
+		"id": -1000007796,
+		"key": "story_S2_1_o2",
+		"en|ch|tc|kr": "{O} gustare sinere"
+	},
+	{
+		"id": -1000007797,
+		"key": "story_S2_1_o3",
+		"en|ch|tc|kr": "Nemo gustat"
+	},
+	{
+		"id": -1000007798,
+		"key": "story_S3_1",
+		"en|ch|tc|kr": "Ultima pagina integra est. Manus Regis Medicinae parva et firma: \"Medicus eligit quid servet - vim medicinae, an quietem eius qui sumit.\""
+	},
+	{
+		"id": -1000007799,
+		"key": "story_S3_1_o1",
+		"en|ch|tc|kr": "Vis medicinae (+30% recreationis)"
+	},
+	{
+		"id": -1000007800,
+		"key": "story_S3_1_o2",
+		"en|ch|tc|kr": "Quies sumentis (dimidium intentionis redditur)"
+	},
+	{
+		"id": -1000007801,
+		"key": "story_endS_Heal",
+		"en|ch|tc|kr": "Ultimam paginam in librum tuum transcribis. Abhinc quaeque potio in venis ardentius ardet."
+	},
+	{
+		"id": -1000007802,
+		"key": "story_endS_Focus",
+		"en|ch|tc|kr": "Ultimam paginam in librum tuum transcribis. Abhinc potio mentem vix turbat - dimidium intentionis redit."
+	},
+	{
+		"id": -1000007803,
+		"key": "story_endS_Fragment",
+		"en|ch|tc|kr": "Sine vico, sine gustu veneni, ultima pagina vacua manet. {O} tibi potionem suam dat nec quicquam amplius dicit."
+	},
+	{
+		"id": -1000007804,
+		"key": "story_end_S_Heal",
+		"en|ch|tc|kr": "Vis medicinae"
+	},
+	{
+		"id": -1000007805,
+		"key": "story_end_S_Focus",
+		"en|ch|tc|kr": "Mens quieta"
+	},
+	{
+		"id": -1000007806,
+		"key": "story_end_S_Fragment",
+		"en|ch|tc|kr": "Pagina vacua"
 	}
 ]

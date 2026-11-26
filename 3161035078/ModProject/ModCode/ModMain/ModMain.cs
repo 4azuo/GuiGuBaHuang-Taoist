@@ -64,11 +64,9 @@ namespace MOD_nE7UL2
             DebugHelper.WriteLine($"Taoist-Version: {ModConst.TAOIST_VERSION}");
             //version of the error reports of Taoist (database: ModConf/crash_reports.json)
             CrashReportHelper.SetModVersion(modId, ModConst.TAOIST_VERSION);
-            //exp
-            foreach (var item in g.conf.roleGrade._allConfList)
-            {
-                item.exp = (item.exp * ModSettings.BaseConfigs.LevelExpRatio).Parse<int>();
-            }
+            //exp, skill mastery exp, skill MP cost / cooldown / requirements: the values of the game kept, worked out again for
+            //each save (S&M rates, ConfBalance.Apply in SMLocalConfigsEvent.OnLoadGame)
+            MOD_nE7UL2.Mod.ConfBalance.Init();
             //unlimit attribute
             foreach (var item in g.conf.roleAttributeLimit._allConfList)
             {
@@ -84,104 +82,6 @@ namespace MOD_nE7UL2
                 item.hp = (item.hp * ModSettings.BaseConfigs.ArtifactHpRatio).Parse<int>();
                 item.atk = (item.atk * ModSettings.BaseConfigs.ArtifactAtkRatio).Parse<int>();
                 item.def = (item.def * ModSettings.BaseConfigs.ArtifactDefRatio).Parse<int>();
-            }
-            //skillmastery need more exp
-            foreach (var item in g.conf.battleSkillMastery._allConfList)
-            {
-                item.grade1 = (item.grade1 * ModSettings.BaseConfigs.SkillMasteryExpRatio1).Parse<int>();
-                item.grade2 = (item.grade2 * ModSettings.BaseConfigs.SkillMasteryExpRatio2).Parse<int>();
-                item.grade3 = (item.grade3 * ModSettings.BaseConfigs.SkillMasteryExpRatio3).Parse<int>();
-                item.grade4 = (item.grade4 * ModSettings.BaseConfigs.SkillMasteryExpRatio4).Parse<int>();
-                item.grade5 = (item.grade5 * ModSettings.BaseConfigs.SkillMasteryExpRatio5).Parse<int>();
-                item.grade6 = (item.grade6 * ModSettings.BaseConfigs.SkillMasteryExpRatio6).Parse<int>();
-                item.grade7 = (item.grade7 * ModSettings.BaseConfigs.SkillMasteryExpRatio7).Parse<int>();
-                item.grade8 = (item.grade8 * ModSettings.BaseConfigs.SkillMasteryExpRatio8).Parse<int>();
-                item.grade9 = (item.grade9 * ModSettings.BaseConfigs.SkillMasteryExpRatio9).Parse<int>();
-                item.grade10 = (item.grade10 * ModSettings.BaseConfigs.SkillMasteryExpRatio10).Parse<int>();
-            }
-            //skill need more mpCost
-            //skill cooldown faster
-            //skill need more requirements
-            foreach (var item in g.conf.battleSkillValue._allConfList)
-            {
-                if (item.key.EndsWith("_mpCost"))
-                {
-                    item.value1 = (item.value1.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio1).Parse<int>().ToString();
-                    item.value2 = (item.value2.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio2).Parse<int>().ToString();
-                    item.value3 = (item.value3.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio3).Parse<int>().ToString();
-                    item.value4 = (item.value4.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio4).Parse<int>().ToString();
-                    item.value5 = (item.value5.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio5).Parse<int>().ToString();
-                    item.value6 = (item.value6.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio6).Parse<int>().ToString();
-                    item.value7 = (item.value7.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio7).Parse<int>().ToString();
-                    item.value8 = (item.value8.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio8).Parse<int>().ToString();
-                    item.value9 = (item.value9.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio9).Parse<int>().ToString();
-                    item.value10 = (item.value10.Parse<float>() * ModSettings.BaseConfigs.SkillMpCostRatio10).Parse<int>().ToString();
-                }
-                else if (item.key.EndsWith("_cd"))
-                {
-                    item.value1 = (item.value1.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio1).Parse<int>().ToString();
-                    item.value2 = (item.value2.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio2).Parse<int>().ToString();
-                    item.value3 = (item.value3.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio3).Parse<int>().ToString();
-                    item.value4 = (item.value4.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio4).Parse<int>().ToString();
-                    item.value5 = (item.value5.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio5).Parse<int>().ToString();
-                    item.value6 = (item.value6.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio6).Parse<int>().ToString();
-                    item.value7 = (item.value7.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio7).Parse<int>().ToString();
-                    item.value8 = (item.value8.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio8).Parse<int>().ToString();
-                    item.value9 = (item.value9.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio9).Parse<int>().ToString();
-                    item.value10 = (item.value10.Parse<float>() * ModSettings.BaseConfigs.SkillCdRatio10).Parse<int>().ToString();
-                }
-                else if (item.key.StartsWith("&zizhiBase_"))
-                {
-                    item.value1 = (item.value1.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio1).Parse<int>().ToString();
-                    item.value2 = (item.value2.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio2).Parse<int>().ToString();
-                    item.value3 = (item.value3.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio3).Parse<int>().ToString();
-                    item.value4 = (item.value4.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio4).Parse<int>().ToString();
-                    item.value5 = (item.value5.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio5).Parse<int>().ToString();
-                    item.value6 = (item.value6.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio6).Parse<int>().ToString();
-                    item.value7 = (item.value7.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio7).Parse<int>().ToString();
-                    item.value8 = (item.value8.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio8).Parse<int>().ToString();
-                    item.value9 = (item.value9.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio9).Parse<int>().ToString();
-                    item.value10 = (item.value10.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiBaseRatio10).Parse<int>().ToString();
-                }
-                else if (item.key.StartsWith("&zizhiAdd_"))
-                {
-                    item.value1 = (item.value1.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio1).Parse<int>().ToString();
-                    item.value2 = (item.value2.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio2).Parse<int>().ToString();
-                    item.value3 = (item.value3.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio3).Parse<int>().ToString();
-                    item.value4 = (item.value4.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio4).Parse<int>().ToString();
-                    item.value5 = (item.value5.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio5).Parse<int>().ToString();
-                    item.value6 = (item.value6.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio6).Parse<int>().ToString();
-                    item.value7 = (item.value7.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio7).Parse<int>().ToString();
-                    item.value8 = (item.value8.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio8).Parse<int>().ToString();
-                    item.value9 = (item.value9.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio9).Parse<int>().ToString();
-                    item.value10 = (item.value10.Parse<float>() * ModSettings.BaseConfigs.SkillZizhiAddRatio10).Parse<int>().ToString();
-                }
-                else if (item.key.StartsWith("&daodianBase_"))
-                {
-                    item.value1 = (item.value1.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio1).Parse<int>().ToString();
-                    item.value2 = (item.value2.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio2).Parse<int>().ToString();
-                    item.value3 = (item.value3.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio3).Parse<int>().ToString();
-                    item.value4 = (item.value4.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio4).Parse<int>().ToString();
-                    item.value5 = (item.value5.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio5).Parse<int>().ToString();
-                    item.value6 = (item.value6.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio6).Parse<int>().ToString();
-                    item.value7 = (item.value7.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio7).Parse<int>().ToString();
-                    item.value8 = (item.value8.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio8).Parse<int>().ToString();
-                    item.value9 = (item.value9.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio9).Parse<int>().ToString();
-                    item.value10 = (item.value10.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianBaseRatio10).Parse<int>().ToString();
-                }
-                else if (item.key.StartsWith("&daodianAdd_"))
-                {
-                    item.value1 = (item.value1.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio1).Parse<int>().ToString();
-                    item.value2 = (item.value2.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio2).Parse<int>().ToString();
-                    item.value3 = (item.value3.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio3).Parse<int>().ToString();
-                    item.value4 = (item.value4.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio4).Parse<int>().ToString();
-                    item.value5 = (item.value5.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio5).Parse<int>().ToString();
-                    item.value6 = (item.value6.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio6).Parse<int>().ToString();
-                    item.value7 = (item.value7.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio7).Parse<int>().ToString();
-                    item.value8 = (item.value8.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio8).Parse<int>().ToString();
-                    item.value9 = (item.value9.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio9).Parse<int>().ToString();
-                    item.value10 = (item.value10.Parse<float>() * ModSettings.BaseConfigs.SkillDaodianAddRatio10).Parse<int>().ToString();
-                }
             }
             //balance item
             foreach (var props in g.conf.itemProps._allConfList)
@@ -259,7 +159,7 @@ namespace MOD_nE7UL2
                     grade = Math.Max(1, pill.grade);
                     props.sale = PriceHelper.UpPrice(props.sale, grade, level, ratio);
                     props.worth = PriceHelper.UpPrice(props.worth, grade, level, ratio);
-                    pill.spCost = (pill.spCost.Parse<float>() * (1.30f + (grade * 0.20f + level * 0.05f))).Parse<int>();
+                    pill.spCost = (pill.spCost.Parse<float>() * PotionSpCostRatio(grade)).Parse<int>();
                     pill.applyCD = (pill.applyCD.Parse<float>() * 0.24f).Parse<int>();
 
                     foreach (var efxId in pill.effectValue.Split('|'))
@@ -267,7 +167,7 @@ namespace MOD_nE7UL2
                         roleEfx = g.conf.roleEffect.GetItem(efxId.Parse<int>());
                         if (roleEfx != null && (roleEfx.value.StartsWith($"{UnitPropertyEnum.Hp.PropName}_1_") || roleEfx.value.StartsWith($"{UnitPropertyEnum.Mp.PropName}_1_")))
                         {
-                            roleEfx.SetEfxValue(2, (roleEfx.GetEfxValue<int>(2) * (grade * 4.00f + level * 1.00f + grade / 2 * 4.00f)).Parse<int>());
+                            roleEfx.SetEfxValue(2, (roleEfx.GetEfxValue<int>(2) * PotionHealRatio(grade, level, ModSettings.BaseConfigs)).Parse<int>());
                         }
                     }
                 }
@@ -287,19 +187,7 @@ namespace MOD_nE7UL2
                             (battleEfx.value3.EndsWith("_tsgj") || battleEfx.value3.EndsWith("_tsfy")))
                         {
                             var efxValue = g.conf.battleSkillValue.GetItem(battleEfx.value3);
-                            if (efxValue != null)
-                            {
-                                efxValue.value1 = (efxValue.value1.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio1).Parse<int>().ToString();
-                                efxValue.value2 = (efxValue.value2.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio2).Parse<int>().ToString();
-                                efxValue.value3 = (efxValue.value3.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio3).Parse<int>().ToString();
-                                efxValue.value4 = (efxValue.value4.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio4).Parse<int>().ToString();
-                                efxValue.value5 = (efxValue.value5.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio5).Parse<int>().ToString();
-                                efxValue.value6 = (efxValue.value6.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio6).Parse<int>().ToString();
-                                efxValue.value7 = (efxValue.value7.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio7).Parse<int>().ToString();
-                                efxValue.value8 = (efxValue.value8.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio8).Parse<int>().ToString();
-                                efxValue.value9 = (efxValue.value9.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio9).Parse<int>().ToString();
-                                efxValue.value10 = (efxValue.value10.Parse<float>() * ModSettings.BaseConfigs.PowerUpPillEfxRatio10).Parse<int>().ToString();
-                            }
+                            MOD_nE7UL2.Mod.ConfBalance.AddPowerUpValue(efxValue);
                         }
                     }
                 }
@@ -491,6 +379,15 @@ namespace MOD_nE7UL2
                 item.stayTime = 20;
                 item.cd = 20;
             }
+            //the scaled values before any save (S&M rates at 0)
+            MOD_nE7UL2.Mod.ConfBalance.Apply(null);
         }
+
+        /// <summary>HP / MP of a recovery potion: x (base + gradeRatio x grade + levelRatio x level) of the game (mod_configs.json).</summary>
+        public static float PotionHealRatio(int grade, int level, ModStts._BaseConfigs s) =>
+            Math.Max(1f, (s?.PotionHealBase ?? 1f) + (s?.PotionHealGradeRatio ?? 1.5f) * Math.Max(1, grade) + (s?.PotionHealLevelRatio ?? 1f) * Math.Max(1, level));
+
+        /// <summary>Focus (SP) cost of a recovery potion: x (1 + 0.1 x grade) of the game (was x1.3 + 0.2 x grade + 0.05 x level).</summary>
+        public static float PotionSpCostRatio(int grade) => 1.00f + Math.Max(1, grade) * 0.10f;
     }
 }

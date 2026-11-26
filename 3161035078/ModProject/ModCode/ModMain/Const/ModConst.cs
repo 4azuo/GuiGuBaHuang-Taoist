@@ -15,6 +15,8 @@
         public const string ARTISAN_EVENT = "ArtisanEvent";
         public const string DAO_HEART_EVENT = "DaoHeartEvent";
         public const string SPIRIT_SENSE_EVENT = "SpiritSenseEvent";
+        public const string PILL_BODY_EVENT = "PillBodyEvent";
+        public const string CONSTITUTION_EVENT = "ConstitutionEvent";
         public const string ESTATE_EVENT = "EstateEvent";
         public const string SPIRIT_NOTE_EVENT = "SpiritNoteEvent";
         public const string CLAN_EVENT = "ClanEvent";

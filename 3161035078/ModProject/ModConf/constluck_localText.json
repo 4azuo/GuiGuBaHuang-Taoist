@@ -1,0 +1,1122 @@
+[
+	{
+		"id": -1000018000,
+		"key": "constluck420301001",
+		"en": "Herb Flesh",
+		"ch": "药肌",
+		"tc": "藥肌",
+		"kr": "약기"
+	},
+	{
+		"id": -1000018001,
+		"key": "constluck420301001desc",
+		"en": "Constitution, tier 1: +10% potion recovery (in battles)",
+		"ch": "体质 第1阶：丹药恢复+10%（战斗中）",
+		"tc": "體質 第1階：丹藥恢復+10%（戰鬥中）",
+		"kr": "체질 1단계: 단약 회복 +10% (전투 중)"
+	},
+	{
+		"id": -1000018002,
+		"key": "constluck420301002",
+		"en": "Elixir Skin",
+		"ch": "丹肤",
+		"tc": "丹膚",
+		"kr": "단부"
+	},
+	{
+		"id": -1000018003,
+		"key": "constluck420301002desc",
+		"en": "Constitution, tier 2: +20% potion recovery (in battles)",
+		"ch": "体质 第2阶：丹药恢复+20%（战斗中）",
+		"tc": "體質 第2階：丹藥恢復+20%（戰鬥中）",
+		"kr": "체질 2단계: 단약 회복 +20% (전투 중)"
+	},
+	{
+		"id": -1000018004,
+		"key": "constluck420301003",
+		"en": "Hundred Herbs",
+		"ch": "百草体",
+		"tc": "百草體",
+		"kr": "백초체"
+	},
+	{
+		"id": -1000018005,
+		"key": "constluck420301003desc",
+		"en": "Constitution, tier 3: +30% potion recovery (in battles)",
+		"ch": "体质 第3阶：丹药恢复+30%（战斗中）",
+		"tc": "體質 第3階：丹藥恢復+30%（戰鬥中）",
+		"kr": "체질 3단계: 단약 회복 +30% (전투 중)"
+	},
+	{
+		"id": -1000018006,
+		"key": "constluck420301004",
+		"en": "Pill Marrow",
+		"ch": "丹髓体",
+		"tc": "丹髓體",
+		"kr": "단수체"
+	},
+	{
+		"id": -1000018007,
+		"key": "constluck420301004desc",
+		"en": "Constitution, tier 4: +40% potion recovery (in battles)",
+		"ch": "体质 第4阶：丹药恢复+40%（战斗中）",
+		"tc": "體質 第4階：丹藥恢復+40%（戰鬥中）",
+		"kr": "체질 4단계: 단약 회복 +40% (전투 중)"
+	},
+	{
+		"id": -1000018008,
+		"key": "constluck420301005",
+		"en": "Herb Spirit",
+		"ch": "药灵体",
+		"tc": "藥靈體",
+		"kr": "약령체"
+	},
+	{
+		"id": -1000018009,
+		"key": "constluck420301005desc",
+		"en": "Constitution, tier 5: +50% potion recovery (in battles)",
+		"ch": "体质 第5阶：丹药恢复+50%（战斗中）",
+		"tc": "體質 第5階：丹藥恢復+50%（戰鬥中）",
+		"kr": "체질 5단계: 단약 회복 +50% (전투 중)"
+	},
+	{
+		"id": -1000018010,
+		"key": "constluck420301006",
+		"en": "Gold Elixir",
+		"ch": "金丹体",
+		"tc": "金丹體",
+		"kr": "금단체"
+	},
+	{
+		"id": -1000018011,
+		"key": "constluck420301006desc",
+		"en": "Constitution, tier 6: +60% potion recovery (in battles)",
+		"ch": "体质 第6阶：丹药恢复+60%（战斗中）",
+		"tc": "體質 第6階：丹藥恢復+60%（戰鬥中）",
+		"kr": "체질 6단계: 단약 회복 +60% (전투 중)"
+	},
+	{
+		"id": -1000018012,
+		"key": "constluck420301007",
+		"en": "Myriad Pills",
+		"ch": "万丹体",
+		"tc": "萬丹體",
+		"kr": "만단체"
+	},
+	{
+		"id": -1000018013,
+		"key": "constluck420301007desc",
+		"en": "Constitution, tier 7: +70% potion recovery (in battles)",
+		"ch": "体质 第7阶：丹药恢复+70%（战斗中）",
+		"tc": "體質 第7階：丹藥恢復+70%（戰鬥中）",
+		"kr": "체질 7단계: 단약 회복 +70% (전투 중)"
+	},
+	{
+		"id": -1000018014,
+		"key": "constluck420301008",
+		"en": "Immortal Herb",
+		"ch": "仙药体",
+		"tc": "仙藥體",
+		"kr": "선약체"
+	},
+	{
+		"id": -1000018015,
+		"key": "constluck420301008desc",
+		"en": "Constitution, tier 8: +80% potion recovery (in battles)",
+		"ch": "体质 第8阶：丹药恢复+80%（战斗中）",
+		"tc": "體質 第8階：丹藥恢復+80%（戰鬥中）",
+		"kr": "체질 8단계: 단약 회복 +80% (전투 중)"
+	},
+	{
+		"id": -1000018016,
+		"key": "constluck420301009",
+		"en": "Pill Sage",
+		"ch": "丹圣体",
+		"tc": "丹聖體",
+		"kr": "단성체"
+	},
+	{
+		"id": -1000018017,
+		"key": "constluck420301009desc",
+		"en": "Constitution, tier 9: +90% potion recovery (in battles)",
+		"ch": "体质 第9阶：丹药恢复+90%（战斗中）",
+		"tc": "體質 第9階：丹藥恢復+90%（戰鬥中）",
+		"kr": "체질 9단계: 단약 회복 +90% (전투 중)"
+	},
+	{
+		"id": -1000018018,
+		"key": "constluck420301010",
+		"en": "Medicine King",
+		"ch": "药王体",
+		"tc": "藥王體",
+		"kr": "약왕체"
+	},
+	{
+		"id": -1000018019,
+		"key": "constluck420301010desc",
+		"en": "Constitution, tier 10: +100% potion recovery (in battles)",
+		"ch": "体质 第10阶：丹药恢复+100%（战斗中）",
+		"tc": "體質 第10階：丹藥恢復+100%（戰鬥中）",
+		"kr": "체질 10단계: 단약 회복 +100% (전투 중)"
+	},
+	{
+		"id": -1000018020,
+		"key": "constluck420302001",
+		"en": "Sword Embryo",
+		"ch": "剑胚",
+		"tc": "劍胚",
+		"kr": "검배"
+	},
+	{
+		"id": -1000018021,
+		"key": "constluck420302001desc",
+		"en": "Constitution, tier 1: +1% attack, +5% sword (in battles)",
+		"ch": "体质 第1阶：攻击+1%，剑法+5%（战斗中）",
+		"tc": "體質 第1階：攻擊+1%，劍法+5%（戰鬥中）",
+		"kr": "체질 1단계: 공격 +1%, 검법 +5% (전투 중)"
+	},
+	{
+		"id": -1000018022,
+		"key": "constluck420302002",
+		"en": "Iron Sword",
+		"ch": "铁剑骨",
+		"tc": "鐵劍骨",
+		"kr": "철검골"
+	},
+	{
+		"id": -1000018023,
+		"key": "constluck420302002desc",
+		"en": "Constitution, tier 2: +2% attack, +10% sword (in battles)",
+		"ch": "体质 第2阶：攻击+2%，剑法+10%（战斗中）",
+		"tc": "體質 第2階：攻擊+2%，劍法+10%（戰鬥中）",
+		"kr": "체질 2단계: 공격 +2%, 검법 +10% (전투 중)"
+	},
+	{
+		"id": -1000018024,
+		"key": "constluck420302003",
+		"en": "Sword Intent",
+		"ch": "剑意骨",
+		"tc": "劍意骨",
+		"kr": "검의골"
+	},
+	{
+		"id": -1000018025,
+		"key": "constluck420302003desc",
+		"en": "Constitution, tier 3: +3% attack, +15% sword (in battles)",
+		"ch": "体质 第3阶：攻击+3%，剑法+15%（战斗中）",
+		"tc": "體質 第3階：攻擊+3%，劍法+15%（戰鬥中）",
+		"kr": "체질 3단계: 공격 +3%, 검법 +15% (전투 중)"
+	},
+	{
+		"id": -1000018026,
+		"key": "constluck420302004",
+		"en": "Spirit Blade",
+		"ch": "灵剑骨",
+		"tc": "靈劍骨",
+		"kr": "영검골"
+	},
+	{
+		"id": -1000018027,
+		"key": "constluck420302004desc",
+		"en": "Constitution, tier 4: +4% attack, +20% sword (in battles)",
+		"ch": "体质 第4阶：攻击+4%，剑法+20%（战斗中）",
+		"tc": "體質 第4階：攻擊+4%，劍法+20%（戰鬥中）",
+		"kr": "체질 4단계: 공격 +4%, 검법 +20% (전투 중)"
+	},
+	{
+		"id": -1000018028,
+		"key": "constluck420302005",
+		"en": "Sword Heart",
+		"ch": "剑心骨",
+		"tc": "劍心骨",
+		"kr": "검심골"
+	},
+	{
+		"id": -1000018029,
+		"key": "constluck420302005desc",
+		"en": "Constitution, tier 5: +5% attack, +25% sword (in battles)",
+		"ch": "体质 第5阶：攻击+5%，剑法+25%（战斗中）",
+		"tc": "體質 第5階：攻擊+5%，劍法+25%（戰鬥中）",
+		"kr": "체질 5단계: 공격 +5%, 검법 +25% (전투 중)"
+	},
+	{
+		"id": -1000018030,
+		"key": "constluck420302006",
+		"en": "Sword Soul",
+		"ch": "剑魂骨",
+		"tc": "劍魂骨",
+		"kr": "검혼골"
+	},
+	{
+		"id": -1000018031,
+		"key": "constluck420302006desc",
+		"en": "Constitution, tier 6: +6% attack, +30% sword (in battles)",
+		"ch": "体质 第6阶：攻击+6%，剑法+30%（战斗中）",
+		"tc": "體質 第6階：攻擊+6%，劍法+30%（戰鬥中）",
+		"kr": "체질 6단계: 공격 +6%, 검법 +30% (전투 중)"
+	},
+	{
+		"id": -1000018032,
+		"key": "constluck420302007",
+		"en": "Skysplitter",
+		"ch": "裂天骨",
+		"tc": "裂天骨",
+		"kr": "열천골"
+	},
+	{
+		"id": -1000018033,
+		"key": "constluck420302007desc",
+		"en": "Constitution, tier 7: +7% attack, +35% sword (in battles)",
+		"ch": "体质 第7阶：攻击+7%，剑法+35%（战斗中）",
+		"tc": "體質 第7階：攻擊+7%，劍法+35%（戰鬥中）",
+		"kr": "체질 7단계: 공격 +7%, 검법 +35% (전투 중)"
+	},
+	{
+		"id": -1000018034,
+		"key": "constluck420302008",
+		"en": "Sword Sovereign",
+		"ch": "剑皇骨",
+		"tc": "劍皇骨",
+		"kr": "검황골"
+	},
+	{
+		"id": -1000018035,
+		"key": "constluck420302008desc",
+		"en": "Constitution, tier 8: +8% attack, +40% sword (in battles)",
+		"ch": "体质 第8阶：攻击+8%，剑法+40%（战斗中）",
+		"tc": "體質 第8階：攻擊+8%，劍法+40%（戰鬥中）",
+		"kr": "체질 8단계: 공격 +8%, 검법 +40% (전투 중)"
+	},
+	{
+		"id": -1000018036,
+		"key": "constluck420302009",
+		"en": "Supreme Sword",
+		"ch": "至尊骨",
+		"tc": "至尊骨",
+		"kr": "지존골"
+	},
+	{
+		"id": -1000018037,
+		"key": "constluck420302009desc",
+		"en": "Constitution, tier 9: +9% attack, +45% sword (in battles)",
+		"ch": "体质 第9阶：攻击+9%，剑法+45%（战斗中）",
+		"tc": "體質 第9階：攻擊+9%，劍法+45%（戰鬥中）",
+		"kr": "체질 9단계: 공격 +9%, 검법 +45% (전투 중)"
+	},
+	{
+		"id": -1000018038,
+		"key": "constluck420302010",
+		"en": "Primal Sword",
+		"ch": "太初剑骨",
+		"tc": "太初劍骨",
+		"kr": "태초검골"
+	},
+	{
+		"id": -1000018039,
+		"key": "constluck420302010desc",
+		"en": "Constitution, tier 10: +10% attack, +50% sword (in battles)",
+		"ch": "体质 第10阶：攻击+10%，剑法+50%（战斗中）",
+		"tc": "體質 第10階：攻擊+10%，劍法+50%（戰鬥中）",
+		"kr": "체질 10단계: 공격 +10%, 검법 +50% (전투 중)"
+	},
+	{
+		"id": -1000018040,
+		"key": "constluck420303001",
+		"en": "Bronze Skin",
+		"ch": "铜皮",
+		"tc": "銅皮",
+		"kr": "동피"
+	},
+	{
+		"id": -1000018041,
+		"key": "constluck420303001desc",
+		"en": "Constitution, tier 1: +3% defense, +2% max HP (in battles)",
+		"ch": "体质 第1阶：防御+3%，最大生命+2%（战斗中）",
+		"tc": "體質 第1階：防禦+3%，最大生命+2%（戰鬥中）",
+		"kr": "체질 1단계: 방어 +3%, 최대 체력 +2% (전투 중)"
+	},
+	{
+		"id": -1000018042,
+		"key": "constluck420303002",
+		"en": "Iron Bone",
+		"ch": "铁骨",
+		"tc": "鐵骨",
+		"kr": "철골"
+	},
+	{
+		"id": -1000018043,
+		"key": "constluck420303002desc",
+		"en": "Constitution, tier 2: +6% defense, +4% max HP (in battles)",
+		"ch": "体质 第2阶：防御+6%，最大生命+4%（战斗中）",
+		"tc": "體質 第2階：防禦+6%，最大生命+4%（戰鬥中）",
+		"kr": "체질 2단계: 방어 +6%, 최대 체력 +4% (전투 중)"
+	},
+	{
+		"id": -1000018044,
+		"key": "constluck420303003",
+		"en": "Rockbreaker",
+		"ch": "碎石躯",
+		"tc": "碎石軀",
+		"kr": "쇄석구"
+	},
+	{
+		"id": -1000018045,
+		"key": "constluck420303003desc",
+		"en": "Constitution, tier 3: +9% defense, +6% max HP (in battles)",
+		"ch": "体质 第3阶：防御+9%，最大生命+6%（战斗中）",
+		"tc": "體質 第3階：防禦+9%，最大生命+6%（戰鬥中）",
+		"kr": "체질 3단계: 방어 +9%, 최대 체력 +6% (전투 중)"
+	},
+	{
+		"id": -1000018046,
+		"key": "constluck420303004",
+		"en": "Golden Bell",
+		"ch": "金钟体",
+		"tc": "金鐘體",
+		"kr": "금종체"
+	},
+	{
+		"id": -1000018047,
+		"key": "constluck420303004desc",
+		"en": "Constitution, tier 4: +12% defense, +8% max HP (in battles)",
+		"ch": "体质 第4阶：防御+12%，最大生命+8%（战斗中）",
+		"tc": "體質 第4階：防禦+12%，最大生命+8%（戰鬥中）",
+		"kr": "체질 4단계: 방어 +12%, 최대 체력 +8% (전투 중)"
+	},
+	{
+		"id": -1000018048,
+		"key": "constluck420303005",
+		"en": "Vajra",
+		"ch": "金刚体",
+		"tc": "金剛體",
+		"kr": "금강체"
+	},
+	{
+		"id": -1000018049,
+		"key": "constluck420303005desc",
+		"en": "Constitution, tier 5: +15% defense, +10% max HP (in battles)",
+		"ch": "体质 第5阶：防御+15%，最大生命+10%（战斗中）",
+		"tc": "體質 第5階：防禦+15%，最大生命+10%（戰鬥中）",
+		"kr": "체질 5단계: 방어 +15%, 최대 체력 +10% (전투 중)"
+	},
+	{
+		"id": -1000018050,
+		"key": "constluck420303006",
+		"en": "Unbreakable",
+		"ch": "不坏体",
+		"tc": "不壞體",
+		"kr": "불괴체"
+	},
+	{
+		"id": -1000018051,
+		"key": "constluck420303006desc",
+		"en": "Constitution, tier 6: +18% defense, +12% max HP (in battles)",
+		"ch": "体质 第6阶：防御+18%，最大生命+12%（战斗中）",
+		"tc": "體質 第6階：防禦+18%，最大生命+12%（戰鬥中）",
+		"kr": "체질 6단계: 방어 +18%, 최대 체력 +12% (전투 중)"
+	},
+	{
+		"id": -1000018052,
+		"key": "constluck420303007",
+		"en": "Arhat Gold",
+		"ch": "罗汉身",
+		"tc": "羅漢身",
+		"kr": "나한신"
+	},
+	{
+		"id": -1000018053,
+		"key": "constluck420303007desc",
+		"en": "Constitution, tier 7: +21% defense, +14% max HP (in battles)",
+		"ch": "体质 第7阶：防御+21%，最大生命+14%（战斗中）",
+		"tc": "體質 第7階：防禦+21%，最大生命+14%（戰鬥中）",
+		"kr": "체질 7단계: 방어 +21%, 최대 체력 +14% (전투 중)"
+	},
+	{
+		"id": -1000018054,
+		"key": "constluck420303008",
+		"en": "Bodhi Vajra",
+		"ch": "菩提身",
+		"tc": "菩提身",
+		"kr": "보리신"
+	},
+	{
+		"id": -1000018055,
+		"key": "constluck420303008desc",
+		"en": "Constitution, tier 8: +24% defense, +16% max HP (in battles)",
+		"ch": "体质 第8阶：防御+24%，最大生命+16%（战斗中）",
+		"tc": "體質 第8階：防禦+24%，最大生命+16%（戰鬥中）",
+		"kr": "체질 8단계: 방어 +24%, 최대 체력 +16% (전투 중)"
+	},
+	{
+		"id": -1000018056,
+		"key": "constluck420303009",
+		"en": "Buddha Light",
+		"ch": "佛光身",
+		"tc": "佛光身",
+		"kr": "불광신"
+	},
+	{
+		"id": -1000018057,
+		"key": "constluck420303009desc",
+		"en": "Constitution, tier 9: +27% defense, +18% max HP (in battles)",
+		"ch": "体质 第9阶：防御+27%，最大生命+18%（战斗中）",
+		"tc": "體質 第9階：防禦+27%，最大生命+18%（戰鬥中）",
+		"kr": "체질 9단계: 방어 +27%, 최대 체력 +18% (전투 중)"
+	},
+	{
+		"id": -1000018058,
+		"key": "constluck420303010",
+		"en": "Undying",
+		"ch": "不灭体",
+		"tc": "不滅體",
+		"kr": "불멸체"
+	},
+	{
+		"id": -1000018059,
+		"key": "constluck420303010desc",
+		"en": "Constitution, tier 10: +30% defense, +20% max HP (in battles)",
+		"ch": "体质 第10阶：防御+30%，最大生命+20%（战斗中）",
+		"tc": "體質 第10階：防禦+30%，最大生命+20%（戰鬥中）",
+		"kr": "체질 10단계: 방어 +30%, 최대 체력 +20% (전투 중)"
+	},
+	{
+		"id": -1000018060,
+		"key": "constluck420304001",
+		"en": "Spirit Touch",
+		"ch": "灵触体",
+		"tc": "靈觸體",
+		"kr": "영촉체"
+	},
+	{
+		"id": -1000018061,
+		"key": "constluck420304001desc",
+		"en": "Constitution, tier 1: +4% max MP, +1% attack (in battles)",
+		"ch": "体质 第1阶：最大灵力+4%，攻击+1%（战斗中）",
+		"tc": "體質 第1階：最大靈力+4%，攻擊+1%（戰鬥中）",
+		"kr": "체질 1단계: 최대 영력 +4%, 공격 +1% (전투 중)"
+	},
+	{
+		"id": -1000018062,
+		"key": "constluck420304002",
+		"en": "Clear Spirit",
+		"ch": "清灵体",
+		"tc": "清靈體",
+		"kr": "청령체"
+	},
+	{
+		"id": -1000018063,
+		"key": "constluck420304002desc",
+		"en": "Constitution, tier 2: +8% max MP, +2% attack (in battles)",
+		"ch": "体质 第2阶：最大灵力+8%，攻击+2%（战斗中）",
+		"tc": "體質 第2階：最大靈力+8%，攻擊+2%（戰鬥中）",
+		"kr": "체질 2단계: 최대 영력 +8%, 공격 +2% (전투 중)"
+	},
+	{
+		"id": -1000018064,
+		"key": "constluck420304003",
+		"en": "Spirit Spring",
+		"ch": "灵泉体",
+		"tc": "靈泉體",
+		"kr": "영천체"
+	},
+	{
+		"id": -1000018065,
+		"key": "constluck420304003desc",
+		"en": "Constitution, tier 3: +12% max MP, +3% attack (in battles)",
+		"ch": "体质 第3阶：最大灵力+12%，攻击+3%（战斗中）",
+		"tc": "體質 第3階：最大靈力+12%，攻擊+3%（戰鬥中）",
+		"kr": "체질 3단계: 최대 영력 +12%, 공격 +3% (전투 중)"
+	},
+	{
+		"id": -1000018066,
+		"key": "constluck420304004",
+		"en": "Spirit Vein",
+		"ch": "灵脉体",
+		"tc": "靈脈體",
+		"kr": "영맥체"
+	},
+	{
+		"id": -1000018067,
+		"key": "constluck420304004desc",
+		"en": "Constitution, tier 4: +16% max MP, +4% attack (in battles)",
+		"ch": "体质 第4阶：最大灵力+16%，攻击+4%（战斗中）",
+		"tc": "體質 第4階：最大靈力+16%，攻擊+4%（戰鬥中）",
+		"kr": "체질 4단계: 최대 영력 +16%, 공격 +4% (전투 중)"
+	},
+	{
+		"id": -1000018068,
+		"key": "constluck420304005",
+		"en": "Innate Spirit",
+		"ch": "先天灵体",
+		"tc": "先天靈體",
+		"kr": "선천영체"
+	},
+	{
+		"id": -1000018069,
+		"key": "constluck420304005desc",
+		"en": "Constitution, tier 5: +20% max MP, +5% attack (in battles)",
+		"ch": "体质 第5阶：最大灵力+20%，攻击+5%（战斗中）",
+		"tc": "體質 第5階：最大靈力+20%，攻擊+5%（戰鬥中）",
+		"kr": "체질 5단계: 최대 영력 +20%, 공격 +5% (전투 중)"
+	},
+	{
+		"id": -1000018070,
+		"key": "constluck420304006",
+		"en": "Purple Qi",
+		"ch": "紫气体",
+		"tc": "紫氣體",
+		"kr": "자기체"
+	},
+	{
+		"id": -1000018071,
+		"key": "constluck420304006desc",
+		"en": "Constitution, tier 6: +24% max MP, +6% attack (in battles)",
+		"ch": "体质 第6阶：最大灵力+24%，攻击+6%（战斗中）",
+		"tc": "體質 第6階：最大靈力+24%，攻擊+6%（戰鬥中）",
+		"kr": "체질 6단계: 최대 영력 +24%, 공격 +6% (전투 중)"
+	},
+	{
+		"id": -1000018072,
+		"key": "constluck420304007",
+		"en": "Heaven-Born",
+		"ch": "天生体",
+		"tc": "天生體",
+		"kr": "천생체"
+	},
+	{
+		"id": -1000018073,
+		"key": "constluck420304007desc",
+		"en": "Constitution, tier 7: +28% max MP, +7% attack (in battles)",
+		"ch": "体质 第7阶：最大灵力+28%，攻击+7%（战斗中）",
+		"tc": "體質 第7階：最大靈力+28%，攻擊+7%（戰鬥中）",
+		"kr": "체질 7단계: 최대 영력 +28%, 공격 +7% (전투 중)"
+	},
+	{
+		"id": -1000018074,
+		"key": "constluck420304008",
+		"en": "Star Spirit",
+		"ch": "星灵体",
+		"tc": "星靈體",
+		"kr": "성령체"
+	},
+	{
+		"id": -1000018075,
+		"key": "constluck420304008desc",
+		"en": "Constitution, tier 8: +32% max MP, +8% attack (in battles)",
+		"ch": "体质 第8阶：最大灵力+32%，攻击+8%（战斗中）",
+		"tc": "體質 第8階：最大靈力+32%，攻擊+8%（戰鬥中）",
+		"kr": "체질 8단계: 최대 영력 +32%, 공격 +8% (전투 중)"
+	},
+	{
+		"id": -1000018076,
+		"key": "constluck420304009",
+		"en": "Chaos Spirit",
+		"ch": "鸿蒙体",
+		"tc": "鴻蒙體",
+		"kr": "홍몽체"
+	},
+	{
+		"id": -1000018077,
+		"key": "constluck420304009desc",
+		"en": "Constitution, tier 9: +36% max MP, +9% attack (in battles)",
+		"ch": "体质 第9阶：最大灵力+36%，攻击+9%（战斗中）",
+		"tc": "體質 第9階：最大靈力+36%，攻擊+9%（戰鬥中）",
+		"kr": "체질 9단계: 최대 영력 +36%, 공격 +9% (전투 중)"
+	},
+	{
+		"id": -1000018078,
+		"key": "constluck420304010",
+		"en": "Dao Body",
+		"ch": "道体",
+		"tc": "道體",
+		"kr": "도체"
+	},
+	{
+		"id": -1000018079,
+		"key": "constluck420304010desc",
+		"en": "Constitution, tier 10: +40% max MP, +10% attack (in battles)",
+		"ch": "体质 第10阶：最大灵力+40%，攻击+10%（战斗中）",
+		"tc": "體質 第10階：最大靈力+40%，攻擊+10%（戰鬥中）",
+		"kr": "체질 10단계: 최대 영력 +40%, 공격 +10% (전투 중)"
+	},
+	{
+		"id": -1000018080,
+		"key": "constluck420305001",
+		"en": "Scale Blood",
+		"ch": "鳞血",
+		"tc": "鱗血",
+		"kr": "인혈"
+	},
+	{
+		"id": -1000018081,
+		"key": "constluck420305001desc",
+		"en": "Constitution, tier 1: +4% max HP, +1% attack (in battles)",
+		"ch": "体质 第1阶：最大生命+4%，攻击+1%（战斗中）",
+		"tc": "體質 第1階：最大生命+4%，攻擊+1%（戰鬥中）",
+		"kr": "체질 1단계: 최대 체력 +4%, 공격 +1% (전투 중)"
+	},
+	{
+		"id": -1000018082,
+		"key": "constluck420305002",
+		"en": "Serpent Blood",
+		"ch": "蛇血体",
+		"tc": "蛇血體",
+		"kr": "사혈체"
+	},
+	{
+		"id": -1000018083,
+		"key": "constluck420305002desc",
+		"en": "Constitution, tier 2: +8% max HP, +2% attack (in battles)",
+		"ch": "体质 第2阶：最大生命+8%，攻击+2%（战斗中）",
+		"tc": "體質 第2階：最大生命+8%，攻擊+2%（戰鬥中）",
+		"kr": "체질 2단계: 최대 체력 +8%, 공격 +2% (전투 중)"
+	},
+	{
+		"id": -1000018084,
+		"key": "constluck420305003",
+		"en": "Jiao Blood",
+		"ch": "蛟血体",
+		"tc": "蛟血體",
+		"kr": "교혈체"
+	},
+	{
+		"id": -1000018085,
+		"key": "constluck420305003desc",
+		"en": "Constitution, tier 3: +12% max HP, +3% attack (in battles)",
+		"ch": "体质 第3阶：最大生命+12%，攻击+3%（战斗中）",
+		"tc": "體質 第3階：最大生命+12%，攻擊+3%（戰鬥中）",
+		"kr": "체질 3단계: 최대 체력 +12%, 공격 +3% (전투 중)"
+	},
+	{
+		"id": -1000018086,
+		"key": "constluck420305004",
+		"en": "Qiu Blood",
+		"ch": "虬血体",
+		"tc": "虯血體",
+		"kr": "규혈체"
+	},
+	{
+		"id": -1000018087,
+		"key": "constluck420305004desc",
+		"en": "Constitution, tier 4: +16% max HP, +4% attack (in battles)",
+		"ch": "体质 第4阶：最大生命+16%，攻击+4%（战斗中）",
+		"tc": "體質 第4階：最大生命+16%，攻擊+4%（戰鬥中）",
+		"kr": "체질 4단계: 최대 체력 +16%, 공격 +4% (전투 중)"
+	},
+	{
+		"id": -1000018088,
+		"key": "constluck420305005",
+		"en": "Dragon Blood",
+		"ch": "龙血体",
+		"tc": "龍血體",
+		"kr": "용혈체"
+	},
+	{
+		"id": -1000018089,
+		"key": "constluck420305005desc",
+		"en": "Constitution, tier 5: +20% max HP, +5% attack (in battles)",
+		"ch": "体质 第5阶：最大生命+20%，攻击+5%（战斗中）",
+		"tc": "體質 第5階：最大生命+20%，攻擊+5%（戰鬥中）",
+		"kr": "체질 5단계: 최대 체력 +20%, 공격 +5% (전투 중)"
+	},
+	{
+		"id": -1000018090,
+		"key": "constluck420305006",
+		"en": "True Dragon",
+		"ch": "真龙体",
+		"tc": "真龍體",
+		"kr": "진룡체"
+	},
+	{
+		"id": -1000018091,
+		"key": "constluck420305006desc",
+		"en": "Constitution, tier 6: +24% max HP, +6% attack (in battles)",
+		"ch": "体质 第6阶：最大生命+24%，攻击+6%（战斗中）",
+		"tc": "體質 第6階：最大生命+24%，攻擊+6%（戰鬥中）",
+		"kr": "체질 6단계: 최대 체력 +24%, 공격 +6% (전투 중)"
+	},
+	{
+		"id": -1000018092,
+		"key": "constluck420305007",
+		"en": "Azure Dragon",
+		"ch": "青龙体",
+		"tc": "青龍體",
+		"kr": "청룡체"
+	},
+	{
+		"id": -1000018093,
+		"key": "constluck420305007desc",
+		"en": "Constitution, tier 7: +28% max HP, +7% attack (in battles)",
+		"ch": "体质 第7阶：最大生命+28%，攻击+7%（战斗中）",
+		"tc": "體質 第7階：最大生命+28%，攻擊+7%（戰鬥中）",
+		"kr": "체질 7단계: 최대 체력 +28%, 공격 +7% (전투 중)"
+	},
+	{
+		"id": -1000018094,
+		"key": "constluck420305008",
+		"en": "Dragon Ancestor",
+		"ch": "祖龙体",
+		"tc": "祖龍體",
+		"kr": "조룡체"
+	},
+	{
+		"id": -1000018095,
+		"key": "constluck420305008desc",
+		"en": "Constitution, tier 8: +32% max HP, +8% attack (in battles)",
+		"ch": "体质 第8阶：最大生命+32%，攻击+8%（战斗中）",
+		"tc": "體質 第8階：最大生命+32%，攻擊+8%（戰鬥中）",
+		"kr": "체질 8단계: 최대 체력 +32%, 공격 +8% (전투 중)"
+	},
+	{
+		"id": -1000018096,
+		"key": "constluck420305009",
+		"en": "Dragon Emperor",
+		"ch": "龙皇体",
+		"tc": "龍皇體",
+		"kr": "용황체"
+	},
+	{
+		"id": -1000018097,
+		"key": "constluck420305009desc",
+		"en": "Constitution, tier 9: +36% max HP, +9% attack (in battles)",
+		"ch": "体质 第9阶：最大生命+36%，攻击+9%（战斗中）",
+		"tc": "體質 第9階：最大生命+36%，攻擊+9%（戰鬥中）",
+		"kr": "체질 9단계: 최대 체력 +36%, 공격 +9% (전투 중)"
+	},
+	{
+		"id": -1000018098,
+		"key": "constluck420305010",
+		"en": "Dragon God",
+		"ch": "龙神体",
+		"tc": "龍神體",
+		"kr": "용신체"
+	},
+	{
+		"id": -1000018099,
+		"key": "constluck420305010desc",
+		"en": "Constitution, tier 10: +40% max HP, +10% attack (in battles)",
+		"ch": "体质 第10阶：最大生命+40%，攻击+10%（战斗中）",
+		"tc": "體質 第10階：最大生命+40%，攻擊+10%（戰鬥中）",
+		"kr": "체질 10단계: 최대 체력 +40%, 공격 +10% (전투 중)"
+	},
+	{
+		"id": -1000018100,
+		"key": "constluck420306001",
+		"en": "Thunderstruck",
+		"ch": "雷击躯",
+		"tc": "雷擊軀",
+		"kr": "뇌격구"
+	},
+	{
+		"id": -1000018101,
+		"key": "constluck420306001desc",
+		"en": "Constitution, tier 1: +1% attack, +5% thunder (in battles)",
+		"ch": "体质 第1阶：攻击+1%，雷灵根+5%（战斗中）",
+		"tc": "體質 第1階：攻擊+1%，雷靈根+5%（戰鬥中）",
+		"kr": "체질 1단계: 공격 +1%, 뇌 영근 +5% (전투 중)"
+	},
+	{
+		"id": -1000018102,
+		"key": "constluck420306002",
+		"en": "Thunder Forged",
+		"ch": "雷淬身",
+		"tc": "雷淬身",
+		"kr": "뇌쉬신"
+	},
+	{
+		"id": -1000018103,
+		"key": "constluck420306002desc",
+		"en": "Constitution, tier 2: +2% attack, +10% thunder (in battles)",
+		"ch": "体质 第2阶：攻击+2%，雷灵根+10%（战斗中）",
+		"tc": "體質 第2階：攻擊+2%，雷靈根+10%（戰鬥中）",
+		"kr": "체질 2단계: 공격 +2%, 뇌 영근 +10% (전투 중)"
+	},
+	{
+		"id": -1000018104,
+		"key": "constluck420306003",
+		"en": "Thunder Vein",
+		"ch": "雷脉体",
+		"tc": "雷脈體",
+		"kr": "뇌맥체"
+	},
+	{
+		"id": -1000018105,
+		"key": "constluck420306003desc",
+		"en": "Constitution, tier 3: +3% attack, +15% thunder (in battles)",
+		"ch": "体质 第3阶：攻击+3%，雷灵根+15%（战斗中）",
+		"tc": "體質 第3階：攻擊+3%，雷靈根+15%（戰鬥中）",
+		"kr": "체질 3단계: 공격 +3%, 뇌 영근 +15% (전투 중)"
+	},
+	{
+		"id": -1000018106,
+		"key": "constluck420306004",
+		"en": "Purple Thunder",
+		"ch": "紫雷体",
+		"tc": "紫雷體",
+		"kr": "자뢰체"
+	},
+	{
+		"id": -1000018107,
+		"key": "constluck420306004desc",
+		"en": "Constitution, tier 4: +4% attack, +20% thunder (in battles)",
+		"ch": "体质 第4阶：攻击+4%，雷灵根+20%（战斗中）",
+		"tc": "體質 第4階：攻擊+4%，雷靈根+20%（戰鬥中）",
+		"kr": "체질 4단계: 공격 +4%, 뇌 영근 +20% (전투 중)"
+	},
+	{
+		"id": -1000018108,
+		"key": "constluck420306005",
+		"en": "Thunder Spirit",
+		"ch": "雷灵体",
+		"tc": "雷靈體",
+		"kr": "뇌령체"
+	},
+	{
+		"id": -1000018109,
+		"key": "constluck420306005desc",
+		"en": "Constitution, tier 5: +5% attack, +25% thunder (in battles)",
+		"ch": "体质 第5阶：攻击+5%，雷灵根+25%（战斗中）",
+		"tc": "體質 第5階：攻擊+5%，雷靈根+25%（戰鬥中）",
+		"kr": "체질 5단계: 공격 +5%, 뇌 영근 +25% (전투 중)"
+	},
+	{
+		"id": -1000018110,
+		"key": "constluck420306006",
+		"en": "Five Thunders",
+		"ch": "五雷体",
+		"tc": "五雷體",
+		"kr": "오뢰체"
+	},
+	{
+		"id": -1000018111,
+		"key": "constluck420306006desc",
+		"en": "Constitution, tier 6: +6% attack, +30% thunder (in battles)",
+		"ch": "体质 第6阶：攻击+6%，雷灵根+30%（战斗中）",
+		"tc": "體質 第6階：攻擊+6%，雷靈根+30%（戰鬥中）",
+		"kr": "체질 6단계: 공격 +6%, 뇌 영근 +30% (전투 중)"
+	},
+	{
+		"id": -1000018112,
+		"key": "constluck420306007",
+		"en": "Sky Thunder",
+		"ch": "天雷体",
+		"tc": "天雷體",
+		"kr": "천뢰체"
+	},
+	{
+		"id": -1000018113,
+		"key": "constluck420306007desc",
+		"en": "Constitution, tier 7: +7% attack, +35% thunder (in battles)",
+		"ch": "体质 第7阶：攻击+7%，雷灵根+35%（战斗中）",
+		"tc": "體質 第7階：攻擊+7%，雷靈根+35%（戰鬥中）",
+		"kr": "체질 7단계: 공격 +7%, 뇌 영근 +35% (전투 중)"
+	},
+	{
+		"id": -1000018114,
+		"key": "constluck420306008",
+		"en": "Tribulation",
+		"ch": "劫雷体",
+		"tc": "劫雷體",
+		"kr": "겁뢰체"
+	},
+	{
+		"id": -1000018115,
+		"key": "constluck420306008desc",
+		"en": "Constitution, tier 8: +8% attack, +40% thunder (in battles)",
+		"ch": "体质 第8阶：攻击+8%，雷灵根+40%（战斗中）",
+		"tc": "體質 第8階：攻擊+8%，雷靈根+40%（戰鬥中）",
+		"kr": "체질 8단계: 공격 +8%, 뇌 영근 +40% (전투 중)"
+	},
+	{
+		"id": -1000018116,
+		"key": "constluck420306009",
+		"en": "Thunder Emperor",
+		"ch": "雷帝体",
+		"tc": "雷帝體",
+		"kr": "뇌제체"
+	},
+	{
+		"id": -1000018117,
+		"key": "constluck420306009desc",
+		"en": "Constitution, tier 9: +9% attack, +45% thunder (in battles)",
+		"ch": "体质 第9阶：攻击+9%，雷灵根+45%（战斗中）",
+		"tc": "體質 第9階：攻擊+9%，雷靈根+45%（戰鬥中）",
+		"kr": "체질 9단계: 공격 +9%, 뇌 영근 +45% (전투 중)"
+	},
+	{
+		"id": -1000018118,
+		"key": "constluck420306010",
+		"en": "Divine Thunder",
+		"ch": "神雷体",
+		"tc": "神雷體",
+		"kr": "신뢰체"
+	},
+	{
+		"id": -1000018119,
+		"key": "constluck420306010desc",
+		"en": "Constitution, tier 10: +10% attack, +50% thunder (in battles)",
+		"ch": "体质 第10阶：攻击+10%，雷灵根+50%（战斗中）",
+		"tc": "體質 第10階：攻擊+10%，雷靈根+50%（戰鬥中）",
+		"kr": "체질 10단계: 공격 +10%, 뇌 영근 +50% (전투 중)"
+	},
+	{
+		"id": -1000018120,
+		"key": "constluck420307001",
+		"en": "Venom Taster",
+		"ch": "尝毒躯",
+		"tc": "嘗毒軀",
+		"kr": "상독구"
+	},
+	{
+		"id": -1000018121,
+		"key": "constluck420307001desc",
+		"en": "Constitution, tier 1: +2% defense, +5% wood (in battles)",
+		"ch": "体质 第1阶：防御+2%，木灵根+5%（战斗中）",
+		"tc": "體質 第1階：防禦+2%，木靈根+5%（戰鬥中）",
+		"kr": "체질 1단계: 방어 +2%, 목 영근 +5% (전투 중)"
+	},
+	{
+		"id": -1000018122,
+		"key": "constluck420307002",
+		"en": "Poisonproof",
+		"ch": "抗毒身",
+		"tc": "抗毒身",
+		"kr": "항독신"
+	},
+	{
+		"id": -1000018123,
+		"key": "constluck420307002desc",
+		"en": "Constitution, tier 2: +4% defense, +10% wood (in battles)",
+		"ch": "体质 第2阶：防御+4%，木灵根+10%（战斗中）",
+		"tc": "體質 第2階：防禦+4%，木靈根+10%（戰鬥中）",
+		"kr": "체질 2단계: 방어 +4%, 목 영근 +10% (전투 중)"
+	},
+	{
+		"id": -1000018124,
+		"key": "constluck420307003",
+		"en": "Hundred Poisons",
+		"ch": "百毒体",
+		"tc": "百毒體",
+		"kr": "백독체"
+	},
+	{
+		"id": -1000018125,
+		"key": "constluck420307003desc",
+		"en": "Constitution, tier 3: +6% defense, +15% wood (in battles)",
+		"ch": "体质 第3阶：防御+6%，木灵根+15%（战斗中）",
+		"tc": "體質 第3階：防禦+6%，木靈根+15%（戰鬥中）",
+		"kr": "체질 3단계: 방어 +6%, 목 영근 +15% (전투 중)"
+	},
+	{
+		"id": -1000018126,
+		"key": "constluck420307004",
+		"en": "Venom Vein",
+		"ch": "毒脉体",
+		"tc": "毒脈體",
+		"kr": "독맥체"
+	},
+	{
+		"id": -1000018127,
+		"key": "constluck420307004desc",
+		"en": "Constitution, tier 4: +8% defense, +20% wood (in battles)",
+		"ch": "体质 第4阶：防御+8%，木灵根+20%（战斗中）",
+		"tc": "體質 第4階：防禦+8%，木靈根+20%（戰鬥中）",
+		"kr": "체질 4단계: 방어 +8%, 목 영근 +20% (전투 중)"
+	},
+	{
+		"id": -1000018128,
+		"key": "constluck420307005",
+		"en": "Venom Spirit",
+		"ch": "毒灵体",
+		"tc": "毒靈體",
+		"kr": "독령체"
+	},
+	{
+		"id": -1000018129,
+		"key": "constluck420307005desc",
+		"en": "Constitution, tier 5: +10% defense, +25% wood (in battles)",
+		"ch": "体质 第5阶：防御+10%，木灵根+25%（战斗中）",
+		"tc": "體質 第5階：防禦+10%，木靈根+25%（戰鬥中）",
+		"kr": "체질 5단계: 방어 +10%, 목 영근 +25% (전투 중)"
+	},
+	{
+		"id": -1000018130,
+		"key": "constluck420307006",
+		"en": "Poison Eater",
+		"ch": "噬毒体",
+		"tc": "噬毒體",
+		"kr": "서독체"
+	},
+	{
+		"id": -1000018131,
+		"key": "constluck420307006desc",
+		"en": "Constitution, tier 6: +12% defense, +30% wood (in battles)",
+		"ch": "体质 第6阶：防御+12%，木灵根+30%（战斗中）",
+		"tc": "體質 第6階：防禦+12%，木靈根+30%（戰鬥中）",
+		"kr": "체질 6단계: 방어 +12%, 목 영근 +30% (전투 중)"
+	},
+	{
+		"id": -1000018132,
+		"key": "constluck420307007",
+		"en": "Myriad Venoms",
+		"ch": "万毒体",
+		"tc": "萬毒體",
+		"kr": "만독체"
+	},
+	{
+		"id": -1000018133,
+		"key": "constluck420307007desc",
+		"en": "Constitution, tier 7: +14% defense, +35% wood (in battles)",
+		"ch": "体质 第7阶：防御+14%，木灵根+35%（战斗中）",
+		"tc": "體質 第7階：防禦+14%，木靈根+35%（戰鬥中）",
+		"kr": "체질 7단계: 방어 +14%, 목 영근 +35% (전투 중)"
+	},
+	{
+		"id": -1000018134,
+		"key": "constluck420307008",
+		"en": "Venom King",
+		"ch": "毒王体",
+		"tc": "毒王體",
+		"kr": "독왕체"
+	},
+	{
+		"id": -1000018135,
+		"key": "constluck420307008desc",
+		"en": "Constitution, tier 8: +16% defense, +40% wood (in battles)",
+		"ch": "体质 第8阶：防御+16%，木灵根+40%（战斗中）",
+		"tc": "體質 第8階：防禦+16%，木靈根+40%（戰鬥中）",
+		"kr": "체질 8단계: 방어 +16%, 목 영근 +40% (전투 중)"
+	},
+	{
+		"id": -1000018136,
+		"key": "constluck420307009",
+		"en": "Venom Saint",
+		"ch": "毒圣体",
+		"tc": "毒聖體",
+		"kr": "독성체"
+	},
+	{
+		"id": -1000018137,
+		"key": "constluck420307009desc",
+		"en": "Constitution, tier 9: +18% defense, +45% wood (in battles)",
+		"ch": "体质 第9阶：防御+18%，木灵根+45%（战斗中）",
+		"tc": "體質 第9階：防禦+18%，木靈根+45%（戰鬥中）",
+		"kr": "체질 9단계: 방어 +18%, 목 영근 +45% (전투 중)"
+	},
+	{
+		"id": -1000018138,
+		"key": "constluck420307010",
+		"en": "Venom Ancestor",
+		"ch": "毒祖体",
+		"tc": "毒祖體",
+		"kr": "독조체"
+	},
+	{
+		"id": -1000018139,
+		"key": "constluck420307010desc",
+		"en": "Constitution, tier 10: +20% defense, +50% wood (in battles)",
+		"ch": "体质 第10阶：防御+20%，木灵根+50%（战斗中）",
+		"tc": "體質 第10階：防禦+20%，木靈根+50%（戰鬥中）",
+		"kr": "체질 10단계: 방어 +20%, 목 영근 +50% (전투 중)"
+	}
+]

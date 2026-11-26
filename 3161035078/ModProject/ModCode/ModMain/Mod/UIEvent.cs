@@ -20,7 +20,22 @@ namespace MOD_nE7UL2.Mod
         public static UIEvent Instance { get; set; }
 
         /// <summary>Player info: the "Damage Calc" button and the S&amp;M score line on the top edge, offsets from the close button (canvas units).</summary>
-        public const float DMG_BUTTON_DX = -190f, SCORE_DX = -1150f, REBIRTH_BUTTON_DX = -185f;
+        /// <summary>The "?" of the artisan ranks: right of the title of the Artisanship column (from goItem8_En).</summary>
+        public const float APPR_HELP_DX = 162f, APPR_HELP_DY = 27f;
+        /// <summary>The "?" of the martial / magic trainee ranks: right of the titles of the Martial Arts / Spiritual Root columns.</summary>
+        public const float MARTIAL_HELP_DX = 156f, MAGIC_HELP_DX = 152f;
+        /// <summary>The "?" of the artisan ranks of the open player info (autotest TG-93).</summary>
+        public static ModLib.Object.UIItemBase ApprenticeHelpButton { get; private set; }
+        /// <summary>The "?" of the rebirth of the open player info (autotest TX-03).</summary>
+        public static ModLib.Object.UIItemBase RebirthHelpButton { get; private set; }
+        /// <summary>The "?" of the martial / magic trainee ranks of the open player info (autotest TG-93).</summary>
+        public static ModLib.Object.UIItemBase MartialHelpButton { get; private set; }
+        public static ModLib.Object.UIItemBase MagicHelpButton { get; private set; }
+        /// <summary>The "?" of the merchant ranks, right of the search button of the bag (autotest TG-93).</summary>
+        public static ModLib.Object.UIItemBase MerchantHelpButton { get; private set; }
+        public const float MERCHANT_HELP_DX = 50f;
+
+        public const float DMG_BUTTON_DX = -190f, SCORE_DX = -1150f, REBIRTH_BUTTON_DX = -185f, PILL_BUTTON_DX = -620f;
 
         private Text uiArtifactInfo_textBasicTitle;
         private Text uiArtifactInfo_textBasicAdj1;
@@ -159,18 +174,27 @@ namespace MOD_nE7UL2.Mod
                             UpdateAct = ModLib.Helper.ActionHelper.WTracedAction<UIItemBase>((x) => x.Set(ModTextHelper.LSF("ui_adj_hp", UnitModifyHelper.GetMartialAdjHp(ui.UI.unit))))
                         });
                     ui.AddToolTipButton(GameTool.LS("other500020033")).SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot).Pos(ui.UI.uiPropertyCommon.goItem6_En, 40, -160);
+                    // the martial trainee ranks (destinies of the sum of the physical bases)
+                    MartialHelpButton = ui.AddButton(0, 0, () => UnitTypeEvent.OpenTraineeHelp(true), "?").Size(30, 28)
+                        .SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot).Pos(ui.UI.uiPropertyCommon.goItem6_En, MARTIAL_HELP_DX, APPR_HELP_DY);
                     ui.AddText(0, 0, string.Empty).SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot)
                         .Pos(ui.UI.uiPropertyCommon.goItem7_En, 100, -160).SetWork(new UIItemWork
                         {
                             UpdateAct = ModLib.Helper.ActionHelper.WTracedAction<UIItemBase>((x) => x.Set(ModTextHelper.LSF("ui_adj_mp", UnitModifyHelper.GetSpiritualAdjMp(ui.UI.unit))))
                         });
                     ui.AddToolTipButton(GameTool.LS("other500020034")).SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot).Pos(ui.UI.uiPropertyCommon.goItem7_En, 40, -160);
+                    // the magic trainee ranks (destinies of the sum of the spiritual roots)
+                    MagicHelpButton = ui.AddButton(0, 0, () => UnitTypeEvent.OpenTraineeHelp(false), "?").Size(30, 28)
+                        .SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot).Pos(ui.UI.uiPropertyCommon.goItem7_En, MAGIC_HELP_DX, APPR_HELP_DY);
                     ui.AddText(0, 0, string.Empty).SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot)
                         .Pos(ui.UI.uiPropertyCommon.goItem8_En, 100, -160).SetWork(new UIItemWork
                         {
                             UpdateAct = ModLib.Helper.ActionHelper.WTracedAction<UIItemBase>((x) => x.Set(ModTextHelper.LSF("ui_adj_sp", UnitModifyHelper.GetArtisanshipAdjSp(ui.UI.unit))))
                         });
                     ui.AddToolTipButton(GameTool.LS("other500020035")).SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot).Pos(ui.UI.uiPropertyCommon.goItem8_En, 40, -160);
+                    // the artisan ranks (destinies of the 6 arts): names, effects, the values they need
+                    ApprenticeHelpButton = ui.AddButton(0, 0, () => UnitTypeEvent.OpenApprenticeHelp(), "?").Size(30, 28)
+                        .SetParentTransform(ui.UI.uiPropertyCommon.goGroupRoot).Pos(ui.UI.uiPropertyCommon.goItem8_En, APPR_HELP_DX, APPR_HELP_DY);
 
                     ui.AddText(0, 0, string.Empty).Format(Color.white).SetParentTransform(ui.UI.uiSkill.textPoint1.transform)
                         .Pos(ui.UI.uiSkill.textPoint1.transform, 0, -12).SetWork(new UIItemWork
@@ -200,11 +224,24 @@ namespace MOD_nE7UL2.Mod
                             var info = e.ui;
                             ui.AddButton(0, 0, () => RebirthEvent.Open(() => g.ui.CloseUI(info)), RebirthEvent.ButtonText).Size(170, 32)
                                 .SetParentTransform(close.transform.parent).Pos(close, DMG_BUTTON_DX + REBIRTH_BUTTON_DX, 0);
-                            ui.AddToolTipButton(GameTool.LS("rebirth420103103")).SetParentTransform(close.transform.parent).Pos(close, DMG_BUTTON_DX + REBIRTH_BUTTON_DX - 105f, 0);
+                            // the "?": a window of the rebirth (conditions, gains, costs, its destinies)
+                            RebirthHelpButton = ui.AddButton(0, 0, RebirthEvent.OpenHelp, "?").Size(30, 28)
+                                .SetParentTransform(close.transform.parent).Pos(close, DMG_BUTTON_DX + REBIRTH_BUTTON_DX - 105f, 0);
                         }
+                        // the constitutions (ConstitutionEvent; the pill body from its window)
+                        if (ConstitutionEvent.Enabled)
+                            ui.AddButton(0, 0, ConstitutionEvent.Open, GameTool.LS("const_title")).Size(170, 32)
+                                .SetParentTransform(close.transform.parent).Pos(close, PILL_BUTTON_DX, 0);
+                        else if (PillBodyEvent.Instance != null)
+                            ui.AddButton(0, 0, () => MOD_nE7UL2.Helper.InfoDialog.ShowLong(GameTool.LS("pill_title"), PillBodyEvent.Summary()), GameTool.LS("pill_title")).Size(170, 32)
+                                .SetParentTransform(close.transform.parent).Pos(close, PILL_BUTTON_DX, 0);
                         // S&M score of the save: title of its tier, P, reward bonus (SMScoreEvent)
                         ui.AddText(0, 0, SMScoreEvent.TitleLine(SMScoreEvent.P)).Format(new Color(0.45f, 0.12f, 0.08f), 16).Align(TextAnchor.MiddleCenter)
                             .SetParentTransform(close.transform.parent).Pos(close, SCORE_DX, 0);
+                        // the merchant ranks: a "?" right of the search button of the bag (Item tab only: same parent)
+                        var search = System.Linq.Enumerable.FirstOrDefault(ui.UI.GetComponentsInChildren<Button>(true), b => b != null && b.name.IndexOf("Search", System.StringComparison.OrdinalIgnoreCase) >= 0);
+                        MerchantHelpButton = search == null ? null : ui.AddButton(0, 0, UnitTypeEvent.OpenMerchantHelp, "?").Size(30, 28)
+                            .SetParentTransform(search.transform.parent).Pos(search.transform, MERCHANT_HELP_DX, 0);
                     }
                 }
                 ui.IsAutoUpdate = true;

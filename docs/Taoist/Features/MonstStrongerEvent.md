@@ -47,10 +47,10 @@ S&M: `AddAtkRate`, `AddDefRate`, `AddHpRate`, `AddBasisRate`, `MonsterProperties
 3. **Sect guardians**: adds the base Atk / Def / max HP / bases of the strongest unit in the sect's area.
 4. `atk, def, mhp` = values after steps 1-3 (the base of the % below).
 5. **Area** (area of the player): `r = AreaBonus[area] x gameLvl`.
-6. **Growth**: `r = (Counter x GrowRate[type] + KillCounter[type] x KillGrowRate[type]) x grade x gameLvl`.
+6. **Growth**: `r = (Counter^GrowExponent x GrowRate[type] + KillCounter[type] x KillGrowRate[type]) x (1 + GrowGradeRate x (grade - 1)) x (1 + GrowGameLvlRate x (gameLvl - 1))` (`MonstStrongerConfig.Growth`; 0.75, 0.5, 0.25 in `monst_stronger_configs.json`). Until 6.3 `(Counter x GrowRate + kills x KillGrowRate) x grade x gameLvl`: a common monster of grade 10 in Chaos was +1,180 % after 15 years (TG-91) while the NPCs grew x1.4-2; now about +94 %.
 7. **Player attack**: if `MonsterPropertiesDependOnPlayerProperties`: max HP += player Atk x `PlayerAtk2Hp[type]` x gameLvl.
 8. **Rebirth**: `r = TotalGradeLvl x 0.04 x gameLvl`.
-9. **Bases**: every basis x `grade x gameLvl`.
+9. **Bases**: every basis x `(1 + BasisGradeRate x (grade - 1)) x (1 + BasisGameLvlRate x (gameLvl - 1))` (`MonstStrongerConfig.BasisMultiplier`, 0.5 and 0.25 in `monst_stronger_configs.json`: x1 at grade 1 of Normal, x11 at grade 10 of Chaos; until 6.3 `grade x gameLvl`, x50).
 10. **Bases to stats**: Def += `avg(Fist, Palm, Finger) / 1000 x Def` + `Earth / 1000 x Def`; move speed += `Wind / 100`.
 
 Steps 5, 6, 8 each add `atk x r x 1.05`, `def x r x 0.5`, `mhp x r x 1.5`.

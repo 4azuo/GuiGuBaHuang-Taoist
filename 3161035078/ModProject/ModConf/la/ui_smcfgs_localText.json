@@ -818,5 +818,155 @@
 		"id": -1000001213,
 		"key": "smcfgs213",
 		"en|ch|tc|kr": "Uni tantum heredi: senex magister ultimam artem scribit et duos heredes probat (opus est mod Dao of Creation)."
+	},
+	{
+		"id": -1000001214,
+		"key": "smcfgs214",
+		"en|ch|tc|kr": "Ratio scuti"
+	},
+	{
+		"id": -1000001215,
+		"key": "smcfgs215",
+		"en|ch|tc|kr": "Ratio displosionis"
+	},
+	{
+		"id": -1000001216,
+		"key": "smcfgs216",
+		"en|ch|tc|kr": "Ratio divisionis"
+	},
+	{
+		"id": -1000001217,
+		"key": "smcfgs217",
+		"en|ch|tc|kr": "Monstra sine scuto"
+	},
+	{
+		"id": -1000001218,
+		"key": "smcfgs218",
+		"en|ch|tc|kr": "Basis: vires armorum et elementorum monstrorum.\n- Ictus eorum huius generis plus nocent.\n- Ictus tui huius generis minus nocent.\n- Plus obstructionis; Ventus: evasio et celeritas; Terra, Pugnus, Palma, Digitus: defensio; Lignum: recreatio HP.\nBasis iam cum regno et difficultate crescit; haec ratio additur."
+	},
+	{
+		"id": -1000001219,
+		"key": "smcfgs219",
+		"en|ch|tc|kr": "Addit monstris HP maximum ex impetu tuo:\nimpetus tuus x difficultas (Normalis 1 - Chaos 5) x\n- {0} communibus\n- {1} electis\n- {2} ducibus\n- {3} monstris NPC\nQuo fortior es, eo plus HP habent."
+	},
+	{
+		"id": -1000001220,
+		"key": "smcfgs220",
+		"en|ch|tc|kr": "Menses unius incrementi (tu, NPC, monstra).\n- Minus: omnia celerius crescunt, difficilius, longior processus mensis.\n- Plus: tardius crescunt, facilius, brevior processus mensis.\nQuodque incrementum auget impetum, defensionem, HP monstrorum (x regnum x difficultas), etiam si supra 0 est."
+	},
+	{
+		"id": -1000001221,
+		"key": "smcfgs221",
+		"en|ch|tc|kr": "Probabilitas = valor x regnum x difficultas (Normalis 1 - Chaos 5), quaque ratione mutata (-100%: nulla).\n- Scutum {0}%: absorbet {3}% HP maximi (commune), {4}% (electum)\n- Displosio in morte {1}%\n- Divisio in morte {2}%\nDux cum scuto: semper, {5}% HP maximi. Monstra sine scuto: omnia haec scuta tollit."
+	},
+	{
+		"id": -1000001222,
+		"key": "smcfgs222",
+		"en|ch|tc|kr": "Difficultas etiam vires NPC et monstrorum auget (sine S&M Configs).\n\nMonstra, Taoist:\n- Basis x{0}\n- Incrementum (tempus, caedes, regio, renascentiae) x{0}\n- Scutum, displosio, divisio x{0}\n- Damnum minimum x{0}"
+	},
+	{
+		"id": -1000001223,
+		"key": "smcfgs223",
+		"en|ch|tc|kr": "Puncta S&M commendata: usque ad {0:#,##0} P."
+	},
+	{
+		"id": -1000001224,
+		"key": "smcfgs224",
+		"en|ch|tc|kr": "Commendatur tironibus et omnibus punctis S&M."
+	},
+	{
+		"id": -1000001225,
+		"key": "smcfgs225",
+		"en|ch|tc|kr": "Artes et pilulae"
+	},
+	{
+		"id": -1000001226,
+		"key": "smcfgs226",
+		"en|ch|tc|kr": "Usus artis (exp)"
+	},
+	{
+		"id": -1000001227,
+		"key": "smcfgs227",
+		"en|ch|tc|kr": "Sumptus MP artium"
+	},
+	{
+		"id": -1000001228,
+		"key": "smcfgs228",
+		"en|ch|tc|kr": "Mora artium"
+	},
+	{
+		"id": -1000001229,
+		"key": "smcfgs229",
+		"en|ch|tc|kr": "Basis requisita (fundamentum)"
+	},
+	{
+		"id": -1000001230,
+		"key": "smcfgs230",
+		"en|ch|tc|kr": "Basis requisita (per gradum)"
+	},
+	{
+		"id": -1000001231,
+		"key": "smcfgs231",
+		"en|ch|tc|kr": "Puncta Dao requisita (fundamentum)"
+	},
+	{
+		"id": -1000001232,
+		"key": "smcfgs232",
+		"en|ch|tc|kr": "Puncta Dao requisita (per gradum)"
+	},
+	{
+		"id": -1000001233,
+		"key": "smcfgs233",
+		"en|ch|tc|kr": "Vis pilularum roboris"
+	},
+	{
+		"id": -1000001234,
+		"key": "smcfgs234",
+		"en|ch|tc|kr": "Quaeque ratio additur ad x1 valorum ModConf/mod_configs.json (per gradum 1-10): -50% dimidiat, +100% duplicat. Ars carior, tardior aut difficilior durior est (+P); pilulae roboris fortiores faciliores (-P). Valores iterum computantur quotiens ludus servatus legitur."
+	},
+	{
+		"id": -1000001235,
+		"key": "smcfgs235",
+		"en|ch|tc|kr": "Testamentum Regis Medicinae: senex alchimista paginas laceras medici clari servat (a Nucleo Aureo)."
+	},
+	{
+		"id": -1000001236,
+		"key": "smcfgs236",
+		"en|ch|tc|kr": "Optiones moduli {0} (non numerantur in punctis S&M)"
+	},
+	{
+		"id": -1000001237,
+		"key": "smcfgs237",
+		"en|ch|tc|kr": "Sine constitutionibus"
+	},
+	{
+		"id": -1000001238,
+		"key": "smcfgs238",
+		"en|ch|tc|kr": "Constitutiones: corpora singularia (Corpus pilularum, Os gladii, Corpus vajra, Spiritus innatus, Sanguis draconis, Corpus tonitrus, Corpus veneni), quot colere potes, quodque suo modo (pilulae, artes, thesauri, probationes, fabulae, a natura). Sine eis: +1.000 P."
+	},
+	{
+		"id": -1000001239,
+		"key": "smcfgs239",
+		"en|ch|tc|kr": "Numeros aequilibrii servare"
+	},
+	{
+		"id": -1000001240,
+		"key": "smcfgs240",
+		"en|ch|tc|kr": "tantum in hoc computatro; cum relatione mitte"
+	},
+	{
+		"id": -1000001241,
+		"key": "smcfgs241",
+		"en|ch|tc|kr": "Celeritas: {0}"
+	},
+	{
+		"id": -1000001242,
+		"key": "smcfgs242",
+		"en|ch|tc|kr": "ACTA"
+	},
+	{
+		"id": -1000001243,
+		"key": "smcfgs243",
+		"en|ch|tc|kr": "INACTA"
 	}
 ]

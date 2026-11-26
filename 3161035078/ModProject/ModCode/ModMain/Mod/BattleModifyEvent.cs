@@ -49,6 +49,7 @@ namespace MOD_nE7UL2.Mod
             if (e.uiType.uiName == UIType.MapMain.uiName)
             {
                 _nullify.Clear();
+                _regenLeft.Clear();
             }
             else
             if (e.uiType.uiName == UIType.BattleInfo.uiName)
@@ -108,6 +109,18 @@ namespace MOD_nE7UL2.Mod
             }
         }
 
+        /// <summary>A hit between two cultivators (autotest TB-19): the damage at the start, before the MP/SP/DP blocks,
+        /// the part they took, the final one and the minimum.</summary>
+        public class HitRecord
+        {
+            public string AtkId, HitId;
+            public int Raw, PreGuard, Guard, Final, Min, HitHpMax;
+            public bool Crit;
+        }
+
+        /// <summary>The hits between cultivators are added here while it is not null (autotest TB-19).</summary>
+        public static List<HitRecord> RecordedHits { get; set; }
+
         /// <summary>Logs the damage after each step of OnBattleUnitHitDynIntHandler (debug, e.g. autotest TB-04).</summary>
         public static bool TraceDamage { get; set; } = false;
 
@@ -145,6 +158,7 @@ namespace MOD_nE7UL2.Mod
             var atk = ModBattleEvent.AttackingUnit.data.attack.baseValue;
 
             Trace("1", e);
+            var rawDmg = e.dynV.baseValue;
             //nullify
             if (ModBattleEvent.IsWorldUnitHit)
             {
@@ -195,8 +209,8 @@ namespace MOD_nE7UL2.Mod
                 }
             }
 
-            //add dmg by time
-            e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, (double)GetDamageMultiplier() * (atkGradeLvl / 3f) * e.dynV.baseValue);
+            //add dmg by time: (multiplier - 1) x grade / 3, nothing at the start of the battle (the multiplier starts at x1)
+            e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, TimeBonus(GetDamageMultiplier(), atkGradeLvl) * e.dynV.baseValue);
 
             Trace("3", e);
             //add dmg (skill)
@@ -310,39 +324,50 @@ namespace MOD_nE7UL2.Mod
             }
 
             Trace("10", e);
+            // the MP, SP and DP blocks together take at most GUARD_MAX of the damage of the hit (6.3)
+            var preGuard = e.dynV.baseValue;
+            var guardLeft = GuardCap(preGuard);
             //block dmg (mp)
             if (ModBattleEvent.IsWorldUnitHit && hitUnitData != null && hitUnitData.mp > hitUnitData.maxMP.value / 5 && e.dynV.baseValue > minDmg)
             {
                 var blockcost = GetBlockMpCost(hitUnitData);
                 var mpRate = hitUnitData.mp.Parse<float>() / hitUnitData.maxMP.value.Parse<float>(float.MaxValue);
                 var blockTimes = (mpRate * defGradeLvl).Parse<int>();
-                for (int i = 0; i < blockTimes && e.dynV.baseValue > minDmg; i++)
+                // at most MP_BLOCK_MAX of the damage of the hit (the tries of a high realm blocked everything)
+                var blockLeft = Math.Min(MpBlockCap(e.dynV.baseValue), guardLeft);
+                for (int i = 0; i < blockTimes && e.dynV.baseValue > minDmg && blockLeft > 0; i++)
                 {
-                    var mpcost = Math.Max(defGradeLvl, e.dynV.baseValue / blockcost).Parse<int>(int.MaxValue);
-                    if (hitUnitData.mp < mpcost)
+                    // the cost is the damage really blocked (not below the minimum damage) / blockcost
+                    var blockedDmg = Math.Min(Math.Min(((double)def * mpRate * blockratio).ToIntClamp(), e.dynV.baseValue - minDmg), blockLeft);
+                    blockLeft -= Math.Max(0, blockedDmg);
+                    var mpcost = BlockMpCostOf(blockedDmg, blockcost);
+                    if (blockedDmg <= 0 || hitUnitData.mp < mpcost)
                         break;
-                    var r = mpRate * blockratio;
-                    var blockedDmg = ((double)def * r).ToIntClamp();
                     e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, -(double)blockedDmg);
+                    guardLeft -= blockedDmg;
                     hitUnitData.AddMP(-mpcost);
                 }
             }
             
             Trace("11", e);
             //block dmg (sp)
-            if (ModBattleEvent.IsWorldUnitHit && hitUnitData != null && hitUnitData.sp > 0 && e.dynV.baseValue > minDmg && defGradeLvl >= 4)
+            if (ModBattleEvent.IsWorldUnitHit && hitUnitData != null && hitUnitData.sp > 0 && e.dynV.baseValue > minDmg && defGradeLvl >= 4 && guardLeft > 0)
             {
                 var r = (hitUnitData.sp.Parse<float>() / hitUnitData.maxSP.value.Parse<float>(float.MaxValue)) * blockratio;
-                e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, -(double)def * r);
+                var blocked = GuardBlock(def * r, guardLeft);
+                guardLeft -= blocked;
+                e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, -(double)blocked);
                 hitUnitData.AddSP(-1);
             }
 
             Trace("12", e);
             //block dmg (dp)
-            if (ModBattleEvent.IsWorldUnitHit && hitUnitData != null && hitUnitData.dp > 0 && e.dynV.baseValue > minDmg && defGradeLvl >= 8)
+            if (ModBattleEvent.IsWorldUnitHit && hitUnitData != null && hitUnitData.dp > 0 && e.dynV.baseValue > minDmg && defGradeLvl >= 8 && guardLeft > 0)
             {
                 var r = (hitUnitData.dp.Parse<float>() / hitUnitData.maxDP.value.Parse<float>(float.MaxValue)) * blockratio;
-                e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, -(double)def * r);
+                var blocked = GuardBlock(def * r, guardLeft);
+                guardLeft -= blocked;
+                e.dynV.baseValue = ValueHelper.SafeAddInt(e.dynV.baseValue, -(double)blocked);
             }
 
             Trace("13", e);
@@ -350,6 +375,14 @@ namespace MOD_nE7UL2.Mod
             if (e.dynV.baseValue <= minDmg)
                 e.dynV.baseValue = minDmg;
             Trace($"final (min {minDmg})", e);
+            if (RecordedHits != null && ModBattleEvent.IsWorldUnitAttacking && ModBattleEvent.IsWorldUnitHit)
+                RecordedHits.Add(new HitRecord
+                {
+                    AtkId = ModBattleEvent.AttackingWorldUnit.GetUnitId(), HitId = ModBattleEvent.HitWorldUnit.GetUnitId(),
+                    Raw = rawDmg, PreGuard = preGuard, Guard = GuardCap(preGuard) - guardLeft, Final = e.dynV.baseValue, Min = minDmg,
+                    HitHpMax = ModBattleEvent.HitUnit.data.maxHP.value, Crit = e.hitData.isCrit,
+                });
+            RecordStats(e.dynV.baseValue, preGuard, GuardCap(preGuard) - guardLeft, GuardCap(preGuard), minDmg);
 
             //steal
             if (ModBattleEvent.IsWorldUnitAttacking)
@@ -366,6 +399,31 @@ namespace MOD_nE7UL2.Mod
                 ModBattleEvent.AttackingUnit.data.AddSP(
                     ((double)e.dynV.baseValue * (GetStealSpBase(ModBattleEvent.AttackingWorldUnit) + GetStealSpPlus(ModBattleEvent.AttackingWorldUnit))).ToIntClamp());
             }
+        }
+
+        /// <summary>Balance numbers (Helper/TaoistStats) of a hit where the player is the attacker or the target.</summary>
+        private static void RecordStats(int final, int preGuard, int guard, int cap, int minDmg)
+        {
+            var byPlayer = ModBattleEvent.IsWorldUnitAttacking && ModBattleEvent.AttackingWorldUnit.IsPlayer();
+            var onPlayer = ModBattleEvent.IsWorldUnitHit && ModBattleEvent.HitWorldUnit.IsPlayer();
+            if (byPlayer == onPlayer) return; // neither (NPCs between them) or both
+            var other = byPlayer ? ModBattleEvent.HitUnit : ModBattleEvent.AttackingUnit;
+            var otherWorld = byPlayer ? (ModBattleEvent.IsWorldUnitHit ? ModBattleEvent.HitWorldUnit : null) : (ModBattleEvent.IsWorldUnitAttacking ? ModBattleEvent.AttackingWorldUnit : null);
+            var monst = other?.data?.TryCast<UnitDataMonst>();
+            var kind = otherWorld != null ? "cultivator" : monst != null && monst.monstType == MonstType.BOSS ? "boss" : "monster";
+            var realm = otherWorld?.GetGradeLvl() ?? other?.data?.grade?.value ?? 0;
+            Helper.TaoistStats.Hit(byPlayer, kind, realm, final, ModBattleEvent.HitUnit.data.maxHP.value);
+            if (ModBattleEvent.IsWorldUnitHit)
+                Helper.TaoistStats.Guard(ModBattleEvent.HitWorldUnit.GetGradeLvl(), preGuard, guard, cap, final <= minDmg);
+        }
+
+        /// <summary>The end of a battle of the player: its length, the result, the damage multiplier of the time (TaoistStats).</summary>
+        public override void OnBattleEndHandler(BattleEndHandler e)
+        {
+            base.OnBattleEndHandler(e);
+            var player = g.world?.playerUnit;
+            if (player == null || e == null) return;
+            Helper.TaoistStats.BattleEnd(player.GetGradeLvl(), ModBattleEvent.BattleStayTime, e.isWin, GetDamageMultiplier());
         }
 
         /// <summary>
@@ -416,19 +474,26 @@ namespace MOD_nE7UL2.Mod
                         monstData.hp += (Math.Sqrt(Math.Sqrt(monstData.maxHP.value / 3)) + Math.Sqrt(monstData.basisWood.value / 100)).Parse<int>();
                 }
 
-                //human recovery
+                //human recovery: the fractions are kept until they make a whole point (0.44 HP a tick = 2.2 HP a second)
                 var humanData = unit?.data?.TryCast<UnitDataHuman>();
                 if (humanData?.worldUnitData?.unit != null)
                 {
                     var wunit = humanData.worldUnitData.unit;
+                    var id = wunit.GetUnitId();
+                    if (!_regenLeft.TryGetValue(id, out var left))
+                        _regenLeft[id] = left = new double[4];
                     if (humanData.hp < humanData.maxHP.value)
-                        humanData.hp += Convert.ToInt32(GetHpRecoveryBase(wunit) + GetHpRecoveryPlus(wunit));
+                        humanData.hp = ValueHelper.SafeAddInt(humanData.hp, Regen(ref left[0], GetHpRecoveryBase(wunit) + GetHpRecoveryPlus(wunit)));
+                    else left[0] = 0;
                     if (humanData.mp < humanData.maxMP.value)
-                        humanData.mp += Convert.ToInt32(GetMpRecoveryBase(wunit) + GetMpRecoveryPlus(wunit));
+                        humanData.mp = ValueHelper.SafeAddInt(humanData.mp, Regen(ref left[1], GetMpRecoveryBase(wunit) + GetMpRecoveryPlus(wunit)));
+                    else left[1] = 0;
                     if (humanData.sp < humanData.maxSP.value)
-                        humanData.sp += Convert.ToInt32(GetSpRecoveryBase(wunit) + GetSpRecoveryPlus(wunit));
+                        humanData.sp = ValueHelper.SafeAddInt(humanData.sp, Regen(ref left[2], GetSpRecoveryBase(wunit) + GetSpRecoveryPlus(wunit)));
+                    else left[2] = 0;
                     if (humanData.dp < humanData.maxDP.value)
-                        humanData.dp += Convert.ToInt32(GetDpRecoveryBase(wunit) + GetDpRecoveryPlus(wunit));
+                        humanData.dp = ValueHelper.SafeAddInt(humanData.dp, Regen(ref left[3], GetDpRecoveryBase(wunit) + GetDpRecoveryPlus(wunit)));
+                    else left[3] = 0;
                 }
             }
         }
@@ -440,6 +505,46 @@ namespace MOD_nE7UL2.Mod
         {
             return Math.Pow(GLOBAL_DMG_MULTIPLIER, ModBattleEvent.BattleStayTime) * Math.Pow(LOCAL_DMG_MULTIPLIER, ModBattleEvent.RoomStayTime);
         }
+
+        /// <summary>Share of the damage of a hit the MP block can take at most (6.3).</summary>
+        public const double MP_BLOCK_MAX = 0.6;
+
+        /// <summary>Damage the MP block of a hit can take at most.</summary>
+        public static int MpBlockCap(int dmg) => Math.Max(0d, dmg * MP_BLOCK_MAX).ToIntClamp();
+
+        /// <summary>Share of the damage of a hit the MP, SP and DP blocks together can take at most (6.3). Not lower:
+        /// every block spends its MP / SP / DP and blocks less as they go down.</summary>
+        public const double GUARD_MAX = 0.8;
+
+        /// <summary>Damage the MP, SP and DP blocks of a hit can take together at most.</summary>
+        public static int GuardCap(int dmg) => Math.Max(0d, dmg * GUARD_MAX).ToIntClamp();
+
+        /// <summary>Damage a SP / DP block takes: what it would block, not over what the guard has left.</summary>
+        public static int GuardBlock(double wouldBlock, int guardLeft) => Math.Max(0, Math.Min(Math.Max(0d, wouldBlock).ToIntClamp(), guardLeft));
+
+        /// <summary>Share of the damage added by the time of the battle: (multiplier - 1) x grade / 3 (0 at the start).</summary>
+        public static double TimeBonus(double multiplier, int grade) => Math.Max(0d, multiplier - 1d) * (grade / 3d);
+
+        /// <summary>MP cost of one MP block: the damage blocked / blockcost (physical basis sum / 50), at least 1.</summary>
+        public static int BlockMpCostOf(int blockedDmg, float blockcost)
+        {
+            if (blockedDmg <= 0) return 0;
+            if (blockcost <= 0f) return int.MaxValue; // no physical basis: no MP block
+            return Math.Max(1d, Math.Ceiling(blockedDmg / (double)blockcost)).ToIntClamp();
+        }
+
+        /// <summary>Recovery of a tick with the fraction kept from the ticks before (left): the whole points to add.</summary>
+        public static int Regen(ref double left, double perTick)
+        {
+            if (double.IsNaN(perTick) || double.IsInfinity(perTick)) return 0;
+            left += perTick;
+            var whole = Math.Floor(left);
+            left -= whole;
+            return whole.ToIntClamp();
+        }
+
+        /// <summary>Fractions of the recovery kept for each unit of the battle (HP, MP, SP, DP).</summary>
+        private static readonly Dictionary<string, double[]> _regenLeft = new Dictionary<string, double[]>();
 
         #region Modify
         public static Dictionary<int, float> BlockRatio { get; } = new Dictionary<int, float>()

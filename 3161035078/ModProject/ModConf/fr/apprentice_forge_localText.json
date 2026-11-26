@@ -2,7 +2,7 @@
 	{
 		"id": "420022001",
 		"key": "apprentice420021001",
-		"en|ch|tc|kr": "Forge niveau 1"
+		"en|ch|tc|kr": "Garçon du Soufflet"
 	},
 	{
 		"id": "420023001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420022002",
 		"key": "apprentice420021002",
-		"en|ch|tc|kr": "Forge niveau 2"
+		"en|ch|tc|kr": "Élève de l'Enclume"
 	},
 	{
 		"id": "420023002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420022003",
 		"key": "apprentice420021003",
-		"en|ch|tc|kr": "Forge niveau 3"
+		"en|ch|tc|kr": "Forgeron"
 	},
 	{
 		"id": "420023003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420022004",
 		"key": "apprentice420021004",
-		"en|ch|tc|kr": "Forge niveau 4"
+		"en|ch|tc|kr": "Artificier"
 	},
 	{
 		"id": "420023004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420022005",
 		"key": "apprentice420021005",
-		"en|ch|tc|kr": "Forge niveau 5"
+		"en|ch|tc|kr": "Maître Forgeron"
 	},
 	{
 		"id": "420023005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420022006",
 		"key": "apprentice420021006",
-		"en|ch|tc|kr": "Forge niveau 6"
+		"en|ch|tc|kr": "Grand Artificier"
 	},
 	{
 		"id": "420023006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420022007",
 		"key": "apprentice420021007",
-		"en|ch|tc|kr": "Forge niveau 7"
+		"en|ch|tc|kr": "Patriarche Forgeron"
 	},
 	{
 		"id": "420023007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420022008",
 		"key": "apprentice420021008",
-		"en|ch|tc|kr": "Forge niveau 8"
+		"en|ch|tc|kr": "Vénérable Forgeron"
 	},
 	{
 		"id": "420023008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420022009",
 		"key": "apprentice420021009",
-		"en|ch|tc|kr": "Forge niveau 9"
+		"en|ch|tc|kr": "Saint Forgeron"
 	},
 	{
 		"id": "420023009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420022010",
 		"key": "apprentice420021010",
-		"en|ch|tc|kr": "Forge niveau 10"
+		"en|ch|tc|kr": "Empereur Forgeron"
 	},
 	{
 		"id": "420023010",

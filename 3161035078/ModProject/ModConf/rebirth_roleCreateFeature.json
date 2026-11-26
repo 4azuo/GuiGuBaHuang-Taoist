@@ -1,6 +1,6 @@
 [
 	{
-		"__name": "Rebirth Lvl-1",
+		"__name": "rebirth 1: Second Life",
 		"id": "420101001",
 		"type": "2",
 		"group": "420101000",
@@ -17,7 +17,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-2",
+		"__name": "rebirth 2: Past Wisdom",
 		"id": "420101002",
 		"type": "2",
 		"group": "420101000",
@@ -34,7 +34,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-3",
+		"__name": "rebirth 3: Old Soul",
 		"id": "420101003",
 		"type": "2",
 		"group": "420101000",
@@ -51,7 +51,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-4",
+		"__name": "rebirth 4: Wheel Walker",
 		"id": "420101004",
 		"type": "2",
 		"group": "420101000",
@@ -68,7 +68,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-5",
+		"__name": "rebirth 5: Nirvana Body",
 		"id": "420101005",
 		"type": "2",
 		"group": "420101000",
@@ -85,7 +85,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-6",
+		"__name": "rebirth 6: Phoenix Body",
 		"id": "420101006",
 		"type": "2",
 		"group": "420101000",
@@ -102,7 +102,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-7",
+		"__name": "rebirth 7: Myriad Lives",
 		"id": "420101007",
 		"type": "2",
 		"group": "420101000",
@@ -119,7 +119,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-8",
+		"__name": "rebirth 8: Samsara Breaker",
 		"id": "420101008",
 		"type": "2",
 		"group": "420101000",
@@ -136,7 +136,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-9",
+		"__name": "rebirth 9: Deathless Soul",
 		"id": "420101009",
 		"type": "2",
 		"group": "420101000",
@@ -153,7 +153,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Rebirth Lvl-10",
+		"__name": "rebirth 10: Eternal One",
 		"id": "420101010",
 		"type": "2",
 		"group": "420101000",

@@ -3888,5 +3888,150 @@
 		"id": "-1000007777",
 		"key": "story_doc_essence_L",
 		"en|ch|tc|kr": "Le cœur clair, chaque art que vous connaissez s'étend comme un lac paisible, et vous voyez la main qui a tracé chacun. Votre Essence du Dao s'approfondit."
+	},
+	{
+		"id": -1000007778,
+		"key": "story_name_S",
+		"en|ch|tc|kr": "Le testament du Roi des remèdes"
+	},
+	{
+		"id": -1000007779,
+		"key": "story_task_desc_S",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007780,
+		"key": "story_task_S0",
+		"en|ch|tc|kr": "{O} garde trois pages déchirées du Roi des remèdes. La première est dans l'antre d'une bête."
+	},
+	{
+		"id": -1000007781,
+		"key": "story_task_S1",
+		"en|ch|tc|kr": "Un village meurt de la peste. La deuxième page dit : un guérisseur qui passe son chemin n'en est pas un."
+	},
+	{
+		"id": -1000007782,
+		"key": "story_task_S2",
+		"en|ch|tc|kr": "La troisième page est un poison. Quelqu'un doit le goûter pour lire le remède."
+	},
+	{
+		"id": -1000007783,
+		"key": "story_task_S3",
+		"en|ch|tc|kr": "Le testament est presque complet. Lisez sa dernière page."
+	},
+	{
+		"id": -1000007784,
+		"key": "story_S0_1",
+		"en|ch|tc|kr": "Un vieil alchimiste est assis près d'un feu éteint, une liasse de papier brûlé sur les genoux.\n{O} dit : \"Ce sont les dernières paroles du Roi des remèdes. Il manque trois pages, et mes mains tremblent trop pour les chercher. Le ferez-vous ?\""
+	},
+	{
+		"id": -1000007785,
+		"key": "story_S0_1_o1",
+		"en|ch|tc|kr": "Je les trouverai"
+	},
+	{
+		"id": -1000007786,
+		"key": "story_S0_1_o2",
+		"en|ch|tc|kr": "Ce n'est pas mon affaire"
+	},
+	{
+		"id": -1000007787,
+		"key": "story_S0_2",
+		"en|ch|tc|kr": "La première page sent le musc. Vous la suivez jusqu'à une grotte pleine d'os rongés ; quelque chose de grand respire dans le noir."
+	},
+	{
+		"id": -1000007788,
+		"key": "story_S0_2_o1",
+		"en|ch|tc|kr": "Entrer"
+	},
+	{
+		"id": -1000007789,
+		"key": "story_S1_1",
+		"en|ch|tc|kr": "Des toux derrière chaque porte. {O} lit la deuxième page à voix haute : \"Un guérisseur qui passe son chemin n'en est pas un.\"\nLes malades ont besoin de potions, ou de pierres spirituelles pour un médecin de la ville ({0:#,##0} [icon:zm_lingshi])."
+	},
+	{
+		"id": -1000007790,
+		"key": "story_S1_1_o1",
+		"en|ch|tc|kr": "Donner une potion"
+	},
+	{
+		"id": -1000007791,
+		"key": "story_S1_1_o2",
+		"en|ch|tc|kr": "Payer un médecin"
+	},
+	{
+		"id": -1000007792,
+		"key": "story_S1_1_o3",
+		"en|ch|tc|kr": "Passer son chemin"
+	},
+	{
+		"id": -1000007793,
+		"key": "story_S1_nopill",
+		"en|ch|tc|kr": "Vous n'avez aucune potion de soin à donner."
+	},
+	{
+		"id": -1000007794,
+		"key": "story_S2_1",
+		"en|ch|tc|kr": "La troisième page ne porte pas d'encre mais une pâte noire séchée. {O} la tourne à la lumière : \"Le remède est écrit dans le poison. Quelqu'un doit y goûter.\""
+	},
+	{
+		"id": -1000007795,
+		"key": "story_S2_1_o1",
+		"en|ch|tc|kr": "Y goûter soi-même"
+	},
+	{
+		"id": -1000007796,
+		"key": "story_S2_1_o2",
+		"en|ch|tc|kr": "Laisser {O} y goûter"
+	},
+	{
+		"id": -1000007797,
+		"key": "story_S2_1_o3",
+		"en|ch|tc|kr": "Personne n'y goûte"
+	},
+	{
+		"id": -1000007798,
+		"key": "story_S3_1",
+		"en|ch|tc|kr": "La dernière page est intacte. L'écriture du Roi des remèdes est petite et sûre : \"Un guérisseur choisit ce qu'il garde : la force du remède, ou le calme de celui qui le prend.\""
+	},
+	{
+		"id": -1000007799,
+		"key": "story_S3_1_o1",
+		"en|ch|tc|kr": "La force du remède (+30% de récupération)"
+	},
+	{
+		"id": -1000007800,
+		"key": "story_S3_1_o2",
+		"en|ch|tc|kr": "Le calme de celui qui le prend (moitié de la concentration rendue)"
+	},
+	{
+		"id": -1000007801,
+		"key": "story_endS_Heal",
+		"en|ch|tc|kr": "Vous recopiez la dernière page dans votre propre livre. Désormais chaque potion avalée brûle plus fort dans vos veines."
+	},
+	{
+		"id": -1000007802,
+		"key": "story_endS_Focus",
+		"en|ch|tc|kr": "Vous recopiez la dernière page dans votre propre livre. Désormais une potion trouble à peine votre esprit : la moitié de la concentration revient."
+	},
+	{
+		"id": -1000007803,
+		"key": "story_endS_Fragment",
+		"en|ch|tc|kr": "Sans le village, sans le goût du poison, la dernière page reste blanche. {O} vous donne une de ses potions et ne dit plus rien."
+	},
+	{
+		"id": -1000007804,
+		"key": "story_end_S_Heal",
+		"en|ch|tc|kr": "La force du remède"
+	},
+	{
+		"id": -1000007805,
+		"key": "story_end_S_Focus",
+		"en|ch|tc|kr": "L'esprit calme"
+	},
+	{
+		"id": -1000007806,
+		"key": "story_end_S_Fragment",
+		"en|ch|tc|kr": "Une page blanche"
 	}
 ]

@@ -268,5 +268,170 @@
 		"id": "-1000008053",
 		"key": "ui_town_portal_off",
 		"en|ch|tc|kr": "\"Único portal en la ciudad y la secta\" está DESACTIVADO: los pueblos pequeños pueden volver a tener portal."
+	},
+	{
+		"id": -1000008054,
+		"key": "ui_appr_title",
+		"en|ch|tc|kr": "Rangos de oficio"
+	},
+	{
+		"id": -1000008055,
+		"key": "ui_appr_header",
+		"en|ch|tc|kr": "{0}: {1} puntos, {2}"
+	},
+	{
+		"id": -1000008056,
+		"key": "ui_appr_none",
+		"en|ch|tc|kr": "aún sin rango"
+	},
+	{
+		"id": -1000008057,
+		"key": "ui_appr_rank",
+		"en|ch|tc|kr": "rango {0}: {1}"
+	},
+	{
+		"id": -1000008058,
+		"key": "ui_appr_line",
+		"en|ch|tc|kr": "Rango {0} {1}: {2} {3}+, {4}"
+	},
+	{
+		"id": -1000008059,
+		"key": "ui_appr_note",
+		"en|ch|tc|kr": "Cada rango es un destino: llega cuando el valor del oficio alcanza el umbral y cambia con él."
+	},
+	{
+		"id": -1000008060,
+		"key": "ui_appr_prev",
+		"en|ch|tc|kr": "Anterior"
+	},
+	{
+		"id": -1000008061,
+		"key": "ui_appr_next",
+		"en|ch|tc|kr": "Siguiente"
+	},
+	{
+		"id": -1000008062,
+		"key": "ui_appr_alchemy",
+		"en|ch|tc|kr": "Alquimia"
+	},
+	{
+		"id": -1000008063,
+		"key": "ui_appr_forge",
+		"en|ch|tc|kr": "Forja"
+	},
+	{
+		"id": -1000008064,
+		"key": "ui_appr_fengshui",
+		"en|ch|tc|kr": "Feng Shui"
+	},
+	{
+		"id": -1000008065,
+		"key": "ui_appr_talismans",
+		"en|ch|tc|kr": "Talismanes"
+	},
+	{
+		"id": -1000008066,
+		"key": "ui_appr_herbology",
+		"en|ch|tc|kr": "Herbología"
+	},
+	{
+		"id": -1000008067,
+		"key": "ui_appr_mining",
+		"en|ch|tc|kr": "Minería"
+	},
+	{
+		"id": -1000008068,
+		"key": "ui_trainee_title_martial",
+		"en|ch|tc|kr": "Rangos marciales"
+	},
+	{
+		"id": -1000008069,
+		"key": "ui_trainee_title_magic",
+		"en|ch|tc|kr": "Rangos arcanos"
+	},
+	{
+		"id": -1000008070,
+		"key": "ui_trainee_martial",
+		"en|ch|tc|kr": "Bases marciales (suma)"
+	},
+	{
+		"id": -1000008071,
+		"key": "ui_trainee_magic",
+		"en|ch|tc|kr": "Raíces espirituales (suma)"
+	},
+	{
+		"id": -1000008072,
+		"key": "ui_panel_ranks",
+		"en|ch|tc|kr": "Rangos"
+	},
+	{
+		"id": -1000008073,
+		"key": "ui_panel_rank",
+		"en|ch|tc|kr": "Rango"
+	},
+	{
+		"id": -1000008074,
+		"key": "ui_panel_title",
+		"en|ch|tc|kr": "Título"
+	},
+	{
+		"id": -1000008075,
+		"key": "ui_panel_needs",
+		"en|ch|tc|kr": "Requiere"
+	},
+	{
+		"id": -1000008076,
+		"key": "ui_panel_effect",
+		"en|ch|tc|kr": "Efecto"
+	},
+	{
+		"id": -1000008077,
+		"key": "ui_panel_next",
+		"en|ch|tc|kr": "Siguiente: {0} con {1} ({2}%)"
+	},
+	{
+		"id": -1000008078,
+		"key": "ui_panel_top",
+		"en|ch|tc|kr": "Rango máximo alcanzado"
+	},
+	{
+		"id": -1000008079,
+		"key": "ui_panel_back",
+		"en|ch|tc|kr": "Volver"
+	},
+	{
+		"id": -1000008080,
+		"key": "ui_appr_overview",
+		"en|ch|tc|kr": "Las seis artes"
+	},
+	{
+		"id": -1000008081,
+		"key": "ui_appr_value",
+		"en|ch|tc|kr": "{0} puntos"
+	},
+	{
+		"id": -1000008082,
+		"key": "ui_appr_to_next",
+		"en|ch|tc|kr": "siguiente rango en {0}"
+	},
+	{
+		"id": -1000008083,
+		"key": "ui_appr_overview_hint",
+		"en|ch|tc|kr": "Pulsa ? en un arte para ver sus 10 rangos."
+	},
+	{
+		"id": -1000008084,
+		"key": "ui_merchant_title",
+		"en|ch|tc|kr": "Rangos de mercader"
+	},
+	{
+		"id": -1000008085,
+		"key": "ui_merchant_money",
+		"en|ch|tc|kr": "Piedras espirituales"
+	},
+	{
+		"id": -1000008086,
+		"key": "ui_merchant_note",
+		"en|ch|tc|kr": "Un rango alcanzado se mantiene aunque bajen las piedras."
 	}
 ]

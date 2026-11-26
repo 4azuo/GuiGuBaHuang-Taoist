@@ -2,7 +2,7 @@
 	{
 		"id": "420082001",
 		"key": "trainee420081001",
-		"en|ch|tc|kr": "Magic Lvl-1"
+		"en|ch|tc|kr": "Tiro Magiae"
 	},
 	{
 		"id": "420083001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420082002",
 		"key": "trainee420081002",
-		"en|ch|tc|kr": "Magic Lvl-2"
+		"en|ch|tc|kr": "Discipulus Magiae"
 	},
 	{
 		"id": "420083002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420082003",
 		"key": "trainee420081003",
-		"en|ch|tc|kr": "Magic Lvl-3"
+		"en|ch|tc|kr": "Magus"
 	},
 	{
 		"id": "420083003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420082004",
 		"key": "trainee420081004",
-		"en|ch|tc|kr": "Magic Lvl-4"
+		"en|ch|tc|kr": "Magister Magiae"
 	},
 	{
 		"id": "420083004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420082005",
 		"key": "trainee420081005",
-		"en|ch|tc|kr": "Magic Lvl-5"
+		"en|ch|tc|kr": "Perfectus"
 	},
 	{
 		"id": "420083005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420082006",
 		"key": "trainee420081006",
-		"en|ch|tc|kr": "Magic Lvl-6"
+		"en|ch|tc|kr": "Rex Dharmae"
 	},
 	{
 		"id": "420083006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420082007",
 		"key": "trainee420081007",
-		"en|ch|tc|kr": "Magic Lvl-7"
+		"en|ch|tc|kr": "Imperator Magiae"
 	},
 	{
 		"id": "420083007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420082008",
 		"key": "trainee420081008",
-		"en|ch|tc|kr": "Magic Lvl-8"
+		"en|ch|tc|kr": "Venerabilis Dharmae"
 	},
 	{
 		"id": "420083008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420082009",
 		"key": "trainee420081009",
-		"en|ch|tc|kr": "Magic Lvl-9"
+		"en|ch|tc|kr": "Sanctus Dharmae"
 	},
 	{
 		"id": "420083009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420082010",
 		"key": "trainee420081010",
-		"en|ch|tc|kr": "Magic Lvl-10"
+		"en|ch|tc|kr": "Deus Dharmae"
 	},
 	{
 		"id": "420083010",

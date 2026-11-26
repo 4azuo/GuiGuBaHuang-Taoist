@@ -47,6 +47,8 @@
     <Compile Include="Helper\ItemHelper.cs" />
     <Compile Include="Helper\InfoDialog.cs" />
     <Compile Include="Helper\InfoSheet.cs" />
+    <Compile Include="Helper\InfoPanel.cs" />
+    <Compile Include="Helper\TaoistStats.cs" />
     <Compile Include="Helper\DocHelper.cs" />
     <Compile Include="Helper\TaoistWindows.cs" />
     <Compile Include="Helper\UnitPowerCalHelper.cs" />
@@ -57,6 +59,9 @@
     <Compile Include="ModMain.cs" />
     <Compile Include="Mod\BattleAfterEvent.cs" />
     <Compile Include="Mod\DamageInfo.cs" />
+    <Compile Include="Mod\ConfBalance.cs" />
+    <Compile Include="Mod\PillBodyEvent.cs" />
+    <Compile Include="Mod\ConstitutionEvent.cs" />
     <Compile Include="Mod\SMScoreEvent.cs" />
     <Compile Include="Mod\ExpertEvent.cs" />
     <Compile Include="Mod\InflationaryEvent.cs" />
@@ -126,6 +131,7 @@
     <Compile Include="Story\Lines\LineP_SenseVoice.cs" />
     <Compile Include="Story\Lines\LineQ_NamelessArt.cs" />
     <Compile Include="Story\Lines\LineR_LastHeir.cs" />
+    <Compile Include="Story\Lines\LineS_MedicineKing.cs" />
     <Compile Include="Mod\RealMarketEvent3.Extra.cs" />
     <Compile Include="Helper\ModTextHelper.cs" />
     <Compile Include="Mod\UICreatePlayerEvent.cs" />
@@ -191,6 +197,11 @@
     <Compile Include="AutoTest\Scenarios\Story\TS_Storylines.cs" />
     <Compile Include="AutoTest\Scenarios\Battle\TB16_ArtifactHotkeys.cs" />
     <Compile Include="AutoTest\Scenarios\Battle\TB17_DamageInfoBattle.cs" />
+    <Compile Include="AutoTest\Scenarios\Battle\TB18_PotionBonus.cs" />
+    <Compile Include="AutoTest\Scenarios\Battle\TB19_NpcDuelsByRealm.cs" />
+    <Compile Include="AutoTest\Scenarios\Battle\TG91_BalanceByRealm.cs" />
+    <Compile Include="AutoTest\Scenarios\Unit\TG92_PillBody.cs" />
+    <Compile Include="AutoTest\Scenarios\Unit\TG93_Constitutions.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX07_GameMonthLog.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX08_FamilySeclusion.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX09_SkipTiming.cs" />

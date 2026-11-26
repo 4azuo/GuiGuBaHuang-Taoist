@@ -421,4 +421,24 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Story
         public Scenario Create() => StoryDriver.Build(Id, "R", "Story R For One Heir Only: three trials, the theft, the heir, the art handed on", null, null,
             new[] { "R_Lineage", "R_Buried", "R_Stolen" }, null, StoryDriver.CheckArt);
     }
+
+    // ---- the line of 6.3 (recovery of the potions, PillBodyEvent)
+
+    public class TS19_MedicineKing : IScenarioDefinition
+    {
+        public string Id => "TS-19";
+        // outside towns; first options: the page found, a potion given to the village, the player tastes the poison, ending Heal
+        public Scenario Create() => StoryDriver.Build(Id, "S", "Story S Medicine King's Testament: the lair, the plague village, the poison, the last page", c =>
+            {
+                StoryDriver.LeaveTown();
+                c.Bag["ts19_heal"] = PillBodyEvent.Instance.KingHeal;
+                c.Bag["ts19_focus"] = PillBodyEvent.Instance.KingFocus;
+            }, null,
+            new[] { "S_Heal", "S_Focus", "S_Fragment" }, null, (c, s) =>
+            {
+                c.Assert(s.Ending != "S_Heal" || PillBodyEvent.Instance.KingHeal, $"ending {s.Ending}: the perk of the potions kept");
+                PillBodyEvent.Instance.KingHeal = (bool)c.Bag["ts19_heal"];
+                PillBodyEvent.Instance.KingFocus = (bool)c.Bag["ts19_focus"];
+            });
+    }
 }

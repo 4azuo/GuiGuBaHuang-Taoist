@@ -268,5 +268,170 @@
 		"id": "-1000008053",
 		"key": "ui_town_portal_off",
 		"en|ch|tc|kr": "\"Nur Portal bei Stadt und Sekte\" ist AUS: kleine Städte können wieder ein Portal haben."
+	},
+	{
+		"id": -1000008054,
+		"key": "ui_appr_title",
+		"en|ch|tc|kr": "Handwerksränge"
+	},
+	{
+		"id": -1000008055,
+		"key": "ui_appr_header",
+		"en|ch|tc|kr": "{0}: {1} Punkte, {2}"
+	},
+	{
+		"id": -1000008056,
+		"key": "ui_appr_none",
+		"en|ch|tc|kr": "noch kein Rang"
+	},
+	{
+		"id": -1000008057,
+		"key": "ui_appr_rank",
+		"en|ch|tc|kr": "Rang {0}: {1}"
+	},
+	{
+		"id": -1000008058,
+		"key": "ui_appr_line",
+		"en|ch|tc|kr": "Rang {0} {1}: {2} ab {3}, {4}"
+	},
+	{
+		"id": -1000008059,
+		"key": "ui_appr_note",
+		"en|ch|tc|kr": "Jeder Rang ist ein Schicksal: Er kommt, wenn der Wert des Handwerks die Schwelle erreicht, und ändert sich mit ihm."
+	},
+	{
+		"id": -1000008060,
+		"key": "ui_appr_prev",
+		"en|ch|tc|kr": "Zurück"
+	},
+	{
+		"id": -1000008061,
+		"key": "ui_appr_next",
+		"en|ch|tc|kr": "Weiter"
+	},
+	{
+		"id": -1000008062,
+		"key": "ui_appr_alchemy",
+		"en|ch|tc|kr": "Alchemie"
+	},
+	{
+		"id": -1000008063,
+		"key": "ui_appr_forge",
+		"en|ch|tc|kr": "Schmieden"
+	},
+	{
+		"id": -1000008064,
+		"key": "ui_appr_fengshui",
+		"en|ch|tc|kr": "Feng Shui"
+	},
+	{
+		"id": -1000008065,
+		"key": "ui_appr_talismans",
+		"en|ch|tc|kr": "Talismane"
+	},
+	{
+		"id": -1000008066,
+		"key": "ui_appr_herbology",
+		"en|ch|tc|kr": "Kräuterkunde"
+	},
+	{
+		"id": -1000008067,
+		"key": "ui_appr_mining",
+		"en|ch|tc|kr": "Bergbau"
+	},
+	{
+		"id": -1000008068,
+		"key": "ui_trainee_title_martial",
+		"en|ch|tc|kr": "Kampfränge"
+	},
+	{
+		"id": -1000008069,
+		"key": "ui_trainee_title_magic",
+		"en|ch|tc|kr": "Zauberränge"
+	},
+	{
+		"id": -1000008070,
+		"key": "ui_trainee_martial",
+		"en|ch|tc|kr": "Kampfgrundwerte (Summe)"
+	},
+	{
+		"id": -1000008071,
+		"key": "ui_trainee_magic",
+		"en|ch|tc|kr": "Geistwurzeln (Summe)"
+	},
+	{
+		"id": -1000008072,
+		"key": "ui_panel_ranks",
+		"en|ch|tc|kr": "Ränge"
+	},
+	{
+		"id": -1000008073,
+		"key": "ui_panel_rank",
+		"en|ch|tc|kr": "Rang"
+	},
+	{
+		"id": -1000008074,
+		"key": "ui_panel_title",
+		"en|ch|tc|kr": "Titel"
+	},
+	{
+		"id": -1000008075,
+		"key": "ui_panel_needs",
+		"en|ch|tc|kr": "Benötigt"
+	},
+	{
+		"id": -1000008076,
+		"key": "ui_panel_effect",
+		"en|ch|tc|kr": "Wirkung"
+	},
+	{
+		"id": -1000008077,
+		"key": "ui_panel_next",
+		"en|ch|tc|kr": "Nächster: {0} ab {1} ({2}%)"
+	},
+	{
+		"id": -1000008078,
+		"key": "ui_panel_top",
+		"en|ch|tc|kr": "Höchster Rang erreicht"
+	},
+	{
+		"id": -1000008079,
+		"key": "ui_panel_back",
+		"en|ch|tc|kr": "Zurück"
+	},
+	{
+		"id": -1000008080,
+		"key": "ui_appr_overview",
+		"en|ch|tc|kr": "Die sechs Künste"
+	},
+	{
+		"id": -1000008081,
+		"key": "ui_appr_value",
+		"en|ch|tc|kr": "{0} Punkte"
+	},
+	{
+		"id": -1000008082,
+		"key": "ui_appr_to_next",
+		"en|ch|tc|kr": "nächster Rang ab {0}"
+	},
+	{
+		"id": -1000008083,
+		"key": "ui_appr_overview_hint",
+		"en|ch|tc|kr": "Drücke ? bei einer Kunst für ihre 10 Ränge."
+	},
+	{
+		"id": -1000008084,
+		"key": "ui_merchant_title",
+		"en|ch|tc|kr": "Händlerränge"
+	},
+	{
+		"id": -1000008085,
+		"key": "ui_merchant_money",
+		"en|ch|tc|kr": "Geiststeine"
+	},
+	{
+		"id": -1000008086,
+		"key": "ui_merchant_note",
+		"en|ch|tc|kr": "Ein erreichter Händlerrang bleibt, auch wenn die Geiststeine sinken."
 	}
 ]

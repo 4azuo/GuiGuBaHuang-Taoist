@@ -12,12 +12,12 @@ None.
 
 | Hook | What happens |
 |---|---|
-| `OnBattleUnitInto` | Monsters only (`UnitDataMonst`). Venerable tortoises (`unitAttrItem.id` 12005-12011): move speed 0, defense halved. Spiritlock circle (12012): move speed 0. |
+| `OnBattleUnitInto` | Monsters only (`UnitDataMonst`). Venerable tortoises (`unitAttrItem.id` 12005-12011): move speed 0, direction locked (`move.isLockDire`), defense halved, max HP x2 (`TORTOISE_HP_RATIO`). Spiritlock circle (12012): move speed 0. |
 
 ## Notes
 
-The halved max HP is commented out in the code.
+Move speed 0 alone does not stop a tortoise from turning.
 
 ## Tests
 
-TM-24.
+TB-05, TM-24.

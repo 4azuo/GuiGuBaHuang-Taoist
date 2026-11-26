@@ -18,6 +18,9 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
     public class TP01_NewCharacter : IScenarioDefinition
     {
         /// <summary>Scenario id (see 3161035078/tests/scenarios.json).</summary>
+        /// <summary>The destiny chosen freely (Deadly Fingers, CustomDestinyEvent).</summary>
+        public const int CUSTOM_DESTINY = 1414;
+
         public string Id => "TP-01";
 
         /// <summary>True when the run asked for a new character (set by AutoTestEvent from the request).</summary>
@@ -148,6 +151,9 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     {
                         if (ui.uiProperty.selectLuck.Count >= 3) break;
                         if (t.isOn || !t.interactable) continue;
+                        // the destiny chosen freely later (CustomDestinyEvent, 1414) is not taken from the roll: a destiny rolled
+                        // too is free, the score of the save would not go down (the check of "character" failed when it was rolled)
+                        if (t.name == CUSTOM_DESTINY.ToString()) continue;
                         t.isOn = true;
                         picked.Add($"{t.transform.parent?.name}/{t.name}");
                     }
@@ -173,7 +179,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     var ui = g.ui.GetUI<UICreatePlayer>(UIType.CreatePlayer);
                     if (!c.Assert(ui != null, "creation screen open")) return;
                     // CustomDestinyEvent: a destiny chosen freely (Deadly Fingers), on top of the 3 rolled
-                    CustomDestinyEvent.Picked.Add(1414);
+                    CustomDestinyEvent.Picked.Add(CUSTOM_DESTINY);
                     ui.OnOkClick();
                 }, 3000)
                 .Wait("world created", c =>
@@ -207,7 +213,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                     c.AssertEqual(1, Player.GetGradeLvl(), "grade 1");
                     c.AssertEqual(GameLevelType.CrueltyShura.ToString(), GameHelper.GetGameLevel().ToString(), "difficulty");
                     c.Assert(SMLocalConfigsEvent.Instance.Configs.EnableTrainer, "trainer on in the save configs");
-                    c.Assert(Player.GetLuck(1414) != null && Player.data.unitData.propertyData.bornLuck.Any(x => x.id == 1414), "the destiny chosen freely is a born one");
+                    c.Assert(Player.GetLuck(CUSTOM_DESTINY) != null && Player.data.unitData.propertyData.bornLuck.Any(x => x.id == CUSTOM_DESTINY), "the destiny chosen freely is a born one");
                     c.Assert(SMLocalConfigsEvent.Instance.Configs.Score < 0, $"score of the save lowered: {SMLocalConfigsEvent.Instance.Configs.Score}");
                     c.Assert(IsLoaded(ModConst.TRAINER_EVENT), "TrainerEvent loaded");
                     // NewGameEvent: the 3 artifacts, no intro screen / first battle left

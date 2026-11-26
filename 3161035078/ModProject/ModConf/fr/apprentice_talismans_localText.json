@@ -2,7 +2,7 @@
 	{
 		"id": "420032001",
 		"key": "apprentice420031001",
-		"en|ch|tc|kr": "Talismans Niveau 1"
+		"en|ch|tc|kr": "Garçon d'Encre"
 	},
 	{
 		"id": "420033001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420032002",
 		"key": "apprentice420031002",
-		"en|ch|tc|kr": "Talismans Niveau 2"
+		"en|ch|tc|kr": "Copiste"
 	},
 	{
 		"id": "420033002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420032003",
 		"key": "apprentice420031003",
-		"en|ch|tc|kr": "Talismans Niveau 3"
+		"en|ch|tc|kr": "Scribe"
 	},
 	{
 		"id": "420033003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420032004",
 		"key": "apprentice420031004",
-		"en|ch|tc|kr": "Talismans Niveau 4"
+		"en|ch|tc|kr": "Graveur de Runes"
 	},
 	{
 		"id": "420033004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420032005",
 		"key": "apprentice420031005",
-		"en|ch|tc|kr": "Talismans Niv-5"
+		"en|ch|tc|kr": "Maître des Runes"
 	},
 	{
 		"id": "420033005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420032006",
 		"key": "apprentice420031006",
-		"en|ch|tc|kr": "Talismans Niv-6"
+		"en|ch|tc|kr": "Grand Maître des Runes"
 	},
 	{
 		"id": "420033006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420032007",
 		"key": "apprentice420031007",
-		"en|ch|tc|kr": "Talismans Niv-7"
+		"en|ch|tc|kr": "Patriarche des Runes"
 	},
 	{
 		"id": "420033007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420032008",
 		"key": "apprentice420031008",
-		"en|ch|tc|kr": "Talismans Niveau 8"
+		"en|ch|tc|kr": "Vénérable des Runes"
 	},
 	{
 		"id": "420033008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420032009",
 		"key": "apprentice420031009",
-		"en|ch|tc|kr": "Talismans Niveau 9"
+		"en|ch|tc|kr": "Saint des Runes"
 	},
 	{
 		"id": "420033009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420032010",
 		"key": "apprentice420031010",
-		"en|ch|tc|kr": "Talismans Niv. 10"
+		"en|ch|tc|kr": "Empereur des Runes"
 	},
 	{
 		"id": "420033010",

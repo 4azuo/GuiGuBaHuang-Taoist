@@ -10,7 +10,8 @@ None. `MultipliedUnits` (runtime, `[JsonIgnore]`) lists the copies created this 
 
 ## Switches
 
-- `AddSpecialMonsterRate` (S&M): raises every chance below through `Calculate(chance, rate)`.
+- `AddMonstShieldRate`, `AddMonstExplodeRate`, `AddMonstMultiplyRate` (S&M): change the chance of the same name below through `Calculate(chance, rate)` (-1: off).
+- `NoMonsterShield` (S&M): no shield on any monster, bosses included.
 - `BossHasShield` (S&M): bosses and NPC-type monsters always get a shield.
 
 ## Scope
@@ -23,8 +24,8 @@ Monsters only, not the Devil Demon pot (`IsPotmon`), not summons.
 
 | Hook | Monster type | Effect | Chance (%) |
 |---|---|---|---|
-| `OnBattleUnitInto` | Common, Elite | Shield = max HP (max shield unlimited), via `BattleManashieldEvent.ShieldUp` | `0.6 x grade x gameLvl` |
-| `OnBattleUnitInto` | BOSS, NPC | Shield = max HP | 100 % if `BossHasShield`, else none |
+| `OnBattleUnitInto` | Common, Elite | Shield = 30 % (Common) / 40 % (Elite) of max HP (max shield unlimited), via `BattleManashieldEvent.ShieldUp` | `0.6 x grade x gameLvl` |
+| `OnBattleUnitInto` | BOSS, NPC | Shield = 50 % of max HP | 100 % if `BossHasShield`, else none |
 | `OnBattleUnitDie` | Common, Elite | **Explosion**: effect `baiyuanshizhen`, a hit of the monster's base attack on every enemy within 2.5 | `0.4 x grade x gameLvl` |
 | `OnBattleUnitDie` | Common, Elite, not itself a copy | **Split**: effect `changhenfu_bao`, creates `Random(1, gameLvl)` new monsters of the same kind at its position | `0.2 x grade x gameLvl` |
 

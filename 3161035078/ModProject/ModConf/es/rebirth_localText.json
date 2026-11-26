@@ -2,7 +2,7 @@
 	{
 		"id": "420102001",
 		"key": "rebirth420101001",
-		"en|ch|tc|kr": "Renacimiento 1"
+		"en|ch|tc|kr": "Segunda Vida"
 	},
 	{
 		"id": "420103001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420102002",
 		"key": "rebirth420101002",
-		"en|ch|tc|kr": "Renacimiento 2"
+		"en|ch|tc|kr": "Sabiduría Pasada"
 	},
 	{
 		"id": "420103002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420102003",
 		"key": "rebirth420101003",
-		"en|ch|tc|kr": "Renacimiento 3"
+		"en|ch|tc|kr": "Alma Antigua"
 	},
 	{
 		"id": "420103003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420102004",
 		"key": "rebirth420101004",
-		"en|ch|tc|kr": "Renacimiento 4"
+		"en|ch|tc|kr": "Caminante del Ciclo"
 	},
 	{
 		"id": "420103004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420102005",
 		"key": "rebirth420101005",
-		"en|ch|tc|kr": "Renacimiento 5"
+		"en|ch|tc|kr": "Cuerpo Nirvana"
 	},
 	{
 		"id": "420103005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420102006",
 		"key": "rebirth420101006",
-		"en|ch|tc|kr": "Renacimiento 6"
+		"en|ch|tc|kr": "Cuerpo de Fénix"
 	},
 	{
 		"id": "420103006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420102007",
 		"key": "rebirth420101007",
-		"en|ch|tc|kr": "Renacimiento 7"
+		"en|ch|tc|kr": "Mil Vidas"
 	},
 	{
 		"id": "420103007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420102008",
 		"key": "rebirth420101008",
-		"en|ch|tc|kr": "Renacimiento 8"
+		"en|ch|tc|kr": "Rompesamsara"
 	},
 	{
 		"id": "420103008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420102009",
 		"key": "rebirth420101009",
-		"en|ch|tc|kr": "Renacimiento 9"
+		"en|ch|tc|kr": "Alma sin Muerte"
 	},
 	{
 		"id": "420103009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420102010",
 		"key": "rebirth420101010",
-		"en|ch|tc|kr": "Renacimiento 10"
+		"en|ch|tc|kr": "El Eterno"
 	},
 	{
 		"id": "420103010",
@@ -143,5 +143,95 @@
 		"id": "420103106",
 		"key": "rebirth_need_town",
 		"en|ch|tc|kr": "El renacimiento se hace en una ciudad de zona {1} o más (sobre tu último renacimiento, {0}, y al menos tu grado)."
+	},
+	{
+		"id": "420103107",
+		"key": "rebirth_button",
+		"en|ch|tc|kr": "Renacer {0}"
+	},
+	{
+		"id": "420103108",
+		"key": "rebirth_help_now",
+		"en|ch|tc|kr": "Renacimientos: {0}, el último en el reino {1}, reinos de todos: {2}"
+	},
+	{
+		"id": "420103109",
+		"key": "rebirth_help_cond",
+		"en|ch|tc|kr": "Condiciones"
+	},
+	{
+		"id": "420103110",
+		"key": "rebirth_help_c_on",
+		"en|ch|tc|kr": "Renacer activado (ajustes S&M)"
+	},
+	{
+		"id": "420103111",
+		"key": "rebirth_help_c_grade",
+		"en|ch|tc|kr": "Reino {0} o más (sobre el último renacer)"
+	},
+	{
+		"id": "420103112",
+		"key": "rebirth_help_c_town",
+		"en|ch|tc|kr": "En una ciudad del área {0} o más (sobre el último renacer y al menos tu reino)"
+	},
+	{
+		"id": "420103113",
+		"key": "rebirth_help_c_sect",
+		"en|ch|tc|kr": "Sin secta"
+	},
+	{
+		"id": "420103114",
+		"key": "rebirth_help_gain",
+		"en|ch|tc|kr": "Ventajas"
+	},
+	{
+		"id": "420103115",
+		"key": "rebirth_help_g1",
+		"en|ch|tc|kr": "Un destino de renacer cada vez, +5% PV máx. por nivel (hasta 10)"
+	},
+	{
+		"id": "420103116",
+		"key": "rebirth_help_g2",
+		"en|ch|tc|kr": "Conservas artes, objetos, bases y atributos: en el mismo reino eres más fuerte"
+	},
+	{
+		"id": "420103117",
+		"key": "rebirth_help_g3",
+		"en|ch|tc|kr": "El daño mínimo y los bonos de refinado DP/SP crecen con los reinos de todos los renaceres (ahora +{0})"
+	},
+	{
+		"id": "420103118",
+		"key": "rebirth_help_cost",
+		"en|ch|tc|kr": "Desventajas"
+	},
+	{
+		"id": "420103119",
+		"key": "rebirth_help_x1",
+		"en|ch|tc|kr": "Reino y experiencia al inicio, reputación 0"
+	},
+	{
+		"id": "420103120",
+		"key": "rebirth_help_x2",
+		"en|ch|tc|kr": "Monstruos más fuertes: ahora +{0}% ataque, defensa y PV (reinos x {1}% x dificultad)"
+	},
+	{
+		"id": "420103121",
+		"key": "rebirth_help_x3",
+		"en|ch|tc|kr": "Dejas tu secta; reparar artefactos cuesta más"
+	},
+	{
+		"id": "420103122",
+		"key": "rebirth_help_levels",
+		"en|ch|tc|kr": "Destinos de renacer"
+	},
+	{
+		"id": "420103123",
+		"key": "rebirth_help_ready",
+		"en|ch|tc|kr": "Listo para renacer"
+	},
+	{
+		"id": "420103124",
+		"key": "rebirth_help_notready",
+		"en|ch|tc|kr": "Condiciones no cumplidas"
 	}
 ]

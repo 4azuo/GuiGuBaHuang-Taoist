@@ -280,7 +280,7 @@ namespace MOD_nE7UL2.Mod
             var steps = new List<Tuple<string, int>>();
             double v = a.Atk;
             steps.Add(Tuple.Create("base", (int)v));
-            v += (TimeMultiplier() - 1d) * (a.Grade / 3f) * v; steps.Add(Tuple.Create("time", Clamp(v)));
+            v += BattleModifyEvent.TimeBonus(TimeMultiplier(), a.Grade) * v; steps.Add(Tuple.Create("time", Clamp(v)));
             if (a.Human) { v += SkillBonus(a); steps.Add(Tuple.Create("skill", Clamp(v))); }
             var basis = a.MainBasis;
             v += (double)a.Atk * a.BasisOf(basis) / BattleModifyEvent.BASIS_ON_DMG; steps.Add(Tuple.Create("basis", Clamp(v)));
@@ -293,15 +293,17 @@ namespace MOD_nE7UL2.Mod
             }
             var min = (double)MinDmgPerGrade(a) * d.Grade;
             if (v > min) { v -= (double)d.Def * d.BasisOf(basis) / BattleModifyEvent.BASIS_ON_DEF; steps.Add(Tuple.Create("basisdef", Clamp(v))); }
+            var guard = (double)BattleModifyEvent.GuardCap(Clamp(v));
             if (d.Human && d.MpMax > 0 && d.Mp > d.MpMax / 5)
             {
                 var mpRate = Ratio(d.Mp, d.MpMax);
                 var times = (int)(mpRate * d.Grade);
-                for (var i = 0; i < times && v > min; i++) v -= d.Def * mpRate * BlockRatio(d);
+                var left = Math.Min((double)BattleModifyEvent.MpBlockCap(Clamp(v)), guard);
+                for (var i = 0; i < times && v > min && left > 0; i++) { var b = Math.Min(Math.Min(d.Def * mpRate * BlockRatio(d), v - min), left); v -= b; left -= b; guard -= b; }
                 steps.Add(Tuple.Create("mpblock", Clamp(v)));
             }
-            if (d.Human && d.Sp > 0 && d.Grade >= 4 && v > min) { v -= d.Def * Ratio(d.Sp, d.SpMax) * BlockRatio(d); steps.Add(Tuple.Create("spblock", Clamp(v))); }
-            if (d.Human && d.Dp > 0 && d.Grade >= 8 && v > min) { v -= d.Def * Ratio(d.Dp, d.DpMax) * BlockRatio(d); steps.Add(Tuple.Create("dpblock", Clamp(v))); }
+            if (d.Human && d.Sp > 0 && d.Grade >= 4 && v > min) { var b = BattleModifyEvent.GuardBlock(d.Def * Ratio(d.Sp, d.SpMax) * BlockRatio(d), Clamp(guard)); v -= b; guard -= b; steps.Add(Tuple.Create("spblock", Clamp(v))); }
+            if (d.Human && d.Dp > 0 && d.Grade >= 8 && v > min) { var b = BattleModifyEvent.GuardBlock(d.Def * Ratio(d.Dp, d.DpMax) * BlockRatio(d), Clamp(guard)); v -= b; guard -= b; steps.Add(Tuple.Create("dpblock", Clamp(v))); }
             if (v < min) v = min;
             steps.Add(Tuple.Create("min", Clamp(v)));
             return steps;

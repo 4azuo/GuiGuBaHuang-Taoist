@@ -818,5 +818,155 @@
 		"id": -1000001213,
 		"key": "smcfgs213",
 		"en|ch|tc|kr": "Para un solo heredero: un viejo maestro escribe un último arte y pone a prueba a dos herederos (requiere el mod Dao of Creation)."
+	},
+	{
+		"id": -1000001214,
+		"key": "smcfgs214",
+		"en|ch|tc|kr": "Tasa de escudo"
+	},
+	{
+		"id": -1000001215,
+		"key": "smcfgs215",
+		"en|ch|tc|kr": "Tasa de explosión"
+	},
+	{
+		"id": -1000001216,
+		"key": "smcfgs216",
+		"en|ch|tc|kr": "Tasa de división"
+	},
+	{
+		"id": -1000001217,
+		"key": "smcfgs217",
+		"en|ch|tc|kr": "Monstruos sin escudo"
+	},
+	{
+		"id": -1000001218,
+		"key": "smcfgs218",
+		"en|ch|tc|kr": "Base: estadísticas de arma y elemento de los monstruos.\n- Sus golpes de ese tipo hacen más daño.\n- Tus golpes de ese tipo les hacen menos daño.\n- Más bloqueo; Viento: evasión y velocidad; Tierra, Puño, Palma, Dedo: defensa; Madera: recuperación de HP.\nLa base ya sube con el reino y la dificultad; esta tasa se suma."
+	},
+	{
+		"id": -1000001219,
+		"key": "smcfgs219",
+		"en|ch|tc|kr": "Añade HP máximo a los monstruos según tu ataque:\ntu ataque x dificultad (Normal 1 - Caos 5) x\n- {0} comunes\n- {1} élites\n- {2} jefes\n- {3} monstruos tipo NPC\nCuanto más fuerte golpeas, más HP tienen."
+	},
+	{
+		"id": -1000001220,
+		"key": "smcfgs220",
+		"en|ch|tc|kr": "Meses de un turno de crecimiento (tú, NPC y monstruos).\n- Menor: todo crece más rápido, más difícil, proceso mensual más largo.\n- Mayor: crecimiento más lento, más fácil, proceso mensual más corto.\nCada turno sube ataque, defensa y HP de los monstruos (x reino x dificultad), incluso con los controles de arriba a 0."
+	},
+	{
+		"id": -1000001221,
+		"key": "smcfgs221",
+		"en|ch|tc|kr": "Probabilidad = valor x reino x dificultad (Normal 1 - Caos 5), según cada tasa (-100%: desactivado).\n- Escudo {0}%: absorbe {3}% del HP máx. (común), {4}% (élite)\n- Explosión al morir {1}%\n- División al morir {2}%\nJefe con escudo: siempre, {5}% del HP máx. Monstruos sin escudo: desactiva todos estos escudos."
+	},
+	{
+		"id": -1000001222,
+		"key": "smcfgs222",
+		"en|ch|tc|kr": "La dificultad también sube las estadísticas de NPC y monstruos (sin contar S&M Configs).\n\nMonstruos, Taoist:\n- Base x{0}\n- Crecimiento (tiempo, muertes, zona, renacimientos) x{0}\n- Escudo, explosión, división x{0}\n- Daño mínimo x{0}"
+	},
+	{
+		"id": -1000001223,
+		"key": "smcfgs223",
+		"en|ch|tc|kr": "Puntuación S&M recomendada: hasta {0:#,##0} P."
+	},
+	{
+		"id": -1000001224,
+		"key": "smcfgs224",
+		"en|ch|tc|kr": "Recomendado para nuevos jugadores y cualquier puntuación S&M."
+	},
+	{
+		"id": -1000001225,
+		"key": "smcfgs225",
+		"en|ch|tc|kr": "Técnicas y píldoras"
+	},
+	{
+		"id": -1000001226,
+		"key": "smcfgs226",
+		"en|ch|tc|kr": "Exp. de maestría"
+	},
+	{
+		"id": -1000001227,
+		"key": "smcfgs227",
+		"en|ch|tc|kr": "Coste de MP"
+	},
+	{
+		"id": -1000001228,
+		"key": "smcfgs228",
+		"en|ch|tc|kr": "Enfriamiento"
+	},
+	{
+		"id": -1000001229,
+		"key": "smcfgs229",
+		"en|ch|tc|kr": "Base requerida (base)"
+	},
+	{
+		"id": -1000001230,
+		"key": "smcfgs230",
+		"en|ch|tc|kr": "Base requerida (por nivel)"
+	},
+	{
+		"id": -1000001231,
+		"key": "smcfgs231",
+		"en|ch|tc|kr": "Puntos Dao requeridos (base)"
+	},
+	{
+		"id": -1000001232,
+		"key": "smcfgs232",
+		"en|ch|tc|kr": "Puntos Dao requeridos (por nivel)"
+	},
+	{
+		"id": -1000001233,
+		"key": "smcfgs233",
+		"en|ch|tc|kr": "Efecto de píldoras de poder"
+	},
+	{
+		"id": -1000001234,
+		"key": "smcfgs234",
+		"en|ch|tc|kr": "Cada tasa se suma a x1 de los valores de ModConf/mod_configs.json (por grado 1-10): -50% los reduce a la mitad, +100% los duplica. Técnicas más caras, lentas o exigentes son más difíciles (+P); píldoras de poder más fuertes, más fáciles (-P). Los valores se recalculan al cargar cada partida."
+	},
+	{
+		"id": -1000001235,
+		"key": "smcfgs235",
+		"en|ch|tc|kr": "El testamento del Rey de la Medicina: un viejo alquimista guarda las páginas rotas de un sanador legendario (Núcleo Dorado o más)."
+	},
+	{
+		"id": -1000001236,
+		"key": "smcfgs236",
+		"en|ch|tc|kr": "Opciones del mod {0} (no cuentan en la puntuación S&M)"
+	},
+	{
+		"id": -1000001237,
+		"key": "smcfgs237",
+		"en|ch|tc|kr": "Sin constituciones"
+	},
+	{
+		"id": -1000001238,
+		"key": "smcfgs238",
+		"en|ch|tc|kr": "Constituciones: cuerpos especiales (Cuerpo de píldoras, Hueso de espada, Cuerpo vajra, Espíritu innato, Sangre de dragón, Cuerpo de trueno, Cuerpo venenoso), tantos como cultives, cada uno a su manera (píldoras, artes marciales, tesoros, pruebas, historias, de nacimiento). Desactivado: +1.000 P."
+	},
+	{
+		"id": -1000001239,
+		"key": "smcfgs239",
+		"en|ch|tc|kr": "Guardar datos de equilibrio"
+	},
+	{
+		"id": -1000001240,
+		"key": "smcfgs240",
+		"en|ch|tc|kr": "solo en este PC; envíalo con un informe de equilibrio"
+	},
+	{
+		"id": -1000001241,
+		"key": "smcfgs241",
+		"en|ch|tc|kr": "Rendimiento: {0}"
+	},
+	{
+		"id": -1000001242,
+		"key": "smcfgs242",
+		"en|ch|tc|kr": "SÍ"
+	},
+	{
+		"id": -1000001243,
+		"key": "smcfgs243",
+		"en|ch|tc|kr": "NO"
 	}
 ]

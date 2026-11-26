@@ -13,7 +13,8 @@ The S&M ("sadism & masochism") difficulty configs, edited in the "S&M Configs" w
 | Option | Range / default | Score | Used by |
 |---|---|---|---|
 | `AddAtkRate`, `AddDefRate`, `AddHpRate`, `AddBasisRate` (monsters) | -0.5 .. 8 / 0 | x 1,000 (6.1.01; was x 100) | [MonstStrongerEvent](MonstStrongerEvent.md) |
-| `AddSpecialMonsterRate` | -0.5 .. 1 / 0 | x 3,000 | [SpecialMonsterEvent](SpecialMonsterEvent.md) |
+| `AddMonstShieldRate` / `AddMonstExplodeRate` / `AddMonstMultiplyRate` | -1 .. 1 / 0 (-1: off) | x 1,000 each | [SpecialMonsterEvent](SpecialMonsterEvent.md); the former `AddSpecialMonsterRate` of older configs is read into the three |
+| `NoMonsterShield` | off | -1,000 | SpecialMonsterEvent (no shield at all; the shield rate and `BossHasShield` then count nothing) |
 | `MonsterPropertiesDependOnPlayerProperties` | off | +5,000 | MonstStrongerEvent |
 | `BossHasShield` | off | +10,000 | SpecialMonsterEvent |
 | `AddNpcGrowRate` | 0 .. 8 / 0 | x 1,000 | [NpcAutoEvent](NpcAutoEvent.md), [UnitTypeEvent](UnitTypeEvent.md) |
@@ -88,7 +89,7 @@ Not split: the player side of every feature, `UnitModifyEvent` (hooks new units)
 | `NoGrowupFromBattles` | off | +10,000 | BattleRewardEventV2 |
 | `AllowUpgradeNaturally` | off | -2,000 | [UpgradeNaturallyEvent](UpgradeNaturallyEvent.md) |
 | `AllowTownBuildupOverTime` (+ `_IncludeFirstTown`) | off | +1,000 (+1,000) | BuildingArrangeEvent |
-| `OnlyActiveOnCurOrNearArea` | **on** | -1,000 (6.1.01; was -5,000) | RealMarketEvent3 |
+| `OnlyActiveOnCurOrNearArea` | **on** | 0 (was -1,000) | RealMarketEvent3 |
 | `DestroyBuildingAfterTownWar` | **on** | +2,000 | [MapBuildBattleEvent](MapBuildBattleEvent.md) |
 | `AllowRepairGodWeapon` | off | -5,000 | [RepairShinkiEvent](RepairShinkiEvent.md) |
 
@@ -136,13 +137,22 @@ only), `SpiritSenseEvent.AddExp`.
 Page 3 shows a hint of the features under the sliders, wrapped by `WrapText` (about 80 Latin characters; a CJK
 character counts as 2 and may be split between two CJK characters).
 
-### Page 4 (NPC storylines)
+### Page 4 (skills and pills, 6.3)
+
+Eight sliders added to x1 of the ratios of `mod_configs.json` ([ConfBalance](ConfBalance.md), `SKILL_SLIDERS`): skill
+mastery exp (-50..+200 %, +1,000 P a +100 %), MP cost (-75..+100 %, +3,000), cooldown (-50..+100 %, +3,000), basis
+required base / a level (-75..+100 %, +1,000 / +500), Dao points required base / a level (-50..+100 %, +1,000 / +500),
+power-up pill effect (-75..+100 %, -2,000). The presets set them to 0 (their scores unchanged). Hint `smcfgs234`. Under them `NoConstitution` (+1,000 P, [ConstitutionEvent](ConstitutionEvent.md), hint `smcfgs238`).
+
+The pages of another mod (after page 5): a banner "Options of the mod <title> (not counted in the S&M score)" (`smcfgs236`, blue, `MOD_OPTIONS_COLOR`) and the note of the mod on the top rows, the options of `ModOptionsPage` on the rows under them (the grid rows of the window are narrowed while they are added: they stood over the note and over the red line of the last row). Two columns of options at the grid columns `MOD_OPTION_COLUMNS` (3 and 16; the first one was at 4: its values ran into the labels of the second one).
+
+### Page 5 (NPC storylines)
 
 | Option | Score | Used by |
 |---|---|---|
 | `NoStory` | +1,000 | StoryEvent (`ModMain/Story/`) |
 
-One line per storyline A-P under "No NPC storylines" (`smcfgs169-174`, `smcfgs186-191`, `smcfgs208-211`), wrapped
+One line per storyline A-S under "No NPC storylines" (`smcfgs169-174`, `smcfgs186-191`, `smcfgs208-211`), wrapped
 by `WrapText` (about 140 Latin characters).
 
 ## Presets (right column)
@@ -167,4 +177,12 @@ TT-02.
 
 ## Options of the other mods (6.2.0)
 
-After page 4, a page (or more) per loaded mod shipping `ModConf/*_options.json` (ModLib `ModOptionsHelper.LoadedOptions`, `ModOptionsPage`), e.g. Dao of Creation (`doc_options.json`). OK writes their values file (the mod applies it at the next world load). They do not change the score and the presets leave them alone.
+Page 4 also holds the toggle "Keep balance numbers" (`KeepBalanceStats`, `smcfgs239`/`240`, default on, not in the score):
+the balance numbers of the play (`Helper/TaoistStats` on ModLib `BalanceStatsHelper`: `balance-stats.json` in the global
+cache folder of Taoist, only on this computer; what a player sends with a balance report). Under the Level buttons (every
+page): the button "Performance: ON/OFF" (`PerformanceMode`, `smcfgs241`-`243`, not in the score): on, the balance numbers
+are off and the options that save processing time are on (`OnlyActiveOnCurOrNearArea`, `AllFunctionsApplyToNearestUnits`:
+its score as usual); the presets keep the mode (`ApplyPerformanceOptions` after them); off changes nothing back. Checked by
+TT-02.
+
+After page 5, a page (or more) per loaded mod shipping `ModConf/*_options.json` (ModLib `ModOptionsHelper.LoadedOptions`, `ModOptionsPage`), e.g. Dao of Creation (`doc_options.json`). OK writes their values file (the mod applies it at the next world load). They do not change the score and the presets leave them alone.

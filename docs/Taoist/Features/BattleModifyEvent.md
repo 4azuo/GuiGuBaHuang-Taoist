@@ -8,7 +8,7 @@ Each step is recorded by `Trace` for the damage window ([DamageInfo](DamageInfo.
 
 ## Saved data
 
-None. Runtime: `_nullify` (nullify charges left per unit, cleared on the map).
+None. Runtime: `_nullify` (nullify charges left per unit) and `_regenLeft` (fractions of the regeneration per unit), both cleared on the map.
 
 ## Switches
 
@@ -39,7 +39,7 @@ nullify charges = adjustment Nullify
 | 1 | Nullify | defender is a world unit with charges: one used, damage 0, stop |
 | - | Instant kill | world unit hits a **monster** (BUG-01): chance `InstantKill` adjustment % -> damage int.Max, stop |
 | 2 | Evasion | world unit hit: `min(12 + EvadeChanceMax adj, sqrt(Wind / 18)) + step expertise evade + EvadeChance adj` %; monster hit: `min(12, sqrt(Wind / 18))` %. Evaded: 0, stop |
-| 3 | Time | `+ dmg x multiplier x G_a / 3`, multiplier = `1.001^battleTime x 1.003^roomTime` (seconds) |
+| 3 | Time | `+ dmg x (multiplier - 1) x G_a / 3` (`TimeBonus`, nothing at the start of the battle; until 6.3 `multiplier x G_a / 3`: x2 at grade 3 from the first second), multiplier = `1.001^battleTime x 1.003^roomTime` (seconds) |
 | 4 | Skill | world unit attacker with a casting skill: `+ skill expertise damage x SkillDamage adj` |
 | 4 | Basis | `+ atk x B_attacker / 1000` |
 | 5 | MP | world unit attacker with MP: `+ atk x MP / maxMP`, costs `G_a / 5` MP |
@@ -48,9 +48,10 @@ nullify charges = adjustment Nullify
 | 8 | Critical | not already critical. World unit: chance `min(8 + SCritChanceMax adj, sqrt(Thunder / 50)) + SCritChance adj` %, damage `+ dmg x (2 + Fire / 1000 + SCritDamage adj)`. Monster: 0.4 % x4, 2 % x3, 8 % x2 (one roll) |
 | 9 | Block | chance `min(18 + BlockChanceMax adj, sqrt(B_defender / 12))` % (monster: max 18): `- (Def + BlockDmg adj)` |
 | 10 | Basis defense | if above min: `- def x B_defender / 400` |
-| 11 | MP block | world unit hit, MP > 20 % max, above min: `MP/maxMP x G_d` tries; each costs `max(G_d, dmg / (physical bases / 50))` MP and blocks `def x MP/maxMP x blockRatio` |
+| 11 | MP block | world unit hit, MP > 20 % max, above min: `MP/maxMP x G_d` tries; each blocks `min(def x MP/maxMP x blockRatio, dmg - min)`, all the tries together at most **60 % of the hit** (`MP_BLOCK_MAX`, 6.3: at realm 9 the tries blocked about 12,000 of a 4,000 hit), and costs `ceil(blocked / (physical bases / 50))` MP, at least 1 (`BlockMpCostOf`; until 6.3 `max(G_d, dmg / ...)`: the whole damage paid, whatever was blocked); no physical basis: no MP block |
 | 12 | SP block | grade >= 4: `- def x SP/maxSP x blockRatio`, -1 SP |
 | 13 | DP block | grade >= 8: `- def x DP/maxDP x blockRatio` |
+| 11-13 | guard cap | the MP, SP and DP blocks together take at most **80 % of the hit** (the damage after the basis defense; `GUARD_MAX`, `GuardCap`, `GuardBlock`, 6.3: same-realm cultivators of realm 7+ only took the minimum damage). Not lower on purpose: every block spends MP / SP / DP and blocks less as they go down |
 | final | Minimum | `minDmg x G_d`: world unit attacker `grade (+ rebirth grades for the player) + MinDamage adj`; monster `grade x gameLevel` |
 | - | Steal | world unit attacker: HP / MP / SP `+ damage x Steal* adj` |
 
@@ -67,6 +68,9 @@ nullify charges = adjustment Nullify
 
 ## Regeneration (`OnTimeUpdate200ms`, every 0.2 s)
 
+Humans: the fractions are kept per unit until they make a whole point (`Regen`; until 6.3 each tick was rounded: 0.44 a tick gave 0).
+
+
 | Unit | Rule |
 |---|---|
 | Monster grade >= 3 | HP `+ sqrt(sqrt(maxHP / 3)) + sqrt(Wood / 100)` |
@@ -80,4 +84,6 @@ nullify charges = adjustment Nullify
 
 ## Tests
 
-TG-18, TM-27, TB-04.
+TG-18, TM-27, TB-04; TB-19 (two NPCs of the same realm fight 20 s for every realm, each hit between them recorded in
+`RecordedHits`: blocks under the guard cap, final damage / max HP, hits to kill; `duels-by-realm.csv`); unit test
+`BalanceTests.Guard_CommonCap`.

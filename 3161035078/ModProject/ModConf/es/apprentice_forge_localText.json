@@ -2,7 +2,7 @@
 	{
 		"id": "420022001",
 		"key": "apprentice420021001",
-		"en|ch|tc|kr": "Forja Lvl-1"
+		"en|ch|tc|kr": "Chico del Fuelle"
 	},
 	{
 		"id": "420023001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420022002",
 		"key": "apprentice420021002",
-		"en|ch|tc|kr": "Forja Lvl-2"
+		"en|ch|tc|kr": "Alumno del Yunque"
 	},
 	{
 		"id": "420023002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420022003",
 		"key": "apprentice420021003",
-		"en|ch|tc|kr": "Forja Lvl-3"
+		"en|ch|tc|kr": "Herrero"
 	},
 	{
 		"id": "420023003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420022004",
 		"key": "apprentice420021004",
-		"en|ch|tc|kr": "Forja Lvl-4"
+		"en|ch|tc|kr": "Artífice"
 	},
 	{
 		"id": "420023004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420022005",
 		"key": "apprentice420021005",
-		"en|ch|tc|kr": "Forja Lvl-5"
+		"en|ch|tc|kr": "Maestro Forjador"
 	},
 	{
 		"id": "420023005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420022006",
 		"key": "apprentice420021006",
-		"en|ch|tc|kr": "Forja Lvl-6"
+		"en|ch|tc|kr": "Gran Artífice"
 	},
 	{
 		"id": "420023006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420022007",
 		"key": "apprentice420021007",
-		"en|ch|tc|kr": "Forja Lvl-7"
+		"en|ch|tc|kr": "Patriarca Forjador"
 	},
 	{
 		"id": "420023007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420022008",
 		"key": "apprentice420021008",
-		"en|ch|tc|kr": "Forja Lvl-8"
+		"en|ch|tc|kr": "Venerable Forjador"
 	},
 	{
 		"id": "420023008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420022009",
 		"key": "apprentice420021009",
-		"en|ch|tc|kr": "Forja Lvl-9"
+		"en|ch|tc|kr": "Santo Forjador"
 	},
 	{
 		"id": "420023009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420022010",
 		"key": "apprentice420021010",
-		"en|ch|tc|kr": "Forja Niv. 10"
+		"en|ch|tc|kr": "Emperador Forjador"
 	},
 	{
 		"id": "420023010",

@@ -48,7 +48,14 @@ namespace MOD_nE7UL2.Mod
         public float AddDefRate { get; set; } = 0f;
         public float AddHpRate { get; set; } = 0f;
         public float AddBasisRate { get; set; } = 0f;
-        public float AddSpecialMonsterRate { get; set; } = 0f;
+        /// <summary>Chances of the special monsters, added to x1 (-1: off), see SpecialMonsterEvent.</summary>
+        public float AddMonstShieldRate { get; set; } = 0f;
+        public float AddMonstExplodeRate { get; set; } = 0f;
+        public float AddMonstMultiplyRate { get; set; } = 0f;
+        /// <summary>The single rate of the configs saved before it was split: read into the three rates, never written.</summary>
+        public float AddSpecialMonsterRate { set { AddMonstShieldRate = AddMonstExplodeRate = AddMonstMultiplyRate = value; } }
+        /// <summary>No shield on any monster (BossHasShield included).</summary>
+        public bool NoMonsterShield { get; set; } = false;
         public float AddTaxRate { get; set; } = 0f;
         public float AddInflationRate { get; set; } = 0f;
         public float AddBuildingCostRate { get; set; } = 0f;
@@ -137,14 +144,98 @@ namespace MOD_nE7UL2.Mod
         public bool DestroyBuildingAfterTownWar { get; set; } = true;
         public bool AllowRepairGodWeapon { get; set; } = false;
         public bool AllFunctionsApplyToNearestUnits { get; set; } = false;
+        /// <summary>Skills and pills (page 4, ConfBalance): added to x1 of the values of mod_configs.json (0: as there).</summary>
+        public float SkillMasteryExpRate { get; set; } = 0f;
+        public float SkillMpCostRate { get; set; } = 0f;
+        public float SkillCdRate { get; set; } = 0f;
+        public float SkillZizhiBaseRate { get; set; } = 0f;
+        public float SkillZizhiAddRate { get; set; } = 0f;
+        public float SkillDaodianBaseRate { get; set; } = 0f;
+        public float SkillDaodianAddRate { get; set; } = 0f;
+        public float PowerUpPillEfxRate { get; set; } = 0f;
+        /// <summary>No constitutions (ConstitutionEvent): +1,000 P.</summary>
+        public bool NoConstitution { get; set; } = false;
+        private UIItemComposite tglNoConstitution;
+        /// <summary>Keep the balance numbers of the play (Helper/TaoistStats: balance-stats.json in the global cache folder of
+        /// Taoist, only on this computer): an option of the player, not in the score, the presets leave it alone.</summary>
+        public bool KeepBalanceStats { get; set; } = true;
+        private UIItemComposite tglKeepBalanceStats;
+        /// <summary>Performance mode (button under Level 10, not in the score): on, the balance numbers are not kept and the
+        /// options that save processing time are turned on (OnlyActiveOnCurOrNearArea, AllFunctionsApplyToNearestUnits: its
+        /// score as usual); off: nothing changed back (the options stay as the player sets them).</summary>
+        public bool PerformanceMode { get; set; } = false;
+        /// <summary>Width of the performance button (its text on one line).</summary>
+        public const float PERFORMANCE_W = 150f;
+        private bool performanceUI;
+        private readonly List<UIItemBase> btnPerformance = new List<UIItemBase>();
+
+        /// <summary>Text of the performance button: "Performance: ON" / "OFF".</summary>
+        public static string PerformanceText(bool on) => string.Format(GameTool.LS("smcfgs241"), GameTool.LS(on ? "smcfgs242" : "smcfgs243"));
+
+        /// <summary>The performance button: flips the mode; on, sets the options of the window (balance numbers off,
+        /// the two processing options on).</summary>
+        public void TogglePerformance()
+        {
+            performanceUI = !performanceUI;
+            ApplyPerformanceOptions();
+            foreach (var b in btnPerformance) b?.Set(PerformanceText(performanceUI));
+        }
+
+        /// <summary>The presets keep the performance mode: its options set again after them.</summary>
+        private void ApplyPerformanceOptions()
+        {
+            if (!performanceUI) return;
+            tglKeepBalanceStats?.Set(false);
+            tglOnlyActiveOnCurOrNearArea?.Set(true);
+            tglAllFunctionsApplyToNearestUnits?.Set(true);
+        }
+
+        /// <summary>The performance mode shown in the open window (tests).</summary>
+        public bool PerformanceShown => performanceUI;
+
+        /// <summary>The sliders of page 4: label key, range, points a +100 % (a harder value is positive), the rate.</summary>
+        public static readonly (string key, float min, float max, int score, ConfBalance.Kind kind)[] SKILL_SLIDERS =
+        {
+            ("smcfgs226", -0.50f, 2.00f, 1000, ConfBalance.Kind.MasteryExp),
+            ("smcfgs227", -0.75f, 1.00f, 3000, ConfBalance.Kind.MpCost),
+            ("smcfgs228", -0.50f, 1.00f, 3000, ConfBalance.Kind.Cd),
+            ("smcfgs229", -0.75f, 1.00f, 1000, ConfBalance.Kind.ZizhiBase),
+            ("smcfgs230", -0.75f, 1.00f, 500, ConfBalance.Kind.ZizhiAdd),
+            ("smcfgs231", -0.50f, 1.00f, 1000, ConfBalance.Kind.DaodianBase),
+            ("smcfgs232", -0.50f, 1.00f, 500, ConfBalance.Kind.DaodianAdd),
+            ("smcfgs233", -0.75f, 1.00f, -2000, ConfBalance.Kind.PowerUpPill),
+        };
+
+        /// <summary>Sets the rate of a kind of page 4.</summary>
+        public void SetSkillRate(ConfBalance.Kind k, float v)
+        {
+            switch (k)
+            {
+                case ConfBalance.Kind.MasteryExp: SkillMasteryExpRate = v; break;
+                case ConfBalance.Kind.MpCost: SkillMpCostRate = v; break;
+                case ConfBalance.Kind.Cd: SkillCdRate = v; break;
+                case ConfBalance.Kind.ZizhiBase: SkillZizhiBaseRate = v; break;
+                case ConfBalance.Kind.ZizhiAdd: SkillZizhiAddRate = v; break;
+                case ConfBalance.Kind.DaodianBase: SkillDaodianBaseRate = v; break;
+                case ConfBalance.Kind.DaodianAdd: SkillDaodianAddRate = v; break;
+                case ConfBalance.Kind.PowerUpPill: PowerUpPillEfxRate = v; break;
+            }
+        }
+
+        /// <summary>Points of a slider of page 4 at the rate v.</summary>
+        public static int SkillSliderScore(int scoreA100, float v) => (v * scoreA100).Parse<int>();
 
         //UI
+        private readonly UIItemComposite[] slSkills = new UIItemComposite[SKILL_SLIDERS.Length];
         private UICustom1 uiCustom;
         private UIItemComposite slMonstAtk;
         private UIItemComposite slMonstDef;
         private UIItemComposite slMonstHp;
         private UIItemComposite slMonstBasis;
-        private UIItemComposite slMonstSpecialRate;
+        private UIItemComposite slMonstShieldRate;
+        private UIItemComposite slMonstExplodeRate;
+        private UIItemComposite slMonstMultiplyRate;
+        private UIItemComposite tglNoMonsterShield;
         private UIItemComposite slEcoTaxRate;
         private UIItemComposite slEcoInfRate;
         private UIItemComposite slEcoBuildingCost;
@@ -203,7 +294,7 @@ namespace MOD_nE7UL2.Mod
         /// <summary>One line per NPC storyline under the "No NPC storylines" toggle (lines A-L).</summary>
         private static readonly string[] STORY_DESCRIPTIONS = { "smcfgs169", "smcfgs170", "smcfgs171", "smcfgs172", "smcfgs173", "smcfgs174",
             "smcfgs186", "smcfgs187", "smcfgs188", "smcfgs189", "smcfgs190", "smcfgs191",
-            "smcfgs208", "smcfgs209", "smcfgs210", "smcfgs211", "smcfgs212", "smcfgs213" };
+            "smcfgs208", "smcfgs209", "smcfgs210", "smcfgs211", "smcfgs212", "smcfgs213", "smcfgs235" };
 
         /// <summary>The pages of the options of the other mods (ModLib ModOptions): mod id -> the values edited.</summary>
         private readonly Dictionary<string, Func<Dictionary<string, object>>> modOptionPages = new Dictionary<string, Func<Dictionary<string, object>>>();
@@ -235,6 +326,7 @@ namespace MOD_nE7UL2.Mod
         public override void OnLoadClass(bool isNew, string modId, CacheAttribute attr)
         {
             base.OnLoadClass(isNew, modId, attr);
+            Helper.TaoistStats.Init(modId, ModConst.TAOIST_VERSION, KeepBalanceStats);
 
             ScoreCalculator.Clear();
             Register(() => slMonstAtk, // x1,000: +8 (x9) = +8,000 P
@@ -245,8 +337,23 @@ namespace MOD_nE7UL2.Mod
                 funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
             Register(() => slMonstBasis, // x1,000: +8 (x9) = +8,000 P
                 funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
-            Register(() => slMonstSpecialRate,
-                funcCal: s => (s.Get().Parse<float>() * 3000).Parse<int>());
+            // x1,000 each (the single special monster rate was x3,000)
+            Register(() => slMonstShieldRate,
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>(),
+                funcCond: s => !tglNoMonsterShield.Get().Parse<bool>());
+            Register(() => slMonstExplodeRate,
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
+            Register(() => slMonstMultiplyRate,
+                funcCal: s => (s.Get().Parse<float>() * 1000).Parse<int>());
+            Register(() => tglNoMonsterShield, // the same as a shield rate of -100 %
+                funcCal: s => -1000,
+                funcCond: s => s.Get().Parse<bool>(),
+                onChange: (s, v) =>
+                {
+                    var tgl = v.Parse<bool>();
+                    slMonstShieldRate.SetEnable(!tgl);
+                    tglSysBossHasShield.SetEnable(!tgl);
+                });
             Register(() => slEcoTaxRate, // x400: +500 % taxes = +2,000 P (same top as the bank fee)
                 funcCal: s => (s.Get().Parse<float>() * 400).Parse<int>());
             Register(() => slEcoInfRate,
@@ -318,7 +425,7 @@ namespace MOD_nE7UL2.Mod
                 });
             Register(() => tglSysBossHasShield, 
                 funcCal: s => 10000,
-                funcCond: s => s.Get().Parse<bool>());
+                funcCond: s => s.Get().Parse<bool>() && !tglNoMonsterShield.Get().Parse<bool>());
             Register(() => tglNoGrowupFromBattles, 
                 funcCal: s => 10000,
                 funcCond: s => s.Get().Parse<bool>());
@@ -512,8 +619,8 @@ namespace MOD_nE7UL2.Mod
                     }
                     return rs;
                 });
-            Register(() => tglOnlyActiveOnCurOrNearArea, // a performance option on by default: a small discount
-                funcCal: s => -1000,
+            Register(() => tglOnlyActiveOnCurOrNearArea, // a performance option: no effect on the score
+                funcCal: s => 0,
                 funcCond: s => s.Get().Parse<bool>());
             Register(() => tglDestroyBuildingAfterTownWar,
                 funcCal: s => 2000,
@@ -524,6 +631,13 @@ namespace MOD_nE7UL2.Mod
             Register(() => tglAllFunctionsApplyToNearestUnits, // the NPCs far away do not grow (Taoist handlers skip them)
                 funcCal: s => -3000,
                 funcCond: s => s.Get().Parse<bool>());
+            // skills and pills (page 4): dearer / slower skills harder, stronger power-up pills easier
+            for (var i = 0; i < SKILL_SLIDERS.Length; i++)
+            {
+                var idx = i;
+                Register(() => slSkills[idx], funcCal: s => SkillSliderScore(SKILL_SLIDERS[idx].score, s.Get().Parse<float>()));
+            }
+            Register(() => tglNoConstitution, funcCal: s => 1000, funcCond: s => s.Get().Parse<bool>());   // no special bodies
         }
 
         /// <summary>
@@ -624,6 +738,8 @@ namespace MOD_nE7UL2.Mod
             {
                 uiCustom = new UICustom1(TITLE, string.Empty, SetSMConfigs, true);
                 uiCustom.IsShowNavigationButtons = true;
+                performanceUI = PerformanceMode;
+                btnPerformance.Clear();
 
                 //page 1
                 uiCustom.AddPage();
@@ -639,10 +755,14 @@ namespace MOD_nE7UL2.Mod
                     slMonstDef = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs002"), -0.50f, 8.00f, AddDefRate, GameTool.LS("smcfgs101"));
                     slMonstHp = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs003"), -0.50f, 8.00f, AddHpRate, GameTool.LS("smcfgs101"));
                     slMonstBasis = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs004"), -0.50f, 8.00f, AddBasisRate, GameTool.LS("smcfgs101"));
-                    uiCustom.AddText(col - 1, row++, GameTool.LS("smcfgs005")).Format(null, 13).Align(TextAnchor.MiddleLeft);
-                    slMonstSpecialRate = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs006"), -0.50f, 1.00f, AddSpecialMonsterRate, GameTool.LS("smcfgs101"));
-                    uiCustom.AddText(col + 2, row++, GameTool.LS("smcfgs049")).Format(null, 13).Align(TextAnchor.MiddleLeft);
+                    AddRowHelp(row - 1, GameTool.LS("smcfgs218"));
+                    AddRowHelp(row, SpecialMonsterHelp());
+                    slMonstShieldRate = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs214"), -1.00f, 1.00f, AddMonstShieldRate, GameTool.LS("smcfgs101"));
+                    slMonstExplodeRate = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs215"), -1.00f, 1.00f, AddMonstExplodeRate, GameTool.LS("smcfgs101"));
+                    slMonstMultiplyRate = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs216"), -1.00f, 1.00f, AddMonstMultiplyRate, GameTool.LS("smcfgs101"));
+                    AddRowHelp(row, DependOnPlayerHelp());
                     tglMonsterPropertiesDependOnPlayerProperties = uiCustom.AddCompositeToggle(col, row++, GameTool.LS("smcfgs058"), MonsterPropertiesDependOnPlayerProperties, GameTool.LS("smcfgs102"));
+                    tglNoMonsterShield = uiCustom.AddCompositeToggle(col, row++, GameTool.LS("smcfgs217"), NoMonsterShield, GameTool.LS("smcfgs102"));
                     tglSysBossHasShield = uiCustom.AddCompositeToggle(col, row++, GameTool.LS("smcfgs038"), BossHasShield, GameTool.LS("smcfgs102"));
                     //
                     row++;
@@ -658,8 +778,7 @@ namespace MOD_nE7UL2.Mod
                     uiCustom.AddText(col, row++, SectionTitle("smcfgs018")).Format(SECTION_COLOR, 18, FontStyle.Bold).Align(TextAnchor.MiddleRight);
                     slMiscLevelupExp = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs019"), 0.00f, 1.00f, AddLevelupExpRate, GameTool.LS("smcfgs101"));
                     slGrowUpSpeed = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs051"), 1, 24, GrowUpSpeed, GameTool.LS("smcfgs053"));
-                    uiCustom.AddText(col + 2, row++, GameTool.LS("smcfgs052")).Format(null, 13).Align(TextAnchor.MiddleLeft);
-                    uiCustom.AddText(col + 2, row++, GameTool.LS("smcfgs128")).Format(null, 13).Align(TextAnchor.MiddleLeft);
+                    AddRowHelp(row - 1, GameTool.LS("smcfgs220"));
                     //
                     row++;
                     uiCustom.AddText(col, row++, SectionTitle("smcfgs104")).Format(SECTION_COLOR, 18, FontStyle.Bold).Align(TextAnchor.MiddleRight);
@@ -821,7 +940,31 @@ namespace MOD_nE7UL2.Mod
                     AddDifButtons();
                 }
 
-                //page 4: NPC storylines, one toggle for all, a line per story
+                //page 4: skills and pills (ConfBalance: x the ratios of mod_configs.json)
+                uiCustom.AddPage();
+                {
+                    int col = 2, row = 0;
+                    uiCustom.AddToolTipButton(GameTool.LS("other500020039")).Pos(uiCustom.Columns[0], uiCustom.Rows[0] + UIHelper.GetUIDeltaY());
+                    uiCustom.AddText(col, row++, SectionTitle("smcfgs225")).Format(SECTION_COLOR, 18, FontStyle.Bold).Align(TextAnchor.MiddleRight);
+                    for (var i = 0; i < SKILL_SLIDERS.Length; i++)
+                    {
+                        var x = SKILL_SLIDERS[i];
+                        slSkills[i] = uiCustom.AddCompositeSlider(col, row++, GameTool.LS(x.key), x.min, x.max, ConfBalance.Rate(this, x.kind), GameTool.LS("smcfgs101"));
+                    }
+                    row++;
+                    foreach (var line in WrapText(GameTool.LS("smcfgs234"), WRAP_STORY))
+                        uiCustom.AddText(col - 1, row++, line).Format(null, 13).Align(TextAnchor.MiddleLeft);
+                    row++;
+                    tglNoConstitution = uiCustom.AddCompositeToggle(col, row++, GameTool.LS("smcfgs237"), NoConstitution, GameTool.LS("smcfgs102"));
+                    foreach (var line in WrapText(GameTool.LS("smcfgs238"), WRAP_STORY))
+                        uiCustom.AddText(col - 1, row++, line).Format(null, 13).Align(TextAnchor.MiddleLeft);
+                    // the balance numbers of the play (not in the score)
+                    tglKeepBalanceStats = uiCustom.AddCompositeToggle(col, row++, GameTool.LS("smcfgs239"), KeepBalanceStats, GameTool.LS("smcfgs240"));
+
+                    AddDifButtons();
+                }
+
+                //page 5: NPC storylines, one toggle for all, a line per story
                 uiCustom.AddPage();
                 {
                     int col = 2, row = 0;
@@ -843,6 +986,14 @@ namespace MOD_nE7UL2.Mod
             });
         }
 
+        /// <summary>Colour of the banner and the note of the pages of another mod (not the seal colour of the S&amp;M sections).</summary>
+        public static Color MOD_OPTIONS_COLOR => new Color(0.10f, 0.25f, 0.55f);
+        /// <summary>Lines of the note of a mod at most (above its options).</summary>
+        public const int MOD_NOTE_LINES = 3;
+        /// <summary>Columns (of the grid) of the two columns of options of a mod page: the first one a step left of 4 (its
+        /// values ran into the labels of the second one).</summary>
+        public static readonly int[] MOD_OPTION_COLUMNS = { 3, 16 };
+
         /// <summary>Pages after the last one: the options of the loaded mods which ship some (e.g. Dao of Creation). They do
         /// not change the score; a mod whose values file cannot be read has no page (the file is left alone).</summary>
         private void AddModOptionPages()
@@ -852,20 +1003,39 @@ namespace MOD_nE7UL2.Mod
             {
                 var values = ModOptionsHelper.ReadValues(mod.Key);
                 if (values == null) continue;
-                // the note is written wrapped on the free right side (one line of it went out of the window on the left); the
-                // options start at column 4: the last row would stand over the page button
+                // every page of the mod: a banner "Options of the mod <title>" (another mod, not in the score) and its note on
+                // the rows at the top, wrapped over the width of the window; the options take the rows under it and leave the
+                // last row to the red line of the window (they stood over the note, the title and that line). The title and
+                // the note of the schema are drawn here, not by ModOptionsPage (the schema is the one of the mod: put back).
                 var schema = mod.Value;
-                var note = string.IsNullOrEmpty(schema.Note) ? null : GameTool.LS(schema.Note);
-                schema.Note = null;
+                var title = string.IsNullOrEmpty(schema.Title) ? mod.Key : GameTool.LS(schema.Title);
+                var noteLines = string.IsNullOrEmpty(schema.Note) ? new List<string>() : WrapText(GameTool.LS(schema.Note), WRAP_STORY).Take(MOD_NOTE_LINES).ToList();
+                var head = 1 + noteLines.Count + 1;   // banner, note, a free row
+                var (schemaTitle, schemaNote) = (schema.Title, schema.Note);
+                var allRows = uiCustom.Rows.ToList();
+                var optionRows = allRows.Skip(head).Take(Math.Max(1, allRows.Count - head - 1)).ToList();
+                void UseRows(List<float> r) { uiCustom.Rows.Clear(); uiCustom.Rows.AddRange(r); }
                 var firstPage = uiCustom.Pages.Count;
-                modOptionPages[mod.Key] = ModOptionsPage.AddPages(uiCustom, mod.Key, schema, values, new[] { 4, 16 }, _ =>
+                schema.Title = null; schema.Note = null;
+                UseRows(optionRows);
+                try
                 {
-                    AddDifButtons();
-                    var row = 0;
-                    if (note != null && uiCustom.Pages.Count == firstPage + 1)
-                        foreach (var line in WrapText(note, WRAP_HINT))
-                            uiCustom.AddText(Math.Min(13, uiCustom.Columns.Count - 1), row++, line).Format(null, 13).Align(TextAnchor.MiddleLeft);
-                });
+                    modOptionPages[mod.Key] = ModOptionsPage.AddPages(uiCustom, mod.Key, schema, values, MOD_OPTION_COLUMNS, _ =>
+                    {
+                        UseRows(allRows);
+                        try
+                        {
+                            AddDifButtons();
+                            uiCustom.AddText(1, 0, TextIconHelper.ToSprites("[icon:daodian]") + " " + string.Format(GameTool.LS("smcfgs236"), title))
+                                .Format(MOD_OPTIONS_COLOR, 20, FontStyle.Bold).Align(TextAnchor.MiddleLeft);
+                            var row = 1;
+                            foreach (var line in noteLines)
+                                uiCustom.AddText(1, row++, line).Format(MOD_OPTIONS_COLOR, 13, FontStyle.Italic).Align(TextAnchor.MiddleLeft);
+                        }
+                        finally { UseRows(optionRows); }
+                    });
+                }
+                finally { UseRows(allRows); schema.Title = schemaTitle; schema.Note = schemaNote; }
                 ShowSliderValues(schema, uiCustom.Pages.Skip(firstPage).SelectMany(x => x.Items).OfType<UIItemSlider>().ToList());
             }
         }
@@ -998,6 +1168,28 @@ namespace MOD_nE7UL2.Mod
             Process.Start("explorer.exe", ConfHelper.GetConfFolderPath(ModId));
         }
 
+        /// <summary>Column of the "?" buttons of page 1 (right of the values of the left column).</summary>
+        private const int HELP_COL = 11;
+
+        /// <summary>A small "?" button at the end of a row of page 1, explaining its option.</summary>
+        private void AddRowHelp(int row, string content)
+        {
+            uiCustom.AddToolTipButton(HELP_COL, row, content).Size(20, 20);
+        }
+
+        /// <summary>Chances and shields of the special monsters (help of their rates).</summary>
+        public static string SpecialMonsterHelp() => string.Format(GameTool.LS("smcfgs221"),
+            SpecialMonsterEvent.MONST_SHIELD_CHANCE, SpecialMonsterEvent.MONST_EXPLODE_CHANCE, SpecialMonsterEvent.MONST_MULTIPLY_CHANCE,
+            SpecialMonsterEvent.SHIELD_HP_COMMON * 100, SpecialMonsterEvent.SHIELD_HP_ELITE * 100, SpecialMonsterEvent.SHIELD_HP_BOSS * 100);
+
+        /// <summary>Help of "Monster Depend On Player": HP from the attack of the player, by monster type.</summary>
+        public static string DependOnPlayerHelp()
+        {
+            var r = MonstStrongerEvent.Configs.PlayerAtk2Hp;
+            Func<MonstType, float> of = t => r.TryGetValue(t, out var v) ? v : 0f;
+            return string.Format(GameTool.LS("smcfgs219"), of(MonstType.Common), of(MonstType.Elite), of(MonstType.BOSS), of(MonstType.NPC));
+        }
+
         /// <summary>
         /// Adds the difficulty preset buttons.
         /// </summary>
@@ -1031,18 +1223,21 @@ namespace MOD_nE7UL2.Mod
                     return new object[] { TextIconHelper.ToSprites($"[icon:{SMScoreEvent.TIER_ICONS[SMScoreEvent.Tier(score)]}]") + " " + SMScoreEvent.TitleText(score) };
                 }),
             });
-            uiCustom.AddButton(col, row += 2, () => SetLevelBase(), GameTool.LS("smcfgs044"));
-            uiCustom.AddButton(col, row += 2, () => SetLevel(0), $"{GameTool.LS("smcfgs045")} 0");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(1), $"{GameTool.LS("smcfgs045")} 1");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(2), $"{GameTool.LS("smcfgs045")} 2");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(3), $"{GameTool.LS("smcfgs045")} 3");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(4), $"{GameTool.LS("smcfgs045")} 4");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(5), $"{GameTool.LS("smcfgs045")} 5");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(6), $"{GameTool.LS("smcfgs045")} 6");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(7), $"{GameTool.LS("smcfgs045")} 7");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(8), $"{GameTool.LS("smcfgs045")} 8");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(9), $"{GameTool.LS("smcfgs045")} 9");
-            uiCustom.AddButton(col, row += 2, () => SetLevel(10), $"{GameTool.LS("smcfgs045")} 10");
+            // the preset buttons and the performance button: 13 buttons spread from row 2 to row 24 (the rows of the 12
+            // presets before: the page button of the bottom right stays free)
+            var bx = uiCustom.Columns[col];
+            var top = uiCustom.Rows[Math.Min(2, uiCustom.LastRow)];
+            var step = (top - uiCustom.Rows[Math.Min(24, uiCustom.LastRow)]) / 12f;
+            var presets = new List<(string label, Action act)> { (GameTool.LS("smcfgs044"), () => SetLevelBase()) };
+            for (var lv = 0; lv <= 10; lv++) { var l = lv; presets.Add(($"{GameTool.LS("smcfgs045")} {l}", () => SetLevel(l))); }
+            for (var i = 0; i < presets.Count; i++)
+            {
+                var p = presets[i];
+                uiCustom.AddButton(bx, top - step * i, () => p.act(), p.label);
+            }
+            // the performance mode (not in the score)
+            btnPerformance.Add(uiCustom.AddButton(bx, top - step * presets.Count, TogglePerformance, PerformanceText(performanceUI))
+                .Format(new Color(0.10f, 0.35f, 0.55f), 13, FontStyle.Bold).Size(PERFORMANCE_W, 30f));
             uiCustom.AddText(uiCustom.MidCol, uiCustom.LastRow, GameTool.LS("smcfgs046")).Format(Color.red, 17);
         }
 
@@ -1067,7 +1262,10 @@ namespace MOD_nE7UL2.Mod
             slMonstDef.Set(0f);
             slMonstHp.Set(0f);
             slMonstBasis.Set(0f);
-            slMonstSpecialRate.Set(0f);
+            slMonstShieldRate.Set(0f);
+            slMonstExplodeRate.Set(0f);
+            slMonstMultiplyRate.Set(0f);
+            tglNoMonsterShield.Set(false);
             slEcoTaxRate.Set(0f);
             slEcoInfRate.Set(0f);
             slEcoBuildingCost.Set(0f);
@@ -1134,6 +1332,9 @@ namespace MOD_nE7UL2.Mod
             tglDestroyBuildingAfterTownWar.Set(true);
             tglAllowRepairGodWeapon.Set(false);
             tglAllFunctionsApplyToNearestUnits.Set(false);
+            foreach (var s in slSkills) s.Set(0f);
+            tglNoConstitution.Set(false);
+            ApplyPerformanceOptions();
         }
 
         /// <summary>
@@ -1145,7 +1346,10 @@ namespace MOD_nE7UL2.Mod
             slMonstDef.SetPercent(level * 0.01000f);
             slMonstHp.SetPercent(level * 0.05000f, 0f);
             slMonstBasis.SetPercent(level * 0.04000f);
-            slMonstSpecialRate.SetPercent(level * 0.10000f);
+            slMonstShieldRate.SetPercent(level * 0.10000f, -0.50f);
+            slMonstExplodeRate.SetPercent(level * 0.10000f, -0.50f);
+            slMonstMultiplyRate.SetPercent(level * 0.10000f, -0.50f);
+            tglNoMonsterShield.Set(false);
             slEcoTaxRate.SetPercent(level * 0.00500f);
             slEcoInfRate.SetPercent(level * 0.05000f);
             slEcoBuildingCost.SetPercent(level * 0.04000f);
@@ -1212,6 +1416,9 @@ namespace MOD_nE7UL2.Mod
             tglAllowRepairGodWeapon.Set(false);
             tglAllFunctionsApplyToNearestUnits.Set(false);
             tglLostMoneyWhenDie.Set(level > 0);
+            foreach (var s in slSkills) s.Set(0f);   // as in mod_configs.json: the presets keep their scores
+            tglNoConstitution.Set(false);
+            ApplyPerformanceOptions();
         }
 
         /// <summary>
@@ -1225,7 +1432,10 @@ namespace MOD_nE7UL2.Mod
             AddDefRate = slMonstDef.Get().Parse<float>();
             AddHpRate = slMonstHp.Get().Parse<float>();
             AddBasisRate = slMonstBasis.Get().Parse<float>();
-            AddSpecialMonsterRate = slMonstSpecialRate.Get().Parse<float>();
+            AddMonstShieldRate = slMonstShieldRate.Get().Parse<float>();
+            AddMonstExplodeRate = slMonstExplodeRate.Get().Parse<float>();
+            AddMonstMultiplyRate = slMonstMultiplyRate.Get().Parse<float>();
+            NoMonsterShield = tglNoMonsterShield.Get().Parse<bool>();
             AddTaxRate = slEcoTaxRate.Get().Parse<float>();
             AddInflationRate = slEcoInfRate.Get().Parse<float>();
             AddBuildingCostRate = slEcoBuildingCost.Get().Parse<float>();
@@ -1299,6 +1509,12 @@ namespace MOD_nE7UL2.Mod
             AllowRepairGodWeapon = tglAllowRepairGodWeapon.Get().Parse<bool>();
             AllFunctionsApplyToNearestUnits = tglAllFunctionsApplyToNearestUnits.Get().Parse<bool>();
             LostMoneyWhenDie = tglLostMoneyWhenDie.Get().Parse<bool>();
+            for (var i = 0; i < SKILL_SLIDERS.Length; i++)
+                SetSkillRate(SKILL_SLIDERS[i].kind, slSkills[i].Get().Parse<float>());
+            NoConstitution = tglNoConstitution.Get().Parse<bool>();
+            PerformanceMode = performanceUI;
+            KeepBalanceStats = tglKeepBalanceStats.Get().Parse<bool>() && !PerformanceMode;
+            Helper.TaoistStats.Init(ModMain.ModObj?.ModId ?? "nE7UL2", ModConst.TAOIST_VERSION, KeepBalanceStats);
             CacheHelper.SaveGlobalCache(this);
 
             //edit conf

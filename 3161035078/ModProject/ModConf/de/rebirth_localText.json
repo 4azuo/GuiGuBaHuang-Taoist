@@ -2,7 +2,7 @@
 	{
 		"id": "420102001",
 		"key": "rebirth420101001",
-		"en|ch|tc|kr": "Wiedergeburt 1"
+		"en|ch|tc|kr": "Zweites Leben"
 	},
 	{
 		"id": "420103001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420102002",
 		"key": "rebirth420101002",
-		"en|ch|tc|kr": "Wiedergeburt 2"
+		"en|ch|tc|kr": "Alte Weisheit"
 	},
 	{
 		"id": "420103002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420102003",
 		"key": "rebirth420101003",
-		"en|ch|tc|kr": "Wiedergeburt 3"
+		"en|ch|tc|kr": "Alte Seele"
 	},
 	{
 		"id": "420103003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420102004",
 		"key": "rebirth420101004",
-		"en|ch|tc|kr": "Wiedergeburt 4"
+		"en|ch|tc|kr": "Radwanderer"
 	},
 	{
 		"id": "420103004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420102005",
 		"key": "rebirth420101005",
-		"en|ch|tc|kr": "Wiedergeburt 5"
+		"en|ch|tc|kr": "Nirvana-Leib"
 	},
 	{
 		"id": "420103005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420102006",
 		"key": "rebirth420101006",
-		"en|ch|tc|kr": "Wiedergeburt 6"
+		"en|ch|tc|kr": "Phönixleib"
 	},
 	{
 		"id": "420103006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420102007",
 		"key": "rebirth420101007",
-		"en|ch|tc|kr": "Wiedergeburt 7"
+		"en|ch|tc|kr": "Zehntausend Leben"
 	},
 	{
 		"id": "420103007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420102008",
 		"key": "rebirth420101008",
-		"en|ch|tc|kr": "Wiedergeburt 8"
+		"en|ch|tc|kr": "Samsara-Brecher"
 	},
 	{
 		"id": "420103008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420102009",
 		"key": "rebirth420101009",
-		"en|ch|tc|kr": "Wiedergeburt 9"
+		"en|ch|tc|kr": "Todlose Seele"
 	},
 	{
 		"id": "420103009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420102010",
 		"key": "rebirth420101010",
-		"en|ch|tc|kr": "Wiedergeburt 10"
+		"en|ch|tc|kr": "Der Ewige"
 	},
 	{
 		"id": "420103010",
@@ -143,5 +143,95 @@
 		"id": "420103106",
 		"key": "rebirth_need_town",
 		"en|ch|tc|kr": "Die Wiedergeburt geschieht in einer Stadt ab Gebiet {1} (über deiner letzten Wiedergeburt, {0}, und mindestens deine Stufe)."
+	},
+	{
+		"id": "420103107",
+		"key": "rebirth_button",
+		"en|ch|tc|kr": "Wiedergeburt {0}"
+	},
+	{
+		"id": "420103108",
+		"key": "rebirth_help_now",
+		"en|ch|tc|kr": "Wiedergeburten: {0}, die letzte im Reich {1}, Reiche aller Wiedergeburten: {2}"
+	},
+	{
+		"id": "420103109",
+		"key": "rebirth_help_cond",
+		"en|ch|tc|kr": "Bedingungen"
+	},
+	{
+		"id": "420103110",
+		"key": "rebirth_help_c_on",
+		"en|ch|tc|kr": "Wiedergeburt an (S&M-Einstellungen)"
+	},
+	{
+		"id": "420103111",
+		"key": "rebirth_help_c_grade",
+		"en|ch|tc|kr": "Reich {0} oder höher (über der letzten Wiedergeburt)"
+	},
+	{
+		"id": "420103112",
+		"key": "rebirth_help_c_town",
+		"en|ch|tc|kr": "In einer Stadt des Gebiets {0} oder höher (über der letzten Wiedergeburt, mindestens dein Reich)"
+	},
+	{
+		"id": "420103113",
+		"key": "rebirth_help_c_sect",
+		"en|ch|tc|kr": "In keiner Sekte"
+	},
+	{
+		"id": "420103114",
+		"key": "rebirth_help_gain",
+		"en|ch|tc|kr": "Vorteile"
+	},
+	{
+		"id": "420103115",
+		"key": "rebirth_help_g1",
+		"en|ch|tc|kr": "Ein Wiedergeburtsschicksal pro Mal, +5% max. LP pro Stufe (bis 10)"
+	},
+	{
+		"id": "420103116",
+		"key": "rebirth_help_g2",
+		"en|ch|tc|kr": "Künste, Gegenstände, Grundwerte und Eigenschaften bleiben: im selben Reich bist du stärker"
+	},
+	{
+		"id": "420103117",
+		"key": "rebirth_help_g3",
+		"en|ch|tc|kr": "Mindestschaden und DP/SP-Veredelungsboni wachsen mit den Reichen aller Wiedergeburten (jetzt +{0})"
+	},
+	{
+		"id": "420103118",
+		"key": "rebirth_help_cost",
+		"en|ch|tc|kr": "Nachteile"
+	},
+	{
+		"id": "420103119",
+		"key": "rebirth_help_x1",
+		"en|ch|tc|kr": "Reich und Erfahrung zurück auf Anfang, Ruf 0"
+	},
+	{
+		"id": "420103120",
+		"key": "rebirth_help_x2",
+		"en|ch|tc|kr": "Monster stärker: jetzt +{0}% Angriff, Verteidigung, LP (Reiche aller Wiedergeburten x {1}% x Schwierigkeit)"
+	},
+	{
+		"id": "420103121",
+		"key": "rebirth_help_x3",
+		"en|ch|tc|kr": "Du verlässt deine Sekte; Artefakte zu reparieren kostet mehr"
+	},
+	{
+		"id": "420103122",
+		"key": "rebirth_help_levels",
+		"en|ch|tc|kr": "Schicksale der Wiedergeburt"
+	},
+	{
+		"id": "420103123",
+		"key": "rebirth_help_ready",
+		"en|ch|tc|kr": "Bereit zur Wiedergeburt"
+	},
+	{
+		"id": "420103124",
+		"key": "rebirth_help_notready",
+		"en|ch|tc|kr": "Bedingungen nicht erfüllt"
 	}
 ]

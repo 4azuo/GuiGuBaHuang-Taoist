@@ -818,5 +818,155 @@
 		"id": -1000001213,
 		"key": "smcfgs213",
 		"en|ch|tc|kr": "Pour un seul héritier : un vieux maître écrit un dernier art et met deux héritiers à l'épreuve (nécessite le mod Dao of Creation)."
+	},
+	{
+		"id": -1000001214,
+		"key": "smcfgs214",
+		"en|ch|tc|kr": "Taux de bouclier"
+	},
+	{
+		"id": -1000001215,
+		"key": "smcfgs215",
+		"en|ch|tc|kr": "Taux d'explosion"
+	},
+	{
+		"id": -1000001216,
+		"key": "smcfgs216",
+		"en|ch|tc|kr": "Taux de division"
+	},
+	{
+		"id": -1000001217,
+		"key": "smcfgs217",
+		"en|ch|tc|kr": "Monstres sans bouclier"
+	},
+	{
+		"id": -1000001218,
+		"key": "smcfgs218",
+		"en|ch|tc|kr": "Base : statistiques d'arme et d'élément des monstres.\n- Leurs coups de ce type font plus mal.\n- Vos coups de ce type leur font moins mal.\n- Plus de blocage ; Vent : esquive et vitesse ; Terre, Poing, Paume, Doigt : défense ; Bois : récupération de PV.\nLa base monte déjà avec le royaume et la difficulté ; ce taux s'ajoute."
+	},
+	{
+		"id": -1000001219,
+		"key": "smcfgs219",
+		"en|ch|tc|kr": "Ajoute des PV max aux monstres selon votre attaque :\nvotre attaque x difficulté (Normal 1 - Chaos 5) x\n- {0} communs\n- {1} élites\n- {2} boss\n- {3} monstres de type PNJ\nPlus vous frappez fort, plus ils ont de PV."
+	},
+	{
+		"id": -1000001220,
+		"key": "smcfgs220",
+		"en|ch|tc|kr": "Mois d'un tour de croissance (vous, PNJ et monstres).\n- Plus bas : croissance plus rapide, plus difficile, traitement mensuel plus long.\n- Plus haut : croissance plus lente, plus facile, traitement plus court.\nChaque tour augmente attaque, défense et PV des monstres (x royaume x difficulté), même avec les curseurs du dessus à 0."
+	},
+	{
+		"id": -1000001221,
+		"key": "smcfgs221",
+		"en|ch|tc|kr": "Chance = valeur x royaume x difficulté (Normal 1 - Chaos 5), modifiée par chaque taux (-100% : désactivé).\n- Bouclier {0}% : absorbe {3}% des PV max (commun), {4}% (élite)\n- Explosion à la mort {1}%\n- Division à la mort {2}%\nBoss avec bouclier : toujours, {5}% des PV max. Monstres sans bouclier : désactive tous ces boucliers."
+	},
+	{
+		"id": -1000001222,
+		"key": "smcfgs222",
+		"en|ch|tc|kr": "La difficulté augmente aussi les stats des PNJ et des monstres (hors S&M Configs).\n\nMonstres, Taoist :\n- Base x{0}\n- Croissance (temps, morts, zone, renaissances) x{0}\n- Bouclier, explosion, division x{0}\n- Dégâts min x{0}"
+	},
+	{
+		"id": -1000001223,
+		"key": "smcfgs223",
+		"en|ch|tc|kr": "Score S&M conseillé : jusqu'à {0:#,##0} P."
+	},
+	{
+		"id": -1000001224,
+		"key": "smcfgs224",
+		"en|ch|tc|kr": "Conseillé aux débutants et pour tout score S&M."
+	},
+	{
+		"id": -1000001225,
+		"key": "smcfgs225",
+		"en|ch|tc|kr": "Techniques et pilules"
+	},
+	{
+		"id": -1000001226,
+		"key": "smcfgs226",
+		"en|ch|tc|kr": "Exp. de maîtrise"
+	},
+	{
+		"id": -1000001227,
+		"key": "smcfgs227",
+		"en|ch|tc|kr": "Coût en PM"
+	},
+	{
+		"id": -1000001228,
+		"key": "smcfgs228",
+		"en|ch|tc|kr": "Temps de recharge"
+	},
+	{
+		"id": -1000001229,
+		"key": "smcfgs229",
+		"en|ch|tc|kr": "Base requise (base)"
+	},
+	{
+		"id": -1000001230,
+		"key": "smcfgs230",
+		"en|ch|tc|kr": "Base requise (par niveau)"
+	},
+	{
+		"id": -1000001231,
+		"key": "smcfgs231",
+		"en|ch|tc|kr": "Points Dao requis (base)"
+	},
+	{
+		"id": -1000001232,
+		"key": "smcfgs232",
+		"en|ch|tc|kr": "Points Dao requis (par niveau)"
+	},
+	{
+		"id": -1000001233,
+		"key": "smcfgs233",
+		"en|ch|tc|kr": "Effet des pilules de puissance"
+	},
+	{
+		"id": -1000001234,
+		"key": "smcfgs234",
+		"en|ch|tc|kr": "Chaque taux s'ajoute à x1 des valeurs de ModConf/mod_configs.json (par grade 1-10) : -50% les divise par deux, +100% les double. Une technique plus chère, plus lente ou plus exigeante est plus difficile (+P) ; des pilules de puissance plus fortes plus faciles (-P). Les valeurs sont recalculées à chaque chargement."
+	},
+	{
+		"id": -1000001235,
+		"key": "smcfgs235",
+		"en|ch|tc|kr": "Le testament du Roi des remèdes : un vieil alchimiste garde les pages déchirées d'un guérisseur légendaire (Noyau d'or et plus)."
+	},
+	{
+		"id": -1000001236,
+		"key": "smcfgs236",
+		"en|ch|tc|kr": "Options du mod {0} (non comptées dans le score S&M)"
+	},
+	{
+		"id": -1000001237,
+		"key": "smcfgs237",
+		"en|ch|tc|kr": "Pas de constitutions"
+	},
+	{
+		"id": -1000001238,
+		"key": "smcfgs238",
+		"en|ch|tc|kr": "Constitutions : des corps spéciaux (Corps des pilules, Os d'épée, Corps vajra, Esprit inné, Sang de dragon, Corps du tonnerre, Corps venimeux), autant que vous en cultivez, chacun à sa manière (pilules, arts martiaux, trésors, épreuves, histoires, de naissance). Désactivé : +1 000 P."
+	},
+	{
+		"id": -1000001239,
+		"key": "smcfgs239",
+		"en|ch|tc|kr": "Garder les chiffres d’équilibre"
+	},
+	{
+		"id": -1000001240,
+		"key": "smcfgs240",
+		"en|ch|tc|kr": "seulement sur ce PC ; à joindre à un rapport d’équilibre"
+	},
+	{
+		"id": -1000001241,
+		"key": "smcfgs241",
+		"en|ch|tc|kr": "Performance : {0}"
+	},
+	{
+		"id": -1000001242,
+		"key": "smcfgs242",
+		"en|ch|tc|kr": "OUI"
+	},
+	{
+		"id": -1000001243,
+		"key": "smcfgs243",
+		"en|ch|tc|kr": "NON"
 	}
 ]

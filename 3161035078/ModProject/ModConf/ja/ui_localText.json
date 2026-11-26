@@ -268,5 +268,170 @@
 		"id": "-1000008053",
 		"key": "ui_town_portal_off",
 		"en|ch|tc|kr": "「市と宗派の唯一のポータル」をOFFにした：小さな町がまた転送陣を持てる。"
+	},
+	{
+		"id": -1000008054,
+		"key": "ui_appr_title",
+		"en|ch|tc|kr": "技芸の位階"
+	},
+	{
+		"id": -1000008055,
+		"key": "ui_appr_header",
+		"en|ch|tc|kr": "{0}：{1}点、{2}"
+	},
+	{
+		"id": -1000008056,
+		"key": "ui_appr_none",
+		"en|ch|tc|kr": "まだ位階なし"
+	},
+	{
+		"id": -1000008057,
+		"key": "ui_appr_rank",
+		"en|ch|tc|kr": "第{0}段階：{1}"
+	},
+	{
+		"id": -1000008058,
+		"key": "ui_appr_line",
+		"en|ch|tc|kr": "第{0}段階 {1}：{2}{3}以上、{4}"
+	},
+	{
+		"id": -1000008059,
+		"key": "ui_appr_note",
+		"en|ch|tc|kr": "各位階は気運：技芸の値が基準に達すると得られ、値に応じて変わる。"
+	},
+	{
+		"id": -1000008060,
+		"key": "ui_appr_prev",
+		"en|ch|tc|kr": "前へ"
+	},
+	{
+		"id": -1000008061,
+		"key": "ui_appr_next",
+		"en|ch|tc|kr": "次へ"
+	},
+	{
+		"id": -1000008062,
+		"key": "ui_appr_alchemy",
+		"en|ch|tc|kr": "錬丹"
+	},
+	{
+		"id": -1000008063,
+		"key": "ui_appr_forge",
+		"en|ch|tc|kr": "錬器"
+	},
+	{
+		"id": -1000008064,
+		"key": "ui_appr_fengshui",
+		"en|ch|tc|kr": "風水"
+	},
+	{
+		"id": -1000008065,
+		"key": "ui_appr_talismans",
+		"en|ch|tc|kr": "符術"
+	},
+	{
+		"id": -1000008066,
+		"key": "ui_appr_herbology",
+		"en|ch|tc|kr": "採薬"
+	},
+	{
+		"id": -1000008067,
+		"key": "ui_appr_mining",
+		"en|ch|tc|kr": "採鉱"
+	},
+	{
+		"id": -1000008068,
+		"key": "ui_trainee_title_martial",
+		"en|ch|tc|kr": "武道の位階"
+	},
+	{
+		"id": -1000008069,
+		"key": "ui_trainee_title_magic",
+		"en|ch|tc|kr": "法道の位階"
+	},
+	{
+		"id": -1000008070,
+		"key": "ui_trainee_martial",
+		"en|ch|tc|kr": "武学資質（合計）"
+	},
+	{
+		"id": -1000008071,
+		"key": "ui_trainee_magic",
+		"en|ch|tc|kr": "霊根資質（合計）"
+	},
+	{
+		"id": -1000008072,
+		"key": "ui_panel_ranks",
+		"en|ch|tc|kr": "位階"
+	},
+	{
+		"id": -1000008073,
+		"key": "ui_panel_rank",
+		"en|ch|tc|kr": "段階"
+	},
+	{
+		"id": -1000008074,
+		"key": "ui_panel_title",
+		"en|ch|tc|kr": "称号"
+	},
+	{
+		"id": -1000008075,
+		"key": "ui_panel_needs",
+		"en|ch|tc|kr": "条件"
+	},
+	{
+		"id": -1000008076,
+		"key": "ui_panel_effect",
+		"en|ch|tc|kr": "効果"
+	},
+	{
+		"id": -1000008077,
+		"key": "ui_panel_next",
+		"en|ch|tc|kr": "次：{0}、{1}必要（{2}%）"
+	},
+	{
+		"id": -1000008078,
+		"key": "ui_panel_top",
+		"en|ch|tc|kr": "最高位階に到達"
+	},
+	{
+		"id": -1000008079,
+		"key": "ui_panel_back",
+		"en|ch|tc|kr": "戻る"
+	},
+	{
+		"id": -1000008080,
+		"key": "ui_appr_overview",
+		"en|ch|tc|kr": "六芸"
+	},
+	{
+		"id": -1000008081,
+		"key": "ui_appr_value",
+		"en|ch|tc|kr": "{0}点"
+	},
+	{
+		"id": -1000008082,
+		"key": "ui_appr_to_next",
+		"en|ch|tc|kr": "次の位階：{0}"
+	},
+	{
+		"id": -1000008083,
+		"key": "ui_appr_overview_hint",
+		"en|ch|tc|kr": "各技芸の ? で10の位階を表示。"
+	},
+	{
+		"id": -1000008084,
+		"key": "ui_merchant_title",
+		"en|ch|tc|kr": "商道の位階"
+	},
+	{
+		"id": -1000008085,
+		"key": "ui_merchant_money",
+		"en|ch|tc|kr": "霊石"
+	},
+	{
+		"id": -1000008086,
+		"key": "ui_merchant_note",
+		"en|ch|tc|kr": "到達した商道の位階は霊石が減っても下がらない。"
 	}
 ]

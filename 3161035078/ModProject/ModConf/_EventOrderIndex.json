@@ -68,6 +68,8 @@
 	"BattleModifyEvent": 5030,
 	"BattleManashieldEvent": 5040,
 	"SpecialMonsterEvent": 5041,
+	"PillBodyEvent": 5045,
+	"ConstitutionEvent": 5046,
 	"BattleRewardEventV2": 5060,
 
 	//global

@@ -1310,5 +1310,245 @@
 		"ch": "一人之传：老前辈写下最后的绝技，考验两位传人（需要Dao of Creation模组）。",
 		"tc": "一人之傳：老前輩寫下最後的絕技，考驗兩位傳人（需要Dao of Creation模組）。",
 		"kr": "단 한 명의 전인: 노선배가 마지막 절학을 쓰고 두 후보를 시험한다 (Dao of Creation 모드 필요)."
+	},
+	{
+		"id": -1000001214,
+		"key": "smcfgs214",
+		"en": "Shield Rate",
+		"ch": "护盾率",
+		"tc": "護盾率",
+		"kr": "보호막 확률"
+	},
+	{
+		"id": -1000001215,
+		"key": "smcfgs215",
+		"en": "Explode Rate",
+		"ch": "爆炸率",
+		"tc": "爆炸率",
+		"kr": "폭발 확률"
+	},
+	{
+		"id": -1000001216,
+		"key": "smcfgs216",
+		"en": "Multiply Rate",
+		"ch": "分裂率",
+		"tc": "分裂率",
+		"kr": "분열 확률"
+	},
+	{
+		"id": -1000001217,
+		"key": "smcfgs217",
+		"en": "No Monster Shield",
+		"ch": "怪物无护盾",
+		"tc": "怪物無護盾",
+		"kr": "몬스터 보호막 없음"
+	},
+	{
+		"id": -1000001218,
+		"key": "smcfgs218",
+		"en": "Basis: the weapon and element stats of the monsters.\n- Their hits of that type hurt more.\n- Your hits of that type hurt them less.\n- More block; Wind: evasion and speed; Earth, Fist, Palm, Finger: defense; Wood: HP recovery.\nBasis already rises with realm and difficulty; this rate is added on top.",
+		"ch": "资质：怪物的武器与灵根数值。\n- 对应类型的攻击伤害更高。\n- 受到对应类型的伤害更低。\n- 格挡更高；风：闪避与速度；土、拳、掌、指：防御；木：体力恢复。\n资质已随境界与难度提升，此比率另外叠加。",
+		"tc": "資質：怪物的武器與靈根數值。\n- 對應類型的攻擊傷害更高。\n- 受到對應類型的傷害更低。\n- 格擋更高；風：閃避與速度；土、拳、掌、指：防禦；木：體力恢復。\n資質已隨境界與難度提升，此比率另外疊加。",
+		"kr": "자질: 몬스터의 무기 및 속성 수치.\n- 해당 유형의 공격이 더 아픕니다.\n- 해당 유형의 피해를 덜 받습니다.\n- 막기 증가; 바람: 회피와 속도; 땅, 권, 장, 지: 방어; 나무: 체력 회복.\n자질은 이미 경지와 난이도에 따라 오르며, 이 비율은 추가로 적용됩니다."
+	},
+	{
+		"id": -1000001219,
+		"key": "smcfgs219",
+		"en": "Adds max HP to the monsters from your attack:\nyour attack x difficulty (Normal 1 - Chaos 5) x\n- {0} for common monsters\n- {1} for elites\n- {2} for bosses\n- {3} for NPC-type monsters\nThe stronger you hit, the more HP they have.",
+		"ch": "根据你的攻击增加怪物体力上限：\n你的攻击 x 难度（普通1 - 洪荒5）x\n- 普通怪 {0}\n- 精英 {1}\n- 首领 {2}\n- NPC型怪物 {3}\n你的攻击越高，它们的体力越多。",
+		"tc": "根據你的攻擊增加怪物體力上限：\n你的攻擊 x 難度（普通1 - 洪荒5）x\n- 普通怪 {0}\n- 精英 {1}\n- 首領 {2}\n- NPC型怪物 {3}\n你的攻擊越高，它們的體力越多。",
+		"kr": "당신의 공격력에 따라 몬스터 최대 HP가 증가합니다:\n공격력 x 난이도(보통 1 - 홍황 5) x\n- 일반 {0}\n- 정예 {1}\n- 보스 {2}\n- NPC형 몬스터 {3}\n공격력이 높을수록 HP가 많아집니다."
+	},
+	{
+		"id": -1000001220,
+		"key": "smcfgs220",
+		"en": "Months of one growth turn (you, NPCs and monsters).\n- Lower: everything grows faster, harder game, longer monthly processing.\n- Higher: slower growth, easier game, shorter monthly processing.\nEach turn raises attack, defense and HP of the monsters (x realm x difficulty), even with the sliders above at 0.",
+		"ch": "一次成长所需的月数（你、NPC与怪物）。\n- 越低：成长越快，游戏更难，每月处理时间更长。\n- 越高：成长越慢，游戏更易，每月处理时间更短。\n每次成长提升怪物的攻击、防御与体力（x 境界 x 难度），即使上方滑块为0。",
+		"tc": "一次成長所需的月數（你、NPC與怪物）。\n- 越低：成長越快，遊戲更難，每月處理時間更長。\n- 越高：成長越慢，遊戲更易，每月處理時間更短。\n每次成長提升怪物的攻擊、防禦與體力（x 境界 x 難度），即使上方滑塊為0。",
+		"kr": "성장 1회에 걸리는 개월 수 (당신, NPC, 몬스터).\n- 낮음: 성장이 빠르고 어려우며 월 처리 시간이 깁니다.\n- 높음: 성장이 느리고 쉬우며 월 처리 시간이 짧습니다.\n위 슬라이더가 0이어도 성장마다 몬스터의 공격, 방어, HP가 오릅니다 (x 경지 x 난이도)."
+	},
+	{
+		"id": -1000001221,
+		"key": "smcfgs221",
+		"en": "Chance = value x realm x difficulty (Normal 1 - Chaos 5), changed by each rate (-100%: off).\n- Shield {0}%: absorbs {3}% of max HP (common), {4}% (elite)\n- Explode on death {1}%\n- Multiply on death {2}%\nBoss Has Shield: always, {5}% of max HP. No Monster Shield: turns every one of these shields off.",
+		"ch": "几率 = 数值 x 境界 x 难度（普通1 - 洪荒5），再按各比率调整（-100%：关闭）。\n- 护盾 {0}%：吸收体力上限的 {3}%（普通）、{4}%（精英）\n- 死亡时爆炸 {1}%\n- 死亡时分裂 {2}%\n首领护盾：必定，体力上限的 {5}%。怪物无护盾：关闭以上所有护盾。",
+		"tc": "機率 = 數值 x 境界 x 難度（普通1 - 洪荒5），再按各比率調整（-100%：關閉）。\n- 護盾 {0}%：吸收體力上限的 {3}%（普通）、{4}%（精英）\n- 死亡時爆炸 {1}%\n- 死亡時分裂 {2}%\n首領護盾：必定，體力上限的 {5}%。怪物無護盾：關閉以上所有護盾。",
+		"kr": "확률 = 값 x 경지 x 난이도(보통 1 - 홍황 5), 각 비율로 조정 (-100%: 끔).\n- 보호막 {0}%: 최대 HP의 {3}%(일반), {4}%(정예) 흡수\n- 사망 시 폭발 {1}%\n- 사망 시 분열 {2}%\n보스 보호막: 항상, 최대 HP의 {5}%. 몬스터 보호막 없음: 이 보호막을 모두 끕니다."
+	},
+	{
+		"id": -1000001222,
+		"key": "smcfgs222",
+		"en": "The difficulty also raises the stats of NPCs and monsters (S&M Configs not included).\n\nMonsters, Taoist:\n- Basis x{0}\n- Growth (time, kills, area, rebirths) x{0}\n- Shield, explode, multiply chances x{0}\n- Min damage x{0}",
+		"ch": "难度也会提升NPC与怪物的属性（不含S&M设置）。\n\n怪物（Taoist）：\n- 资质 x{0}\n- 成长（时间、击杀、区域、转生）x{0}\n- 护盾、爆炸、分裂几率 x{0}\n- 最低伤害 x{0}",
+		"tc": "難度也會提升NPC與怪物的屬性（不含S&M設置）。\n\n怪物（Taoist）：\n- 資質 x{0}\n- 成長（時間、擊殺、區域、轉生）x{0}\n- 護盾、爆炸、分裂機率 x{0}\n- 最低傷害 x{0}",
+		"kr": "난이도는 NPC와 몬스터의 능력치도 올립니다 (S&M 설정 미포함).\n\n몬스터 (Taoist):\n- 자질 x{0}\n- 성장(시간, 처치, 지역, 환생) x{0}\n- 보호막, 폭발, 분열 확률 x{0}\n- 최소 피해 x{0}"
+	},
+	{
+		"id": -1000001223,
+		"key": "smcfgs223",
+		"en": "Recommended S&M score: up to {0:#,##0} P.",
+		"ch": "推荐S&M分数：不超过 {0:#,##0} P。",
+		"tc": "推薦S&M分數：不超過 {0:#,##0} P。",
+		"kr": "권장 S&M 점수: {0:#,##0} P 이하."
+	},
+	{
+		"id": -1000001224,
+		"key": "smcfgs224",
+		"en": "Recommended for new players and for any S&M score.",
+		"ch": "推荐新手，适合任何S&M分数。",
+		"tc": "推薦新手，適合任何S&M分數。",
+		"kr": "초보자 및 모든 S&M 점수에 권장."
+	},
+	{
+		"id": -1000001225,
+		"key": "smcfgs225",
+		"en": "Skills & pills",
+		"ch": "功法与丹药",
+		"tc": "功法與丹藥",
+		"kr": "무공과 단약"
+	},
+	{
+		"id": -1000001226,
+		"key": "smcfgs226",
+		"en": "Skill mastery exp",
+		"ch": "功法熟练度经验",
+		"tc": "功法熟練度經驗",
+		"kr": "무공 숙련 경험치"
+	},
+	{
+		"id": -1000001227,
+		"key": "smcfgs227",
+		"en": "Skill MP cost",
+		"ch": "功法灵力消耗",
+		"tc": "功法靈力消耗",
+		"kr": "무공 영력 소모"
+	},
+	{
+		"id": -1000001228,
+		"key": "smcfgs228",
+		"en": "Skill cooldown",
+		"ch": "功法冷却",
+		"tc": "功法冷卻",
+		"kr": "무공 재사용 대기"
+	},
+	{
+		"id": -1000001229,
+		"key": "smcfgs229",
+		"en": "Basis required (base)",
+		"ch": "资质需求（基础）",
+		"tc": "資質需求（基礎）",
+		"kr": "자질 요구 (기본)"
+	},
+	{
+		"id": -1000001230,
+		"key": "smcfgs230",
+		"en": "Basis required (a level)",
+		"ch": "资质需求（每级）",
+		"tc": "資質需求（每級）",
+		"kr": "자질 요구 (단계당)"
+	},
+	{
+		"id": -1000001231,
+		"key": "smcfgs231",
+		"en": "Dao points required (base)",
+		"ch": "道点需求（基础）",
+		"tc": "道點需求（基礎）",
+		"kr": "도점 요구 (기본)"
+	},
+	{
+		"id": -1000001232,
+		"key": "smcfgs232",
+		"en": "Dao points required (a level)",
+		"ch": "道点需求（每级）",
+		"tc": "道點需求（每級）",
+		"kr": "도점 요구 (단계당)"
+	},
+	{
+		"id": -1000001233,
+		"key": "smcfgs233",
+		"en": "Power-up pill effect",
+		"ch": "强化丹药效果",
+		"tc": "強化丹藥效果",
+		"kr": "강화 단약 효과"
+	},
+	{
+		"id": -1000001234,
+		"key": "smcfgs234",
+		"en": "Each rate is added to x1 of the values of ModConf/mod_configs.json (by grade 1-10): -50% halves them, +100% doubles them. A dearer, slower or harder skill is harder (+P); stronger power-up pills are easier (-P). The values are worked out again each time a save is loaded.",
+		"ch": "每个比率叠加在ModConf/mod_configs.json数值（按品阶1-10）的x1上：-50%减半，+100%翻倍。功法更贵、更慢、要求更高则更难（+P）；强化丹药更强则更易（-P）。每次读取存档时重新计算。",
+		"tc": "每個比率疊加在ModConf/mod_configs.json數值（按品階1-10）的x1上：-50%減半，+100%翻倍。功法更貴、更慢、要求更高則更難（+P）；強化丹藥更強則更易（-P）。每次讀取存檔時重新計算。",
+		"kr": "각 비율은 ModConf/mod_configs.json 값(품계 1-10별)의 x1에 더해집니다: -50%는 절반, +100%는 두 배. 무공이 비싸고 느리고 요구가 높으면 어려움(+P), 강화 단약이 강하면 쉬움(-P). 저장을 불러올 때마다 다시 계산됩니다."
+	},
+	{
+		"id": -1000001235,
+		"key": "smcfgs235",
+		"en": "The Medicine King's Testament: an old alchemist keeps the torn pages of a legendary healer (Golden Core and above).",
+		"ch": "药王遗书：一位老丹师守着传奇医者的残页（金丹及以上）。",
+		"tc": "藥王遺書：一位老丹師守著傳奇醫者的殘頁（金丹及以上）。",
+		"kr": "약왕의 유서: 늙은 연단사가 전설적인 의원의 찢어진 책장을 지키고 있다 (금단 이상)."
+	},
+	{
+		"id": -1000001236,
+		"key": "smcfgs236",
+		"en": "Options of the mod {0} (not counted in the S&M score)",
+		"ch": "模组 {0} 的选项（不计入S&M分数）",
+		"tc": "模組 {0} 的選項（不計入S&M分數）",
+		"kr": "모드 {0}의 옵션 (S&M 점수에 포함되지 않음)"
+	},
+	{
+		"id": -1000001237,
+		"key": "smcfgs237",
+		"en": "No constitutions",
+		"ch": "无体质",
+		"tc": "無體質",
+		"kr": "체질 없음"
+	},
+	{
+		"id": -1000001238,
+		"key": "smcfgs238",
+		"en": "Constitutions: special bodies (Pill Body, Sword Bone, Vajra Body, Innate Spirit, Dragon Blood, Thunder Body, Venom Body), as many as you can cultivate, each grown its own way (potions, martial arts, treasures, trials, stories, born with it). Off: +1,000 P.",
+		"ch": "体质：特殊的身体（药体、剑骨、金刚体、先天灵体、龙血体、雷体、毒体），能修多少就有多少，各有修炼之法（丹药、武学、天材地宝、雷劫、故事、天生）。关闭：+1,000 P。",
+		"tc": "體質：特殊的身體（藥體、劍骨、金剛體、先天靈體、龍血體、雷體、毒體），能修多少就有多少，各有修煉之法（丹藥、武學、天材地寶、雷劫、故事、天生）。關閉：+1,000 P。",
+		"kr": "체질: 특별한 몸 (약체, 검골, 금강체, 선천영체, 용혈체, 뇌체, 독체). 수련하는 만큼 가질 수 있으며 각자 방법이 다르다 (단약, 무공, 천재지보, 뇌겁, 이야기, 타고남). 끄면: +1,000 P."
+	},
+	{
+		"id": -1000001239,
+		"key": "smcfgs239",
+		"en": "Keep balance numbers",
+		"ch": "保留平衡数据",
+		"tc": "保留平衡數據",
+		"kr": "밸런스 수치 기록"
+	},
+	{
+		"id": -1000001240,
+		"key": "smcfgs240",
+		"en": "only on this PC; send it with a balance report",
+		"ch": "仅保存在本机；反馈平衡问题时可附上",
+		"tc": "僅保存在本機；回報平衡問題時可附上",
+		"kr": "이 PC에만 저장; 밸런스 제보 시 첨부"
+	},
+	{
+		"id": -1000001241,
+		"key": "smcfgs241",
+		"en": "Performance: {0}",
+		"ch": "性能模式：{0}",
+		"tc": "效能模式：{0}",
+		"kr": "성능 모드: {0}"
+	},
+	{
+		"id": -1000001242,
+		"key": "smcfgs242",
+		"en": "ON",
+		"ch": "开",
+		"tc": "開",
+		"kr": "켜짐"
+	},
+	{
+		"id": -1000001243,
+		"key": "smcfgs243",
+		"en": "OFF",
+		"ch": "关",
+		"tc": "關",
+		"kr": "꺼짐"
 	}
 ]

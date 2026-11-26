@@ -1,60 +1,60 @@
 [
 	{
-		"__name": "Magic Lvl-1",
+		"__name": "trainee_magic 1: Spell Novice",
 		"id": "420081001",
 		"effectType": "1",
 		"value": "mpMax_0_2"
 	},
 	{
-		"__name": "Magic Lvl-2",
+		"__name": "trainee_magic 2: Spell Disciple",
 		"id": "420081002",
 		"effectType": "1",
 		"value": "mpMax_0_4"
 	},
 	{
-		"__name": "Magic Lvl-3",
+		"__name": "trainee_magic 3: Sorcerer",
 		"id": "420081003",
 		"effectType": "1",
 		"value": "mpMax_0_7"
 	},
 	{
-		"__name": "Magic Lvl-4",
+		"__name": "trainee_magic 4: Spell Master",
 		"id": "420081004",
 		"effectType": "1",
 		"value": "mpMax_0_10"
 	},
 	{
-		"__name": "Magic Lvl-5",
+		"__name": "trainee_magic 5: Perfected One",
 		"id": "420081005",
 		"effectType": "1",
 		"value": "mpMax_0_15"
 	},
 	{
-		"__name": "Magic Lvl-6",
+		"__name": "trainee_magic 6: Dharma King",
 		"id": "420081006",
 		"effectType": "1",
 		"value": "mpMax_0_20"
 	},
 	{
-		"__name": "Magic Lvl-7",
+		"__name": "trainee_magic 7: Spell Sovereign",
 		"id": "420081007",
 		"effectType": "1",
 		"value": "mpMax_0_30"
 	},
 	{
-		"__name": "Magic Lvl-8",
+		"__name": "trainee_magic 8: Dharma Venerable",
 		"id": "420081008",
 		"effectType": "1",
 		"value": "mpMax_0_40"
 	},
 	{
-		"__name": "Magic Lvl-9",
+		"__name": "trainee_magic 9: Dharma Saint",
 		"id": "420081009",
 		"effectType": "1",
 		"value": "mpMax_0_60"
 	},
 	{
-		"__name": "Magic Lvl-10",
+		"__name": "trainee_magic 10: Dharma God",
 		"id": "420081010",
 		"effectType": "1",
 		"value": "mpMax_0_90"

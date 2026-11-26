@@ -1,60 +1,60 @@
 [
 	{
-		"__name": "Talismans Lvl-1",
+		"__name": "talismans 1: Ink Boy",
 		"id": "420031001",
 		"effectType": "1",
 		"value": "mpMax_0_5"
 	},
 	{
-		"__name": "Talismans Lvl-2",
+		"__name": "talismans 2: Copyist",
 		"id": "420031002",
 		"effectType": "1",
 		"value": "mpMax_0_10"
 	},
 	{
-		"__name": "Talismans Lvl-3",
+		"__name": "talismans 3: Scribe",
 		"id": "420031003",
 		"effectType": "1",
 		"value": "mpMax_0_15"
 	},
 	{
-		"__name": "Talismans Lvl-4",
+		"__name": "talismans 4: Runecrafter",
 		"id": "420031004",
 		"effectType": "1",
 		"value": "mpMax_0_20"
 	},
 	{
-		"__name": "Talismans Lvl-5",
+		"__name": "talismans 5: Rune Master",
 		"id": "420031005",
 		"effectType": "1",
 		"value": "mpMax_0_25"
 	},
 	{
-		"__name": "Talismans Lvl-6",
+		"__name": "talismans 6: Grand Runemaster",
 		"id": "420031006",
 		"effectType": "1",
 		"value": "mpMax_0_30"
 	},
 	{
-		"__name": "Talismans Lvl-7",
+		"__name": "talismans 7: Rune Patriarch",
 		"id": "420031007",
 		"effectType": "1",
 		"value": "mpMax_0_35"
 	},
 	{
-		"__name": "Talismans Lvl-8",
+		"__name": "talismans 8: Rune Venerable",
 		"id": "420031008",
 		"effectType": "1",
 		"value": "mpMax_0_40"
 	},
 	{
-		"__name": "Talismans Lvl-9",
+		"__name": "talismans 9: Rune Saint",
 		"id": "420031009",
 		"effectType": "1",
 		"value": "mpMax_0_45"
 	},
 	{
-		"__name": "Talismans Lvl-10",
+		"__name": "talismans 10: Rune Emperor",
 		"id": "420031010",
 		"effectType": "1",
 		"value": "mpMax_0_50"

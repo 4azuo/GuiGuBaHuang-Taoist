@@ -1,6 +1,6 @@
 [
 	{
-		"__name": "Mining Lvl-1",
+		"__name": "mining 1: Ore Boy",
 		"id": "420061001",
 		"type": "2",
 		"group": "420061000",
@@ -17,7 +17,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-2",
+		"__name": "mining 2: Pick Student",
 		"id": "420061002",
 		"type": "2",
 		"group": "420061000",
@@ -34,7 +34,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-3",
+		"__name": "mining 3: Miner",
 		"id": "420061003",
 		"type": "2",
 		"group": "420061000",
@@ -51,7 +51,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-4",
+		"__name": "mining 4: Prospector",
 		"id": "420061004",
 		"type": "2",
 		"group": "420061000",
@@ -68,7 +68,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-5",
+		"__name": "mining 5: Mine Master",
 		"id": "420061005",
 		"type": "2",
 		"group": "420061000",
@@ -85,7 +85,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-6",
+		"__name": "mining 6: Grand Miner",
 		"id": "420061006",
 		"type": "2",
 		"group": "420061000",
@@ -102,7 +102,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-7",
+		"__name": "mining 7: Mine Patriarch",
 		"id": "420061007",
 		"type": "2",
 		"group": "420061000",
@@ -119,7 +119,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-8",
+		"__name": "mining 8: Vein Venerable",
 		"id": "420061008",
 		"type": "2",
 		"group": "420061000",
@@ -136,7 +136,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-9",
+		"__name": "mining 9: Mountain Saint",
 		"id": "420061009",
 		"type": "2",
 		"group": "420061000",
@@ -153,7 +153,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Mining Lvl-10",
+		"__name": "mining 10: Earth Sovereign",
 		"id": "420061010",
 		"type": "2",
 		"group": "420061000",

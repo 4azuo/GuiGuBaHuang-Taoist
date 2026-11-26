@@ -1,60 +1,60 @@
 [
 	{
-		"__name": "Feng Shui Lvl-1",
+		"__name": "fengshui 1: Compass Boy",
 		"id": "420041001",
 		"effectType": "1",
 		"value": "mpMax_0_2"
 	},
 	{
-		"__name": "Feng Shui Lvl-2",
+		"__name": "fengshui 2: Land Reader",
 		"id": "420041002",
 		"effectType": "1",
 		"value": "mpMax_0_4"
 	},
 	{
-		"__name": "Feng Shui Lvl-3",
+		"__name": "fengshui 3: Geomancer",
 		"id": "420041003",
 		"effectType": "1",
 		"value": "mpMax_0_6"
 	},
 	{
-		"__name": "Feng Shui Lvl-4",
+		"__name": "fengshui 4: Vein Seeker",
 		"id": "420041004",
 		"effectType": "1",
 		"value": "mpMax_0_8"
 	},
 	{
-		"__name": "Feng Shui Lvl-5",
+		"__name": "fengshui 5: Feng Shui Master",
 		"id": "420041005",
 		"effectType": "1",
 		"value": "mpMax_0_10"
 	},
 	{
-		"__name": "Feng Shui Lvl-6",
+		"__name": "fengshui 6: Grand Geomancer",
 		"id": "420041006",
 		"effectType": "1",
 		"value": "mpMax_0_12"
 	},
 	{
-		"__name": "Feng Shui Lvl-7",
+		"__name": "fengshui 7: Geomancy Patriarch",
 		"id": "420041007",
 		"effectType": "1",
 		"value": "mpMax_0_14"
 	},
 	{
-		"__name": "Feng Shui Lvl-8",
+		"__name": "fengshui 8: Earth Venerable",
 		"id": "420041008",
 		"effectType": "1",
 		"value": "mpMax_0_16"
 	},
 	{
-		"__name": "Feng Shui Lvl-9",
+		"__name": "fengshui 9: Geomancy Saint",
 		"id": "420041009",
 		"effectType": "1",
 		"value": "mpMax_0_18"
 	},
 	{
-		"__name": "Feng Shui Lvl-10",
+		"__name": "fengshui 10: Sky-Earth Sage",
 		"id": "420041010",
 		"effectType": "1",
 		"value": "mpMax_0_20"

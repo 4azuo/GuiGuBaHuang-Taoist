@@ -162,3 +162,14 @@ Test: extend TG-46 (register a hidden item, NPC buys it, check the drama has no 
 - **Nexus Mods**: create the ModLib and Taoist pages and a first file on Nexus by hand, then run the VS Code task
   "Setup: Nexus Mods (CI)" (the CI only adds versions to an existing file). The game domain of Tale of Immortal on
   Nexus was not checked.
+
+## Balance pass 6.3 (2026-11-26): open points
+
+- High realms last long (accepted by the user on 2026-11-26: realms 9-10 stay as they are): TB-19 (two NPCs of a realm, real hits, guard cap 80 %) gives about 12 hits to kill at realms
+  1-3, 30-50 at realms 5-8 and about 165 at realms 9-10 (a hit 0.6 % of the max HP; at realm 10 half the hits are the
+  minimum damage). The guard cap is not the cause there: the basis defense and the HP of realms 9-10 are. To decide:
+  lower the basis defense (`BASIS_ON_DEF`) or the HP growth of the high realms, then measure again with TB-19.
+- TB-19 sees few hits between the two NPCs in 20 s (1-11): their AI also targets the player and the first opponent.
+  More reliable numbers: a longer fight, or the player and the opponent out of the room.
+- TG-91: the MP cost of the skills of the NPCs reads 0 (their `skillLeft` is empty out of a battle): the column
+  "skill MP" of balance-*.csv is not measured.

@@ -2,10 +2,10 @@
 	{
 		"id": "420102001",
 		"key": "rebirth420101001",
-		"en": "Rebirth 1",
-		"ch": "重生1",
-		"tc": "重生1",
-		"kr": "환생 1"
+		"en": "Second Life",
+		"ch": "再世",
+		"tc": "再世",
+		"kr": "재세"
 	},
 	{
 		"id": "420103001",
@@ -18,10 +18,10 @@
 	{
 		"id": "420102002",
 		"key": "rebirth420101002",
-		"en": "Rebirth 2",
-		"ch": "重生2",
-		"tc": "重生2",
-		"kr": "환생 2"
+		"en": "Past Wisdom",
+		"ch": "宿慧",
+		"tc": "宿慧",
+		"kr": "숙혜"
 	},
 	{
 		"id": "420103002",
@@ -34,10 +34,10 @@
 	{
 		"id": "420102003",
 		"key": "rebirth420101003",
-		"en": "Rebirth 3",
-		"ch": "重生3",
-		"tc": "重生3",
-		"kr": "환생 3"
+		"en": "Old Soul",
+		"ch": "宿魂",
+		"tc": "宿魂",
+		"kr": "숙혼"
 	},
 	{
 		"id": "420103003",
@@ -45,15 +45,15 @@
 		"en": "+15% Max HP",
 		"ch": "+15% 最大值 HP",
 		"tc": "+15% 最大值 HP",
-		"kr": "+15% 최대 {⑪}0{/⑪⑪}"
+		"kr": "+15% 최대 HP"
 	},
 	{
 		"id": "420102004",
 		"key": "rebirth420101004",
-		"en": "Rebirth 4",
-		"ch": "重生4",
-		"tc": "重生4",
-		"kr": "환생 4"
+		"en": "Wheel Walker",
+		"ch": "轮回客",
+		"tc": "輪迴客",
+		"kr": "윤회객"
 	},
 	{
 		"id": "420103004",
@@ -66,10 +66,10 @@
 	{
 		"id": "420102005",
 		"key": "rebirth420101005",
-		"en": "Rebirth 5",
-		"ch": "重生5",
-		"tc": "重生5",
-		"kr": "환생 5"
+		"en": "Nirvana Body",
+		"ch": "涅槃身",
+		"tc": "涅槃身",
+		"kr": "열반신"
 	},
 	{
 		"id": "420103005",
@@ -77,15 +77,15 @@
 		"en": "+25% Max HP",
 		"ch": "+25% 最大值 HP",
 		"tc": "+25% 最大值 HP",
-		"kr": "+25% 최대 {⑪}0{/⑪⑪}"
+		"kr": "+25% 최대 HP"
 	},
 	{
 		"id": "420102006",
 		"key": "rebirth420101006",
-		"en": "Rebirth 6",
-		"ch": "重生6",
-		"tc": "重生6",
-		"kr": "환생 6"
+		"en": "Phoenix Body",
+		"ch": "凤凰身",
+		"tc": "鳳凰身",
+		"kr": "봉황신"
 	},
 	{
 		"id": "420103006",
@@ -98,10 +98,10 @@
 	{
 		"id": "420102007",
 		"key": "rebirth420101007",
-		"en": "Rebirth 7",
-		"ch": "重生7",
-		"tc": "重生7",
-		"kr": "환생 7"
+		"en": "Myriad Lives",
+		"ch": "万世身",
+		"tc": "萬世身",
+		"kr": "만세신"
 	},
 	{
 		"id": "420103007",
@@ -114,10 +114,10 @@
 	{
 		"id": "420102008",
 		"key": "rebirth420101008",
-		"en": "Rebirth 8",
-		"ch": "重生8",
-		"tc": "重生8",
-		"kr": "환생 8"
+		"en": "Samsara Breaker",
+		"ch": "破轮回",
+		"tc": "破輪迴",
+		"kr": "파윤회"
 	},
 	{
 		"id": "420103008",
@@ -130,10 +130,10 @@
 	{
 		"id": "420102009",
 		"key": "rebirth420101009",
-		"en": "Rebirth 9",
-		"ch": "重生9",
-		"tc": "重生9",
-		"kr": "환생 9"
+		"en": "Deathless Soul",
+		"ch": "不死魂",
+		"tc": "不死魂",
+		"kr": "불사혼"
 	},
 	{
 		"id": "420103009",
@@ -141,15 +141,15 @@
 		"en": "+45% Max HP",
 		"ch": "+45% 最大值 HP",
 		"tc": "+45% 最大值 HP",
-		"kr": "+45% 최대 {⑪}0{/⑪⑪}"
+		"kr": "+45% 최대 HP"
 	},
 	{
 		"id": "420102010",
 		"key": "rebirth420101010",
-		"en": "Rebirth 10",
-		"ch": "重生10",
-		"tc": "重生10",
-		"kr": "환생 10"
+		"en": "Eternal One",
+		"ch": "永世者",
+		"tc": "永世者",
+		"kr": "영세자"
 	},
 	{
 		"id": "420103010",
@@ -230,5 +230,149 @@
 		"ch": "需在{1}区及以上的城镇重生（高于上次重生的{0}，且不低于你的境界）。",
 		"tc": "需在{1}區及以上的城鎮重生（高於上次重生的{0}，且不低於你的境界）。",
 		"kr": "{1}구역 이상의 마을에서 환생할 수 있다 (지난 환생 {0}보다 높고, 자신의 경지 이상)."
+	},
+	{
+		"id": "420103107",
+		"key": "rebirth_button",
+		"en": "Rebirth {0}",
+		"ch": "重生{0}",
+		"tc": "重生{0}",
+		"kr": "환생 {0}"
+	},
+	{
+		"id": "420103108",
+		"key": "rebirth_help_now",
+		"en": "Rebirths: {0}, the last one at realm {1}, realms of all rebirths: {2}",
+		"ch": "已重生{0}次，上次于第{1}境界，历次重生境界合计：{2}",
+		"tc": "已重生{0}次，上次於第{1}境界，歷次重生境界合計：{2}",
+		"kr": "환생 {0}회, 마지막은 {1}경지, 모든 환생의 경지 합계: {2}"
+	},
+	{
+		"id": "420103109",
+		"key": "rebirth_help_cond",
+		"en": "Conditions",
+		"ch": "条件",
+		"tc": "條件",
+		"kr": "조건"
+	},
+	{
+		"id": "420103110",
+		"key": "rebirth_help_c_on",
+		"en": "Rebirth on (S&M settings)",
+		"ch": "重生已开启（S&M设置）",
+		"tc": "重生已開啟（S&M設定）",
+		"kr": "환생 켜짐 (S&M 설정)"
+	},
+	{
+		"id": "420103111",
+		"key": "rebirth_help_c_grade",
+		"en": "Realm {0} or above (above your last rebirth)",
+		"ch": "境界达到第{0}境界（高于上次重生）",
+		"tc": "境界達到第{0}境界（高於上次重生）",
+		"kr": "{0}경지 이상 (마지막 환생보다 높게)"
+	},
+	{
+		"id": "420103112",
+		"key": "rebirth_help_c_town",
+		"en": "In a town of area {0} or more (above your last rebirth and at least your realm)",
+		"ch": "身处{0}区及以上的城镇（高于上次重生且不低于你的境界）",
+		"tc": "身處{0}區及以上的城鎮（高於上次重生且不低於你的境界）",
+		"kr": "{0}지역 이상의 마을 안 (마지막 환생보다 높고 경지 이상)"
+	},
+	{
+		"id": "420103113",
+		"key": "rebirth_help_c_sect",
+		"en": "Not in a sect",
+		"ch": "不属于任何宗门",
+		"tc": "不屬於任何宗門",
+		"kr": "문파에 속하지 않음"
+	},
+	{
+		"id": "420103114",
+		"key": "rebirth_help_gain",
+		"en": "Gains",
+		"ch": "收益",
+		"tc": "收益",
+		"kr": "이득"
+	},
+	{
+		"id": "420103115",
+		"key": "rebirth_help_g1",
+		"en": "A destiny of rebirth a time, +5% max HP a level (up to 10)",
+		"ch": "每次重生获得一个重生气运，每级+5%最大生命（至多10级）",
+		"tc": "每次重生獲得一個重生氣運，每級+5%最大生命（至多10級）",
+		"kr": "환생마다 환생 기운, 단계마다 최대 체력 +5% (최대 10)"
+	},
+	{
+		"id": "420103116",
+		"key": "rebirth_help_g2",
+		"en": "You keep your arts, items, bases and properties: at the same realm again you are stronger",
+		"ch": "保留功法、物品、资质与属性：回到同一境界时更强",
+		"tc": "保留功法、物品、資質與屬性：回到同一境界時更強",
+		"kr": "무공, 아이템, 자질, 속성 유지: 같은 경지에 다시 오르면 더 강함"
+	},
+	{
+		"id": "420103117",
+		"key": "rebirth_help_g3",
+		"en": "Minimum damage and the DP / SP refine bonuses grow with the realms of all rebirths (now +{0})",
+		"ch": "最低伤害及DP/SP精炼加成随历次重生境界合计增长（当前+{0}）",
+		"tc": "最低傷害及DP/SP精煉加成隨歷次重生境界合計增長（目前+{0}）",
+		"kr": "최소 피해와 DP/SP 정련 보너스가 모든 환생의 경지 합계만큼 증가 (현재 +{0})"
+	},
+	{
+		"id": "420103118",
+		"key": "rebirth_help_cost",
+		"en": "Costs",
+		"ch": "代价",
+		"tc": "代價",
+		"kr": "대가"
+	},
+	{
+		"id": "420103119",
+		"key": "rebirth_help_x1",
+		"en": "Realm and experience back to the start, reputation 0",
+		"ch": "境界与经验回到起点，声望归零",
+		"tc": "境界與經驗回到起點，聲望歸零",
+		"kr": "경지와 경험치가 처음으로, 명성 0"
+	},
+	{
+		"id": "420103120",
+		"key": "rebirth_help_x2",
+		"en": "Monsters stronger: +{0}% attack, defense and HP now (realms of all rebirths x {1}% x difficulty)",
+		"ch": "妖兽变强：当前攻击、防御、生命+{0}%（历次重生境界合计 x {1}% x 难度）",
+		"tc": "妖獸變強：目前攻擊、防禦、生命+{0}%（歷次重生境界合計 x {1}% x 難度）",
+		"kr": "요수 강화: 현재 공격, 방어, 체력 +{0}% (환생 경지 합계 x {1}% x 난이도)"
+	},
+	{
+		"id": "420103121",
+		"key": "rebirth_help_x3",
+		"en": "You leave your sect; repairing artifacts costs more",
+		"ch": "离开宗门；修复法宝更贵",
+		"tc": "離開宗門；修復法寶更貴",
+		"kr": "문파를 떠남; 법보 수리 비용 증가"
+	},
+	{
+		"id": "420103122",
+		"key": "rebirth_help_levels",
+		"en": "Destinies of rebirth",
+		"ch": "重生气运",
+		"tc": "重生氣運",
+		"kr": "환생 기운"
+	},
+	{
+		"id": "420103123",
+		"key": "rebirth_help_ready",
+		"en": "Ready to be reborn",
+		"ch": "可以重生",
+		"tc": "可以重生",
+		"kr": "환생 가능"
+	},
+	{
+		"id": "420103124",
+		"key": "rebirth_help_notready",
+		"en": "Conditions not met",
+		"ch": "条件未满足",
+		"tc": "條件未滿足",
+		"kr": "조건 미충족"
 	}
 ]

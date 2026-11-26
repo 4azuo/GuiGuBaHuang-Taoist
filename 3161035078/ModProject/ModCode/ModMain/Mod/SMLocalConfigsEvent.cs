@@ -31,16 +31,14 @@ namespace MOD_nE7UL2.Mod
         }
 
         /// <summary>
-        /// Applies AddLevelupExpRate to the level-up exp table.
+        /// Works out again the values of the game scaled by the S&amp;M configs of this save (ConfBalance: level-up exp, skill
+        /// mastery exp, skill MP cost / cooldown / requirements, power-up pills) from the values of the game: loading another
+        /// save in the same session does not multiply them twice.
         /// </summary>
         public override void OnLoadGame()
         {
             base.OnLoadGame();
-            //exp
-            foreach (var item in g.conf.roleGrade._allConfList)
-            {
-                item.exp = Calculate(item.exp, Configs.AddLevelupExpRate).Parse<int>();
-            }
+            ConfBalance.Apply(Configs);
         }
 
         /// <summary>

@@ -2,7 +2,7 @@
 	{
 		"id": "420022001",
 		"key": "apprentice420021001",
-		"en|ch|tc|kr": "Schmiede Lvl-1"
+		"en|ch|tc|kr": "Blasebalgjunge"
 	},
 	{
 		"id": "420023001",
@@ -12,7 +12,7 @@
 	{
 		"id": "420022002",
 		"key": "apprentice420021002",
-		"en|ch|tc|kr": "Schmiede Lvl-2"
+		"en|ch|tc|kr": "Ambossschüler"
 	},
 	{
 		"id": "420023002",
@@ -22,7 +22,7 @@
 	{
 		"id": "420022003",
 		"key": "apprentice420021003",
-		"en|ch|tc|kr": "Schmiede Lvl-3"
+		"en|ch|tc|kr": "Schmied"
 	},
 	{
 		"id": "420023003",
@@ -32,7 +32,7 @@
 	{
 		"id": "420022004",
 		"key": "apprentice420021004",
-		"en|ch|tc|kr": "Schmiede Lvl-4"
+		"en|ch|tc|kr": "Artefaktschmied"
 	},
 	{
 		"id": "420023004",
@@ -42,7 +42,7 @@
 	{
 		"id": "420022005",
 		"key": "apprentice420021005",
-		"en|ch|tc|kr": "Schmiede Lvl-5"
+		"en|ch|tc|kr": "Schmiedemeister"
 	},
 	{
 		"id": "420023005",
@@ -52,7 +52,7 @@
 	{
 		"id": "420022006",
 		"key": "apprentice420021006",
-		"en|ch|tc|kr": "Schmiede Lvl-6"
+		"en|ch|tc|kr": "Großschmied"
 	},
 	{
 		"id": "420023006",
@@ -62,7 +62,7 @@
 	{
 		"id": "420022007",
 		"key": "apprentice420021007",
-		"en|ch|tc|kr": "Schmiede Lvl-7"
+		"en|ch|tc|kr": "Schmiedepatriarch"
 	},
 	{
 		"id": "420023007",
@@ -72,7 +72,7 @@
 	{
 		"id": "420022008",
 		"key": "apprentice420021008",
-		"en|ch|tc|kr": "Schmiede Lvl-8"
+		"en|ch|tc|kr": "Schmiede-Ehrwürden"
 	},
 	{
 		"id": "420023008",
@@ -82,7 +82,7 @@
 	{
 		"id": "420022009",
 		"key": "apprentice420021009",
-		"en|ch|tc|kr": "Schmiede Lvl-9"
+		"en|ch|tc|kr": "Schmiedeheiliger"
 	},
 	{
 		"id": "420023009",
@@ -92,7 +92,7 @@
 	{
 		"id": "420022010",
 		"key": "apprentice420021010",
-		"en|ch|tc|kr": "Schmiede Lvl-10"
+		"en|ch|tc|kr": "Schmiedekaiser"
 	},
 	{
 		"id": "420023010",

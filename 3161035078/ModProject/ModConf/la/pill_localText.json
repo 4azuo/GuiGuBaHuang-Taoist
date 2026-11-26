@@ -1,0 +1,87 @@
+[
+	{
+		"id": -1000016000,
+		"key": "pill_title",
+		"en|ch|tc|kr": "Corpus pilularum"
+	},
+	{
+		"id": -1000016001,
+		"key": "pill_summary",
+		"en|ch|tc|kr": "Corpus pilularum gradus {0} (finis regni {1}), {2} puncta (gradus proximus: {3}).\nQuaeque potio in proelio sumpta gradum suum addit.\n- Gradus: +{4}% recreationis\n- Alchimia: +{5}% cum genere potionis a te facto\n- Pilula aurea novies versa: {6} (+10% HP / MP maximi per potionem)\n- Testamentum Regis Medicinae: {7}"
+	},
+	{
+		"id": -1000016002,
+		"key": "pill_yes",
+		"en|ch|tc|kr": "ita"
+	},
+	{
+		"id": -1000016003,
+		"key": "pill_no",
+		"en|ch|tc|kr": "non"
+	},
+	{
+		"id": -1000016004,
+		"key": "pill_king_heal",
+		"en|ch|tc|kr": "+30% recreationis"
+	},
+	{
+		"id": -1000016005,
+		"key": "pill_king_focus",
+		"en|ch|tc|kr": "dimidium intentionis potionis redditur"
+	},
+	{
+		"id": -1000016006,
+		"key": "log_pill_tier",
+		"en|ch|tc|kr": "Corpus pilularum: gradus {0} (+{1}% recreationis)."
+	},
+	{
+		"id": -1000016007,
+		"key": "log_pill_capped",
+		"en|ch|tc|kr": "Corpus pilularum: gradus {0} finis regni tui est; perrumpe ut progrediaris."
+	},
+	{
+		"id": -1000016008,
+		"key": "log_pill_nineturn",
+		"en|ch|tc|kr": "Pilulam auream novies versam perfecisti: quaeque potio nunc 10% HP / MP maximi plus dat."
+	},
+	{
+		"id": -1000016009,
+		"key": "log_pill_king_heal",
+		"en|ch|tc|kr": "Testamentum Regis Medicinae: potiones tuae 30% plus sanant."
+	},
+	{
+		"id": -1000016010,
+		"key": "log_pill_king_focus",
+		"en|ch|tc|kr": "Testamentum Regis Medicinae: dimidium intentionis potionis redit."
+	},
+	{
+		"id": -1000016011,
+		"key": "pill_nineturn",
+		"en|ch|tc|kr": "Fumus novem colorum ex fornace diruta surgit. Intus pilula sponte volvitur - pilula aurea novies versa, mille annos imperfecta.\nOpus est {1} herbis et {0:#,##0} [icon:zm_lingshi] lapidibus spiritalibus ad ignem."
+	},
+	{
+		"id": -1000016012,
+		"key": "pill_nineturn_o1",
+		"en|ch|tc|kr": "Pilulam perficere"
+	},
+	{
+		"id": -1000016013,
+		"key": "pill_nineturn_o2",
+		"en|ch|tc|kr": "Relinquere"
+	},
+	{
+		"id": -1000016014,
+		"key": "pill_nineturn_leave",
+		"en|ch|tc|kr": "Abis. Post te fumus evanescit et fornax frigescit."
+	},
+	{
+		"id": -1000016015,
+		"key": "pill_nineturn_noherb",
+		"en|ch|tc|kr": "{1} herbis opus est. Fumus evanescit priusquam eas invenias."
+	},
+	{
+		"id": -1000016016,
+		"key": "pill_nineturn_done",
+		"en|ch|tc|kr": "Novem dies noctesque. Ultimo mane pilula volvi desinit et in palmam tuam descendit, calida ut cordis pulsus.\nAbhinc quaeque potio 10% HP / MP maximi plus dat."
+	}
+]

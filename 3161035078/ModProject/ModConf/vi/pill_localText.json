@@ -1,0 +1,87 @@
+[
+	{
+		"id": -1000016000,
+		"key": "pill_title",
+		"en|ch|tc|kr": "Dược Thể"
+	},
+	{
+		"id": -1000016001,
+		"key": "pill_summary",
+		"en|ch|tc|kr": "Dược Thể tầng {0} (giới hạn theo cảnh giới {1}), {2} điểm dược lực (tầng sau: {3}).\nMỗi viên thuốc hồi dùng trong trận cộng thêm phẩm của nó.\n- Tầng: +{4}% lượng hồi của thuốc\n- Luyện đan: +{5}% với loại thuốc bạn từng luyện\n- Cửu Chuyển Kim Đan: {6} (mỗi viên hồi thêm 10% HP / MP tối đa)\n- Dược Vương di thư: {7}"
+	},
+	{
+		"id": -1000016002,
+		"key": "pill_yes",
+		"en|ch|tc|kr": "có"
+	},
+	{
+		"id": -1000016003,
+		"key": "pill_no",
+		"en|ch|tc|kr": "không"
+	},
+	{
+		"id": -1000016004,
+		"key": "pill_king_heal",
+		"en|ch|tc|kr": "+30% lượng hồi"
+	},
+	{
+		"id": -1000016005,
+		"key": "pill_king_focus",
+		"en|ch|tc|kr": "hoàn lại một nửa niệm lực của thuốc"
+	},
+	{
+		"id": -1000016006,
+		"key": "log_pill_tier",
+		"en|ch|tc|kr": "Dược Thể: tầng {0} (+{1}% lượng hồi của thuốc)."
+	},
+	{
+		"id": -1000016007,
+		"key": "log_pill_capped",
+		"en|ch|tc|kr": "Dược Thể: tầng {0} là giới hạn của cảnh giới hiện tại; đột phá để lên tiếp."
+	},
+	{
+		"id": -1000016008,
+		"key": "log_pill_nineturn",
+		"en|ch|tc|kr": "Bạn đã luyện thành Cửu Chuyển Kim Đan: từ nay mỗi viên thuốc hồi thêm 10% HP / MP tối đa."
+	},
+	{
+		"id": -1000016009,
+		"key": "log_pill_king_heal",
+		"en|ch|tc|kr": "Dược Vương di thư: thuốc của bạn hồi nhiều hơn 30%."
+	},
+	{
+		"id": -1000016010,
+		"key": "log_pill_king_focus",
+		"en|ch|tc|kr": "Dược Vương di thư: dùng thuốc được hoàn lại một nửa niệm lực."
+	},
+	{
+		"id": -1000016011,
+		"key": "pill_nineturn",
+		"en|ch|tc|kr": "Khói chín màu bốc lên từ một lò đan đổ nát. Bên trong, một viên đan tự xoay - Cửu Chuyển Kim Đan, nghìn năm chưa thành.\nCần {1} cây thảo dược và {0:#,##0} [icon:zm_lingshi] linh thạch để giữ lửa."
+	},
+	{
+		"id": -1000016012,
+		"key": "pill_nineturn_o1",
+		"en|ch|tc|kr": "Luyện thành viên đan"
+	},
+	{
+		"id": -1000016013,
+		"key": "pill_nineturn_o2",
+		"en|ch|tc|kr": "Bỏ đi"
+	},
+	{
+		"id": -1000016014,
+		"key": "pill_nineturn_leave",
+		"en|ch|tc|kr": "Bạn rời đi. Sau lưng, khói chín màu tan dần và lò đan nguội lạnh."
+	},
+	{
+		"id": -1000016015,
+		"key": "pill_nineturn_noherb",
+		"en|ch|tc|kr": "Cần {1} cây thảo dược để nuôi lò. Khói đã tan trước khi bạn kịp tìm đủ."
+	},
+	{
+		"id": -1000016016,
+		"key": "pill_nineturn_done",
+		"en|ch|tc|kr": "Chín ngày chín đêm. Sáng cuối cùng, viên đan ngừng xoay và rơi vào lòng bàn tay bạn, ấm như nhịp tim.\nTừ nay mỗi viên thuốc hồi thêm 10% HP / MP tối đa."
+	}
+]

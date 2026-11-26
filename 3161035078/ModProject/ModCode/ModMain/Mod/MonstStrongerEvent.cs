@@ -212,7 +212,7 @@ namespace MOD_nE7UL2.Mod
                 if (Configs.GrowRate.ContainsKey(monstData.monstType))
                 {
                     //grow-rate & kill-rate
-                    var r = ((Counter * Configs.GrowRate[monstData.monstType]) + (KillCounter[monstData.monstType] * Configs.KillGrowRate[monstData.monstType])) * monstData.grade.value * gameLvl;
+                    var r = Configs.Growth(Counter, KillCounter[monstData.monstType], Configs.GrowRate[monstData.monstType], Configs.KillGrowRate[monstData.monstType], monstData.grade.value, gameLvl);
                     monstData.attack.baseValue = ValueHelper.SafeAddInt(monstData.attack.baseValue, atk * r * Configs.AtkR);
                     monstData.defense.baseValue = ValueHelper.SafeAddInt(monstData.defense.baseValue, def * r * Configs.DefR);
                     monstData.maxHP.baseValue = ValueHelper.SafeAddInt(monstData.maxHP.baseValue, mhp * r * Configs.MHpR);
@@ -233,20 +233,11 @@ namespace MOD_nE7UL2.Mod
                 monstData.defense.baseValue = ValueHelper.SafeAddInt(monstData.defense.baseValue, def * rebirthRatio * Configs.DefR);
                 monstData.maxHP.baseValue = ValueHelper.SafeAddInt(monstData.maxHP.baseValue, mhp * rebirthRatio * Configs.MHpR);
 
-                //basis
-                //DebugHelper.WriteLine("11");
-                monstData.basisBlade.baseValue = ValueHelper.SafeMulInt(monstData.basisBlade.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisEarth.baseValue = ValueHelper.SafeMulInt(monstData.basisEarth.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisFinger.baseValue = ValueHelper.SafeMulInt(monstData.basisFinger.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisFire.baseValue = ValueHelper.SafeMulInt(monstData.basisFire.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisFist.baseValue = ValueHelper.SafeMulInt(monstData.basisFist.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisFroze.baseValue = ValueHelper.SafeMulInt(monstData.basisFroze.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisPalm.baseValue = ValueHelper.SafeMulInt(monstData.basisPalm.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisSpear.baseValue = ValueHelper.SafeMulInt(monstData.basisSpear.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisSword.baseValue = ValueHelper.SafeMulInt(monstData.basisSword.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisThunder.baseValue = ValueHelper.SafeMulInt(monstData.basisThunder.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisWind.baseValue = ValueHelper.SafeMulInt(monstData.basisWind.baseValue, monstData.grade.value * gameLvl);
-                monstData.basisWood.baseValue = ValueHelper.SafeMulInt(monstData.basisWood.baseValue, monstData.grade.value * gameLvl);
+                //basis: x (1 + BasisGradeRate x (grade - 1)) x (1 + BasisGameLvlRate x (game level - 1))
+                var basisMul = Configs.BasisMultiplier(monstData.grade.value, gameLvl);
+                foreach (var b in new[] { monstData.basisBlade, monstData.basisEarth, monstData.basisFinger, monstData.basisFire, monstData.basisFist, monstData.basisFroze,
+                    monstData.basisPalm, monstData.basisSpear, monstData.basisSword, monstData.basisThunder, monstData.basisWind, monstData.basisWood })
+                    b.baseValue = ValueHelper.SafeMulInt(b.baseValue, basisMul);
 
                 //others
                 //DebugHelper.WriteLine("12");

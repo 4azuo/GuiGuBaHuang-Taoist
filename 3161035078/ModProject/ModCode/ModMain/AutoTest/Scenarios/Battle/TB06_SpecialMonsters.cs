@@ -42,19 +42,26 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
             d.hp = hp;
         }
 
+        private static SMGlobalConfigsEvent Cfg => SMLocalConfigsEvent.Instance.Configs;
+        private static float[] Rates() => new[] { Cfg.AddMonstShieldRate, Cfg.AddMonstExplodeRate, Cfg.AddMonstMultiplyRate };
+        private static void SetRates(params float[] r) { Cfg.AddMonstShieldRate = r[0]; Cfg.AddMonstExplodeRate = r[1]; Cfg.AddMonstMultiplyRate = r[2]; }
+
         /// <summary>Builds the scenario and its steps.</summary>
         public Scenario Create()
         {
-            var specialRate = 0f;
+            var specialRates = new float[3];
+            var noShield = false;
             var counter = 0;
             UnitCtrlBase spawned = null;
             return new Scenario { Id = "TB-06", Feature = "SpecialMonsterEvent/MonstStrongerEvent", Title = "Special monsters (shield, split) and monsters getting stronger", Overlay = false }
                 .Step("travel", c => TravelTo(c, FindTown(t => t != null)))
                 .Step("join wave", c =>
                 {
-                    specialRate = SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate;
-                    SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate = 1000f;
-                    c.Info($"special monster rate {specialRate} -> 1000 for the test");
+                    specialRates = Rates();
+                    noShield = Cfg.NoMonsterShield;
+                    Cfg.NoMonsterShield = false;
+                    SetRates(1000f, 1000f, 1000f);
+                    c.Info($"special monster rate {string.Join("/", specialRates)} -> 1000 for the test");
                     MapBuildBattleEvent.JoinMonstWave(BagTown(c), MapBuildBattleEvent.TOWN_MONST_WAVE_DUNGEON_BASE_ID);
                 })
                 .Wait("battle loaded", c =>
@@ -80,7 +87,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
                     // the x1000 rate is only for the spawned monsters (shields) and for the 3 kills below: left on, every
                     // monster killed by the guards splits and its replacement splits again -> exponential monster count, game frozen
                     c.Bag["spawned"] = ModBattleEvent.BattleMonsters.Where(IsSpecialCandidate).ToList();
-                    SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate = specialRate;
+                    SetRates(specialRates);
                 }, 500)
                 .Step("shields", c =>
                 {
@@ -92,7 +99,7 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
                     var m0 = mons[0];
                     var md = m0.data.TryCast<UnitDataMonst>();
                     var gameLvl = GameHelper.GetGameLevel().Parse<int>();
-                    c.Info($"game level {GameHelper.GetGameLevel()} -> {gameLvl}, monster grade {md.grade.value}, shield chance {SMLocalConfigsEvent.Instance.Calculate(SpecialMonsterEvent.MONST_SHIELD_CHANCE * md.grade.value * gameLvl, SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate):0.##}%");
+                    c.Info($"game level {GameHelper.GetGameLevel()} -> {gameLvl}, monster grade {md.grade.value}, shield chance {SMLocalConfigsEvent.Instance.Calculate(SpecialMonsterEvent.MONST_SHIELD_CHANCE * md.grade.value * gameLvl, Cfg.AddMonstShieldRate):0.##}%");
                     c.Info($"effects of monster #1: {string.Join(", ", m0.effects.ToArray().Select(x => x?.data?.effectItem?.id.ToString() ?? "?"))}");
                     c.Info($"shields counted at load, battle already started: {c.Bag["atLoadStarted"]}");
                     c.Assert(shielded > 0, $"monsters spawned with a shield: {shielded}/{mons.Count}");
@@ -103,6 +110,28 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
                         c.Info($"after calling SpecialMonsterEvent.OnBattleUnitInto again: shield {HasShield(m0)}, effects {string.Join(", ", m0.effects.ToArray().Select(x => x?.data?.effectItem?.id.ToString() ?? "?"))}");
                     }
                 }, 2000)
+                .Step("shield options", c =>
+                {
+                    if (!InBattle) { c.Assert(false, "still in the battle (the wave ended too early)"); return; }
+                    var any = ModBattleEvent.BattleMonsters.FirstOrDefault(IsSpecialCandidate);
+                    if (any == null) { c.Skip("no monster"); return; }
+                    var d = any.data.TryCast<UnitDataMonst>();
+                    var ratio = d.monstType == MonstType.Common ? 0.3 : 0.4;
+                    c.Assert(System.Math.Abs(SpecialMonsterEvent.GetShield(d) - d.maxHP.value * ratio) <= 1, $"shield of {d.monstType}: {SpecialMonsterEvent.GetShield(d)} of {d.maxHP.value} HP");
+                    var before = any.effects.Count;
+                    try
+                    {
+                        SetRates(1000f, 1000f, 1000f);
+                        Cfg.NoMonsterShield = true;
+                        SpecialMonsterEvent.Instance.OnBattleUnitInto(any);
+                        c.AssertEqual(before, any.effects.Count, "No Monster Shield: no shield added at a rate of x1000");
+                        Cfg.NoMonsterShield = false;
+                        SetRates(-1f, 1000f, 1000f);
+                        for (var i = 0; i < 50; i++) SpecialMonsterEvent.Instance.OnBattleUnitInto(any);
+                        c.AssertEqual(before, any.effects.Count, "shield rate -100 %: no shield added in 50 rolls, the other rates at x1000");
+                    }
+                    finally { Cfg.NoMonsterShield = false; SetRates(specialRates); }
+                }, 500)
                 .Step("stronger", c =>
                 {
                     if (!InBattle) { c.Assert(false, "still in the battle (the wave ended too early)"); return; }
@@ -189,9 +218,9 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
                     var split = SpecialMonsterEvent.Instance.MultipliedUnits.Count;
                     var targets = ModBattleEvent.BattleMonsters.Where(IsSpecialCandidate).Where(x => x != spawned).Take(3).ToList();
                     var types = targets.Select(x => x.data.TryCast<UnitDataMonst>().monstType).ToList();
-                    SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate = 1000f;
+                    SetRates(1000f, 1000f, 1000f);
                     try { foreach (var t in targets) PlayerKill(t); }
-                    finally { SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate = specialRate; }
+                    finally { SetRates(specialRates); }
                     c.Assert(targets.All(x => x.isDie), $"{targets.Count} monsters killed");
                     foreach (var t in types.Distinct())
                         c.AssertEqual(kc[t] + types.Count(x => x == t), MonstStrongerEvent.Instance.KillCounter[t], $"{t} kill counter");
@@ -201,7 +230,8 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Battle
                 .Wait("back to the map", c => LeaveBattle(), 90000, 2000)
                 .Step("after battle", c =>
                 {
-                    SMLocalConfigsEvent.Instance.Configs.AddSpecialMonsterRate = specialRate;
+                    SetRates(specialRates);
+                    Cfg.NoMonsterShield = noShield;
                     c.Assert(OnMap, "player back on the world map");
                     c.AssertEqual(0, SpecialMonsterEvent.Instance.MultipliedUnits.Count, "split list cleared at battle end");
                 }, 2000);

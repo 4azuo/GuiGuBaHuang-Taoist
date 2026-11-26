@@ -376,7 +376,9 @@ Results: console + `logs/unittests/unittests.trx`. The tests reference the mods'
 | `ModLib/ValueParseHelperTests.cs` | `ValueHelper` (IsBetween, FixValue, Is, NearlyEqual, SafeSumInt), `ParseHelper` (Parse, defaults, ParseJson) |
 | `ModLib/ObjectTests.cs` | `EnumObject` lookups, `EnumObjectConverter` round trip, `MultiValue`, `MathLogicOptions`, `EncryptionHelper`, `PngEncodeHelper` chunks, `ModBattleEvent` damage keys/types |
 | `Taoist/FormulaTests.cs` | `ExpertEvent.GetExpertNeedExp`, `SMLocalConfigsEvent.Calculate`, `PriceHelper.UpPrice` and ratio tables, `BattleModifyEvent.BlockRatio` |
-| `Taoist/ConfigTests.cs` | every ModConf JSON parses, `mod_configs.json` sections/keys match `ModStts`, feature config files match their classes and defaults (`FeatureConfigs_MatchDefaults`), unique CacheIds, `_EventOrderIndex.json` vs events, every `GameTool.LS("key")` exists in LocalText, unique LocalText ids/keys, `scenarios.json` vs scenario classes |
+| `Taoist/ConfigTests.cs` | every ModConf JSON parses, `mod_configs.json` sections/keys match `ModStts`, feature config files match their classes and defaults (`FeatureConfigs_MatchDefaults`), unique CacheIds, `_EventOrderIndex.json` vs events, every `GameTool.LS("key")` exists in LocalText, unique LocalText ids/keys, no broken characters in the texts (`LocalText_NoBrokenCharacters`), `scenarios.json` vs scenario classes |
+| `Taoist/BalanceTests.cs` | the balance formulas of 6.3: monster basis / growth, time bonus, MP block cost and cap, guard cap of the MP / SP / DP blocks, regeneration, skill and pill ratios, potions, pill body, constitutions |
+| `Taoist/DestinyTests.cs` | the destinies: a luck a constitution tier, every rank destiny name (constitutions, artisan, rebirth, trainee, merchant) unique in every language, no "Lvl" |
 | `KnownIssues.cs` | `[TestCategory("KnownIssue")]` tests reproducing the open issues of [../Known-Issues.md](../Known-Issues.md) (none at the moment), excluded by default |
 
 What can / cannot be unit tested:

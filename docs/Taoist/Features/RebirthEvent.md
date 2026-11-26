@@ -20,7 +20,7 @@ Rebirth (a button of the player info, beside the damage calculation; until 6.0 a
 
 | Hook | What happens |
 |---|---|
-| Player info (UIEvent, the player's own) | Button `RebirthEvent.ButtonText` (`rebirth{420101001 + RebirthCount}`) left of "Damage Calc", tooltip `rebirth420103103`; shown unless NoRebirth. A click: `RebirthEvent.Open` - `Missing(player)` tells what is missing (`rebirth_need_grade`: grade above RebirthLevel; `rebirth_need_town`: in a town with `areaBaseID > RebirthLevel` and `>= grade`; `rebirth420103100`: no sect), else the confirmation, the rebirth, the player info closed. |
+| Player info (UIEvent, the player's own) | Button `RebirthEvent.ButtonText` (`rebirth_button`: "Rebirth {RebirthCount + 1}"; the destinies have names of their own) left of "Damage Calc", and a "?" left of it (`OpenHelp`: the rebirths done, the conditions met or not, the gains, the costs with the monster growth now, the 10 destinies of rebirth with the one of the player marked; `Help`, texts `rebirth_help_*`; checked by TG-93); shown unless NoRebirth. A click: `RebirthEvent.Open` - `Missing(player)` tells what is missing (`rebirth_need_grade`: grade above RebirthLevel; `rebirth_need_town`: in a town with `areaBaseID > RebirthLevel` and `>= grade`; `rebirth420103100`: no sect), else the confirmation, the rebirth, the player info closed. |
 
 Click:
 
@@ -30,6 +30,10 @@ Click:
    - grade reset (`ResetGradeLevel`), exp cleared, reputation 0;
    - lucks `420101001..420101010` removed, luck `420101000 + RebirthCount` added;
    - drama `420109999`.
+
+## Destinies
+
+A destiny a rebirth (`rebirth4201010xx`, +5 % max HP a level): Second Life, Past Wisdom, Old Soul, Wheel Walker, Nirvana Body, Phoenix Body, Myriad Lives, Samsara Breaker, Deathless Soul, Eternal One (were "Rebirth 1"...).
 
 ## Notes
 

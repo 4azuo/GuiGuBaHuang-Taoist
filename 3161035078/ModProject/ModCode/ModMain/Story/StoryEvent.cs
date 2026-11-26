@@ -40,7 +40,7 @@ namespace MOD_nE7UL2.Story
             new LineG_HundredYearWager(), new LineH_RoadsideInn(), new LineI_SealedTomb(),
             new LineJ_CursedDisciple(), new LineK_ThunderRemnant(), new LineL_HeartDemon(),
             new LineM_OldTieForge(), new LineN_HouseSeven(), new LineO_AshesOfTown(), new LineP_SenseVoice(),
-            new LineQ_NamelessArt(), new LineR_LastHeir(),
+            new LineQ_NamelessArt(), new LineR_LastHeir(), new LineS_MedicineKing(),
         };
 
         public Dictionary<string, StoryState> Lines { get; set; } = new Dictionary<string, StoryState>();

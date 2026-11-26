@@ -1,0 +1,207 @@
+[
+	{
+		"id": -1000017000,
+		"key": "const_title",
+		"en|ch|tc|kr": "Constitutions"
+	},
+	{
+		"id": -1000017001,
+		"key": "const_line",
+		"en|ch|tc|kr": "{0} : palier {1} ({2})"
+	},
+	{
+		"id": -1000017002,
+		"key": "const_progress",
+		"en|ch|tc|kr": "{0} / {1} points, limite du royaume {2}"
+	},
+	{
+		"id": -1000017003,
+		"key": "const_innate",
+		"en|ch|tc|kr": "innée : grandit avec votre royaume"
+	},
+	{
+		"id": -1000017004,
+		"key": "const_not_born",
+		"en|ch|tc|kr": "seulement pour ceux qui en sont nés"
+	},
+	{
+		"id": -1000017005,
+		"key": "const_absorb",
+		"en|ch|tc|kr": "Absorber un trésor"
+	},
+	{
+		"id": -1000017006,
+		"key": "const_taste",
+		"en|ch|tc|kr": "Goûter une herbe crue"
+	},
+	{
+		"id": -1000017007,
+		"key": "const_no_treasure",
+		"en|ch|tc|kr": "Aucun trésor dans le sac (herbes ou minerais de niveau 4 et plus)."
+	},
+	{
+		"id": -1000017008,
+		"key": "const_absorbed",
+		"en|ch|tc|kr": "Le trésor fond dans votre sang. Quelque chose d'ancien et d'écailleux remue dans vos veines (Sang de dragon)."
+	},
+	{
+		"id": -1000017009,
+		"key": "const_no_herb",
+		"en|ch|tc|kr": "Aucune herbe dans le sac."
+	},
+	{
+		"id": -1000017010,
+		"key": "const_tasted",
+		"en|ch|tc|kr": "Amer, puis brûlant. Vous perdez des PV et votre corps se souvient du poison (Corps venimeux)."
+	},
+	{
+		"id": -1000017011,
+		"key": "log_const_tier",
+		"en|ch|tc|kr": "Constitution {0} : palier {1}."
+	},
+	{
+		"id": -1000017012,
+		"key": "log_const_born",
+		"en|ch|tc|kr": "Vous êtes né avec une constitution rare : {0}."
+	},
+	{
+		"id": -1000017013,
+		"key": "const_pill",
+		"en|ch|tc|kr": "Corps des pilules"
+	},
+	{
+		"id": -1000017014,
+		"key": "const_pill_how",
+		"en|ch|tc|kr": "Potions prises en combat (leur grade)."
+	},
+	{
+		"id": -1000017015,
+		"key": "const_pill_gain",
+		"en|ch|tc|kr": "Par palier : +10% de récupération."
+	},
+	{
+		"id": -1000017016,
+		"key": "const_swordbone",
+		"en|ch|tc|kr": "Os d'épée"
+	},
+	{
+		"id": -1000017017,
+		"key": "const_swordbone_how",
+		"en|ch|tc|kr": "Coups portés avec des arts d'épée (1 point par coup, x50 par palier)."
+	},
+	{
+		"id": -1000017018,
+		"key": "const_swordbone_gain",
+		"en|ch|tc|kr": "Par palier : +5% de base d'épée, +1% d'attaque."
+	},
+	{
+		"id": -1000017019,
+		"key": "const_vajra",
+		"en|ch|tc|kr": "Corps vajra"
+	},
+	{
+		"id": -1000017020,
+		"key": "const_vajra_how",
+		"en|ch|tc|kr": "Coups portés avec des arts du poing, de la paume ou du doigt (1 point par coup, x50 par palier)."
+	},
+	{
+		"id": -1000017021,
+		"key": "const_vajra_gain",
+		"en|ch|tc|kr": "Par palier : +3% de défense, +2% de PV max."
+	},
+	{
+		"id": -1000017022,
+		"key": "const_innatespirit",
+		"en|ch|tc|kr": "Corps d'esprit inné"
+	},
+	{
+		"id": -1000017023,
+		"key": "const_innatespirit_how",
+		"en|ch|tc|kr": "De naissance (rare) ; grandit avec le royaume."
+	},
+	{
+		"id": -1000017024,
+		"key": "const_innatespirit_gain",
+		"en|ch|tc|kr": "Par palier : +4% de PM max, +1% d'attaque."
+	},
+	{
+		"id": -1000017025,
+		"key": "const_dragonblood",
+		"en|ch|tc|kr": "Corps du sang de dragon"
+	},
+	{
+		"id": -1000017026,
+		"key": "const_dragonblood_how",
+		"en|ch|tc|kr": "De naissance (très rare) ou en absorbant des trésors (niveau² points, x2 par palier)."
+	},
+	{
+		"id": -1000017027,
+		"key": "const_dragonblood_gain",
+		"en|ch|tc|kr": "Par palier : +4% de PV max, +1% d'attaque."
+	},
+	{
+		"id": -1000017028,
+		"key": "const_thunder",
+		"en|ch|tc|kr": "Corps du tonnerre"
+	},
+	{
+		"id": -1000017029,
+		"key": "const_thunder_how",
+		"en|ch|tc|kr": "Épreuves de foudre survécues (10 x royaume points), histoire K (200)."
+	},
+	{
+		"id": -1000017030,
+		"key": "const_thunder_gain",
+		"en|ch|tc|kr": "Par palier : +5% de base du tonnerre, +1% d'attaque."
+	},
+	{
+		"id": -1000017031,
+		"key": "const_venom",
+		"en|ch|tc|kr": "Corps venimeux"
+	},
+	{
+		"id": -1000017032,
+		"key": "const_venom_how",
+		"en|ch|tc|kr": "Herbes crues goûtées (niveau + 1, -10% PV chacune), histoire S : le poison goûté (100)."
+	},
+	{
+		"id": -1000017033,
+		"key": "const_venom_gain",
+		"en|ch|tc|kr": "Par palier : +2% de défense, +5% de base du bois (récupération de PV)."
+	},
+	{
+		"id": -1000017034,
+		"key": "const_awakening",
+		"en|ch|tc|kr": "non éveillée : {0} / {1} points, puis {2}% de chance à chaque fois (au plus {3}%)"
+	},
+	{
+		"id": -1000017035,
+		"key": "log_const_awaken",
+		"en|ch|tc|kr": "Votre {0} s'est éveillé !"
+	},
+	{
+		"id": -1000017036,
+		"key": "const_ui_header",
+		"en|ch|tc|kr": "Royaume {0} : constitutions au palier {1} maximum. Éveil : les points du palier 1, puis une petite chance (moins de 1 %) à chaque gain."
+	},
+	{
+		"id": -1000017037,
+		"key": "const_ui_tier",
+		"en|ch|tc|kr": "Palier {0} : {1}"
+	},
+	{
+		"id": -1000017038,
+		"key": "const_ui_locked",
+		"en|ch|tc|kr": "Non éveillé"
+	},
+	{
+		"id": -1000017039,
+		"key": "const_ui_owned",
+		"en|ch|tc|kr": "Éveillées ({0})"
+	},
+	{
+		"id": -1000017040,
+		"key": "const_ui_notyet",
+		"en|ch|tc|kr": "Pas encore éveillées ({0})"
+	}
+]

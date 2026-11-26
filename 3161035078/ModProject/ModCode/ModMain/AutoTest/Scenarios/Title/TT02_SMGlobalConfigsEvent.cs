@@ -35,16 +35,38 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                 {
                     var btn = FindButtons(UIType.Login, SMGlobalConfigsEvent.TITLE).FirstOrDefault();
                     if (!c.Assert(btn != null, "S&M button exists on the title screen")) return;
+                    // a window of the title screen (the "[INFO] Taoist" of a new version, a notice) holds TextInfoLong:
+                    // closed first, the S&M window waits for it otherwise
+                    if (g.ui.HasUI(UIType.TextInfoLong)) { c.Info("closing a window in TextInfoLong first"); g.ui.CloseUI(UIType.TextInfoLong); }
                     btn.Item.onClick.Invoke();
                 })
+                .Wait("S&M window shown", c =>
+                {
+                    if (g.ui.HasUI(UIType.TextInfoLong) && Window != null && Window.Pages.Count >= 5) return true;
+                    // another window came first (shown later by the title screen): closed, the button clicked again
+                    if (g.ui.HasUI(UIType.TextInfoLong) && (Window == null || Window.Pages.Count < 5))
+                    {
+                        g.ui.CloseUI(UIType.TextInfoLong);
+                        FindButtons(UIType.Login, SMGlobalConfigsEvent.TITLE).FirstOrDefault()?.Item.onClick.Invoke();
+                    }
+                    return false;
+                }, 20000, 1000)
                 .Step("page 1", c =>
                 {
                     c.Assert(g.ui.HasUI(UIType.TextInfoLong) && Window != null, "S&M window is open");
                     var modPages = ModOptionsHelper.LoadedOptions().Count;   // at least a page per mod with options (Dao of Creation)
-                    c.Assert(Window?.Pages.Count >= 4 + modPages && (modPages > 0 || Window?.Pages.Count == 4), $"4 pages and those of {modPages} mod(s) with options ({Window?.Pages.Count})");
+                    c.Assert(Window?.Pages.Count >= 5 + modPages && (modPages > 0 || Window?.Pages.Count == 5), $"5 pages and those of {modPages} mod(s) with options ({Window?.Pages.Count})");
                     c.AssertEqual(0, Window?.CurrentPageIndex ?? -1, "page 1 shown first");
                     c.Bag["score"] = SMGlobalConfigsEvent.CalSMTotalScore();
                     c.Info($"total score: {c.Bag["score"]}");
+                    var labels = new[] { "smcfgs214", "smcfgs215", "smcfgs216", "smcfgs217" }.Select(k => GameTool.LS(k)).ToList();
+                    c.AssertEqual(4, Window.Items.OfType<ModLib.Object.UIItemText>().Count(x => labels.Contains(x.GetFormat() ?? string.Empty)), "shield, explode and multiply sliders, no monster shield");
+                    c.Info(SMGlobalConfigsEvent.SpecialMonsterHelp());
+                    c.Info(SMGlobalConfigsEvent.DependOnPlayerHelp());
+                    // a config saved before the rate was split
+                    var old = new SMGlobalConfigsEvent();
+                    Newtonsoft.Json.JsonConvert.PopulateObject("{\"AddSpecialMonsterRate\":0.4}", old);
+                    c.Assert(old.AddMonstShieldRate == 0.4f && old.AddMonstExplodeRate == 0.4f && old.AddMonstMultiplyRate == 0.4f, "old special monster rate read into the three rates");
                 })
                 .Step("page 2", c =>
                 {
@@ -95,18 +117,69 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Title
                 .Step("page 4", c =>
                 {
                     Window.NextPage();
-                    c.AssertEqual(3, Window.CurrentPageIndex, "page 4: NPC storylines");
+                    c.AssertEqual(3, Window.CurrentPageIndex, "page 4: skills and pills");
+                    var labels = SMGlobalConfigsEvent.SKILL_SLIDERS.Select(x => GameTool.LS(x.key)).ToList();
+                    var sliders = Window.Items.OfType<ModLib.Object.UIItemText>().Where(x => labels.Contains(x.GetFormat() ?? string.Empty))
+                        .Select(x => x.Parent as ModLib.Object.UIItemComposite).Where(x => x != null).ToList();
+                    c.AssertEqual(8, sliders.Count, "8 sliders: mastery exp, MP cost, cooldown, basis / Dao points required, power-up pills");
+                    var before = SMGlobalConfigsEvent.CalSMTotalScore();
+                    var mp = (ModLib.Object.UIItemComposite)Window.Items.OfType<ModLib.Object.UIItemText>().First(x => x.GetFormat() == GameTool.LS("smcfgs227")).Parent;
+                    var old = mp.Get().Parse<float>();
+                    mp.MainComponent.Set(old + 1f > 1f ? 1f : old + 1f);
+                    c.Info($"MP cost slider {old} -> {mp.Get()}: score {before} -> {SMGlobalConfigsEvent.CalSMTotalScore()}");
+                    c.Assert(SMGlobalConfigsEvent.CalSMTotalScore() > before, "dearer skills: more points");
+                    mp.MainComponent.Set(old);
+                    c.AssertEqual(before, SMGlobalConfigsEvent.CalSMTotalScore(), "slider put back");
+                    var keep = Window.Items.OfType<ModLib.Object.UIItemText>().FirstOrDefault(x => x.GetFormat() == GameTool.LS("smcfgs239"))?.Parent as ModLib.Object.UIItemComposite;
+                    c.Assert(keep != null, $"toggle 'Keep balance numbers' on page 4 ({keep?.Get()})");
+                }, 1000)
+                .Step("performance", c =>
+                {
+                    // the performance button (under Level 10, every page): on = balance numbers off, the processing options on
+                    var cfg = SMGlobalConfigsEvent.Instance;
+                    var off = SMGlobalConfigsEvent.PerformanceText(cfg.PerformanceShown);
+                    var btn = FindButtons(UIType.TextInfoLong, off).FirstOrDefault(x => x.GetFormat() == off);
+                    if (!c.Assert(btn != null, $"button '{off}' under Level 10")) return;
+                    var score = SMGlobalConfigsEvent.CalSMTotalScore();
+                    var wasOn = cfg.PerformanceShown;
+                    if (wasOn) btn.Item.onClick.Invoke();   // off first: the test turns it on
+                    btn.Item.onClick.Invoke();
+                    c.Assert(cfg.PerformanceShown, "performance mode on");
+                    c.AssertEqual(SMGlobalConfigsEvent.PerformanceText(true), btn.GetFormat(), "the button shows ON");
+                    var keep = (ModLib.Object.UIItemComposite)Window.Items.OfType<ModLib.Object.UIItemText>().First(x => x.GetFormat() == GameTool.LS("smcfgs239")).Parent;
+                    c.Assert(!keep.Get().Parse<bool>(), "balance numbers off");
+                    var near = (ModLib.Object.UIItemComposite)Window.Items.OfType<ModLib.Object.UIItemText>().First(x => x.GetFormat() == GameTool.LS("smcfgs138")).Parent;
+                    c.Assert(near.Get().Parse<bool>(), "All Functions Apply To Nearest Units on");
+                    c.Info($"score {score} -> {SMGlobalConfigsEvent.CalSMTotalScore()}");
+                    c.Bag["perfWasOn"] = wasOn;
+                }, 1000)
+                .Step("performance shown", c => c.Info($"performance mode on: {SMGlobalConfigsEvent.Instance.PerformanceShown}"), 1000) // screenshot: ON
+                .Step("performance back", c =>
+                {
+                    // back as it was (the window is cancelled at the end)
+                    if (c.Bag.TryGetValue("perfWasOn", out var w) && !(bool)w && SMGlobalConfigsEvent.Instance.PerformanceShown)
+                    {
+                        var on = SMGlobalConfigsEvent.PerformanceText(true);
+                        FindButtons(UIType.TextInfoLong, on).FirstOrDefault(x => x.GetFormat() == on)?.Item.onClick.Invoke();
+                    }
+                    c.Info($"performance mode: {SMGlobalConfigsEvent.Instance.PerformanceShown}");
+                })
+                .Step("page 5", c =>
+                {
+                    Window.NextPage();
+                    c.AssertEqual(4, Window.CurrentPageIndex, "page 5: NPC storylines");
                     var lines = new[] { "smcfgs169", "smcfgs191", "smcfgs208", "smcfgs211" }.Select(k => GameTool.LS(k)).ToList();
                     c.Assert(Window.Items.OfType<ModLib.Object.UIItemText>().Count(x => lines.Any(l => (x.GetFormat() ?? string.Empty).Contains(l.Substring(0, System.Math.Min(20, l.Length))))) >= 4,
                         "the lines A..P described");
                 }, 1000)
                 .Step("options of the mods", c =>
                 {
-                    if (Window.Pages.Count <= 4) { c.Info("no mod with options"); return; }
+                    if (Window.Pages.Count <= 5) { c.Info("no mod with options"); return; }
                     Window.NextPage();
-                    c.AssertEqual(4, Window.CurrentPageIndex, "page 5: options of a mod");
+                    c.AssertEqual(5, Window.CurrentPageIndex, "page 6: options of a mod");
                 }, 1500)
-                .Step("back to page 4", c => { if (Window.CurrentPageIndex == 4) Window.PrevPage(); })
+                .Step("back to page 5", c => { if (Window.CurrentPageIndex == 5) Window.PrevPage(); })
+                .Step("back to page 4", c => Window.PrevPage())
                 .Step("back to page 3", c => Window.PrevPage())
                 .Step("back to page 2", c => Window.PrevPage())
                 .Step("preset level 3", c =>

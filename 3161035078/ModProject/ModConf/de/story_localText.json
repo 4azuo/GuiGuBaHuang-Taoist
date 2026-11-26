@@ -3888,5 +3888,150 @@
 		"id": "-1000007777",
 		"key": "story_doc_essence_L",
 		"en|ch|tc|kr": "Mit klarem Herzen liegt jede Kunst, die du kennst, offen wie ein stiller See, und du siehst die Hand, die jede gezeichnet hat. Deine Dao-Essenz vertieft sich."
+	},
+	{
+		"id": -1000007778,
+		"key": "story_name_S",
+		"en|ch|tc|kr": "Das Vermächtnis des Medizinkönigs"
+	},
+	{
+		"id": -1000007779,
+		"key": "story_task_desc_S",
+		"en|ch|tc|kr": "{0}"
+	},
+	{
+		"id": -1000007780,
+		"key": "story_task_S0",
+		"en|ch|tc|kr": "{O} hütet drei zerrissene Seiten des Medizinkönigs. Die erste liegt im Bau einer Bestie."
+	},
+	{
+		"id": -1000007781,
+		"key": "story_task_S1",
+		"en|ch|tc|kr": "Ein Dorf stirbt an einer Seuche. Die zweite Seite sagt: Ein Heiler, der vorbeigeht, ist kein Heiler."
+	},
+	{
+		"id": -1000007782,
+		"key": "story_task_S2",
+		"en|ch|tc|kr": "Die dritte Seite ist ein Gift. Jemand muss es kosten, um das Heilmittel zu lesen."
+	},
+	{
+		"id": -1000007783,
+		"key": "story_task_S3",
+		"en|ch|tc|kr": "Das Vermächtnis ist fast vollständig. Lies seine letzte Seite."
+	},
+	{
+		"id": -1000007784,
+		"key": "story_S0_1",
+		"en|ch|tc|kr": "Ein alter Alchemist sitzt an einem erloschenen Feuer, ein Bündel verbrannten Papiers auf den Knien.\n{O} sagt: \"Das sind die letzten Worte des Medizinkönigs. Drei Seiten fehlen - und meine Hände zittern zu sehr, um sie zu suchen. Tust du es?\""
+	},
+	{
+		"id": -1000007785,
+		"key": "story_S0_1_o1",
+		"en|ch|tc|kr": "Ich finde sie"
+	},
+	{
+		"id": -1000007786,
+		"key": "story_S0_1_o2",
+		"en|ch|tc|kr": "Nicht meine Sache"
+	},
+	{
+		"id": -1000007787,
+		"key": "story_S0_2",
+		"en|ch|tc|kr": "Die erste Seite riecht nach Moschus. Du folgst dem Geruch zu einer Höhle voller abgenagter Knochen; im Dunkeln atmet etwas Großes."
+	},
+	{
+		"id": -1000007788,
+		"key": "story_S0_2_o1",
+		"en|ch|tc|kr": "Hineingehen"
+	},
+	{
+		"id": -1000007789,
+		"key": "story_S1_1",
+		"en|ch|tc|kr": "Husten hinter jeder Tür. {O} liest die zweite Seite vor: \"Ein Heiler, der vorbeigeht, ist kein Heiler.\"\nDie Kranken brauchen Heiltränke oder Geistersteine für einen Arzt aus der Stadt ({0:#,##0} [icon:zm_lingshi])."
+	},
+	{
+		"id": -1000007790,
+		"key": "story_S1_1_o1",
+		"en|ch|tc|kr": "Einen Heiltrank geben"
+	},
+	{
+		"id": -1000007791,
+		"key": "story_S1_1_o2",
+		"en|ch|tc|kr": "Einen Arzt bezahlen"
+	},
+	{
+		"id": -1000007792,
+		"key": "story_S1_1_o3",
+		"en|ch|tc|kr": "Weitergehen"
+	},
+	{
+		"id": -1000007793,
+		"key": "story_S1_nopill",
+		"en|ch|tc|kr": "Du hast keinen Heiltrank zum Geben."
+	},
+	{
+		"id": -1000007794,
+		"key": "story_S2_1",
+		"en|ch|tc|kr": "Die dritte Seite trägt keine Tinte, sondern eine getrocknete schwarze Paste. {O} dreht sie im Licht: \"Das Heilmittel steht im Gift. Jemand muss es kosten.\""
+	},
+	{
+		"id": -1000007795,
+		"key": "story_S2_1_o1",
+		"en|ch|tc|kr": "Selbst kosten"
+	},
+	{
+		"id": -1000007796,
+		"key": "story_S2_1_o2",
+		"en|ch|tc|kr": "{O} kosten lassen"
+	},
+	{
+		"id": -1000007797,
+		"key": "story_S2_1_o3",
+		"en|ch|tc|kr": "Niemand kostet"
+	},
+	{
+		"id": -1000007798,
+		"key": "story_S3_1",
+		"en|ch|tc|kr": "Die letzte Seite ist ganz. Die Schrift des Medizinkönigs ist klein und ruhig: \"Ein Heiler wählt, was er bewahrt - die Kraft der Arznei oder die Ruhe dessen, der sie nimmt.\""
+	},
+	{
+		"id": -1000007799,
+		"key": "story_S3_1_o1",
+		"en|ch|tc|kr": "Die Kraft der Arznei (+30% Heilung)"
+	},
+	{
+		"id": -1000007800,
+		"key": "story_S3_1_o2",
+		"en|ch|tc|kr": "Die Ruhe dessen, der sie nimmt (halbe Konzentration zurück)"
+	},
+	{
+		"id": -1000007801,
+		"key": "story_endS_Heal",
+		"en|ch|tc|kr": "Du schreibst die letzte Seite in dein eigenes Buch. Von nun an brennt jede Pille heißer in deinen Adern."
+	},
+	{
+		"id": -1000007802,
+		"key": "story_endS_Focus",
+		"en|ch|tc|kr": "Du schreibst die letzte Seite in dein eigenes Buch. Von nun an stört eine Pille deinen Geist kaum - die Hälfte der Konzentration kommt zurück."
+	},
+	{
+		"id": -1000007803,
+		"key": "story_endS_Fragment",
+		"en|ch|tc|kr": "Ohne das Dorf, ohne den Geschmack des Gifts bleibt die letzte Seite leer. {O} gibt dir einen eigenen Heiltrank und sagt nichts mehr."
+	},
+	{
+		"id": -1000007804,
+		"key": "story_end_S_Heal",
+		"en|ch|tc|kr": "Die Kraft der Arznei"
+	},
+	{
+		"id": -1000007805,
+		"key": "story_end_S_Focus",
+		"en|ch|tc|kr": "Der ruhige Geist"
+	},
+	{
+		"id": -1000007806,
+		"key": "story_end_S_Fragment",
+		"en|ch|tc|kr": "Eine leere Seite"
 	}
 ]

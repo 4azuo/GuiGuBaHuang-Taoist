@@ -1,6 +1,6 @@
 [
 	{
-		"__name": "Martial Lvl-1",
+		"__name": "trainee_martial 1: Martial Novice",
 		"id": "420071001",
 		"type": "2",
 		"group": "420071000",
@@ -17,7 +17,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-2",
+		"__name": "trainee_martial 2: Martial Disciple",
 		"id": "420071002",
 		"type": "2",
 		"group": "420071000",
@@ -34,7 +34,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-3",
+		"__name": "trainee_martial 3: Warrior",
 		"id": "420071003",
 		"type": "2",
 		"group": "420071000",
@@ -51,7 +51,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-4",
+		"__name": "trainee_martial 4: Martial Master",
 		"id": "420071004",
 		"type": "2",
 		"group": "420071000",
@@ -68,7 +68,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-5",
+		"__name": "trainee_martial 5: War General",
 		"id": "420071005",
 		"type": "2",
 		"group": "420071000",
@@ -85,7 +85,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-6",
+		"__name": "trainee_martial 6: Martial King",
 		"id": "420071006",
 		"type": "2",
 		"group": "420071000",
@@ -102,7 +102,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-7",
+		"__name": "trainee_martial 7: Martial Sovereign",
 		"id": "420071007",
 		"type": "2",
 		"group": "420071000",
@@ -119,7 +119,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-8",
+		"__name": "trainee_martial 8: Martial Venerable",
 		"id": "420071008",
 		"type": "2",
 		"group": "420071000",
@@ -136,7 +136,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-9",
+		"__name": "trainee_martial 9: Martial Saint",
 		"id": "420071009",
 		"type": "2",
 		"group": "420071000",
@@ -153,7 +153,7 @@
 		"weight": "0"
 	},
 	{
-		"__name": "Martial Lvl-10",
+		"__name": "trainee_martial 10: War God",
 		"id": "420071010",
 		"type": "2",
 		"group": "420071000",

@@ -236,5 +236,14 @@ namespace UnitTests.Taoist
                 Assert.AreEqual(kind == "watch", s.Trigger != null, $"{s.Id} trigger");
             }
         }
+
+        [TestMethod, Description("No broken characters in the texts (the Korean texts had circled numbers in braces where 'HP' was)")]
+        public void LocalText_NoBrokenCharacters()
+        {
+            var bad = new Regex(@"\{[^{}]*[\u2460-\u24ff][^{}]*\}|\ufffd");
+            var hits = Directory.GetFiles(ModConf, "*localText.json", SearchOption.AllDirectories)
+                .Where(f => bad.IsMatch(File.ReadAllText(f))).Select(Path.GetFileName).ToList();
+            Check.True(hits.Count == 0, "no broken characters", string.Join(", ", hits));
+        }
     }
 }

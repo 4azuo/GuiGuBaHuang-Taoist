@@ -818,5 +818,155 @@
 		"id": -1000001213,
 		"key": "smcfgs213",
 		"en|ch|tc|kr": "Nur für einen Erben: Ein alter Meister schreibt eine letzte Kunst und prüft zwei Erben (benötigt die Mod Dao of Creation)."
+	},
+	{
+		"id": -1000001214,
+		"key": "smcfgs214",
+		"en|ch|tc|kr": "Schildrate"
+	},
+	{
+		"id": -1000001215,
+		"key": "smcfgs215",
+		"en|ch|tc|kr": "Explosionsrate"
+	},
+	{
+		"id": -1000001216,
+		"key": "smcfgs216",
+		"en|ch|tc|kr": "Teilungsrate"
+	},
+	{
+		"id": -1000001217,
+		"key": "smcfgs217",
+		"en|ch|tc|kr": "Monster ohne Schild"
+	},
+	{
+		"id": -1000001218,
+		"key": "smcfgs218",
+		"en|ch|tc|kr": "Basis: Waffen- und Elementwerte der Monster.\n- Ihre Treffer dieses Typs schaden mehr.\n- Deine Treffer dieses Typs schaden ihnen weniger.\n- Mehr Block; Wind: Ausweichen und Tempo; Erde, Faust, Handfläche, Finger: Verteidigung; Holz: HP-Regeneration.\nDie Basis steigt bereits mit Reich und Schwierigkeit; diese Rate kommt hinzu."
+	},
+	{
+		"id": -1000001219,
+		"key": "smcfgs219",
+		"en|ch|tc|kr": "Gibt Monstern max. HP aus deinem Angriff:\ndein Angriff x Schwierigkeit (Normal 1 - Chaos 5) x\n- {0} für normale Monster\n- {1} für Elite\n- {2} für Bosse\n- {3} für NPC-Monster\nJe stärker du bist, desto mehr HP haben sie."
+	},
+	{
+		"id": -1000001220,
+		"key": "smcfgs220",
+		"en|ch|tc|kr": "Monate pro Wachstumsrunde (du, NPCs und Monster).\n- Niedriger: schnelleres Wachstum, schwerer, längere Monatsberechnung.\n- Höher: langsameres Wachstum, leichter, kürzere Monatsberechnung.\nJede Runde erhöht Angriff, Verteidigung und HP der Monster (x Reich x Schwierigkeit), auch wenn die Regler oben auf 0 stehen."
+	},
+	{
+		"id": -1000001221,
+		"key": "smcfgs221",
+		"en|ch|tc|kr": "Chance = Wert x Reich x Schwierigkeit (Normal 1 - Chaos 5), geändert durch jede Rate (-100%: aus).\n- Schild {0}%: absorbiert {3}% der max. HP (normal), {4}% (Elite)\n- Explosion beim Tod {1}%\n- Teilung beim Tod {2}%\nBoss mit Schild: immer, {5}% der max. HP. Monster ohne Schild: schaltet alle diese Schilde aus."
+	},
+	{
+		"id": -1000001222,
+		"key": "smcfgs222",
+		"en|ch|tc|kr": "Die Schwierigkeit erhöht auch die Werte von NPCs und Monstern (ohne S&M Configs).\n\nMonster, Taoist:\n- Basis x{0}\n- Wachstum (Zeit, Kills, Gebiet, Wiedergeburten) x{0}\n- Schild-, Explosions-, Teilungschance x{0}\n- Mindestschaden x{0}"
+	},
+	{
+		"id": -1000001223,
+		"key": "smcfgs223",
+		"en|ch|tc|kr": "Empfohlene S&M-Punkte: bis {0:#,##0} P."
+	},
+	{
+		"id": -1000001224,
+		"key": "smcfgs224",
+		"en|ch|tc|kr": "Empfohlen für neue Spieler und jede S&M-Punktzahl."
+	},
+	{
+		"id": -1000001225,
+		"key": "smcfgs225",
+		"en|ch|tc|kr": "Fertigkeiten & Pillen"
+	},
+	{
+		"id": -1000001226,
+		"key": "smcfgs226",
+		"en|ch|tc|kr": "Fertigkeits-Meisterschaft (EP)"
+	},
+	{
+		"id": -1000001227,
+		"key": "smcfgs227",
+		"en|ch|tc|kr": "MP-Kosten der Fertigkeiten"
+	},
+	{
+		"id": -1000001228,
+		"key": "smcfgs228",
+		"en|ch|tc|kr": "Abklingzeit"
+	},
+	{
+		"id": -1000001229,
+		"key": "smcfgs229",
+		"en|ch|tc|kr": "Benötigte Basis (Grund)"
+	},
+	{
+		"id": -1000001230,
+		"key": "smcfgs230",
+		"en|ch|tc|kr": "Benötigte Basis (je Stufe)"
+	},
+	{
+		"id": -1000001231,
+		"key": "smcfgs231",
+		"en|ch|tc|kr": "Benötigte Dao-Punkte (Grund)"
+	},
+	{
+		"id": -1000001232,
+		"key": "smcfgs232",
+		"en|ch|tc|kr": "Benötigte Dao-Punkte (je Stufe)"
+	},
+	{
+		"id": -1000001233,
+		"key": "smcfgs233",
+		"en|ch|tc|kr": "Wirkung der Stärkungspillen"
+	},
+	{
+		"id": -1000001234,
+		"key": "smcfgs234",
+		"en|ch|tc|kr": "Jede Rate wird zu x1 der Werte von ModConf/mod_configs.json (nach Grad 1-10) addiert: -50% halbiert, +100% verdoppelt. Teurere, langsamere oder anspruchsvollere Fertigkeiten sind schwerer (+P); stärkere Stärkungspillen leichter (-P). Die Werte werden bei jedem Laden eines Spielstands neu berechnet."
+	},
+	{
+		"id": -1000001235,
+		"key": "smcfgs235",
+		"en|ch|tc|kr": "Das Vermächtnis des Medizinkönigs: ein alter Alchemist hütet die zerrissenen Seiten eines legendären Heilers (ab Goldkern)."
+	},
+	{
+		"id": -1000001236,
+		"key": "smcfgs236",
+		"en|ch|tc|kr": "Optionen der Mod {0} (zählen nicht zur S&M-Punktzahl)"
+	},
+	{
+		"id": -1000001237,
+		"key": "smcfgs237",
+		"en|ch|tc|kr": "Keine Konstitutionen"
+	},
+	{
+		"id": -1000001238,
+		"key": "smcfgs238",
+		"en|ch|tc|kr": "Konstitutionen: besondere Körper (Pillenkörper, Schwertknochen, Vajra-Körper, Angeborener Geist, Drachenblut, Donnerkörper, Giftkörper), so viele du kultivieren kannst, jeder auf seine Art (Pillen, Kampfkünste, Schätze, Prüfungen, Geschichten, angeboren). Aus: +1.000 P."
+	},
+	{
+		"id": -1000001239,
+		"key": "smcfgs239",
+		"en|ch|tc|kr": "Balancewerte speichern"
+	},
+	{
+		"id": -1000001240,
+		"key": "smcfgs240",
+		"en|ch|tc|kr": "nur auf diesem PC; mit einem Balancebericht senden"
+	},
+	{
+		"id": -1000001241,
+		"key": "smcfgs241",
+		"en|ch|tc|kr": "Leistung: {0}"
+	},
+	{
+		"id": -1000001242,
+		"key": "smcfgs242",
+		"en|ch|tc|kr": "AN"
+	},
+	{
+		"id": -1000001243,
+		"key": "smcfgs243",
+		"en|ch|tc|kr": "AUS"
 	}
 ]

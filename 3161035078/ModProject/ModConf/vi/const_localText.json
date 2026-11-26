@@ -1,0 +1,207 @@
+[
+	{
+		"id": -1000017000,
+		"key": "const_title",
+		"en|ch|tc|kr": "Thể chất"
+	},
+	{
+		"id": -1000017001,
+		"key": "const_line",
+		"en|ch|tc|kr": "{0}: tầng {1} ({2})"
+	},
+	{
+		"id": -1000017002,
+		"key": "const_progress",
+		"en|ch|tc|kr": "{0} / {1} điểm, giới hạn cảnh giới {2}"
+	},
+	{
+		"id": -1000017003,
+		"key": "const_innate",
+		"en|ch|tc|kr": "bẩm sinh: lớn theo cảnh giới"
+	},
+	{
+		"id": -1000017004,
+		"key": "const_not_born",
+		"en|ch|tc|kr": "chỉ người sinh ra đã có"
+	},
+	{
+		"id": -1000017005,
+		"key": "const_absorb",
+		"en|ch|tc|kr": "Luyện hóa thiên tài địa bảo"
+	},
+	{
+		"id": -1000017006,
+		"key": "const_taste",
+		"en|ch|tc|kr": "Nếm thảo dược sống"
+	},
+	{
+		"id": -1000017007,
+		"key": "const_no_treasure",
+		"en|ch|tc|kr": "Không có thiên tài địa bảo trong túi (thảo dược hoặc khoáng thạch cấp 4 trở lên)."
+	},
+	{
+		"id": -1000017008,
+		"key": "const_absorbed",
+		"en|ch|tc|kr": "Bảo vật tan vào máu. Trong huyết mạch, thứ gì đó cổ xưa và có vảy khẽ cựa mình (Long Huyết Thể)."
+	},
+	{
+		"id": -1000017009,
+		"key": "const_no_herb",
+		"en|ch|tc|kr": "Không có thảo dược trong túi."
+	},
+	{
+		"id": -1000017010,
+		"key": "const_tasted",
+		"en|ch|tc|kr": "Đắng rồi bỏng rát. Bạn mất một ít HP, và cơ thể ghi nhớ chất độc (Độc Thể)."
+	},
+	{
+		"id": -1000017011,
+		"key": "log_const_tier",
+		"en|ch|tc|kr": "Thể chất {0}: tầng {1}."
+	},
+	{
+		"id": -1000017012,
+		"key": "log_const_born",
+		"en|ch|tc|kr": "Bạn sinh ra đã mang thể chất hiếm: {0}."
+	},
+	{
+		"id": -1000017013,
+		"key": "const_pill",
+		"en|ch|tc|kr": "Dược Thể"
+	},
+	{
+		"id": -1000017014,
+		"key": "const_pill_how",
+		"en|ch|tc|kr": "Thuốc dùng trong trận (cộng theo phẩm)."
+	},
+	{
+		"id": -1000017015,
+		"key": "const_pill_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +10% lượng hồi của thuốc."
+	},
+	{
+		"id": -1000017016,
+		"key": "const_swordbone",
+		"en|ch|tc|kr": "Kiếm Cốt"
+	},
+	{
+		"id": -1000017017,
+		"key": "const_swordbone_how",
+		"en|ch|tc|kr": "Đánh trúng bằng kiếm pháp (mỗi đòn 1 điểm, mỗi tầng cần x50)."
+	},
+	{
+		"id": -1000017018,
+		"key": "const_swordbone_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +5% tư chất kiếm, +1% công."
+	},
+	{
+		"id": -1000017019,
+		"key": "const_vajra",
+		"en|ch|tc|kr": "Kim Cương Thể"
+	},
+	{
+		"id": -1000017020,
+		"key": "const_vajra_how",
+		"en|ch|tc|kr": "Đánh trúng bằng quyền, chưởng, chỉ pháp (mỗi đòn 1 điểm, mỗi tầng cần x50)."
+	},
+	{
+		"id": -1000017021,
+		"key": "const_vajra_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +3% thủ, +2% HP tối đa."
+	},
+	{
+		"id": -1000017022,
+		"key": "const_innatespirit",
+		"en|ch|tc|kr": "Tiên Thiên Linh Thể"
+	},
+	{
+		"id": -1000017023,
+		"key": "const_innatespirit_how",
+		"en|ch|tc|kr": "Bẩm sinh (hiếm); lớn theo cảnh giới."
+	},
+	{
+		"id": -1000017024,
+		"key": "const_innatespirit_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +4% linh lực tối đa, +1% công."
+	},
+	{
+		"id": -1000017025,
+		"key": "const_dragonblood",
+		"en|ch|tc|kr": "Long Huyết Thể"
+	},
+	{
+		"id": -1000017026,
+		"key": "const_dragonblood_how",
+		"en|ch|tc|kr": "Bẩm sinh (cực hiếm), hoặc luyện hóa thiên tài địa bảo (cấp² điểm, mỗi tầng cần x2)."
+	},
+	{
+		"id": -1000017027,
+		"key": "const_dragonblood_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +4% HP tối đa, +1% công."
+	},
+	{
+		"id": -1000017028,
+		"key": "const_thunder",
+		"en|ch|tc|kr": "Lôi Thể"
+	},
+	{
+		"id": -1000017029,
+		"key": "const_thunder_how",
+		"en|ch|tc|kr": "Vượt lôi kiếp (cảnh giới x10 điểm), tuyến truyện K (200)."
+	},
+	{
+		"id": -1000017030,
+		"key": "const_thunder_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +5% tư chất lôi, +1% công."
+	},
+	{
+		"id": -1000017031,
+		"key": "const_venom",
+		"en|ch|tc|kr": "Độc Thể"
+	},
+	{
+		"id": -1000017032,
+		"key": "const_venom_how",
+		"en|ch|tc|kr": "Nếm thảo dược sống (cấp + 1 điểm, mỗi lần -10% HP), tuyến truyện S: tự nếm độc (100)."
+	},
+	{
+		"id": -1000017033,
+		"key": "const_venom_gain",
+		"en|ch|tc|kr": "Mỗi tầng: +2% thủ, +5% tư chất mộc (hồi HP)."
+	},
+	{
+		"id": -1000017034,
+		"key": "const_awakening",
+		"en|ch|tc|kr": "chưa thức tỉnh: {0} / {1} điểm, đủ rồi mỗi lần có {2}% thức tỉnh (tối đa {3}%)"
+	},
+	{
+		"id": -1000017035,
+		"key": "log_const_awaken",
+		"en|ch|tc|kr": "{0} của bạn đã thức tỉnh!"
+	},
+	{
+		"id": -1000017036,
+		"key": "const_ui_header",
+		"en|ch|tc|kr": "Cảnh giới {0}: thể chất tối đa bậc {1}. Thức tỉnh: đủ điểm bậc 1, sau đó mỗi lần nhận điểm có tỉ lệ nhỏ (dưới 1%)."
+	},
+	{
+		"id": -1000017037,
+		"key": "const_ui_tier",
+		"en|ch|tc|kr": "Bậc {0}: {1}"
+	},
+	{
+		"id": -1000017038,
+		"key": "const_ui_locked",
+		"en|ch|tc|kr": "Chưa thức tỉnh"
+	},
+	{
+		"id": -1000017039,
+		"key": "const_ui_owned",
+		"en|ch|tc|kr": "Đã thức tỉnh ({0})"
+	},
+	{
+		"id": -1000017040,
+		"key": "const_ui_notyet",
+		"en|ch|tc|kr": "Chưa thức tỉnh ({0})"
+	}
+]

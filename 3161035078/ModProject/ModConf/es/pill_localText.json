@@ -1,0 +1,87 @@
+[
+	{
+		"id": -1000016000,
+		"key": "pill_title",
+		"en|ch|tc|kr": "Cuerpo de píldoras"
+	},
+	{
+		"id": -1000016001,
+		"key": "pill_summary",
+		"en|ch|tc|kr": "Cuerpo de píldoras nivel {0} (tope del reino {1}), {2} puntos (siguiente nivel: {3}).\nCada poción tomada en combate suma su grado.\n- Niveles: +{4}% de recuperación\n- Alquimia: +{5}% con un tipo de poción que hayas fabricado\n- Píldora dorada de nueve vueltas: {6} (+10% del HP / MP máx. por poción)\n- Testamento del Rey de la Medicina: {7}"
+	},
+	{
+		"id": -1000016002,
+		"key": "pill_yes",
+		"en|ch|tc|kr": "sí"
+	},
+	{
+		"id": -1000016003,
+		"key": "pill_no",
+		"en|ch|tc|kr": "no"
+	},
+	{
+		"id": -1000016004,
+		"key": "pill_king_heal",
+		"en|ch|tc|kr": "+30% de recuperación"
+	},
+	{
+		"id": -1000016005,
+		"key": "pill_king_focus",
+		"en|ch|tc|kr": "la mitad de la concentración de una poción devuelta"
+	},
+	{
+		"id": -1000016006,
+		"key": "log_pill_tier",
+		"en|ch|tc|kr": "Cuerpo de píldoras: nivel {0} (+{1}% de recuperación)."
+	},
+	{
+		"id": -1000016007,
+		"key": "log_pill_capped",
+		"en|ch|tc|kr": "Cuerpo de píldoras: el nivel {0} es el límite de tu reino; avanza para seguir."
+	},
+	{
+		"id": -1000016008,
+		"key": "log_pill_nineturn",
+		"en|ch|tc|kr": "Refinaste la píldora dorada de nueve vueltas: cada poción da ahora un 10% más de tu HP / MP máx."
+	},
+	{
+		"id": -1000016009,
+		"key": "log_pill_king_heal",
+		"en|ch|tc|kr": "Testamento del Rey de la Medicina: tus pociones curan un 30% más."
+	},
+	{
+		"id": -1000016010,
+		"key": "log_pill_king_focus",
+		"en|ch|tc|kr": "Testamento del Rey de la Medicina: recuperas la mitad de la concentración de una poción."
+	},
+	{
+		"id": -1000016011,
+		"key": "pill_nineturn",
+		"en|ch|tc|kr": "Humo de nueve colores sale de un horno en ruinas. Dentro, una píldora gira sola: la píldora dorada de nueve vueltas, inacabada desde hace mil años.\nNecesita {1} hierbas y {0:#,##0} [icon:zm_lingshi] piedras espirituales para el fuego."
+	},
+	{
+		"id": -1000016012,
+		"key": "pill_nineturn_o1",
+		"en|ch|tc|kr": "Terminar la píldora"
+	},
+	{
+		"id": -1000016013,
+		"key": "pill_nineturn_o2",
+		"en|ch|tc|kr": "Dejarla"
+	},
+	{
+		"id": -1000016014,
+		"key": "pill_nineturn_leave",
+		"en|ch|tc|kr": "Te marchas. Detrás de ti, el humo de nueve colores se apaga y el horno se enfría."
+	},
+	{
+		"id": -1000016015,
+		"key": "pill_nineturn_noherb",
+		"en|ch|tc|kr": "Necesitas {1} hierbas para el horno. El humo se apaga antes de que las encuentres."
+	},
+	{
+		"id": -1000016016,
+		"key": "pill_nineturn_done",
+		"en|ch|tc|kr": "Nueve días y nueve noches. La última mañana la píldora deja de girar y cae en tu palma, cálida como un latido.\nDesde ahora, cada poción te da un 10% más de tu HP / MP máx."
+	}
+]
