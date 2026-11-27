@@ -6,16 +6,19 @@
       "kind": "auto",
       "feature": "UITitleScreenEvent",
       "title": "Title screen shows Taoist/ModLib buttons and versions are compatible",
-      "description": "Smoke test of the mod installation. On the title screen Taoist adds its own buttons (Taoist version, S&M configs) and ModLib adds its buttons. If they are missing the mods did not load; if ModLib is older than the version Taoist needs, a warning would appear. Passes when all buttons are there and no warning is shown.",
+      "description": "Smoke test of the mod installation. On the title screen Taoist adds its own buttons (Taoist version, S&M configs) and ModLib adds its buttons. If they are missing the mods did not load; if ModLib is older than the version Taoist needs, a warning would appear. Passes when all buttons are there and no warning is shown. The panel \"More mods by Fouru\" shows the other mods of the author (title_othermods_configs.json) not loaded in this game.",
       "preconditions": "Game started with ModLib and Taoist enabled",
       "steps": [
         "Open the title screen",
-        "Close the Workshop description popup"
+        "Close the Workshop description popup",
+        "Panel of the other mods: with the config, then with a test config of two mods (one always shown), the next one"
       ],
       "expected": [
         "ModLib, Taoist and S&M buttons are on the title screen",
         "Button 'Taoist <version>' exists",
-        "No 'not supported in ModLib' warning (ModLib >= MODLIB_REQUIRED_VERSION)"
+        "No 'not supported in ModLib' warning (ModLib >= MODLIB_REQUIRED_VERSION)",
+        "The panel shows only the mods not loaded (none left: no panel)",
+        "Test config: the panel, its picture, the Discord button, the second mod (no button without an address), back to the first"
       ]
     },
     {

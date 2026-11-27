@@ -433,5 +433,25 @@
 		"id": -1000008086,
 		"key": "ui_merchant_note",
 		"en|ch|tc|kr": "Ein erreichter Händlerrang bleibt, auch wenn die Geiststeine sinken."
+	},
+	{
+		"id": "-1000008087",
+		"key": "ui_othermods_title",
+		"en|ch|tc|kr": "Weitere Mods von Fouru"
+	},
+	{
+		"id": "-1000008088",
+		"key": "ui_othermods_doc",
+		"en|ch|tc|kr": "Erschaffe eigene Kampfkünste: begreife die Effekte, die du im Kampf siehst, forme sie und verschmelze zwei Künste zu einer. Ein Unterstützer-Mod."
+	},
+	{
+		"id": "-1000008089",
+		"key": "ui_othermods_discord",
+		"en|ch|tc|kr": "Auf Discord holen"
+	},
+	{
+		"id": "-1000008090",
+		"key": "ui_othermods_open",
+		"en|ch|tc|kr": "Öffnen"
 	}
 ]

@@ -11,10 +11,11 @@ using UnityEngine;
 namespace MOD_nE7UL2.Mod
 {
     /// <summary>
-    /// Title screen: version button (opens the cache folder), Workshop description, ModLib version check.
+    /// Title screen: version button (opens the cache folder), Workshop description, ModLib version check, the panel of the
+    /// other mods of the author (UITitleScreenEvent.OtherMods.cs).
     /// </summary>
     [Cache(ModConst.UI_TITLE_SCREEN_EVENT, CacheType = CacheAttribute.CType.Global, WorkOn = CacheAttribute.WType.Global)]
-    public class UITitleScreenEvent : ModEvent
+    public partial class UITitleScreenEvent : ModEvent
     {
         /// <summary>
         /// Login UI: adds the button, shows news and warns when ModLib is too old.
@@ -31,6 +32,7 @@ namespace MOD_nE7UL2.Mod
                 // the game's UITextInfoLong / UITextInfo: one of each, so they wait for the windows of the other mods
                 // (the error reports consent of ModLib...) instead of writing over them
                 ShowWorkshopInfo();
+                ShowOtherMods();
 
                 if (!CompareVersion(ModConst.MODLIB_REQUIRED_VERSION, ModMaster.ModObj.Version))
                 {
@@ -78,6 +80,7 @@ namespace MOD_nE7UL2.Mod
         {
             base.OnTimeUpdate1000ms();
             if (!g.ui.HasUI(UIType.Login)) return;
+            RotateOtherMods();
             RefreshLabel(VersionButton, $"Taoist {ModConst.TAOIST_VERSION}");
             RefreshLabel(SMGlobalConfigsEvent.TitleButton, SMGlobalConfigsEvent.TITLE);
         }

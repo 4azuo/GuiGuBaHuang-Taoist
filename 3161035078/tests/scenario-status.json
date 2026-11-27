@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-26T19:30:18",
+  "updatedAt": "2026-11-27T11:41:12",
   "counts": {
     "OK": 5,
     "NG": 0,
-    "SKIP": 1,
-    "NOT RUN": 148,
+    "SKIP": 2,
+    "NOT RUN": 147,
     "-": 4
   },
   "scenarios": [
@@ -13,9 +13,9 @@
       "kind": "auto",
       "feature": "UITitleScreenEvent",
       "title": "Title screen shows Taoist/ModLib buttons and versions are compatible",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-26T19:30:18",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261126-192255",
+      "result": "OK",
+      "lastRun": "2026-11-27T11:41:12",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261127-113939",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -23,7 +23,17 @@
         "TT-01-02": "OK",
         "TT-01-03": "OK",
         "TT-01-04": "OK",
-        "TT-01-05": "OK"
+        "TT-01-05": "OK",
+        "TT-01-06": "OK",
+        "TT-01-07": "OK",
+        "TT-01-08": "OK",
+        "TT-01-09": "OK",
+        "TT-01-10": "OK",
+        "TT-01-11": "OK",
+        "TT-01-12": "OK",
+        "TT-01-13": "OK",
+        "TT-01-14": "OK",
+        "TT-01-15": "OK"
       }
     },
     {
@@ -373,37 +383,12 @@
       "kind": "auto",
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
-      "result": "OK",
-      "lastRun": "2026-11-26T19:30:18",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261126-192255",
+      "result": "SKIP",
+      "lastRun": "2026-11-27T11:41:12",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261127-113939",
       "tester": "autotest",
       "note": null,
-      "checks": {
-        "TP-01-01": "OK",
-        "TP-01-02": "OK",
-        "TP-01-03": "OK",
-        "TP-01-04": "OK",
-        "TP-01-05": "OK",
-        "TP-01-06": "OK",
-        "TP-01-07": "OK",
-        "TP-01-08": "OK",
-        "TP-01-09": "OK",
-        "TP-01-10": "OK",
-        "TP-01-11": "OK",
-        "TP-01-12": "OK",
-        "TP-01-13": "OK",
-        "TP-01-14": "OK",
-        "TP-01-15": "OK",
-        "TP-01-16": "OK",
-        "TP-01-17": "OK",
-        "TP-01-18": "OK",
-        "TP-01-19": "OK",
-        "TP-01-20": "OK",
-        "TP-01-21": "OK",
-        "TP-01-22": "OK",
-        "TP-01-23": "OK",
-        "TP-01-24": "OK"
-      }
+      "checks": {}
     },
     {
       "id": "TG-01",

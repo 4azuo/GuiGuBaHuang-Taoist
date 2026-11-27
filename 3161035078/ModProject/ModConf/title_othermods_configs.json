@@ -1,0 +1,20 @@
+{
+	"__name": "Other mods of the author on the title screen (UITitleScreenEvent, panel \"More mods by Fouru\")",
+	"__help": [
+		"A value left out (or a broken file): the default of the mod.",
+		"Enabled: the panel is shown. RotateSec: seconds a mod stays before the next one (several mods, at least 3).",
+		"Mods, in this order: ModId (not shown when that mod is loaded: the player has it; empty: always shown), Name, Text and Button (a localText key of Taoist or the text itself), Image (a 16:9 picture in ModImg of Taoist), Url (opened by the button)."
+	],
+	"Enabled": true,
+	"RotateSec": 8,
+	"Mods": [
+		{
+			"ModId": "rLvJjS",
+			"Name": "Dao of Creation",
+			"Text": "ui_othermods_doc",
+			"Image": "othermods_doc.jpg",
+			"Url": "https://discord.gg/XKaP3EYfw",
+			"Button": "ui_othermods_discord"
+		}
+	]
+}

@@ -433,5 +433,25 @@
 		"id": -1000008086,
 		"key": "ui_merchant_note",
 		"en|ch|tc|kr": "到達した商道の位階は霊石が減っても下がらない。"
+	},
+	{
+		"id": "-1000008087",
+		"key": "ui_othermods_title",
+		"en|ch|tc|kr": "Fouru のほかのMOD"
+	},
+	{
+		"id": "-1000008088",
+		"key": "ui_othermods_doc",
+		"en|ch|tc|kr": "自分だけの武技を創ろう：戦闘で見たエフェクトを悟り、形にして、二つの武技を一つに融合する。支援者向けMOD。"
+	},
+	{
+		"id": "-1000008089",
+		"key": "ui_othermods_discord",
+		"en|ch|tc|kr": "Discordで入手"
+	},
+	{
+		"id": "-1000008090",
+		"key": "ui_othermods_open",
+		"en|ch|tc|kr": "開く"
 	}
 ]

@@ -694,5 +694,37 @@
 		"ch": "已达到的商道品阶不会因灵石减少而降低。",
 		"tc": "已達到的商道品階不會因靈石減少而降低。",
 		"kr": "도달한 상도 품계는 영석이 줄어도 유지됩니다."
+	},
+	{
+		"id": -1000008087,
+		"key": "ui_othermods_title",
+		"en": "More mods by Fouru",
+		"ch": "Fouru 的其他模组",
+		"tc": "Fouru 的其他模組",
+		"kr": "Fouru의 다른 모드"
+	},
+	{
+		"id": -1000008088,
+		"key": "ui_othermods_doc",
+		"en": "Create your own martial arts: comprehend the effects you see in battle, shape them, then fuse two arts into one. A supporter mod.",
+		"ch": "创造属于你的功法：领悟战斗中见到的特效，塑造它们，再将两门功法融合为一。支持者模组。",
+		"tc": "創造屬於你的功法：領悟戰鬥中見到的特效，塑造它們，再將兩門功法融合為一。支持者模組。",
+		"kr": "나만의 무공을 만드세요: 전투에서 본 이펙트를 깨닫고 다듬은 뒤, 두 무공을 하나로 융합합니다. 후원자 모드."
+	},
+	{
+		"id": -1000008089,
+		"key": "ui_othermods_discord",
+		"en": "Get it on Discord",
+		"ch": "在 Discord 获取",
+		"tc": "在 Discord 取得",
+		"kr": "Discord에서 받기"
+	},
+	{
+		"id": -1000008090,
+		"key": "ui_othermods_open",
+		"en": "Open",
+		"ch": "打开",
+		"tc": "打開",
+		"kr": "열기"
 	}
 ]

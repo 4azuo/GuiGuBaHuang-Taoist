@@ -34,6 +34,7 @@ One file per feature in `ModProject/ModConf/`, read once in `ModMain.OnLoadClass
 | `npc_upgrade_skill_configs.json` | `NpcUpgradeSkillConfig` (MartialType) | NpcUpgradeSkillEvent | `UpgradeRates` per martial type |
 | `expert_configs.json` | `ExpertConfig` (MartialType) | ExpertEvent, UnitModifyHelper | `SkillDmgRatios`, `SkillExpRatios`, artifact exp rates |
 | `battle_reward_configs.json` | `BattleRewardConfig` | BattleRewardEventV2 | `ExpPerDmgDealt`, `ExpPerDmgRecv` |
+| `title_othermods_configs.json` | `TitleOtherModsConfig` (`UITitleScreenEvent.Config.cs`) | UITitleScreenEvent | the panel of the other mods of the author on the title screen: `Enabled`, `RotateSec`, `Mods` (id, name, text, picture, address, button) |
 
 ## ModLib files (read by ModLib, not by Taoist code)
 

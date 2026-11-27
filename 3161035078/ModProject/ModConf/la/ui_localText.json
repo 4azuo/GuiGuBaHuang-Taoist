@@ -433,5 +433,25 @@
 		"id": -1000008086,
 		"key": "ui_merchant_note",
 		"en|ch|tc|kr": "Gradus attactus servatur, etiam cum lapides minuuntur."
+	},
+	{
+		"id": "-1000008087",
+		"key": "ui_othermods_title",
+		"en|ch|tc|kr": "Alii modi a Fouru"
+	},
+	{
+		"id": "-1000008088",
+		"key": "ui_othermods_doc",
+		"en|ch|tc|kr": "Artes martiales tuas crea: effectus in proelio visos intellege, forma, deinde duas artes in unam confunde. Modus fautoribus."
+	},
+	{
+		"id": "-1000008089",
+		"key": "ui_othermods_discord",
+		"en|ch|tc|kr": "In Discord accipe"
+	},
+	{
+		"id": "-1000008090",
+		"key": "ui_othermods_open",
+		"en|ch|tc|kr": "Aperi"
 	}
 ]

@@ -433,5 +433,25 @@
 		"id": -1000008086,
 		"key": "ui_merchant_note",
 		"en|ch|tc|kr": "Un rang atteint est gardé, même si les pierres baissent."
+	},
+	{
+		"id": "-1000008087",
+		"key": "ui_othermods_title",
+		"en|ch|tc|kr": "Autres mods de Fouru"
+	},
+	{
+		"id": "-1000008088",
+		"key": "ui_othermods_doc",
+		"en|ch|tc|kr": "Créez vos propres arts martiaux : comprenez les effets vus au combat, façonnez-les, puis fusionnez deux arts en un. Un mod pour les soutiens."
+	},
+	{
+		"id": "-1000008089",
+		"key": "ui_othermods_discord",
+		"en|ch|tc|kr": "Disponible sur Discord"
+	},
+	{
+		"id": "-1000008090",
+		"key": "ui_othermods_open",
+		"en|ch|tc|kr": "Ouvrir"
 	}
 ]

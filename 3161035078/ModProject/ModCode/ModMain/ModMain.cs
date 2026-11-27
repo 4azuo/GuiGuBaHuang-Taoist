@@ -53,6 +53,7 @@ namespace MOD_nE7UL2
             MOD_nE7UL2.Mod.ContributionExchangeConfig.Load(modId);
             MOD_nE7UL2.Mod.MissionDeclareConfig.Load(modId);
             MOD_nE7UL2.Mod.BattleManashieldConfig.Load(modId);
+            MOD_nE7UL2.Mod.TitleOtherModsConfig.Load(modId);
             MOD_nE7UL2.Mod.UnitTypeConfig.Load(modId);
             MOD_nE7UL2.Mod.RealTrialConfig.Load(modId);
             MOD_nE7UL2.Mod.RealStorageConfig.Load(modId);
