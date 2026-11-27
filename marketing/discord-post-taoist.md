@@ -3,7 +3,7 @@ Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078
 Góp ý: https://github.com/4azuo/GuiGuBaHuang-Taoist/issues/13
 Discord: https://discord.gg/XKaP3EYfw
 *※ Cho xin 1 like trên Steam Workshop để ủng hộ nhé* · Ko-fi: https://ko-fi.com/fouru
-⚠️ Cần **Fouru's ModLib** v2.3.04+, đặt lên đầu danh sách mod rồi khởi động lại game.
+⚠️ Cần **Fouru's ModLib** v2.3.06+, đặt lên đầu danh sách mod rồi khởi động lại game.
 Hầu hết tính năng chỉnh/tắt trong **S&M Configs**: càng khó, điểm càng cao, thưởng càng nhiều.
 
 **★ Mới trong 6.2**
