@@ -864,6 +864,14 @@
     "kr": "새끼 영수는 먹고 나서 네 손을 핥더니 절뚝이며 떠났다. 그 순간 하늘이 미소 짓는 듯했다. (운 +{0})"
   },
   {
+    "id": -1000006301,
+    "key": "enc_cub_r0",
+    "en": "The cub eats, licks your hand and limps away into the bushes. Nothing more happens, but your heart feels lighter.",
+    "ch": "小兽吃完，舔了舔你的手，一瘸一拐地钻进草丛。再无异样，但你心中一片轻松。",
+    "tc": "小獸吃完，舔了舔你的手，一瘸一拐地鑽進草叢。再無異樣，但你心中一片輕鬆。",
+    "kr": "새끼 영수는 먹고 나서 네 손을 핥더니 절뚝이며 덤불 속으로 사라졌다. 별일은 없었지만 마음이 한결 가벼워졌다."
+  },
+  {
     "id": -1000006131,
     "key": "enc_cub_noherb",
     "en": "You search your bag — not a single herb. The cub slips away.",

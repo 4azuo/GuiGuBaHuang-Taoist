@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-28T15:30:00",
+  "updatedAt": "2026-11-28T21:58:04",
   "counts": {
-    "OK": 8,
-    "NG": 0,
+    "OK": 9,
+    "NG": 1,
     "SKIP": 2,
-    "NOT RUN": 145,
+    "NOT RUN": 143,
     "-": 4
   },
   "scenarios": [
@@ -384,8 +384,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "SKIP",
-      "lastRun": "2026-11-28T15:30:00",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-152751",
+      "lastRun": "2026-11-28T21:58:04",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-215536",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -2164,9 +2164,9 @@
       "kind": "auto",
       "feature": "EncounterEvent",
       "title": "Random encounters: dramas, choices and rewards",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-26T19:30:18",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261126-192255",
+      "result": "NG",
+      "lastRun": "2026-11-28T21:42:45",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-213927",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2177,18 +2177,18 @@
         "TG-55-05": "OK",
         "TG-55-06": "OK",
         "TG-55-07": "OK",
-        "TG-55-08": "OK",
+        "TG-55-08": "NG",
         "TG-55-09": "OK",
         "TG-55-10": "OK",
         "TG-55-11": "OK",
         "TG-55-12": "OK",
-        "TG-55-13": "OK",
+        "TG-55-13": "NG",
         "TG-55-14": "OK",
         "TG-55-15": "OK",
         "TG-55-16": "OK",
         "TG-55-17": "OK",
         "TG-55-18": "OK",
-        "TG-55-19": "OK",
+        "TG-55-19": "NG",
         "TG-55-20": "OK",
         "TG-55-21": "OK",
         "TG-55-22": "OK",
@@ -2210,7 +2210,9 @@
         "TG-55-38": "OK",
         "TG-55-39": "OK",
         "TG-55-40": "OK",
-        "TG-55-41": "OK"
+        "TG-55-41": "OK",
+        "TG-55-42": "OK",
+        "TG-55-43": "OK"
       }
     },
     {
@@ -3279,9 +3281,9 @@
       "kind": "auto",
       "feature": "ArtisanEvent",
       "title": "Mine veins and herb valleys of every area",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-26T19:30:18",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261126-192255",
+      "result": "OK",
+      "lastRun": "2026-11-28T21:58:04",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-215536",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -3300,7 +3302,17 @@
         "TG-86-13": "OK",
         "TG-86-14": "OK",
         "TG-86-15": "OK",
-        "TG-86-16": "OK"
+        "TG-86-16": "OK",
+        "TG-86-17": "OK",
+        "TG-86-18": "OK",
+        "TG-86-19": "OK",
+        "TG-86-20": "OK",
+        "TG-86-21": "OK",
+        "TG-86-22": "OK",
+        "TG-86-23": "OK",
+        "TG-86-24": "OK",
+        "TG-86-25": "OK",
+        "TG-86-26": "OK"
       }
     },
     {

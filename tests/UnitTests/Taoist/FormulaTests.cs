@@ -231,8 +231,17 @@ namespace UnitTests.Taoist
             Check.True(ArtisanEvent.GatheredFromCell(ArtisanEvent.Craft.Mining, 100, 100, 50, 40), "ores of the cells down: gathered", null);
             Check.True(!ArtisanEvent.Blocking(new[] { "MapMain", "GetReward" }), "the reward window of the gathering does not block", null);
             // mine veins and herb valleys
-            Check.Eq(24, ArtisanEvent.SpotItems(12, 0), "a year at a spot: 24 items");
-            Check.Eq(48, ArtisanEvent.SpotItems(12, 4), "a Grandmaster: +100 %");
+            Check.Eq(12, ArtisanEvent.GatherTries(12), "a year at a spot: 12 tries");
+            Check.Eq(36, ArtisanEvent.GatherTries(36), "3 years: 36 tries (no bonus of the rank)");
+            Check.Eq(80f, ArtisanEvent.GatherChance(45, 45, 0), "craft value = need: 80 %");
+            Check.Eq(40f, ArtisanEvent.GatherChance(45, 90, 0), "half the need: 40 %");
+            Check.Eq(50f, ArtisanEvent.GatherChance(45, 45, 2), "2 levels above the area: -30");
+            Check.Eq(95f, ArtisanEvent.GatherChance(500, 45, 0), "at most 95 %");
+            Check.Eq(5f, ArtisanEvent.GatherChance(0, 45, 0), "at least 5 %");
+            Check.Eq(95f, ArtisanEvent.GatherChance(0, 0, 0), "common items (no need): 95 %");
+            Check.Eq(0, ArtisanEvent.MineNeed(1), "an ore of level 1 needs no Mining");
+            Check.Eq(120, ArtisanEvent.MineNeed(4), "an ore of level 4: 120");
+            Check.Eq(390, ArtisanEvent.MineNeed(9), "above level 6: the need of level 6");
             Check.Eq(0, ArtisanEvent.Direction(0, 0, 0, 5), "north");
             Check.Eq(2, ArtisanEvent.Direction(0, 0, 5, 0), "east");
             Check.Eq(5, ArtisanEvent.Direction(0, 0, -5, -5), "south-west");

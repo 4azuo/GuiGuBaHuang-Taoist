@@ -35,8 +35,12 @@ the cells: not counted. The mod's own gifts
 load (`MakeSpots`, saved in `Spots`, fixed for the save): free cells of the area, 4-12 cells from one of its towns. Their
 cells are made rich every year (`Enrich`: mineral / medicinal 500), so the game's own gathering finds more there. When the
 player stands on one (or next to it), not offered in the last 12 months, a drama offers to stay 1, 3, 5 or 10 years: a
-seclusion (`SeclusionEvent.Kind.MineVein / HerbValley`, the time passes). At the end (`SpotReward`): ores / herbs of the
-area's grade, 2 a month x (1 + 0.25 x the rank of Mining / Herbs), and their craft exp. The spirit sense's scan tells the
+seclusion (`SeclusionEvent.Kind.MineVein / HerbValley`, the time passes). At the end (`SpotReward`): `GatherTries` = 1 a month (the rank of Mining / Herbs
+counts by its craft value, +15 a rank); each try picks an item the game gives in the area (`SpotPool`: herbs of `WorldBlockHerb` with a weight in
+the area, by weight, need = basHerb; ores of the `WorldBlockMine` row of the area, same weight, need = `MINE_NEED` by
+level: 0, 0, 12, 45, 120, 240, 390 for levels 0-6) and succeeds with `GatherChance` = 80 x craft value / need - 15 a
+level of the item above the area's level (the lowest level of its items with a need), 5..95 % (no need: 95 %); the items
+gathered and their craft exp. The drama shows the expected count (`SpotExpected`). Every spot has a marker on the world map (`UpdateSpotMarkers`: a sprite `ModImg/map_herb.png` / `map_mine.png`: the game's map pictures `ziyuanyaocaoyuan` / `ziyuankuangmai`, under `SceneType.map.world.mapRoot` at `PointToWorld` of its cell, 1.6 cells wide, the sorting layer of the player model; made again when the map scene is new). The spirit sense's scan tells the
 nearest one, its distance and direction (`SpiritSenseEvent.Scan`).
 
 ## Formulas

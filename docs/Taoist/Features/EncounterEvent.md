@@ -14,7 +14,7 @@ Random encounters of the player (at most one a month) as dramas with choices, an
 ## Switches
 
 - `NoEncounter` (S&M): none at all (player and NPCs).
-- `EncounterRate` (S&M, default 3 %): monthly chance.
+- `EncounterRate` (S&M, default 1 %): monthly chance.
 
 ## Player encounters (`OnMonthly`)
 
@@ -37,7 +37,7 @@ Not when disabled, in battle or during a time skip. Roll `< EncounterRate` -> on
 | **Chess hermit** (stake `Cost(3)`) | 1. play (needs the stake): win chance `clamp(25 + Talent / 4, 25, 75)` %: +`100 x grade` exp and + stake; else - stake. 2. decline. |
 | **Hooded peddler** (box `Cost(5)`) | 1. buy: 10 % empty; else a herb / mineral / pill of the grade (grade + 1 when roll < 15). 2. haggle: 50 % he leaves, else 30 % off and the box (the roll x 2 reused). 3. ignore. |
 | **Collapsed cave** | 1. explore: < 30: 1 herb / mineral (2 when < 10); < 55: +`Cost(2)` stones; else -30 % max HP (keeps 1 HP). 2. leave. |
-| **Spirit beast cub** | 1. feed a herb from the bag: +1 Luck (+2 when < 10); no herb -> `enc_cub_noherb`. 2. leave. |
+| **Spirit beast cub** | 1. feed a herb from the bag (merit +10): Luck +2 when the roll < 2, +1 when < 20 (`CubLuck`), else nothing (`enc_cub_r0`); no herb -> `enc_cub_noherb`. 2. leave. |
 | **Town festival** (`Cost(1)`) | 1. join: Mood + up to 20, 5 townspeople near the town center +20 intimacy. 2. skip. |
 | **Waterfall / Lava pool / Thunder pool** (`BodyCulEvent.OfferPlace`) | 1-3. stay 1 / 3 / 5 years: a seclusion (`SeclusionEvent`), each month the body exp of the current level / 24 / 14 / 8. 4. leave. |
 | **Flood relief** (`Cost(8)`) | 1. donate (to the town budget): merit +20 x grade. 2. walk on. |

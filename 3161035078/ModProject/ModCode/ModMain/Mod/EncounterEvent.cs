@@ -10,7 +10,7 @@ using System.Linq;
 namespace MOD_nE7UL2.Mod
 {
     /// <summary>
-    /// Random encounters: at most one a month (S&M EncounterRate %, default 3), on the map, not during a time skip. Each one is a
+    /// Random encounters: at most one a month (S&M EncounterRate %, default 1), on the map, not during a time skip. Each one is a
     /// drama with choices and a reward or a price:
     /// - Wounded cultivator (an NPC nearby): pay for medicine (friendship + a herb) / rob him (his money, his hatred) / walk on.
     /// - Chess hermit: play for a stake (win chance from Talent: exp + the stake; lose: the stake) / decline.
@@ -39,7 +39,7 @@ namespace MOD_nE7UL2.Mod
         /// <summary>Encounters on/off (Taoist Settings).</summary>
         public bool Enabled { get; set; } = true;
         /// <summary>Chance of an encounter each month (%, S&M).</summary>
-        public static float EncounterRate => SMLocalConfigsEvent.Instance?.Configs?.EncounterRate ?? 3f;
+        public static float EncounterRate => SMLocalConfigsEvent.Instance?.Configs?.EncounterRate ?? SMGlobalConfigsEvent.DEFAULT_ENCOUNTER_RATE;
         /// <summary>Encounters seen (statistics).</summary>
         public int Count { get; set; }
 
@@ -240,6 +240,10 @@ namespace MOD_nE7UL2.Mod
         public const int WOUNDED_HELP_MERIT = 30;
         public const int WOUNDED_ROB_MERIT = -60;
         public const int CUB_MERIT = 10;
+        public const float CUB_LUCK_CHANCE = 20f;    // % of the fed cub giving Luck +1
+        public const float CUB_LUCK2_CHANCE = 2f;    // % of it giving Luck +2 (part of CUB_LUCK_CHANCE)
+        /// <summary>Luck of the fed cub by the roll (0..100): +2 below 2, +1 below 20, else none (the merit only).</summary>
+        public static int CubLuck(float roll) => roll < CUB_LUCK2_CHANCE ? 2 : roll < CUB_LUCK_CHANCE ? 1 : 0;
         public const int FESTIVAL_MERIT = 5;
 
         // option index from the default option ids of DramaHelper (999790000 + index)
@@ -346,10 +350,11 @@ namespace MOD_nE7UL2.Mod
                         var herb = Player.GetUnitProps().FirstOrDefault(x => x.propsItem?.IsHerbItem() != null);
                         if (herb == null) { key = "enc_cub_noherb"; break; }
                         Player.RemoveUnitProp(herb.soleID, 1);
-                        var luck = roll < 10f ? 2 : 1;
+                        MeritEvent.Add(Player, CUB_MERIT, "merit_src_cub");
+                        var luck = CubLuck(roll);
+                        if (luck <= 0) { key = "enc_cub_r0"; break; }
                         Player.AddProperty<int>(UnitPropertyEnum.Luck, luck);
                         key = "enc_cub_r"; args = new object[] { luck };
-                        MeritEvent.Add(Player, CUB_MERIT, "merit_src_cub");
                     }
                     break;
                 case Encounter.Festival:

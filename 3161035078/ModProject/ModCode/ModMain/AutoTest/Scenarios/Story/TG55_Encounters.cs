@@ -109,9 +109,12 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Story
                     c.AssertEqual("enc_cub_noherb", EncounterEvent.Resolve(E.Cub, 0, roll: 50f), "no herb to give");
                     Player.AddUnitProp(HerbId, 1);
                     var luck = Player.GetProperty<int>(UnitPropertyEnum.Luck);
-                    c.AssertEqual("enc_cub_r", EncounterEvent.Resolve(E.Cub, 0, roll: 50f), "the cub is fed");
-                    c.AssertEqual(luck + 1, Player.GetProperty<int>(UnitPropertyEnum.Luck), "+1 luck");
+                    c.AssertEqual("enc_cub_r0", EncounterEvent.Resolve(E.Cub, 0, roll: 50f), "the cub is fed, no luck (roll 50)");
+                    c.AssertEqual(luck, Player.GetProperty<int>(UnitPropertyEnum.Luck), "luck unchanged");
                     c.AssertEqual(0, Player.GetUnitPropCount(HerbId), "the herb is eaten");
+                    Player.AddUnitProp(HerbId, 1);
+                    c.AssertEqual("enc_cub_r", EncounterEvent.Resolve(E.Cub, 0, roll: 10f), "the cub is fed (roll 10)");
+                    c.AssertEqual(luck + 1, Player.GetProperty<int>(UnitPropertyEnum.Luck), "+1 luck");
                 }, 1000)
                 .Step("wounded", c =>
                 {

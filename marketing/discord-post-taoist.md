@@ -1,4 +1,4 @@
-**Taoist v6.3.2** — mod hardcore cho Quỷ Cốc Bát Hoang
+**Taoist v6.3.3** — mod hardcore cho Quỷ Cốc Bát Hoang
 Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078
 Góp ý: https://github.com/4azuo/GuiGuBaHuang-Taoist/issues/13
 Discord: https://discord.gg/XKaP3EYfw

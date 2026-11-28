@@ -129,8 +129,10 @@ namespace MOD_nE7UL2.Mod
         public bool ContinueAsDescendant { get; set; } = false;
         /// <summary>No NPC storylines (StoryEvent).</summary>
         public bool NoStory { get; set; } = false;
+        /// <summary>Default chance (%) of a random encounter of the player each month (NPC fortunes have their own rates).</summary>
+        public const float DEFAULT_ENCOUNTER_RATE = 1f;
         /// <summary>Chance of a random encounter each month (%).</summary>
-        public float EncounterRate { get; set; } = 3f;
+        public float EncounterRate { get; set; } = DEFAULT_ENCOUNTER_RATE;
         /// <summary>Total score (P) of these settings, worked out when the window is confirmed (SMScoreEvent: what P does).</summary>
         public int Score { get; set; } = 0;
         /// <summary>Chance of a seclusion offer each month (%); forced ones scale with it.</summary>
@@ -559,8 +561,8 @@ namespace MOD_nE7UL2.Mod
                 var x = s.Parent as UIItemComposite;
                 return new object[] { x == null ? 0 : CalCompScore(x), x == null ? "0" : x.Get().Parse<float>().ToString("0.0") + " %" };
             };
-            // encounters: 3 % (default) = 0 P, 300 P a point below / above (0 % = +900, 10 % = -2100)
-            Register(() => slEncounterRate, funcCal: s => ((3f - s.Get().Parse<float>()) * 300).Parse<int>(),
+            // encounters: 1 % (default) = 0 P, 300 P a point below / above (0 % = +300, 10 % = -2700)
+            Register(() => slEncounterRate, funcCal: s => ((DEFAULT_ENCOUNTER_RATE - s.Get().Parse<float>()) * 300).Parse<int>(),
                 funcCond: s => !tglNoEncounter.Get().Parse<bool>(), funcFormatter: rateFormatter);
             // seclusion events: 0.5 % (default) = 0 P, 2000 P a point (0 % = +1000, 3 % = -5000)
             Register(() => slSeclusionRate, funcCal: s => ((0.5f - s.Get().Parse<float>()) * 2000).Parse<int>(),
@@ -1321,7 +1323,7 @@ namespace MOD_nE7UL2.Mod
             selChildSurname.Set(0);
             tglContinueAsDescendant.Set(false);
             tglNoStory.Set(false);
-            slEncounterRate.Set(3f);
+            slEncounterRate.Set(DEFAULT_ENCOUNTER_RATE);
             slSeclusionRate.Set(0.5f);
             tglLostLifespanWhenDie.Set(false);
             tglLostMoneyWhenDie.Set(true);
@@ -1405,7 +1407,7 @@ namespace MOD_nE7UL2.Mod
             selChildSurname.Set(0);
             tglContinueAsDescendant.Set(false);
             tglNoStory.Set(false);
-            slEncounterRate.Set(3f);
+            slEncounterRate.Set(DEFAULT_ENCOUNTER_RATE);
             slSeclusionRate.Set(0.5f);
             tglLostLifespanWhenDie.Set(level > 0);
             slMaxSellersEachTown.Set(8f);

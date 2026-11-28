@@ -100,7 +100,7 @@ Turning off a feature that helps the player costs points; turning off one that h
 | Option | Score | Used by |
 |---|---|---|
 | `NoEncounter` | +1,000 | [EncounterEvent](EncounterEvent.md) |
-| `EncounterRate` (0 .. 10 %, default 3) | `(3 - rate) x 300` (encounters on) | EncounterEvent |
+| `EncounterRate` (0 .. 10 %, default 1) | `(1 - rate) x 300` (encounters on) | EncounterEvent |
 | `NoBankLoan` | +1,000 | [BankLoanEvent](BankLoanEvent.md) |
 | `NoBuyOrder` | +500 | RealMarketEvent3 |
 | `NoBounty` | -2,000 | [WantedEvent](WantedEvent.md) |

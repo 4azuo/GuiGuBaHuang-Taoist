@@ -93,18 +93,48 @@ namespace MOD_nE7UL2.AutoTest.Scenarios.Unit
                 .Step("a year in the vein", c =>
                 {
                     var s = (ArtisanEvent.Spot)c.Bag["spot"];
-                    var bag0 = ArtisanEvent.Bag(Player);
-                    var exp0 = ArtisanEvent.Get(Player, ArtisanEvent.Craft.Mining)?.Exp ?? 0;
-                    var text = SeclusionEvent.Reward(new SeclusionEvent.Running { Kind = SeclusionEvent.Kind.MineVein, Months = 12, Area = s.Area });
-                    c.Info(text);
-                    var got = ArtisanEvent.Gained(bag0, ArtisanEvent.Bag(Player));
-                    c.AssertEqual(ArtisanEvent.SpotItems(12, 0), got.Values.Sum(), "24 ores for a year (a new miner)");
-                    c.Assert(got.Keys.All(k => ArtisanEvent.GatherCraft(g.conf.itemProps.GetItem(k)) == ArtisanEvent.Craft.Mining), "all are ores");
-                    var d = ArtisanEvent.Get(Player, ArtisanEvent.Craft.Mining);
-                    c.Assert(d != null && (d.Rank > 0 || d.Exp > exp0), $"Mining exp ({d?.Rank}, {d?.Exp})");
-                    var hv = SeclusionEvent.Reward(new SeclusionEvent.Running { Kind = SeclusionEvent.Kind.HerbValley, Months = 12, Area = s.Area });
-                    c.Info(hv);
-                    c.Assert(ArtisanEvent.Get(Player, ArtisanEvent.Craft.Herbal) != null, "a herb valley: Herbs exp");
+                    // a year at each kind: 12 tries, each with its chance, items the game gives in the area
+                    foreach (var kind in new[] { ArtisanEvent.SpotKind.Mine, ArtisanEvent.SpotKind.Herb })
+                    {
+                        var craft = ArtisanEvent.SpotCraft(kind);
+                        var pool = ArtisanEvent.SpotPool(kind, s.Area);
+                        var value = ArtisanEvent.CraftValue(Player, craft);
+                        var tries = ArtisanEvent.GatherTries(12);
+                        c.Info($"{kind} area {s.Area}: {pool.Count} items, {craft} value {value}, {tries} tries, expected {ArtisanEvent.ExpectedItems(pool, tries, value)}: "
+                            + string.Join(", ", pool.Take(6).Select(x => $"{GameTool.LS(x.Item.name)} L{x.Item.level} need {x.Need} +{x.LevelAboveArea} {ArtisanEvent.GatherChance(value, x.Need, x.LevelAboveArea):0}%")));
+                        c.Assert(pool.Count > 0, $"the area gives {kind} items (WorldBlock config)");
+                        var exp0 = ArtisanEvent.Get(Player, craft)?.Exp ?? 0;
+                        var text = SeclusionEvent.Reward(new SeclusionEvent.Running { Kind = kind == ArtisanEvent.SpotKind.Mine ? SeclusionEvent.Kind.MineVein : SeclusionEvent.Kind.HerbValley, Months = 12, Area = s.Area });
+                        c.Info(text);
+                        // counted from the reward (a full bag sends the items to the temporary storage)
+                        var got = ArtisanEvent.LastSpotGot;
+                        c.Assert(got.Values.Sum() <= tries, $"{got.Values.Sum()} items, at most {tries} tries");
+                        c.Assert(got.Keys.All(k => pool.Any(x => x.Item.id == k)), "only the items of the area");
+                        c.Assert(got.Keys.All(k => ArtisanEvent.GatherCraft(g.conf.itemProps.GetItem(k)) == craft), $"all are of {craft}");
+                        var d = ArtisanEvent.Get(Player, craft);
+                        c.Assert(got.Count == 0 || (d != null && (d.Rank > 0 || d.Exp > exp0)), $"{craft} exp ({d?.Rank}, {d?.Exp})");
+                    }
+                })
+                .Step("the markers on the map", c =>
+                {
+                    ArtisanEvent.UpdateSpotMarkers();
+                    var spots = ArtisanEvent.Instance.Spots;
+                    var shown = spots.Count(x => ArtisanEvent.SpotMarker(x) != null);
+                    c.AssertEqual(spots.Count, shown, "a marker for every spot");
+                    var s = spots.First();
+                    var m = ArtisanEvent.SpotMarker(s);
+                    var w = SceneType.map.world.PointToWorld(s.Point());
+                    c.Assert(m != null && Vector2.Distance(new Vector2(m.transform.position.x, m.transform.position.y), w) < 0.01f, $"at its cell ({w.x:0.00},{w.y:0.00})");
+                    var sr = m?.GetComponent<SpriteRenderer>();
+                    c.Assert(sr != null && sr.sprite != null, $"a picture ({sr?.sortingLayerName} {sr?.sortingOrder}, size {sr?.bounds.size.x:0.00})");
+                    // the player next to the nearest herb valley: the marker is on screen (the screenshot of the step)
+                    var near = ArtisanEvent.NearestSpot(Player.GetUnitPos(), ArtisanEvent.SpotKind.Herb);
+                    if (near != null) { near.LastOfferMonth = GameHelper.GetGameTotalMonth(); Player.SetUnitPos(new Vector2Int(near.X + 2, near.Y)); }
+                }, 2500)
+                .Step("the marker seen", c =>
+                {
+                    var near = ArtisanEvent.NearestSpot(Player.GetUnitPos(), ArtisanEvent.SpotKind.Herb);
+                    c.Assert(near != null && ArtisanEvent.SpotMarker(near) != null, "the herb valley next to the player has its marker (screenshot)");
                 })
                 .Step("restore", c =>
                 {

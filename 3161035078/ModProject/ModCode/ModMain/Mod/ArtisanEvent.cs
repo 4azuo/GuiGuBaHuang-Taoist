@@ -413,8 +413,9 @@ namespace MOD_nE7UL2.Mod
                 }
             _mapBag = now;
             (_cellHerbs, _cellOres) = cells;
-            // a mine vein / herb valley under the player's feet (ArtisanEvent.Spots.cs)
+            // a mine vein / herb valley under the player's feet, their markers on the map (ArtisanEvent.Spots.cs)
             CheckSpot();
+            UpdateSpotMarkers();
         }
 
         public static Dictionary<int, int> Bag(WorldUnitBase w) =>
