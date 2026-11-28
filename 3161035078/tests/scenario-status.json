@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-27T11:41:12",
+  "updatedAt": "2026-11-28T09:22:19",
   "counts": {
-    "OK": 5,
+    "OK": 7,
     "NG": 0,
     "SKIP": 2,
-    "NOT RUN": 147,
+    "NOT RUN": 145,
     "-": 4
   },
   "scenarios": [
@@ -384,8 +384,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "SKIP",
-      "lastRun": "2026-11-27T11:41:12",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261127-113939",
+      "lastRun": "2026-11-28T09:22:19",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-091922",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -2430,9 +2430,9 @@
       "kind": "auto",
       "feature": "BodyCulEvent",
       "title": "Body refining: realms, breakthrough, bath, bonuses",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-26T19:30:18",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261126-192255",
+      "result": "OK",
+      "lastRun": "2026-11-28T09:22:19",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-091922",
       "tester": "autotest",
       "note": null,
       "checks": {
@@ -2706,9 +2706,9 @@
       "kind": "auto",
       "feature": "BodyCulEvent",
       "title": "Body refining levels and their materials",
-      "result": "NOT RUN",
-      "lastRun": "2026-11-26T19:30:18",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261126-192255",
+      "result": "OK",
+      "lastRun": "2026-11-28T09:22:19",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-091922",
       "tester": "autotest",
       "note": null,
       "checks": {
