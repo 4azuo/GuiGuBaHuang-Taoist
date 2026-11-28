@@ -1,4 +1,4 @@
-Taoist 6.3 is out! (v6.3.2, ModLib v2.3.07)
+Taoist 6.3 is out! (v6.3.2, ModLib v2.3.08)
 
 Thank you so much to everyone who supports the mod — your coffees keep it going, and the mod stays free for everyone.
 

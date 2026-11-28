@@ -18,7 +18,7 @@
 - Body Refining window no longer overlaps its texts; S&M bank fee capped at +1,000%
 
 ## ⚠️ Before you play
-Update **Fouru's ModLib** to **v2.3.07+**, put it at the **top of the mod list**, then restart the game.
+Update **Fouru's ModLib** to **v2.3.08+**, put it at the **top of the mod list**, then restart the game.
 
 ## Links
 - **Steam:** <https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078>
