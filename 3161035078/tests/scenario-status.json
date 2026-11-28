@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-28T09:22:19",
+  "updatedAt": "2026-11-28T15:30:00",
   "counts": {
-    "OK": 7,
+    "OK": 8,
     "NG": 0,
     "SKIP": 2,
     "NOT RUN": 145,
@@ -384,8 +384,8 @@
       "feature": "Pre-test (new character)",
       "title": "Create a new character (trainer on, CrueltyShura, 3 artifacts, intro skipped)",
       "result": "SKIP",
-      "lastRun": "2026-11-28T09:22:19",
-      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-091922",
+      "lastRun": "2026-11-28T15:30:00",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-152751",
       "tester": "autotest",
       "note": null,
       "checks": {}
@@ -3591,6 +3591,31 @@
         "TG-93-46": "OK",
         "TG-93-47": "OK",
         "TG-93-48": "OK"
+      }
+    },
+    {
+      "id": "TG-94",
+      "kind": "auto",
+      "feature": "ConfBalance",
+      "title": "Level-up exp by the S&M rate of the save (loaded save, new save +100 %)",
+      "result": "OK",
+      "lastRun": "2026-11-28T15:30:00",
+      "evidence": "logs/test-viewer/index.html#tab=auto&run=20261128-152751",
+      "tester": "autotest",
+      "note": null,
+      "checks": {
+        "TG-94-01": "OK",
+        "TG-94-02": "OK",
+        "TG-94-03": "OK",
+        "TG-94-04": "OK",
+        "TG-94-05": "OK",
+        "TG-94-06": "OK",
+        "TG-94-07": "OK",
+        "TG-94-08": "OK",
+        "TG-94-09": "OK",
+        "TG-94-10": "OK",
+        "TG-94-11": "OK",
+        "TG-94-12": "OK"
       }
     },
     {

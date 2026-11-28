@@ -2912,6 +2912,24 @@
       ]
     },
     {
+      "id": "TG-94",
+      "kind": "auto",
+      "feature": "ConfBalance",
+      "title": "Level-up exp by the S&M rate of the save (loaded save, new save +100 %)",
+      "description": "The exp to level up is the value of the game x the ratio of mod_configs.json x (1 + S&M Levelup Exp of the save). The S&M configs belong to the save (copied from the global configs when the save is created): the loaded save keeps its own rate; a new save made after the slider was moved to +100 % reads the global file and needs twice the exp of the game. The global configs and the values of the save are put back.",
+      "preconditions": "Save loaded",
+      "steps": [
+        "Exp of the levels with the rate of the save",
+        "Global Levelup Exp +100 %, read like a new save, applied",
+        "Player info"
+      ],
+      "expected": [
+        "Every level = game x ratio x (1 + rate of the save), the max exp of the player too",
+        "New save: +100 % copied, twice the exp of the game",
+        "Values of the save back"
+      ]
+    },
+    {
       "id": "TG-99",
       "kind": "auto",
       "feature": "CustomDestinyEvent",

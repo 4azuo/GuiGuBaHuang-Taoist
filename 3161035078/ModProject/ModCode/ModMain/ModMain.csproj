@@ -204,6 +204,7 @@
     <Compile Include="AutoTest\Scenarios\Battle\TG91_BalanceByRealm.cs" />
     <Compile Include="AutoTest\Scenarios\Unit\TG92_PillBody.cs" />
     <Compile Include="AutoTest\Scenarios\Unit\TG93_Constitutions.cs" />
+    <Compile Include="AutoTest\Scenarios\Unit\TG94_LevelupExp.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX07_GameMonthLog.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX08_FamilySeclusion.cs" />
     <Compile Include="AutoTest\Scenarios\Time\TX09_SkipTiming.cs" />

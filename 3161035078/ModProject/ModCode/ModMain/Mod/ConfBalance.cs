@@ -111,7 +111,7 @@ namespace MOD_nE7UL2.Mod
         public static void Apply(SMGlobalConfigsEvent cfg)
         {
             if (!initDone) return;
-            var expRatio = Settings?.LevelExpRatio ?? 1f;
+            var expRatio = LevelExpRatio;
             var expRate = cfg?.AddLevelupExpRate ?? 0f;
             foreach (var x in levelExp)
                 x.Item1.exp = Scale(x.Item2, expRatio, expRate);
@@ -137,6 +137,16 @@ namespace MOD_nE7UL2.Mod
         {
             var v = values.FirstOrDefault(x => x.Item.key == key);
             return v == null ? (float?)null : v.Orig[Math.Max(1, Math.Min(10, grade)) - 1];
+        }
+
+        /// <summary>The ratio of the level-up exp of mod_configs.json (1 when missing).</summary>
+        public static float LevelExpRatio => Settings?.LevelExpRatio ?? 1f;
+
+        /// <summary>The value of the game of the level-up exp of a row (tests), null when it is not kept.</summary>
+        public static int? OriginalLevelExp(ConfRoleGradeItem item)
+        {
+            var v = levelExp.FirstOrDefault(x => x.Item1 == item || x.Item1.id == item?.id);
+            return v?.Item2;
         }
 
         /// <summary>The value of the game of the skill mastery exp of a row at the grade (tests).</summary>
