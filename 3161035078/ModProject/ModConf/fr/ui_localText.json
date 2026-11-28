@@ -1,4 +1,4 @@
-﻿[
+[
 	{
 		"id": "-1000008000",
 		"key": "ui_bank_open",
@@ -453,5 +453,10 @@
 		"id": "-1000008090",
 		"key": "ui_othermods_open",
 		"en|ch|tc|kr": "Ouvrir"
+	},
+	{
+		"id": "-1000008091",
+		"key": "ui_support_info",
+		"en|ch|tc|kr": "Un tout nouveau monde de cultivation : royaumes rééquilibrés, économie vivante, sectes et villes qui grandissent, histoires, artisans, raffinement du corps... construit et équilibré au fil des années. Votre soutien fait venir du nouveau contenu."
 	}
 ]

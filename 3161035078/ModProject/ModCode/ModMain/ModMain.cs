@@ -22,6 +22,7 @@ namespace MOD_nE7UL2
         public const string SUPPORT_URL = "https://ko-fi.com/fouru";
         public const string SUPPORT_QR = "fouru-kofi-qr.png";
         public const string SUPPORT_NAME = "Taoist";
+        public const string SUPPORT_INFO = "ui_support_info";
 
         public ModStts ModSettings { get; private set; }
         public static ModMain ModObj { get; private set; }

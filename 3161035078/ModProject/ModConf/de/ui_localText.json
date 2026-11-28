@@ -1,4 +1,4 @@
-﻿[
+[
 	{
 		"id": "-1000008000",
 		"key": "ui_bank_open",
@@ -453,5 +453,10 @@
 		"id": "-1000008090",
 		"key": "ui_othermods_open",
 		"en|ch|tc|kr": "Öffnen"
+	},
+	{
+		"id": "-1000008091",
+		"key": "ui_support_info",
+		"en|ch|tc|kr": "Eine ganz neue Kultivierungswelt: neu ausbalancierte Reiche, eine lebendige Wirtschaft, wachsende Sekten und Städte, Handlungsstränge, Handwerker, Körperverfeinerung... über Jahre gebaut und ausbalanciert. Deine Unterstützung bringt immer neue Inhalte."
 	}
 ]

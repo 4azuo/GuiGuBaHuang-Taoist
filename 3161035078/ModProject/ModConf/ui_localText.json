@@ -726,5 +726,13 @@
 		"ch": "打开",
 		"tc": "打開",
 		"kr": "열기"
+	},
+	{
+		"id": -1000008091,
+		"key": "ui_support_info",
+		"en": "A whole new cultivation world: realms rebalanced, a living economy, sects and towns that grow, storylines, artisans, body refining... built and balanced over years. Your support keeps new content coming.",
+		"ch": "一个全新的修仙世界：重新平衡的境界、鲜活的经济、会成长的宗门与城镇、剧情、工匠、炼体……多年打磨与平衡。您的支持让新内容不断到来。",
+		"tc": "一個全新的修仙世界：重新平衡的境界、鮮活的經濟、會成長的宗門與城鎮、劇情、工匠、煉體……多年打磨與平衡。您的支持讓新內容不斷到來。",
+		"kr": "완전히 새로운 수련 세계: 재조정된 경지, 살아 있는 경제, 성장하는 종문과 마을, 스토리, 장인, 체수련... 수년간 다듬고 균형을 맞췄습니다. 여러분의 후원으로 새 콘텐츠가 계속됩니다."
 	}
 ]

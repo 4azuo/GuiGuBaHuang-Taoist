@@ -1,4 +1,4 @@
-﻿[
+[
 	{
 		"id": "-1000008000",
 		"key": "ui_bank_open",
@@ -453,5 +453,10 @@
 		"id": "-1000008090",
 		"key": "ui_othermods_open",
 		"en|ch|tc|kr": "Aperi"
+	},
+	{
+		"id": "-1000008091",
+		"key": "ui_support_info",
+		"en|ch|tc|kr": "Mundus cultivationis omnino novus: regna librata, oeconomia viva, sectae et oppida crescentia, fabulae, artifices, corporis refinatio... per annos aedificatus et libratus. Auxilium tuum nova semper affert."
 	}
 ]
