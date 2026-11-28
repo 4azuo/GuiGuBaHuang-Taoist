@@ -1,31 +1,16 @@
-Taoist 6.2 is out! (v6.2.0, ModLib v2.3.00)
+Taoist 6.3 is out! (v6.3.2, ModLib v2.3.07)
 
 Thank you so much to everyone who supports the mod — your coffees keep it going, and the mod stays free for everyone.
 
 For newcomers: Taoist is a hardcore overhaul of Tale of Immortal. A living world where NPCs grow, marry and fight beside you; a harsh economy with inflation, loans and a player market; towns with taxes, bounties and cultivator clans; families that carry your legacy after you die; long storylines with real battles; and tougher battles with a Damage Calc window. Almost everything can be tuned in S&M Configs.
 
-What's new in 6.2:
+What's new in 6.3:
 
-• Choose your destinies — a new window at character creation with every innate destiny of the game and filters by quality, name and description. Take as many as you like; each one lowers your S&M score.
-• Taoist × Dao of Creation (optional, when you play both mods) — 2 new storylines, The Nameless Art and For One Heir Only. Characters create martial arts of their own and teach them to you, and older storylines have new rewards.
-• S&M Configs shows the options of Dao of Creation on a page of their own.
-• Taoist wallpapers for the title screen, trainer teleport by area, windows that no longer open over each other.
-
-Still new since 6.1:
-
-• Clan elders — outsiders who guard a clan for a salary. They vote on its wars and fight in them... and a disloyal elder may flee, or betray its clan in the middle of the battle.
-• Succession — when the head of a clan dies, a child (or a sibling, or the spouse) carries the clan on. A clan wiped out leaves its mansion in ruins.
-• Faster months — NPCs grow by turns and the game saves in the background.
-• S&M score balance, new windows for plots, clans and elders, and an option to hide the Damage Calc button.
-
-Still new since 6.0:
-
-• Body Refining — from Copper Skin to Undying Body. Train under waterfalls, in lava and thunder pools, and survive the body tribulation.
-• Merit & Karma — good deeds bring blessings; evil deeds bring power, bounties and revenge. Deep enough in karma, you can even massacre a town.
-• Artisan Dao — alchemy, forging, talismans, feng shui, herbs and mining with ranks, exams, masterpieces, commissions and apprentices.
-• Dao Heart and Spirit Sense — the strength of your mind, against heart demons and ambushes, with a scan of everything around you.
-• Estates — every town has its own map. Buy a house, grow it from a thatched hut to an immortal palace, build rooms, pay your house tax.
-• 4 storylines of 6.0 (16 in all, 18 with Dao of Creation): Old Tie's Forge, The House on the Old Street, Ashes of the Town, A Heartbeat in the Stone.
+• Seven constitutions — Pill Body, Sword Bone, Vajra Body, Innate Spirit Body, Dragon Blood Body, Thunder Body and Venom Body. 10 tiers each, awakened by the way you cultivate; your realm caps the tier, and NPCs awaken them too.
+• Potions that keep up — the Pill Body and your alchemy rank raise their recovery; a rare Nine-Turn Golden Pill makes every potion heal 10% of your max HP / MP.
+• A new storyline, The Medicine King's Testament: an old alchemist, three missing pages, and a lasting gift for your potions.
+• New windows for constitutions, artisan ranks and rebirth; slower monster growth; a new S&M page "Skills & pills".
+• A Support button on the title screen — thank you to everyone who uses it!
 
 Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3161035078
 (Requires Fouru's ModLib: https://steamcommunity.com/sharedfiles/filedetails/?id=3385996759 — put it at the top of the mod list and restart.)
