@@ -362,8 +362,8 @@ namespace MOD_nE7UL2.Mod
                 funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
             Register(() => slEcoBankAccCost,
                 funcCal: s => (s.Get().Parse<float>() * 100).Parse<int>());
-            Register(() => slEcoBankFee, // x20: the top fee (100) = +2,000 P (was x100: +10,000, 20 times the taxes)
-                funcCal: s => (s.Get().Parse<float>() * 20).Parse<int>());
+            Register(() => slEcoBankFee, // x200: the top fee (10) = +2,000 P
+                funcCal: s => (s.Get().Parse<float>() * 200).Parse<int>());
             Register(() => slEcoRefineCost,
                 funcCal: s => (s.Get().Parse<float>() * 2000).Parse<int>());
             Register(() => slEcoSectExchangeRate,
@@ -844,7 +844,7 @@ namespace MOD_nE7UL2.Mod
                     slEcoInfRate = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs009"), -0.50f, 2.00f, AddInflationRate, GameTool.LS("smcfgs101"));
                     slEcoBuildingCost = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs010"), 0.00f, 8.00f, AddBuildingCostRate, GameTool.LS("smcfgs101"));
                     slEcoBankAccCost = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs011"), 0.00f, 8.00f, AddBankAccountCostRate, GameTool.LS("smcfgs101"));
-                    slEcoBankFee = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs012"), 0.00f, 100.00f, AddBankFee, GameTool.LS("smcfgs101"));
+                    slEcoBankFee = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs012"), 0.00f, 10.00f, AddBankFee, GameTool.LS("smcfgs101"));
                     slEcoRefineCost = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs013"), -0.50f, 1.00f, AddRefineCost, GameTool.LS("smcfgs101"));
                     slEcoSectExchangeRate = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs014"), -0.50f, 1.00f, AddSectExchangeRate, GameTool.LS("smcfgs101"));
                     slEcoItemValue = uiCustom.AddCompositeSlider(col, row++, GameTool.LS("smcfgs015"), -0.50f, 1.00f, AddItemValueRate, GameTool.LS("smcfgs101"));
@@ -1354,7 +1354,7 @@ namespace MOD_nE7UL2.Mod
             slEcoInfRate.SetPercent(level * 0.05000f);
             slEcoBuildingCost.SetPercent(level * 0.04000f);
             slEcoBankAccCost.SetPercent(level * 0.05000f);
-            slEcoBankFee.SetPercent(level * 0.01000f);
+            slEcoBankFee.SetPercent(level * 0.10000f);
             slEcoRefineCost.SetPercent(level * 0.10000f);
             slEcoSectExchangeRate.SetPercent(level * 0.10000f);
             slEcoItemValue.SetPercent(level * 0.10000f);

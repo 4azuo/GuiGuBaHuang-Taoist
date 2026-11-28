@@ -1019,9 +1019,11 @@ namespace MOD_nE7UL2.Mod
                 if (d.InjuryMonths > 0)
                     ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_injured"), d.InjuryMonths)).Format(Color.red, 15);
                 row++;
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_hp"), AdjHp(Player, Player.GetDynProperty(UnitDynPropertyEnum.HpMax).baseValue))).Format(null, 15);
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_def"), AdjDef(Player, Player.GetDynProperty(UnitDynPropertyEnum.Defense).baseValue))).Format(null, 15);
-                ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_basis"), AdjBasis(Player))).Format(null, 15);
+                // the bonuses on one line (the window is full with the breakthrough rows)
+                ui.AddText(ui.MidCol, row++, string.Join(",   ",
+                    string.Format(GameTool.LS("body_bonus_hp"), AdjHp(Player, Player.GetDynProperty(UnitDynPropertyEnum.HpMax).baseValue)),
+                    string.Format(GameTool.LS("body_bonus_def"), AdjDef(Player, Player.GetDynProperty(UnitDynPropertyEnum.Defense).baseValue)),
+                    string.Format(GameTool.LS("body_bonus_basis"), AdjBasis(Player)))).Format(null, 15);
                 ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_bonus_break"), d.BonusHp, d.BonusDef, d.BonusAtk)).Format(null, 15);
                 ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_break_rates"),
                     Math.Round(BREAK_HP_PER_REALM * Realm(lvl) * 100), Math.Round(BREAK_DEF_PER_REALM * Realm(lvl) * 100), Math.Round(BREAK_ATK_PER_REALM * Realm(lvl) * 100))).Format(null, 14);
@@ -1110,14 +1112,14 @@ namespace MOD_nE7UL2.Mod
                     }, GameTool.LS("body_trib_button")).Size(300, 36);
                     ui.AddText(DoseColumn(ui, 2) + 165f, ui.Rows[row], string.Format(GameTool.LS("body_trib_hint"), Math.Round(TRIBULATION_MP * 100), Math.Round(DOSE_GAIN[TRIBULATION_DOSE - 1] * 100)))
                         .Format(new Color(0.5f, 0.15f, 0.1f), 12);
-                    row += 2;
+                    row++;
                 }
 
                 if (InBodySect(Player))
                     ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_sect"), Player.data.school?.name, SECT_TRAIN_RATE)).Format(new Color(0.1f, 0.4f, 0.1f), 13);
                 ui.AddText(ui.MidCol, row++, string.Format(GameTool.LS("body_materials_hint"), HerbFloor(Player.GetGradeLvl()))).Format(Color.gray, 12);
-                ui.AddText(ui.MidCol, row, GameTool.LS("body_dose_hint")).Format(new Color(0.55f, 0.1f, 0.1f), 12);
-                ui.AddText(ui.MidCol, ui.LastRow - 1, GameTool.LS("body_help")).Format(null, 13);
+                ui.AddText(ui.MidCol, row++, GameTool.LS("body_dose_hint")).Format(new Color(0.55f, 0.1f, 0.1f), 12);
+                ui.AddText(ui.MidCol, row, GameTool.LS("body_help")).Format(null, 13);
             });
         }
     }

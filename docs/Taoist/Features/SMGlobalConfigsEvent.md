@@ -71,7 +71,7 @@ Not split: the player side of every feature, `UnitModifyEvent` (hooks new units)
 | `AddInflationRate` | -0.5 .. 2 | x 1,000 | [InflationaryEvent](InflationaryEvent.md) |
 | `AddBuildingCostRate` | 0 .. 8 | x 100 | [BuildingArrangeEvent](BuildingArrangeEvent.md) |
 | `AddBankAccountCostRate` | 0 .. 8 | x 100 | [BankAccountEvent](BankAccountEvent.md) |
-| `AddBankFee` | 0 .. 100 | x 20 (6.1.01; was x 100) | [RealStorageEvent](RealStorageEvent.md) |
+| `AddBankFee` | 0 .. 10 (was 0 .. 100) | x 200 (top still +2,000 P) | [RealStorageEvent](RealStorageEvent.md) |
 | `AddRefineCost` | -0.5 .. 1 | x 2,000 | [CustomRefineEvent](CustomRefineEvent.md) |
 | `AddSectExchangeRate` | -0.5 .. 1 | x 2,000 (not with SectNoExchange) | [ContributionExchangeEvent](ContributionExchangeEvent.md) |
 | `AddItemValueRate` | -0.5 .. 1 | x 1,000 | InflationaryEvent (start index) |

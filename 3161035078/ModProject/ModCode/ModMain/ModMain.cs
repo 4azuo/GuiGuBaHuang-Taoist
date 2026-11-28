@@ -18,6 +18,11 @@ namespace MOD_nE7UL2
     [Cache("nE7UL2", CacheType = CacheAttribute.CType.Global, OrderIndex = 0)]
     public class ModMain : ModChild
     {
+        //support page of the author: the "Support" window of the title screen (ModLib SupportHelper)
+        public const string SUPPORT_URL = "https://ko-fi.com/fouru";
+        public const string SUPPORT_QR = "fouru-kofi-qr.png";
+        public const string SUPPORT_NAME = "Taoist";
+
         public ModStts ModSettings { get; private set; }
         public static ModMain ModObj { get; private set; }
 
